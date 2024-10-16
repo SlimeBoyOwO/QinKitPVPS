@@ -250,6 +250,33 @@ public class PvzGameRunnable extends BukkitRunnable {
         if(plantTeam == null) return null;
         LivingEntity hitEntity = null;
 
+        Predicate<Entity> predicate = x -> isEnemy(bullet, x) && !bullet.equals(x);
+        // 计算射线方向的角度
+
+        double angle = Math.atan2(PvzEntity.getBulletVector(bullet).getZ(), PvzEntity.getBulletVector(bullet).getX());;
+
+        // 基于角度计算射线的目标方向
+        Vector direction = new Vector(Math.cos(angle), 0, Math.sin(angle));
+
+        // 发射射线
+        RayTraceResult result = bullet.getWorld().rayTrace(
+                bullet.getLocation(), // 起始点
+                direction,               // 方向向量
+                findDistance,                     // 最大距离
+                FluidCollisionMode.NEVER, // 流体模式
+                true,                    // 忽略非可视方块
+                0.3,                     // 检测范围（宽度）
+                predicate              // 过滤器
+        );
+
+        // 检查是否有实体被射线命中
+        if (result != null && result.getHitEntity() != null) {
+            hitEntity = (LivingEntity) result.getHitEntity();
+            return hitEntity;
+        }
+
+        return null;
+        /*
         for(Entity hit : bullet.getNearbyEntities(findDistance,findDistance,findDistance)) {
             if(PVZFunction.isBullet(hit)) continue;
             if(!(hit instanceof LivingEntity)) continue;
@@ -259,6 +286,7 @@ public class PvzGameRunnable extends BukkitRunnable {
             hitEntity = (LivingEntity) hit;
         }
         return hitEntity;
+         */
     }
 
     private LivingEntity findNearestEnemy(Entity mob,double maxDistance) {
