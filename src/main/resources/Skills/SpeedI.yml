@@ -1,0 +1,7 @@
+Activator:
+  Name: 'SpeedI'
+CoolDown:
+  CoolDown: 40
+Commands:
+  - 'console: say Hi %player%, this is an example console command that can be run when you use your ability.'
+  - 'player: me This is an example player command that can be run when you use your ability.'

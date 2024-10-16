@@ -1,0 +1,14 @@
+MenuTitle: "&a&l击杀特效选择"
+
+10:
+  Name: "&c&l火焰"
+  Material: Apple
+  Lora:
+    - '用火焰击杀敌人吧！'
+    - '啊哈哈哈哈哈哈'
+  Left_Commands:
+    - '[player] qinkit killEffectAdd Fire'
+    - '[close]'
+  Right_Commands:
+    - '[player] say hi'
+    - '[close]'

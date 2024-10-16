@@ -1,0 +1,12 @@
+say: hello
+BossBars:
+  TWorld:
+    Max: 100
+    ifASC: true
+    Title: "时停时间"
+    ScoreBoard: "reload"
+  Meow:
+    Max: 100
+    ifASC: true
+    Title: "时停时间"
+    ScoreBoard: "reload"

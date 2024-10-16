@@ -1,0 +1,28 @@
+Kit:
+  Name: 'Fighter'
+Inventory:
+  Armor:
+    Helmet:
+      Name: '§7战士的头盔'
+      Material: IRON_HELMET
+    Chestplate:
+      Name: '§7战士的护甲'
+      Material: IRON_CHESTPLATE
+    Leggings:
+      Name: '§7战士的护腿'
+      Material: IRON_LEGGINGS
+    Boots:
+      Name: '§7战士的鞋子'
+      Material: IRON_BOOTS
+  Items:
+    0:
+      Name: '§a战士的剑'
+      Material: DIAMOND_SWORD
+    8:
+      Name: '§aPlayer Tracker &7(Right Click)'
+      Material: COMPASS
+    2:
+      Name: '§aRegenerative Soups &7(Right Click)'
+      Lore:
+        - '§7Use this item to regain health.'
+      Material: MUSHROOM_STEW

@@ -1,0 +1,9 @@
+name: QinKitPVPS
+author: Noi Qing_Ling
+main: org.NoiQing.QinKitPVPS
+version: 1.0.0
+description: KitPVP Gaming.
+api-version: "1.20"
+commands:
+  qinkit:
+    description: Main command.

@@ -1,0 +1,14 @@
+Traders:
+  核心商店:
+    Menu: 核心商店菜单
+
+Market:
+  coal:
+    Material: COAL
+    Name: 煤炭
+    Lore:
+      - '&8===================='
+      - '&#CCCCFF普通的小煤块'
+      - '&8===================='
+    SellPrice: 10
+    PurchasePrice: 30
