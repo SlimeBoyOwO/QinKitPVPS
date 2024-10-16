@@ -57,8 +57,9 @@ QinKitPVPS extends JavaPlugin {
                         ██║▄▄ ██║██║██║╚██╗██║██╔═██╗ ██║   ██║   ██╔═══╝ ╚██╗ ██╔╝██╔═══╝ ╚════██║
                         ╚██████╔╝██║██║ ╚████║██║  ██╗██║   ██║   ██║      ╚████╔╝ ██║     ███████║
                          ╚══▀▀═╝ ╚═╝╚═╝  ╚═══╝╚═╝  ╚═╝╚═╝   ╚═╝   ╚═╝       ╚═══╝  ╚═╝     ╚══════╝
-                                                        Version:0.8.0          Author: NoiQing_Ling
+                                                   Version:0.8.0-MODIFIED      Author: NoiQing_Ling
                          =*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*
+                         WARN: This plugin is a modified version of QinKitPVPS for non-commercial use, please follow the original plugin on GitHub.
                         """);
 
         plugin = this;
