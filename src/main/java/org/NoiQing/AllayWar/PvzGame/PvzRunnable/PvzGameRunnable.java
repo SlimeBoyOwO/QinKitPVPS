@@ -1,5 +1,6 @@
 package org.NoiQing.AllayWar.PvzGame.PvzRunnable;
 
+import org.NoiQing.AllayWar.PvzGame.PVZUtils.Entity2DTree;
 import org.NoiQing.AllayWar.PvzGame.PVZUtils.PVZFunction;
 import org.NoiQing.AllayWar.PvzGame.PVZUtils.PvzEntity;
 import org.NoiQing.EventListener.System.WallJumpListener;
@@ -14,18 +15,35 @@ import org.bukkit.potion.PotionEffectType;
 import org.bukkit.scheduler.BukkitRunnable;
 import org.bukkit.util.RayTraceResult;
 import org.bukkit.util.Vector;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Objects;
 import java.util.function.Predicate;
 
 
 public class PvzGameRunnable extends BukkitRunnable {
+    private static final Logger log = LoggerFactory.getLogger(PvzGameRunnable.class);
     private int pause = 0;
+    Entity2DTree EnemyTree = new Entity2DTree();
+
     @Override
     public void run() {
         pause++;
+        List<Entity> ZombieList = new ArrayList<>();
+        int updateInterval = 20;
         for(World w : Bukkit.getWorlds()) {
             for(Entity e: w.getEntities()) {
+                //以下代码针对僵尸逻辑
+                if(pause % updateInterval == 0) { //每5tick更新一次
+                    if (e instanceof Zombie && !e.getScoreboardTags().contains("pvz_plant")) {
+                        ZombieList.add(e);
+                        continue;
+                    }
+                }
+
                 if(!e.getScoreboardTags().contains("pvz_plant")) continue;
 
                 //以下代码针对植物逻辑
@@ -125,7 +143,13 @@ public class PvzGameRunnable extends BukkitRunnable {
             }
         }
 
-        if(pause == 20) pause=0;
+        if(pause % updateInterval == 0){
+            EnemyTree.clear();
+            EnemyTree.addEntities(ZombieList);
+        }
+        if(pause == 20) {
+            pause = 0;
+        }
     }
 
     private LivingEntity findEnemyViaRay(Mob mob, int distance) {
@@ -226,6 +250,33 @@ public class PvzGameRunnable extends BukkitRunnable {
         if(plantTeam == null) return null;
         LivingEntity hitEntity = null;
 
+        Predicate<Entity> predicate = x -> isEnemy(bullet, x) && !bullet.equals(x);
+        // 计算射线方向的角度
+
+        double angle = Math.atan2(PvzEntity.getBulletVector(bullet).getZ(), PvzEntity.getBulletVector(bullet).getX());;
+
+        // 基于角度计算射线的目标方向
+        Vector direction = new Vector(Math.cos(angle), 0, Math.sin(angle));
+
+        // 发射射线
+        RayTraceResult result = bullet.getWorld().rayTrace(
+                bullet.getLocation(), // 起始点
+                direction,               // 方向向量
+                findDistance,                     // 最大距离
+                FluidCollisionMode.NEVER, // 流体模式
+                true,                    // 忽略非可视方块
+                0.3,                     // 检测范围（宽度）
+                predicate              // 过滤器
+        );
+
+        // 检查是否有实体被射线命中
+        if (result != null && result.getHitEntity() != null) {
+            hitEntity = (LivingEntity) result.getHitEntity();
+            return hitEntity;
+        }
+
+        return null;
+        /*
         for(Entity hit : bullet.getNearbyEntities(findDistance,findDistance,findDistance)) {
             if(PVZFunction.isBullet(hit)) continue;
             if(!(hit instanceof LivingEntity)) continue;
@@ -235,54 +286,65 @@ public class PvzGameRunnable extends BukkitRunnable {
             hitEntity = (LivingEntity) hit;
         }
         return hitEntity;
+         */
     }
 
-    private LivingEntity findNearestEnemy(Entity mob, double findDistance) {
-        double nearestEnemy = findDistance;
-        LivingEntity closestEnemy = null;
-        Location mobLocation = mob.getLocation().clone().add(0,1,0);
-
-        // 射线数量 (这里设为30条，360度范围内)
-        int rayCount = 30;
-        double angleIncrement = 360.0 / rayCount;
-
-        // 从 mob 发射射线
-        Predicate<Entity> predicate = x -> isEnemy(mob, x) && !mob.equals(x);
-        for (int i = 0; i < rayCount; i++) {
-            // 计算射线方向的角度
-            double angle = Math.toRadians(i * angleIncrement);
-
-            // 基于角度计算射线的目标方向
-            Vector direction = new Vector(Math.cos(angle), 0, Math.sin(angle));
-
-            // 发射射线
-            RayTraceResult result = mob.getWorld().rayTrace(
-                    mobLocation, // 起始点
-                    direction,               // 方向向量
-                    findDistance,                     // 最大距离
-                    FluidCollisionMode.NEVER, // 流体模式
-                    true,                    // 忽略非可视方块
-                    0.2,                     // 检测范围（宽度）
-                    predicate              // 过滤器
-            );
-
-            // 检查是否有实体被射线命中
-            if (result != null && result.getHitEntity() != null) {
-                LivingEntity hitEntity = (LivingEntity) result.getHitEntity();
-
-                // 计算命中实体与mob的距离
-                double distance = hitEntity.getLocation().distance(mobLocation);
-
-                // 更新最近的敌人
-                if (distance < nearestEnemy) {
-                    nearestEnemy = distance;
-                    closestEnemy = hitEntity;
-                }
+    private LivingEntity findNearestEnemy(Entity mob,double maxDistance) {
+        LivingEntity foundEntity =  (LivingEntity) EnemyTree.findNearest(mob);
+        if(foundEntity != null) {
+            if(mob.getLocation().distance(foundEntity.getLocation()) > maxDistance) {
+                foundEntity = null;
             }
         }
-
-        return closestEnemy;
+        return foundEntity;
     }
+
+//    private LivingEntity findNearestEnemy(Entity mob, double findDistance) {
+//        double nearestEnemy = findDistance;
+//        LivingEntity closestEnemy = null;
+//        Location mobLocation = mob.getLocation().clone().add(0,1,0);
+//
+//        // 射线数量 (这里设为30条，360度范围内)
+//        int rayCount = 30;
+//        double angleIncrement = 360.0 / rayCount;
+//
+//        // 从 mob 发射射线
+//        Predicate<Entity> predicate = x -> isEnemy(mob, x) && !mob.equals(x);
+//        for (int i = 0; i < rayCount; i++) {
+//            // 计算射线方向的角度
+//            double angle = Math.toRadians(i * angleIncrement);
+//
+//            // 基于角度计算射线的目标方向
+//            Vector direction = new Vector(Math.cos(angle), 0, Math.sin(angle));
+//
+//            // 发射射线
+//            RayTraceResult result = mob.getWorld().rayTrace(
+//                    mobLocation, // 起始点
+//                    direction,               // 方向向量
+//                    findDistance,                     // 最大距离
+//                    FluidCollisionMode.NEVER, // 流体模式
+//                    true,                    // 忽略非可视方块
+//                    0.2,                     // 检测范围（宽度）
+//                    predicate              // 过滤器
+//            );
+//
+//            // 检查是否有实体被射线命中
+//            if (result != null && result.getHitEntity() != null) {
+//                LivingEntity hitEntity = (LivingEntity) result.getHitEntity();
+//
+//                // 计算命中实体与mob的距离
+//                double distance = hitEntity.getLocation().distance(mobLocation);
+//
+//                // 更新最近的敌人
+//                if (distance < nearestEnemy) {
+//                    nearestEnemy = distance;
+//                    closestEnemy = hitEntity;
+//                }
+//            }
+//        }
+//
+//        return closestEnemy;
+//    }
 
     /*
     private LivingEntity findNearestEnemy(Entity mob, double findDistance) {
