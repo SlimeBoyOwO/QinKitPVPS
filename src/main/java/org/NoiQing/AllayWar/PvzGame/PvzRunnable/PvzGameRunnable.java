@@ -1,5 +1,9 @@
 package org.NoiQing.AllayWar.PvzGame.PvzRunnable;
 
+//import com.github.davidmoten.rtree.Entry;
+//import com.github.davidmoten.rtree.RTree;
+//import com.github.davidmoten.rtree.geometry.Geometries;
+//import com.github.davidmoten.rtree.geometry.Point;
 import org.NoiQing.AllayWar.PvzGame.PVZUtils.Entity2DTree;
 import org.NoiQing.AllayWar.PvzGame.PVZUtils.PVZFunction;
 import org.NoiQing.AllayWar.PvzGame.PVZUtils.PvzEntity;
@@ -18,9 +22,8 @@ import org.bukkit.util.Vector;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
-import java.util.ArrayList;
-import java.util.List;
-import java.util.Objects;
+import java.util.*;
+//import java.util.concurrent.ConcurrentHashMap;
 import java.util.function.Predicate;
 
 
@@ -29,13 +32,33 @@ public class PvzGameRunnable extends BukkitRunnable {
     private int pause = 0;
     Entity2DTree EnemyTree = new Entity2DTree();
 
+//    private RTree<Entity, Point> rTree = RTree.create();
+//    private ConcurrentHashMap<UUID, Long> lastUpdated = new ConcurrentHashMap<>();
+//    private ConcurrentHashMap<UUID, Location> lastLocations = new ConcurrentHashMap<>();
+
+//    public void onZombieDie(EntityDeathEvent event) {
+//        Entity e = event.getEntity();
+//        if(e instanceof Zombie z && !e.getScoreboardTags().contains("pvz_plant")) {
+//            removeZombie(z);
+//        }
+//    }
+
     @Override
     public void run() {
         pause++;
         List<Entity> ZombieList = new ArrayList<>();
-        int updateInterval = 20;
+        int updateInterval = 5;
         for(World w : Bukkit.getWorlds()) {
             for(Entity e: w.getEntities()) {
+//                if(e instanceof Zombie && !e.getScoreboardTags().contains("pvz_plant")) {
+//                    UUID entityId = e.getUniqueId();
+//                    Long lastUpdate = lastUpdated.get(entityId);
+//                    long currentTime = System.currentTimeMillis();
+//                    if (lastUpdate == null || (currentTime - lastUpdate) > 500) {
+//                        lastUpdated.put(entityId, currentTime);
+//                        updateZombieInRTree((Zombie) e);
+//                    }
+//                }
                 //以下代码针对僵尸逻辑
                 if(pause % updateInterval == 0) { //每5tick更新一次
                     if (e instanceof Zombie && !e.getScoreboardTags().contains("pvz_plant")) {
@@ -152,25 +175,68 @@ public class PvzGameRunnable extends BukkitRunnable {
         }
     }
 
-    private LivingEntity findEnemyViaRay(Mob mob, int distance) {
-        Predicate<Entity> predicate = x -> !isEnemy(mob,x);
-        Location start = mob.getLocation().clone().add(0,1,0);
-        // 创建一条射线
-        RayTraceResult result = mob.getWorld().rayTrace(
-                start, // 起始点
-                mob.getLocation().getDirection(),               // 方向向量
-                distance,                     // 最大距离
-                FluidCollisionMode.NEVER, // 流体模式
-                true,                    // 忽略非可视方块
-                0.1,                     // 检测范围（宽度）
-                predicate              // 过滤器
-        );
+//    private LivingEntity findEnemyViaRay(Mob mob, int distance) {
+//        Predicate<Entity> predicate = x -> !isEnemy(mob,x);
+//        Location start = mob.getLocation().clone().add(0,1,0);
+//        // 创建一条射线
+//        RayTraceResult result = mob.getWorld().rayTrace(
+//                start, // 起始点
+//                mob.getLocation().getDirection(),               // 方向向量
+//                distance,                     // 最大距离
+//                FluidCollisionMode.NEVER, // 流体模式
+//                true,                    // 忽略非可视方块
+//                0.1,                     // 检测范围（宽度）
+//                predicate              // 过滤器
+//        );
+//
+//        if (result != null) {
+//            return (LivingEntity) result.getHitEntity();
+//        }
+//        return null;
+//    }
 
-        if (result != null) {
-            return (LivingEntity) result.getHitEntity();
-        }
-        return null;
-    }
+//    private void updateZombieInRTree(Zombie zombie) {
+//        Location lastLocation = lastLocations.get(zombie.getUniqueId());
+//        Location location = zombie.getLocation();;
+//        if(lastLocation == location){
+//            return;
+//        }
+//
+//        Point point = Geometries.point(location.getX(), location.getZ());
+//        if(lastLocation != null) {
+//            Point old_point = Geometries.point(lastLocation.getX(), lastLocation.getZ());
+//            rTree = rTree.delete(zombie, old_point);
+//        }
+//
+//        // 插入新的实体位置
+//        rTree = rTree.add(zombie, point);
+//        lastLocations.put(zombie.getUniqueId(), location);
+//    }
+//
+//    public void removeZombie(Zombie zombie) {
+////        Bukkit.broadcastMessage("Size: " + rTree.size());
+////        Bukkit.broadcastMessage("Trying to remove zombie from rTree");
+//        UUID entityId = zombie.getUniqueId();
+//        Location location = lastLocations.get(entityId);
+//        Point point = Geometries.point(location.getX(), location.getZ());
+//
+//        rTree = rTree.delete(zombie, point);
+////        Bukkit.broadcastMessage("Removed zombie from rTree");
+////        Bukkit.broadcastMessage("NEW Size: " + rTree.size());
+//        lastUpdated.remove(entityId);
+//    }
+//
+//    public Zombie findNearestZombie(Location location,double maxDistance) {
+//        if(!rTree.isEmpty()){
+//            Point point = Geometries.point(location.getX(), location.getZ());
+//            Entry<Entity, Point> nearest = rTree.nearest(point, maxDistance, 1).toBlocking().single();
+//
+//            if(nearest != null) {
+//                return (Zombie) nearest.value();
+//            }
+//        }
+//        return null;
+//    }
 
     private boolean isEnemy(Entity e, Entity entity) {
         QinTeam mobTeam = QinTeams.getEntityTeam(e);
@@ -216,7 +282,7 @@ public class PvzGameRunnable extends BukkitRunnable {
         Location targetLocation = target.getBoundingBox().getCenter().toLocation(target.getWorld());
         Vector direction = targetLocation.toVector().subtract(fireLocation.toVector()).normalize();
         QinTeam mobTeam = QinTeams.getEntityTeam(mob);
-        Pig pea = mob.getWorld().spawn(fireLocation, Pig.class);
+        Silverfish pea = mob.getWorld().spawn(fireLocation, Silverfish.class);
         Objects.requireNonNull(pea.getAttribute(Attribute.GENERIC_SCALE)).setBaseValue(0.2);
         pea.addScoreboardTag("plant_damage");
         pea.addScoreboardTag("plant_bullet");
@@ -248,12 +314,12 @@ public class PvzGameRunnable extends BukkitRunnable {
         QinTeam plantTeam = QinTeams.getEntityTeam(PvzEntity.getBulletOwner(bullet));
         //一般情况不可能没有队伍
         if(plantTeam == null) return null;
-        LivingEntity hitEntity = null;
+        LivingEntity hitEntity;
 
         Predicate<Entity> predicate = x -> isEnemy(bullet, x) && !bullet.equals(x);
         // 计算射线方向的角度
 
-        double angle = Math.atan2(PvzEntity.getBulletVector(bullet).getZ(), PvzEntity.getBulletVector(bullet).getX());;
+        double angle = Math.atan2(PvzEntity.getBulletVector(bullet).getZ(), PvzEntity.getBulletVector(bullet).getX());
 
         // 基于角度计算射线的目标方向
         Vector direction = new Vector(Math.cos(angle), 0, Math.sin(angle));
@@ -276,96 +342,27 @@ public class PvzGameRunnable extends BukkitRunnable {
         }
 
         return null;
-        /*
-        for(Entity hit : bullet.getNearbyEntities(findDistance,findDistance,findDistance)) {
-            if(PVZFunction.isBullet(hit)) continue;
-            if(!(hit instanceof LivingEntity)) continue;
-            if(plantTeam.getTeamName().equals("植物") && hit instanceof Player) continue;
-            if(plantTeam.equals(QinTeams.getEntityTeam(hit))) continue;
-
-            hitEntity = (LivingEntity) hit;
-        }
-        return hitEntity;
-         */
     }
 
     private LivingEntity findNearestEnemy(Entity mob,double maxDistance) {
         LivingEntity foundEntity =  (LivingEntity) EnemyTree.findNearest(mob);
         if(foundEntity != null) {
-            if(mob.getLocation().distance(foundEntity.getLocation()) > maxDistance) {
+            if(mob.getLocation().distanceSquared(foundEntity.getLocation()) > maxDistance * maxDistance) {
                 foundEntity = null;
             }
         }
         return foundEntity;
     }
 
-//    private LivingEntity findNearestEnemy(Entity mob, double findDistance) {
-//        double nearestEnemy = findDistance;
-//        LivingEntity closestEnemy = null;
-//        Location mobLocation = mob.getLocation().clone().add(0,1,0);
-//
-//        // 射线数量 (这里设为30条，360度范围内)
-//        int rayCount = 30;
-//        double angleIncrement = 360.0 / rayCount;
-//
-//        // 从 mob 发射射线
-//        Predicate<Entity> predicate = x -> isEnemy(mob, x) && !mob.equals(x);
-//        for (int i = 0; i < rayCount; i++) {
-//            // 计算射线方向的角度
-//            double angle = Math.toRadians(i * angleIncrement);
-//
-//            // 基于角度计算射线的目标方向
-//            Vector direction = new Vector(Math.cos(angle), 0, Math.sin(angle));
-//
-//            // 发射射线
-//            RayTraceResult result = mob.getWorld().rayTrace(
-//                    mobLocation, // 起始点
-//                    direction,               // 方向向量
-//                    findDistance,                     // 最大距离
-//                    FluidCollisionMode.NEVER, // 流体模式
-//                    true,                    // 忽略非可视方块
-//                    0.2,                     // 检测范围（宽度）
-//                    predicate              // 过滤器
-//            );
-//
-//            // 检查是否有实体被射线命中
-//            if (result != null && result.getHitEntity() != null) {
-//                LivingEntity hitEntity = (LivingEntity) result.getHitEntity();
-//
-//                // 计算命中实体与mob的距离
-//                double distance = hitEntity.getLocation().distance(mobLocation);
-//
-//                // 更新最近的敌人
-//                if (distance < nearestEnemy) {
-//                    nearestEnemy = distance;
-//                    closestEnemy = hitEntity;
-//                }
-//            }
-//        }
-//
-//        return closestEnemy;
+//    private LivingEntity findNearestEnemy(Entity mob,double maxDistance) {
+//        LivingEntity foundEntity =  (LivingEntity) findNearestZombie(mob.getLocation(), maxDistance);
+////        if(foundEntity != null) {
+////            if(mob.getLocation().distanceSquared(foundEntity.getLocation()) > maxDistance * maxDistance) {
+////                foundEntity = null;
+////            }
+////        }
+//        return foundEntity;
 //    }
-
-    /*
-    private LivingEntity findNearestEnemy(Entity mob, double findDistance) {
-        double nearestEnemy = findDistance;
-        LivingEntity closestEnemy = null;
-        Location mobLocation = mob.getLocation();
-
-        for (Entity entity : mob.getNearbyEntities(findDistance, findDistance, findDistance)) {
-            if(isEnemy(mob,entity)) continue;
-            double distance = entity.getLocation().distance(mobLocation);
-
-            if (distance < nearestEnemy) {
-                nearestEnemy = distance;
-                closestEnemy = (LivingEntity) entity;
-            }
-        }
-
-        return closestEnemy;
-    }
-    */
-
 
     private boolean ignoreSomeEntities(QinTeam allayTeam, Entity entity, QinTeam entityTeam, boolean equals, boolean dead) {
         //是自己的话，排除
