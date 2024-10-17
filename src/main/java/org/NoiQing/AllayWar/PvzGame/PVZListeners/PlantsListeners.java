@@ -2,6 +2,7 @@ package org.NoiQing.AllayWar.PvzGame.PVZListeners;
 
 import org.NoiQing.AllayWar.PvzGame.PVZUtils.PVZFunction;
 import org.NoiQing.AllayWar.PvzGame.PVZUtils.PvzEntity;
+import org.NoiQing.AllayWar.PvzGame.PvzRunnable.PvzGameRunnable;
 import org.NoiQing.api.QinTeam;
 import org.NoiQing.mainGaming.QinTeams;
 import org.NoiQing.util.Function;
@@ -15,10 +16,15 @@ import org.bukkit.event.entity.*;
 import org.bukkit.event.player.PlayerInteractEvent;
 
 public class PlantsListeners implements Listener {
+    private PvzGameRunnable runnableCallback;
+    public void setRunnable(PvzGameRunnable runnable) {
+        runnableCallback = runnable;
+    }
 
     //pvz_plant tag 用于标记植物
     @EventHandler
     public void onPlantDeath(EntityDeathEvent e) {
+        runnableCallback.onZombieDie(e);
         if(e.getEntity().getScoreboardTags().contains("pvz_plant")) {
             Entity plant = e.getEntity();
             plant.getWorld().playSound(plant.getLocation(), Sound.ENTITY_FOX_EAT,3,1);
@@ -27,6 +33,7 @@ public class PlantsListeners implements Listener {
             PvzEntity.removePlantDisplays(plant);
         }
     }
+
     @EventHandler
     public void onPlantDamaged(EntityDamageEvent e) {
         if(e.getEntity().getScoreboardTags().contains("pvz_plant")) {
@@ -41,7 +48,7 @@ public class PlantsListeners implements Listener {
         Entity entity = e.getEntity();
         if (entity.getScoreboardTags().contains("pvz_plant")) {
             Entity target = e.getTarget();
-            Bukkit.broadcastMessage(e.getReason().toString());
+//            Bukkit.broadcastMessage(e.getReason().toString());
 
             //筛选
             QinTeam team = QinTeams.getEntityTeam(entity);

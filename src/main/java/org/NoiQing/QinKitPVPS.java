@@ -85,7 +85,8 @@ QinKitPVPS extends JavaPlugin {
         Bukkit.getPluginManager().registerEvents(new PlayerChatListener(), this);
         Bukkit.getPluginManager().registerEvents(new CustomMenuListeners(this), this);
         Bukkit.getPluginManager().registerEvents(new BirthDayListener(),this);
-        Bukkit.getPluginManager().registerEvents(new PlantsListeners(),this);
+        PlantsListeners plantsListeners = new PlantsListeners();
+        Bukkit.getPluginManager().registerEvents(plantsListeners,this);
 
         //悦灵战争注册表
         Bukkit.getPluginManager().registerEvents(new TowerListener(),this);
@@ -109,7 +110,9 @@ QinKitPVPS extends JavaPlugin {
         new TeamModeRunnable().runTaskTimer(plugin,0,1);
         new EffectRunnable().runTaskTimer(plugin,0,1);
         new AGameRunnable().runTaskTimer(plugin,0,1);
-        new PvzGameRunnable().runTaskTimer(plugin,0,1);
+        PvzGameRunnable pubPvzGameRunnable = new PvzGameRunnable();
+        plantsListeners.setRunnable(pubPvzGameRunnable);
+        pubPvzGameRunnable.runTaskTimer(plugin,0,1);
 
         //悦灵战争循环任务
         new TowerAttackRunnable().runTaskTimer(plugin,0,1);
