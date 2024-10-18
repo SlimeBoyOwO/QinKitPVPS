@@ -24,7 +24,7 @@ public class PlantsListeners implements Listener {
     //pvz_plant tag 用于标记植物
     @EventHandler
     public void onPlantDeath(EntityDeathEvent e) {
-        runnableCallback.onZombieDie(e);
+//        runnableCallback.onZombieDie(e);
         if(e.getEntity().getScoreboardTags().contains("pvz_plant")) {
             Entity plant = e.getEntity();
             plant.getWorld().playSound(plant.getLocation(), Sound.ENTITY_FOX_EAT,3,1);
