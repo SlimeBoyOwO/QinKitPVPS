@@ -44,10 +44,22 @@ public class PvzGameRunnable extends BukkitRunnable {
 //        }
 //    }
 
+//    private RTree<Entity, Point> rTree = RTree.create();
+//    private ConcurrentHashMap<UUID, Long> lastUpdated = new ConcurrentHashMap<>();
+//    private ConcurrentHashMap<UUID, Location> lastLocations = new ConcurrentHashMap<>();
+
+//    public void onZombieDie(EntityDeathEvent event) {
+//        Entity e = event.getEntity();
+//        if(e instanceof Zombie z && !e.getScoreboardTags().contains("pvz_plant")) {
+//            removeZombie(z);
+//        }
+//    }
+
     @Override
     public void run() {
         pause++;
         List<Entity> ZombieList = new ArrayList<>();
+        int updateInterval = 5;
         for(World w : Bukkit.getWorlds()) {
             for(Entity e: w.getEntities()) {
 //                if(e instanceof Zombie && !e.getScoreboardTags().contains("pvz_plant")) {
