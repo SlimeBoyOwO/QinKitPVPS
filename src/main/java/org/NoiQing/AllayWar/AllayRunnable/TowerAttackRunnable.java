@@ -19,6 +19,7 @@ import org.bukkit.scheduler.BukkitRunnable;
 import org.bukkit.util.Transformation;
 import org.bukkit.util.Vector;
 
+import java.util.List;
 import java.util.Objects;
 
 public class TowerAttackRunnable extends BukkitRunnable {
@@ -147,7 +148,9 @@ public class TowerAttackRunnable extends BukkitRunnable {
                     }
                 }
             }
-            for(Entity e : w.getEntities()) {
+
+
+            for(Entity e : w.getEntitiesByClass(LivingEntity.class)) {
                 if(AWFunction.isTankArmy(e)) {
                     if(AWAllay.getTankDisplays(e) == null) continue;
                     for(Display d : AWAllay.getTankDisplays(e)) {

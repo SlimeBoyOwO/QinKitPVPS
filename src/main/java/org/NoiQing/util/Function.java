@@ -1026,7 +1026,13 @@ public class Function {
         return yaw;
     }
 
+    public static void setEntityHealth(LivingEntity a, double health) {
+        Objects.requireNonNull(a.getAttribute(Attribute.GENERIC_MAX_HEALTH)).setBaseValue(health);
+        a.setHealth(health);
+    }
+
     public static boolean isShootAble(LivingEntity attacker, LivingEntity target, Location start) {
+        if(target==null) return false;
         Predicate<Entity> predicate = x -> !x.equals(attacker);
         Location end = target.getBoundingBox().getCenter().toLocation(target.getWorld());
         // 创建一条射线

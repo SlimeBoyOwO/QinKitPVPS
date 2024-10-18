@@ -73,7 +73,7 @@ public class PVZFunction {
     }
 
     public static void hidePlantCore(LivingEntity z) {
-        Objects.requireNonNull(z.getAttribute(Attribute.GENERIC_SCALE)).setBaseValue(0.7);
+        Objects.requireNonNull(z.getAttribute(Attribute.GENERIC_SCALE)).setBaseValue(0.3);
         Objects.requireNonNull(z.getAttribute(Attribute.GENERIC_ATTACK_DAMAGE)).setBaseValue(0);
         Objects.requireNonNull(z.getAttribute(Attribute.GENERIC_KNOCKBACK_RESISTANCE)).setBaseValue(1000);
         z.addPotionEffect(new PotionEffect(PotionEffectType.SLOWNESS,999999,244,false,false,true));
