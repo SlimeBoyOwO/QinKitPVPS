@@ -31,6 +31,7 @@ public class PvzGameRunnable extends BukkitRunnable {
     private static final Logger log = LoggerFactory.getLogger(PvzGameRunnable.class);
     private int pause = 0;
     Entity2DTree EnemyTree = new Entity2DTree();
+    int updateInterval = 5;
 
 //    private RTree<Entity, Point> rTree = RTree.create();
 //    private ConcurrentHashMap<UUID, Long> lastUpdated = new ConcurrentHashMap<>();
@@ -47,7 +48,6 @@ public class PvzGameRunnable extends BukkitRunnable {
     public void run() {
         pause++;
         List<Entity> ZombieList = new ArrayList<>();
-        int updateInterval = 5;
         for(World w : Bukkit.getWorlds()) {
             for(Entity e: w.getEntities()) {
 //                if(e instanceof Zombie && !e.getScoreboardTags().contains("pvz_plant")) {
@@ -170,8 +170,19 @@ public class PvzGameRunnable extends BukkitRunnable {
             EnemyTree.clear();
             EnemyTree.addEntities(ZombieList);
         }
+
         if(pause == 20) {
             pause = 0;
+            // 根据ZombieList的大小动态决定kd树的更新频率
+            if(ZombieList.size() > 400) {
+                updateInterval = 20;
+            } else if(ZombieList.size() > 200) {
+                updateInterval = 10;
+            } else if(ZombieList.size() > 80) {
+                updateInterval = 4;
+            } else {
+                updateInterval = 2;
+            }
         }
     }
 
