@@ -6,6 +6,7 @@ import org.NoiQing.AllayWar.AWListeners.CustomShopListener;
 import org.NoiQing.AllayWar.AWListeners.TowerListener;
 import org.NoiQing.AllayWar.PvzGame.PVZListeners.PlantsListeners;
 import org.NoiQing.AllayWar.PvzGame.PvzRunnable.PvzGameRunnable;
+import org.NoiQing.AllayWar.PvzGame.PvzRunnable.PvzRoundRunnable;
 import org.NoiQing.BukkitRunnable.*;
 import org.NoiQing.DataBase.MySQLDataBase;
 import org.NoiQing.DataBase.RegisterDatabase;
@@ -109,6 +110,7 @@ QinKitPVPS extends JavaPlugin {
         new EffectRunnable().runTaskTimer(plugin,0,1);
         new AGameRunnable().runTaskTimer(plugin,0,1);
         new PvzGameRunnable().runTaskTimer(plugin,0,1);
+        new PvzRoundRunnable().runTaskTimer(plugin,0,1);
 
         //悦灵战争循环任务
         new TowerAttackRunnable().runTaskTimer(plugin,0,1);

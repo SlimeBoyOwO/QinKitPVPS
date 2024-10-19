@@ -2,6 +2,7 @@ package org.NoiQing.commands;
 
 import org.NoiQing.AllayWar.AWAPI.AWRound;
 import org.NoiQing.AllayWar.AWUtils.AWPlayer;
+import org.NoiQing.AllayWar.PvzGame.PVZAPI.PvzMap;
 import org.NoiQing.BukkitRunnable.MapRunnable;
 import org.NoiQing.BukkitRunnable.WeatherRunnable;
 import org.NoiQing.QinKitPVPS;
@@ -198,6 +199,10 @@ public class MainCommands implements CommandExecutor {
             }
             if(args[0].equalsIgnoreCase(Function.addTab("noInv"))) {
                 player.setInvulnerable(false);
+                return true;
+            }
+            if(args[0].equalsIgnoreCase(Function.addTab("startPvzLevel"))) {
+                executeStartPvzLevel(args, player);
                 return true;
             }
 
@@ -448,6 +453,22 @@ public class MainCommands implements CommandExecutor {
         }
 
         return false;
+    }
+
+    private void executeStartPvzLevel(String[] args, Player p) {
+        PvzMap pvzMap = QinKitPVPS.getPlugin().getGame().getMaps().getPvzMapByMapID(Integer.parseInt(args[1]));
+        if(pvzMap == null) {
+            Function.sendPlayerSystemMessage(p,"你指定的PVZ地图不存在啊啊啊啊啊");
+            return;
+        }
+        if(pvzMap.getVillagerArea().getWorld() == null) {
+            Function.sendPlayerSystemMessage(p,"你指定的PVZ地图的世界没加载啊啊啊啊啊");
+            return;
+        }
+        for(Player players : pvzMap.getVillagerArea().getWorld().getPlayers()) {
+            players.sendTitle("§a准备 放置 植物！","§b保护你的脑子叭！",10,70,20);
+        }
+        pvzMap.startLevel(Integer.parseInt(args[2]));
     }
 
     private void executeSavePlantData(String[] args, Player player) {

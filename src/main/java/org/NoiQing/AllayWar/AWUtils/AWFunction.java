@@ -104,16 +104,6 @@ public class AWFunction {
         return towerName.endsWith("塔") || towerName.endsWith("炮") || towerName.equals("生命核心");
     }
 
-    public static void setMobEquipment(LivingEntity m, ItemStack... item) {
-        ItemStack air = new ItemStack(Material.AIR);
-        int length = item.length;
-        Objects.requireNonNull(m.getEquipment()).setItemInMainHand(item[0] == null ? air : item[0]);
-        if(length > 1) m.getEquipment().setHelmet(item[1] == null ? air : item[1]);
-        if(length > 2) m.getEquipment().setChestplate(item[2] == null ? air : item[2]);
-        if(length > 3) m.getEquipment().setLeggings(item[3] == null ? air : item[3]);
-        if(length > 4) m.getEquipment().setBoots(item[4] == null ? air : item[4]);
-    }
-
     public static void givePlayerRespawnItem(Player p) {
         QinTeam t = QinTeams.getEntityTeam(p);
         int sharpnessLevel = 0; int protectionLevel = 0; int haveRaider = 0;

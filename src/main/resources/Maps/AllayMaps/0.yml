@@ -1,0 +1,28 @@
+MapID: 0
+MapName: 方格战争
+World: skyblock_copy
+Center:
+  X: 1037
+  Y: 31
+  Z: 1037
+Radius:
+  X: 43
+  Y: 6
+  Z: 43
+Locations:
+  '0':
+    X: 998
+    Y: 29
+    Z: 998
+  '1':
+    X: 998
+    Y: 29
+    Z: 1074
+  '2':
+    X: 1074
+    Y: 29
+    Z: 1074
+  '3':
+    X: 1074
+    Y: 29
+    Z: 998

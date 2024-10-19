@@ -1,0 +1,58 @@
+MapID: 0
+MapName: 草坪
+World: skyblock_copy
+Center:
+  X: -982
+  Y: 1
+  Z: -1000
+VillagerCenter:
+  X: -982
+  Y: 1
+  Z: -1001
+MonsterArea:
+  1:
+    X: -968
+    Y: 1
+    Z: -942
+  2:
+    X: -1001
+    Y: 1
+    Z: -931
+
+Levels:
+  1:
+    TotalTime: 1000
+    Waves:
+      200:
+        Type: "普通僵尸"
+        Amount: 5
+      300:
+        Type: "普通僵尸"
+        Amount: 5
+      500:
+        Type: "普通僵尸"
+        Amount: 10
+      700:
+        Type: "普通僵尸"
+        Amount: 20
+      1000:
+        Type: "普通僵尸"
+        Amount: 20
+  2:
+    TotalTime: 1000
+    Waves:
+      200:
+        Type: "普通僵尸"
+        Amount: 5
+      300:
+        Type: "普通僵尸"
+        Amount: 5
+      500:
+        Type: "普通僵尸"
+        Amount: 10
+      700:
+        Type: "普通僵尸"
+        Amount: 20
+      1000:
+        Type: "普通僵尸"
+        Amount: 20

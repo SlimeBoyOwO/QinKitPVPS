@@ -1,5 +1,7 @@
 package org.NoiQing.AllayWar.PvzGame.PvzRunnable;
 
+import org.NoiQing.AllayWar.PvzGame.Game.PvzRound;
+import org.NoiQing.AllayWar.PvzGame.PVZUtils.Entity2DTree;
 import org.NoiQing.AllayWar.PvzGame.PVZUtils.PVZFunction;
 import org.NoiQing.AllayWar.PvzGame.PVZUtils.PvzEntity;
 import org.NoiQing.EventListener.System.WallJumpListener;
@@ -7,181 +9,214 @@ import org.NoiQing.api.QinTeam;
 import org.NoiQing.mainGaming.QinTeams;
 import org.NoiQing.util.Function;
 import org.bukkit.*;
-import org.bukkit.attribute.Attribute;
 import org.bukkit.entity.*;
-import org.bukkit.potion.PotionEffect;
-import org.bukkit.potion.PotionEffectType;
+import org.bukkit.inventory.ItemStack;
 import org.bukkit.scheduler.BukkitRunnable;
 import org.bukkit.util.RayTraceResult;
 import org.bukkit.util.Vector;
 
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Objects;
+import java.util.function.BiConsumer;
 import java.util.function.Predicate;
 
 
 public class PvzGameRunnable extends BukkitRunnable {
     private int pause = 0;
+    Entity2DTree enemyTree = new Entity2DTree();
+    int updateInterval = 5;
     @Override
     public void run() {
         pause++;
+        List<Entity> zombieList = new ArrayList<>();
         for(World w : Bukkit.getWorlds()) {
-            for(Entity e: w.getEntities()) {
+            if(!w.getName().equals("skyblock_copy")) continue;
+            for(Monster zombie: w.getEntitiesByClass(Monster.class)) {
+                if(pause % updateInterval == 0) { //每5tick更新一次
+                    if (!zombie.getScoreboardTags().contains("pvz_plant")) {
+                        zombieList.add(zombie);
+                    }
+                }
+            }
+            for(Entity e: w.getEntitiesByClass(LivingEntity.class)) {
                 if(!e.getScoreboardTags().contains("pvz_plant")) continue;
-
                 //以下代码针对植物逻辑
                 if(PvzEntity.getPlantDisplays(e) == null) continue;
                 for(Display d : PvzEntity.getPlantDisplays(e)) {
                     d.setRotation(e.getLocation().getYaw() + 90,0);
                 }
-
-                //以下代码针对子弹逻辑
-                if(PVZFunction.isBullet(e)) {
-                    if(e.hasGravity()) {
-                        Vector vec = PvzEntity.getBulletVector(e);
-                        e.setVelocity(new Vector(vec.getX(),e.getVelocity().getY(),vec.getZ()));
-                    } else e.setVelocity(PvzEntity.getBulletVector(e));
-
-                    LivingEntity hitEntity = findHitEntity(e,e.hasGravity() ? 0.6 : 0.3);
-                    Entity shooter = PvzEntity.getBulletOwner(e);
-                    if(WallJumpListener.isTouchingWallHere(e) || hitEntity != null) {
-                        PvzEntity.getPlantDisplays(e).forEach(Entity::remove);
-                        PvzEntity.removePlantDisplays(e);
-                        e.remove();
-                    }
-
-                    if(hitEntity == null) continue;
-                    if (hitEntity.getScoreboardTags().contains("pvz_plant")) continue;
-
-                    if(e.getScoreboardTags().contains("pea_bullet")) {
-                        hitEntity.damage(4, Objects.requireNonNullElse(shooter, e));
-                        e.getWorld().spawnParticle(Particle.ITEM_SLIME,e.getLocation(),10,0,0,0,0,null,true);
-                    } else if(e.getScoreboardTags().contains("ice_pea_bullet")) {
-                        hitEntity.damage(4, Objects.requireNonNullElse(shooter, e));
-                        e.getWorld().spawnParticle(Particle.ITEM_SNOWBALL,e.getLocation(),10,0,0,0,0,null,true);
-                        hitEntity.addPotionEffect(new PotionEffect(PotionEffectType.SLOWNESS,10*20,1,true,false));
-                    } else if(e.getScoreboardTags().contains("cabbage_bullet")) {
-                        hitEntity.damage(8, Objects.requireNonNullElse(shooter, e));
-                        e.getWorld().spawnParticle(Particle.ITEM_SLIME,e.getLocation(),10,0,0,0,0,null,true);
-                        hitEntity.addPotionEffect(new PotionEffect(PotionEffectType.SLOWNESS,10*20,1,true,false));
-                    }
-                }
-
-                //豌豆射手逻辑
+                //植物逻辑处理
                 if(e instanceof Mob mob) {
                     LivingEntity target = mob.getTarget();
 
-                    if (target != null && (target.isDead())) {
-                        mob.setTarget(null);
-                        target = null;
-                    }
-
-                    //如果设定了pause 则会导致每次getTarget都是null
-                    if(pause == 20) {
-                        LivingEntity newTarget = findNearestEnemy(mob,30);
-                        if(newTarget != null && !newTarget.equals(target)) {
-                            mob.setTarget(newTarget);
-                            target = newTarget;
+                    if (target != null) {
+                        mob.setRotation(Function.calculateYaw(mob.getLocation(), target.getLocation()), 0);
+                        if(target.isDead()) {
+                            mob.setTarget(null);
+                            target = null;
                         }
                     }
 
-                    if(target == null) continue;
-                    mob.setRotation(Function.calculateYaw(mob.getLocation(),target.getLocation()),0);
-                    if(mob.getScoreboardTags().contains("peaShooter")) {
-                        PvzEntity.setPlantAttackCD(mob,PvzEntity.getPlantAttackCD(mob) + 1);
-                        if(!Function.isShootAble(mob,target))
-                            continue;
-                        if(PvzEntity.getPlantAttackCD(mob) >= 28) {
-                            shootPea(mob,target);
-                            PvzEntity.setPlantAttackCD(mob,0);
+                    int attackCD = PvzEntity.getPlantAttackCD(mob);
+                    PvzEntity.setPlantAttackCD(mob, ++attackCD);
+                    String mobTag = mob.getScoreboardTags().stream()
+                            .filter(this::isSupportedShooter)
+                            .findFirst()
+                            .orElse(null);
+                    if (mobTag != null) {
+                        switch (mobTag) {
+                            case "peaShooter" ->
+                                    handleSingleShot(mob, target, attackCD, 28, this::shootPea);
+                            case "icePeaShooter" ->
+                                    handleSingleShot(mob, target, attackCD, 28, this::shootIcePea);
+                            case "doublePeaShooter" ->
+                                    handleDoubleShot(mob, target, attackCD);
+                            case "machinePeaShooter" ->
+                                    handleMultiShot(mob, target, attackCD, new int[]{4, 8, 12}, 28, this::shootPea);
+                            case "cabbagePitcher" ->
+                                    handlePitcherShot(mob, target, attackCD, 54, 56, this::shootCabbage);
+                            case "cornPitcher" ->
+                                    handlePitcherShot(mob, target, attackCD, 54, 56, this::shootCorn);
+                            case "melonPitcher" ->
+                                    handlePitcherShot(mob, target, attackCD, 54, 56, this::shootMelon);
+                            case "sunFlower" -> {
+                                if(attackCD >= 23 * 20) {
+                                    Item sun = mob.getWorld().spawn(mob.getLocation().clone().add(0,1,0), Item.class);
+                                    sun.setItemStack(new ItemStack(Material.SUNFLOWER));
+                                    sun.addScoreboardTag("pvz_sun");
+                                    PvzEntity.setPlantAttackCD(mob,0);
+                                }
+                            }
+                            case "pvz_nut" -> {
+                                if(attackCD >= 20) {
+                                    for(Entity entity: mob.getNearbyEntities(2,2,2)) {
+                                        if(isEnemy(mob,entity) && entity instanceof Mob enemy) {
+                                            Entity lastTarget = PvzEntity.getMobTarget(mob);
+                                            if(lastTarget == null || !lastTarget.getScoreboardTags().contains("pvz_nut")) {
+                                                enemy.setTarget(mob);
+                                                PvzEntity.setMobTarget(enemy,mob);
+                                            }
+                                        }
+                                    }
+                                    PvzEntity.setPlantAttackCD(mob,0);
+                                }
+                            }
                         }
-                    } else if(mob.getScoreboardTags().contains("icePeaShooter")) {
-                        PvzEntity.setPlantAttackCD(mob,PvzEntity.getPlantAttackCD(mob) + 1);
-                        if(!Function.isShootAble(mob,target))
-                            continue;
-                        if(PvzEntity.getPlantAttackCD(mob) >= 28) {
-                            shootIcePea(mob,target);
-                            PvzEntity.setPlantAttackCD(mob,0);
-                        }
-                    } else if(mob.getScoreboardTags().contains("doublePeaShooter")) {
-                        PvzEntity.setPlantAttackCD(mob,PvzEntity.getPlantAttackCD(mob) + 1);
-                        if(!Function.isShootAble(mob,target))
-                            continue;
-                        if(PvzEntity.getPlantAttackCD(mob) == 5) shootPea(mob,target);
-                        if(PvzEntity.getPlantAttackCD(mob) >= 28) {
-                            shootPea(mob,target);
-                            PvzEntity.setPlantAttackCD(mob,0);
-                        }
-                    } else if(mob.getScoreboardTags().contains("cabbagePitcher")) {
-                        PvzEntity.setPlantAttackCD(mob,PvzEntity.getPlantAttackCD(mob) + 1);
-                        if(PvzEntity.getPlantAttackCD(mob) == 54) {
-                            PvzEntity.setEntityLastLoc(target,target.getLocation());
-                        }
-                        if(PvzEntity.getPlantAttackCD(mob) >= 56) {
-                            shootCabbage(mob,target);
-                            PvzEntity.setPlantAttackCD(mob,0);
-                        }
+                    }
+                }
+            }
+            for(Entity e: w.getEntitiesByClass(ThrownPotion.class)) {
+                //以下代码针对子弹逻辑
+                if(PVZFunction.isBullet(e)) {
+                    if(WallJumpListener.isTouchingWallHere(e) || isPotionOnGround(e)) {
+                        PvzEntity.getPlantDisplays(e).forEach(Entity::remove);
+                        PvzEntity.removePlantDisplays(e);
+                        e.remove();
                     }
                 }
             }
         }
 
-        if(pause == 20) pause=0;
-    }
-
-    private LivingEntity findEnemyViaRay(Mob mob, int distance) {
-        Predicate<Entity> predicate = x -> !isEnemy(mob,x);
-        Location start = mob.getLocation().clone().add(0,1,0);
-        // 创建一条射线
-        RayTraceResult result = mob.getWorld().rayTrace(
-                start, // 起始点
-                mob.getLocation().getDirection(),               // 方向向量
-                distance,                     // 最大距离
-                FluidCollisionMode.NEVER, // 流体模式
-                true,                    // 忽略非可视方块
-                0.1,                     // 检测范围（宽度）
-                predicate              // 过滤器
-        );
-
-        if (result != null) {
-            return (LivingEntity) result.getHitEntity();
+        //保证僵尸向脑子前进
+        for(Mob m : PvzRound.getZombies()) {
+            if(m.getTarget() == null || m.getTarget().isDead()) {
+                m.setTarget(PvzRound.getBrain());
+            }
         }
-        return null;
+        if(PvzRound.isRunning() && PvzRound.isWaveEnd() && PvzRound.getZombies().size() == 0)
+            PvzRound.endRound();
+
+        if(pause % updateInterval == 0){
+            enemyTree.clear();
+            enemyTree.addEntities(zombieList);
+        }
+
+        if(pause == 20) {
+            pause = 0;
+            // 根据ZombieList的大小动态决定kd树的更新频率
+            if(zombieList.size() > 400) {
+                updateInterval = 20;
+            } else if(zombieList.size() > 200) {
+                updateInterval = 10;
+            } else if(zombieList.size() > 80) {
+                updateInterval = 4;
+            } else {
+                updateInterval = 2;
+            }
+        }
     }
 
-    private boolean isEnemy(Entity e, Entity entity) {
+    private boolean isSupportedShooter(String tag) {
+        return tag.equals("peaShooter") || tag.equals("icePeaShooter") ||
+                tag.equals("doublePeaShooter") || tag.equals("machinePeaShooter") ||
+                tag.equals("cabbagePitcher") || tag.equals("cornPitcher") ||
+                tag.equals("melonPitcher") || tag.equals("sunFlower") || tag.equals("pvz_nut");
+    }
+
+    private LivingEntity setPlantTarget(Mob mob,LivingEntity target) {
+        LivingEntity newTarget = null;
+        if(target != null)
+            newTarget = findNearestEnemy1(mob,52,true);
+        if(newTarget == null) newTarget = findNearestEnemy2(mob,52);
+        if(newTarget != null && !newTarget.equals(target)) {
+            mob.setTarget(newTarget);
+            target = newTarget;
+        }
+
+        return target;
+    }
+
+    public static boolean isEnemy(Entity e, Entity target) {
+        if(target instanceof Display) return false;
         QinTeam mobTeam = QinTeams.getEntityTeam(e);
-        QinTeam entityTeam = QinTeams.getEntityTeam(entity);
+        QinTeam entityTeam = QinTeams.getEntityTeam(target);
         //无视生物移动标记
-        if(entity.getScoreboardTags().contains("move_tag")) return false;
-        if(PVZFunction.isBullet(entity)) return false;
-        if(entity instanceof Display) return false;
+        if(target.getScoreboardTags().contains("move_tag")) return false;
+        if(PVZFunction.isBullet(target)) return false;
         //无视无敌的玩家
-        if (entity instanceof Player p)
+        if (target instanceof Player p)
             if(p.getGameMode() == GameMode.SPECTATOR || p.getGameMode() == GameMode.CREATIVE
                     || p.isInvulnerable() || Objects.equals(entityTeam, mobTeam)) return false;
 
-        if (mobTeam != null && mobTeam.getTeamName().equals("植物") && entity instanceof Player) return false;
+        if (mobTeam != null && mobTeam.getTeamName().equals("植物") && target instanceof Player) return false;
 
         //如果是一些特殊的实体，无视
-        if (ignoreSomeEntities(mobTeam, entity, entityTeam, entity.equals(e), entity.isDead()))
+        if (ignoreSomeEntities(mobTeam, target, entityTeam, target.equals(e), target.isDead()))
             return false;
 
-        if(!(entity instanceof LivingEntity)) return false;
-        return !(entity instanceof Villager);
+        if(!(target instanceof LivingEntity)) return false;
+        return !(target instanceof Villager);
     }
 
     private void shootCabbage(Mob mob, LivingEntity target) {
+        if(target == null) return;
         Entity cabbage = generateBullet(mob,target,false);
         cabbage.addScoreboardTag("cabbage_bullet");
         PVZFunction.summonPlant(cabbage,"卷心菜",0.4f,true);
     }
 
+    private void shootCorn(Mob mob, LivingEntity target) {
+        if(target == null) return;
+        Entity corn = generateBullet(mob,target,false);
+        corn.addScoreboardTag("corn_bullet");
+        PVZFunction.summonPlant(corn,"玉米粒投掷物",0.4f,true);
+    }
+    private void shootMelon(Mob mob, LivingEntity target) {
+        if(target == null) return;
+        Entity melon = generateBullet(mob,target,false);
+        melon.addScoreboardTag("melon_bullet");
+        PVZFunction.summonPlant(melon,"西瓜投掷物",0.4f,true);
+    }
+
     private void shootPea(Mob mob, LivingEntity target) {
+        if(target == null) return;
         Entity pea = generateBullet(mob,target,true);
         pea.addScoreboardTag("pea_bullet");
         PVZFunction.summonPlant(pea,"豌豆子弹",0.4f,true);
     }
     private void shootIcePea(Mob mob, LivingEntity target) {
+        if(target == null) return;
         Entity pea = generateBullet(mob,target,true);
         pea.addScoreboardTag("ice_pea_bullet");
         PVZFunction.summonPlant(pea,"寒冰豌豆子弹",0.4f,true);
@@ -192,16 +227,13 @@ public class PvzGameRunnable extends BukkitRunnable {
         Location targetLocation = target.getBoundingBox().getCenter().toLocation(target.getWorld());
         Vector direction = targetLocation.toVector().subtract(fireLocation.toVector()).normalize();
         QinTeam mobTeam = QinTeams.getEntityTeam(mob);
-        Pig pea = mob.getWorld().spawn(fireLocation, Pig.class);
-        Objects.requireNonNull(pea.getAttribute(Attribute.GENERIC_SCALE)).setBaseValue(0.2);
+        ThrownPotion pea = mob.getWorld().spawn(fireLocation, ThrownPotion.class);
         pea.addScoreboardTag("plant_damage");
         pea.addScoreboardTag("plant_bullet");
-        pea.setHealth(1);
         if(mobTeam != null) mobTeam.addTeamEntities(pea);
         PvzEntity.setBulletOwner(pea,mob);
         pea.addScoreboardTag("pvz_plant");
         pea.setSilent(true);
-        pea.addPotionEffect(new PotionEffect(PotionEffectType.INVISIBILITY,999,5,true,false));
         QinTeam allayTeam = QinTeams.getEntityTeam(mob);
         if(allayTeam != null) allayTeam.addTeamEntities();
         Objects.requireNonNull(fireLocation.getWorld()).playSound(fireLocation, Sound.ENTITY_SNOWBALL_THROW,1,1);
@@ -209,12 +241,17 @@ public class PvzGameRunnable extends BukkitRunnable {
         if(isPea) {
             pea.setGravity(false);
             pea.setVelocity(direction.multiply(1.1));
-            PvzEntity.setBulletVector(pea,direction.multiply(1.1));
+            // PvzEntity.setBulletVector(pea,direction.multiply(1.1));
         } else {
             pea.setGravity(true);
             Vector vec = Function.calculateVelocity(fireLocation.toVector(),calculateFutureLocation(target,20).toVector(),6,0.16);
-            pea.setVelocity(vec);
-            PvzEntity.setBulletVector(pea,vec);
+            if (vec.getX() > -100 && vec.getX() < 100 && vec.getY() > -3 && vec.getY() < 100 && vec.getZ() > -100 && vec.getZ() < 100)
+                pea.setVelocity(vec);
+            else {
+                vec = new Vector(0,1.5,0);
+                pea.setVelocity(vec);
+            }
+            // PvzEntity.setBulletVector(pea,vec);
         }
 
         return pea;
@@ -226,86 +263,118 @@ public class PvzGameRunnable extends BukkitRunnable {
         if(plantTeam == null) return null;
         LivingEntity hitEntity = null;
 
-        for(Entity hit : bullet.getNearbyEntities(findDistance,findDistance,findDistance)) {
-            if(PVZFunction.isBullet(hit)) continue;
-            if(!(hit instanceof LivingEntity)) continue;
-            if(plantTeam.getTeamName().equals("植物") && hit instanceof Player) continue;
-            if(plantTeam.equals(QinTeams.getEntityTeam(hit))) continue;
+        Predicate<Entity> predicate = x -> isEnemy(bullet, x);
+        // 计算射线方向的角度
 
-            hitEntity = (LivingEntity) hit;
+        double angle = Math.atan2(PvzEntity.getBulletVector(bullet).getZ(), PvzEntity.getBulletVector(bullet).getX());;
+
+        // 基于角度计算射线的目标方向
+        Vector direction = new Vector(Math.cos(angle), 0, Math.sin(angle));
+
+        // 发射射线
+        RayTraceResult result = bullet.getWorld().rayTrace(
+                bullet.getLocation(), // 起始点
+                direction,               // 方向向量
+                findDistance,                     // 最大距离
+                FluidCollisionMode.NEVER, // 流体模式
+                true,                    // 忽略非可视方块
+                0.3,                     // 检测范围（宽度）
+                predicate              // 过滤器
+        );
+
+        // 检查是否有实体被射线命中
+        if (result != null && result.getHitEntity() != null) {
+            hitEntity = (LivingEntity) result.getHitEntity();
+            return hitEntity;
         }
-        return hitEntity;
+
+        return null;
     }
 
-    private LivingEntity findNearestEnemy(Entity mob, double findDistance) {
-        double nearestEnemy = findDistance;
+    private LivingEntity findNearestEnemy1(Entity mob, double findDistance, boolean once) {
+        double nearestEnemy = findDistance * findDistance;
         LivingEntity closestEnemy = null;
-        Location mobLocation = mob.getLocation().clone().add(0,1,0);
+        Location mobLocation = mob.getLocation().clone().add(0,4.7,0);
 
         // 射线数量 (这里设为30条，360度范围内)
-        int rayCount = 30;
+        int rayCount = 40;
         double angleIncrement = 360.0 / rayCount;
 
-        // 从 mob 发射射线
-        Predicate<Entity> predicate = x -> isEnemy(mob, x) && !mob.equals(x);
-        for (int i = 0; i < rayCount; i++) {
-            // 计算射线方向的角度
-            double angle = Math.toRadians(i * angleIncrement);
+        Predicate<Entity> predicate = x -> isEnemy(mob, x);
 
-            // 基于角度计算射线的目标方向
-            Vector direction = new Vector(Math.cos(angle), 0, Math.sin(angle));
-
+        {
             // 发射射线
             RayTraceResult result = mob.getWorld().rayTrace(
                     mobLocation, // 起始点
-                    direction,               // 方向向量
+                    mob.getLocation().getDirection(),               // 方向向量
                     findDistance,                     // 最大距离
                     FluidCollisionMode.NEVER, // 流体模式
                     true,                    // 忽略非可视方块
-                    0.2,                     // 检测范围（宽度）
+                    3.5,                     // 检测范围（宽度）
                     predicate              // 过滤器
             );
-
-            // 检查是否有实体被射线命中
             if (result != null && result.getHitEntity() != null) {
-                LivingEntity hitEntity = (LivingEntity) result.getHitEntity();
+                return (LivingEntity) result.getHitEntity();
+            }
+        }
 
-                // 计算命中实体与mob的距离
-                double distance = hitEntity.getLocation().distance(mobLocation);
 
-                // 更新最近的敌人
-                if (distance < nearestEnemy) {
-                    nearestEnemy = distance;
-                    closestEnemy = hitEntity;
+        // 执行到这里，则说明第一次射线没有成功，则追加360度扫描
+        if(!once) {
+            for (int i = 0; i < rayCount; i++) {
+                // 计算射线方向的角度
+                double angle = Math.toRadians(i * angleIncrement);
+
+                // 基于角度计算射线的目标方向
+                Vector direction = new Vector(Math.cos(angle), 0, Math.sin(angle));
+
+                // 发射射线
+                RayTraceResult result = mob.getWorld().rayTrace(
+                        mobLocation, // 起始点
+                        direction,               // 方向向量
+                        findDistance,                     // 最大距离
+                        FluidCollisionMode.NEVER, // 流体模式
+                        true,                    // 忽略非可视方块
+                        3.5,                     // 检测范围（宽度）
+                        predicate              // 过滤器
+                );
+
+                // 检查是否有实体被射线命中
+                if (result != null && result.getHitEntity() != null) {
+                    LivingEntity hitEntity = (LivingEntity) result.getHitEntity();
+                    if(hitEntity.equals(closestEnemy)) continue;
+                    if(closestEnemy == null) {
+                        closestEnemy = hitEntity;
+                        continue;
+                    }
+
+                    // 计算命中实体与mob的距离
+                    double distance = Math.pow(hitEntity.getLocation().getX() - closestEnemy.getLocation().getX(),2) + Math.pow(hitEntity.getLocation().getZ() - closestEnemy.getLocation().getZ(),2);
+
+
+                    // 更新最近的敌人
+                    if (distance < nearestEnemy) {
+                        nearestEnemy = distance;
+                        closestEnemy = hitEntity;
+                    }
                 }
             }
         }
 
         return closestEnemy;
     }
-
-    /*
-    private LivingEntity findNearestEnemy(Entity mob, double findDistance) {
-        double nearestEnemy = findDistance;
-        LivingEntity closestEnemy = null;
-        Location mobLocation = mob.getLocation();
-
-        for (Entity entity : mob.getNearbyEntities(findDistance, findDistance, findDistance)) {
-            if(isEnemy(mob,entity)) continue;
-            double distance = entity.getLocation().distance(mobLocation);
-
-            if (distance < nearestEnemy) {
-                nearestEnemy = distance;
-                closestEnemy = (LivingEntity) entity;
+    private LivingEntity findNearestEnemy2(Entity mob,double maxDistance) {
+        LivingEntity foundEntity =  (LivingEntity) enemyTree.findNearest(mob);
+        if(foundEntity != null) {
+            if(mob.getLocation().distanceSquared(foundEntity.getLocation()) > maxDistance * maxDistance) {
+                foundEntity = null;
             }
         }
-
-        return closestEnemy;
+        return foundEntity;
     }
-    */
 
 
-    private boolean ignoreSomeEntities(QinTeam allayTeam, Entity entity, QinTeam entityTeam, boolean equals, boolean dead) {
+    public static boolean ignoreSomeEntities(QinTeam allayTeam, Entity entity, QinTeam entityTeam, boolean equals, boolean dead) {
         //是自己的话，排除
         if(equals) return true;
         //是中立油井的话，排除
@@ -339,4 +408,47 @@ public class PvzGameRunnable extends BukkitRunnable {
         return new Location(currentLocation.getWorld(), futureX, futureY, futureZ, currentLocation.getYaw(), currentLocation.getPitch());
     }
 
+    private void handleSingleShot(Mob mob, LivingEntity target, int attackCD, int cooldown, BiConsumer<Mob, LivingEntity> shootAction) {
+        if (attackCD >= cooldown) {
+            target = setPlantTarget(mob, target);
+            if (Function.isShootAble(mob, target, mob.getLocation().clone().add(0, 1.35, 0))) {
+                shootAction.accept(mob, target);
+            }
+            PvzEntity.setPlantAttackCD(mob, 0);
+        }
+    }
+
+    private void handleDoubleShot(Mob mob, LivingEntity target, int attackCD) {
+        if (attackCD == 4 && Function.isShootAble(mob, target, mob.getLocation().clone().add(0, 1.35, 0))) {
+            shootPea(mob, target);
+        }
+        handleSingleShot(mob, target, attackCD, 28, this::shootPea);
+    }
+
+    private void handleMultiShot(Mob mob, LivingEntity target, int attackCD, int[] shotIntervals, int cooldown, BiConsumer<Mob, LivingEntity> shootAction) {
+        for (int interval : shotIntervals) {
+            if (attackCD == interval && Function.isShootAble(mob, target, mob.getLocation().clone().add(0, 1.35, 0))) {
+                shootAction.accept(mob, target);
+            }
+        }
+        handleSingleShot(mob, target, attackCD, cooldown, shootAction);
+    }
+
+    private void handlePitcherShot(Mob mob, LivingEntity target, int attackCD, int preShootTime, int shootTime, BiConsumer<Mob, LivingEntity> shootAction) {
+        if (attackCD == preShootTime) {
+            target = setPlantTarget(mob, target);
+            if (target != null) {
+                PvzEntity.setEntityLastLocation(target,mob);
+            }
+        }
+        if (attackCD >= shootTime) {
+            shootAction.accept(mob, target);
+
+            PvzEntity.setPlantAttackCD(mob, 0);
+        }
+    }
+
+    public static boolean isPotionOnGround(Entity player) {
+        return player.getLocation().clone().subtract(0, 0.4, 0).getBlock().getType().isSolid();
+    }
 }

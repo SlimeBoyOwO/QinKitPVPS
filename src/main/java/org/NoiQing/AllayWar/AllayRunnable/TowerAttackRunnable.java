@@ -26,6 +26,7 @@ public class TowerAttackRunnable extends BukkitRunnable {
     @Override
     public void run() {
         for(World w : Bukkit.getWorlds()) {
+            if(!w.getName().equals("skyblock_copy")) continue;
             for(Allay a : w.getEntitiesByClass(Allay.class)) {
                 if(getAllayTowerType(a).isEmpty()) continue;
                 AWAllay.setAllayAttackCD(a,AWAllay.getAllayAttackCD(a) + 1);
@@ -147,7 +148,9 @@ public class TowerAttackRunnable extends BukkitRunnable {
                     }
                 }
             }
-            for(Entity e : w.getEntities()) {
+
+
+            for(Entity e : w.getEntitiesByClass(LivingEntity.class)) {
                 if(AWFunction.isTankArmy(e)) {
                     if(AWAllay.getTankDisplays(e) == null) continue;
                     for(Display d : AWAllay.getTankDisplays(e)) {

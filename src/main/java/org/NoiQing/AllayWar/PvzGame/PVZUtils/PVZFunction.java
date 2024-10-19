@@ -73,13 +73,13 @@ public class PVZFunction {
     }
 
     public static void hidePlantCore(LivingEntity z) {
-        Objects.requireNonNull(z.getAttribute(Attribute.GENERIC_SCALE)).setBaseValue(0.7);
         Objects.requireNonNull(z.getAttribute(Attribute.GENERIC_ATTACK_DAMAGE)).setBaseValue(0);
         Objects.requireNonNull(z.getAttribute(Attribute.GENERIC_KNOCKBACK_RESISTANCE)).setBaseValue(1000);
-        z.addPotionEffect(new PotionEffect(PotionEffectType.SLOWNESS,999999,244,false,false,true));
-        z.addPotionEffect(new PotionEffect(PotionEffectType.INVISIBILITY, 999999, 0, false, false, true));
-        z.addPotionEffect(new PotionEffect(PotionEffectType.WEAKNESS, 999999, 50, false, false, true));
+        z.addPotionEffect(new PotionEffect(PotionEffectType.SLOWNESS,9999999,244,false,false,true));
+        z.addPotionEffect(new PotionEffect(PotionEffectType.INVISIBILITY, 9999999, 0, false, false, true));
+        z.addPotionEffect(new PotionEffect(PotionEffectType.WEAKNESS, 9999999, 50, false, false, true));
         z.setSilent(true);
+        z.setAI(false);
         NamespacedKey key = new NamespacedKey(QinKitPVPS.getPlugin(), "persistentEntity");
         z.getPersistentDataContainer().set(key, PersistentDataType.BYTE, (byte) 1);
         z.setPersistent(true);

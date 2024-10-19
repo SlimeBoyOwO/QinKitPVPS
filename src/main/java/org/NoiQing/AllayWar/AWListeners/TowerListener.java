@@ -435,7 +435,7 @@ public class TowerListener implements Listener {
             return;
         }
         Skeleton s = p.getWorld().spawn(p.getLocation(),Skeleton.class);
-        AWFunction.setMobEquipment(s,new ItemStack(Material.AIR));
+        Function.setMobEquipment(s,new ItemStack(Material.AIR));
         t.addTeamEntities(s);
         s.addScoreboardTag("player_stand");
         Objects.requireNonNull(s.getAttribute(Attribute.GENERIC_ATTACK_DAMAGE)).setBaseValue(0);
@@ -611,7 +611,7 @@ public class TowerListener implements Listener {
             c.setSilent(true);
             c.setAI(false);
             c.setInvulnerable(false);
-            setEntityHealth(c,100);
+            Function.setEntityHealth(c,100);
             c.addScoreboardTag("move_tag");
             Function.sendPlayerSystemMessage(p,"指定了生物移动");
 
@@ -691,7 +691,7 @@ public class TowerListener implements Listener {
                 z.addScoreboardTag("Attack_Tower_Only");
                 AWFunction.setNameByTeam(z, "§l丧尸巨人");
                 z.setAdult();
-                AWFunction.setMobEquipment(z,new ItemStack(Material.AIR), new ItemStack(Material.DIAMOND_HELMET));
+                Function.setMobEquipment(z,new ItemStack(Material.AIR), new ItemStack(Material.DIAMOND_HELMET));
             }
 
             case "步枪士兵" -> {
@@ -701,7 +701,7 @@ public class TowerListener implements Listener {
                     z.addScoreboardTag("rifle");
                     z.setAdult();
                     z.setHealth(20);
-                    AWFunction.setMobEquipment(z,new ItemStack(Material.IRON_HOE),new ItemStack(Material.IRON_HELMET));
+                    Function.setMobEquipment(z,new ItemStack(Material.IRON_HOE),new ItemStack(Material.IRON_HELMET));
                 }
             }
 
@@ -711,7 +711,7 @@ public class TowerListener implements Listener {
                 z.addScoreboardTag("engineer");
                 z.setAdult();
                 z.setHealth(20);
-                AWFunction.setMobEquipment(z,new ItemStack(Material.ORANGE_CONCRETE),new ItemStack(Material.IRON_HELMET));
+                Function.setMobEquipment(z,new ItemStack(Material.ORANGE_CONCRETE),new ItemStack(Material.IRON_HELMET));
             }
 
             case "激光坦克" -> {
@@ -721,7 +721,7 @@ public class TowerListener implements Listener {
                 summonTankCore(z);
                 z.addPotionEffect(new PotionEffect(PotionEffectType.SLOWNESS, 999999, 2, false, false, true));
                 AWFunction.setNameByTeam(z,"§l激光坦克");
-                setEntityHealth(z,40);
+                Function.setEntityHealth(z,40);
                 AWFunction.summonTank(z,"激光坦克",(float) z.getHeight() + 0.6f);
             }
 
@@ -732,7 +732,7 @@ public class TowerListener implements Listener {
                 summonTankCore(z);
                 z.addPotionEffect(new PotionEffect(PotionEffectType.SLOWNESS, 999999, 1, false, false, true));
                 AWFunction.setNameByTeam(z,"§l普通坦克");
-                setEntityHealth(z,75);
+                Function.setEntityHealth(z,75);
                 AWFunction.summonTank(z,"普通坦克",(float) z.getHeight() + 0.6f);
             }
 
@@ -750,7 +750,7 @@ public class TowerListener implements Listener {
                         lm.setColor(Color.RED);
                         helmet.setItemMeta(lm);
                     }
-                    AWFunction.setMobEquipment(z,new ItemStack(Material.IRON_PICKAXE),helmet);
+                    Function.setMobEquipment(z,new ItemStack(Material.IRON_PICKAXE),helmet);
                 }
             }
 
@@ -758,7 +758,7 @@ public class TowerListener implements Listener {
                 for(int i = 0; i < 2; i++) {
                     Zombie z = summonAllayArmy(p, Zombie.class, randomNearbyLocation(loc,1));
                     AWFunction.setNameByTeam(z, "§l地狱火尸");
-                    setEntityHealth(z,50);
+                    Function.setEntityHealth(z,50);
                     z.addScoreboardTag("hell_pig");
                     //添加速度
                     z.addPotionEffect(new PotionEffect(PotionEffectType.SPEED, 999999, 1, false, false, true));
@@ -776,7 +776,7 @@ public class TowerListener implements Listener {
                         leggings.setItemMeta(lm);
                         boots.setItemMeta(lm);
                     }
-                    AWFunction.setMobEquipment(z,item,helmet,chestplate,leggings,boots);
+                    Function.setMobEquipment(z,item,helmet,chestplate,leggings,boots);
                 }
             }
         }
@@ -802,7 +802,7 @@ public class TowerListener implements Listener {
         allay.setCustomNameVisible(true);
         allay.setInvulnerable(false);
         allay.setGravity(false);
-        setEntityHealth(allay, 100);
+        Function.setEntityHealth(allay, 100);
 
         QinTeam team = QinTeams.getEntityTeam(p);
         if(team != null) team.addTeamEntities(allay);
@@ -812,7 +812,7 @@ public class TowerListener implements Listener {
                 Function.summonTower(p,"狙击塔", loc);
                 allay.addScoreboardTag("Tower_Sniper");
                 AWFunction.setNameByTeam(allay,"§l\uD83C\uDFF9 狙击塔 \uD83C\uDFF9");
-                setEntityHealth(allay, 80);
+                Function.setEntityHealth(allay, 80);
                 Objects.requireNonNull(allay.getEquipment()).setItemInMainHand(new ItemStack(Material.BOW));
             }
 
@@ -825,7 +825,7 @@ public class TowerListener implements Listener {
                 Function.summonTower(p,"医院", loc);
                 allay.addScoreboardTag("Tower_Hospital");
                 AWFunction.setNameByTeam(allay,"§l❤ 医院 ❤");
-                setEntityHealth(allay, 150);
+                Function.setEntityHealth(allay, 150);
                 Objects.requireNonNull(allay.getEquipment()).setItemInMainHand(new ItemStack(Material.BEETROOT_SOUP));
             }
 
@@ -847,7 +847,7 @@ public class TowerListener implements Listener {
                 Function.summonTower(p,"兵营", loc);
                 allay.addScoreboardTag("Tower_Army");
                 AWFunction.setNameByTeam(allay,"§l⚔ 兵营 ⚔");
-                setEntityHealth(allay, 50);
+                Function.setEntityHealth(allay, 50);
                 Objects.requireNonNull(allay.getEquipment()).setItemInMainHand(new ItemStack(Material.DIAMOND_SWORD));
             }
 
@@ -856,7 +856,7 @@ public class TowerListener implements Listener {
                 allay.addScoreboardTag("Tower_LifeCore");
                 AWFunction.setNameByTeam(allay,"§l۞ 生命核心 ۞");
                 if (team != null) AWRound.getTeamLevels(team.getTeamName()).put("HaveBase",1);
-                setEntityHealth(allay, 600);
+                Function.setEntityHealth(allay, 600);
                 Objects.requireNonNull(allay.getEquipment()).setItemInMainHand(new ItemStack(Material.REDSTONE_BLOCK));
             }
 
@@ -899,7 +899,7 @@ public class TowerListener implements Listener {
                 Function.summonTower(p,"造车工坊", loc);
                 allay.addScoreboardTag("Tower_Workshop");
                 AWFunction.setNameByTeam(allay,"§l🚗 造车工坊 🚗");
-                setEntityHealth(allay,150);
+                Function.setEntityHealth(allay,150);
                 Objects.requireNonNull(allay.getEquipment()).setItemInMainHand(new ItemStack(Material.IRON_BLOCK));
             }
 
@@ -941,10 +941,7 @@ public class TowerListener implements Listener {
         return true;
     }
 
-    private static void setEntityHealth(LivingEntity a, double health) {
-        Objects.requireNonNull(a.getAttribute(Attribute.GENERIC_MAX_HEALTH)).setBaseValue(health);
-        a.setHealth(health);
-    }
+    
 
     public static Set<Mob> getSelectedEntities(Location loc1, Location loc2, Player p) {
         // 获取两个Location的最小和最大边界

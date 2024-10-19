@@ -1026,14 +1026,20 @@ public class Function {
         return yaw;
     }
 
+    public static void setEntityHealth(LivingEntity a, double health) {
+        Objects.requireNonNull(a.getAttribute(Attribute.GENERIC_MAX_HEALTH)).setBaseValue(health);
+        a.setHealth(health);
+    }
+
     public static boolean isShootAble(LivingEntity attacker, LivingEntity target, Location start) {
+        if(target==null) return false;
         Predicate<Entity> predicate = x -> !x.equals(attacker);
-        Location end = target.getBoundingBox().getCenter().toLocation(target.getWorld());
+        Location end = target.getLocation().clone().add(0,1,0);
         // 创建一条射线
         RayTraceResult result = Objects.requireNonNull(start.getWorld()).rayTrace(
                 start, // 起始点
                 end.subtract(start).toVector(),               // 方向向量
-                start.distance(end),                     // 最大距离
+                30,                     // 最大距离
                 FluidCollisionMode.NEVER, // 流体模式
                 true,                    // 忽略非可视方块
                 0.1,                     // 检测范围（宽度）
@@ -1041,6 +1047,16 @@ public class Function {
         );
 
         return result != null && result.getHitEntity() instanceof LivingEntity;
+    }
+
+    public static void setMobEquipment(LivingEntity m, ItemStack... item) {
+        ItemStack air = new ItemStack(Material.AIR);
+        int length = item.length;
+        Objects.requireNonNull(m.getEquipment()).setItemInMainHand(item[0] == null ? air : item[0]);
+        if(length > 1) m.getEquipment().setHelmet(item[1] == null ? air : item[1]);
+        if(length > 2) m.getEquipment().setChestplate(item[2] == null ? air : item[2]);
+        if(length > 3) m.getEquipment().setLeggings(item[3] == null ? air : item[3]);
+        if(length > 4) m.getEquipment().setBoots(item[4] == null ? air : item[4]);
     }
 
     public static Vector calculateVelocity(Vector from, Vector to, int heightGain, double gravity)

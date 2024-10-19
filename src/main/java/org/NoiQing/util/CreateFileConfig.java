@@ -18,6 +18,7 @@ public class CreateFileConfig {
     private final Map<String, Configuration> mixedMapFiles;
     private final Map<String, Configuration> teamedMapFiles;
     private final Map<String, Configuration> allayMapFiles;
+    private final Map<String, Configuration> pvzMapFiles;
     private final Map<String, Configuration> menuFiles;
     public CreateFileConfig(QinKitPVPS plugin){
         this.plugin = plugin;
@@ -31,6 +32,7 @@ public class CreateFileConfig {
         this.mixedMapFiles = new HashMap<>();
         this.teamedMapFiles = new HashMap<>();
         this.allayMapFiles = new HashMap<>();
+        this.pvzMapFiles = new HashMap<>();
         this.menuFiles = new HashMap<>();
 
         if (!plugin.getDataFolder().exists()) {
@@ -89,11 +91,18 @@ public class CreateFileConfig {
             }
         }
 
+        for (String fileName : getPluginDirectoryFilesLevelTwo("Maps","PvzMaps", true)) {
+            if (!pvzMapFiles.containsKey(fileName) && !fileName.startsWith(".")) {
+                pvzMapFiles.put(Function.getNameRemovedNotes(fileName), new Configuration(plugin, "Maps/PvzMaps/" + fileName));
+            }
+        }
+
         reloadFiles(kitFiles);
         reloadFiles(skillFiles);
         reloadFiles(mixedMapFiles);
         reloadFiles(teamedMapFiles);
         reloadFiles(allayMapFiles);
+        reloadFiles(pvzMapFiles);
         reloadFiles(menuFiles);
     }
     public void reload(){load();}
@@ -144,6 +153,12 @@ public class CreateFileConfig {
     public Configuration getAllayMap(String stringMapID){
         if(allayMapFiles.containsKey(stringMapID + ".yml")) {
             return allayMapFiles.get(stringMapID + ".yml");
+        }
+        return null;
+    }
+    public Configuration getPvzMap(String stringMapID){
+        if(pvzMapFiles.containsKey(stringMapID + ".yml")) {
+            return pvzMapFiles.get(stringMapID + ".yml");
         }
         return null;
     }
