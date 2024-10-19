@@ -3,7 +3,8 @@ package org.NoiQing.AllayWar.PvzGame.PVZUtils;
 import org.bukkit.Location;
 import org.bukkit.entity.Display;
 import org.bukkit.entity.Entity;
-import org.bukkit.util.Vector;
+import org.bukkit.entity.Mob;
+import org.bukkit.entity.Player;
 
 import java.util.*;
 
@@ -13,6 +14,9 @@ public class PvzEntity {
     private static final Map<Entity,Entity> bulletOwner = new HashMap<>();
     private static final Map<Entity, org.bukkit.util.Vector> bulletVector = new HashMap<>();
     private static final Map<Entity, Location> entityLastLoc = new HashMap<>();
+    private static final Map<Entity,Map<Entity,Location>> entityLastLocation = new HashMap<>();
+    private static final Map<Player, Integer> playerSun = new HashMap<>();
+    private static final Map<Mob,Entity> mobTarget = new HashMap<>();
     public static List<Display> getPlantDisplays(Entity plant){
         plantDisplays.computeIfAbsent(plant, k -> new ArrayList<>());
         return plantDisplays.getOrDefault(plant, null);
@@ -24,7 +28,7 @@ public class PvzEntity {
         plantAttackCD.put(a, cd);
     }
     public static int getPlantAttackCD(Entity a) {
-        return plantAttackCD.getOrDefault(a,0);
+        return plantAttackCD.getOrDefault(a,-1);
     }
     public static void setBulletOwner(Entity bullet, Entity owner) {
         bulletOwner.put(bullet,owner);
@@ -46,5 +50,23 @@ public class PvzEntity {
     }
     public static void clearEntityLastLoc(Entity e) {
         entityLastLoc.remove(e);
+    }
+    public static void setEntityLastLocation(Entity e, Entity plant) {
+        entityLastLocation.getOrDefault(e,new HashMap<>()).put(plant,e.getLocation());
+    }
+    public static Location getEntityLastLocation(Entity e, Entity plant) {
+        return entityLastLocation.getOrDefault(e,new HashMap<>()).getOrDefault(plant,e.getLocation());
+    }
+    public static Integer getPlayerSun(Player p) {
+        return playerSun.getOrDefault(p,0);
+    }
+    public static void setPlayerSun(Player p, int sun) {
+        playerSun.put(p,sun);
+    }
+    public static void setMobTarget(Mob m, Entity target) {
+        mobTarget.put(m,target);
+    }
+    public static Entity getMobTarget(Mob m) {
+        return mobTarget.getOrDefault(m,null);
     }
 }
