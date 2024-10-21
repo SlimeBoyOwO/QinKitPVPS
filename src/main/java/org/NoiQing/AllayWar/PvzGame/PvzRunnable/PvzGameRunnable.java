@@ -45,6 +45,27 @@ public class PvzGameRunnable extends BukkitRunnable {
                 }
             }
             for(Entity e: w.getEntitiesByClass(LivingEntity.class)) {
+
+                int effectDuration = PvzEntity.getEffectDuration(e);
+                if(effectDuration >= 0) {
+                    PvzEntity.setEffectDuration(e,--effectDuration);
+                    if(effectDuration == 0) {
+                        if(e instanceof Mob mob) mob.setAI(true);
+                        List<Display> effectDisplays = PvzEntity.getEffectDisplays(e);
+                        if(!effectDisplays.isEmpty()) {
+                            for(Display display : effectDisplays)
+                                e.removePassenger(display);
+                        }
+                        PvzEntity.getEffectDisplays(e).forEach(Entity::remove);
+                        PvzEntity.removeEffectDisplays(e);
+                        List<Display> displays = PvzEntity.getPlantDisplays(e);
+                        if(!displays.isEmpty()) {
+                            for(Display display : displays)
+                                e.addPassenger(display);
+                        }
+                    }
+                }
+
                 if(!e.getScoreboardTags().contains("pvz_plant")) continue;
                 //以下代码针对植物逻辑
                 if(PvzEntity.getPlantDisplays(e) == null) continue;
@@ -152,6 +173,29 @@ public class PvzGameRunnable extends BukkitRunnable {
                                     }
                                 }
                             }
+                            case "icebergLettuce" -> {
+                                if(attackCD >= 20) {
+                                    for(Entity entity: mob.getNearbyEntities(2,2,2)) {
+                                        if(isEnemy(mob,entity) && entity instanceof Mob enemy) {
+                                            enemy.damage(2,mob);
+                                            break;
+                                        }
+                                    }
+                                    mob.getWorld().spawnParticle(Particle.SNOWFLAKE,mob.getLocation(),30,2,2,2,0);
+                                    mob.getWorld().playSound(mob.getLocation(),Sound.BLOCK_GRASS_BREAK,3,1);
+                                    mob.setHealth(0);
+                                } else {
+                                    if(mob.getScoreboardTags().contains("ready_boom")) continue;
+                                    List<Entity> entities = new ArrayList<>();
+                                    for(Entity entity: mob.getNearbyEntities(2,2,2)) {
+                                        if(isEnemy(mob,entity) && entity instanceof Mob enemy) {
+                                            entities.add(enemy);
+                                        }
+                                    }
+                                    if(entities.size() > 0) mob.addScoreboardTag("ready_boom");
+                                    else PvzEntity.setPlantAttackCD(mob,0);
+                                }
+                            }
                         }
                     }
                 }
@@ -180,10 +224,17 @@ public class PvzGameRunnable extends BukkitRunnable {
                 }
             }
         }
+
+
         //保证僵尸向脑子前进
         for(Mob m : PvzRound.getZombies()) {
             if(m.getTarget() == null || m.getTarget().isDead()) {
                 m.setTarget(PvzRound.getBrain());
+            }
+            //以下代码针对植物逻辑
+            if(PvzEntity.getPlantDisplays(m) == null) continue;
+            for(Display d : PvzEntity.getPlantDisplays(m)) {
+                d.setRotation(m.getLocation().getYaw() + 90,0);
             }
         }
         if(PvzRound.isRunning()) {
@@ -228,7 +279,8 @@ public class PvzGameRunnable extends BukkitRunnable {
                 tag.equals("doublePeaShooter") || tag.equals("machinePeaShooter") ||
                 tag.equals("cabbagePitcher") || tag.equals("cornPitcher") ||
                 tag.equals("melonPitcher") || tag.equals("sunFlower") ||
-                tag.equals("pvz_nut") || tag.equals("potatoMine") || tag.equals("cherryBoom");
+                tag.equals("pvz_nut") || tag.equals("potatoMine") ||
+                tag.equals("cherryBoom") || tag.equals("icebergLettuce");
     }
 
     private LivingEntity setPlantTarget(Mob mob,LivingEntity target) {

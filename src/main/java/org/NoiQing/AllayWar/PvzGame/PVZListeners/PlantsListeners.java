@@ -33,6 +33,7 @@ public class PlantsListeners implements Listener {
             plant.getWorld().playSound(plant.getLocation(), Sound.ENTITY_DOLPHIN_EAT,3,1);
             PvzEntity.getPlantDisplays(plant).forEach(Entity::remove);
             PvzEntity.removePlantDisplays(plant);
+
         }
     }
     @EventHandler
@@ -52,12 +53,17 @@ public class PlantsListeners implements Listener {
         Entity entity = e.getEntity();
         if(entity.getScoreboardTags().contains("pvz_zombie") && entity instanceof Mob m) {
             PvzRound.removeZombieFromRound(m);
+            PvzEntity.getPlantDisplays(m).forEach(Entity::remove);
+            PvzEntity.removePlantDisplays(m);
+            PvzEntity.getEffectDisplays(m).forEach(Entity::remove);
+            PvzEntity.removeEffectDisplays(m);
         }
         if(entity.getScoreboardTags().contains("pvz_brain")) {
             PvzRound.gameOver();
         }
 
     }
+
 
     @EventHandler
     public void onPvzZombieHurt(EntityDamageEvent e) {
@@ -69,8 +75,54 @@ public class PlantsListeners implements Listener {
             int insertLoc = (int) (healthBar * 20) + 4;
             StringBuilder stringBuilder = new StringBuilder("§c§l||||||||||||||||||||");
             stringBuilder.insert(insertLoc,"§7§l");
-            zombie.setCustomName(stringBuilder.toString());
-            zombie.setCustomNameVisible(true);
+            Entity topEntity;
+            if(zombie.getPassengers().isEmpty()) topEntity = zombie;
+            else topEntity = zombie.getPassengers().getLast();
+            topEntity.setCustomName(stringBuilder.toString());
+            topEntity.setCustomNameVisible(true);
+
+            if(damagedHealth <= 30 && m.getScoreboardTags().contains("pvz_armed")) {
+                PvzEntity.getPlantDisplays(m).forEach(Entity::remove);
+                PvzEntity.removePlantDisplays(m);
+            }
+        }
+    }
+
+    @EventHandler
+    public void onPvzZombieHurtByPlant(EntityDamageByEntityEvent e) {
+        Entity zombie = e.getEntity();
+        Entity plant = e.getDamager();
+        if(!plant.getScoreboardTags().contains("pvz_plant")) return;
+
+        if(plant.getScoreboardTags().contains("icebergLettuce")) {
+            if(zombie instanceof LivingEntity lv) {
+                lv.addPotionEffect(new PotionEffect(PotionEffectType.SLOWNESS,18 * 20, 2, true,false));
+                lv.addScoreboardTag("pvz_frozen");
+                lv.setAI(false);
+                PVZFunction.summonEffect(zombie,"冰冻",1.8f);
+                PvzEntity.setEffectDuration(zombie,8*20);
+                if(lv.getScoreboardTags().contains("torchZombie")) {
+                    PvzEntity.getPlantDisplays(lv).forEach(Entity::remove);
+                    PvzEntity.removePlantDisplays(lv);
+                    PVZFunction.summonPlant(lv,"熄灭的火把",0,false);
+                    lv.addScoreboardTag("torch_died");
+                }
+            }
+        }
+    }
+
+    @EventHandler
+    public void onPvzZombieAttackPlant(EntityDamageByEntityEvent e) {
+        Entity zombie = e.getDamager();
+        Entity plant = e.getEntity();
+        if(!zombie.getScoreboardTags().contains("pvz_zombie")) return;
+
+        if(zombie.getScoreboardTags().contains("torchZombie") && !zombie.getScoreboardTags().contains("torch_died")) {
+            if(!plant.getScoreboardTags().contains("pvz_plant")) return;
+            if(plant instanceof LivingEntity lv) {
+                lv.setHealth(0);
+                lv.getWorld().spawnParticle(Particle.FLAME,lv.getLocation().add(0,0.5,0),50,0.2,0.2,0.2,0.05);
+            }
         }
     }
 
@@ -378,7 +430,15 @@ public class PlantsListeners implements Listener {
                 PVZFunction.summonPlant(z,"西瓜投手",0.54f,false);
                 PvzEntity.setPlayerPlantCoolDownTime(p,"西瓜投手",7.5);
             }
-
+            case "冰冻生菜" -> {
+                if(notHaveEnoughSun(p,0,"冰冻生菜")) return;
+                Allay z = spawnPlantCore(p, Allay.class,loc.clone().add(0.5,0,0.5));
+                PVZFunction.hidePlantCore(z);
+                z.addScoreboardTag("icebergLettuce");
+                z.setCustomName("冰冻生菜");
+                PVZFunction.summonPlant(z,"冰冻生菜",0.54f,false);
+                PvzEntity.setPlayerPlantCoolDownTime(p,"冰冻生菜",22.5);
+            }
         }
     }
 }

@@ -1,21 +1,24 @@
 package org.NoiQing.AllayWar.PvzGame.PVZAPI;
 
 import org.NoiQing.AllayWar.PvzGame.Game.PvzRound;
+import org.NoiQing.AllayWar.PvzGame.PVZUtils.PVZFunction;
 import org.NoiQing.QinKitPVPS;
 import org.NoiQing.api.QinMap;
+import org.NoiQing.api.QinTeam;
+import org.NoiQing.mainGaming.QinTeams;
 import org.NoiQing.util.Function;
 import org.bukkit.Location;
 import org.bukkit.Material;
 import org.bukkit.World;
-import org.bukkit.entity.Player;
-import org.bukkit.entity.Villager;
-import org.bukkit.entity.Zombie;
+import org.bukkit.attribute.Attribute;
+import org.bukkit.entity.*;
 import org.bukkit.inventory.ItemStack;
 import org.bukkit.scheduler.BukkitRunnable;
 
 import java.util.Collections;
 import java.util.HashMap;
 import java.util.Map;
+import java.util.Objects;
 
 public class PvzMap extends QinMap {
     // 怪物刷新区域（矩形），使用两个Location表示区域的对角点
@@ -146,14 +149,14 @@ public class PvzMap extends QinMap {
         if(world == null) return;
         switch (type) {
             case "普通僵尸" -> {
-                Zombie z = world.spawn(randomLocation,Zombie.class);
+                Zombie z = spawnZombie(Zombie.class,randomLocation);
                 Function.setEntityHealth(z,30);
                 z.setAdult();
                 PvzRound.addZombieToRound(z);
             }
 
             case "皮革僵尸" -> {
-                Zombie z = world.spawn(randomLocation,Zombie.class);
+                Zombie z = spawnZombie(Zombie.class,randomLocation);
                 Function.setEntityHealth(z,30);
                 z.setAdult();
                 Function.setMobEquipment(z,new ItemStack(Material.WOODEN_SWORD)
@@ -161,6 +164,36 @@ public class PvzMap extends QinMap {
                         ,new ItemStack(Material.LEATHER_CHESTPLATE)
                         ,new ItemStack(Material.LEATHER_LEGGINGS)
                         ,new ItemStack(Material.LEATHER_BOOTS));
+                PvzRound.addZombieToRound(z);
+            }
+
+            case "路障僵尸" -> {
+                Zombie z = spawnZombie(Zombie.class,randomLocation);
+                Function.setEntityHealth(z,30 * 3);
+                z.setAdult();
+                z.addScoreboardTag("pvz_armed");
+                Function.setMobEquipment(z,new ItemStack(Material.AIR));
+                PVZFunction.summonPlant(z,"路障",0,false);
+                PvzRound.addZombieToRound(z);
+            }
+
+            case "铁桶僵尸" -> {
+                Zombie z = spawnZombie(Zombie.class,randomLocation);
+                Function.setEntityHealth(z,30 * 5);
+                z.setAdult();
+                z.addScoreboardTag("pvz_armed");
+                Function.setMobEquipment(z,new ItemStack(Material.AIR));
+                PVZFunction.summonPlant(z,"铁桶",0,false);
+                PvzRound.addZombieToRound(z);
+            }
+
+            case "火把僵尸" -> {
+                Zombie z = spawnZombie(Zombie.class,randomLocation);
+                Function.setEntityHealth(z,30);
+                z.setAdult();
+                Function.setMobEquipment(z,new ItemStack(Material.AIR));
+                z.addScoreboardTag("torchZombie");
+                PVZFunction.summonPlant(z,"火把",0,false);
                 PvzRound.addZombieToRound(z);
             }
         }
@@ -184,5 +217,17 @@ public class PvzMap extends QinMap {
 
         // 创建并返回随机位置
         return new Location(monsterSpawnCorner1.getWorld(), randomX, randomY, randomZ);
+    }
+
+    private <T extends Entity> T spawnZombie(Class<T> entityClass, Location loc) {
+        T e = Objects.requireNonNull(loc.getWorld()).spawn(loc,entityClass);
+        QinTeam zombieTeam = QinTeams.getQinTeamByName("僵尸");
+        if(zombieTeam != null) {
+            zombieTeam.addTeamEntities(e);
+        }
+        e.addScoreboardTag("pvz_zombie");
+        if(e instanceof LivingEntity lv)
+            Objects.requireNonNull(lv.getAttribute(Attribute.GENERIC_MOVEMENT_SPEED)).setBaseValue(0.165);
+        return e;
     }
 }

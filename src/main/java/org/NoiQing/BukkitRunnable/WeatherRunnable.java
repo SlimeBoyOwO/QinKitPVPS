@@ -5,6 +5,7 @@ import org.NoiQing.QinKitPVPS;
 import org.NoiQing.util.Function;
 import org.NoiQing.util.WeatherDataSave;
 import org.bukkit.Bukkit;
+import org.bukkit.World;
 import org.bukkit.attribute.Attribute;
 import org.bukkit.boss.BarColor;
 import org.bukkit.boss.BarStyle;
@@ -49,7 +50,9 @@ public class WeatherRunnable extends BukkitRunnable {
             WeatherDataSave.getWeatherStorage().put(Bukkit.getWorld("world"), weather);
             bossBar.removeAll();
             Function.setBossBar(bossBar,"\uD83D\uDCE1 §7❃ §l" + Function.spreadString(weather, true) + " §7❃" + "  " + Function.getNameWithoutColor(weatherLore), BarColor.BLUE, BarStyle.SEGMENTED_6,20,20);
-            for (Player onlinePlayer : Bukkit.getOnlinePlayers()) {
+            World world = Bukkit.getWorld("world");
+            if(world == null) return;
+            for (Player onlinePlayer : world.getPlayers()) {
                 PluginScoreboard.changeScoreboard(onlinePlayer);
                 if(!onlinePlayer.getScoreboardTags().contains("QinKitLobby")){
                     onlinePlayer.sendTitle("§7>> " +weather+ " §7<<",weatherLore,20,3 * 20,20);

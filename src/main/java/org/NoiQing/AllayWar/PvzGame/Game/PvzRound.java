@@ -1,6 +1,7 @@
 package org.NoiQing.AllayWar.PvzGame.Game;
 
 import org.NoiQing.AllayWar.PvzGame.PVZAPI.PvzMap;
+import org.NoiQing.QinKitPVPS;
 import org.NoiQing.itemFunction.ItemsFunction;
 import org.bukkit.Bukkit;
 import org.bukkit.GameMode;
@@ -60,7 +61,6 @@ public class PvzRound {
     }
     public static void addZombieToRound(Mob zombie) {
         zombies.add(zombie);
-        zombie.addScoreboardTag("pvz_zombie");
         zombie.setTarget(brain);
     }
     public static void removeZombieFromRound(Mob zombie) {
@@ -117,7 +117,12 @@ public class PvzRound {
             process.removeAll();
         }
         for(Mob m:zombies) {
-            m.remove();
+            new BukkitRunnable() {
+                @Override
+                public void run() {
+                    m.setHealth(0);
+                }
+            }.runTaskLater(QinKitPVPS.getPlugin(),60);
         }
         for(LivingEntity entity : brain.getWorld().getEntitiesByClass(LivingEntity.class)) {
             if(entity.getScoreboardTags().contains("pvz_plant"))

@@ -13,7 +13,9 @@ import java.util.*;
 
 public class PvzEntity {
     private static final Map<Entity, List<Display>> plantDisplays = new HashMap<>();
+    private static final Map<Entity, List<Display>> effectDisplays = new HashMap<>();
     private static final Map<Entity, Integer> plantAttackCD = new HashMap<>();
+    private static final Map<Entity, Integer> effectDuration = new HashMap<>();
     private static final Map<Entity,Entity> bulletOwner = new HashMap<>();
     private static final Map<Entity, org.bukkit.util.Vector> bulletVector = new HashMap<>();
     private static final Map<Entity, Location> entityLastLoc = new HashMap<>();
@@ -58,11 +60,24 @@ public class PvzEntity {
     public static void removePlantDisplays(Entity plant) {
         plantDisplays.remove(plant);
     }
+    public static List<Display> getEffectDisplays(Entity plant){
+        effectDisplays.computeIfAbsent(plant, k -> new ArrayList<>());
+        return effectDisplays.getOrDefault(plant, null);
+    }
+    public static void removeEffectDisplays(Entity plant) {
+        effectDisplays.remove(plant);
+    }
     public static void setPlantAttackCD(Entity a, int cd){
         plantAttackCD.put(a, cd);
     }
     public static int getPlantAttackCD(Entity a) {
         return plantAttackCD.getOrDefault(a,-1);
+    }
+    public static void setEffectDuration(Entity a, int cd){
+        effectDuration.put(a, cd);
+    }
+    public static int getEffectDuration(Entity a) {
+        return effectDuration.getOrDefault(a,-1);
     }
     public static void setBulletOwner(Entity bullet, Entity owner) {
         bulletOwner.put(bullet,owner);
