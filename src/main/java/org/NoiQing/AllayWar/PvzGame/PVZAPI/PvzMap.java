@@ -23,7 +23,7 @@ public class PvzMap extends QinMap {
     private Location monsterSpawnCorner2;
     private Location villagerArea;
     // 关卡信息，使用一个 Map 存储各个关卡的 Wave 数据
-    private final Map<Integer, LevelData> levels = new HashMap<>();
+    private final Map<String, LevelData> levels = new HashMap<>();
 
     public void setMonsterSpawnArea(Location corner1, Location corner2) {
         this.monsterSpawnCorner1 = corner1;
@@ -45,19 +45,21 @@ public class PvzMap extends QinMap {
         return monsterSpawnCorner2;
     }
     // 添加关卡数据
-    public void addLevelData(int level, LevelData levelData) {
-        this.levels.put(level, levelData);
+    public void addLevelData(String levelName, LevelData levelData) {
+        this.levels.put(levelName, levelData);
     }
     // 获取关卡数据
-    public Map<Integer, LevelData> getLevels() {
+    public Map<String, LevelData> getLevels() {
         return levels;
     }
     // 关卡数据类
     public static class LevelData {
         private final int totalTime;
         private final Map<Integer, WaveData> waves = new HashMap<>();
+        private final String name;
 
-        public LevelData(int totalTime) {
+        public LevelData(String name,int totalTime) {
+            this.name = name;
             this.totalTime = totalTime;
         }
 
@@ -68,6 +70,7 @@ public class PvzMap extends QinMap {
         public int getTotalTime() {
             return totalTime;
         }
+        public String getId() {return name;}
 
         public Map<Integer, WaveData> getWaves() {
             return waves;
@@ -93,7 +96,7 @@ public class PvzMap extends QinMap {
         }
     }
 
-    public void startLevel(int level) {
+    public void startLevel(String level) {
         LevelData levelData = levels.get(level);
         int lastWaveKey = Collections.max(levelData.getWaves().keySet());
         int firstWaveKey = Collections.min(levelData.getWaves().keySet());
@@ -105,7 +108,7 @@ public class PvzMap extends QinMap {
         villager.setHealth(1);
         villager.addScoreboardTag("pvz_brain");
         villager.setGlowing(true);
-        PvzRound.initRound(villager);
+        PvzRound.initRound(villager, levelData);
 
         for(Map.Entry<Integer,WaveData> wave : levelData.getWaves().entrySet()) {
             BukkitRunnable runnable = new BukkitRunnable() {
@@ -145,12 +148,14 @@ public class PvzMap extends QinMap {
             case "普通僵尸" -> {
                 Zombie z = world.spawn(randomLocation,Zombie.class);
                 Function.setEntityHealth(z,30);
+                z.setAdult();
                 PvzRound.addZombieToRound(z);
             }
 
             case "皮革僵尸" -> {
                 Zombie z = world.spawn(randomLocation,Zombie.class);
                 Function.setEntityHealth(z,30);
+                z.setAdult();
                 Function.setMobEquipment(z,new ItemStack(Material.WOODEN_SWORD)
                         ,new ItemStack(Material.LEATHER_HELMET)
                         ,new ItemStack(Material.LEATHER_CHESTPLATE)

@@ -39,6 +39,10 @@ public class PlantsListeners implements Listener {
     public void onPlantDamaged(EntityDamageEvent e) {
         if(e.getEntity().getScoreboardTags().contains("pvz_plant")) {
             Entity plant = e.getEntity();
+            if(e.getCause().equals(EntityDamageEvent.DamageCause.SUFFOCATION)) {
+                e.setCancelled(true);
+                return;
+            }
             plant.getWorld().playSound(plant.getLocation(), Sound.ENTITY_GENERIC_EAT,3,1);
         }
     }
@@ -59,11 +63,23 @@ public class PlantsListeners implements Listener {
     public void onPvzZombieHurt(EntityDamageEvent e) {
         Entity zombie = e.getEntity();
         if(zombie.getScoreboardTags().contains("pvz_zombie") && zombie instanceof Mob m) {
-            double healthBar = (m.getHealth() - e.getFinalDamage()) / Objects.requireNonNull(m.getAttribute(Attribute.GENERIC_MAX_HEALTH)).getValue();
-            int insertLoc = (int) (healthBar * 20) + 2;
-            StringBuilder stringBuilder = new StringBuilder("§c||||||||||||||||||||");
-            stringBuilder.insert(insertLoc,"§7");
+            double damagedHealth = m.getHealth() - e.getFinalDamage();
+            damagedHealth = damagedHealth < 0 ? 0 : damagedHealth;
+            double healthBar = damagedHealth / Objects.requireNonNull(m.getAttribute(Attribute.GENERIC_MAX_HEALTH)).getValue();
+            int insertLoc = (int) (healthBar * 20) + 4;
+            StringBuilder stringBuilder = new StringBuilder("§c§l||||||||||||||||||||");
+            stringBuilder.insert(insertLoc,"§7§l");
             zombie.setCustomName(stringBuilder.toString());
+            zombie.setCustomNameVisible(true);
+        }
+    }
+
+    @EventHandler
+    public void onPvzZombieFire(EntityCombustEvent e) {
+        Entity zombie = e.getEntity();
+        if(zombie.getScoreboardTags().contains("pvz_zombie") && zombie instanceof Mob m) {
+            e.setCancelled(true);
+            return;
         }
     }
 
@@ -123,12 +139,14 @@ public class PlantsListeners implements Listener {
 
     @EventHandler
     public void onPlayerPickUpSun(EntityPickupItemEvent e) {
-        if(e.getItem().getScoreboardTags().contains("pvz_sun") && e.getEntity() instanceof Player p) {
-            int sun = PvzEntity.getPlayerSun(p);
+        if(e.getItem().getScoreboardTags().contains("pvz_sun") && e.getEntity() instanceof Player) {
+            int sun = PvzRound.getTotalSun();
             sun += 25 * e.getItem().getItemStack().getAmount();
-            PvzEntity.setPlayerSun(p,sun);
-            p.playSound(p,Sound.ENTITY_EXPERIENCE_ORB_PICKUP,1,1.5f);
-            p.spigot().sendMessage(ChatMessageType.ACTION_BAR, TextComponent.fromLegacy("§e+ " + "25" + " 阳光: " + sun));
+            PvzRound.setTotalSun(sun);
+            for(Player player : e.getItem().getWorld().getPlayers()) {
+                player.playSound(player,Sound.ENTITY_EXPERIENCE_ORB_PICKUP,1,1.5f);
+                player.spigot().sendMessage(ChatMessageType.ACTION_BAR, TextComponent.fromLegacy("§e+ " + "25" + " 阳光: " + sun));
+            }
             e.getItem().remove();
             e.setCancelled(true);
         }
@@ -152,7 +170,13 @@ public class PlantsListeners implements Listener {
             if (team.equals(targetTeam)) {
                 e.setCancelled(true);
             }
-        } else {
+        } else if(entity.getScoreboardTags().contains("pvz_zombie")){
+            if(e.getReason().equals(EntityTargetEvent.TargetReason.TARGET_ATTACKED_NEARBY_ENTITY) ||
+                    e.getReason().equals(EntityTargetEvent.TargetReason.CLOSEST_PLAYER) ||
+                    e.getReason().equals(EntityTargetEvent.TargetReason.FORGOT_TARGET)) {
+                e.setCancelled(true);
+                return;
+            }
             if(target != null && entity instanceof Mob mob) {
                 Entity lastTarget = PvzEntity.getMobTarget(mob);
                 if(lastTarget != null && lastTarget.getScoreboardTags().contains("pvz_nut") && !lastTarget.isDead()) {
@@ -200,6 +224,7 @@ public class PlantsListeners implements Listener {
         if(!Function.getMainHandItemNameWithoutColor(p).startsWith("植物 - ")) return;
         String plantType = Function.getMainHandItemNameWithoutColor(p).substring(5);
         summonPlant(p,plantType,e.getClickedBlock().getLocation().clone().add(0,1,0));
+        e.setCancelled(true);
     }
 
     private <T extends Entity> T spawnPlantCore(Player p, Class<T> entityClass, Location loc) {
@@ -215,45 +240,57 @@ public class PlantsListeners implements Listener {
 
         return e;
     }
-    private boolean notHaveEnoughSun(Player p, int sunCost) {
-        if(p.getGameMode().equals(GameMode.CREATIVE)) return false;
-        int playerSun = PvzEntity.getPlayerSun(p);
+    private boolean notHaveEnoughSun(Player p, int sunCost, String plant) {
+        if(p.getGameMode().equals(GameMode.CREATIVE)) {
+            p.getWorld().playSound(p.getLocation(),Sound.BLOCK_GRASS_PLACE,1,1);
+            return false;
+        }
+        if(!PvzEntity.ifPlayerPlantPassCoolDownTime(p,plant)) return true;
+        int playerSun = PvzRound.getTotalSun();
         if(playerSun < sunCost) {
             Function.sendPlayerSystemMessage(p,"你没有足够的阳光！");
             return true;
         }
-        PvzEntity.setPlayerSun(p,playerSun - sunCost);
+        playerSun -= sunCost;
+        PvzRound.setTotalSun(playerSun);
+        for(Player player :p.getWorld().getPlayers()) {
+            player.spigot().sendMessage(ChatMessageType.ACTION_BAR, TextComponent.fromLegacy("§e阳光: " + playerSun));
+        }
+        p.getWorld().playSound(p.getLocation(),Sound.BLOCK_GRASS_PLACE,1,1);
         return false;
     }
     private void summonPlant(Player p, String plantType, Location loc) {
         switch (plantType) {
             case "豌豆射手" -> {
-                if(notHaveEnoughSun(p,100)) return;
+                if(notHaveEnoughSun(p,100,"豌豆射手")) return;
                 Allay z = spawnPlantCore(p, Allay.class,loc.clone().add(0.5,0,0.5));
                 PVZFunction.hidePlantCore(z);
                 z.addScoreboardTag("peaShooter");
                 z.setCustomName("豌豆射手");
                 PVZFunction.summonPlant(z,"豌豆射手",0.54f,false);
+                PvzEntity.setPlayerPlantCoolDownTime(p,"豌豆射手",7.5);
             }
             case "向日葵" -> {
-                if(notHaveEnoughSun(p,50)) return;
+                if(notHaveEnoughSun(p,50,"向日葵")) return;
                 Allay z = spawnPlantCore(p, Allay.class,loc.clone().add(0.5,0,0.5));
                 PVZFunction.hidePlantCore(z);
                 z.addScoreboardTag("sunFlower");
                 z.setCustomName("向日葵");
                 PVZFunction.summonPlant(z,"向日葵",0.54f,false);
-                PvzEntity.setPlantAttackCD(z,16);
+                PvzEntity.setPlantAttackCD(z,12 * 20);
+                PvzEntity.setPlayerPlantCoolDownTime(p,"向日葵",7.5);
             }
             case "樱桃炸弹" -> {
-                if(notHaveEnoughSun(p,150)) return;
+                if(notHaveEnoughSun(p,150,"樱桃炸弹")) return;
                 Allay z = spawnPlantCore(p, Allay.class,loc.clone().add(0.5,0,0.5));
                 PVZFunction.hidePlantCore(z);
                 z.addScoreboardTag("cherryBoom");
                 z.setCustomName("樱桃炸弹");
                 PVZFunction.summonPlant(z,"樱桃炸弹",0.54f,false);
+                PvzEntity.setPlayerPlantCoolDownTime(p,"樱桃炸弹",50);
             }
             case "坚果墙" -> {
-                if(notHaveEnoughSun(p,50)) return;
+                if(notHaveEnoughSun(p,50,"坚果墙")) return;
                 Allay z = spawnPlantCore(p, Allay.class,loc.clone().add(0.5,0,0.5));
                 PVZFunction.hidePlantCore(z);
                 z.addScoreboardTag("wallNut");
@@ -261,9 +298,10 @@ public class PlantsListeners implements Listener {
                 z.setCustomName("坚果墙");
                 Function.setEntityHealth(z,267);
                 PVZFunction.summonPlant(z,"坚果墙",0.54f,false);
+                PvzEntity.setPlayerPlantCoolDownTime(p,"坚果墙",30);
             }
             case "高坚果" -> {
-                if(notHaveEnoughSun(p,125)) return;
+                if(notHaveEnoughSun(p,125,"高坚果")) return;
                 Allay z = spawnPlantCore(p, Allay.class,loc.clone().add(0.5,0,0.5));
                 PVZFunction.hidePlantCore(z);
                 z.addScoreboardTag("tallWallNut");
@@ -271,66 +309,74 @@ public class PlantsListeners implements Listener {
                 z.setCustomName("高坚果");
                 Function.setEntityHealth(z,267 * 2);
                 PVZFunction.summonPlant(z,"高坚果",0.54f,false);
+                PvzEntity.setPlayerPlantCoolDownTime(p,"高坚果",30);
             }
             case "土豆地雷" -> {
-                if(notHaveEnoughSun(p,25)) return;
-                Allay z = spawnPlantCore(p, Allay.class,loc.clone().add(0.5,0,0.5));
+                if(notHaveEnoughSun(p,25,"土豆地雷")) return;
+                Allay z = spawnPlantCore(p, Allay.class,loc.clone().add(0.5,-0.55,0.5));
                 PVZFunction.hidePlantCore(z);
                 z.addScoreboardTag("potatoMine");
                 z.setCustomName("土豆地雷");
                 PVZFunction.summonPlant(z,"土豆地雷",0.54f,false);
+                PvzEntity.setPlayerPlantCoolDownTime(p,"土豆地雷",30);
             }
             case "大嘴花" -> {
 
             }
             case "寒冰射手" -> {
-                if(notHaveEnoughSun(p,175)) return;
+                if(notHaveEnoughSun(p,175,"寒冰射手")) return;
                 Allay z = spawnPlantCore(p, Allay.class,loc.clone().add(0.5,0,0.5));
                 PVZFunction.hidePlantCore(z);
                 z.addScoreboardTag("icePeaShooter");
                 z.setCustomName("寒冰射手");
                 PVZFunction.summonPlant(z,"寒冰射手",0.54f,false);
+                PvzEntity.setPlayerPlantCoolDownTime(p,"寒冰射手",7.5);
             }
             case "双发射手" -> {
-                if(notHaveEnoughSun(p,200)) return;
+                if(notHaveEnoughSun(p,200,"双发射手")) return;
                 Allay z = spawnPlantCore(p, Allay.class,loc.clone().add(0.5,0,0.5));
                 PVZFunction.hidePlantCore(z);
                 z.addScoreboardTag("doublePeaShooter");
                 z.setCustomName("双发射手");
                 PVZFunction.summonPlant(z,"双发射手",0.54f,false);
+                PvzEntity.setPlayerPlantCoolDownTime(p,"双发射手",7.5);
             }
             case "卷心菜投手" -> {
-                if(notHaveEnoughSun(p,100)) return;
+                if(notHaveEnoughSun(p,100,"卷心菜投手")) return;
                 Allay z = spawnPlantCore(p, Allay.class,loc.clone().add(0.5,0,0.5));
                 PVZFunction.hidePlantCore(z);
                 z.addScoreboardTag("cabbagePitcher");
                 z.setCustomName("卷心菜投手");
                 PVZFunction.summonPlant(z,"卷心菜投手",0.54f,false);
+                PvzEntity.setPlayerPlantCoolDownTime(p,"卷心菜投手",7.5);
             }
 
             case "机枪射手" -> {
-                if(notHaveEnoughSun(p,450)) return;
+                if(notHaveEnoughSun(p,450,"机枪投手")) return;
                 Allay z = spawnPlantCore(p, Allay.class,loc.clone().add(0.5,0,0.5));
                 PVZFunction.hidePlantCore(z);
                 z.addScoreboardTag("machinePeaShooter");
                 z.setCustomName("机枪射手");
                 PVZFunction.summonPlant(z,"机枪射手",0.54f,false);
+                PvzEntity.setPlayerPlantCoolDownTime(p,"机枪射手",50);
             }
             case "玉米投手" -> {
-                if(notHaveEnoughSun(p,100)) return;
+                if(notHaveEnoughSun(p,100,"玉米投手")) return;
                 Allay z = spawnPlantCore(p, Allay.class,loc.clone().add(0.5,0,0.5));
                 PVZFunction.hidePlantCore(z);
                 z.addScoreboardTag("cornPitcher");
                 z.setCustomName("玉米投手");
                 PVZFunction.summonPlant(z,"玉米投手",0.54f,false);
+                PvzEntity.setPlayerPlantCoolDownTime(p,"玉米投手",7.5);
             }
             case "西瓜投手" -> {
-                if(notHaveEnoughSun(p,300)) return;
+                if(notHaveEnoughSun(p,300,"西瓜投手")) return;
                 Allay z = spawnPlantCore(p, Allay.class,loc.clone().add(0.5,0,0.5));
                 PVZFunction.hidePlantCore(z);
                 z.addScoreboardTag("melonPitcher");
                 z.setCustomName("西瓜投手");
                 PVZFunction.summonPlant(z,"西瓜投手",0.54f,false);
+                PvzEntity.setPlayerPlantCoolDownTime(p,"西瓜投手",7.5);
             }
 
         }

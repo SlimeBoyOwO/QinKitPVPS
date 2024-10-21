@@ -1,5 +1,7 @@
 package org.NoiQing.util;
 
+import net.md_5.bungee.api.ChatMessageType;
+import net.md_5.bungee.api.chat.TextComponent;
 import org.NoiQing.BukkitRunnable.PluginScoreboard;
 import org.NoiQing.QinKitPVPS;
 import org.bukkit.Sound;
@@ -43,9 +45,7 @@ public class PlayerDataSave {
             return true;
         }else if(System.currentTimeMillis() < SkillCoolDowns.get(player).get(skill)){
             int CoolDownTimeLeft = (int) (SkillCoolDowns.get(player).get(skill) - currentTime) /1000 + 1;
-            List<String> commands = new ArrayList<>();
-            commands.add("console: title " + player.getName() + " actionbar [\"\\u00a73\\u00a7l冷却剩余 \\u00a7b" + CoolDownTimeLeft + " \\u00a73\\u00a7l秒\"]");
-            Function.executeCommands(player, commands,"none","none");
+            player.spigot().sendMessage(ChatMessageType.ACTION_BAR, TextComponent.fromLegacy("§3§l冷却剩余 §b"+ CoolDownTimeLeft + " §3§l秒"));
             return false;
         }
         return true;

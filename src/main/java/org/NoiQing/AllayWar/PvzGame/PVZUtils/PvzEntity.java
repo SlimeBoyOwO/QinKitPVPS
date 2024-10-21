@@ -1,5 +1,8 @@
 package org.NoiQing.AllayWar.PvzGame.PVZUtils;
 
+import net.md_5.bungee.api.ChatMessageType;
+import net.md_5.bungee.api.chat.TextComponent;
+import org.NoiQing.util.Function;
 import org.bukkit.Location;
 import org.bukkit.entity.Display;
 import org.bukkit.entity.Entity;
@@ -17,6 +20,37 @@ public class PvzEntity {
     private static final Map<Entity,Map<Entity,Location>> entityLastLocation = new HashMap<>();
     private static final Map<Player, Integer> playerSun = new HashMap<>();
     private static final Map<Mob,Entity> mobTarget = new HashMap<>();
+    private static final Map<Player, Map<String, Long>> plantCoolDowns = new HashMap<>();
+
+    /* 玩 家 冷 却 时 间 记 录 */
+    public static boolean ifPlayerPlantPassCoolDownTime(Player player, String plant){
+        plantCoolDownInitialization(player);
+        long currentTime = System.currentTimeMillis();
+        if(plantCoolDowns.get(player).get(plant) == null){
+            return true;
+        }else if(System.currentTimeMillis() < plantCoolDowns.get(player).get(plant)){
+            int coolDownTimeLeft = (int) (plantCoolDowns.get(player).get(plant) - currentTime) /1000 + 1;
+            player.spigot().sendMessage(ChatMessageType.ACTION_BAR, TextComponent.fromLegacy("§3§l冷却剩余 §b"+ coolDownTimeLeft + " §3§l秒"));
+            return false;
+        }
+        return true;
+    }
+    public static void setPlayerPlantCoolDownTime(Player player, String plant, double coolDownTime){
+        long passCoolDownTime = (long) (System.currentTimeMillis() + coolDownTime* 1000L);
+
+        plantCoolDownInitialization(player);
+        plantCoolDowns.get(player).put(plant, passCoolDownTime);
+        player.setCooldown(player.getInventory().getItemInMainHand().getType(), (int) coolDownTime * 20);
+    }
+    public static void clearPlayerSkillCoolDownTime(Player player){
+        plantCoolDowns.remove(player);
+    }
+    public static void plantCoolDownInitialization(Player player){
+        if (!plantCoolDowns.containsKey(player)) {
+            plantCoolDowns.put(player, new HashMap<>());
+        }
+    }
+
     public static List<Display> getPlantDisplays(Entity plant){
         plantDisplays.computeIfAbsent(plant, k -> new ArrayList<>());
         return plantDisplays.getOrDefault(plant, null);
@@ -63,6 +97,19 @@ public class PvzEntity {
     public static void setPlayerSun(Player p, int sun) {
         playerSun.put(p,sun);
     }
+    public static Integer getAllPlayerSun() {
+        int totalSun = 0;
+        for(Map.Entry<Player,Integer> set : playerSun.entrySet()) {
+            totalSun += set.getValue();
+        }
+        return totalSun;
+    }
+    public static void addAllPlayerSun(int sun) {
+        for(Map.Entry<Player,Integer> set : playerSun.entrySet()) {
+            set.setValue(getAllPlayerSun() + sun);
+        }
+    }
+
     public static void setMobTarget(Mob m, Entity target) {
         mobTarget.put(m,target);
     }

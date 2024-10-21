@@ -1,5 +1,7 @@
 package org.NoiQing.AllayWar.PvzGame.PvzRunnable;
 
+import net.md_5.bungee.api.ChatMessageType;
+import net.md_5.bungee.api.chat.TextComponent;
 import org.NoiQing.AllayWar.PvzGame.Game.PvzRound;
 import org.NoiQing.AllayWar.PvzGame.PVZUtils.Entity2DTree;
 import org.NoiQing.AllayWar.PvzGame.PVZUtils.PVZFunction;
@@ -11,6 +13,8 @@ import org.NoiQing.util.Function;
 import org.bukkit.*;
 import org.bukkit.entity.*;
 import org.bukkit.inventory.ItemStack;
+import org.bukkit.potion.PotionEffect;
+import org.bukkit.potion.PotionEffectType;
 import org.bukkit.scheduler.BukkitRunnable;
 import org.bukkit.util.RayTraceResult;
 import org.bukkit.util.Vector;
@@ -24,6 +28,7 @@ import java.util.function.Predicate;
 
 public class PvzGameRunnable extends BukkitRunnable {
     private int pause = 0;
+    private int sunFall = 0;
     Entity2DTree enemyTree = new Entity2DTree();
     int updateInterval = 5;
     @Override
@@ -46,6 +51,7 @@ public class PvzGameRunnable extends BukkitRunnable {
                 for(Display d : PvzEntity.getPlantDisplays(e)) {
                     d.setRotation(e.getLocation().getYaw() + 90,0);
                 }
+
                 //植物逻辑处理
                 if(e instanceof Mob mob) {
                     LivingEntity target = mob.getTarget();
@@ -53,8 +59,9 @@ public class PvzGameRunnable extends BukkitRunnable {
                     if (target != null) {
                         mob.setRotation(Function.calculateYaw(mob.getLocation(), target.getLocation()), 0);
                         if(target.isDead()) {
-                            mob.setTarget(null);
-                            target = null;
+                            LivingEntity newTarget = findNearestEnemy2(mob,50);
+                            mob.setTarget(newTarget);
+                            target = newTarget;
                         }
                     }
 
@@ -82,6 +89,7 @@ public class PvzGameRunnable extends BukkitRunnable {
                                     handlePitcherShot(mob, target, attackCD, 54, 56, this::shootMelon);
                             case "sunFlower" -> {
                                 if(attackCD >= 23 * 20) {
+                                    mob.addPotionEffect(new PotionEffect(PotionEffectType.GLOWING,40,1,true,false));
                                     Item sun = mob.getWorld().spawn(mob.getLocation().clone().add(0,1,0), Item.class);
                                     sun.setItemStack(new ItemStack(Material.SUNFLOWER));
                                     sun.addScoreboardTag("pvz_sun");
@@ -102,6 +110,48 @@ public class PvzGameRunnable extends BukkitRunnable {
                                     PvzEntity.setPlantAttackCD(mob,0);
                                 }
                             }
+                            case "cherryBoom" -> {
+                                if(attackCD >= 24) {
+                                    for(Entity entity: mob.getNearbyEntities(6,6,6)) {
+                                        if(isEnemy(mob,entity) && entity instanceof Mob enemy) {
+                                            enemy.damage(4*90,mob);
+                                        }
+                                    }
+                                    mob.getWorld().spawnParticle(Particle.EXPLOSION,mob.getLocation(),100,6,6,6,0);
+                                    mob.getWorld().playSound(mob.getLocation(),Sound.ENTITY_GENERIC_EXPLODE,2,1);
+                                    mob.setHealth(0);
+                                }
+                            }
+                            case "potatoMine" -> {
+                                if(!mob.getScoreboardTags().contains("mine_ready")) {
+                                    if(attackCD >= 20 * 20) {
+                                        mob.addScoreboardTag("mine_ready");
+                                        PvzEntity.setPlantAttackCD(mob,0);
+                                    }
+                                } else {
+                                    if(attackCD >= 20) {
+                                        for(Entity entity: mob.getNearbyEntities(2,2,2)) {
+                                            if(isEnemy(mob,entity) && entity instanceof Mob enemy) {
+                                                enemy.damage(4*90,mob);
+                                            }
+                                        }
+
+                                        mob.getWorld().spawnParticle(Particle.EXPLOSION,mob.getLocation(),30,2,2,2,0);
+                                        mob.getWorld().playSound(mob.getLocation(),Sound.ENTITY_GENERIC_EXPLODE,1,1);
+                                        mob.setHealth(0);
+                                    } else {
+                                        if(mob.getScoreboardTags().contains("ready_boom")) continue;
+                                        List<Entity> entities = new ArrayList<>();
+                                        for(Entity entity: mob.getNearbyEntities(2,2,2)) {
+                                            if(isEnemy(mob,entity) && entity instanceof Mob enemy) {
+                                                entities.add(enemy);
+                                            }
+                                        }
+                                        if(entities.size() > 0) mob.addScoreboardTag("ready_boom");
+                                        else PvzEntity.setPlantAttackCD(mob,0);
+                                    }
+                                }
+                            }
                         }
                     }
                 }
@@ -116,13 +166,38 @@ public class PvzGameRunnable extends BukkitRunnable {
                     }
                 }
             }
+            for(Item item: w.getEntitiesByClass(Item.class)) {
+                if(!item.getScoreboardTags().contains("pvz_sun")) return;
+                int cd = PvzEntity.getPlantAttackCD(item);
+                PvzEntity.setPlantAttackCD(item,++cd);
+                if(cd >= 60) {
+                    PvzRound.setTotalSun(PvzRound.getTotalSun() + item.getItemStack().getAmount() * 25);
+                    for(Player player : item.getWorld().getPlayers()) {
+                        player.playSound(player,Sound.ENTITY_EXPERIENCE_ORB_PICKUP,1,1.5f);
+                        player.spigot().sendMessage(ChatMessageType.ACTION_BAR, TextComponent.fromLegacy("§e+ " + "25" + " 阳光: " + PvzRound.getTotalSun()));
+                    }
+                    item.remove();
+                }
+            }
         }
-
         //保证僵尸向脑子前进
         for(Mob m : PvzRound.getZombies()) {
             if(m.getTarget() == null || m.getTarget().isDead()) {
                 m.setTarget(PvzRound.getBrain());
             }
+        }
+        if(PvzRound.isRunning()) {
+            if(++sunFall == 20 * 7) {
+                sunFall = 0;
+                PvzRound.setTotalSun(PvzRound.getTotalSun() + 25);
+                if(PvzRound.getBrain() == null) return;
+                for(Player player : PvzRound.getBrain().getWorld().getPlayers()) {
+                    player.playSound(player,Sound.ENTITY_EXPERIENCE_ORB_PICKUP,1,1.5f);
+                    player.spigot().sendMessage(ChatMessageType.ACTION_BAR, TextComponent.fromLegacy("§e+ " + "25" + " 阳光: " + PvzRound.getTotalSun()));
+                }
+            }
+            PvzRound.addCurrentTime();
+            PvzRound.getProcessBar().setProgress((double) PvzRound.getCurrentTime() / PvzRound.getTotalTime());
         }
         if(PvzRound.isRunning() && PvzRound.isWaveEnd() && PvzRound.getZombies().size() == 0)
             PvzRound.endRound();
@@ -131,6 +206,7 @@ public class PvzGameRunnable extends BukkitRunnable {
             enemyTree.clear();
             enemyTree.addEntities(zombieList);
         }
+
 
         if(pause == 20) {
             pause = 0;
@@ -151,14 +227,13 @@ public class PvzGameRunnable extends BukkitRunnable {
         return tag.equals("peaShooter") || tag.equals("icePeaShooter") ||
                 tag.equals("doublePeaShooter") || tag.equals("machinePeaShooter") ||
                 tag.equals("cabbagePitcher") || tag.equals("cornPitcher") ||
-                tag.equals("melonPitcher") || tag.equals("sunFlower") || tag.equals("pvz_nut");
+                tag.equals("melonPitcher") || tag.equals("sunFlower") ||
+                tag.equals("pvz_nut") || tag.equals("potatoMine") || tag.equals("cherryBoom");
     }
 
     private LivingEntity setPlantTarget(Mob mob,LivingEntity target) {
         LivingEntity newTarget = null;
-        if(target != null)
-            newTarget = findNearestEnemy1(mob,52,true);
-        if(newTarget == null) newTarget = findNearestEnemy2(mob,52);
+        newTarget = findNearestEnemy2(mob,52);
         if(newTarget != null && !newTarget.equals(target)) {
             mob.setTarget(newTarget);
             target = newTarget;
@@ -240,11 +315,11 @@ public class PvzGameRunnable extends BukkitRunnable {
 
         if(isPea) {
             pea.setGravity(false);
-            pea.setVelocity(direction.multiply(1.1));
+            pea.setVelocity(direction.multiply(1.5));
             // PvzEntity.setBulletVector(pea,direction.multiply(1.1));
         } else {
             pea.setGravity(true);
-            Vector vec = Function.calculateVelocity(fireLocation.toVector(),calculateFutureLocation(target,20).toVector(),6,0.16);
+            Vector vec = Function.calculateVelocity(fireLocation.toVector(),calculateFutureLocation(target,20).toVector(),6,0.115);
             if (vec.getX() > -100 && vec.getX() < 100 && vec.getY() > -3 && vec.getY() < 100 && vec.getZ() > -100 && vec.getZ() < 100)
                 pea.setVelocity(vec);
             else {
@@ -257,6 +332,7 @@ public class PvzGameRunnable extends BukkitRunnable {
         return pea;
     }
 
+    /*
     private LivingEntity findHitEntity(Entity bullet, double findDistance) {
         QinTeam plantTeam = QinTeams.getEntityTeam(PvzEntity.getBulletOwner(bullet));
         //一般情况不可能没有队伍
@@ -363,6 +439,8 @@ public class PvzGameRunnable extends BukkitRunnable {
 
         return closestEnemy;
     }
+
+     */
     private LivingEntity findNearestEnemy2(Entity mob,double maxDistance) {
         LivingEntity foundEntity =  (LivingEntity) enemyTree.findNearest(mob);
         if(foundEntity != null) {
@@ -411,15 +489,14 @@ public class PvzGameRunnable extends BukkitRunnable {
     private void handleSingleShot(Mob mob, LivingEntity target, int attackCD, int cooldown, BiConsumer<Mob, LivingEntity> shootAction) {
         if (attackCD >= cooldown) {
             target = setPlantTarget(mob, target);
-            if (Function.isShootAble(mob, target, mob.getLocation().clone().add(0, 1.35, 0))) {
-                shootAction.accept(mob, target);
-            }
+            shootAction.accept(mob, target);
+
             PvzEntity.setPlantAttackCD(mob, 0);
         }
     }
 
     private void handleDoubleShot(Mob mob, LivingEntity target, int attackCD) {
-        if (attackCD == 4 && Function.isShootAble(mob, target, mob.getLocation().clone().add(0, 1.35, 0))) {
+        if (attackCD == 4) {
             shootPea(mob, target);
         }
         handleSingleShot(mob, target, attackCD, 28, this::shootPea);
@@ -427,7 +504,7 @@ public class PvzGameRunnable extends BukkitRunnable {
 
     private void handleMultiShot(Mob mob, LivingEntity target, int attackCD, int[] shotIntervals, int cooldown, BiConsumer<Mob, LivingEntity> shootAction) {
         for (int interval : shotIntervals) {
-            if (attackCD == interval && Function.isShootAble(mob, target, mob.getLocation().clone().add(0, 1.35, 0))) {
+            if (attackCD == interval) {
                 shootAction.accept(mob, target);
             }
         }
@@ -450,5 +527,27 @@ public class PvzGameRunnable extends BukkitRunnable {
 
     public static boolean isPotionOnGround(Entity player) {
         return player.getLocation().clone().subtract(0, 0.4, 0).getBlock().getType().isSolid();
+    }
+
+    public static boolean isShootAble(LivingEntity attacker, LivingEntity target, Location start) {
+        if(target==null) return false;
+        Predicate<Entity> predicate = x -> isEnemy(attacker,target);
+        Location end = target.getLocation().clone().add(0,1,0);
+        // 创建一条射线
+        RayTraceResult result = Objects.requireNonNull(start.getWorld()).rayTrace(
+                start, // 起始点
+                end.subtract(start).toVector(),               // 方向向量
+                30,                     // 最大距离
+                FluidCollisionMode.NEVER, // 流体模式
+                true,                    // 忽略非可视方块
+                0.3,                     // 检测范围（宽度）
+                predicate              // 过滤器
+        );
+        if(result != null && result.getHitEntity() instanceof LivingEntity lv) {
+            Bukkit.broadcastMessage(lv.getName());
+            return true;
+        }
+        return false;
+
     }
 }

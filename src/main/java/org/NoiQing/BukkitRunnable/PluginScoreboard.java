@@ -60,7 +60,7 @@ public class PluginScoreboard extends BukkitRunnable {
                         "",
                         Function.changeColorCharacters(">&#e8dc00>&l信息：<&#fcf003<"),
                         "§a名字: §f" + player.getName(),
-                        "§§a阳光： §f" + ChatColor.of("#d6b865")+ PvzEntity.getPlayerSun(player),
+                        "§§a阳光： §f" + ChatColor.of("#d6b865")+ PvzRound.getTotalSun(),
                         "§§a波数： §f" + ChatColor.AQUA + (PvzRound.getTotalWaves() - PvzRound.getRunnables().size()) + " / " + PvzRound.getTotalWaves(),
                         "",
                         Function.changeColorCharacters(">&#056e6c>&l天气预报：<&#05b0ad<") + (WeatherDataSave.getWeatherStorage().get(player.getWorld()) == null ? "§7无" : WeatherDataSave.getWeatherStorage().get(player.getWorld())),

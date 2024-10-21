@@ -66,7 +66,7 @@ public class PlayerJoinListener implements Listener {
             if(Objects.requireNonNull(e.getTo().getWorld()).getName().equals("skyblock_copy")) {
                 onEnterAWWorld(e.getPlayer());
             }
-
+            else WeatherRunnable.getBossbar().addPlayer(e.getPlayer());
         }
     }
 
@@ -75,13 +75,12 @@ public class PlayerJoinListener implements Listener {
         PluginScoreboard.changeScoreboard(e.getPlayer());
         if(e.getPlayer().getWorld().getName().equals("skyblock_copy")){
             onEnterAWWorld(e.getPlayer());
-        }
-
-
+        } else WeatherRunnable.getBossbar().addPlayer(e.getPlayer());
     }
 
     private void onEnterAWWorld(Player player) {
         player.removeScoreboardTag(QinConstant.LOBBY_MARK);
+        WeatherRunnable.getBossbar().removeAll();
         if(AWRound.isRunning()) {
             player.setGameMode(GameMode.SPECTATOR);
             player.sendTitle("游戏正在进行...","观察模式",10,40,10);

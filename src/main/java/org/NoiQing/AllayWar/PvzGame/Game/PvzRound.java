@@ -1,9 +1,13 @@
 package org.NoiQing.AllayWar.PvzGame.Game;
 
-import org.NoiQing.AllayWar.PvzGame.PVZUtils.PvzEntity;
+import org.NoiQing.AllayWar.PvzGame.PVZAPI.PvzMap;
 import org.NoiQing.itemFunction.ItemsFunction;
+import org.bukkit.Bukkit;
 import org.bukkit.GameMode;
 import org.bukkit.Material;
+import org.bukkit.boss.BarColor;
+import org.bukkit.boss.BarStyle;
+import org.bukkit.boss.BossBar;
 import org.bukkit.entity.*;
 import org.bukkit.inventory.ItemStack;
 import org.bukkit.scheduler.BukkitRunnable;
@@ -14,18 +18,31 @@ import java.util.List;
 import java.util.Set;
 
 public class PvzRound {
-    public static Villager brain = null;
-    public static Set<Mob> zombies = new HashSet<>();
-    public static List<BukkitRunnable> runnables = new ArrayList<>();
-    public static boolean running = false;
-    public static boolean waveEnd = true;
-    public static int totalWaves = 0;
-    public static void initRound(Villager v) {
+    private static Villager brain = null;
+    private static final Set<Mob> zombies = new HashSet<>();
+    private static final List<BukkitRunnable> runnables = new ArrayList<>();
+    private static boolean running = false;
+    private static boolean waveEnd = true;
+    private static int totalWaves = 0;
+    private static int totalSun = 0;
+    private static BossBar process = null;
+    private static int totalTime = 0;
+    private static int currentTime = 0;
+    public static void initRound(Villager v, PvzMap.LevelData level) {
         brain = v;
         running = true;
         waveEnd = false;
+        if(process == null) {
+            process = Bukkit.createBossBar("§e§l关卡: " + level.getId(), BarColor.GREEN, BarStyle.SOLID);
+        }
+        totalTime = level.getTotalTime();
+        currentTime = 0;
+        process.setTitle("§e§l关卡: " + level.getId());
+        process.setProgress(0);
+        for(Player p : brain.getWorld().getPlayers()) process.addPlayer(p);
+
+        setTotalSun(50);
         for(Player p: v.getWorld().getPlayers()) {
-            PvzEntity.setPlayerSun(p,200);
             if(p.getGameMode().equals(GameMode.ADVENTURE)) {
                 p.setInvulnerable(false);
                 ItemStack sword = new ItemStack(Material.IRON_SWORD);
@@ -34,6 +51,10 @@ public class PvzRound {
             }
         }
     }
+    public static int getTotalTime() {return totalTime;}
+    public static int getCurrentTime() {return currentTime;}
+    public static void addCurrentTime() {if(currentTime < totalTime) currentTime++;}
+    public static BossBar getProcessBar() {return process;}
     public static void addRunnable(BukkitRunnable runnable) {
         runnables.add(runnable);
     }
@@ -60,6 +81,8 @@ public class PvzRound {
     public static void setTotalWaves(int waves) {
         totalWaves = waves;
     }
+    public static int getTotalSun() { return totalSun; }
+    public static void setTotalSun(int sun) { totalSun = sun; }
     public static boolean isRunning() {
         return running;
     }
@@ -76,6 +99,7 @@ public class PvzRound {
         waveEnd = true;
         for(Player p: brain.getWorld().getPlayers()) {
             p.sendTitle("§a你的脑子保住了~","§b我们安全了，暂时...",10,70,20);
+            process.removeAll();
         }
         for(LivingEntity entity : brain.getWorld().getEntitiesByClass(LivingEntity.class)) {
             if(entity.getScoreboardTags().contains("pvz_plant"))
@@ -90,6 +114,7 @@ public class PvzRound {
     public static void gameOver() {
         for(Player p: brain.getWorld().getPlayers()) {
             p.sendTitle("§c§l僵尸吃掉了你的脑子！","§cNOOOOOOOOOOOOOO",10,70,20);
+            process.removeAll();
         }
         for(Mob m:zombies) {
             m.remove();
