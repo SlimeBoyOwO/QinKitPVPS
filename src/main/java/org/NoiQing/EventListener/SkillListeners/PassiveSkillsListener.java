@@ -127,7 +127,11 @@ public class PassiveSkillsListener implements Listener {
                     lv.setMaximumNoDamageTicks(7);
                 }
                 lv.setNoDamageTicks(0);
-            }else if((event.getDamager() instanceof Player damager && damager.getScoreboardTags().contains("FastSword_S")) || event.getDamager().getScoreboardTags().contains("TWorld_Arrow") || event.getDamager().getScoreboardTags().contains("allay_damage") || event.getDamager().getScoreboardTags().contains("pvz_plant")){
+            }else if((event.getDamager() instanceof Player damager && damager.getScoreboardTags().contains("FastSword_S")) ||
+                    event.getDamager().getScoreboardTags().contains("TWorld_Arrow") ||
+                    event.getDamager().getScoreboardTags().contains("allay_damage") ||
+                    event.getDamager().getScoreboardTags().contains("pvz_plant") ||
+                    event.getDamager().getScoreboardTags().contains("pvz_zombie")){
                 lv.setMaximumNoDamageTicks(0);
                 lv.setNoDamageTicks(0);
             }else if(event.getCause() == EntityDamageEvent.DamageCause.ENTITY_ATTACK){

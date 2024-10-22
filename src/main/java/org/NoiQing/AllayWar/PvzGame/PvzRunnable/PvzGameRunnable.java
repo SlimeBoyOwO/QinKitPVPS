@@ -7,10 +7,12 @@ import org.NoiQing.AllayWar.PvzGame.PVZUtils.Entity2DTree;
 import org.NoiQing.AllayWar.PvzGame.PVZUtils.PVZFunction;
 import org.NoiQing.AllayWar.PvzGame.PVZUtils.PvzEntity;
 import org.NoiQing.EventListener.System.WallJumpListener;
+import org.NoiQing.QinKitPVPS;
 import org.NoiQing.api.QinTeam;
 import org.NoiQing.mainGaming.QinTeams;
 import org.NoiQing.util.Function;
 import org.bukkit.*;
+import org.bukkit.attribute.Attribute;
 import org.bukkit.entity.*;
 import org.bukkit.inventory.ItemStack;
 import org.bukkit.potion.PotionEffect;
@@ -92,6 +94,9 @@ public class PvzGameRunnable extends BukkitRunnable {
                             .filter(this::isSupportedShooter)
                             .findFirst()
                             .orElse(null);
+
+
+
                     if (mobTag != null) {
                         switch (mobTag) {
                             case "peaShooter" ->
@@ -116,18 +121,11 @@ public class PvzGameRunnable extends BukkitRunnable {
                                     sun.addScoreboardTag("pvz_sun");
                                     PvzEntity.setPlantAttackCD(mob,0);
                                 }
+                                allowPlantToBeEat(mob);
                             }
                             case "pvz_nut" -> {
                                 if(attackCD >= 20) {
-                                    for(Entity entity: mob.getNearbyEntities(2,2,2)) {
-                                        if(isEnemy(mob,entity) && entity instanceof Mob enemy) {
-                                            Entity lastTarget = PvzEntity.getMobTarget(mob);
-                                            if(lastTarget == null || !lastTarget.getScoreboardTags().contains("pvz_nut")) {
-                                                enemy.setTarget(mob);
-                                                PvzEntity.setMobTarget(enemy,mob);
-                                            }
-                                        }
-                                    }
+                                    allowPlantToBeEat(mob);
                                     PvzEntity.setPlantAttackCD(mob,0);
                                 }
                             }
@@ -178,7 +176,6 @@ public class PvzGameRunnable extends BukkitRunnable {
                                     for(Entity entity: mob.getNearbyEntities(2,2,2)) {
                                         if(isEnemy(mob,entity) && entity instanceof Mob enemy) {
                                             enemy.damage(2,mob);
-                                            break;
                                         }
                                     }
                                     mob.getWorld().spawnParticle(Particle.SNOWFLAKE,mob.getLocation(),30,2,2,2,0);
@@ -226,16 +223,37 @@ public class PvzGameRunnable extends BukkitRunnable {
         }
 
 
-        //保证僵尸向脑子前进
+        //此处处理Pvz_Zombie的逻辑
         for(Mob m : PvzRound.getZombies()) {
-            if(m.getTarget() == null || m.getTarget().isDead()) {
-                m.setTarget(PvzRound.getBrain());
-            }
-            //以下代码针对植物逻辑
+            //僵尸实体逻辑处理
             if(PvzEntity.getPlantDisplays(m) == null) continue;
             for(Display d : PvzEntity.getPlantDisplays(m)) {
                 d.setRotation(m.getLocation().getYaw() + 90,0);
             }
+            //保证僵尸向着脑子攻击
+            if(m.getTarget() == null || m.getTarget().isDead()) {
+                m.setTarget(PvzRound.getBrain());
+            }
+            //以下代码针对僵尸逻辑
+            if(m.getScoreboardTags().contains("PoleZombie")) {
+                for(Entity e : m.getNearbyEntities(4,2,4)) {
+                    if(!e.getScoreboardTags().contains("pvz_plant")) continue;
+                    m.setVelocity(new Vector(0,1,0).add(m.getLocation().getDirection().multiply(1.4).setY(0)));
+                    new BukkitRunnable() {
+                        @Override
+                        public void run() {
+                            m.setTarget(PvzRound.getBrain());
+                            m.removeScoreboardTag("PoleZombie");
+                        }
+                    }.runTaskLater(QinKitPVPS.getPlugin(),30);
+
+
+                    Objects.requireNonNull(m.getAttribute(Attribute.GENERIC_MOVEMENT_SPEED)).setBaseValue(0.135);
+                    PVZFunction.changePlant(m,"撑杆跳僵尸头发",0);
+                    break;
+                }
+            }
+
         }
         if(PvzRound.isRunning()) {
             if(++sunFall == 20 * 7) {
@@ -270,6 +288,22 @@ public class PvzGameRunnable extends BukkitRunnable {
                 updateInterval = 4;
             } else {
                 updateInterval = 2;
+            }
+        }
+    }
+
+    private void allowPlantToBeEat(Mob mob) {
+        int attackCD = PvzEntity.getPlantAttackCD(mob);
+        if(attackCD % 20 == 0) {
+            for(Entity entity: mob.getNearbyEntities(1.5,0.15,1.5)) {
+                if(entity.getScoreboardTags().contains("PoleZombie")) continue;
+                if(isEnemy(mob,entity) && entity instanceof Mob enemy) {
+                    Entity lastTarget = PvzEntity.getMobTarget(mob);
+                    if(lastTarget == null || !lastTarget.getScoreboardTags().contains("pvz_nut")) {
+                        enemy.setTarget(mob);
+                        PvzEntity.setMobTarget(enemy,mob);
+                    }
+                }
             }
         }
     }

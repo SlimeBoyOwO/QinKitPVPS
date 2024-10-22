@@ -468,7 +468,13 @@ public class MainCommands implements CommandExecutor {
         for(Player players : pvzMap.getVillagerArea().getWorld().getPlayers()) {
             players.sendTitle("§a准备 放置 植物！","§b保护你的脑子叭！",10,70,20);
         }
-        pvzMap.startLevel(args[2]);
+
+        int difficultly = 1;
+        if(args.length > 3) {
+            if(args[3].equalsIgnoreCase("-e")) difficultly = 0;
+            else if(args[3].equalsIgnoreCase("-h")) difficultly = 2;
+        }
+        pvzMap.startLevel(args[2],difficultly);
     }
 
     private void executeSavePlantData(String[] args, Player player) {

@@ -127,7 +127,7 @@ public class QinMaps {
         ConfigurationSection levelsSection = resource.getConfigurationSection("Levels");
         if (levelsSection != null) {
             for (String levelKey : levelsSection.getKeys(false)) {
-                PvzMap.LevelData levelData = new PvzMap.LevelData(levelKey,levelsSection.getInt(levelKey + ".TotalTime"));
+                PvzMap.LevelData levelData = new PvzMap.LevelData(levelKey,levelsSection.getIntegerList(levelKey + ".TotalTime"));
 
                 ConfigurationSection wavesSection = levelsSection.getConfigurationSection(levelKey + ".Waves");
                 if (wavesSection != null) {

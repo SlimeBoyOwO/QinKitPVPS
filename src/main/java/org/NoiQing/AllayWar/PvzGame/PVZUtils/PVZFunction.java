@@ -69,6 +69,12 @@ public class PVZFunction {
         }
     }
 
+    public static void changePlant(Entity core, String newPlant, float entityHeight) {
+        PvzEntity.getPlantDisplays(core).forEach(Entity::remove);
+        PvzEntity.removePlantDisplays(core);
+        PVZFunction.summonPlant(core,newPlant,entityHeight,false);
+    }
+
     public static void summonEffect(Entity effectedMob, String plantName, float entityHeight) {
         Configuration data = QinKitPVPS.getPlugin().getResource().getPvzData();
         if(!data.contains("PlantData." + plantName)) {

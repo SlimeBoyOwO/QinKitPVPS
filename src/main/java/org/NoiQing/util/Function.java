@@ -1059,7 +1059,7 @@ public class Function {
         if(length > 4) m.getEquipment().setBoots(item[4] == null ? air : item[4]);
     }
 
-    public static Vector calculateVelocity(Vector from, Vector to, int heightGain, double gravity)
+    public static Vector calculateVelocity(Vector from, Vector to, double heightGain, double gravity)
     {
 
         // Block locations
@@ -1067,7 +1067,7 @@ public class Function {
         double horizDist = Math.sqrt(distanceSquared(from, to));
 
         // Height gain
-        int gain = heightGain;
+        double gain = heightGain;
 
         double maxGain = Math.max(gain, (endGain + gain));
 

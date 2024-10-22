@@ -22,13 +22,18 @@ public class PvzRound {
     private static Villager brain = null;
     private static final Set<Mob> zombies = new HashSet<>();
     private static final List<BukkitRunnable> runnables = new ArrayList<>();
-    private static boolean running = false;
-    private static boolean waveEnd = true;
-    private static int totalWaves = 0;
-    private static int totalSun = 0;
-    private static BossBar process = null;
-    private static int totalTime = 0;
-    private static int currentTime = 0;
+    private static int waveOffset = 0;                  //记录的runnables里显示的波数的偏差值
+    private static String levelName = "";               //当前关卡名字
+    private static boolean running = false;             //记录当前是否在进行关卡
+    private static boolean waveEnd = true;              //记录关卡的波数是否已经完全完成
+    private static int totalFlag = 0;               //记录一共有多少个旗帜
+    private static int currentFlag = 0;                 //记录当前旗帜
+    private static int totalSmallWaves = 0;             //记录总波数-由runnables产生
+    private static int currentSmallWave = 0;
+    private static int totalSun = 0;                    //记录玩家全体阳光数
+    private static BossBar process = null;              //记录bossBar对象
+    private static int totalTime = 0;                   //记录当前进度条总时间
+    private static int currentTime = 0;                 //记录当前游戏进度
     public static void initRound(Villager v, PvzMap.LevelData level) {
         brain = v;
         running = true;
@@ -36,9 +41,14 @@ public class PvzRound {
         if(process == null) {
             process = Bukkit.createBossBar("§e§l关卡: " + level.getId(), BarColor.GREEN, BarStyle.SOLID);
         }
-        totalTime = level.getTotalTime();
+        totalTime = level.getWaveTimes().getLast();
+        totalFlag = level.getWaveTimes().size();
+        currentFlag = 0;
         currentTime = 0;
-        process.setTitle("§e§l关卡: " + level.getId());
+        currentSmallWave = 0;
+        waveOffset = 0;
+        levelName = level.getId();
+        process.setTitle("§e§l关卡: " + levelName + " §3§l旗帜 §7[ §b" + currentFlag + "§7/§b " + totalFlag + " §7]");
         process.setProgress(0);
         for(Player p : brain.getWorld().getPlayers()) process.addPlayer(p);
 
@@ -55,9 +65,15 @@ public class PvzRound {
     public static int getTotalTime() {return totalTime;}
     public static int getCurrentTime() {return currentTime;}
     public static void addCurrentTime() {if(currentTime < totalTime) currentTime++;}
+    public static void addCurrentSmallWave() {currentSmallWave++;}
+    public static int getCurrentSmallWave() {return currentSmallWave;}
     public static BossBar getProcessBar() {return process;}
     public static void addRunnable(BukkitRunnable runnable) {
         runnables.add(runnable);
+    }
+    public static void addSubRunnable(BukkitRunnable runnable) {
+        runnables.add(runnable);
+        waveOffset++;
     }
     public static void addZombieToRound(Mob zombie) {
         zombies.add(zombie);
@@ -75,12 +91,13 @@ public class PvzRound {
     public static List<BukkitRunnable> getRunnables() {
         return runnables;
     }
-    public static int getTotalWaves() {
-        return totalWaves;
+    public static int getTotalSmallWaves() {
+        return totalSmallWaves;
     }
-    public static void setTotalWaves(int waves) {
-        totalWaves = waves;
+    public static void setTotalSmallWaves(int waves) {
+        totalSmallWaves = waves;
     }
+    public static int getWaveOffset() { return waveOffset; }
     public static int getTotalSun() { return totalSun; }
     public static void setTotalSun(int sun) { totalSun = sun; }
     public static boolean isRunning() {
@@ -109,6 +126,8 @@ public class PvzRound {
         for(BukkitRunnable r : runnables) {
             r.cancel();
         } runnables.clear();
+
+        totalSun = 0;
     }
 
     public static void gameOver() {
@@ -131,8 +150,17 @@ public class PvzRound {
         zombies.clear();
         brain = null;
         waveEnd = false;
+        running = false;
         for(BukkitRunnable r : runnables) {
             r.cancel();
         } runnables.clear();
+    }
+    public static void addCurrentWave() {
+        currentFlag++;
+        process.setTitle("§e§l关卡: " + levelName + " §3§l旗帜 §7[ §b" + currentFlag + "§7/§b " + totalFlag + " §7]");
+    }
+
+    public static int getRemainZombies() {
+        return zombies.size();
     }
 }

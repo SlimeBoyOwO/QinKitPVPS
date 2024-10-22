@@ -4,6 +4,7 @@ import net.md_5.bungee.api.ChatMessageType;
 import net.md_5.bungee.api.chat.TextComponent;
 import org.NoiQing.util.Function;
 import org.bukkit.Location;
+import org.bukkit.Material;
 import org.bukkit.entity.Display;
 import org.bukkit.entity.Entity;
 import org.bukkit.entity.Mob;
@@ -37,12 +38,12 @@ public class PvzEntity {
         }
         return true;
     }
-    public static void setPlayerPlantCoolDownTime(Player player, String plant, double coolDownTime){
+    public static void setPlayerPlantCoolDownTime(Player player, String plant, double coolDownTime, Material type){
         long passCoolDownTime = (long) (System.currentTimeMillis() + coolDownTime* 1000L);
 
         plantCoolDownInitialization(player);
         plantCoolDowns.get(player).put(plant, passCoolDownTime);
-        player.setCooldown(player.getInventory().getItemInMainHand().getType(), (int) coolDownTime * 20);
+        player.setCooldown(type, (int) coolDownTime * 20);
     }
     public static void clearPlayerSkillCoolDownTime(Player player){
         plantCoolDowns.remove(player);
