@@ -11,6 +11,7 @@ import org.bukkit.event.Listener;
 import org.bukkit.event.block.Action;
 import org.bukkit.event.player.PlayerInteractEvent;
 import org.bukkit.event.player.PlayerItemConsumeEvent;
+import org.bukkit.inventory.ItemStack;
 import org.bukkit.potion.PotionEffectType;
 
 public class RecoveryItems implements Listener {
@@ -19,6 +20,7 @@ public class RecoveryItems implements Listener {
     @EventHandler
     public void onUseRecoveryItems(PlayerInteractEvent event){
         Player player = event.getPlayer();
+        ItemStack item = event.getItem();
         if(isRightClicked(event)){
             if(Function.isHoldingSPItem(player,"医疗包") && player.getHealth() < Function.getPlayerMaxHealth(player) && PlayerDataSave.ifPlayerSkillPassCoolDownTime(player,"医疗包")){
                 double RecoveryHealth = 12.0;
@@ -28,6 +30,11 @@ public class RecoveryItems implements Listener {
                 player.getWorld().spawnParticle(Particle.FALLING_SPORE_BLOSSOM,player.getLocation().clone().add(0,1,0),50,0.4,0.5,0.4,0,null,true);
                 player.getWorld().playSound(player.getLocation(), Sound.ENTITY_PLAYER_LEVELUP,1,1.6F);
                 event.setCancelled(true);
+            } else if (item != null && item.getItemMeta() != null && Function.getNameWithoutColor(item.getItemMeta().getDisplayName()).equals("治疗药水 I") && player.getHealth() < Function.getPlayerMaxHealth(player)) {
+                event.setCancelled(true);
+                player.addPotionEffect(PotionEffectType.INSTANT_HEALTH.createEffect(1,1));
+                player.getWorld().playSound(player.getLocation(), Sound.ENTITY_PLAYER_LEVELUP,1,1.6F);
+                item.setAmount(item.getAmount() - 1);
             }
         }
 
@@ -36,6 +43,7 @@ public class RecoveryItems implements Listener {
     @EventHandler
     public void onPlayerEat(PlayerItemConsumeEvent event){
         Player player = event.getPlayer();
+        ItemStack item = event.getItem();
         if(event.getItem().getType() == Material.COOKED_BEEF){
             if(player.getHealth() <= 0) return;
             double RecoveryHealth = 4;

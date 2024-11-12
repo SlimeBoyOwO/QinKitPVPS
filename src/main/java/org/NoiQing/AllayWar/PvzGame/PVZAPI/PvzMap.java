@@ -2,14 +2,13 @@ package org.NoiQing.AllayWar.PvzGame.PVZAPI;
 
 import org.NoiQing.AllayWar.PvzGame.Game.PvzRound;
 import org.NoiQing.AllayWar.PvzGame.PVZUtils.PVZFunction;
+import org.NoiQing.AllayWar.PvzGame.PVZUtils.PvzEntity;
 import org.NoiQing.QinKitPVPS;
 import org.NoiQing.api.QinMap;
 import org.NoiQing.api.QinTeam;
 import org.NoiQing.mainGaming.QinTeams;
 import org.NoiQing.util.Function;
-import org.bukkit.Location;
-import org.bukkit.Material;
-import org.bukkit.World;
+import org.bukkit.*;
 import org.bukkit.attribute.Attribute;
 import org.bukkit.entity.*;
 import org.bukkit.inventory.ItemStack;
@@ -21,6 +20,9 @@ public class PvzMap extends QinMap {
     // 怪物刷新区域（矩形），使用两个Location表示区域的对角点
     private Location monsterSpawnCorner1;
     private Location monsterSpawnCorner2;
+    private Location plantCorner1;
+    private Location plantCorner2;
+    private final List<Location> plantLocations = new ArrayList<>();
     private Location villagerArea;
     // 关卡信息，使用一个 Map 存储各个关卡的 Wave 数据
     private final Map<String, LevelData> levels = new HashMap<>();
@@ -28,6 +30,36 @@ public class PvzMap extends QinMap {
     public void setMonsterSpawnArea(Location corner1, Location corner2) {
         this.monsterSpawnCorner1 = corner1;
         this.monsterSpawnCorner2 = corner2;
+    }
+    public void setPlantCorner(Location corner1, Location corner2) {
+        this.plantCorner1 = corner1;
+        this.plantCorner2 = corner2;
+        initPlantLocations();
+    }
+    private void initPlantLocations() {
+        double cornerX1 = plantCorner1.getX();
+        double cornerX2 = plantCorner2.getX();
+        double cornerZ1 = plantCorner1.getZ();
+        double cornerZ2 = plantCorner2.getZ();
+        World w = plantCorner1.getWorld();
+        double y = plantCorner1.getY();
+
+        for(int i = 1; i < Math.abs(cornerX1-cornerX2); i+=3) {
+            for(int j = 1; j < Math.abs(cornerZ1-cornerZ2); j+=3) {
+                plantLocations.add(new Location(w,Math.min(cornerX1,cornerX2) + i,y,Math.min(cornerZ1,cornerZ2) + j));
+            }
+        }
+    }
+    public void showPlantLocations() {
+        World particleWorld = plantLocations.get(0).getWorld();
+        if(particleWorld == null) {
+            Bukkit.broadcastMessage("世界不存在");
+            return;
+        }
+
+        for(Location loc : plantLocations) {
+            particleWorld.spawnParticle(Particle.END_ROD, loc.clone().add(0,1,0), 5, 0, 0, 0,0);
+        }
     }
     public Location getVillagerArea() {
         return villagerArea;
@@ -57,10 +89,12 @@ public class PvzMap extends QinMap {
         private final List<Integer> waveTimes;
         private final Map<Integer, WaveData> waves = new HashMap<>();
         private final String name;
+        private final int graveAmount;
 
-        public LevelData(String name,List<Integer> totalTime) {
+        public LevelData(String name,List<Integer> totalTime, int graveAmount) {
             this.name = name;
             this.waveTimes = totalTime;
+            this.graveAmount = graveAmount;
         }
 
         public void addWaveData(int waveTime, WaveData waveData) {
@@ -71,7 +105,7 @@ public class PvzMap extends QinMap {
             return waveTimes;
         }
         public String getId() {return name;}
-
+        public int getGraveAmount() {return graveAmount;}
         public Map<Integer, WaveData> getWaves() {
             return waves;
         }
@@ -108,6 +142,12 @@ public class PvzMap extends QinMap {
         villager.setHealth(1);
         villager.addScoreboardTag("pvz_brain");
         villager.setGlowing(true);
+        villager.setCustomName("§5你的脑子");
+        villager.setCustomNameVisible(true);
+
+        //召唤坟墓
+
+
         PvzRound.initRound(villager, levelData);
 
         int lastWaveTime = 0;
@@ -120,6 +160,14 @@ public class PvzMap extends QinMap {
                         for (Player player : world.getPlayers()) {
                             player.sendTitle("§c§l一大波僵尸即将来袭！", "", 10, 120, 20); // 显示标题
                         }
+                        new BukkitRunnable() {
+                            @Override
+                            public void run() {
+                                for (Player player : world.getPlayers()) {
+                                    player.playSound(player, Sound.ITEM_GOAT_HORN_SOUND_2,1,1); // 发出声音
+                                }
+                            }
+                        }.runTaskLater(QinKitPVPS.getPlugin(),150);
                     }
                 };
                 waveRunnable.runTaskLater(QinKitPVPS.getPlugin(),wave.getKey() - 150);
@@ -150,6 +198,7 @@ public class PvzMap extends QinMap {
                     int spawnAmount = waveData.amount;
                     if(difficultly == 0) spawnAmount = spawnAmount / 2 + 1;
                     else if(difficultly == 2) spawnAmount = (int) (spawnAmount * 1.5);
+                    else if(difficultly == 3) spawnAmount = (int) (spawnAmount * 2);
 
                     for(int i = 0; i < spawnAmount; i++) {
                         Location randomLocation = generateRandomLocation();
@@ -242,6 +291,44 @@ public class PvzMap extends QinMap {
                 z.setAdult();
                 Objects.requireNonNull(z.getAttribute(Attribute.GENERIC_MOVEMENT_SPEED)).setBaseValue(0.23);
             }
+
+            case "钻石僵尸" -> {
+                Zombie z = spawnZombie(Zombie.class,randomLocation);
+                Function.setEntityHealth(z,40);
+                z.setAdult();
+                Function.setMobEquipment(z,new ItemStack(Material.DIAMOND_SWORD)
+                        ,new ItemStack(Material.DIAMOND_HELMET)
+                        ,new ItemStack(Material.DIAMOND_CHESTPLATE));
+            }
+
+            case "下界僵尸" -> {
+                Zombie z = spawnZombie(Zombie.class,randomLocation);
+                Function.setEntityHealth(z,50);
+                z.setAdult();
+                Function.setMobEquipment(z,new ItemStack(Material.NETHERITE_SWORD)
+                        ,new ItemStack(Material.NETHERITE_HELMET)
+                        ,new ItemStack(Material.NETHERITE_CHESTPLATE));
+            }
+
+            case "读报僵尸" -> {
+                Zombie z = spawnZombie(Zombie.class,randomLocation);
+                Function.setEntityHealth(z,30);
+                z.setAdult();
+                z.addScoreboardTag("paperZombie");
+                PvzEntity.setZombieExtraHealth(z,20);
+                PvzEntity.setZombieMaxExtraHealth(z,20);
+                PVZFunction.summonExtra(z,"报纸",0);
+            }
+
+            case "铁栅栏僵尸" -> {
+                Zombie z = spawnZombie(Zombie.class,randomLocation);
+                Function.setEntityHealth(z,30);
+                z.setAdult();
+                z.addScoreboardTag("ironDoorZombie");
+                PvzEntity.setZombieExtraHealth(z,30 * 4.07);
+                PvzEntity.setZombieMaxExtraHealth(z,30 * 4.07);
+                PVZFunction.summonExtra(z,"铁栅栏",0);
+            }
         }
     }
 
@@ -272,8 +359,9 @@ public class PvzMap extends QinMap {
             zombieTeam.addTeamEntities(e);
         }
         e.addScoreboardTag("pvz_zombie");
+        Random random = new Random();
         if(e instanceof LivingEntity lv)
-            Objects.requireNonNull(lv.getAttribute(Attribute.GENERIC_MOVEMENT_SPEED)).setBaseValue(0.1615);
+            Objects.requireNonNull(lv.getAttribute(Attribute.GENERIC_MOVEMENT_SPEED)).setBaseValue(random.nextDouble() * 0.005 + 0.157);
         if(e instanceof Mob m) PvzRound.addZombieToRound(m);
         return e;
     }

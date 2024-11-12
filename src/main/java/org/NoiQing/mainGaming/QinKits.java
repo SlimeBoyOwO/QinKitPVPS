@@ -21,13 +21,9 @@ public class QinKits {
 
     }
     public void giveQinKitToPlayer(Player player, QinKit QinKit){
-        if(!player.hasPermission(QinKit.getPermission())){
-            player.sendMessage("§7> > §b§lQinKitPVPS §7--> §3你还没有拥有这个职业呢 §b(*O^O*)");
-        }else{
-            player.getInventory().clear();
-            player.getInventory().setArmorContents(null);
-            QinKit.apply(player);
-        }
+        player.getInventory().clear();
+        player.getInventory().setArmorContents(null);
+        QinKit.apply(player);
     }
     private QinKit createKitFromResource(Configuration resource) throws IllegalAccessException, NoSuchMethodException, InvocationTargetException {
 

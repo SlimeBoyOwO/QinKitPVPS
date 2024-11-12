@@ -123,11 +123,28 @@ public class QinMaps {
             pvzMap.setMonsterSpawnArea(corner1, corner2);
         }
 
+        ConfigurationSection plantsSection = resource.getConfigurationSection("PlantsArea");
+        if (plantsSection != null) {
+            // 获取两个角落的坐标
+            Location corner1 = new Location(Bukkit.getWorld(Objects.requireNonNull(resource.getString("World"))),
+                    plantsSection.getDouble("1.X"),
+                    plantsSection.getDouble("1.Y"),
+                    plantsSection.getDouble("1.Z"));
+
+            Location corner2 = new Location(Bukkit.getWorld(Objects.requireNonNull(resource.getString("World"))),
+                    plantsSection.getDouble("2.X"),
+                    plantsSection.getDouble("2.Y"),
+                    plantsSection.getDouble("2.Z"));
+
+            // 设置怪物生成区域
+            pvzMap.setPlantCorner(corner1, corner2);
+        }
+
         // 设置关卡信息
         ConfigurationSection levelsSection = resource.getConfigurationSection("Levels");
         if (levelsSection != null) {
             for (String levelKey : levelsSection.getKeys(false)) {
-                PvzMap.LevelData levelData = new PvzMap.LevelData(levelKey,levelsSection.getIntegerList(levelKey + ".TotalTime"));
+                PvzMap.LevelData levelData = new PvzMap.LevelData(levelKey,levelsSection.getIntegerList(levelKey + ".TotalTime"), levelsSection.contains(levelKey + ".GraveAmount") ? levelsSection.getInt(levelKey + ".GraveAmount") : 0);
 
                 ConfigurationSection wavesSection = levelsSection.getConfigurationSection(levelKey + ".Waves");
                 if (wavesSection != null) {

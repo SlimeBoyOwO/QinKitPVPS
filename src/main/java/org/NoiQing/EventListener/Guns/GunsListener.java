@@ -163,7 +163,6 @@ public class GunsListener implements Listener {
            Block block = result.getHitBlock();
             block.getWorld().spawnParticle(Particle.LAVA,block.getLocation(),30,0.5,0.5,0.5,0,null,true);
             block.getWorld().playSound(block.getLocation(),Sound.ENTITY_GENERIC_EXPLODE,8,1);
-            player.setRotation(player.getLocation().getYaw(), player.getLocation().getPitch()- 3);
         }
         player.getWorld().playSound(player.getLocation(),Sound.ENTITY_GENERIC_EXPLODE,1,1);
     }

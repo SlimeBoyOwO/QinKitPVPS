@@ -5,6 +5,7 @@ import net.md_5.bungee.api.chat.TextComponent;
 import org.NoiQing.AllayWar.PvzGame.Game.PvzRound;
 import org.NoiQing.AllayWar.PvzGame.PVZUtils.PVZFunction;
 import org.NoiQing.AllayWar.PvzGame.PVZUtils.PvzEntity;
+import org.NoiQing.QinKitPVPS;
 import org.NoiQing.api.QinTeam;
 import org.NoiQing.mainGaming.QinTeams;
 import org.NoiQing.util.Function;
@@ -19,7 +20,10 @@ import org.bukkit.event.player.PlayerInteractEvent;
 import org.bukkit.inventory.ItemStack;
 import org.bukkit.potion.PotionEffect;
 import org.bukkit.potion.PotionEffectType;
+import org.bukkit.scheduler.BukkitRunnable;
 
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Objects;
 
 public class PlantsListeners implements Listener {
@@ -52,11 +56,36 @@ public class PlantsListeners implements Listener {
     public void onPvzZombieDeath(EntityDeathEvent e) {
         Entity entity = e.getEntity();
         if(entity.getScoreboardTags().contains("pvz_zombie") && entity instanceof Mob m) {
-            PvzRound.removeZombieFromRound(m);
-            PvzEntity.getPlantDisplays(m).forEach(Entity::remove);
-            PvzEntity.removePlantDisplays(m);
-            PvzEntity.getEffectDisplays(m).forEach(Entity::remove);
-            PvzEntity.removeEffectDisplays(m);
+            removeAllPlantDisplays(m);
+            Player killer = m.getKiller();
+            int chance = Function.createRandom(0,100);
+            if(killer != null) chance = chance / 2;
+            int money = PvzEntity.getPlayerMoney(killer);
+            int addMoney = 0;
+            if(chance < 1) addMoney = 100;
+            else if(chance < 6) addMoney = 10;
+            else if(chance < 47) addMoney = 1;
+            int addedMoney = money + addMoney;
+
+            if(addedMoney >= 0) {
+                if(killer != null) {
+                    PvzEntity.setPlayerMoney(killer, addedMoney);
+                    killer.spigot().sendMessage(ChatMessageType.ACTION_BAR, TextComponent.fromLegacy("§e+ " + addMoney + " 钱钱: " + addedMoney));
+                } else {
+                    if(m.getWorld().getPlayers().size() > 0) {
+                        List<Player> moneyPlayers = new ArrayList<>();
+                        for(Player checkPlayer : m.getWorld().getPlayers()) {
+                            if(checkPlayer.getGameMode().equals(GameMode.ADVENTURE) || checkPlayer.getGameMode().equals(GameMode.ADVENTURE))
+                                moneyPlayers.add(checkPlayer);
+                        }
+                        if(moneyPlayers.size() > 0) {
+                            Player p = moneyPlayers.get(Function.createRandom(0,moneyPlayers.size()));
+                            PvzEntity.setPlayerMoney(p, PvzEntity.getPlayerMoney(p) + addMoney);
+                            p.spigot().sendMessage(ChatMessageType.ACTION_BAR, TextComponent.fromLegacy("§e+ " + addMoney + " 钱钱: " + addedMoney));
+                        }
+                    }
+                }
+            }
         }
         if(entity.getScoreboardTags().contains("pvz_brain")) {
             PvzRound.gameOver();
@@ -64,26 +93,121 @@ public class PlantsListeners implements Listener {
 
     }
 
+    private void removeAllPlantDisplays(Mob m) {
+        PvzRound.removeZombieFromRound(m);
+        PvzEntity.getPlantDisplays(m).forEach(Entity::remove);
+        PvzEntity.removePlantDisplays(m);
+        PvzEntity.getEffectDisplays(m).forEach(Entity::remove);
+        PvzEntity.removeEffectDisplays(m);
+        PvzEntity.getExtraDisplays(m).forEach(Entity::remove);
+        PvzEntity.removeExtraDisplays(m);
+    }
+
 
     @EventHandler
-    public void onPvzZombieHurt(EntityDamageEvent e) {
+    public void onPvzZombieHurt(EntityDamageByEntityEvent e) {
         Entity zombie = e.getEntity();
+        Entity damager = e.getDamager();
         if(zombie.getScoreboardTags().contains("pvz_zombie") && zombie instanceof Mob m) {
+            String originalName = Function.getTopEntity(zombie).getCustomName();
+
             double damagedHealth = m.getHealth() - e.getFinalDamage();
             damagedHealth = damagedHealth < 0 ? 0 : damagedHealth;
             double healthBar = damagedHealth / Objects.requireNonNull(m.getAttribute(Attribute.GENERIC_MAX_HEALTH)).getValue();
-            int insertLoc = (int) (healthBar * 20) + 4;
+            double extraHealth = PvzEntity.getZombieExtraHealth(m);
+            double damagedExtraHealth = extraHealth - e.getFinalDamage();
             StringBuilder stringBuilder = new StringBuilder("§c§l||||||||||||||||||||");
-            stringBuilder.insert(insertLoc,"§7§l");
-            Entity topEntity;
-            if(zombie.getPassengers().isEmpty()) topEntity = zombie;
-            else topEntity = zombie.getPassengers().getLast();
-            topEntity.setCustomName(stringBuilder.toString());
-            topEntity.setCustomNameVisible(true);
+            if(damagedExtraHealth > 0) {
+                double extraHealthBar = damagedExtraHealth / PvzEntity.getZombieMaxExtraHealth(zombie);
+                int extraInsertLoc = (int) (extraHealthBar * 10) + 18;
+                stringBuilder = new StringBuilder("§c§l||||||||||§6§l||||||||||");
+                if(originalName != null && originalName.startsWith("§b") || m.getPotionEffect(PotionEffectType.SLOWNESS) != null) {
+                    stringBuilder.replace(0,2,"§b");
+                    stringBuilder.replace(14,16,"§3");
+                }
+                stringBuilder.insert(extraInsertLoc,"§7§l");
+            } else {
+                int healthInsertLoc = (int) (healthBar * 20) + 4;
+                if(originalName != null && originalName.startsWith("§b") || m.getPotionEffect(PotionEffectType.SLOWNESS) != null)
+                    stringBuilder.replace(0,2,"§b");
+                stringBuilder.insert(healthInsertLoc,"§7§l");
+            }
 
             if(damagedHealth <= 30 && m.getScoreboardTags().contains("pvz_armed")) {
                 PvzEntity.getPlantDisplays(m).forEach(Entity::remove);
                 PvzEntity.removePlantDisplays(m);
+            }
+
+            // TODO 加上对具有二类防具僵尸的伤害判定
+            // 这里表明僵尸拥有二类防具
+            if(PvzEntity.getZombieMaxExtraHealth(zombie) > 1) {
+                PvzEntity.setZombieExtraHealth(m,damagedExtraHealth);
+                // 假如实体还没清除，则执行清除逻辑
+                if(PvzEntity.getExtraDisplays(m).isEmpty()) return;
+                if(damagedExtraHealth < 0) {
+                    PvzEntity.getExtraDisplays(m).forEach(Entity::remove);
+                    PvzEntity.removeExtraDisplays(m);
+                    PvzEntity.setZombieMaxExtraHealth(zombie,0);
+                } else {
+                    if(damager.getScoreboardTags().contains("pvz_piercing")) {
+                        int healthInsertLoc = (int) (healthBar * 10) + 4;
+                        stringBuilder.insert(healthInsertLoc,"§7§l");
+                    } else e.setCancelled(true);
+                }
+            }
+
+            Entity topEntity = Function.getTopEntity(zombie);
+            topEntity.setCustomName(stringBuilder.toString());
+            topEntity.setCustomNameVisible(true);
+
+            if(m.getScoreboardTags().contains("paperZombie") && !m.getScoreboardTags().contains("angry")) {
+                if(damagedExtraHealth < 0) {
+                    m.addScoreboardTag("angry");
+                    m.setAI(false);
+                    m.getWorld().playSound(m.getLocation(),Sound.ENTITY_VILLAGER_TRADE,3,1);
+                    new BukkitRunnable() {
+                        @Override
+                        public void run() {
+                            if(m.isDead()) return;
+                            m.addPotionEffect(new PotionEffect(PotionEffectType.STRENGTH,999999,2));
+                            Objects.requireNonNull(m.getAttribute(Attribute.GENERIC_MOVEMENT_SPEED)).setBaseValue(0.32);
+                            m.getWorld().playSound(m.getLocation(),Sound.ENTITY_ZOMBIFIED_PIGLIN_ANGRY,3,1);
+                            m.setAI(true);
+                        }
+                    }.runTaskLater(QinKitPVPS.getPlugin(),20);
+                }
+            }
+        }
+    }
+
+    @EventHandler
+    public void onPotion(EntityPotionEffectEvent e) {
+        Entity entity = e.getEntity();
+        if(!entity.getScoreboardTags().contains("pvz_zombie")) return;
+        if(!(entity instanceof LivingEntity zombie)) return;
+        switch (e.getAction()) {
+            case ADDED -> {
+                if(e.getNewEffect() == null) return;
+                if(!e.getNewEffect().getType().equals(PotionEffectType.SLOWNESS)) return;
+
+                Entity topEntity = Function.getTopEntity(zombie);
+                String healthBar = topEntity.getCustomName();
+                if(healthBar != null) {
+                    healthBar = healthBar.replaceAll("§c","§b");
+                    topEntity.setCustomName(healthBar);
+                }
+            }
+
+            case REMOVED -> {
+                if(e.getOldEffect() == null) return;
+                if(!e.getOldEffect().getType().equals(PotionEffectType.SLOWNESS)) return;
+
+                Entity topEntity = Function.getTopEntity(zombie);
+                String healthBar = topEntity.getCustomName();
+                if(healthBar != null) {
+                    healthBar = healthBar.replaceAll("§b","§c");
+                    topEntity.setCustomName(healthBar);
+                }
             }
         }
     }
@@ -95,7 +219,7 @@ public class PlantsListeners implements Listener {
         if(!plant.getScoreboardTags().contains("pvz_plant")) return;
         if(!(zombie instanceof LivingEntity lv)) return;
 
-        if(plant.getScoreboardTags().contains("icebergLettuce")) {
+        if(plant.getScoreboardTags().contains("pvz_freeze") && PvzEntity.getZombieExtraHealth(zombie) <= 0) {
             lv.addPotionEffect(new PotionEffect(PotionEffectType.SLOWNESS, 18 * 20, 2, true, false));
             lv.addScoreboardTag("pvz_frozen");
             lv.setAI(false);
@@ -117,9 +241,15 @@ public class PlantsListeners implements Listener {
 
     @EventHandler
     public void onPvzZombieAttackPlant(EntityDamageByEntityEvent e) {
-        Entity zombie = e.getDamager();
+        Entity damager = e.getDamager();
         Entity plant = e.getEntity();
-        if(!zombie.getScoreboardTags().contains("pvz_zombie")) return;
+        if(!damager.getScoreboardTags().contains("pvz_zombie")) return;
+        if(!(damager instanceof LivingEntity zombie)) return;
+
+        //僵尸冷冻延迟攻击
+        if(zombie.getPotionEffect(PotionEffectType.SLOWNESS) != null) {
+            if(PvzEntity.isAttackFreeze(zombie)) e.setCancelled(true); return;
+        }
 
         if(zombie.getScoreboardTags().contains("torchZombie") && !zombie.getScoreboardTags().contains("torch_died")) {
             if(!plant.getScoreboardTags().contains("pvz_plant")) return;
@@ -189,19 +319,23 @@ public class PlantsListeners implements Listener {
         } else if(bullet.getScoreboardTags().contains("melon_bullet")) {
             hitEntity.damage(16, shooter);
             bullet.getWorld().spawnParticle(Particle.ITEM,bullet.getLocation(),20,0.5,0.25,0.5,0,new ItemStack(Material.MELON_SLICE),false);
+        } else if(bullet.getScoreboardTags().contains("puff_bullet")) {
+            hitEntity.damage(4, shooter);
+            bullet.getWorld().spawnParticle(Particle.ITEM,bullet.getLocation(),10,0.25,0.25,0.25,0.1,new ItemStack(Material.CRYING_OBSIDIAN),false);
         }
     }
 
 
     @EventHandler
     public void onPlayerPickUpSun(EntityPickupItemEvent e) {
-        if(e.getItem().getScoreboardTags().contains("pvz_sun") && e.getEntity() instanceof Player) {
+        if((e.getItem().getScoreboardTags().contains("pvz_sun") || e.getItem().getScoreboardTags().contains("pvz_small_sun")) && e.getEntity() instanceof Player) {
             int sun = PvzRound.getTotalSun();
-            sun += 25 * e.getItem().getItemStack().getAmount();
+            int sunPrice = e.getItem().getScoreboardTags().contains("pvz_small_sun") ? 15 : 25;
+            sun += sunPrice * e.getItem().getItemStack().getAmount();
             PvzRound.setTotalSun(sun);
             for(Player player : e.getItem().getWorld().getPlayers()) {
                 player.playSound(player,Sound.ENTITY_EXPERIENCE_ORB_PICKUP,1,1.5f);
-                player.spigot().sendMessage(ChatMessageType.ACTION_BAR, TextComponent.fromLegacy("§e+ " + "25" + " 阳光: " + sun));
+                player.spigot().sendMessage(ChatMessageType.ACTION_BAR, TextComponent.fromLegacy("§e+ " + sunPrice + " 阳光: " + sun));
             }
             e.getItem().remove();
             e.setCancelled(true);
@@ -210,13 +344,14 @@ public class PlantsListeners implements Listener {
 
     //怪物特定标记目标设定
     @EventHandler
-    public void onAttackTowerOnlyEntityTarget(EntityTargetEvent e) {
+    public void onPVZTarget(EntityTargetEvent e) {
         Entity entity = e.getEntity();
         Entity target = e.getTarget();
         if (entity.getScoreboardTags().contains("pvz_plant")) {
             //筛选
             QinTeam team = QinTeams.getEntityTeam(entity);
             QinTeam targetTeam = QinTeams.getEntityTeam(target);
+            Bukkit.broadcastMessage(e.getReason().toString() + Objects.requireNonNullElse(e.getTarget(),"无Entity").toString());
             if (target instanceof Player p && p.isInvulnerable()) {
                 e.setCancelled(true);
                 return;
@@ -234,11 +369,6 @@ public class PlantsListeners implements Listener {
                 return;
             }
 
-            if(entity.getScoreboardTags().contains("PoleZombie")) {
-                if(e.getTarget() != null && !e.getTarget().equals(PvzRound.getBrain())) {
-                    e.setCancelled(true); return;
-                }
-            }
             if(target != null && entity instanceof Mob mob) {
                 Entity lastTarget = PvzEntity.getMobTarget(mob);
                 if(lastTarget != null && lastTarget.getScoreboardTags().contains("pvz_nut") && !lastTarget.isDead()) {
@@ -389,7 +519,13 @@ public class PlantsListeners implements Listener {
                 setAllPlayerCD(p,"土豆地雷",30);
             }
             case "大嘴花" -> {
-
+                if(notHaveEnoughSun(p,150,"大嘴花")) return;
+                Allay z = spawnPlantCore(p, Allay.class,loc.clone().add(0.5,0,0.5));
+                PVZFunction.hidePlantCore(z);
+                z.addScoreboardTag("eaterFlower");
+                z.setCustomName("大嘴花");
+                PVZFunction.summonPlant(z,"大嘴花",0.54f,false);
+                setAllPlayerCD(p,"大嘴花",7.5);
             }
             case "寒冰射手" -> {
                 if(notHaveEnoughSun(p,175,"寒冰射手")) return;
@@ -451,9 +587,69 @@ public class PlantsListeners implements Listener {
                 Allay z = spawnPlantCore(p, Allay.class,loc.clone().add(0.5,0,0.5));
                 PVZFunction.hidePlantCore(z);
                 z.addScoreboardTag("icebergLettuce");
+                z.addScoreboardTag("pvz_freeze");
                 z.setCustomName("冰冻生菜");
                 PVZFunction.summonPlant(z,"冰冻生菜",0.54f,false);
                 setAllPlayerCD(p,"冰冻生菜",22.5);
+            }
+            case "寒冰菇" -> {
+                if(notHaveEnoughSun(p,75,"寒冰菇")) return;
+                Allay z = spawnPlantCore(p, Allay.class,loc.clone().add(0.5,0,0.5));
+                PVZFunction.hidePlantCore(z);
+                z.addScoreboardTag("iceRoom");
+                z.addScoreboardTag("pvz_freeze");
+                z.setCustomName("寒冰菇");
+                PVZFunction.summonPlant(z,"寒冰菇",0.54f,false);
+                setAllPlayerCD(p,"寒冰菇",50);
+            }
+            case "毁灭菇" -> {
+                if(notHaveEnoughSun(p,125,"毁灭菇")) return;
+                Allay z = spawnPlantCore(p, Allay.class,loc.clone().add(0.5,0,0.5));
+                PVZFunction.hidePlantCore(z);
+                z.addScoreboardTag("doomRoom");
+                z.setCustomName("毁灭菇");
+                PVZFunction.summonPlant(z,"毁灭菇",0.54f,false);
+                setAllPlayerCD(p,"毁灭菇",50);
+            }
+            case "小喷菇" -> {
+                if(notHaveEnoughSun(p,0,"小喷菇")) return;
+                Allay z = spawnPlantCore(p, Allay.class,loc.clone().add(0.5,0,0.5));
+                PVZFunction.hidePlantCore(z);
+                z.addScoreboardTag("puffRoom");
+                z.setCustomName("小喷菇");
+                PVZFunction.summonPlant(z,"小喷菇",0.54f,false);
+                setAllPlayerCD(p,"小喷菇",7.5);
+            }
+            case "胆小菇" -> {
+                if(notHaveEnoughSun(p,25,"胆小菇")) return;
+                Allay z = spawnPlantCore(p, Allay.class,loc.clone().add(0.5,0,0.5));
+                PVZFunction.hidePlantCore(z);
+                z.addScoreboardTag("afraidRoom");
+                z.setCustomName("胆小菇");
+                PVZFunction.summonPlant(z,"胆小菇",0.54f,false);
+                setAllPlayerCD(p,"胆小菇",7.5);
+            }
+
+            case "阳光菇" -> {
+                if(notHaveEnoughSun(p,25,"阳光菇")) return;
+                Allay z = spawnPlantCore(p, Allay.class,loc.clone().add(0.5,0,0.5));
+                PVZFunction.hidePlantCore(z);
+                z.addScoreboardTag("sunRoom");
+                z.setCustomName("阳光菇");
+                PVZFunction.summonPlant(z,"小阳光菇",0.54f,false);
+                setAllPlayerCD(p,"阳光菇",7.5);
+                PvzEntity.setPlantAttackCD(z,12 * 20);
+            }
+
+            case "大喷菇" -> {
+                if(notHaveEnoughSun(p,75,"大喷菇")) return;
+                Allay z = spawnPlantCore(p, Allay.class,loc.clone().add(0.5,0,0.5));
+                PVZFunction.hidePlantCore(z);
+                z.addScoreboardTag("bigPuffRoom");
+                z.addScoreboardTag("pvz_piercing");
+                z.setCustomName("大喷菇");
+                PVZFunction.summonPlant(z,"大喷菇",0.54f,false);
+                setAllPlayerCD(p,"大喷菇",7.5);
             }
         }
     }

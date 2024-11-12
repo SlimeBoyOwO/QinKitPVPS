@@ -14,6 +14,7 @@ import org.bukkit.event.block.Action;
 import org.bukkit.event.entity.*;
 import org.bukkit.event.player.*;
 import org.bukkit.inventory.ItemStack;
+import org.bukkit.inventory.meta.ItemMeta;
 import org.bukkit.inventory.meta.PotionMeta;
 import org.bukkit.potion.PotionEffect;
 import org.bukkit.potion.PotionEffectType;
@@ -265,6 +266,8 @@ public class PassiveSkillsListener implements Listener {
             player.addScoreboardTag("Ghost_Shot");
             player.getWorld().playSound(player.getLocation(), Sound.ENTITY_VEX_DEATH,1,1);
             player.addPotionEffect(new PotionEffect(PotionEffectType.SLOWNESS,20,4));
+            player.addPotionEffect(new PotionEffect(PotionEffectType.WEAKNESS,100,0));
+            player.addPotionEffect(new PotionEffect(PotionEffectType.RESISTANCE,100,1));
             new BukkitRunnable(){
                 @Override
                 public void run() {

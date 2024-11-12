@@ -1,8 +1,13 @@
 package org.NoiQing.AllayWar.PvzGame.PVZUtils;
 
+import org.bukkit.Location;
 import org.bukkit.entity.Entity;
+import org.bukkit.entity.Zombie;
+import org.bukkit.util.Vector;
 
+import java.util.HashSet;
 import java.util.List;
+import java.util.Set;
 
 public class Entity2DTree {
 
@@ -105,6 +110,56 @@ public class Entity2DTree {
         }
 
         return nearest;
+    }
+
+    // 查找直线附近的所有僵尸
+    public Set<Entity> findZombiesNearLine(Location from, Location to) {
+        Set<Entity> zombiesNearLine = new HashSet<>();
+        findZombiesNearLine(root, from, to, zombiesNearLine, true);
+        return zombiesNearLine;
+    }
+
+    private void findZombiesNearLine(Node node, Location from, Location to, Set<Entity> zombiesNearLine, boolean xAxis) {
+        if (node == null) {
+            return;
+        }
+
+        // 检查当前节点的实体是否为僵尸，且是否在直线范围内
+        if (node.entity != null) {
+            double distanceToLine = distanceToLine(from, to, node.entity.getLocation());
+            if (distanceToLine <= 3.0) {
+                zombiesNearLine.add(node.entity);
+            }
+        }
+
+        // 计算分割平面的距离，用于判断是否需要检查另一子树
+        double planeDistance = xAxis
+                ? Math.abs(from.getX() - node.entity.getLocation().getX())
+                : Math.abs(from.getZ() - node.entity.getLocation().getZ());
+
+        // 确定下一个遍历的子树
+        Node nextBranch = (xAxis
+                ? (from.getX() < node.entity.getLocation().getX() ? node.left : node.right)
+                : (from.getZ() < node.entity.getLocation().getZ() ? node.left : node.right));
+        Node oppositeBranch = (nextBranch == node.left ? node.right : node.left);
+
+        // 递归查找下一个分支
+        findZombiesNearLine(nextBranch, from, to, zombiesNearLine, !xAxis);
+
+        // 如果平面距离小于3米，也需要检查另一分支
+        if (planeDistance <= 3.0) {
+            findZombiesNearLine(oppositeBranch, from, to, zombiesNearLine, !xAxis);
+        }
+    }
+
+    // 计算点到直线的垂直距离
+    private double distanceToLine(Location from, Location to, Location point) {
+        Vector lineVec = to.toVector().subtract(from.toVector());
+        Vector pointVec = point.toVector().subtract(from.toVector());
+        double lineLength = lineVec.length();
+
+        // 点到直线的距离 = |(pointVec × lineVec) / lineLength|
+        return pointVec.crossProduct(lineVec).length() / lineLength;
     }
 
     private double distance(Entity e1, Entity e2) {

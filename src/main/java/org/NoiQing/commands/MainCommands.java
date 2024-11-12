@@ -3,6 +3,8 @@ package org.NoiQing.commands;
 import org.NoiQing.AllayWar.AWAPI.AWRound;
 import org.NoiQing.AllayWar.AWUtils.AWPlayer;
 import org.NoiQing.AllayWar.PvzGame.PVZAPI.PvzMap;
+import org.NoiQing.AllayWar.PvzGame.PVZUtils.PVZFunction;
+import org.NoiQing.AllayWar.PvzGame.PVZUtils.PvzEntity;
 import org.NoiQing.BukkitRunnable.MapRunnable;
 import org.NoiQing.BukkitRunnable.WeatherRunnable;
 import org.NoiQing.QinKitPVPS;
@@ -16,12 +18,14 @@ import org.bukkit.attribute.Attribute;
 import org.bukkit.block.Block;
 import org.bukkit.block.BlockFace;
 import org.bukkit.block.BlockState;
+import org.bukkit.block.CommandBlock;
 import org.bukkit.block.data.Directional;
 import org.bukkit.block.data.Rotatable;
 import org.bukkit.block.data.type.Fence;
 import org.bukkit.block.data.type.Lantern;
 import org.bukkit.block.data.type.Slab;
 import org.bukkit.block.data.type.Wall;
+import org.bukkit.command.BlockCommandSender;
 import org.bukkit.command.Command;
 import org.bukkit.command.CommandExecutor;
 import org.bukkit.command.CommandSender;
@@ -291,6 +295,11 @@ public class MainCommands implements CommandExecutor {
                 return true;
             }
 
+            if (args[0].equalsIgnoreCase(Function.addTab("showLocs"))) {
+                plugin.getGame().getMaps().getPvzMapByMapID(0).showPlantLocations();
+                Function.sendPlayerSystemMessage(player,"已经显示");
+            }
+
             if (args[0].equalsIgnoreCase(Function.addTab("getKey"))) {
                 try {
                     player.sendMessage("你拥有 " + plugin.getMySQLDataBase().getPlayerKey(player) + " 个小钥匙");
@@ -358,6 +367,16 @@ public class MainCommands implements CommandExecutor {
                 return true;
             }
 
+            if (args[0].equalsIgnoreCase(Function.addTab("saveItem"))) {
+                executeSaveItemData(args, player);
+                return true;
+            }
+
+            if (args[0].equalsIgnoreCase(Function.addTab("getItem"))) {
+                executeGetItemData(args, player);
+                return true;
+            }
+
             if (args[0].equalsIgnoreCase(Function.addTab("placeTower"))) {
                 executePlaceTower(args, player);
                 return true;
@@ -389,6 +408,16 @@ public class MainCommands implements CommandExecutor {
 
             if (args[0].equalsIgnoreCase(Function.addTab("freeKit"))) {
                 executeGiveFreeKitToPlayer(player, args);
+                return true;
+            }
+
+            if (args[0].equalsIgnoreCase(Function.addTab("wearPlant"))) {
+                executeWearPlant(player, args);
+                return true;
+            }
+
+            if (args[0].equalsIgnoreCase(Function.addTab("removePlant"))) {
+                executeRemovePlant(player);
                 return true;
             }
 
@@ -450,9 +479,70 @@ public class MainCommands implements CommandExecutor {
             }
 
             player.sendMessage("你输入错指令了吧？ 我们插件没有这个指令");
+        } else {
+            if (args[0].equalsIgnoreCase(Function.addTab("giveItem"))) {
+                Player p = Bukkit.getPlayer(args[2]);
+                if(p == null) {
+                    sender.sendMessage("没有名为" + args[2] + "的玩家");
+                    return true;
+                }
+                executeGetItemData(args,p); return true;
+            }
+
+            if (args[0].equalsIgnoreCase(Function.addTab("execCommand"))) {
+                Player player = Bukkit.getPlayer(args[1]);
+                if(args[1].equals("@p") && sender instanceof BlockCommandSender commandBlock) {
+                    Location blockLocation = commandBlock.getBlock().getLocation();
+
+                    Player nearestPlayer = null;
+                    double nearestDistance = Double.MAX_VALUE;
+
+                    for (Player players : commandBlock.getBlock().getWorld().getPlayers()) {
+                        double distance = players.getLocation().distance(blockLocation);
+                        if (distance < nearestDistance) {
+                            nearestDistance = distance;
+                            nearestPlayer = players;
+                        }
+                    }
+
+                    if (nearestPlayer != null) {
+                        player = nearestPlayer;
+                        // 在这里继续执行你需要的逻辑
+                    }
+                }
+                executeExecuteCommandPlayer(player, args);
+                return true;
+            }
         }
 
         return false;
+    }
+
+    private void executeRemovePlant(Player player) {
+        PvzEntity.getPlantDisplays(player).forEach(Entity::remove);
+        PvzEntity.removePlantDisplays(player);
+    }
+
+    private void executeWearPlant(Player player, String[] args) {
+        PVZFunction.summonPlant(player, args[1],0,false);
+    }
+
+    private void executeGetItemData(String[] args, Player player) {
+        Configuration saveItems = QinKitPVPS.getPlugin().getResource().getSaveItems();
+        if(saveItems.contains("SaveItems." + args[1])) {
+            ItemStack item = saveItems.getItemStack("SaveItems." + args[1]);
+            player.getInventory().addItem(item);
+        }
+        else Function.sendPlayerSystemMessage(player, "没有保存名为 " + args[1] + " 的物品");
+    }
+
+    private void executeSaveItemData(String[] args, Player player) {
+        Configuration saveItems = QinKitPVPS.getPlugin().getResource().getSaveItems();
+        ItemStack item = Function.getMainHandItem(player);
+        if (item.getType().equals(Material.AIR)) return;
+        saveItems.set("SaveItems." + args[1], item);
+        saveItems.save();
+        player.sendMessage("成功导入了物品：" + args[1]);
     }
 
     private void executeStartPvzLevel(String[] args, Player p) {
@@ -473,6 +563,7 @@ public class MainCommands implements CommandExecutor {
         if(args.length > 3) {
             if(args[3].equalsIgnoreCase("-e")) difficultly = 0;
             else if(args[3].equalsIgnoreCase("-h")) difficultly = 2;
+            else if(args[3].equalsIgnoreCase("-vh")) difficultly = 3;
         }
         pvzMap.startLevel(args[2],difficultly);
     }
@@ -685,6 +776,7 @@ public class MainCommands implements CommandExecutor {
     }
 
     private void executeExecuteCommandPlayer(Player player, String[] args) {
+        if(player == null) return;
         Player targetPlayer = Bukkit.getServer().getPlayer(args[1]);
         if(targetPlayer != null) {
             StringBuilder command = new StringBuilder();

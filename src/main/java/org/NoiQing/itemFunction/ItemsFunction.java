@@ -1,5 +1,6 @@
 package org.NoiQing.itemFunction;
 
+import org.NoiQing.QinKitPVPS;
 import org.NoiQing.api.QinMenu;
 import org.NoiQing.util.Configuration;
 import org.NoiQing.util.Function;
@@ -26,14 +27,22 @@ public class ItemsFunction {
         ItemMeta meta = item.getItemMeta();
         assert meta != null;
 
+        if (config.contains(path + ".ItemID")) {
+            String itemID = config.getString(path + ".ItemID");
+            final Configuration saveItems = QinKitPVPS.getPlugin().getResource().getSaveItems();
+            final ItemStack newItem = saveItems.getItemStack("SaveItems." + itemID);
+            if(newItem != null) item = newItem.clone();
+        }
+
         if (config.contains(path + ".Name")) {
             meta.setDisplayName(Function.changeColorCharacters(Objects.requireNonNull(config.getString(path + ".Name"))));
+            item.setItemMeta(meta);
         }
         if (config.contains(path + ".Lore")) {
             meta.setLore(Function.changeColorCharacters(config.getStringList(path + ".Lore")));
+            item.setItemMeta(meta);
         }
 
-        item.setItemMeta(meta);
 
         if (config.contains(path + ".Material")) {
             String materialValue = config.getString(path + ".Material");
@@ -201,6 +210,14 @@ public class ItemsFunction {
         List<String> requirements = config.getStringList(path+ ".Requirements");
         ItemStack item = new ItemStack(Material.BEDROCK,1);
         ItemStack alternativeItem = new ItemStack(Material.BEDROCK,1);
+        String itemID = config.getString(path + ".ItemID");
+        Configuration saveItems = QinKitPVPS.getPlugin().getResource().getSaveItems();
+        if(itemID != null) {
+            final ItemStack newItem = saveItems.getItemStack("SaveItems." + itemID);
+            if(newItem != null) item = newItem.clone();
+        }
+
+
         List<String> leftCommandsATL = config.getStringList(path + ".Else.LeftClickCommands");
         List<String> rightCommandsATL = config.getStringList(path + ".Else.RightClickCommands");
 

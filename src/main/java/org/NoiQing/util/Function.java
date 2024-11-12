@@ -2,6 +2,8 @@ package org.NoiQing.util;
 
 import org.NoiQing.AllayWar.AWAPI.AWRound;
 import org.NoiQing.AllayWar.AWUtils.AWPlayer;
+import org.NoiQing.AllayWar.PvzGame.Game.PvzRound;
+import org.NoiQing.AllayWar.PvzGame.PVZUtils.PvzEntity;
 import org.NoiQing.BukkitRunnable.PluginScoreboard;
 import org.NoiQing.EventListener.GuiListeners.CustomMenuListeners;
 import org.NoiQing.QinKitPVPS;
@@ -603,9 +605,7 @@ public class Function {
             return;
         }
 
-
-
-        int money = AWPlayer.getPlayerAWMoney(player);
+        int money = PvzRound.isRunning() ? PvzEntity.getPlayerMoney(player) : AWPlayer.getPlayerAWMoney(player);
         int price = shop.getInt("Market." + itemID + ".PurchasePrice");
 
         if(money < price) {
@@ -617,10 +617,63 @@ public class Function {
         if(commands.size() != 0) executeCommands(player, commands, "","");
 
 
-        AWPlayer.setPlayerAWMoney(player, money- price);
+        if (PvzRound.isRunning()) {
+            PvzEntity.setPlayerMoney(player, money - price);
+        } else {
+            AWPlayer.setPlayerAWMoney(player, money - price);
+        }
+
         ItemStack item = ItemsFunction.getItemStackFromPath(shop, "Market." + itemID);
         player.getInventory().addItem(item);
         player.playSound(player,Sound.ENTITY_VILLAGER_CELEBRATE,1,1f);
+    }
+
+    public static Location getLocationInFront(Entity entity, double distance) {
+        // 获取实体当前位置
+        Location currentLocation = entity.getLocation();
+
+        // 获取实体的朝向向量，并将其乘以指定距离
+        Vector direction = currentLocation.getDirection().normalize().multiply(distance);
+
+        // 返回新的位置，将朝向向量加到当前位置上
+        return currentLocation.add(direction);
+    }
+
+    public static boolean isEntityNearLine(Location from, Location to, Entity zombie, double maxDistance) {
+        // 确保起点和终点在同一世界中
+        if (!Objects.equals(from.getWorld(), to.getWorld()) || !Objects.equals(from.getWorld(), zombie.getWorld())) {
+            return false;
+        }
+
+        // 将from和to转换为向量
+        Vector start = from.toVector();
+        Vector end = to.toVector();
+        Vector zombiePos = zombie.getLocation().toVector();
+
+        // 计算from到to的向量
+        Vector lineVec = end.clone().subtract(start);
+
+        // 计算from到僵尸的向量
+        Vector fromToZombie = zombiePos.clone().subtract(start);
+
+        // 计算僵尸到直线的垂直距离
+        double distanceToLine = fromToZombie.clone().crossProduct(lineVec).length() / lineVec.length();
+
+        double distanceSquared = zombie.getLocation().distanceSquared(from);
+        if(distanceSquared + Math.pow(distanceToLine,2) > from.distanceSquared(to) + Math.pow(maxDistance,2)) return false;
+
+        // 判断是否在指定距离内
+        return distanceToLine <= maxDistance;
+    }
+
+    public static void showMagicParticle(Location rayStart, Location rayEnd, Particle particle, int amount, float xSpread, float ySpread, float zSpread, float speed) {
+        double distance = rayStart.distance(rayEnd);
+        Vector directionNormalized = rayEnd.subtract(rayStart).toVector().normalize();
+
+        for (double i = 0; i < distance; i += 0.5) {
+            Vector particleLocation = rayStart.clone().add(directionNormalized.clone().multiply(i)).toVector();
+            Objects.requireNonNull(rayStart.getWorld()).spawnParticle(particle, particleLocation.toLocation(rayStart.getWorld()), amount,xSpread,ySpread,zSpread,speed);
+        }
     }
 
     public static void executeDelayCommands(Player player, List<String> commands, QinKitPVPS plugin){
@@ -1368,6 +1421,13 @@ public class Function {
     public static String addTab (String arg) {
         CompleteCommands.getTabArryList().add(arg);
         return arg;
+    }
+
+    public static Entity getTopEntity(Entity e) {
+        Entity topEntity;
+        if(e.getPassengers().isEmpty()) topEntity = e;
+        else topEntity = e.getPassengers().getLast();
+        return topEntity;
     }
 
 

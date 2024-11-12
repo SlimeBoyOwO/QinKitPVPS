@@ -1,16 +1,17 @@
 package org.NoiQing.AllayWar.PvzGame.Game;
 
 import org.NoiQing.AllayWar.PvzGame.PVZAPI.PvzMap;
+import org.NoiQing.AllayWar.PvzGame.PVZUtils.PvzEntity;
 import org.NoiQing.QinKitPVPS;
 import org.NoiQing.itemFunction.ItemsFunction;
-import org.bukkit.Bukkit;
-import org.bukkit.GameMode;
-import org.bukkit.Material;
+import org.bukkit.*;
 import org.bukkit.boss.BarColor;
 import org.bukkit.boss.BarStyle;
 import org.bukkit.boss.BossBar;
 import org.bukkit.entity.*;
 import org.bukkit.inventory.ItemStack;
+import org.bukkit.potion.PotionEffect;
+import org.bukkit.potion.PotionEffectType;
 import org.bukkit.scheduler.BukkitRunnable;
 
 import java.util.ArrayList;
@@ -34,6 +35,7 @@ public class PvzRound {
     private static BossBar process = null;              //记录bossBar对象
     private static int totalTime = 0;                   //记录当前进度条总时间
     private static int currentTime = 0;                 //记录当前游戏进度
+    private static boolean allowSunDrop = true;
     public static void initRound(Villager v, PvzMap.LevelData level) {
         brain = v;
         running = true;
@@ -48,14 +50,18 @@ public class PvzRound {
         currentSmallWave = 0;
         waveOffset = 0;
         levelName = level.getId();
+        allowSunDrop = !levelName.startsWith("2");
+        PvzEntity.resetPlayersMoney();
         process.setTitle("§e§l关卡: " + levelName + " §3§l旗帜 §7[ §b" + currentFlag + "§7/§b " + totalFlag + " §7]");
         process.setProgress(0);
+        v.getWorld().setGameRule(GameRule.NATURAL_REGENERATION,false);
         for(Player p : brain.getWorld().getPlayers()) process.addPlayer(p);
 
         setTotalSun(50);
         for(Player p: v.getWorld().getPlayers()) {
             if(p.getGameMode().equals(GameMode.ADVENTURE)) {
                 p.setInvulnerable(false);
+                p.addPotionEffect(new PotionEffect(PotionEffectType.SATURATION,99999,2,true,false,false));
                 ItemStack sword = new ItemStack(Material.IRON_SWORD);
                 ItemsFunction.setUnbreakable(sword);
                 p.getInventory().addItem(sword);
@@ -114,13 +120,21 @@ public class PvzRound {
     public static void endRound() {
         running = false;
         waveEnd = true;
+        brain.getWorld().setGameRule(GameRule.NATURAL_REGENERATION,true);
         for(Player p: brain.getWorld().getPlayers()) {
             p.sendTitle("§a你的脑子保住了~","§b我们安全了，暂时...",10,70,20);
+            p.playSound(p, Sound.UI_TOAST_CHALLENGE_COMPLETE,1,1);
+            p.removePotionEffect(PotionEffectType.SATURATION);
             process.removeAll();
         }
         for(LivingEntity entity : brain.getWorld().getEntitiesByClass(LivingEntity.class)) {
             if(entity.getScoreboardTags().contains("pvz_plant"))
-                entity.setHealth(0);
+                new BukkitRunnable() {
+                    @Override
+                    public void run() {
+                        entity.setHealth(0);
+                    }
+                }.runTaskLater(QinKitPVPS.getPlugin(),60);
         }
         brain.remove();
         for(BukkitRunnable r : runnables) {
@@ -133,6 +147,8 @@ public class PvzRound {
     public static void gameOver() {
         for(Player p: brain.getWorld().getPlayers()) {
             p.sendTitle("§c§l僵尸吃掉了你的脑子！","§cNOOOOOOOOOOOOOO",10,70,20);
+            p.playSound(p, Sound.ENTITY_ENDERMAN_DEATH,1,0.1f);
+            p.removePotionEffect(PotionEffectType.SATURATION);
             process.removeAll();
         }
         for(Mob m:zombies) {
@@ -148,6 +164,7 @@ public class PvzRound {
                 entity.setHealth(0);
         }
         zombies.clear();
+        brain.getWorld().setGameRule(GameRule.NATURAL_REGENERATION,true);
         brain = null;
         waveEnd = false;
         running = false;
@@ -162,5 +179,9 @@ public class PvzRound {
 
     public static int getRemainZombies() {
         return zombies.size();
+    }
+
+    public static boolean allowDropSun() {
+        return allowSunDrop;
     }
 }

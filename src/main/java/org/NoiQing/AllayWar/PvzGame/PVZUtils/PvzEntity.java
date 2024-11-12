@@ -2,7 +2,6 @@ package org.NoiQing.AllayWar.PvzGame.PVZUtils;
 
 import net.md_5.bungee.api.ChatMessageType;
 import net.md_5.bungee.api.chat.TextComponent;
-import org.NoiQing.util.Function;
 import org.bukkit.Location;
 import org.bukkit.Material;
 import org.bukkit.entity.Display;
@@ -15,15 +14,17 @@ import java.util.*;
 public class PvzEntity {
     private static final Map<Entity, List<Display>> plantDisplays = new HashMap<>();
     private static final Map<Entity, List<Display>> effectDisplays = new HashMap<>();
+    private static final Map<Entity, List<Display>> extraDisplays = new HashMap<>();
     private static final Map<Entity, Integer> plantAttackCD = new HashMap<>();
     private static final Map<Entity, Integer> effectDuration = new HashMap<>();
     private static final Map<Entity,Entity> bulletOwner = new HashMap<>();
-    private static final Map<Entity, org.bukkit.util.Vector> bulletVector = new HashMap<>();
-    private static final Map<Entity, Location> entityLastLoc = new HashMap<>();
     private static final Map<Entity,Map<Entity,Location>> entityLastLocation = new HashMap<>();
-    private static final Map<Player, Integer> playerSun = new HashMap<>();
+    private static final Map<Player, Integer> playerMoney = new HashMap<>();
     private static final Map<Mob,Entity> mobTarget = new HashMap<>();
     private static final Map<Player, Map<String, Long>> plantCoolDowns = new HashMap<>();
+    private static final Map<Entity, Boolean> zombieSlowAttack = new HashMap<>();
+    private static final Map<Entity, Double> zombieExtraHealth = new HashMap<>();
+    private static final Map<Entity, Double> zombieMaxExtraHealth = new HashMap<>();
 
     /* 玩 家 冷 却 时 间 记 录 */
     public static boolean ifPlayerPlantPassCoolDownTime(Player player, String plant){
@@ -68,6 +69,13 @@ public class PvzEntity {
     public static void removeEffectDisplays(Entity plant) {
         effectDisplays.remove(plant);
     }
+    public static List<Display> getExtraDisplays(Entity plant) {
+        extraDisplays.computeIfAbsent(plant, k -> new ArrayList<>());
+        return extraDisplays.getOrDefault(plant, null);
+    }
+    public static void removeExtraDisplays(Entity plant) {
+        extraDisplays.remove(plant);
+    }
     public static void setPlantAttackCD(Entity a, int cd){
         plantAttackCD.put(a, cd);
     }
@@ -86,42 +94,32 @@ public class PvzEntity {
     public static Entity getBulletOwner(Entity bullet) {
         return bulletOwner.getOrDefault(bullet,null);
     }
-    public static void setBulletVector(Entity bullet, org.bukkit.util.Vector vector) {
-        bulletVector.put(bullet,vector);
-    }
-    public static org.bukkit.util.Vector getBulletVector(Entity bullet) {
-        return bulletVector.getOrDefault(bullet,bullet.getVelocity());
-    }
-    public static void setEntityLastLoc(Entity e, Location loc) {
-        entityLastLoc.put(e,loc);
-    }
-    public static Location getEntityLastLoc(Entity e) {
-        return entityLastLoc.getOrDefault(e,e.getLocation());
-    }
     public static void clearEntityLastLoc(Entity e) {
-        entityLastLoc.remove(e);
+        entityLastLocation.remove(e);
     }
     public static void setEntityLastLocation(Entity e, Entity plant) {
+        entityLastLocation.put(e,new HashMap<>());
         entityLastLocation.getOrDefault(e,new HashMap<>()).put(plant,e.getLocation());
     }
     public static Location getEntityLastLocation(Entity e, Entity plant) {
         return entityLastLocation.getOrDefault(e,new HashMap<>()).getOrDefault(plant,e.getLocation());
     }
-    public static Integer getPlayerSun(Player p) {
-        return playerSun.getOrDefault(p,0);
+    public static Integer getPlayerMoney(Player p) {
+        return playerMoney.getOrDefault(p,0);
     }
-    public static void setPlayerSun(Player p, int sun) {
-        playerSun.put(p,sun);
+    public static void setPlayerMoney(Player p, int money) {
+        playerMoney.put(p,money);
     }
+    public static void resetPlayersMoney() {playerMoney.clear();}
     public static Integer getAllPlayerSun() {
         int totalSun = 0;
-        for(Map.Entry<Player,Integer> set : playerSun.entrySet()) {
+        for(Map.Entry<Player,Integer> set : playerMoney.entrySet()) {
             totalSun += set.getValue();
         }
         return totalSun;
     }
     public static void addAllPlayerSun(int sun) {
-        for(Map.Entry<Player,Integer> set : playerSun.entrySet()) {
+        for(Map.Entry<Player,Integer> set : playerMoney.entrySet()) {
             set.setValue(getAllPlayerSun() + sun);
         }
     }
@@ -131,5 +129,21 @@ public class PvzEntity {
     }
     public static Entity getMobTarget(Mob m) {
         return mobTarget.getOrDefault(m,null);
+    }
+    public static boolean isAttackFreeze(Entity zombie) {
+        zombieSlowAttack.put(zombie,!zombieSlowAttack.getOrDefault(zombie,false));
+        return zombieSlowAttack.get(zombie);
+    }
+    public static void setZombieExtraHealth(Entity zombie, double health) {
+        zombieExtraHealth.put(zombie,health);
+    }
+    public static double getZombieExtraHealth(Entity zombie) {
+        return zombieExtraHealth.getOrDefault(zombie,0d);
+    }
+    public static void setZombieMaxExtraHealth(Entity zombie, double health) {
+        zombieMaxExtraHealth.put(zombie,health);
+    }
+    public static double getZombieMaxExtraHealth(Entity zombie) {
+        return zombieMaxExtraHealth.getOrDefault(zombie,0d);
     }
 }
