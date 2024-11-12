@@ -18,6 +18,7 @@ public class PlayerChatListener implements Listener {
 
         /* 替换那些有头衔的玩家 */
         if (rec != null && ! Objects.equals(rec, "None"))
-            event.setFormat("§e[" + Function.changeColorCharacters(rec) + "§e] §f§l%s : §r%s");
+            event.setFormat("§e[" + Function.changeColorCharacters(rec) + "§e] §f§l%s§f: §r%s");
+        else event.setFormat("§f§l%s §f: §r%s");
     }
 }
