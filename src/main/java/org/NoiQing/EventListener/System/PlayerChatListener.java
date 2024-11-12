@@ -12,9 +12,12 @@ import java.util.Objects;
 
 public class PlayerChatListener implements Listener {
     @EventHandler
-    public void onPlayerSendMessage(AsyncPlayerChatEvent event){
-        Player player = event.getPlayer();
-        if(PlayerDataSave.getPlayerTextDataRecord(player, "playerPrefix") != null && !Objects.equals(PlayerDataSave.getPlayerTextDataRecord(player, "playerPrefix"), "None"))
-            event.setFormat("§7[" + Function.changeColorCharacters(PlayerDataSave.getPlayerTextDataRecord(player, "playerPrefix")) + "§7]" + " §f<" + player.getName() + "> " + event.getMessage());
+    public void onPlayerSendMessage (AsyncPlayerChatEvent event) {
+        Player p = event.getPlayer();
+        String rec = PlayerDataSave.getPlayerTextDataRecord(p, "playerPrefix");
+
+        /* 替换那些有头衔的玩家 */
+        if (rec != null && ! Objects.equals(rec, "None"))
+            event.setFormat("§e[" + Function.changeColorCharacters(rec) + "§e] §f§l%s : §r%s");
     }
 }
