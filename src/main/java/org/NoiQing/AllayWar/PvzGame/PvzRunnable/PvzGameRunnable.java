@@ -47,7 +47,7 @@ public class PvzGameRunnable extends BukkitRunnable {
                 }
             }
             for(Monster zombie: w.getEntitiesByClass(Monster.class)) {
-                if (!zombie.getScoreboardTags().contains("pvz_plant") && !zombie.isDead()) {
+                if (!zombie.getScoreboardTags().contains("pvz_plant") && !zombie.isDead() && !zombie.getScoreboardTags().contains("pvz_grave")) {
                     zombieList.add(zombie);
                 }
             }
@@ -57,7 +57,7 @@ public class PvzGameRunnable extends BukkitRunnable {
                 if(effectDuration >= 0) {
                     PvzEntity.setEffectDuration(e,--effectDuration);
                     if(effectDuration == 0) {
-                        if(e instanceof Mob mob) mob.setAI(true);
+                        if(e instanceof Mob mob && !mob.getScoreboardTags().contains("pvz_grave")) mob.setAI(true);
                         List<Display> effectDisplays = PvzEntity.getEffectDisplays(e);
                         if(!effectDisplays.isEmpty()) {
                             for(Display display : effectDisplays)
@@ -346,12 +346,14 @@ public class PvzGameRunnable extends BukkitRunnable {
                 }
             }
 
+            if(m.getScoreboardTags().contains("pvz_grave")) continue;
             //保证僵尸向着脑子攻击
             if(m.getTarget() == null || m.getTarget().isDead()) {
                 m.setTarget(PvzRound.getBrain());
             }
 
             //以下代码针对僵尸逻辑
+            //撑杆跳僵尸
             if(m.getScoreboardTags().contains("PoleZombie") && !m.getScoreboardTags().contains("Pole_Jumped")) {
                 for(Entity e : m.getNearbyEntities(4,2,4)) {
                     if(!e.getScoreboardTags().contains("pvz_plant") || PVZFunction.isBullet(e)) continue;
@@ -371,6 +373,19 @@ public class PvzGameRunnable extends BukkitRunnable {
                 }
             }
 
+            //死神（召唤坟墓）僵尸
+            if(m.getScoreboardTags().contains("graveZombie")) {
+                int cd = PvzEntity.getPlantAttackCD(m);
+                if(cd >= 10) {
+                    // TODO 实现死神僵尸逻辑
+                    PvzEntity.setPlantAttackCD(m,0);
+                    m.addPotionEffect(new PotionEffect(PotionEffectType.SLOWNESS,5 * 20,244,true,false));
+                    m.getWorld().playSound(m.getLocation(),Sound.ENTITY_SHULKER_AMBIENT,1.5f,1);
+
+
+                }
+            }
+
         }
         if(PvzRound.isRunning()) {
             if(PvzRound.allowDropSun() && ++sunFall == 20 * 7) {
@@ -385,7 +400,7 @@ public class PvzGameRunnable extends BukkitRunnable {
             PvzRound.addCurrentTime();
             PvzRound.getProcessBar().setProgress((double) PvzRound.getCurrentTime() / PvzRound.getTotalTime());
         }
-        if(PvzRound.isRunning() && PvzRound.isWaveEnd() && PvzRound.getZombies().size() == 0)
+        if(PvzRound.isRunning() && PvzRound.isWaveEnd() && PvzRound.getRemainZombies() == 0)
             PvzRound.endRound();
 
         if(pause % updateInterval == 0){

@@ -1,17 +1,12 @@
 package org.NoiQing.AllayWar.PvzGame.PVZAPI;
 
 import org.NoiQing.AllayWar.PvzGame.Game.PvzRound;
-import org.NoiQing.AllayWar.PvzGame.PVZUtils.PVZFunction;
-import org.NoiQing.AllayWar.PvzGame.PVZUtils.PvzEntity;
+import org.NoiQing.AllayWar.PvzGame.PVZUtils.SpawnZombie;
 import org.NoiQing.QinKitPVPS;
 import org.NoiQing.api.QinMap;
-import org.NoiQing.api.QinTeam;
-import org.NoiQing.mainGaming.QinTeams;
 import org.NoiQing.util.Function;
 import org.bukkit.*;
-import org.bukkit.attribute.Attribute;
 import org.bukkit.entity.*;
-import org.bukkit.inventory.ItemStack;
 import org.bukkit.scheduler.BukkitRunnable;
 
 import java.util.*;
@@ -22,7 +17,10 @@ public class PvzMap extends QinMap {
     private Location monsterSpawnCorner2;
     private Location plantCorner1;
     private Location plantCorner2;
+    private Location graveCorner1;
+    private Location graveCorner2;
     private final List<Location> plantLocations = new ArrayList<>();
+    private final List<Location> graveLocations = new ArrayList<>();
     private Location villagerArea;
     // 关卡信息，使用一个 Map 存储各个关卡的 Wave 数据
     private final Map<String, LevelData> levels = new HashMap<>();
@@ -36,20 +34,36 @@ public class PvzMap extends QinMap {
         this.plantCorner2 = corner2;
         initPlantLocations();
     }
+    public void setGraveCorner(Location corner1, Location corner2) {
+        this.graveCorner1 = corner1;
+        this.graveCorner2 = corner2;
+        initGraveLocations();
+    }
+
+    private void initGraveLocations() {
+        initLocations(graveCorner1,graveCorner2,graveLocations);
+    }
+
     private void initPlantLocations() {
-        double cornerX1 = plantCorner1.getX();
-        double cornerX2 = plantCorner2.getX();
-        double cornerZ1 = plantCorner1.getZ();
-        double cornerZ2 = plantCorner2.getZ();
-        World w = plantCorner1.getWorld();
-        double y = plantCorner1.getY();
+        initLocations(plantCorner1,plantCorner2,plantLocations);
+    }
+
+    private void initLocations(Location corner1, Location corner2, List<Location> locations) {
+        double cornerX1 = corner1.getX();
+        double cornerX2 = corner2.getX();
+        double cornerZ1 = corner1.getZ();
+        double cornerZ2 = corner2.getZ();
+        World w = corner1.getWorld();
+        double y = corner1.getY();
 
         for(int i = 1; i < Math.abs(cornerX1-cornerX2); i+=3) {
             for(int j = 1; j < Math.abs(cornerZ1-cornerZ2); j+=3) {
-                plantLocations.add(new Location(w,Math.min(cornerX1,cornerX2) + i,y,Math.min(cornerZ1,cornerZ2) + j));
+                locations.add(new Location(w,Math.min(cornerX1,cornerX2) + i,y,Math.min(cornerZ1,cornerZ2) + j));
             }
         }
     }
+
+
     public void showPlantLocations() {
         World particleWorld = plantLocations.get(0).getWorld();
         if(particleWorld == null) {
@@ -146,9 +160,21 @@ public class PvzMap extends QinMap {
         villager.setCustomNameVisible(true);
 
         //召唤坟墓
+        Random random = new Random();
 
+        // 选择x个不同的随机元素
+        Set<Location> randomElements = new HashSet<>();
+        while (randomElements.size() < levelData.graveAmount) {
+            int index = random.nextInt(graveLocations.size());
+            randomElements.add(graveLocations.get(index));
+        }
 
         PvzRound.initRound(villager, levelData);
+        for(Location spawnGraveLoc : randomElements) {
+            int chance = Function.createRandom(0,3);
+            String graveName = "墓碑" + chance;
+            SpawnZombie.spawnEntityByType(spawnGraveLoc.clone().add(0.5,1,0.5),graveName);
+        }
 
         int lastWaveTime = 0;
         for(Map.Entry<Integer,WaveData> wave : levelData.getWaves().entrySet()) {
@@ -182,6 +208,7 @@ public class PvzMap extends QinMap {
                     if (wave.getKey() == firstWaveKey) {
                         for (Player player : world.getPlayers()) {
                             player.sendTitle("§c§lI'm zombie, I'm coming~", "", 10, 70, 20); // 显示标题
+                            player.playSound(player,Sound.ENTITY_ZOMBIE_AMBIENT,1,1);
                         }
                     } else if (wave.getKey() == lastWaveKey) {
                         PvzRound.endWave();
@@ -202,7 +229,7 @@ public class PvzMap extends QinMap {
 
                     for(int i = 0; i < spawnAmount; i++) {
                         Location randomLocation = generateRandomLocation();
-                        spawnEntityByType(randomLocation,waveData.type);
+                        SpawnZombie.spawnEntityByType(randomLocation,waveData.type);
                     }
 
                     PvzRound.getRunnables().remove(this);
@@ -217,119 +244,6 @@ public class PvzMap extends QinMap {
         }
 
         PvzRound.setTotalSmallWaves(PvzRound.getRunnables().size() - PvzRound.getWaveOffset());
-    }
-
-    private void spawnEntityByType(Location randomLocation, String type) {
-        World world = randomLocation.getWorld();
-        if(world == null) return;
-        switch (type) {
-            case "普通僵尸" -> {
-                Zombie z = spawnZombie(Zombie.class,randomLocation);
-                Function.setEntityHealth(z,30);
-                z.setAdult();
-            }
-
-            case "皮革僵尸" -> {
-                Zombie z = spawnZombie(Zombie.class,randomLocation);
-                Function.setEntityHealth(z,30);
-                z.setAdult();
-                Function.setMobEquipment(z,new ItemStack(Material.WOODEN_SWORD)
-                        ,new ItemStack(Material.LEATHER_HELMET)
-                        ,new ItemStack(Material.LEATHER_CHESTPLATE));
-            }
-
-            case "路障僵尸" -> {
-                Zombie z = spawnZombie(Zombie.class,randomLocation);
-                Function.setEntityHealth(z,30 * 3);
-                z.setAdult();
-                z.addScoreboardTag("pvz_armed");
-                Function.setMobEquipment(z,new ItemStack(Material.AIR));
-                PVZFunction.summonPlant(z,"路障",0,false);
-            }
-
-            case "铁桶僵尸" -> {
-                Zombie z = spawnZombie(Zombie.class,randomLocation);
-                Function.setEntityHealth(z,30 * 5);
-                z.setAdult();
-                z.addScoreboardTag("pvz_armed");
-                Function.setMobEquipment(z,new ItemStack(Material.AIR));
-                PVZFunction.summonPlant(z,"铁桶",0,false);
-            }
-
-            case "火把僵尸" -> {
-                Zombie z = spawnZombie(Zombie.class,randomLocation);
-                Function.setEntityHealth(z,30);
-                z.setAdult();
-                Function.setMobEquipment(z,new ItemStack(Material.AIR));
-                z.addScoreboardTag("torchZombie");
-                PVZFunction.summonPlant(z,"火把",0,false);
-                Objects.requireNonNull(z.getAttribute(Attribute.GENERIC_MOVEMENT_SPEED)).setBaseValue(0.19);
-            }
-
-            case "僵尸精锐" -> {
-                Zombie z = spawnZombie(Zombie.class,randomLocation);
-                Function.setEntityHealth(z,30);
-                z.setAdult();
-                Function.setMobEquipment(z,new ItemStack(Material.IRON_SWORD)
-                        ,new ItemStack(Material.IRON_HELMET)
-                        ,new ItemStack(Material.IRON_CHESTPLATE));
-            }
-
-            case "小鬼僵尸" -> {
-                Zombie z = spawnZombie(Zombie.class,randomLocation);
-                Function.setEntityHealth(z,12);
-                z.setBaby();
-                Objects.requireNonNull(z.getAttribute(Attribute.GENERIC_MOVEMENT_SPEED)).setBaseValue(0.21);
-            }
-
-            case "撑杆跳僵尸" -> {
-                Zombie z = spawnZombie(Zombie.class,randomLocation);
-                Function.setEntityHealth(z,45);
-                Function.setMobEquipment(z,new ItemStack(Material.AIR));
-                PVZFunction.summonPlant(z,"撑杆跳僵尸",0,false);
-                z.addScoreboardTag("PoleZombie");
-                z.setAdult();
-                Objects.requireNonNull(z.getAttribute(Attribute.GENERIC_MOVEMENT_SPEED)).setBaseValue(0.23);
-            }
-
-            case "钻石僵尸" -> {
-                Zombie z = spawnZombie(Zombie.class,randomLocation);
-                Function.setEntityHealth(z,40);
-                z.setAdult();
-                Function.setMobEquipment(z,new ItemStack(Material.DIAMOND_SWORD)
-                        ,new ItemStack(Material.DIAMOND_HELMET)
-                        ,new ItemStack(Material.DIAMOND_CHESTPLATE));
-            }
-
-            case "下界僵尸" -> {
-                Zombie z = spawnZombie(Zombie.class,randomLocation);
-                Function.setEntityHealth(z,50);
-                z.setAdult();
-                Function.setMobEquipment(z,new ItemStack(Material.NETHERITE_SWORD)
-                        ,new ItemStack(Material.NETHERITE_HELMET)
-                        ,new ItemStack(Material.NETHERITE_CHESTPLATE));
-            }
-
-            case "读报僵尸" -> {
-                Zombie z = spawnZombie(Zombie.class,randomLocation);
-                Function.setEntityHealth(z,30);
-                z.setAdult();
-                z.addScoreboardTag("paperZombie");
-                PvzEntity.setZombieExtraHealth(z,20);
-                PvzEntity.setZombieMaxExtraHealth(z,20);
-                PVZFunction.summonExtra(z,"报纸",0);
-            }
-
-            case "铁栅栏僵尸" -> {
-                Zombie z = spawnZombie(Zombie.class,randomLocation);
-                Function.setEntityHealth(z,30);
-                z.setAdult();
-                z.addScoreboardTag("ironDoorZombie");
-                PvzEntity.setZombieExtraHealth(z,30 * 4.07);
-                PvzEntity.setZombieMaxExtraHealth(z,30 * 4.07);
-                PVZFunction.summonExtra(z,"铁栅栏",0);
-            }
-        }
     }
 
     private Location generateRandomLocation() {
@@ -350,19 +264,5 @@ public class PvzMap extends QinMap {
 
         // 创建并返回随机位置
         return new Location(monsterSpawnCorner1.getWorld(), randomX, randomY, randomZ);
-    }
-
-    private <T extends Entity> T spawnZombie(Class<T> entityClass, Location loc) {
-        T e = Objects.requireNonNull(loc.getWorld()).spawn(loc,entityClass);
-        QinTeam zombieTeam = QinTeams.getQinTeamByName("僵尸");
-        if(zombieTeam != null) {
-            zombieTeam.addTeamEntities(e);
-        }
-        e.addScoreboardTag("pvz_zombie");
-        Random random = new Random();
-        if(e instanceof LivingEntity lv)
-            Objects.requireNonNull(lv.getAttribute(Attribute.GENERIC_MOVEMENT_SPEED)).setBaseValue(random.nextDouble() * 0.005 + 0.157);
-        if(e instanceof Mob m) PvzRound.addZombieToRound(m);
-        return e;
     }
 }

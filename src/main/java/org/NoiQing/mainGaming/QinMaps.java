@@ -105,6 +105,7 @@ public class QinMaps {
         pvzMap.setVillagerArea(villagerArea);
 
         // 设置出怪位置
+        // TODO 优化该部分代码
         // 设置怪物生成区域
         ConfigurationSection monsterAreaSection = resource.getConfigurationSection("MonsterArea");
         if (monsterAreaSection != null) {
@@ -138,6 +139,23 @@ public class QinMaps {
 
             // 设置怪物生成区域
             pvzMap.setPlantCorner(corner1, corner2);
+        }
+
+        ConfigurationSection graveSection = resource.getConfigurationSection("GraveArea");
+        if (graveSection != null) {
+            // 获取两个角落的坐标
+            Location corner1 = new Location(Bukkit.getWorld(Objects.requireNonNull(resource.getString("World"))),
+                    graveSection.getDouble("1.X"),
+                    graveSection.getDouble("1.Y"),
+                    graveSection.getDouble("1.Z"));
+
+            Location corner2 = new Location(Bukkit.getWorld(Objects.requireNonNull(resource.getString("World"))),
+                    graveSection.getDouble("2.X"),
+                    graveSection.getDouble("2.Y"),
+                    graveSection.getDouble("2.Z"));
+
+            // 设置怪物生成区域
+            pvzMap.setGraveCorner(corner1, corner2);
         }
 
         // 设置关卡信息

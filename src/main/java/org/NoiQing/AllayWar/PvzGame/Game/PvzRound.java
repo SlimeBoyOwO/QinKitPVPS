@@ -2,8 +2,10 @@ package org.NoiQing.AllayWar.PvzGame.Game;
 
 import org.NoiQing.AllayWar.PvzGame.PVZAPI.PvzMap;
 import org.NoiQing.AllayWar.PvzGame.PVZUtils.PvzEntity;
+import org.NoiQing.AllayWar.PvzGame.PVZUtils.SpawnZombie;
 import org.NoiQing.QinKitPVPS;
 import org.NoiQing.itemFunction.ItemsFunction;
+import org.NoiQing.util.Function;
 import org.bukkit.*;
 import org.bukkit.boss.BarColor;
 import org.bukkit.boss.BarStyle;
@@ -23,14 +25,15 @@ public class PvzRound {
     private static Villager brain = null;
     private static final Set<Mob> zombies = new HashSet<>();
     private static final List<BukkitRunnable> runnables = new ArrayList<>();
+    private static int zombiesOffSet = 0;               //排除因为特殊僵尸（比如墓碑）导致的回合判定错误
     private static int waveOffset = 0;                  //记录的runnables里显示的波数的偏差值
     private static String levelName = "";               //当前关卡名字
     private static boolean running = false;             //记录当前是否在进行关卡
     private static boolean waveEnd = true;              //记录关卡的波数是否已经完全完成
-    private static int totalFlag = 0;               //记录一共有多少个旗帜
+    private static int totalFlag = 0;                   //记录一共有多少个旗帜
     private static int currentFlag = 0;                 //记录当前旗帜
     private static int totalSmallWaves = 0;             //记录总波数-由runnables产生
-    private static int currentSmallWave = 0;
+    private static int currentSmallWave = 0;            //记录当前由runnable产生的小波数
     private static int totalSun = 0;                    //记录玩家全体阳光数
     private static BossBar process = null;              //记录bossBar对象
     private static int totalTime = 0;                   //记录当前进度条总时间
@@ -40,6 +43,7 @@ public class PvzRound {
         brain = v;
         running = true;
         waveEnd = false;
+        zombiesOffSet = 0;
         if(process == null) {
             process = Bukkit.createBossBar("§e§l关卡: " + level.getId(), BarColor.GREEN, BarStyle.SOLID);
         }
@@ -70,6 +74,7 @@ public class PvzRound {
     }
     public static int getTotalTime() {return totalTime;}
     public static int getCurrentTime() {return currentTime;}
+    public static void addZombieOffSet() {zombiesOffSet++;}
     public static void addCurrentTime() {if(currentTime < totalTime) currentTime++;}
     public static void addCurrentSmallWave() {currentSmallWave++;}
     public static int getCurrentSmallWave() {return currentSmallWave;}
@@ -114,6 +119,16 @@ public class PvzRound {
     }
 
     public static void endWave() {
+        for(Entity e : brain.getWorld().getEntitiesByClass(Zombie.class)) {
+            if(e.getScoreboardTags().contains("pvz_grave")) {
+                int chance = Function.createRandom(0,10);
+                if(chance < 1)
+                    SpawnZombie.spawnEntityByType(e.getLocation().clone().add(0,0.5,0),"铁桶僵尸");
+                else if(chance < 5)
+                    SpawnZombie.spawnEntityByType(e.getLocation().clone().add(0,0.5,0),"路障僵尸");
+                else SpawnZombie.spawnEntityByType(e.getLocation().clone().add(0,0.5,0),"普通僵尸");
+            }
+        }
         waveEnd = true;
     }
 
@@ -126,6 +141,14 @@ public class PvzRound {
             p.playSound(p, Sound.UI_TOAST_CHALLENGE_COMPLETE,1,1);
             p.removePotionEffect(PotionEffectType.SATURATION);
             process.removeAll();
+        }
+        for(Mob m:zombies) {
+            new BukkitRunnable() {
+                @Override
+                public void run() {
+                    m.setHealth(0);
+                }
+            }.runTaskLater(QinKitPVPS.getPlugin(),60);
         }
         for(LivingEntity entity : brain.getWorld().getEntitiesByClass(LivingEntity.class)) {
             if(entity.getScoreboardTags().contains("pvz_plant"))
@@ -178,7 +201,7 @@ public class PvzRound {
     }
 
     public static int getRemainZombies() {
-        return zombies.size();
+        return zombies.size() - zombiesOffSet;
     }
 
     public static boolean allowDropSun() {
