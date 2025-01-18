@@ -1,6 +1,6 @@
 package org.NoiQing.EventListener.System;
 
-import org.NoiQing.AllayWar.AWUtils.AWPlayer;
+import org.NoiQing.ExtraModes.AllayWar.AWUtils.AWPlayer;
 import org.NoiQing.api.QinTeam;
 import org.NoiQing.enums.FacingOffset;
 import org.NoiQing.mainGaming.QinTeams;
@@ -75,7 +75,7 @@ public class WallJumpListener implements Listener {
             player.setSprinting(true);
             player.addPotionEffect(new PotionEffect(PotionEffectType.SPEED,10,1));
             player.getWorld().spawnParticle(Particle.CLOUD,player.getLocation().clone().add(0,0.25,0),20,0.5,0.1,0.5,0.1);
-            player.setExp((float) (player.getExp() - rushExp));
+            if(!player.getGameMode().equals(GameMode.CREATIVE)) player.setExp((float) (player.getExp() - rushExp));
             player.getWorld().playSound(player.getLocation(), Sound.BLOCK_GILDED_BLACKSTONE_BREAK,1,1.2f);
             PlayerDataSave.setPlayerPassiveSkillCoolDownTime(player, "战术冲刺", 1);
         }else PlayerDataSave.setRushJumpRecord(player);

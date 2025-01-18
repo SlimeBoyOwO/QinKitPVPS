@@ -7,13 +7,20 @@ public class Main {
 
 
     public static void main(String[] args) {
-        // 示例输入
-        double x = 0.0, y = 5.0;
-        double cx = 0.0, cy = 0.0;
-        double degrees = 90.0;
-        double initialRotation = 0.5;  // 初始 rotation 值为 0.5 (90 度)
-
-        // 进行旋转计算
-
+        int[] is = new int[] {0, 1, 2, 3, 4, 5};
+        for (int j = 0; j < is.length; j++) {
+            switch (j) {
+                case 0:
+                    System.out.println("这是：" + is[j]);
+                case 1:
+                    System.out.println("这是：" + is[j]);
+                case 2:
+                    System.out.println("这是：" + is[j]);
+                case 3:
+                    System.out.println("这是：" + is[j]);
+                default:
+                    System.out.println("默认：" + is[j]);
+            }
+        }
     }
 }

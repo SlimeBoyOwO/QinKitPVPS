@@ -15,10 +15,12 @@ public class PlayerChatListener implements Listener {
     public void onPlayerSendMessage (AsyncPlayerChatEvent event) {
         Player p = event.getPlayer();
         String rec = PlayerDataSave.getPlayerTextDataRecord(p, "playerPrefix");
+        String level = PlayerDataSave.getPlayerRank(p);
 
         /* 替换那些有头衔的玩家 */
         if (rec != null && ! Objects.equals(rec, "None"))
             event.setFormat("§e[" + Function.changeColorCharacters(rec) + "§e] §f§l%s§f: §r%s");
-        else event.setFormat("§f§l%s §f: §r%s");
+        else event.setFormat("§e[" + level + "☆§e] §f§l%s§f: §r%s");
+        // else event.setFormat("§f§l%s§f: §r%s");
     }
 }

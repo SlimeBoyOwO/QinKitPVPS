@@ -1,7 +1,7 @@
 package org.NoiQing.EventListener.System;
 
-import org.NoiQing.AllayWar.AWAPI.AWRound;
-import org.NoiQing.AllayWar.AWUtils.AWFunction;
+import org.NoiQing.ExtraModes.AllayWar.AWAPI.AllayGame;
+import org.NoiQing.ExtraModes.AllayWar.AWUtils.AWFunction;
 import org.NoiQing.QinKitPVPS;
 import org.NoiQing.api.QinTeam;
 import org.NoiQing.mainGaming.QinTeams;
@@ -183,7 +183,9 @@ public class BornAndDeathListener implements Listener {
         //塔防战争玩家重生设定
         player.getInventory().clear();
         QinTeam team = QinTeams.getEntityTeam(player);
-        if(team != null && AWRound.getTeamLevels(team.getTeamName()) != null && AWRound.getTeamLevels(team.getTeamName()).get("HaveBase") == 0) {
+        AllayGame allayGame = QinKitPVPS.getPlugin().getGames().getAllayGame();
+        if(team != null && allayGame.getTeamLevels(team.getTeamName()) != null && allayGame.getTeamLevels(team.getTeamName()).get("HaveBase") == 0) {
+            allayGame.removePlayerFromTeam(player);
             player.setGameMode(GameMode.SPECTATOR);
             Function.sendPlayerSystemMessage(player,"§c主基地丢失！你已出局");
             Bukkit.broadcastMessage("§c"+team.getTeamName()+"§7 的玩家 §c"+ player.getName()+" §7已出局");

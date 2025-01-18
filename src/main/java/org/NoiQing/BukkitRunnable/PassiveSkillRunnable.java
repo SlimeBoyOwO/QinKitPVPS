@@ -10,6 +10,8 @@ import org.bukkit.entity.*;
 import org.bukkit.inventory.ItemStack;
 import org.bukkit.inventory.meta.Damageable;
 import org.bukkit.inventory.meta.ItemMeta;
+import org.bukkit.inventory.meta.PotionMeta;
+import org.bukkit.potion.PotionEffect;
 import org.bukkit.potion.PotionEffectType;
 import org.bukkit.scheduler.BukkitRunnable;
 import org.bukkit.scoreboard.Objective;
@@ -77,6 +79,37 @@ public class PassiveSkillRunnable extends BukkitRunnable {
                     Function.removeExtraItems(player,"手榴弹",5);
                 }else{
                     PlayerDataSave.setPlayerPassiveSkillCoolDownTime(player,"手榴弹补给",5);
+                }
+            }
+
+            //宇航员被动技能
+            if(player.getScoreboardTags().contains("Astronaut")){
+                if(Function.getPlayerItemAmount(player, Material.TIPPED_ARROW) < 3){
+                    if(PlayerDataSave.ifPlayerPassiveSkillPassCoolDownTime(player,"浮空箭补给")){
+                        ItemStack item = new ItemStack(Material.TIPPED_ARROW);
+                        ItemMeta meta = item.getItemMeta();
+                        if (meta != null) {
+                            meta.setDisplayName("§b浮空箭");
+                            meta.setUnbreakable(true);
+                            item.setItemMeta(meta);
+                        }
+                        if (meta instanceof PotionMeta pm) {
+                            pm.addCustomEffect(new PotionEffect(PotionEffectType.LEVITATION,5 * 20,0),true);
+                            item.setItemMeta(pm);
+                        }
+                        if(player.getInventory().getItemInOffHand().getType().equals(Material.AIR)) {
+                            player.getInventory().setItemInOffHand(item);
+                        } else if(player.getInventory().getItemInOffHand().getType().equals(Material.TIPPED_ARROW)) {
+                            player.getInventory().getItemInOffHand().setAmount(player.getInventory().getItemInOffHand().getAmount() + 1);
+                        } else {
+                            player.getInventory().addItem(item);
+                        }
+                        PlayerDataSave.setPlayerPassiveSkillCoolDownTime(player,"浮空箭补给",12);
+                    }
+                }else if(Function.getPlayerItemAmount(player, Material.TIPPED_ARROW) > 3){
+                    Function.removeExtraItems(player,"浮空箭",3);
+                }else{
+                    PlayerDataSave.setPlayerPassiveSkillCoolDownTime(player,"浮空箭补给",8);
                 }
             }
 

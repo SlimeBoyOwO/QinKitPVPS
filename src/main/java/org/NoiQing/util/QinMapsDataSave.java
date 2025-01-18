@@ -1,6 +1,6 @@
 package org.NoiQing.util;
 
-import org.NoiQing.AllayWar.PvzGame.PVZAPI.PvzMap;
+import org.NoiQing.ExtraModes.PvzGame.PVZAPI.PvzMap;
 import org.NoiQing.api.QinMap;
 
 import java.util.HashMap;

@@ -2,7 +2,7 @@ package org.NoiQing.mainGaming;
 
 import org.NoiQing.QinKitPVPS;
 import org.NoiQing.api.QinKit;
-import org.NoiQing.itemFunction.ItemsFunction;
+import org.NoiQing.util.itemFunction.ItemsFunction;
 import org.NoiQing.util.Configuration;
 import org.NoiQing.util.CreateFileConfig;
 import org.NoiQing.util.QinKitsDataSave;

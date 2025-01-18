@@ -22,7 +22,7 @@ public class WeatherEffectsRunnable extends BukkitRunnable {
     private final Game game;
     public WeatherEffectsRunnable(QinKitPVPS plugin){
         this.plugin = plugin;
-        this.game = plugin.getGame();
+        this.game = plugin.getKitGame();
     }
     @Override
     public void run() {

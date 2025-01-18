@@ -20,7 +20,7 @@ public class WeatherEventListener implements Listener {
         Entity entity = event.getEntity();
         Entity damager = event.getDamager();
         if(currentWeather.equals("§7台风")){
-            if(entity instanceof LivingEntity livingEntity){
+            if(entity instanceof LivingEntity livingEntity && livingEntity.getWorld().getName().equals("world")){
                 livingEntity.setVelocity(entity.getVelocity().add(damager.getLocation().toVector().subtract(entity.getLocation().toVector()).normalize()).multiply(-2.0));
             }
         }

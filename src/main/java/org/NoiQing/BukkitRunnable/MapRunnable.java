@@ -14,7 +14,7 @@ public class MapRunnable extends BukkitRunnable {
     private static int mapsCount;
     public MapRunnable(QinKitPVPS plugin){
         createFileConfig = plugin.getResource();
-        game = plugin.getGame();
+        game = plugin.getKitGame();
         mapsCount = createFileConfig.getMapFiles().size();
     }
     @Override

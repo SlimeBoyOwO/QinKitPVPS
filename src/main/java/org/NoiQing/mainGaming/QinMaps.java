@@ -1,6 +1,6 @@
 package org.NoiQing.mainGaming;
 
-import org.NoiQing.AllayWar.PvzGame.PVZAPI.PvzMap;
+import org.NoiQing.ExtraModes.PvzGame.PVZAPI.PvzMap;
 import org.NoiQing.QinKitPVPS;
 import org.NoiQing.api.QinMap;
 import org.NoiQing.util.Configuration;

@@ -14,7 +14,7 @@ import java.util.List;
 public class CompleteCommands implements TabCompleter {
 
     private static final List<String> tabs = new ArrayList<>();
-    private static final List<String> noAdminTabs = new ArrayList<>(Arrays.asList("kill", "lobby"));
+    private static final List<String> noAdminTabs = new ArrayList<>(Arrays.asList("kill", "lobby", "startPvzLevel"));
     public static List<String> getTabArryList() {
         return tabs;
     }

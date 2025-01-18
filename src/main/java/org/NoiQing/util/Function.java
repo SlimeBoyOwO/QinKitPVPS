@@ -1,17 +1,19 @@
 package org.NoiQing.util;
 
-import org.NoiQing.AllayWar.AWAPI.AWRound;
-import org.NoiQing.AllayWar.AWUtils.AWPlayer;
-import org.NoiQing.AllayWar.PvzGame.Game.PvzRound;
-import org.NoiQing.AllayWar.PvzGame.PVZUtils.PvzEntity;
+import org.NoiQing.ExtraModes.AllayWar.AWAPI.AllayGame;
+import org.NoiQing.ExtraModes.AllayWar.AWUtils.AWPlayer;
+import org.NoiQing.ExtraModes.PvzGame.Game.PvzRound;
+import org.NoiQing.ExtraModes.PvzGame.PVZUtils.PvzEntity;
 import org.NoiQing.BukkitRunnable.PluginScoreboard;
 import org.NoiQing.EventListener.GuiListeners.CustomMenuListeners;
 import org.NoiQing.QinKitPVPS;
 import org.NoiQing.api.QinTeam;
 import org.NoiQing.commands.CompleteCommands;
-import org.NoiQing.itemFunction.ItemsFunction;
+import org.NoiQing.util.itemFunction.ItemsFunction;
 import org.NoiQing.mainGaming.QinTeams;
 import org.bukkit.*;
+import org.bukkit.advancement.Advancement;
+import org.bukkit.advancement.AdvancementProgress;
 import org.bukkit.attribute.Attribute;
 import org.bukkit.attribute.AttributeInstance;
 import org.bukkit.block.Block;
@@ -35,6 +37,7 @@ import org.bukkit.event.player.PlayerInteractEvent;
 import org.bukkit.inventory.EquipmentSlot;
 import org.bukkit.inventory.ItemStack;
 import org.bukkit.inventory.meta.ItemMeta;
+import org.bukkit.inventory.meta.LeatherArmorMeta;
 import org.bukkit.inventory.meta.trim.ArmorTrim;
 import org.bukkit.inventory.meta.trim.TrimMaterial;
 import org.bukkit.inventory.meta.trim.TrimPattern;
@@ -47,7 +50,6 @@ import org.bukkit.scoreboard.Team;
 import org.bukkit.util.RayTraceResult;
 import org.bukkit.util.Vector;
 
-import javax.print.DocFlavor;
 import java.io.File;
 import java.io.IOException;
 import java.nio.file.Files;
@@ -245,7 +247,7 @@ public class Function {
             }
         }
     }
-    public static void recoverHealth(Player player, int health){
+    public static void recoverHealth(Player player, double health){
         player.setHealth(Math.min(player.getHealth() + health,Function.getPlayerMaxHealth(player)));
     }
     public static void clearPlayerTeam(Player player){
@@ -500,13 +502,14 @@ public class Function {
     }
 
     private static void playerGetTeamSword(Player player, String commandString) {
+        AllayGame allayGame = QinKitPVPS.getPlugin().getGames().getAllayGame();
         Material sword = Material.getMaterial(commandString.split(" ")[1]);
         ItemStack item = new ItemStack(Material.BEDROCK);
         QinTeam t = QinTeams.getEntityTeam(player);
         if(sword != null)
             item.setType(sword);
         int sharpnessLevel = 0;
-        if(t != null) sharpnessLevel = AWRound.getTeamLevels(t.getTeamName()).get("Sharpness");
+        if(t != null) sharpnessLevel = allayGame.getTeamLevels(t.getTeamName()).get("Sharpness");
         if(sharpnessLevel > 0) item.addUnsafeEnchantment(Enchantment.SHARPNESS, sharpnessLevel);
         player.getInventory().addItem(item);
     }
@@ -514,12 +517,14 @@ public class Function {
     private static void playerGetTeamArmor(Player player, String commandString) {
         Material material = Material.getMaterial(commandString.split(" ")[1]);
         ItemStack item = new ItemStack(Material.BEDROCK);
+        AllayGame allayGame = QinKitPVPS.getPlugin().getGames().getAllayGame();
         QinTeam t = QinTeams.getEntityTeam(player);
         if(material != null)
             item.setType(material);
         int protectionLevel = 0;
-        if(t != null) protectionLevel = AWRound.getTeamLevels(t.getTeamName()).get("Protection");
+        if(t != null) protectionLevel = allayGame.getTeamLevels(t.getTeamName()).get("Protection");
         if(protectionLevel > 0) item.addUnsafeEnchantment(Enchantment.PROTECTION, protectionLevel);
+        ItemsFunction.setUnbreakable(item);
         if(item.getType().toString().endsWith("_BOOTS"))
             player.getInventory().setBoots(item);
         else if(item.getType().toString().endsWith("_LEGGINGS"))
@@ -534,10 +539,12 @@ public class Function {
     private static void playerTeamUpgrade(Player player, String commandString) {
         String upgrade = commandString.split(" ")[1];
         Configuration shop = QinKitPVPS.getPlugin().getResource().getShop();
+        AllayGame allayGame = QinKitPVPS.getPlugin().getGames().getAllayGame();
         int price = shop.getInt("Market." + upgrade + ".PurchasePrice");
         int level = Integer.parseInt(upgrade.substring(upgrade.length() - 1));
+
         if(upgrade.startsWith("sharpness_up_")) {
-            if (!AWRound.upgradeTeamSharpnessLevel(player, level)) {
+            if (!allayGame.upgradeTeamSharpnessLevel(player, level)) {
                 new BukkitRunnable() {
                     @Override
                     public void run() {
@@ -546,7 +553,7 @@ public class Function {
                 }.runTaskLater(QinKitPVPS.getPlugin(), 1);
             }
         } else if(upgrade.startsWith("protection_up_")) {
-            if (!AWRound.upgradeTeamProtectionLevel(player, level)) {
+            if (!allayGame.upgradeTeamProtectionLevel(player, level)) {
                 new BukkitRunnable() {
                     @Override
                     public void run() {
@@ -555,7 +562,7 @@ public class Function {
                 }.runTaskLater(QinKitPVPS.getPlugin(), 1);
             }
         } else if(upgrade.startsWith("money_up_")) {
-            if (!AWRound.upgradeTeamMoneyLevel(player, level)) {
+            if (!allayGame.upgradeTeamMoneyLevel(player, level)) {
                 new BukkitRunnable() {
                     @Override
                     public void run() {
@@ -593,7 +600,7 @@ public class Function {
 
     private static void playerOpenMenu(Player p, String commandString) {
         String menuName = commandString.substring(11);
-        CustomMenuListeners.openCreatedInventory(p, QinMenusDataSave.getMenuInventory(QinKitPVPS.getPlugin().getGame().getQinMenus().getQinMenuFromQinMenuID(menuName), p));
+        CustomMenuListeners.openCreatedInventory(p, QinMenusDataSave.getMenuInventory(QinKitPVPS.getPlugin().getKitGame().getQinMenus().getQinMenuFromQinMenuID(menuName), p));
     }
 
     private static void playerBuyItem(Player player, String commandString) {
@@ -853,6 +860,7 @@ public class Function {
         createTeamIfNotExist("AWYellow",ChatColor.YELLOW);
         createTeamIfNotExist("AWGreen",ChatColor.GREEN);
         createTeamIfNotExist("AWBlue",ChatColor.AQUA);
+        createTeamIfNotExist("noCol",null);
     }
 
     private static void createTeamIfNotExist(String teamName, ChatColor color) {
@@ -862,7 +870,7 @@ public class Function {
         if(scoreboard.getTeam(teamName) == null){
             Team blue = scoreboard.registerNewTeam(teamName);
             blue.setAllowFriendlyFire(false);
-            blue.setColor(color);
+            if(color != null) blue.setColor(color);
         }
     }
     public static boolean isPlayerParkour(Player player){
@@ -876,9 +884,47 @@ public class Function {
             player.setLevel((int)record);
         }
     }
+
+    public static void giveAdvancement(Player p, String advancementName) {
+        Advancement advancement = Bukkit.getAdvancement(new NamespacedKey("kitspvp",advancementName));
+        // 3. 获取玩家在该成就上的进度
+        AdvancementProgress progress = null;
+        if (advancement != null) {
+            progress = p.getAdvancementProgress(advancement);
+        } else sendPlayerSystemMessage(p,"该成就丢失，联系管理员; w;");
+
+        if(progress == null) {
+            sendPlayerSystemMessage(p,"你好像不存在这个世界上...");
+            return;
+        }
+        // 4. 完成所有条件
+        if (progress.isDone()) return;
+
+        for (String criteria : progress.getRemainingCriteria()) {
+            progress.awardCriteria(criteria);
+        }
+    }
     public static boolean isHasPower(Player player, String skillName, long require){
         long record = PlayerDataSave.getPlayerPassiveSkillRecords(player,skillName);
         return record >= require;
+    }
+
+    public static boolean hasTag(Entity entity, String tag) {
+        return entity.getScoreboardTags().contains(tag);
+    }
+
+    public static void dyeCloth(ItemStack item, Color color) {
+        if (item.getType() == Material.LEATHER_HELMET ||
+                item.getType() == Material.LEATHER_CHESTPLATE ||
+                item.getType() == Material.LEATHER_LEGGINGS ||
+                item.getType() == Material.LEATHER_BOOTS) {
+
+            LeatherArmorMeta dyedMeta = (LeatherArmorMeta) item.getItemMeta();
+            if (dyedMeta != null) {
+                dyedMeta.setColor(color);
+            }
+            item.setItemMeta(dyedMeta);
+        }
     }
     public static boolean isHasPower(Player player,String skillName,long require,String hit){
         if(PlayerDataSave.getPlayerPassiveSkillRecords(player,skillName) < require){
@@ -896,12 +942,14 @@ public class Function {
     public static void reducePlayerPower(Player player, String skillName, long reduce, boolean level){
         PlayerDataSave.setPlayerPassiveSkillRecords(player,skillName,PlayerDataSave.getPlayerPassiveSkillRecords(player,skillName) - reduce, level);
     }
-
     public static void sendPlayerSystemMessage(Player player, String message) {
         message = changeColorCharacters(message);
         player.sendMessage("§7> > §b§lQinKitPVPS §7--> " + message);
     }
-
+    public static void broadcastSystemMessage(String s) {
+        String message = changeColorCharacters(s);
+        Bukkit.broadcastMessage("§7> > §b§lQinKitPVPS §7--> " + message);
+    }
     public static boolean meetRequirements(Player player, List<String> requirements) {
         if(requirements.isEmpty()) return true;
         for(String str : requirements) {
@@ -1429,8 +1477,4 @@ public class Function {
         else topEntity = e.getPassengers().getLast();
         return topEntity;
     }
-
-
-
-
 }

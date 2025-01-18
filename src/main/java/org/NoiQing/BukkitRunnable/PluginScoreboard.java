@@ -2,10 +2,10 @@ package org.NoiQing.BukkitRunnable;
 
 import fr.mrmicky.fastboard.FastBoard;
 import net.md_5.bungee.api.ChatColor;
-import org.NoiQing.AllayWar.AWAPI.AWRound;
-import org.NoiQing.AllayWar.AWUtils.AWPlayer;
-import org.NoiQing.AllayWar.PvzGame.Game.PvzRound;
-import org.NoiQing.AllayWar.PvzGame.PVZUtils.PvzEntity;
+import org.NoiQing.ExtraModes.AllayWar.AWAPI.AllayGame;
+import org.NoiQing.ExtraModes.AllayWar.AWUtils.AWPlayer;
+import org.NoiQing.ExtraModes.PvzGame.Game.PvzRound;
+import org.NoiQing.ExtraModes.PvzGame.PVZUtils.PvzEntity;
 import org.NoiQing.QinKitPVPS;
 import org.NoiQing.api.QinTeam;
 import org.NoiQing.mainGaming.QinTeams;
@@ -27,6 +27,7 @@ public class PluginScoreboard extends BukkitRunnable {
 
     public static void changeScoreboard(Player player) {
         FastBoard board = new FastBoard(player);
+        AllayGame allayGame = QinKitPVPS.getPlugin().getGames().getAllayGame();
 
         if(player.getWorld().getName().equals("skyblock_copy") || player.getWorld().getName().equals("skyblock")) {
             // Set the title
@@ -34,17 +35,17 @@ public class PluginScoreboard extends BukkitRunnable {
 
             String info;
             QinTeam team = QinTeams.getEntityTeam(player);
-            if(team == null || team.getTeamName() == null || AWRound.getTeamLevels(team.getTeamName()).getOrDefault("HaveBase",0) == 0)
+            if(team == null || team.getTeamName() == null || allayGame.getTeamLevels(team.getTeamName()).getOrDefault("HaveBase",0) == 0)
                 info = "丢失";
             else info = "存在";
 
             // Change the lines
-            if(AWRound.isRunning()) {
+            if(allayGame.isRunning()) {
                 board.updateLines(
                         "",
                         Function.changeColorCharacters(">&#e8dc00>&l信息：<&#fcf003<"),
                         "§a名字: §f" + player.getName(),
-                        "§§a游戏时间： §f" + AWRound.getTimeClock(),
+                        "§§a游戏时间： §f" + allayGame.getTimeClock(),
                         "§§a经济： §f" + ChatColor.of("#d6b865")+ AWPlayer.getPlayerAWMoney(player),
                         "§§a主基地： §f" + info,
                         "",
@@ -75,7 +76,7 @@ public class PluginScoreboard extends BukkitRunnable {
             }else {
                 board.updateLines(
                         "│ 等待游戏开始...",
-                        "│ 当前选择地图：" + QinKitPVPS.getPlugin().getGame().getMaps().getAllayQinMapByMapID(AWRound.getChooseMapID()).getMapName()
+                        "│ 当前选择地图：" + QinKitPVPS.getPlugin().getKitGame().getMaps().getAllayQinMapByMapID(allayGame.getChooseMapID()).getMapName()
                 );
             }
 

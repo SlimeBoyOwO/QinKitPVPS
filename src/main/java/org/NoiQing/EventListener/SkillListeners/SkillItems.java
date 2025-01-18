@@ -151,7 +151,7 @@ public class SkillItems implements Listener {
                 player.damage(player.getHealth() > 6 ? 6 : (player.getHealth() - 1 > 0 ? player.getHealth() - 1 : 0));
                 player.addScoreboardTag("Octane_Running");
                 player.getWorld().playSound(player.getLocation(),Sound.ENTITY_BAT_TAKEOFF, 1F, 1.6F);
-                PlayerDataSave.setPlayerSkillCoolDownTime(player,"兴奋剂", 9);
+                PlayerDataSave.setPlayerSkillCoolDownTime(player,"兴奋剂", 7);
             }
             event.setCancelled(true);
         }
@@ -178,25 +178,35 @@ public class SkillItems implements Listener {
             event.setCancelled(true);
         }
         if(playerUseSPItem(player,"时间停止",30)) {
-            player.addScoreboardTag("TWorld");
-            player.addScoreboardTag("TWorld_S");
-            player.getWorld().playSound(player.getLocation(),Sound.ENTITY_ENDER_DRAGON_GROWL, 1F, 1F);
-            for(Entity entity : player.getNearbyEntities(8,8,8)) {
-                if(entity instanceof LivingEntity livingEntity) {
-                    if(entity.equals(player)) continue;
-                    ArmorStand stand = livingEntity.getWorld().spawn(livingEntity.getLocation(), ArmorStand.class);
-                    stand.setInvisible(true);
-                    stand.setMarker(true);
-                    stand.addScoreboardTag("TWorld_A");
-                    stand.addScoreboardTag("Owner_" + player.getName());
-                    new BukkitRunnable() {
-                        @Override
-                        public void run() {
-                            stand.remove();
+            player.addScoreboardTag("pre_THE_WORLD");
+            player.addPotionEffect(new PotionEffect(PotionEffectType.SLOWNESS,20,3,false,false));
+            player.getWorld().playSound(player.getLocation(),Sound.BLOCK_BEACON_DEACTIVATE, 1F, 1F);
+            new BukkitRunnable() {
+                @Override
+                public void run() {
+                    if(!player.getScoreboardTags().contains("pre_THE_WORLD")) return;
+                    player.removeScoreboardTag("pre_THE_WORLD");
+                    player.addScoreboardTag("TWorld");
+                    player.addScoreboardTag("TWorld_S");
+                    player.getWorld().playSound(player.getLocation(),Sound.ENTITY_ENDER_DRAGON_GROWL, 1F, 1F);
+                    for(Entity entity : player.getNearbyEntities(8,8,8)) {
+                        if(entity instanceof LivingEntity livingEntity) {
+                            if(entity.equals(player)) continue;
+                            ArmorStand stand = livingEntity.getWorld().spawn(livingEntity.getLocation(), ArmorStand.class);
+                            stand.setInvisible(true);
+                            stand.setMarker(true);
+                            stand.addScoreboardTag("TWorld_A");
+                            stand.addScoreboardTag("Owner_" + player.getName());
+                            new BukkitRunnable() {
+                                @Override
+                                public void run() {
+                                    stand.remove();
+                                }
+                            }.runTaskLater(plugin,20 * 5);
                         }
-                    }.runTaskLater(plugin,20 * 5);
+                    }
                 }
-            }
+            }.runTaskLater(QinKitPVPS.getPlugin(),20);
             event.setCancelled(true);
         }
         if(playerUseSPItem(player,"战争突刺",15)){
@@ -399,6 +409,104 @@ public class SkillItems implements Listener {
             }
         }
 
+        if(playerUseSPItem(player,"道士之剑",15)) {
+            String skillName = Function.getItemNameWithoutColor(player.getInventory().getItemInOffHand());
+            switch (skillName) {
+                case "风 - 追杀" -> {
+                    Predicate<Entity> predicate = x -> !x.equals(player);
+
+                    // 发射射线
+                    RayTraceResult result = player.getWorld().rayTrace(
+                            player.getEyeLocation(), // 起始点
+                            player.getLocation().getDirection(),               // 方向向量
+                            40,                     // 最大距离
+                            FluidCollisionMode.NEVER, // 流体模式
+                            true,                    // 忽略非可视方块
+                            0.3,                     // 检测范围（宽度）
+                            predicate              // 过滤器
+                    );
+
+                    // 检查是否有实体被射线命中
+                    if (result != null && result.getHitEntity() != null) {
+                        player.setVelocity(Function.calculateVelocity(player.getLocation().toVector(),result.getHitEntity().getLocation().toVector(),0.8,0.315));
+                        player.addPotionEffect(new PotionEffect(PotionEffectType.SPEED,60,1,true,true));
+                        player.getWorld().playSound(player.getLocation(),Sound.ENTITY_BAT_TAKEOFF,1,1);
+                        player.getWorld().spawnParticle(Particle.CLOUD,player.getLocation().clone().add(0,0.2,0),50,0.2,0,0.2,0.15);
+                        player.addPotionEffect(new PotionEffect(PotionEffectType.STRENGTH,2 * 20,0,true,true));
+                        PlayerDataSave.setPlayerSkillCoolDownTime(player,"道士之剑",10);
+                    } else {
+                        Function.sendPlayerSystemMessage(player,"你没有指向一个目标");
+                        PlayerDataSave.setPlayerSkillCoolDownTime(player,"道士之剑",0);
+                    }
+                }
+                case "鬼 - 吸血" -> {
+                    player.setExp(0);
+                    player.addScoreboardTag("Taoist_attack_regeneration");
+                    player.addPotionEffect(new PotionEffect(PotionEffectType.SPEED,3 * 20,1,true,true));
+                    player.getWorld().spawnParticle(Particle.CHERRY_LEAVES,player.getLocation().clone().add(0,1,0),50,1,1,1);
+                    player.getWorld().playSound(player.getLocation(),Sound.ENTITY_BAT_DEATH,1,1);
+                }
+                case "禁 - 狼嚎" -> {
+                    player.setExp(1);
+                    player.setHealth(player.getHealth() / 2);
+                    player.damage(1);
+                    player.addScoreboardTag("Taoist_Wolf");
+                    player.addPotionEffect(new PotionEffect(PotionEffectType.SPEED,10 * 20,2,true,true));
+                    player.addPotionEffect(new PotionEffect(PotionEffectType.STRENGTH,10 * 20,0,true,true));
+                    player.getWorld().spawnParticle(Particle.RAID_OMEN,player.getLocation().clone().add(0,1,0),50,0.5,1,0.5,0.2);
+                    player.getWorld().playSound(player.getLocation(),Sound.ENTITY_WOLF_HOWL,1,1);
+                    PlayerDataSave.setPlayerSkillCoolDownTime(player,"道士之剑",30);
+                }
+                case "剑 - 锐利" -> {
+                    PlayerDataSave.setPlayerSkillCoolDownTime(player,"道士之剑",5);
+                    player.getWorld().spawnParticle(Particle.SOUL_FIRE_FLAME,player.getLocation().clone().add(0,1,0),50,1,1,1);
+                    for(int i = 0; i < 5; i++) {
+                        new BukkitRunnable() {
+                            @Override
+                            public void run() {
+                                player.getWorld().playSound(player.getLocation(),Sound.ENTITY_PLAYER_ATTACK_SWEEP,1,1);
+                            }
+                        }.runTaskLater(QinKitPVPS.getPlugin(),i);
+                    }
+                    player.addPotionEffect(new PotionEffect(PotionEffectType.STRENGTH,2 * 20,0,true,true));
+                    for (Entity entity : player.getNearbyEntities(6,3,6)) {
+                        if(entity.equals(player)) continue;
+                        if(entity instanceof LivingEntity lv) {
+                            lv.damage(8, player);
+                            lv.setVelocity(entity.getVelocity().add(player.getLocation().toVector().subtract(entity.getLocation().toVector()).normalize()).multiply(-1.6).setY(0.6));
+                        }
+                    }
+                    for (int k = 0; k < 20; k++) {
+                        int finalK = k;
+                        // 获取玩家的朝向角度
+                        float yaw = player.getLocation().getYaw() - 60; // 获取偏航角（单位：度）
+                        double playerAngle = Math.toRadians(yaw);  // 转换为弧度，用于三角函数计算
+                        new BukkitRunnable() {
+                            @Override
+                            public void run() {
+                                Location center = player.getLocation().clone().add(0, 1, 0);  // 圆心的位置
+                                double radius = 3;  // 设置圆的半径
+                                int segments = 20;  // 10个小段来完成一个完整的圆形
+
+                                // 计算当前段的起始角度和结束角度
+                                double startAngle = playerAngle + (2 * Math.PI * finalK / segments); // 起始角度
+                                double endAngle = playerAngle + (2 * Math.PI * (finalK + 1) / segments); // 结束角度
+
+                                // 生成当前段的粒子
+                                for (double angle = startAngle; angle <= endAngle; angle += (endAngle - startAngle) / segments) {
+                                    double x = radius * Math.cos(angle);  // x坐标
+                                    double z = radius * Math.sin(angle);  // z坐标
+
+                                    // 在圆上创建粒子
+                                    Location particleLocation = center.clone().add(x, 0, z);
+                                    player.getWorld().spawnParticle(Particle.DUST, particleLocation, 1, 0, 0, 0, 0, new Particle.DustOptions(Color.WHITE, 1.35f), true);
+                                }
+                            }
+                        }.runTaskLater(QinKitPVPS.getPlugin(), finalK / 3);  // 延迟2 * k个ticks
+                    }
+                }
+            }
+        }
         if(playerUseSPItem(player,"死神之镰",4)) {
             event.setCancelled(true);
             player.setVelocity(player.getLocation().getDirection().multiply(1.2).add(new Vector(0,0.2,0)));

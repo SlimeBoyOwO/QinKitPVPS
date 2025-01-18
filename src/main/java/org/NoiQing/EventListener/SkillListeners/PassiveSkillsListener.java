@@ -152,7 +152,7 @@ public class PassiveSkillsListener implements Listener {
     @EventHandler
     public void SniperPassiveSkill(EntityShootBowEvent event){
         if(event.getEntity().getScoreboardTags().contains("Sniper") && event.getEntity() instanceof Player player){
-            if(event.getProjectile() instanceof Arrow arrow && player.getInventory().getItemInMainHand().getEnchantments().get(Enchantment.POWER) >= 8){
+            if(event.getProjectile() instanceof Arrow arrow && player.getInventory().getItemInMainHand().getEnchantmentLevel(Enchantment.POWER) >= 8){
                 arrow.addScoreboardTag("Sniper_Ammo");
                 arrow.setCritical(true);
                 arrow.setGravity(false);
@@ -280,6 +280,17 @@ public class PassiveSkillsListener implements Listener {
         }
     }
     @EventHandler
+    public void GhostPassSkill2(EntityDamageByEntityEvent event) {
+        Entity damager = event.getDamager();
+        if(damager instanceof Player p && p.getScoreboardTags().contains("Ghost")) {
+            if(PlayerDataSave.ifPlayerPassiveSkillPassCoolDownTime(p,"鬼魂奇袭")) {
+                event.setDamage(event.getDamage() * 3);
+                PlayerDataSave.setPlayerPassiveSkillCoolDownTime(p,"鬼魂奇袭",15);
+                damager.getWorld().playSound(damager.getLocation(),Sound.ENTITY_ZOMBIE_ATTACK_WOODEN_DOOR,1,1);
+            }
+        }
+    }
+    @EventHandler
     public void GhostPassiveSkill3(EntityDamageEvent event){
         if(event.getEntity().getScoreboardTags().contains("Ghost") && event.getCause() == EntityDamageEvent.DamageCause.ENTITY_ATTACK){
             event.setDamage(event.getDamage()*1.5);
@@ -351,11 +362,11 @@ public class PassiveSkillsListener implements Listener {
                 && player.getScoreboardTags().contains("FireMan")){
             long arrowShootTimes = PlayerDataSave.getPlayerPassiveSkillRecords(player,"火焰豌豆");
             long currentArrowShootTimes = arrowShootTimes + 1;
-            if(currentArrowShootTimes == 4){
+            if(currentArrowShootTimes == 2){
                 arrow.addScoreboardTag("FirePea_Fire");
                 player.getWorld().playSound(player.getLocation(),Sound.ENTITY_BLAZE_AMBIENT,1,1);
                 PlayerDataSave.setPlayerPassiveSkillRecords(player,"火焰豌豆",currentArrowShootTimes);
-            }else if(currentArrowShootTimes >= 5 || player.getScoreboardTags().contains("FireMan_S")){
+            }else if(currentArrowShootTimes >= 3 || player.getScoreboardTags().contains("FireMan_S")){
                 arrow.addScoreboardTag("FirePea");
                 player.getWorld().playSound(player.getLocation(),Sound.ENTITY_BLAZE_SHOOT,1,1);
                 PlayerDataSave.clearPlayerPassiveSkillRecords(player);
@@ -537,7 +548,7 @@ public class PassiveSkillsListener implements Listener {
             arrow.setVelocity(player.getLocation().getDirection().multiply(3));
             if(!player.getScoreboardTags().contains("TWorld")) return;
             int reload = activeSkill.getScore(player.getName()).getScore();
-            reload += 4;
+            reload += 5;
             activeSkill.getScore(player.getName()).setScore(reload);
             Vector vector = arrow.getVelocity();
             new BukkitRunnable(){
@@ -560,7 +571,7 @@ public class PassiveSkillsListener implements Listener {
         if(event.getDamager() instanceof Player player) {
             if(!player.getScoreboardTags().contains("TWorld")) return;
             int reload = activeSkill.getScore(player.getName()).getScore();
-            reload += 10;
+            reload += 6;
             activeSkill.getScore(player.getName()).setScore(reload);
             refreshTimeStopArrow(player,reload);
         }
@@ -758,8 +769,16 @@ public class PassiveSkillsListener implements Listener {
             }
         }
     }
-
+    //道士吸血技能
     @EventHandler
+    public void onDaoShiXiBlood(EntityDamageByEntityEvent e) {
+        if(e.getDamager() instanceof Player p && p.getScoreboardTags().contains("Taoist_attack_regeneration")) {
+            Function.recoverHealth(p,e.getDamage() * 0.3);
+            e.setDamage(e.getDamage() * 0.75);
+            p.getWorld().playSound(p.getLocation(),Sound.ENTITY_SILVERFISH_HURT,1,1);
+        }
+    }
+
     public static void onShuraigShootBow(ProjectileLaunchEvent event) {
         if(event.getEntity().getShooter() instanceof Player player) {
             if(!player.getScoreboardTags().contains("SLG")) return;

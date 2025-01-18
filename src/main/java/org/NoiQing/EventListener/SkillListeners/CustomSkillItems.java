@@ -16,7 +16,7 @@ public class CustomSkillItems implements Listener {
     private final Game game;
     public CustomSkillItems(QinKitPVPS plugin){
         this.plugin = plugin;
-        this.game = plugin.getGame();
+        this.game = plugin.getKitGame();
     }
 
     @EventHandler

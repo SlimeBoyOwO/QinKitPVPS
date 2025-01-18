@@ -1,8 +1,8 @@
 package org.NoiQing.EventListener.System;
 
-import org.NoiQing.AllayWar.AWAPI.AWRound;
 import org.NoiQing.BukkitRunnable.PluginScoreboard;
 import org.NoiQing.BukkitRunnable.WeatherRunnable;
+import org.NoiQing.ExtraModes.AllayWar.AWAPI.AllayGame;
 import org.NoiQing.QinKitPVPS;
 import org.NoiQing.api.QinTeam;
 import org.NoiQing.mainGaming.QinTeams;
@@ -17,6 +17,7 @@ import org.bukkit.event.EventHandler;
 import org.bukkit.event.Listener;
 import org.bukkit.event.player.PlayerChangedWorldEvent;
 import org.bukkit.event.player.PlayerJoinEvent;
+import org.bukkit.event.player.PlayerPortalEvent;
 import org.bukkit.event.player.PlayerTeleportEvent;
 import org.bukkit.inventory.ItemStack;
 import org.bukkit.inventory.meta.ItemMeta;
@@ -30,11 +31,13 @@ public class PlayerJoinListener implements Listener {
         this.plugin = plugin;
     }
     @EventHandler
-    public void playerOnJoin(PlayerJoinEvent event){
+    public void playerOnJoin(PlayerJoinEvent event) throws SQLException {
         Player player = event.getPlayer();
+        //处理复活
         if(player.getLocation().getWorld() != null) {
             if(player.getScoreboardTags().contains("InAWGaming")) {
-                if(AWRound.isRunning()) {
+                AllayGame allayGame = QinKitPVPS.getPlugin().getGames().getAllayGame();
+                if(allayGame.isRunning()) {
                     String teamName = null;
                     for(String s : player.getScoreboardTags()) {
                         if(s.startsWith("TeamName_")) {
@@ -53,8 +56,19 @@ public class PlayerJoinListener implements Listener {
                 }
                 return;
             }
+        } else player.setHealth(0);
+
+        if (!event.getPlayer().hasPlayedBefore()){
+            QinKitPVPS qinKitPVPS = QinKitPVPS.getPlugin();
+            qinKitPVPS.getSQLiteDatabase().addPlayer(event.getPlayer());
+            qinKitPVPS.getMySQLDataBase().addPlayer(event.getPlayer());
+            qinKitPVPS.getMySQLDataBase().givePlayerKit(player,"Fighter");
+            qinKitPVPS.getMySQLDataBase().givePlayerKit(player,"Archer");
+            qinKitPVPS.getMySQLDataBase().givePlayerKit(player,"Tank");
+            qinKitPVPS.getMySQLDataBase().setPlayerKey(player,10);
         }
 
+        //初始化玩家（更新数据库和状态之类的）
         initializationPlayer(player, plugin);
 
     }
@@ -81,23 +95,34 @@ public class PlayerJoinListener implements Listener {
     private void onEnterAWWorld(Player player) {
         player.removeScoreboardTag(QinConstant.LOBBY_MARK);
         WeatherRunnable.getBossbar().removeAll();
-        if(AWRound.isRunning()) {
+        AllayGame allayGame = QinKitPVPS.getPlugin().getGames().getAllayGame();
+        if(allayGame.isRunning()) {
             player.setGameMode(GameMode.SPECTATOR);
             player.sendTitle("游戏正在进行...","观察模式",10,40,10);
         } else {
-            ItemStack itemStack = new ItemStack(Material.CLOCK);
-            ItemMeta meta = itemStack.getItemMeta();
-            if (meta != null) {
-                meta.setDisplayName("§a§l选队菜单");
-                itemStack.setItemMeta(meta);
-            }
             player.getInventory().clear();
-            player.getInventory().setItem(4, itemStack);
+        }
+    }
+
+    @EventHandler
+    public void onPlayerPortal(PlayerPortalEvent event) {
+        if (event.getTo() != null && event.getTo().getWorld() != null &&
+                event.getTo().getWorld().getName().equalsIgnoreCase("world_nether")) {
+            event.setCancelled(true);
+        }
+    }
+
+    @EventHandler
+    public void onPlayerTeleport(PlayerTeleportEvent event) {
+        if (event.getTo() != null && event.getTo().getWorld() != null &&
+                event.getTo().getWorld().getName().equalsIgnoreCase("world_nether")) {
+            event.setCancelled(true);
         }
     }
 
     public static void initializationPlayer(Player player, QinKitPVPS plugin) {
         player.getInventory().clear();
+        Function.giveAdvancement(player,"qinkitpvps/root");
         /* 传 送 玩 家 到 大 厅 */
         Function.playerTpLobby(player);
         player.sendTitle("§3§l欢迎 §b§l肥家！","    §3QinKitPVPS   §bVer 0.8.0      ",20,20*4,20);
@@ -127,4 +152,5 @@ public class PlayerJoinListener implements Listener {
         PluginScoreboard.changeScoreboard(player);
         WeatherRunnable.getBossbar().addPlayer(player);
     }
+
 }

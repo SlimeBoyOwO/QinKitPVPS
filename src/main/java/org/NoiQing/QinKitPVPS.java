@@ -1,12 +1,12 @@
 package org.NoiQing;
 
-import org.NoiQing.AllayWar.AllayRunnable.AGameRunnable;
-import org.NoiQing.AllayWar.AllayRunnable.TowerAttackRunnable;
-import org.NoiQing.AllayWar.AWListeners.CustomShopListener;
-import org.NoiQing.AllayWar.AWListeners.TowerListener;
-import org.NoiQing.AllayWar.PvzGame.PVZListeners.PlantsListeners;
-import org.NoiQing.AllayWar.PvzGame.PvzRunnable.PvzGameRunnable;
-import org.NoiQing.AllayWar.PvzGame.PvzRunnable.PvzRoundRunnable;
+import org.NoiQing.ExtraModes.AllayWar.AllayRunnable.AGameRunnable;
+import org.NoiQing.ExtraModes.AllayWar.AllayRunnable.TowerAttackRunnable;
+import org.NoiQing.ExtraModes.AllayWar.AWListeners.CustomShopListener;
+import org.NoiQing.ExtraModes.AllayWar.AWListeners.TowerListener;
+import org.NoiQing.ExtraModes.PvzGame.PVZListeners.PlantsListeners;
+import org.NoiQing.ExtraModes.PvzGame.PvzRunnable.PvzGameRunnable;
+import org.NoiQing.ExtraModes.PvzGame.PvzRunnable.PvzRoundRunnable;
 import org.NoiQing.BukkitRunnable.*;
 import org.NoiQing.DataBase.MySQLDataBase;
 import org.NoiQing.DataBase.RegisterDatabase;
@@ -22,11 +22,13 @@ import org.NoiQing.EventListener.Temp.BirthDayListener;
 import org.NoiQing.commands.CompleteCommands;
 import org.NoiQing.commands.MainCommands;
 import org.NoiQing.mainGaming.Game;
+import org.NoiQing.system.AllGames;
 import org.NoiQing.util.CreateFileConfig;
 import org.NoiQing.util.DataBaseCache;
 import org.NoiQing.util.Function;
 import org.NoiQing.util.MapDataSave;
 import org.bukkit.Bukkit;
+import org.bukkit.World;
 import org.bukkit.WorldCreator;
 import org.bukkit.boss.BossBar;
 import org.bukkit.boss.KeyedBossBar;
@@ -44,6 +46,7 @@ QinKitPVPS extends JavaPlugin {
     private SQLiteDatabase SQLiteDatabase;
     private MySQLDataBase mySQLDataBase;
     private Game game;
+    private AllGames games;
 
     // 启 动 服 务 器 的 时 候 要 执 行 的 代 码
     @Override
@@ -66,7 +69,8 @@ QinKitPVPS extends JavaPlugin {
         // 创 建 配 置 文 件
         this.createFileConfig = new CreateFileConfig(this);
         // 初 始 化 游 戏 设 定
-        this.game = new Game(this);
+        this.games = new AllGames();
+        this.game = games.getKitGame();
 
         // 监 听 器 注 册 器
         Bukkit.getPluginManager().registerEvents(new RecoveryItems(), this);
@@ -100,6 +104,11 @@ QinKitPVPS extends JavaPlugin {
         // Bukkit.createWorld(new WorldCreator("teamkitpvp"));
         Bukkit.createWorld(new WorldCreator("skyblock"));
         Bukkit.createWorld(new WorldCreator("skyblock_copy"));
+        Bukkit.createWorld(new WorldCreator("creative"));
+        World nether = Bukkit.getWorld("world_nether");
+        if (nether != null) {
+            Bukkit.unloadWorld(nether, false);
+        }
 
         // 循 环 任 务
         new WeatherRunnable(this).runTaskTimer(plugin, 0, 120 * 20);
@@ -167,7 +176,8 @@ QinKitPVPS extends JavaPlugin {
 
     public static QinKitPVPS getPlugin() {return plugin;}
     public CreateFileConfig getResource() {return createFileConfig;}
-    public Game getGame() {return game;}
+    public Game getKitGame() {return game;}
+    public AllGames getGames() {return games;}
     public int getRandomMapID() {return MapDataSave.getMapStorage().get(Bukkit.getWorld("world"));}
     public int getRandomTeamMapID() {
         return 1;

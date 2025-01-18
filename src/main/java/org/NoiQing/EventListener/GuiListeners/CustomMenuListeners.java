@@ -20,7 +20,7 @@ public class CustomMenuListeners implements Listener {
 
     public CustomMenuListeners(QinKitPVPS plugin) {
         // Create a new inventory, with no owner (as this isn't a real inventory), a size of nine, called example
-        this.game = plugin.getGame();
+        this.game = plugin.getKitGame();
     }
 
     @EventHandler

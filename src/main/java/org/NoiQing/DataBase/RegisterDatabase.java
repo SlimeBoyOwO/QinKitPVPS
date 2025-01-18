@@ -18,19 +18,6 @@ public class RegisterDatabase implements Listener {
     }
 
     @EventHandler
-    public void inJoin(PlayerJoinEvent e) throws SQLException {
-        Player p = e.getPlayer();
-        if (!e.getPlayer().hasPlayedBefore()){
-            qinKitPVPS.getSQLiteDatabase().addPlayer(e.getPlayer());
-            qinKitPVPS.getMySQLDataBase().addPlayer(e.getPlayer());
-            qinKitPVPS.getMySQLDataBase().givePlayerKit(p,"Fighter");
-            qinKitPVPS.getMySQLDataBase().givePlayerKit(p,"Archer");
-            qinKitPVPS.getMySQLDataBase().givePlayerKit(p,"Tank");
-            qinKitPVPS.getMySQLDataBase().setPlayerKey(p,3);
-        }
-    }
-
-    @EventHandler
     public void inLeave(PlayerQuitEvent event) {
         DataBaseCache.removePlayerCache(event.getPlayer());
     }

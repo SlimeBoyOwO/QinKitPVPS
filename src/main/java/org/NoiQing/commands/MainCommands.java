@@ -1,10 +1,11 @@
 package org.NoiQing.commands;
 
-import org.NoiQing.AllayWar.AWAPI.AWRound;
-import org.NoiQing.AllayWar.AWUtils.AWPlayer;
-import org.NoiQing.AllayWar.PvzGame.PVZAPI.PvzMap;
-import org.NoiQing.AllayWar.PvzGame.PVZUtils.PVZFunction;
-import org.NoiQing.AllayWar.PvzGame.PVZUtils.PvzEntity;
+import org.NoiQing.ExtraModes.AllayWar.AWAPI.AllayGame;
+import org.NoiQing.ExtraModes.AllayWar.AWUtils.AWPlayer;
+import org.NoiQing.ExtraModes.PvzGame.Game.PvzRound;
+import org.NoiQing.ExtraModes.PvzGame.PVZAPI.PvzMap;
+import org.NoiQing.ExtraModes.PvzGame.PVZUtils.PVZFunction;
+import org.NoiQing.ExtraModes.PvzGame.PVZUtils.PvzEntity;
 import org.NoiQing.BukkitRunnable.MapRunnable;
 import org.NoiQing.BukkitRunnable.WeatherRunnable;
 import org.NoiQing.QinKitPVPS;
@@ -18,19 +19,21 @@ import org.bukkit.attribute.Attribute;
 import org.bukkit.block.Block;
 import org.bukkit.block.BlockFace;
 import org.bukkit.block.BlockState;
-import org.bukkit.block.CommandBlock;
 import org.bukkit.block.data.Directional;
 import org.bukkit.block.data.Rotatable;
 import org.bukkit.block.data.type.Fence;
 import org.bukkit.block.data.type.Lantern;
 import org.bukkit.block.data.type.Slab;
 import org.bukkit.block.data.type.Wall;
+import org.bukkit.block.spawner.SpawnerEntry;
 import org.bukkit.command.BlockCommandSender;
 import org.bukkit.command.Command;
 import org.bukkit.command.CommandExecutor;
 import org.bukkit.command.CommandSender;
 import org.bukkit.entity.*;
+import org.bukkit.inventory.EquipmentSlot;
 import org.bukkit.inventory.ItemStack;
+import org.bukkit.inventory.meta.ItemMeta;
 import org.bukkit.util.Transformation;
 import org.jetbrains.annotations.NotNull;
 import org.joml.Quaternionf;
@@ -43,13 +46,15 @@ import java.util.stream.Collectors;
 public class MainCommands implements CommandExecutor {
     private final QinKitPVPS plugin;
     private final Game game;
+    private final AllayGame allayGame;
     private final CreateFileConfig configs;
     private int randomMapID;
     private int randomTeamMapID;
 
     public MainCommands(QinKitPVPS plugin) {
         this.plugin = plugin;
-        game = plugin.getGame();
+        game = plugin.getKitGame();
+        allayGame = plugin.getGames().getAllayGame();
         configs = plugin.getResource();
         randomMapID = plugin.getRandomMapID();
         randomTeamMapID = plugin.getRandomTeamMapID();
@@ -61,7 +66,59 @@ public class MainCommands implements CommandExecutor {
             sender.sendMessage("[QinKitPVPS] 欢迎使用本插件(*╹▽╹*)");
             return true;
         }
-        else if (sender instanceof Player player) {
+        if(args[0].equalsIgnoreCase(Function.addTab("superTp"))) {
+            double x,y,z,pitch,yaw;
+            if(args.length >= 6) {
+                Player target = Bukkit.getPlayer(args[1]);
+                World world = Bukkit.getWorld(args[2]);
+                if(target == null) {
+                    Function.broadcastSystemMessage("找不到这名玩家");
+                    return true;
+                }
+                if(world == null) {
+                    Function.broadcastSystemMessage("没有这个世界");
+                    return true;
+                }
+                x = Double.parseDouble(args[3]);
+                y = Double.parseDouble(args[4]);
+                z = Double.parseDouble(args[5]);
+                target.teleport(new Location(world,x,y,z));
+                if (args.length == 8) {
+                    pitch = Double.parseDouble(args[6]);
+                    yaw = Double.parseDouble(args[7]);
+                    target.setRotation((float) pitch, (float) yaw);
+                }
+                return true;
+            }
+        }
+        if(args[0].equalsIgnoreCase(Function.addTab("superGive"))) {
+            Player target = Bukkit.getPlayer(args[1]);
+            int location = -1;
+            if(target == null) {
+                Function.broadcastSystemMessage("玩家不存在");
+                return true;
+            }
+            ItemStack itemStack = new ItemStack(Material.valueOf(args[2].toUpperCase()));
+            int count = Integer.parseInt(args[3]);
+            if(args.length == 6)
+                location = Integer.parseInt(args[5]);
+            String name = args[4];
+            name = Function.changeColorCharacters(name);
+            itemStack.setAmount(count);
+            ItemMeta meta = itemStack.getItemMeta();
+            if(meta != null) {
+                meta.setDisplayName(name);
+                itemStack.setItemMeta(meta);
+            }
+            if(location == -1) target.getInventory().addItem(itemStack);
+            else target.getInventory().setItem(location,itemStack);
+            return true;
+        }
+        if(args[0].equalsIgnoreCase(Function.addTab("startPvzLevel"))) {
+            executeStartPvzLevel(args, null);
+            return true;
+        }
+        if (sender instanceof Player player) {
             //插件跑酷系统
             if(args[0].equalsIgnoreCase("parkour")){
                 player.removeScoreboardTag("QinKit_ParkourExtra");
@@ -98,6 +155,11 @@ public class MainCommands implements CommandExecutor {
             //前往被复制的世界指令
             if(args[0].equalsIgnoreCase("tpCopiedWorld")){
                 player.teleport(new Location(Bukkit.getWorld("skyblock_copy"),1000, 30 ,1000));
+            }
+
+            //前往被复制的世界指令
+            if(args[0].equalsIgnoreCase("creative")){
+                player.teleport(new Location(Bukkit.getWorld("creative"),0, 30 ,0));
             }
 
             //前往大厅指令
@@ -190,6 +252,11 @@ public class MainCommands implements CommandExecutor {
                 return true;
             }
 
+            if(args[0].equalsIgnoreCase(Function.addTab("toPvz"))) {
+                player.teleport(new Location(Bukkit.getWorld("skyblock_copy"),-982.5,1.5,-1008.5));
+                Function.sendPlayerSystemMessage(player,"欢迎来到打姜丝的世界~");
+            }
+
             //========================================================================
             //                       后面的指令需要玩家拥有权限
             //========================================================================
@@ -205,11 +272,6 @@ public class MainCommands implements CommandExecutor {
                 player.setInvulnerable(false);
                 return true;
             }
-            if(args[0].equalsIgnoreCase(Function.addTab("startPvzLevel"))) {
-                executeStartPvzLevel(args, player);
-                return true;
-            }
-
             //前往出生点id指令
             if (args[0].equalsIgnoreCase(Function.addTab("tpSpawn")) && args.length == 2) {
                 executeTpSpawnCommandSelf(player, args);
@@ -246,11 +308,11 @@ public class MainCommands implements CommandExecutor {
             }
 
             if(args[0].equalsIgnoreCase(Function.addTab("startAW"))){
-                AWRound.initRound();
+                allayGame.startGame();
                 return true;
             }
             if(args[0].equalsIgnoreCase(Function.addTab("endAW"))){
-                AWRound.endRound("AWBlue");
+                allayGame.endGame();
                 return true;
             }
 
@@ -296,7 +358,7 @@ public class MainCommands implements CommandExecutor {
             }
 
             if (args[0].equalsIgnoreCase(Function.addTab("showLocs"))) {
-                plugin.getGame().getMaps().getPvzMapByMapID(0).showPlantLocations();
+                plugin.getKitGame().getMaps().getPvzMapByMapID(0).showPlantLocations();
                 Function.sendPlayerSystemMessage(player,"已经显示");
             }
 
@@ -446,9 +508,9 @@ public class MainCommands implements CommandExecutor {
             if (args[0].equalsIgnoreCase(Function.addTab("allayMap"))) {
                 try {
                     int x = Integer.parseInt(args[1]);
-                    QinMap map = QinKitPVPS.getPlugin().getGame().getMaps().getAllayQinMapByMapID(x);
+                    QinMap map = QinKitPVPS.getPlugin().getKitGame().getMaps().getAllayQinMapByMapID(x);
                     if (map != null) {
-                        AWRound.setChooseMapID(x);
+                        allayGame.setChooseMapID(x);
                         Function.sendPlayerSystemMessage(player, "已选择地图: " + map.getMapName());
                     } else Function.sendPlayerSystemMessage(player, "你输入的地图并不存在！");
                 } catch(NumberFormatException e) {
@@ -546,17 +608,23 @@ public class MainCommands implements CommandExecutor {
     }
 
     private void executeStartPvzLevel(String[] args, Player p) {
-        PvzMap pvzMap = QinKitPVPS.getPlugin().getGame().getMaps().getPvzMapByMapID(Integer.parseInt(args[1]));
-        if(pvzMap == null) {
-            Function.sendPlayerSystemMessage(p,"你指定的PVZ地图不存在啊啊啊啊啊");
-            return;
-        }
-        if(pvzMap.getVillagerArea().getWorld() == null) {
-            Function.sendPlayerSystemMessage(p,"你指定的PVZ地图的世界没加载啊啊啊啊啊");
-            return;
-        }
-        for(Player players : pvzMap.getVillagerArea().getWorld().getPlayers()) {
-            players.sendTitle("§a准备 放置 植物！","§b保护你的脑子叭！",10,70,20);
+        PvzMap pvzMap = QinKitPVPS.getPlugin().getKitGame().getMaps().getPvzMapByMapID(Integer.parseInt(args[1]));
+        if(p != null) {
+            if(PvzRound.isRunning()) {
+                Function.sendPlayerSystemMessage(p,"已经有一个游戏开了啊啊啊啊啊");
+                return;
+            }
+            if(pvzMap == null) {
+                Function.sendPlayerSystemMessage(p,"你指定的PVZ地图不存在啊啊啊啊啊");
+                return;
+            }
+            if(pvzMap.getVillagerArea().getWorld() == null) {
+                Function.sendPlayerSystemMessage(p,"你指定的PVZ地图的世界没加载啊啊啊啊啊");
+                return;
+            }
+            for(Player players : pvzMap.getVillagerArea().getWorld().getPlayers()) {
+                players.sendTitle("§a准备 放置 植物！","§b保护你的脑子叭！",10,70,20);
+            }
         }
 
         int difficultly = 1;
