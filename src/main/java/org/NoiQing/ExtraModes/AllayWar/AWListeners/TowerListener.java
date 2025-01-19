@@ -398,6 +398,13 @@ public class TowerListener implements Listener {
             if(target instanceof Player p && p.isInvulnerable()) {
                 e.setCancelled(true);  return;
             }
+            if(entity instanceof Mob mob) {
+                Entity forceAttackMob = AWAllay.getMobForceTarget(mob);
+                if(forceAttackMob != null && !forceAttackMob.equals(target)) {
+                    e.setCancelled(true);  return;
+                }
+            }
+
             QinTeam team = QinTeams.getEntityTeam(entity);
             QinTeam targetTeam = QinTeams.getEntityTeam(target);
             if(team == null) return;
@@ -546,7 +553,8 @@ public class TowerListener implements Listener {
 
         switch (itemName) {
             case "指挥棒 - 选中" -> meta.setDisplayName("指挥棒 - 指令");
-            case "指挥棒 - 指令" -> meta.setDisplayName("指挥棒 - 选中");
+            case "指挥棒 - 指令" -> meta.setDisplayName("指挥棒 - 取消");
+            case "指挥棒 - 取消" -> meta.setDisplayName("指挥棒 - 选中");
         }
         p.playSound(p,Sound.ENTITY_BAT_TAKEOFF,1,1.8f);
         stick.setItemMeta(meta);
@@ -617,6 +625,7 @@ public class TowerListener implements Listener {
             Function.sendPlayerSystemMessage(p,"指定了生物攻击");
             for(Mob m : mobs) {
                 AWAllay.removeMobMove(m);
+                AWAllay.setMobForceTarget(m,lv);
                 m.setTarget(lv);
             }
         } else {

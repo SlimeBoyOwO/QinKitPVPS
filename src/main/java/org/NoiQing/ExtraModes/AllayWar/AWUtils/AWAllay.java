@@ -17,6 +17,8 @@ public class AWAllay {
     private static final Map<Entity, Location> tankLastPos = new HashMap<>();
     private static final Map<Mob, LivingEntity> mobMove = new HashMap<>();
     private static final Map<LivingEntity,Integer> moveCounts = new HashMap<>();
+    private static final Map<Mob, Entity> mobForceTarget = new HashMap<>();
+
     public static void setTankDisplays(Entity tank, List<Display> displays){
         tankDisplays.put(tank, displays);
     }
@@ -62,6 +64,16 @@ public class AWAllay {
         e.getScoreboardTags().remove("mob_moving");
         mobMove.remove(e);
     }
+
+    public static Entity getMobForceTarget(Mob mob) {
+        Entity e = mobForceTarget.getOrDefault(mob,null);
+        if(e == null || e.isDead() || e.isEmpty()) {
+            mobForceTarget.remove(mob);
+            return null;
+        }
+        else return e;
+    }
+    public static void setMobForceTarget(Mob mob, Entity entity) {mobForceTarget.put(mob,entity);}
 
 
 }

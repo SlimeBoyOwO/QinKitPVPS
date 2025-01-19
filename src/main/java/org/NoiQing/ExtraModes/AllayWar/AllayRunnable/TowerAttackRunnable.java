@@ -43,7 +43,7 @@ public class TowerAttackRunnable extends BukkitRunnable {
                         || livingEntity instanceof Player))
                     entityList.add(livingEntity);
             }
-            // 达到一定刷新间隔之后重新构建敌人八叉树
+            // 达到一定刷新间隔之后重新构建敌人KD树
             if(pause % updateInterval == 0){
                 enemyTree.clear();
                 enemyTree.addEntities(entityList);

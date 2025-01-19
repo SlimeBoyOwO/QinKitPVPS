@@ -104,6 +104,7 @@ QinKitPVPS extends JavaPlugin {
         // Bukkit.createWorld(new WorldCreator("teamkitpvp"));
         Bukkit.createWorld(new WorldCreator("skyblock"));
         Bukkit.createWorld(new WorldCreator("skyblock_copy"));
+        Bukkit.createWorld(new WorldCreator("pvz_world"));
         Bukkit.createWorld(new WorldCreator("creative"));
         World nether = Bukkit.getWorld("world_nether");
         if (nether != null) {

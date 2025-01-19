@@ -13,10 +13,10 @@ public class PvzRoundRunnable extends BukkitRunnable {
     @Override
     public void run() {
         if(!PvzRound.isRunning()) return;
-        if(Bukkit.getWorld("skyblock_copy") == null) return;
+        if(Bukkit.getWorld("pvz_world") == null) return;
         sbRefresh++;
         if(sbRefresh >= 20) {
-            for (Player p : Objects.requireNonNull(Bukkit.getWorld("skyblock_copy")).getPlayers())
+            for (Player p : Objects.requireNonNull(Bukkit.getWorld("pvz_world")).getPlayers())
                 PluginScoreboard.changeScoreboard(p);
 
             sbRefresh = 0;

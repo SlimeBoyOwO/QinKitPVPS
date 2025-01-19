@@ -38,7 +38,7 @@ public class PvzGameRunnable extends BukkitRunnable {
         pause++;
         List<Entity> zombieList = new ArrayList<>();
         for(World w : Bukkit.getWorlds()) {
-            if(!w.getName().equals("skyblock_copy")) continue;
+            if(!w.getName().equals("pvz_world")) continue;
             for(Player player : w.getPlayers()) {
                 if(PvzEntity.getPlantDisplays(player) == null) continue;
                 for(Display d : PvzEntity.getPlantDisplays(player)) {
