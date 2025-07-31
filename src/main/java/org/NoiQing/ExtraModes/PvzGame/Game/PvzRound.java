@@ -58,6 +58,9 @@ public class PvzRound {
         waveOffset = 0;
         levelName = level.getId();
         allowSunDrop = !levelName.startsWith("2");
+        if(!allowSunDrop) brain.getWorld().setTime(18000);
+        else brain.getWorld().setTime(0);
+
         PvzEntity.resetPlayersMoney();
         switch (difficulty) {
             case 0 -> strDif = "§a§l简单";

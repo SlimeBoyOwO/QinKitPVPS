@@ -14,6 +14,7 @@ import org.NoiQing.util.QinConstant;
 import org.bukkit.*;
 import org.bukkit.attribute.Attribute;
 import org.bukkit.block.Block;
+import org.bukkit.block.data.type.TNT;
 import org.bukkit.boss.BarColor;
 import org.bukkit.boss.BarStyle;
 import org.bukkit.boss.BossBar;
@@ -176,7 +177,7 @@ public class TowerListener implements Listener {
         if(AWFunction.isAllayTower(victim)) {
             //攻城机器额外攻击机制
             if(e.getDamager() instanceof LivingEntity lv) {
-                if(lv.getEquipment() != null && lv.getEquipment().getItemInMainHand().getType().toString().endsWith("PICKAXE")) {
+                if(lv.getEquipment() != null && lv.getEquipment().getItemInMainHand().getType().toString().endsWith("PICKAXE") && !lv.getEquipment().getItemInMainHand().getEnchantments().isEmpty()) {
                     if(attackTeam != null && attackTeam.equals(victimTeam))
                         e.setDamage(99999);
                     else e.setDamage(e.getDamage() * 2.5);
@@ -287,6 +288,14 @@ public class TowerListener implements Listener {
             }
         }
 
+        // 自爆兵攻击设定
+        if(e.getDamager().getScoreboardTags().contains("self_boomer")) {
+            TNTPrimed tnt = murder.getWorld().spawn(murder.getLocation().clone().add(0,0,0), TNTPrimed.class);
+            tnt.addScoreboardTag("cannon_tnt");
+            tnt.setFuseTicks(2);
+            ((LivingEntity) murder).setHealth(0);
+        }
+
         if(murder instanceof Mob mob) {
             //移动机制
             if(entity.getScoreboardTags().contains("move_tag")) {
@@ -296,6 +305,10 @@ public class TowerListener implements Listener {
             }
         }
 
+        // 自爆兵 或者 加农炮 对不是塔的实体造成伤害减弱
+        if(murder.getScoreboardTags().contains("cannon_tnt") && !isAllayTower(entity)) {
+            e.setDamage(e.getDamage() * 4);
+        }
 
     }
 
@@ -654,6 +667,25 @@ public class TowerListener implements Listener {
         }
     }
 
+    @EventHandler
+    public void onPlayerCommandStop(PlayerInteractEvent e) {
+        if(!Function.isRightClicking(e)) return;
+        Player p = e.getPlayer();
+        if(!Function.getMainHandItemNameWithoutColor(p).equals("指挥棒 - 取消")) return;
+
+        Set<Mob> mobs = AWPlayer.getPlayerSelectedEntities(p);
+        if(mobs.isEmpty()) {
+            Function.sendPlayerSystemMessage(p,"你还没有选择任何单位");
+            return;
+        }
+        Function.sendPlayerSystemMessage(p,"取消了生物移动");
+        for(Mob m : mobs) {
+            AWAllay.removeMobMove(m);
+            AWAllay.removeMobForceTarget(m);
+            m.setTarget(null);
+        }
+    }
+
 
     public static boolean isAllayTower(Entity a) {
         for(String s : a.getScoreboardTags()) {
@@ -782,17 +814,18 @@ public class TowerListener implements Listener {
                         lm.setColor(Color.RED);
                         helmet.setItemMeta(lm);
                     }
-                    Function.setMobEquipment(z,new ItemStack(Material.IRON_PICKAXE),helmet);
+                    ItemStack pickaxe = new ItemStack(Material.IRON_PICKAXE);
+                    pickaxe.addUnsafeEnchantment(Enchantment.SHARPNESS,1);
+                    Function.setMobEquipment(z,pickaxe,helmet);
                 }
             }
 
             case "自爆步兵" -> {
                 for(int i = 0; i < 2; i++) {
-                    Zombie z = summonAllayArmy(p, Zombie.class, randomNearbyLocation(loc,1));
+                    Skeleton z = summonAllayArmy(p, Skeleton.class, randomNearbyLocation(loc,1));
                     AWFunction.setNameByTeam(z, "§l自爆步兵");
                     z.addScoreboardTag("self_boomer");
-                    z.setAdult();
-                    z.addPotionEffect(new PotionEffect(PotionEffectType.SPEED, 999999, 2, false, false, true));
+                    z.addPotionEffect(new PotionEffect(PotionEffectType.SPEED, 999999, 1, false, false, true));
                     z.setHealth(10);
                     ItemStack helmet = new ItemStack(Material.LEATHER_HELMET);
                     ItemMeta meta = helmet.getItemMeta();
@@ -909,6 +942,14 @@ public class TowerListener implements Listener {
                 if (team != null) allayGame.getTeamLevels(team.getTeamName()).put("HaveBase",1);
                 Function.setEntityHealth(allay, 600);
                 Objects.requireNonNull(allay.getEquipment()).setItemInMainHand(new ItemStack(Material.REDSTONE_BLOCK));
+            }
+
+            case "小店铺" -> {
+                Function.summonTower(p,"小店铺", loc);
+                allay.addScoreboardTag("Tower_Shop");
+                AWFunction.setNameByTeam(allay,"§l۞ 小店铺 ۞");
+                Function.setEntityHealth(allay, 50);
+                Objects.requireNonNull(allay.getEquipment()).setItemInMainHand(new ItemStack(Material.GOLDEN_APPLE));
             }
 
             case "实验书楼" -> {

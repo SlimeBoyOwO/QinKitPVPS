@@ -224,8 +224,8 @@ public class PassiveSkillsListener implements Listener {
         Player player = event.getPlayer();
         if(event.getAction() == Action.RIGHT_CLICK_AIR || event.getAction() == Action.RIGHT_CLICK_BLOCK){
             if(event.getItem() != null && event.getItem().getType() == Material.ENDER_PEARL){
-                if(player.getScoreboardTags().contains("Teleporter")){
-                    if(player.getTargetBlockExact(75)!=null){
+                if(player.getScoreboardTags().contains("Teleporter") || Function.getItemNameWithoutColor(event.getItem()).equals("传送装置")){
+                    if(player.getTargetBlockExact(Function.getItemNameWithoutColor(event.getItem()).equals("传送装置") ? 200 : 75)!=null){
                         Vector vector = player.getLocation().getDirection();
                         Location location = player.getLocation();
                         Particle particle = Particle.PORTAL;
@@ -284,8 +284,14 @@ public class PassiveSkillsListener implements Listener {
         Entity damager = event.getDamager();
         if(damager instanceof Player p && p.getScoreboardTags().contains("Ghost")) {
             if(PlayerDataSave.ifPlayerPassiveSkillPassCoolDownTime(p,"鬼魂奇袭")) {
-                event.setDamage(event.getDamage() * 3);
+                event.setDamage(event.getDamage() * 2.5);
                 PlayerDataSave.setPlayerPassiveSkillCoolDownTime(p,"鬼魂奇袭",15);
+                new BukkitRunnable() {
+                    @Override
+                    public void run() {
+                        p.playSound(damager.getLocation(),Sound.ENTITY_WITCH_CELEBRATE,1,1.8f);
+                    }
+                }.runTaskLater(QinKitPVPS.getPlugin(),15 * 20);
                 damager.getWorld().playSound(damager.getLocation(),Sound.ENTITY_ZOMBIE_ATTACK_WOODEN_DOOR,1,1);
             }
         }
@@ -465,14 +471,21 @@ public class PassiveSkillsListener implements Listener {
                 player.addPotionEffect(new PotionEffect(PotionEffectType.SPEED,2*20,0));
                 player.getWorld().playSound(player.getLocation(),Sound.ENTITY_WOLF_GROWL,1,1);
             }
+            if(event.getEntity() instanceof Player victim) {
+                if(event.getFinalDamage() > victim.getHealth()) {
+                    player.addPotionEffect(new PotionEffect(PotionEffectType.STRENGTH,5 * 20,0));
+                    player.playSound(player.getLocation(),Sound.ENTITY_WOLF_HOWL,1,1);
+                }
+            }
         }
     }
     //渔夫被动技能
     @EventHandler
     public void onFishManHurt(EntityDamageByEntityEvent event){
         if(event.getEntity() instanceof Player player && player.getScoreboardTags().contains("FishMan")){
-            if(event.getDamager() instanceof PufferFish)
+            if(event.getDamager() instanceof PufferFish || event.getDamager().getLocation().distance(player.getLocation()) < 6.0)
                 event.setCancelled(true);
+
             if(Function.getMainHandItem(player).getType().equals(Material.FISHING_ROD)){
                 if(player.getInventory().getItem(0) != null && Objects.requireNonNull(player.getInventory().getItem(0)).getType().equals(Material.FISHING_ROD))
                     player.getInventory().setHeldItemSlot(1);
@@ -548,7 +561,7 @@ public class PassiveSkillsListener implements Listener {
             arrow.setVelocity(player.getLocation().getDirection().multiply(3));
             if(!player.getScoreboardTags().contains("TWorld")) return;
             int reload = activeSkill.getScore(player.getName()).getScore();
-            reload += 5;
+            reload += 4;
             activeSkill.getScore(player.getName()).setScore(reload);
             Vector vector = arrow.getVelocity();
             new BukkitRunnable(){
@@ -596,7 +609,7 @@ public class PassiveSkillsListener implements Listener {
         }
         if(event.getEntity() instanceof Trident && event.getEntity().getShooter() != null && event.getEntity().getShooter() instanceof LivingEntity shooter && shooter.getScoreboardTags().contains("Drowned")){
             Random random = new Random();
-            if(random.nextInt(9) < 5){
+            if(random.nextInt(9) < 3){
                 event.getEntity().getWorld().spawn(event.getEntity().getLocation(), LightningStrike.class);
             }
         }

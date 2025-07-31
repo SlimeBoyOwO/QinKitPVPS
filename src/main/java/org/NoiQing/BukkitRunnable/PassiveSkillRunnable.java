@@ -63,7 +63,7 @@ public class PassiveSkillRunnable extends BukkitRunnable {
 
             //自爆兵被动技能
             if(player.getScoreboardTags().contains("Boom")){
-                if(Function.getPlayerItemAmount(player, Material.TNT) < 5){
+                if(Function.getPlayerItemAmount(player, Material.TNT) < 6){
                     if(PlayerDataSave.ifPlayerPassiveSkillPassCoolDownTime(player,"手榴弹补给")){
                         ItemStack item = new ItemStack(Material.TNT);
                         ItemMeta meta = item.getItemMeta();
@@ -73,10 +73,10 @@ public class PassiveSkillRunnable extends BukkitRunnable {
                             item.setItemMeta(meta);
                         }
                         player.getInventory().addItem(item);
-                        PlayerDataSave.setPlayerPassiveSkillCoolDownTime(player,"手榴弹补给",8);
+                        PlayerDataSave.setPlayerPassiveSkillCoolDownTime(player,"手榴弹补给",5);
                     }
-                }else if(Function.getPlayerItemAmount(player, Material.TNT) > 5){
-                    Function.removeExtraItems(player,"手榴弹",5);
+                }else if(Function.getPlayerItemAmount(player, Material.TNT) > 6){
+                    Function.removeExtraItems(player,"手榴弹",6);
                 }else{
                     PlayerDataSave.setPlayerPassiveSkillCoolDownTime(player,"手榴弹补给",5);
                 }

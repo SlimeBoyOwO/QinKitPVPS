@@ -13,6 +13,8 @@ import java.util.Map;
 
 public class AWAllay {
     private static final Map<LivingEntity, Integer> allayAttackCD = new HashMap<>();
+    private static final Map<LivingEntity, Integer> scanTargetCD = new HashMap<>();
+    private static final Map<LivingEntity, Integer> maxScanTargetCD = new HashMap<>();
     private static final Map<Entity, List<Display>> tankDisplays = new HashMap<>();
     private static final Map<Entity, Location> tankLastPos = new HashMap<>();
     private static final Map<Mob, LivingEntity> mobMove = new HashMap<>();
@@ -35,6 +37,12 @@ public class AWAllay {
     public static int getAllayAttackCD(LivingEntity a) {
         return allayAttackCD.getOrDefault(a,0);
     }
+
+    public static int getScanTargetCD(LivingEntity lv) {return scanTargetCD.getOrDefault(lv, 0);}
+    public static void setScanTargetCD(LivingEntity lv, int x) {scanTargetCD.put(lv,x);}
+
+    public static int getMaxScanTargetCD(LivingEntity lv) {return maxScanTargetCD.getOrDefault(lv, 20);}
+    public static void setMaxScanTargetCD(LivingEntity lv, int x) {maxScanTargetCD.put(lv,x);}
 
     public static void setTankLastPos(Entity e, Location l){
         tankLastPos.put(e, l);
@@ -74,6 +82,8 @@ public class AWAllay {
         else return e;
     }
     public static void setMobForceTarget(Mob mob, Entity entity) {mobForceTarget.put(mob,entity);}
-
+    public static void removeMobForceTarget(Mob mob) {
+        mobForceTarget.remove(mob);
+    }
 
 }

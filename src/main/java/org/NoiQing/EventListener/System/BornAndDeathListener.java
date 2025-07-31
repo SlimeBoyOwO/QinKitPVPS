@@ -189,10 +189,14 @@ public class BornAndDeathListener implements Listener {
             player.setGameMode(GameMode.SPECTATOR);
             Function.sendPlayerSystemMessage(player,"§c主基地丢失！你已出局");
             Bukkit.broadcastMessage("§c"+team.getTeamName()+"§7 的玩家 §c"+ player.getName()+" §7已出局");
+            team = null;
         }
         AWFunction.givePlayerRespawnItem(player);
         Location loc = AWFunction.getTeamRespawnPoint(AWFunction.getAWTeam(player));
         Location teleportLoc = new Location(Bukkit.getWorld("skyblock_copy"), loc.getX() + 0.5,loc.getY() + 0.5,loc.getZ() + 0.5);
+        if (team != null) {
+            allayGame.addPlayerToTeam(player,team.getTeamName());
+        }
         player.teleport(teleportLoc);
         Function.setPlayerMaxHealth(player,40);
         player.addPotionEffect(new PotionEffect(PotionEffectType.RESISTANCE,100,20,true));

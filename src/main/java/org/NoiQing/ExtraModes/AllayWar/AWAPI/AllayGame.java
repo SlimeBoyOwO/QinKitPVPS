@@ -99,11 +99,17 @@ public class AllayGame extends MiniGameRound {
 
     @Override
     protected void onAddGameDuration() {
-        gameBar.setTitle("§b§l悦灵战争 §3时间时长：§b" + getTimeClock());
+        gameBar.setTitle("§b§l悦灵战争 §3游戏时长：§b" + getTimeClock());
         if(judgeEnd()) endGame();
     }
 
     private void initRound() {
+        World allayWorld = Bukkit.getWorld("skyblock_copy");
+        if(allayWorld == null) {
+            Function.broadcastSystemMessage("有人尝试在悦灵战争没启动的情况下启动！");
+            return;
+        }
+
         initTeamLevels();
         QinMap AWMap = QinKitPVPS.getPlugin().getKitGame().getMaps().getAllayQinMapByMapID(chooseMapID);
         initMap(AWMap);
@@ -112,13 +118,15 @@ public class AllayGame extends MiniGameRound {
         winTeam = "无";
 
         gameBar.setProgress(1);
-        gameBar.setTitle("§b§l悦灵战争 §3时间时长：§b" + getTimeClock());
+        gameBar.setTitle("§b§l悦灵战争 §3游戏时长：§b" + getTimeClock());
 
         for (String teamName : tagToTeamMap.values()) {
             teamPlayers.put(teamName, new HashSet<>());
         }
 
-        List<Player> players = Objects.requireNonNull(Bukkit.getWorld("skyblock_copy")).getPlayers();
+        allayWorld.setTime(18000);
+
+        List<Player> players = allayWorld.getPlayers();
         if(players.size() == 1) {
             isDebug = true;
             Function.broadcastSystemMessage("检测到独自开启游戏！Debug模式启动！使用 /qinkit endAW 结束调试");
@@ -187,7 +195,7 @@ public class AllayGame extends MiniGameRound {
 
                     Location loc = AWMap.getLocation().get(String.valueOf(teleportLocation));
 
-                    p.teleport(new Location(Bukkit.getWorld("skyblock_copy"), loc.getX() + 0.5,loc.getY() + 0.5,loc.getZ() + 0.5));
+                    p.teleport(new Location(allayWorld, loc.getX() + 0.5,loc.getY() + 0.5,loc.getZ() + 0.5));
 
                 }
             }
@@ -195,7 +203,7 @@ public class AllayGame extends MiniGameRound {
             if(!p.getScoreboardTags().contains("InAWGaming")) {
                 p.setGameMode(GameMode.SPECTATOR);
                 Location loc = AWMap.getCenterLocation();
-                p.teleport(new Location(Bukkit.getWorld("skyblock_copy"), loc.getX() + 0.5,loc.getY() + 0.5,loc.getZ() + 0.5));
+                p.teleport(new Location(allayWorld, loc.getX() + 0.5,loc.getY() + 0.5,loc.getZ() + 0.5));
             }
         }
     }
@@ -309,7 +317,22 @@ public class AllayGame extends MiniGameRound {
         }
         return false;
     }
+
+    public void addPlayerToTeam(Player p, String teamName) {
+        Set<Player> set = teamPlayers.getOrDefault(teamName, null);
+        if(set == null) {
+            Function.sendPlayerSystemMessage(p,"你加入了一个不存在的队伍！");
+            return;
+        }
+        QinTeam qinTeam = QinTeams.getQinTeamByName(teamName);
+        if(qinTeam != null && !qinTeam.getTeamPlayers().contains(p))
+            qinTeam.addTeamEntities(p);
+        set.add(p);
+    }
     public void removePlayerFromTeam(Player p) {
+        QinTeam qTeam = QinTeams.getEntityTeam(p);
+        if (qTeam != null) qTeam.removeTeamEntities(p);
+
         for(Map.Entry<String, Set<Player>> entry : teamPlayers.entrySet()) {
             Set<Player> team = entry.getValue();
             team.remove(p);
@@ -359,5 +382,4 @@ public class AllayGame extends MiniGameRound {
     public void setTeamMoney(String team, int money) {
         teamMoney.put(team,money);
     }
-
 }

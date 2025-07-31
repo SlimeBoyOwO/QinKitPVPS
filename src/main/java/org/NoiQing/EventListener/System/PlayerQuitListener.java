@@ -1,5 +1,7 @@
 package org.NoiQing.EventListener.System;
 
+import org.NoiQing.ExtraModes.AllayWar.AWAPI.AllayGame;
+import org.NoiQing.QinKitPVPS;
 import org.NoiQing.api.QinTeam;
 import org.NoiQing.mainGaming.QinTeams;
 import org.NoiQing.util.Function;
@@ -14,12 +16,14 @@ import java.util.List;
 
 public class PlayerQuitListener implements Listener {
     @EventHandler
-    public void onPlayerDeath(PlayerQuitEvent event){
+    public void onPlayerQuit(PlayerQuitEvent event){
         Player player = event.getPlayer();
         if(player.getScoreboardTags().contains("InAWGaming")) {
             QinTeam team = QinTeams.getEntityTeam(player);
+            AllayGame allayGame = QinKitPVPS.getPlugin().getGames().getAllayGame();
             if(team != null) {
                 player.addScoreboardTag("TeamName_" + team.getTeamName());
+                allayGame.removePlayerFromTeam(player);
             }
 
             return;

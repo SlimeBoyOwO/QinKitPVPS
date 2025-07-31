@@ -76,6 +76,7 @@ public class TowerAttackRunnable extends BukkitRunnable {
                     }
 
                     case "Machine" -> {
+                        AWAllay.setMaxScanTargetCD(a,5);
                         if(AWAllay.getAllayAttackCD(a) >= 5) {
                             // 查找周围20米以内的生物
                             LivingEntity lv = findNearestEntity(a,15);
@@ -218,22 +219,25 @@ public class TowerAttackRunnable extends BukkitRunnable {
                 if(e instanceof Mob mob) {
                     LivingEntity target = null;
                     LivingEntity originalTarget = mob.getTarget();
-
+                    if(originalTarget == null || originalTarget.isDead()) {
+                        originalTarget = null;
+                    }
                     //AWMove索敌
                     if(originalTarget == null || !originalTarget.getScoreboardTags().contains("move_tag")) {
                         //生物自动寻找敌人
                         if (mob.getScoreboardTags().contains("engineer"))
-                            target = findNearestFriendlyTower(mob, 100);
+                            target = findNearestFriendlyTower(mob, allayGame.getChooseMapID()>1 ?15:100);
                         else
-                            target = findNearestEnemy(mob, 100);
+                            target = findNearestEnemy(mob, allayGame.getChooseMapID()>1 ?15:100);
                         if(target != null) mob.setTarget(target);
                     }
 
                     if(originalTarget == null && target == null) {
                         mob.addPotionEffect(new PotionEffect(PotionEffectType.SLOWNESS, 3, 50, true));
                         continue;
+                    } else if (originalTarget != null && target == null) {
+                        target = originalTarget;
                     }
-                    if(target == null) continue;
                     //步枪兵机制
                     if(mob.getScoreboardTags().contains("rifle")) {
                         if(target.getScoreboardTags().contains("move_tag")) continue;
@@ -263,12 +267,14 @@ public class TowerAttackRunnable extends BukkitRunnable {
                         }
                     } else if(mob.getScoreboardTags().contains("normal_tank")) {
                         //灰熊坦克设定
-                        if(target.getScoreboardTags().contains("move_tag")) continue;
-                        if(target.getLocation().distance(mob.getLocation()) <= 10) {
+                        double distance = target.getLocation().distance(mob.getLocation());
+                        if(distance < 12) {
                             AWAllay.setAllayAttackCD(mob,AWAllay.getAllayAttackCD(mob) + 1);
                             mob.setRotation(Function.calculateYaw(mob.getLocation(),target.getLocation()),0);
                             if(Function.isShootAble(mob,target,mob.getLocation().clone().add(0,2,0)))
-                                mob.addPotionEffect(new PotionEffect(PotionEffectType.SLOWNESS,5,50,true));
+                                if(!target.getScoreboardTags().contains("move_tag") && distance < 10) {
+                                    mob.addPotionEffect(new PotionEffect(PotionEffectType.SLOWNESS, 5, 50, true));
+                                }
                             else continue;
                             if(AWAllay.getAllayAttackCD(mob) >= 30) {
                                 shootTank(mob,target);
@@ -349,8 +355,10 @@ public class TowerAttackRunnable extends BukkitRunnable {
     }
     private boolean hasPlayerNearBy(Allay a, int i) {
         for(Entity e : a.getNearbyEntities(i,i,i)) {
-            if(e instanceof Player) {
-                return true;
+            if(e instanceof Player player) {
+                if(Function.isSameQinTeam(a,player) && player.getGameMode().equals(GameMode.SURVIVAL)) {
+                    return true;
+                }
             }
         }
         return false;
@@ -418,14 +426,37 @@ public class TowerAttackRunnable extends BukkitRunnable {
     }
 
     private LivingEntity findNearestEntity(Allay allay, double maxDistance) {
-        Set<Entity> inRangeEntities = enemyTree.findEntitiesWithinRadius(allay,maxDistance, Entity2DTree.FilterMode.TOWER);
-        return getNearestInSet(allay, inRangeEntities, maxDistance);
+        int scanCD = AWAllay.getScanTargetCD(allay);
+        if(scanCD > 0) {
+            AWAllay.setScanTargetCD(allay, scanCD -1);
+            Entity target = allay.getTarget();
+            if(target != null && target.getLocation().distance(allay.getLocation()) > maxDistance) return null;
+            else return allay.getTarget();
+        } else {
+            AWAllay.setScanTargetCD(allay, AWAllay.getMaxScanTargetCD(allay));
+            Set<Entity> inRangeEntities = enemyTree.findEntitiesWithinRadius(allay,maxDistance, Entity2DTree.FilterMode.TOWER);
+            return getNearestInSet(allay, inRangeEntities, maxDistance);
+        }
     }
     private LivingEntity findNearestFriendlyTower(Mob mob, double maxDistance) {
+        int scanCD = AWAllay.getScanTargetCD(mob);
+        if(scanCD > 0) {
+            AWAllay.setScanTargetCD(mob, scanCD -1);
+            return mob.getTarget();
+        } else {
+            AWAllay.setScanTargetCD(mob, 20);
+        }
         Set<Entity> inRangeEntities = enemyTree.findEntitiesWithinRadius(mob,maxDistance, Entity2DTree.FilterMode.FRIENDLY_TOWER);
         return getNearestInSet(mob, inRangeEntities, maxDistance);
     }
     private LivingEntity findNearestEnemy(Mob mob, double maxDistance) {
+        int scanCD = AWAllay.getScanTargetCD(mob);
+        if(scanCD > 0) {
+            AWAllay.setScanTargetCD(mob, scanCD -1);
+            return mob.getTarget();
+        } else {
+            AWAllay.setScanTargetCD(mob, 20);
+        }
         Set<Entity> inRangeEntities = enemyTree.findEntitiesWithinRadius(mob,maxDistance, Entity2DTree.FilterMode.ARMY);
         return getNearestInSet(mob, inRangeEntities, maxDistance);
     }

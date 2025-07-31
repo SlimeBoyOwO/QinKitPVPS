@@ -52,7 +52,7 @@ public class AWPlayer {
         playerSelectedEntities.get(p).addAll(entities);
     }
     public static Set<Mob> getPlayerSelectedEntities(Player p){
-        return playerSelectedEntities.getOrDefault(p, null);
+        return playerSelectedEntities.getOrDefault(p, new HashSet<>());
     }
     public static void removePlayerSelectedEntities(Player p){
         playerSelectedEntities.remove(p);

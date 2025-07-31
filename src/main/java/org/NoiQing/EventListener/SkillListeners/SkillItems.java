@@ -146,8 +146,8 @@ public class SkillItems implements Listener {
         }
         if(Function.isHoldingSPItem(player,"兴奋剂")){
             if(PlayerDataSave.ifPlayerSkillPassCoolDownTime(player,"兴奋剂")){
-                player.addPotionEffect(new PotionEffect(PotionEffectType.SPEED,8*20,3));
-                player.addPotionEffect(new PotionEffect(PotionEffectType.JUMP_BOOST,8*20,1));
+                player.addPotionEffect(new PotionEffect(PotionEffectType.SPEED,6*20,3));
+                player.addPotionEffect(new PotionEffect(PotionEffectType.JUMP_BOOST,6*20,1));
                 player.damage(player.getHealth() > 6 ? 6 : (player.getHealth() - 1 > 0 ? player.getHealth() - 1 : 0));
                 player.addScoreboardTag("Octane_Running");
                 player.getWorld().playSound(player.getLocation(),Sound.ENTITY_BAT_TAKEOFF, 1F, 1.6F);
@@ -230,12 +230,13 @@ public class SkillItems implements Listener {
         if(playerUseSPItem(player,"冰冻莲花",1)){
             event.setCancelled(true);
             long yuanSu = PlayerDataSave.getPlayerPassiveSkillRecords(player,"元素蓄力");
-            if(yuanSu < 30)
+            int skillCost = 15;
+            if(yuanSu < skillCost)
                 player.sendMessage("§b§l元素能量不足");
             else{
                 player.setVelocity(player.getLocation().getDirection().multiply(-1.0));
-                PlayerDataSave.setPlayerPassiveSkillRecords(player,"元素蓄力", (yuanSu - 30));
-                player.setLevel((int) (yuanSu - 30));
+                PlayerDataSave.setPlayerPassiveSkillRecords(player,"元素蓄力", (yuanSu - skillCost));
+                player.setLevel((int) (yuanSu - skillCost));
                 BlockDisplay block = player.getWorld().spawn(player.getLocation().clone().add(new Vector(-0.5,1,-0.5)), BlockDisplay.class);
                 Zombie zombie = player.getWorld().spawn(player.getLocation().clone().add(new Vector(0,1,0)), Zombie.class);
                 zombie.setBaby();zombie.setSilent(true);zombie.setInvisible(true);zombie.setAI(false);zombie.addScoreboardTag("Ice_LianHua");
@@ -334,7 +335,7 @@ public class SkillItems implements Listener {
         }
         if(playerUseSPItem(player,"冰雨",1)){
             event.setCancelled(true);
-            int skillCost = 100;
+            int skillCost = 50;
             long yuanSu = PlayerDataSave.getPlayerPassiveSkillRecords(player,"元素蓄力");
             if(yuanSu < skillCost){
                 player.sendMessage("§b§l元素能量不足");

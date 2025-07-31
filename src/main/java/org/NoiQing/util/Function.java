@@ -29,6 +29,7 @@ import org.bukkit.boss.BarColor;
 import org.bukkit.boss.BarStyle;
 import org.bukkit.boss.BossBar;
 import org.bukkit.enchantments.Enchantment;
+import org.bukkit.entity.Allay;
 import org.bukkit.entity.Entity;
 import org.bukkit.entity.LivingEntity;
 import org.bukkit.entity.Player;
@@ -1476,5 +1477,11 @@ public class Function {
         if(e.getPassengers().isEmpty()) topEntity = e;
         else topEntity = e.getPassengers().getLast();
         return topEntity;
+    }
+
+    public static boolean isSameQinTeam(Entity a, Entity b) {
+        QinTeam aTeam = QinTeams.getEntityTeam(a);
+        QinTeam bTeam = QinTeams.getEntityTeam(b);
+        return aTeam != null && aTeam.equals(bTeam);
     }
 }

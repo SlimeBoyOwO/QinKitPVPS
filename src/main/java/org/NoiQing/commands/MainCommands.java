@@ -1,5 +1,6 @@
 package org.NoiQing.commands;
 
+import org.NoiQing.BukkitRunnable.PluginScoreboard;
 import org.NoiQing.ExtraModes.AllayWar.AWAPI.AllayGame;
 import org.NoiQing.ExtraModes.AllayWar.AWUtils.AWPlayer;
 import org.NoiQing.ExtraModes.PvzGame.Game.PvzRound;
@@ -257,6 +258,30 @@ public class MainCommands implements CommandExecutor {
                 Function.sendPlayerSystemMessage(player,"欢迎来到打姜丝的世界~");
             }
 
+            if(args[0].equalsIgnoreCase(Function.addTab("startAW"))){
+                allayGame.startGame();
+                return true;
+            }
+            if(args[0].equalsIgnoreCase(Function.addTab("endAW"))){
+                allayGame.endGame();
+                return true;
+            }
+            //更改月灵战争地图指令
+            if (args[0].equalsIgnoreCase(Function.addTab("allayMap"))) {
+                try {
+                    int x = Integer.parseInt(args[1]);
+                    QinMap map = QinKitPVPS.getPlugin().getKitGame().getMaps().getAllayQinMapByMapID(x);
+                    if (map != null) {
+                        allayGame.setChooseMapID(x);
+                        Function.broadcastSystemMessage("已选择地图: " + map.getMapName());
+                        PluginScoreboard.changePlayerWorldScoreboard(player);
+                    } else Function.sendPlayerSystemMessage(player, "你输入的地图并不存在！");
+                } catch(NumberFormatException e) {
+                    Function.sendPlayerSystemMessage(player,"请输入数字地图编号！");
+                }
+                return true;
+            }
+
             //========================================================================
             //                       后面的指令需要玩家拥有权限
             //========================================================================
@@ -304,15 +329,6 @@ public class MainCommands implements CommandExecutor {
                 } catch (SQLException e) {
                     e.printStackTrace();
                 }
-                return true;
-            }
-
-            if(args[0].equalsIgnoreCase(Function.addTab("startAW"))){
-                allayGame.startGame();
-                return true;
-            }
-            if(args[0].equalsIgnoreCase(Function.addTab("endAW"))){
-                allayGame.endGame();
                 return true;
             }
 
@@ -501,21 +517,6 @@ public class MainCommands implements CommandExecutor {
             //更改职业战争地图指令
             if (args[0].equalsIgnoreCase(Function.addTab("map"))) {
                 executeChangeMapCommandSelf(player, args);
-                return true;
-            }
-
-            //更改月灵战争地图指令
-            if (args[0].equalsIgnoreCase(Function.addTab("allayMap"))) {
-                try {
-                    int x = Integer.parseInt(args[1]);
-                    QinMap map = QinKitPVPS.getPlugin().getKitGame().getMaps().getAllayQinMapByMapID(x);
-                    if (map != null) {
-                        allayGame.setChooseMapID(x);
-                        Function.sendPlayerSystemMessage(player, "已选择地图: " + map.getMapName());
-                    } else Function.sendPlayerSystemMessage(player, "你输入的地图并不存在！");
-                } catch(NumberFormatException e) {
-                    Function.sendPlayerSystemMessage(player,"请输入数字地图编号！");
-                }
                 return true;
             }
 

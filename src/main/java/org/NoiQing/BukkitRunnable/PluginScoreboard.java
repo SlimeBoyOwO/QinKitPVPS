@@ -13,6 +13,7 @@ import org.NoiQing.util.Function;
 import org.NoiQing.util.PlayerDataSave;
 import org.NoiQing.util.WeatherDataSave;
 import org.bukkit.Bukkit;
+import org.bukkit.World;
 import org.bukkit.entity.Player;
 import org.bukkit.scheduler.BukkitRunnable;
 
@@ -56,12 +57,25 @@ public class PluginScoreboard extends BukkitRunnable {
                         "",
                         "§7QQ群：665188287"
                 );
-            } else if(PvzRound.isRunning()) {
+            }
+            else {
+                board.updateLines(
+                        "│ 等待游戏开始...",
+                        "│ 当前选择地图：" + QinKitPVPS.getPlugin().getKitGame().getMaps().getAllayQinMapByMapID(allayGame.getChooseMapID()).getMapName()
+                );
+            }
+
+        }
+        else if(player.getWorld().getName().equals("pvz_world")) {
+            // Set the title
+            board.updateTitle(Function.changeColorCharacters("&2&l植物大战僵尸"));
+
+            if(PvzRound.isRunning()) {
                 board.updateLines(
                         "",
                         Function.changeColorCharacters(">&#e8dc00>&l信息：<&#fcf003<"),
                         "§a名字: §f" + player.getName(),
-                        "§a阳光： §f" + ChatColor.of("#d6b865")+ PvzRound.getTotalSun(),
+                        "§a阳光： §f" + ChatColor.of("#d6b865") + PvzRound.getTotalSun(),
                         "§a钱钱： §f" + "§e" + PvzEntity.getPlayerMoney(player),
                         "§a波数： §f" + ChatColor.AQUA + PvzRound.getCurrentSmallWave() + " / " + PvzRound.getTotalSmallWaves(),
                         "§a剩余僵尸： §f" + ChatColor.AQUA + PvzRound.getRemainZombies(),
@@ -69,18 +83,20 @@ public class PluginScoreboard extends BukkitRunnable {
                         Function.changeColorCharacters(">&#056e6c>&l天气预报：<&#05b0ad<") + (WeatherDataSave.getWeatherStorage().get(player.getWorld()) == null ? "§7无" : WeatherDataSave.getWeatherStorage().get(player.getWorld())),
                         "",
                         Function.changeColorCharacters(">&#fc5603>&l连杀数：<&#fc4103<"),
-                        "§f" + PlayerDataSave.getPlayerKillStreaks(player,"KillStreaks") + " 连杀",
+                        "§f" + PlayerDataSave.getPlayerKillStreaks(player, "KillStreaks") + " 连杀",
                         "",
                         "§7QQ群：665188287"
                 );
-            }else {
+            } else {
                 board.updateLines(
                         "│ 等待游戏开始...",
-                        "│ 当前选择地图：" + QinKitPVPS.getPlugin().getKitGame().getMaps().getAllayQinMapByMapID(allayGame.getChooseMapID()).getMapName()
+                        "│ 该小游戏仍在beta测试版本",
+                        "│ 在箱子中选择你的植物",
+                        "│ 点击屋子内的命令方块开始"
                 );
             }
-
-        } else {
+        }
+        else {
             // Set the title
             board.updateTitle(Function.changeColorCharacters(">&#3dd4d1>&lQinKitPVP<&#02faf6<"));
 
@@ -105,6 +121,11 @@ public class PluginScoreboard extends BukkitRunnable {
         }
 
 
+    }
+    public static void changePlayerWorldScoreboard(Player player) {
+        World w = player.getWorld();
+        for(Player p : w.getPlayers())
+            changeScoreboard(p);
     }
 
 }
