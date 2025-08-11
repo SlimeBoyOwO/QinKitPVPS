@@ -1,0 +1,24 @@
+Activator:
+  Name: '&a究极炼狱'
+Commands:
+- 'console: execute as %player% at %player% run effect give @a[distance=0..10,tag=!Lava]
+  blindness 2 0'
+- 'console: effect give %player% instant_damage 1 2'
+- 'console: execute as %player% at %player% run fill ~7 ~ ~-7 ~-7 ~1 ~7 fire keep'
+- 'console: effect give %player% wither 1000000 1'
+- 'console: execute as %player% at %player% run summon armor_stand ~ ~ ~ {NoGravity:1b,Invisible:1b,Tags:["Lava"]}'
+- 'console: execute as %player% at %player% run effect give @a[distance=0..3,tag=!Lava]
+  haste 10 4'
+- 'console: execute as %player% at %player% run effect give @a[distance=0..3,tag=!Lava]
+  wither 10 0'
+- 'console: execute as %player% at %player% run effect give @a[distance=0..3,tag=!Lava]
+  slowness 4 254'
+- 'console: execute as %player% at %player% run effect give @a[distance=0..3,tag=!Lava]
+  weakness 4 254'
+- 'console: clear %player% minecraft:blaze_rod '
+- 'console: give %player% blaze_rod[enchantments={levels:{"minecraft:fire_aspect":10,"minecraft:knockback":2,"minecraft:sharpness":1}},attribute_modifiers=[{id:"armor",type:"generic.max_health",amount:-5.0d,operation:"add_value",slot:"mainhand"},{id:"armor",type:"generic.armor",amount:4.0d,operation:"add_value",slot:"mainhand"},{id:"armor",type:"generic.knockback_resistance",amount:0d,operation:"add_value",slot:"mainhand"},{id:"armor",type:"generic.movement_speed",amount:0d,operation:"add_multiplied_base",slot:"mainhand"},{id:"armor",type:"generic.attack_damage",amount:3.5d,operation:"add_value",slot:"mainhand"}]]
+  1'
+- 'console: execute as %player% at %player% run title @a[distance=0..10] title '
+- 'console: execute as %player% at %player% run title @a[distance=0..10] subtitle '
+CoolDown:
+  CoolDown: 30S

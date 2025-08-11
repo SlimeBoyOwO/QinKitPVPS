@@ -1,0 +1,5637 @@
+say: hi
+PlantData:
+  豌豆子弹:
+    '0':
+      Item:
+        ==: org.bukkit.inventory.ItemStack
+        v: 3955
+        type: PLAYER_HEAD
+        meta:
+          ==: ItemMeta
+          meta-type: SKULL
+          skull-owner:
+            ==: PlayerProfile
+            uniqueId: 093018bf-5e4b-eb92-4a42-633ae5e166e3
+            properties:
+            - name: textures
+              value: eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvZDcxOGFmOTI0M2IxN2RmNDUzMjE0MDdjNjM0MTFmMjgzZmQzMmIzMGJlOTJiOWM1NWMyNzUxN2ZhYmFiMTFhNSJ9fX0=
+      ItemDisplay: NONE
+      Transform:
+        Translation:
+        - 0.0
+        - 0.4375
+        - 0.0
+        LeftRotation:
+        - 0.0
+        - -0.70710677
+        - 0.0
+        - 0.70710677
+        RightRotation:
+        - -0.0
+        - -0.0
+        - -0.0
+        - 1.0
+        Scale:
+        - 0.79999995
+        - 0.8
+        - 0.79999995
+  寒冰豌豆子弹:
+    '0':
+      Item:
+        ==: org.bukkit.inventory.ItemStack
+        v: 3955
+        type: PLAYER_HEAD
+        meta:
+          ==: ItemMeta
+          meta-type: SKULL
+          skull-owner:
+            ==: PlayerProfile
+            uniqueId: 69f4dcc4-8d46-c736-c91e-dd5b125435ac
+            properties:
+            - name: textures
+              value: eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvNDNjNWQxYjY0ZjUwZTY0YWQwZjgwZTFhNzcwZjAyYjFkYzRmYzQ1YTVmNDg5MmE4NmRjZDg2MWZmYWFjYjdjNSJ9fX0=
+      ItemDisplay: NONE
+      Transform:
+        Translation:
+        - 0.0
+        - 0.375
+        - 0.0
+        LeftRotation:
+        - 0.0
+        - 0.70710677
+        - 0.0
+        - 0.70710677
+        RightRotation:
+        - -0.0
+        - -0.0
+        - -0.0
+        - 1.0
+        Scale:
+        - 0.79999995
+        - 0.8
+        - 0.79999995
+  卷心菜:
+    '0':
+      Item:
+        ==: org.bukkit.inventory.ItemStack
+        v: 3955
+        type: PLAYER_HEAD
+        meta:
+          ==: ItemMeta
+          meta-type: SKULL
+          skull-owner:
+            ==: PlayerProfile
+            uniqueId: f14f7ed0-39ad-3685-ef2b-b54f04d8c0a4
+            properties:
+            - name: textures
+              value: eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvNThlNTlkYzcyMmU0MTlmZTA2NGYwYzc5OTJhNzg5N2I3M2NjN2M1MjA1ZTE5ZDA2N2ExNzRiY2IwMThlOTQyOSJ9fX0=
+      ItemDisplay: NONE
+      Transform:
+        Translation:
+        - 0.0
+        - 0.5
+        - 0.0
+        LeftRotation:
+        - 0.0
+        - 0.0
+        - 0.0
+        - 1.0
+        RightRotation:
+        - -0.0
+        - -0.0
+        - -0.0
+        - 1.0
+        Scale:
+        - 1.0
+        - 1.0
+        - 1.0
+  双发射手:
+    '0':
+      Item:
+        ==: org.bukkit.inventory.ItemStack
+        v: 3955
+        type: LIME_CONCRETE
+      ItemDisplay: NONE
+      Transform:
+        Translation:
+        - 0.0
+        - 0.4375
+        - 0.0
+        LeftRotation:
+        - 0.0
+        - 1.0
+        - 0.0
+        - 0.0
+        RightRotation:
+        - -0.0
+        - -0.0
+        - -0.0
+        - 1.0
+        Scale:
+        - 0.15
+        - 0.8
+        - 0.15
+    '1':
+      Item:
+        ==: org.bukkit.inventory.ItemStack
+        v: 3955
+        type: LIME_CONCRETE
+      ItemDisplay: NONE
+      Transform:
+        Translation:
+        - 0.0
+        - 0.0
+        - 0.0
+        LeftRotation:
+        - 0.0
+        - 0.8660286
+        - 0.0
+        - -0.49999452
+        RightRotation:
+        - -0.0
+        - -0.0
+        - -0.0
+        - 1.0
+        Scale:
+        - 0.3999912
+        - 0.15
+        - 0.84998137
+    '2':
+      Item:
+        ==: org.bukkit.inventory.ItemStack
+        v: 3955
+        type: LIME_CONCRETE
+      ItemDisplay: NONE
+      Transform:
+        Translation:
+        - -0.5625
+        - 1.5625
+        - 0.0
+        LeftRotation:
+        - -0.3327072
+        - 0.9310393
+        - -0.08416009
+        - -0.124052204
+        RightRotation:
+        - -0.0
+        - -0.0
+        - -0.0
+        - 1.0
+        Scale:
+        - 0.15819022
+        - 0.2734866
+        - 0.0749811
+    '3':
+      Item:
+        ==: org.bukkit.inventory.ItemStack
+        v: 3955
+        type: LIME_TERRACOTTA
+      ItemDisplay: NONE
+      Transform:
+        Translation:
+        - 0.0
+        - 0.8125
+        - 0.0
+        LeftRotation:
+        - 0.0
+        - 1.0
+        - 0.0
+        - 0.0
+        RightRotation:
+        - -0.0
+        - -0.0
+        - -0.0
+        - 1.0
+        Scale:
+        - 0.2
+        - 0.15
+        - 0.2
+    '4':
+      Item:
+        ==: org.bukkit.inventory.ItemStack
+        v: 3955
+        type: LIME_CONCRETE
+      ItemDisplay: NONE
+      Transform:
+        Translation:
+        - -0.625
+        - 1.375
+        - 0.0
+        LeftRotation:
+        - 0.5418015
+        - 0.8104113
+        - 0.061879765
+        - -0.21413897
+        RightRotation:
+        - -0.0
+        - -0.0
+        - -0.0
+        - 1.0
+        Scale:
+        - 0.15816122
+        - 0.2734987
+        - 0.074948385
+    '5':
+      Item:
+        ==: org.bukkit.inventory.ItemStack
+        v: 3955
+        type: PLAYER_HEAD
+        meta:
+          ==: ItemMeta
+          meta-type: SKULL
+          skull-owner:
+            ==: PlayerProfile
+            uniqueId: bd8279dd-27c6-4d64-efdc-c7ebd684193d
+            properties:
+            - name: textures
+              value: eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvMmQ3YmE2MmJkOWQwMGE5ODFhOTc4MzZkOTQxNGQxNDAwNWZjZDRkNTRjNDVkMmJiYWMxMDc1ZDg2YjNkODBmNiJ9fX0=
+      ItemDisplay: NONE
+      Transform:
+        Translation:
+        - 0.0
+        - 1.5
+        - 0.0
+        LeftRotation:
+        - 0.0
+        - -0.70710677
+        - 0.0
+        - 0.70710677
+        RightRotation:
+        - -0.0
+        - -0.0
+        - -0.0
+        - 1.0
+        Scale:
+        - 1.1288999
+        - 1.2656
+        - 1.8749999
+    '6':
+      Item:
+        ==: org.bukkit.inventory.ItemStack
+        v: 3955
+        type: LIME_CONCRETE
+      ItemDisplay: NONE
+      Transform:
+        Translation:
+        - 0.0
+        - 0.0
+        - 0.0
+        LeftRotation:
+        - 0.0
+        - -0.38268346
+        - 0.0
+        - 0.92387956
+        RightRotation:
+        - -0.0
+        - -0.0
+        - -0.0
+        - 1.0
+        Scale:
+        - 0.3999396
+        - 0.15
+        - 0.84994245
+  寒冰射手:
+    '0':
+      Item:
+        ==: org.bukkit.inventory.ItemStack
+        v: 3955
+        type: LIME_CONCRETE
+      ItemDisplay: NONE
+      Transform:
+        Translation:
+        - 0.0
+        - 0.4375
+        - 0.0
+        LeftRotation:
+        - 0.0
+        - 1.0
+        - 0.0
+        - 0.0
+        RightRotation:
+        - -0.0
+        - -0.0
+        - -0.0
+        - 1.0
+        Scale:
+        - 0.15
+        - 0.8
+        - 0.15
+    '1':
+      Item:
+        ==: org.bukkit.inventory.ItemStack
+        v: 3955
+        type: LIME_CONCRETE
+      ItemDisplay: NONE
+      Transform:
+        Translation:
+        - 0.0
+        - 0.0
+        - 0.0
+        LeftRotation:
+        - 0.0
+        - 0.8660286
+        - 0.0
+        - -0.49999452
+        RightRotation:
+        - -0.0
+        - -0.0
+        - -0.0
+        - 1.0
+        Scale:
+        - 0.3999912
+        - 0.15
+        - 0.84998137
+    '2':
+      Item:
+        ==: org.bukkit.inventory.ItemStack
+        v: 3955
+        type: LIGHT_BLUE_CONCRETE
+      ItemDisplay: NONE
+      Transform:
+        Translation:
+        - 0.0
+        - 0.8125
+        - 0.0
+        LeftRotation:
+        - 0.0
+        - 1.0
+        - 0.0
+        - 0.0
+        RightRotation:
+        - -0.0
+        - -0.0
+        - -0.0
+        - 1.0
+        Scale:
+        - 0.2
+        - 0.15
+        - 0.2
+    '3':
+      Item:
+        ==: org.bukkit.inventory.ItemStack
+        v: 3955
+        type: LIME_CONCRETE
+      ItemDisplay: NONE
+      Transform:
+        Translation:
+        - 0.0
+        - 0.0
+        - 0.0
+        LeftRotation:
+        - 0.0
+        - -0.38268346
+        - 0.0
+        - 0.92387956
+        RightRotation:
+        - -0.0
+        - -0.0
+        - -0.0
+        - 1.0
+        Scale:
+        - 0.3999396
+        - 0.15
+        - 0.84994245
+    '4':
+      Item:
+        ==: org.bukkit.inventory.ItemStack
+        v: 3955
+        type: LIGHT_BLUE_CONCRETE
+      ItemDisplay: NONE
+      Transform:
+        Translation:
+        - -0.5
+        - 1.5
+        - 0.0
+        LeftRotation:
+        - -0.3327072
+        - 0.9310393
+        - -0.08416009
+        - -0.124052204
+        RightRotation:
+        - -0.0
+        - -0.0
+        - -0.0
+        - 1.0
+        Scale:
+        - 0.15819022
+        - 0.2734866
+        - 0.0749811
+    '5':
+      Item:
+        ==: org.bukkit.inventory.ItemStack
+        v: 3955
+        type: PLAYER_HEAD
+        meta:
+          ==: ItemMeta
+          meta-type: SKULL
+          skull-owner:
+            ==: PlayerProfile
+            uniqueId: ca6f1f98-7e5a-0aae-c0e1-71e916886850
+            properties:
+            - name: textures
+              value: ewogICJ0aW1lc3RhbXAiIDogMTcyODk5NTk0ODY2OCwKICAicHJvZmlsZUlkIiA6ICJjNjI5MzRjYmE5YTE0NjYwYTk3NTk0YjNlMjQ0ZjhhOSIsCiAgInByb2ZpbGVOYW1lIiA6ICJBQUFycm9iYSIsCiAgInNpZ25hdHVyZVJlcXVpcmVkIiA6IHRydWUsCiAgInRleHR1cmVzIiA6IHsKICAgICJTS0lOIiA6IHsKICAgICAgInVybCIgOiAiaHR0cDovL3RleHR1cmVzLm1pbmVjcmFmdC5uZXQvdGV4dHVyZS82ZDk5MzVmMGU1Y2FmM2VlZDcyOTY0YjRmYzkwNmViZWE2YzYyZGI3MjMwZmQ1MmNiMDcwZjY1Y2EzOTM3MDUzIiwKICAgICAgIm1ldGFkYXRhIiA6IHsKICAgICAgICAibW9kZWwiIDogInNsaW0iCiAgICAgIH0KICAgIH0KICB9Cn0=
+      ItemDisplay: NONE
+      Transform:
+        Translation:
+        - 0.0
+        - 1.5
+        - 0.0
+        LeftRotation:
+        - 0.0
+        - -0.7071067
+        - 0.0
+        - 0.7071067
+        RightRotation:
+        - -0.0
+        - -0.0
+        - -0.0
+        - 1.0
+        Scale:
+        - 1.1249998
+        - 1.25
+        - 1.8163997
+  豌豆射手:
+    '0':
+      Item:
+        ==: org.bukkit.inventory.ItemStack
+        v: 3955
+        type: LIME_CONCRETE
+      ItemDisplay: NONE
+      Transform:
+        Translation:
+        - 0.0
+        - 0.4375
+        - 0.0
+        LeftRotation:
+        - 0.0
+        - 1.0
+        - 0.0
+        - 0.0
+        RightRotation:
+        - -0.0
+        - -0.0
+        - -0.0
+        - 1.0
+        Scale:
+        - 0.15
+        - 0.8
+        - 0.15
+    '1':
+      Item:
+        ==: org.bukkit.inventory.ItemStack
+        v: 3955
+        type: LIME_CONCRETE
+      ItemDisplay: NONE
+      Transform:
+        Translation:
+        - 0.0
+        - 0.0
+        - 0.0
+        LeftRotation:
+        - 0.0
+        - 0.8660286
+        - 0.0
+        - -0.49999452
+        RightRotation:
+        - -0.0
+        - -0.0
+        - -0.0
+        - 1.0
+        Scale:
+        - 0.3999912
+        - 0.15
+        - 0.84998137
+    '2':
+      Item:
+        ==: org.bukkit.inventory.ItemStack
+        v: 3955
+        type: LIME_TERRACOTTA
+      ItemDisplay: NONE
+      Transform:
+        Translation:
+        - 0.0
+        - 0.8125
+        - 0.0
+        LeftRotation:
+        - 0.0
+        - 1.0
+        - 0.0
+        - 0.0
+        RightRotation:
+        - -0.0
+        - -0.0
+        - -0.0
+        - 1.0
+        Scale:
+        - 0.2
+        - 0.15
+        - 0.2
+    '3':
+      Item:
+        ==: org.bukkit.inventory.ItemStack
+        v: 3955
+        type: LIME_CONCRETE
+      ItemDisplay: NONE
+      Transform:
+        Translation:
+        - 0.0
+        - 0.0
+        - 0.0
+        LeftRotation:
+        - 0.0
+        - -0.38268346
+        - 0.0
+        - 0.92387956
+        RightRotation:
+        - -0.0
+        - -0.0
+        - -0.0
+        - 1.0
+        Scale:
+        - 0.3999396
+        - 0.15
+        - 0.84994245
+    '4':
+      Item:
+        ==: org.bukkit.inventory.ItemStack
+        v: 3955
+        type: LIME_CONCRETE
+      ItemDisplay: NONE
+      Transform:
+        Translation:
+        - -0.5
+        - 1.5
+        - 0.0
+        LeftRotation:
+        - -0.3327072
+        - 0.9310393
+        - -0.08416009
+        - -0.124052204
+        RightRotation:
+        - -0.0
+        - -0.0
+        - -0.0
+        - 1.0
+        Scale:
+        - 0.15819022
+        - 0.2734866
+        - 0.0749811
+    '5':
+      Item:
+        ==: org.bukkit.inventory.ItemStack
+        v: 3955
+        type: PLAYER_HEAD
+        meta:
+          ==: ItemMeta
+          meta-type: SKULL
+          skull-owner:
+            ==: PlayerProfile
+            uniqueId: ed29de30-1348-4944-6133-443ebefc5499
+            properties:
+            - name: textures
+              value: eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvNGM3ZGUzOTllODNkZjc4ZTRmZmQxY2JiZTkzMzNiZjg5MGU0ZTUwOTcwNDVlYTVhODA2ZTMwYzRkYzFjOTBjNCJ9fX0=
+      ItemDisplay: NONE
+      Transform:
+        Translation:
+        - 0.0
+        - 1.5
+        - 0.0
+        LeftRotation:
+        - 0.0
+        - -0.7071067
+        - 0.0
+        - 0.7071067
+        RightRotation:
+        - -0.0
+        - -0.0
+        - -0.0
+        - 1.0
+        Scale:
+        - 1.1249998
+        - 1.25
+        - 1.8163997
+  卷心菜投手:
+    '0':
+      Item:
+        ==: org.bukkit.inventory.ItemStack
+        v: 3955
+        type: PLAYER_HEAD
+        meta:
+          ==: ItemMeta
+          meta-type: SKULL
+          skull-owner:
+            ==: PlayerProfile
+            uniqueId: f1794049-c019-c67f-7e31-a79e8af4a169
+            properties:
+            - name: textures
+              value: ewogICJ0aW1lc3RhbXAiIDogMTcyODk5NjMzNjkwNiwKICAicHJvZmlsZUlkIiA6ICJjN2Y2Nzk3ZmE4ZGM0NTdiYTkxNTU0NWIwMGU3M2UzMSIsCiAgInByb2ZpbGVOYW1lIiA6ICJlZGd5c3BlbmNlIiwKICAic2lnbmF0dXJlUmVxdWlyZWQiIDogdHJ1ZSwKICAidGV4dHVyZXMiIDogewogICAgIlNLSU4iIDogewogICAgICAidXJsIiA6ICJodHRwOi8vdGV4dHVyZXMubWluZWNyYWZ0Lm5ldC90ZXh0dXJlLzMxZTNkMGZlY2UwNDY4ZjhiMjI5ZDdiZmZmYzUzMjdlMmU2MDQxNDBhMTU3YWVhZWI4MzJlZDA5OGNkOTA2ZiIsCiAgICAgICJtZXRhZGF0YSIgOiB7CiAgICAgICAgIm1vZGVsIiA6ICJzbGltIgogICAgICB9CiAgICB9CiAgfQp9
+      ItemDisplay: NONE
+      Transform:
+        Translation:
+        - 0.0
+        - 0.75
+        - 0.0
+        LeftRotation:
+        - 0.0
+        - 0.0
+        - 0.0
+        - 1.0
+        RightRotation:
+        - -0.0
+        - -0.0
+        - -0.0
+        - 1.0
+        Scale:
+        - 1.5
+        - 1.5
+        - 1.5
+    '1':
+      Item:
+        ==: org.bukkit.inventory.ItemStack
+        v: 3955
+        type: DARK_OAK_WOOD
+      ItemDisplay: NONE
+      Transform:
+        Translation:
+        - -1.0
+        - 0.6875
+        - 0.0
+        LeftRotation:
+        - 0.0
+        - 0.0
+        - 0.0
+        - 1.0
+        RightRotation:
+        - -0.0
+        - -0.0
+        - -0.0
+        - 1.0
+        Scale:
+        - 0.7
+        - 0.2
+        - 0.7
+    '2':
+      Item:
+        ==: org.bukkit.inventory.ItemStack
+        v: 3955
+        type: PLAYER_HEAD
+        meta:
+          ==: ItemMeta
+          meta-type: SKULL
+          skull-owner:
+            ==: PlayerProfile
+            uniqueId: 5d1d7890-9871-ccfd-f938-37780f0da5dc
+            properties:
+            - name: textures
+              value: eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvNThlNTlkYzcyMmU0MTlmZTA2NGYwYzc5OTJhNzg5N2I3M2NjN2M1MjA1ZTE5ZDA2N2ExNzRiY2IwMThlOTQyOSJ9fX0=
+      ItemDisplay: NONE
+      Transform:
+        Translation:
+        - -1.0
+        - 1.125
+        - 0.0
+        LeftRotation:
+        - 0.0
+        - 0.0
+        - 0.0
+        - 1.0
+        RightRotation:
+        - -0.0
+        - -0.0
+        - -0.0
+        - 1.0
+        Scale:
+        - 1.0
+        - 1.0
+        - 1.0
+    '3':
+      Item:
+        ==: org.bukkit.inventory.ItemStack
+        v: 3955
+        type: LIME_WOOL
+      ItemDisplay: NONE
+      Transform:
+        Translation:
+        - -0.6875
+        - 0.4375
+        - 0.0
+        LeftRotation:
+        - 0.0
+        - 0.0
+        - 0.49999446
+        - 0.8660285
+        RightRotation:
+        - -0.0
+        - -0.0
+        - -0.0
+        - 1.0
+        Scale:
+        - 0.09999779
+        - 0.7999823
+        - 0.09999997
+  西瓜投手:
+    '0':
+      Item:
+        ==: org.bukkit.inventory.ItemStack
+        v: 3955
+        type: DARK_OAK_WOOD
+      ItemDisplay: NONE
+      Transform:
+        Translation:
+        - -1.0
+        - 0.6875
+        - 0.0
+        LeftRotation:
+        - 0.0
+        - 0.0
+        - 0.0
+        - 1.0
+        RightRotation:
+        - -0.0
+        - -0.0
+        - -0.0
+        - 1.0
+        Scale:
+        - 0.7
+        - 0.2
+        - 0.7
+    '1':
+      Item:
+        ==: org.bukkit.inventory.ItemStack
+        v: 3955
+        type: GREEN_TERRACOTTA
+      ItemDisplay: NONE
+      Transform:
+        Translation:
+        - -0.6875
+        - 0.4375
+        - 0.0
+        LeftRotation:
+        - 0.0
+        - 0.0
+        - 0.49999446
+        - 0.8660285
+        RightRotation:
+        - -0.0
+        - -0.0
+        - -0.0
+        - 1.0
+        Scale:
+        - 0.09999779
+        - 0.7999823
+        - 0.09999997
+    '2':
+      Item:
+        ==: org.bukkit.inventory.ItemStack
+        v: 3955
+        type: PLAYER_HEAD
+        meta:
+          ==: ItemMeta
+          meta-type: SKULL
+          skull-owner:
+            ==: PlayerProfile
+            uniqueId: 0f360115-cbf0-916d-62f8-cc4cf5cb0db9
+            properties:
+            - name: textures
+              value: ewogICJ0aW1lc3RhbXAiIDogMTcyOTE0MjUwMTMwNywKICAicHJvZmlsZUlkIiA6ICJjNWY3OWQ3ODkyNDA0ZGMwOGVhZjZiZDVlNGM4ZGYyYyIsCiAgInByb2ZpbGVOYW1lIiA6ICJMb25naG9ybnM3MDkiLAogICJzaWduYXR1cmVSZXF1aXJlZCIgOiB0cnVlLAogICJ0ZXh0dXJlcyIgOiB7CiAgICAiU0tJTiIgOiB7CiAgICAgICJ1cmwiIDogImh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvNWU1NjAzYzQ2Njk4MDdlMDMwZTE2ZGIwNDFkMDgwNWIxZGE3NmY3MDlhYzI0NjFlNjc1ZDZiMTI3ZDc0MTk4NCIsCiAgICAgICJtZXRhZGF0YSIgOiB7CiAgICAgICAgIm1vZGVsIiA6ICJzbGltIgogICAgICB9CiAgICB9CiAgfQp9
+      ItemDisplay: NONE
+      Transform:
+        Translation:
+        - 0.0
+        - 0.75
+        - 0.0
+        LeftRotation:
+        - 0.0
+        - 0.0
+        - 0.0
+        - 1.0
+        RightRotation:
+        - -0.0
+        - -0.0
+        - -0.0
+        - 1.0
+        Scale:
+        - 1.5
+        - 1.5
+        - 1.9336
+    '3':
+      Item:
+        ==: org.bukkit.inventory.ItemStack
+        v: 3955
+        type: PLAYER_HEAD
+        meta:
+          ==: ItemMeta
+          meta-type: SKULL
+          skull-owner:
+            ==: PlayerProfile
+            uniqueId: dc99b3ed-842e-0766-469b-6d3c831ccd83
+            properties:
+            - name: textures
+              value: eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvZmE1MWNkNTkxNDJlYTc5NzU3M2EyZmZjZTY5NTE4YTJiNGM2OTQwZDc5MGU3OGEyZWU4NTA0MTYzNTAwZDFkOSJ9fX0=
+      ItemDisplay: NONE
+      Transform:
+        Translation:
+        - -1.0
+        - 1.125
+        - 0.0
+        LeftRotation:
+        - 0.0
+        - 0.0
+        - 0.0
+        - 1.0
+        RightRotation:
+        - -0.0
+        - -0.0
+        - -0.0
+        - 1.0
+        Scale:
+        - 1.0
+        - 1.0
+        - 1.1875
+  玉米投手:
+    '0':
+      Item:
+        ==: org.bukkit.inventory.ItemStack
+        v: 3955
+        type: DARK_OAK_WOOD
+      ItemDisplay: NONE
+      Transform:
+        Translation:
+        - -1.0
+        - 0.6875
+        - 0.0
+        LeftRotation:
+        - 0.0
+        - 0.0
+        - 0.0
+        - 1.0
+        RightRotation:
+        - -0.0
+        - -0.0
+        - -0.0
+        - 1.0
+        Scale:
+        - 0.5687
+        - 0.2
+        - 0.6125
+    '1':
+      Item:
+        ==: org.bukkit.inventory.ItemStack
+        v: 3955
+        type: GREEN_TERRACOTTA
+      ItemDisplay: NONE
+      Transform:
+        Translation:
+        - -0.6875
+        - 0.4375
+        - 0.0
+        LeftRotation:
+        - 0.0
+        - 0.0
+        - 0.49999446
+        - 0.8660285
+        RightRotation:
+        - -0.0
+        - -0.0
+        - -0.0
+        - 1.0
+        Scale:
+        - 0.09999779
+        - 0.7999823
+        - 0.09999997
+    '2':
+      Item:
+        ==: org.bukkit.inventory.ItemStack
+        v: 3955
+        type: PLAYER_HEAD
+        meta:
+          ==: ItemMeta
+          meta-type: SKULL
+          skull-owner:
+            ==: PlayerProfile
+            uniqueId: 7a843ade-ea4e-2c84-f86f-ffd15517318e
+            properties:
+            - name: textures
+              value: ewogICJ0aW1lc3RhbXAiIDogMTcyOTE0MjkwOTQzOCwKICAicHJvZmlsZUlkIiA6ICI4MDBmNmU2ZGNiMTk0Yzc2OGE1OWU1Y2Q2MzFlNjI2YyIsCiAgInByb2ZpbGVOYW1lIiA6ICJ5dXl1dXUxIiwKICAic2lnbmF0dXJlUmVxdWlyZWQiIDogdHJ1ZSwKICAidGV4dHVyZXMiIDogewogICAgIlNLSU4iIDogewogICAgICAidXJsIiA6ICJodHRwOi8vdGV4dHVyZXMubWluZWNyYWZ0Lm5ldC90ZXh0dXJlL2ExYTc1NDYyNjY3M2FkN2QxZTM2ODdkNGY5NTJkMWI2ZTk4NTlmNWE3MWY5MDIzOTMzY2E5M2Y5NzY4YmZhNTkiLAogICAgICAibWV0YWRhdGEiIDogewogICAgICAgICJtb2RlbCIgOiAic2xpbSIKICAgICAgfQogICAgfQogIH0KfQ==
+      ItemDisplay: NONE
+      Transform:
+        Translation:
+        - 0.0
+        - 0.875
+        - 0.0
+        LeftRotation:
+        - 0.0
+        - 0.0
+        - 0.0
+        - 1.0
+        RightRotation:
+        - -0.0
+        - -0.0
+        - -0.0
+        - 1.0
+        Scale:
+        - 1.5
+        - 1.7431
+        - 1.5
+    '3':
+      Item:
+        ==: org.bukkit.inventory.ItemStack
+        v: 3955
+        type: GOLD_NUGGET
+      ItemDisplay: NONE
+      Transform:
+        Translation:
+        - -1.0
+        - 1.0
+        - 0.0
+        LeftRotation:
+        - 0.70710677
+        - 0.0
+        - -0.70710677
+        - 0.0
+        RightRotation:
+        - -0.0
+        - -0.0
+        - -0.0
+        - 1.0
+        Scale:
+        - 0.99999994
+        - 1.0
+        - 0.99999994
+  机枪射手:
+    '0':
+      Item:
+        ==: org.bukkit.inventory.ItemStack
+        v: 3955
+        type: LIME_CONCRETE
+      ItemDisplay: NONE
+      Transform:
+        Translation:
+        - 0.0
+        - 0.4375
+        - 0.0
+        LeftRotation:
+        - 0.0
+        - 1.0
+        - 0.0
+        - 0.0
+        RightRotation:
+        - -0.0
+        - -0.0
+        - -0.0
+        - 1.0
+        Scale:
+        - 0.15
+        - 0.8
+        - 0.15
+    '1':
+      Item:
+        ==: org.bukkit.inventory.ItemStack
+        v: 3955
+        type: LIME_CONCRETE
+      ItemDisplay: NONE
+      Transform:
+        Translation:
+        - 0.0
+        - 0.0
+        - 0.0
+        LeftRotation:
+        - 0.0
+        - 0.8660286
+        - 0.0
+        - -0.49999452
+        RightRotation:
+        - -0.0
+        - -0.0
+        - -0.0
+        - 1.0
+        Scale:
+        - 0.3999912
+        - 0.15
+        - 0.84998137
+    '2':
+      Item:
+        ==: org.bukkit.inventory.ItemStack
+        v: 3955
+        type: LIME_TERRACOTTA
+      ItemDisplay: NONE
+      Transform:
+        Translation:
+        - 0.0
+        - 0.8125
+        - 0.0
+        LeftRotation:
+        - 0.0
+        - 1.0
+        - 0.0
+        - 0.0
+        RightRotation:
+        - -0.0
+        - -0.0
+        - -0.0
+        - 1.0
+        Scale:
+        - 0.2
+        - 0.15
+        - 0.2
+    '3':
+      Item:
+        ==: org.bukkit.inventory.ItemStack
+        v: 3955
+        type: LIME_CONCRETE
+      ItemDisplay: NONE
+      Transform:
+        Translation:
+        - 0.0
+        - 0.0
+        - 0.0
+        LeftRotation:
+        - 0.0
+        - -0.38268346
+        - 0.0
+        - 0.92387956
+        RightRotation:
+        - -0.0
+        - -0.0
+        - -0.0
+        - 1.0
+        Scale:
+        - 0.3999396
+        - 0.15
+        - 0.84994245
+    '4':
+      Item:
+        ==: org.bukkit.inventory.ItemStack
+        v: 3955
+        type: PLAYER_HEAD
+        meta:
+          ==: ItemMeta
+          meta-type: SKULL
+          skull-owner:
+            ==: PlayerProfile
+            uniqueId: 65d69574-4e6e-4739-c303-0ed1b302f37c
+            properties:
+            - name: textures
+              value: ewogICJ0aW1lc3RhbXAiIDogMTcyOTE0MjIyOTQ0MywKICAicHJvZmlsZUlkIiA6ICI2ZjhlYWI1MTVmNTc0MmRhOWYxZDYzMzY1ODAxMDU4YyIsCiAgInByb2ZpbGVOYW1lIiA6ICJDaW5kZXJGb3hfMjAwNiIsCiAgInNpZ25hdHVyZVJlcXVpcmVkIiA6IHRydWUsCiAgInRleHR1cmVzIiA6IHsKICAgICJTS0lOIiA6IHsKICAgICAgInVybCIgOiAiaHR0cDovL3RleHR1cmVzLm1pbmVjcmFmdC5uZXQvdGV4dHVyZS9lNmRjOGUwYjgzNGUzNWQ4Mjg2NmE4MDE4YjcxNWEzZmRmYmU1OTk5NzIxYjUwZDBiNjlhZmQwMTMxMGRjODNiIiwKICAgICAgIm1ldGFkYXRhIiA6IHsKICAgICAgICAibW9kZWwiIDogInNsaW0iCiAgICAgIH0KICAgIH0KICB9Cn0=
+      ItemDisplay: NONE
+      Transform:
+        Translation:
+        - 0.0
+        - 1.5
+        - 0.0
+        LeftRotation:
+        - 0.0
+        - -0.7071067
+        - 0.0
+        - 0.7071067
+        RightRotation:
+        - -0.0
+        - -0.0
+        - -0.0
+        - 1.0
+        Scale:
+        - 1.1132998
+        - 1.2699999
+        - 1.8124996
+    '5':
+      Item:
+        ==: org.bukkit.inventory.ItemStack
+        v: 3955
+        type: GRAY_CONCRETE
+      ItemDisplay: NONE
+      Transform:
+        Translation:
+        - -0.1875
+        - 1.5625
+        - 0.0
+        LeftRotation:
+        - 0.0
+        - 0.0
+        - 0.0
+        - 1.0
+        RightRotation:
+        - -0.0
+        - -0.0
+        - -0.0
+        - 1.0
+        Scale:
+        - 0.8125
+        - 0.1641
+        - 0.75
+    '6':
+      Item:
+        ==: org.bukkit.inventory.ItemStack
+        v: 3955
+        type: GRAY_CONCRETE
+      ItemDisplay: NONE
+      Transform:
+        Translation:
+        - -0.4375
+        - 1.25
+        - 0.0
+        LeftRotation:
+        - 0.0
+        - 0.0
+        - 0.0
+        - 0.99999994
+        RightRotation:
+        - -0.0
+        - -0.0
+        - -0.0
+        - 1.0
+        Scale:
+        - 0.45699993
+        - 0.7383999
+        - 0.75
+  西瓜投掷物:
+    '0':
+      Item:
+        ==: org.bukkit.inventory.ItemStack
+        v: 3955
+        type: PLAYER_HEAD
+        meta:
+          ==: ItemMeta
+          meta-type: SKULL
+          skull-owner:
+            ==: PlayerProfile
+            uniqueId: bc2c32c6-801c-e7f9-c32b-0efe4b032f10
+            properties:
+            - name: textures
+              value: eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvZmE1MWNkNTkxNDJlYTc5NzU3M2EyZmZjZTY5NTE4YTJiNGM2OTQwZDc5MGU3OGEyZWU4NTA0MTYzNTAwZDFkOSJ9fX0=
+      ItemDisplay: NONE
+      Transform:
+        Translation:
+        - 0.0
+        - 0.5
+        - 0.0
+        LeftRotation:
+        - 0.0
+        - 0.0
+        - 0.0
+        - 1.0
+        RightRotation:
+        - -0.0
+        - -0.0
+        - -0.0
+        - 1.0
+        Scale:
+        - 1.0
+        - 1.0
+        - 1.1875
+  玉米粒投掷物:
+    '0':
+      Item:
+        ==: org.bukkit.inventory.ItemStack
+        v: 3955
+        type: GOLD_NUGGET
+      ItemDisplay: NONE
+      Transform:
+        Translation:
+        - 0.0
+        - 0.25
+        - 0.0
+        LeftRotation:
+        - 0.70710677
+        - 0.0
+        - -0.70710677
+        - 0.0
+        RightRotation:
+        - -0.0
+        - -0.0
+        - -0.0
+        - 1.0
+        Scale:
+        - 0.99999994
+        - 1.0
+        - 0.99999994
+  护士桃:
+    '0':
+      Item:
+        ==: org.bukkit.inventory.ItemStack
+        v: 3955
+        type: PLAYER_HEAD
+        meta:
+          ==: ItemMeta
+          meta-type: SKULL
+          skull-owner:
+            ==: PlayerProfile
+            uniqueId: f368cf17-9a24-b8e1-fd7b-ae2801031fcc
+            properties:
+            - name: textures
+              value: ewogICJ0aW1lc3RhbXAiIDogMTcyOTIzNzk0NzExOCwKICAicHJvZmlsZUlkIiA6ICIwNDg2YWUwMWI4Y2I0OWUzODMyZDcwOTNmMWJlNzI3NyIsCiAgInByb2ZpbGVOYW1lIiA6ICJfcGFrbWFuXyIsCiAgInNpZ25hdHVyZVJlcXVpcmVkIiA6IHRydWUsCiAgInRleHR1cmVzIiA6IHsKICAgICJTS0lOIiA6IHsKICAgICAgInVybCIgOiAiaHR0cDovL3RleHR1cmVzLm1pbmVjcmFmdC5uZXQvdGV4dHVyZS9jNGU4NzAxNTgwMjVhMzM1OWZkYTk1Y2I1NTk2Y2UyNzA3N2MzM2Q3OTdiNTZiOTliYWFiY2Y3MjViN2RlM2I2IiwKICAgICAgIm1ldGFkYXRhIiA6IHsKICAgICAgICAibW9kZWwiIDogInNsaW0iCiAgICAgIH0KICAgIH0KICB9Cn0=
+      ItemDisplay: NONE
+      Transform:
+        Translation:
+        - 0.0
+        - 0.6875
+        - 0.0
+        LeftRotation:
+        - 0.0
+        - 0.0
+        - 0.0
+        - 1.0
+        RightRotation:
+        - -0.0
+        - -0.0
+        - -0.0
+        - 1.0
+        Scale:
+        - 1.3
+        - 1.3
+        - 1.3
+    '1':
+      Item:
+        ==: org.bukkit.inventory.ItemStack
+        v: 3955
+        type: WHITE_CONCRETE
+      ItemDisplay: NONE
+      Transform:
+        Translation:
+        - 0.3125
+        - 0.6875
+        - -0.375
+        LeftRotation:
+        - 0.106839515
+        - -0.063908935
+        - 0.1685708
+        - 0.97779596
+        RightRotation:
+        - -0.0
+        - -0.0
+        - -0.0
+        - 1.0
+        Scale:
+        - 0.100000106
+        - 0.5484273
+        - 0.099989094
+    '2':
+      Item:
+        ==: org.bukkit.inventory.ItemStack
+        v: 3955
+        type: WHITE_CONCRETE
+      ItemDisplay: NONE
+      Transform:
+        Translation:
+        - 0.3125
+        - 0.75
+        - -0.375
+        LeftRotation:
+        - 0.07941255
+        - -0.10361208
+        - 0.786613
+        - 0.6034884
+        RightRotation:
+        - -0.0
+        - -0.0
+        - -0.0
+        - 1.0
+        Scale:
+        - 0.1000035
+        - 0.3085076
+        - 0.10001186
+    '3':
+      Item:
+        ==: org.bukkit.inventory.ItemStack
+        v: 3955
+        type: LIME_CARPET
+      ItemDisplay: NONE
+      Transform:
+        Translation:
+        - 0.0
+        - 0.5
+        - 0.0
+        LeftRotation:
+        - 0.0
+        - 0.0
+        - 0.0
+        - 1.0
+        RightRotation:
+        - -0.0
+        - -0.0
+        - -0.0
+        - 1.0
+        Scale:
+        - 0.9
+        - 1.0
+        - 0.9
+  高坚果:
+    '0':
+      Item:
+        ==: org.bukkit.inventory.ItemStack
+        v: 3955
+        type: PLAYER_HEAD
+        meta:
+          ==: ItemMeta
+          meta-type: SKULL
+          skull-owner:
+            ==: PlayerProfile
+            uniqueId: dee811e2-4669-ac9a-cc33-59a9c199b997
+            properties:
+            - name: textures
+              value: ewogICJ0aW1lc3RhbXAiIDogMTcyOTIzODAxNTMxNywKICAicHJvZmlsZUlkIiA6ICIxNmJhNWU4MDJhMmU0ZDJhYjEwZmZiYWJiYmQ1MDdlZSIsCiAgInByb2ZpbGVOYW1lIiA6ICJzbGlua3l1c2VyMzMxNSIsCiAgInNpZ25hdHVyZVJlcXVpcmVkIiA6IHRydWUsCiAgInRleHR1cmVzIiA6IHsKICAgICJTS0lOIiA6IHsKICAgICAgInVybCIgOiAiaHR0cDovL3RleHR1cmVzLm1pbmVjcmFmdC5uZXQvdGV4dHVyZS84MTg2NDE4YzRjNWUxZWE2NzdhZjkzZDAyYmU5YzY1ZTM1MWI4NDIwOTRmYmNiZGRlMTViZjFmMWI4ZDI1YTM5IiwKICAgICAgIm1ldGFkYXRhIiA6IHsKICAgICAgICAibW9kZWwiIDogInNsaW0iCiAgICAgIH0KICAgIH0KICB9Cn0=
+      ItemDisplay: NONE
+      Transform:
+        Translation:
+        - 0.0
+        - 1.6875
+        - 0.0
+        LeftRotation:
+        - 0.0
+        - 0.0
+        - 0.0
+        - 1.0
+        RightRotation:
+        - -0.0
+        - -0.0
+        - -0.0
+        - 1.0
+        Scale:
+        - 2.0
+        - 3.25
+        - 2.0
+  向日葵:
+    '0':
+      Item:
+        ==: org.bukkit.inventory.ItemStack
+        v: 3955
+        type: LIME_CONCRETE
+      ItemDisplay: NONE
+      Transform:
+        Translation:
+        - 0.0
+        - 0.375
+        - 0.0
+        LeftRotation:
+        - 0.0
+        - -0.70710677
+        - 0.0
+        - 0.70710677
+        RightRotation:
+        - -0.0
+        - -0.0
+        - -0.0
+        - 1.0
+        Scale:
+        - 0.14999999
+        - 0.6317
+        - 0.14999999
+    '1':
+      Item:
+        ==: org.bukkit.inventory.ItemStack
+        v: 3955
+        type: LIME_CONCRETE
+      ItemDisplay: NONE
+      Transform:
+        Translation:
+        - 0.0
+        - 0.0
+        - 0.0
+        LeftRotation:
+        - 0.0
+        - -0.25878805
+        - 0.0
+        - 0.96593416
+        RightRotation:
+        - -0.0
+        - -0.0
+        - -0.0
+        - 1.0
+        Scale:
+        - 0.32503617
+        - 0.15
+        - 0.77502626
+    '2':
+      Item:
+        ==: org.bukkit.inventory.ItemStack
+        v: 3955
+        type: LIME_CONCRETE
+      ItemDisplay: NONE
+      Transform:
+        Translation:
+        - 0.0
+        - 0.0
+        - 0.0
+        LeftRotation:
+        - 0.0
+        - -0.25878403
+        - 0.0
+        - 0.96593523
+        RightRotation:
+        - -0.0
+        - -0.0
+        - -0.0
+        - 1.0
+        Scale:
+        - 0.79289967
+        - 0.15
+        - 0.2999934
+    '3':
+      Item:
+        ==: org.bukkit.inventory.ItemStack
+        v: 3955
+        type: LIME_CONCRETE
+      ItemDisplay: NONE
+      Transform:
+        Translation:
+        - 0.0
+        - 0.375
+        - -0.1875
+        LeftRotation:
+        - 0.6124142
+        - -0.35348088
+        - -0.6124142
+        - 0.35348088
+        RightRotation:
+        - -0.0
+        - -0.0
+        - -0.0
+        - 1.0
+        Scale:
+        - 0.13754362
+        - 0.19999555
+        - 0.19999996
+    '4':
+      Item:
+        ==: org.bukkit.inventory.ItemStack
+        v: 3955
+        type: LIME_CONCRETE
+      ItemDisplay: NONE
+      Transform:
+        Translation:
+        - 0.0
+        - 0.375
+        - 0.1875
+        LeftRotation:
+        - 0.35348088
+        - -0.6124142
+        - -0.35348088
+        - 0.6124142
+        RightRotation:
+        - -0.0
+        - -0.0
+        - -0.0
+        - 1.0
+        Scale:
+        - 0.13754362
+        - 0.19999555
+        - 0.19999996
+    '5':
+      Item:
+        ==: org.bukkit.inventory.ItemStack
+        v: 3955
+        type: PLAYER_HEAD
+        meta:
+          ==: ItemMeta
+          meta-type: SKULL
+          skull-owner:
+            ==: PlayerProfile
+            uniqueId: 539cb08a-6a7f-c8cd-2676-633f7ee65f65
+            properties:
+            - name: textures
+              value: eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvNDkzOTJhMmJmYTFjNGE3OTViYWQxMDE3OTdjZDU0MDc3OTEwYzU1YzFmYThhZTU1YjY3OWU5NWQyYzZlODYwZiJ9fX0=
+      ItemDisplay: NONE
+      Transform:
+        Translation:
+        - 0.0
+        - 1.375
+        - 0.0
+        LeftRotation:
+        - 0.0
+        - -0.7071068
+        - 0.0
+        - 0.7071068
+        RightRotation:
+        - -0.0
+        - -0.0
+        - -0.0
+        - 1.0
+        Scale:
+        - 1.5000002
+        - 1.5
+        - 1.0000001
+  樱桃炸弹:
+    '0':
+      Item:
+        ==: org.bukkit.inventory.ItemStack
+        v: 3955
+        type: PLAYER_HEAD
+        meta:
+          ==: ItemMeta
+          meta-type: SKULL
+          skull-owner:
+            ==: PlayerProfile
+            uniqueId: efede65f-3eaf-03c6-1c1f-1a9a42d34dc0
+            properties:
+            - name: textures
+              value: eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvNjc0OThmODBkZmY5YjdlMmZmMzNkNGQwNzQyNzVhOGY5MTYyYWVlMTA3ZTNmMzM5ZjYyMDUyNjhjMTBlMzJkMiJ9fX0=
+      ItemDisplay: NONE
+      Transform:
+        Translation:
+        - 0.0
+        - 0.75
+        - 0.4375
+        LeftRotation:
+        - 0.0
+        - -0.70710677
+        - 0.0
+        - 0.70710677
+        RightRotation:
+        - -0.0
+        - -0.0
+        - -0.0
+        - 1.0
+        Scale:
+        - 1.1999999
+        - 1.2
+        - 1.1999999
+    '1':
+      Item:
+        ==: org.bukkit.inventory.ItemStack
+        v: 3955
+        type: PLAYER_HEAD
+        meta:
+          ==: ItemMeta
+          meta-type: SKULL
+          skull-owner:
+            ==: PlayerProfile
+            uniqueId: 0fda0237-a907-104c-fca4-7e955021b10b
+            properties:
+            - name: textures
+              value: eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvZGY3YjZiOTQwMWFkODQ4NjI3NmFhYmY3Mjk5NzM0YThjYzYxMzg3MzRlZGMwY2YwNjljNWFkYzVmMTI2MjY3YSJ9fX0=
+      ItemDisplay: NONE
+      Transform:
+        Translation:
+        - 0.0
+        - 0.75
+        - -0.4375
+        LeftRotation:
+        - 0.0
+        - -0.7071068
+        - 0.0
+        - 0.7071068
+        RightRotation:
+        - -0.0
+        - -0.0
+        - -0.0
+        - 1.0
+        Scale:
+        - 1.5000002
+        - 1.5
+        - 1.5000002
+    '2':
+      Item:
+        ==: org.bukkit.inventory.ItemStack
+        v: 3955
+        type: BROWN_CONCRETE
+      ItemDisplay: NONE
+      Transform:
+        Translation:
+        - 0.0
+        - 0.875
+        - 0.1875
+        LeftRotation:
+        - -0.2588252
+        - 0.0
+        - 0.0
+        - 0.9659242
+        RightRotation:
+        - -0.0
+        - -0.0
+        - -0.0
+        - 1.0
+        Scale:
+        - 0.08
+        - 0.2999934
+        - 0.08001557
+    '3':
+      Item:
+        ==: org.bukkit.inventory.ItemStack
+        v: 3955
+        type: BROWN_CONCRETE
+      ItemDisplay: NONE
+      Transform:
+        Translation:
+        - 0.0
+        - 0.875
+        - -0.1875
+        LeftRotation:
+        - 0.2588252
+        - 0.0
+        - 0.0
+        - 0.9659242
+        RightRotation:
+        - -0.0
+        - -0.0
+        - -0.0
+        - 1.0
+        Scale:
+        - 0.08
+        - 0.2999934
+        - 0.08001557
+    '4':
+      Item:
+        ==: org.bukkit.inventory.ItemStack
+        v: 3955
+        type: BROWN_CONCRETE
+      ItemDisplay: NONE
+      Transform:
+        Translation:
+        - 0.0
+        - 1.0
+        - 0.0
+        LeftRotation:
+        - -0.70710677
+        - 0.0
+        - 0.0
+        - 0.70710677
+        RightRotation:
+        - -0.0
+        - -0.0
+        - -0.0
+        - 1.0
+        Scale:
+        - 0.1
+        - 0.49999997
+        - 0.099999994
+  土豆地雷:
+    '0':
+      Item:
+        ==: org.bukkit.inventory.ItemStack
+        v: 3955
+        type: BROWN_CONCRETE
+      ItemDisplay: NONE
+      Transform:
+        Translation:
+        - 0.0
+        - 0.5
+        - 0.0
+        LeftRotation:
+        - 0.0
+        - 0.0
+        - 0.0
+        - 1.0
+        RightRotation:
+        - -0.0
+        - -0.0
+        - -0.0
+        - 1.0
+        Scale:
+        - 0.08
+        - 0.2
+        - 0.08
+    '1':
+      Item:
+        ==: org.bukkit.inventory.ItemStack
+        v: 3955
+        type: PLAYER_HEAD
+        meta:
+          ==: ItemMeta
+          meta-type: SKULL
+          skull-owner:
+            ==: PlayerProfile
+            uniqueId: 87ab84c4-a336-5dac-3976-2f3b1e8e7c09
+            properties:
+            - name: textures
+              value: ewogICJ0aW1lc3RhbXAiIDogMTcyOTE4Njk0NDg0NSwKICAicHJvZmlsZUlkIiA6ICIwZGM5ZGY4ZjlmNWE0NWQ4ODg0ODkyNjJhNDM1N2FlMCIsCiAgInByb2ZpbGVOYW1lIiA6ICJTaXJoZXJvYnJpbmUyMyIsCiAgInNpZ25hdHVyZVJlcXVpcmVkIiA6IHRydWUsCiAgInRleHR1cmVzIiA6IHsKICAgICJTS0lOIiA6IHsKICAgICAgInVybCIgOiAiaHR0cDovL3RleHR1cmVzLm1pbmVjcmFmdC5uZXQvdGV4dHVyZS8xMTNkNzEzZjUwMjY4ZjU4NmIyYWZiYjJlYjgxOTE4NjM1ODVkMjNmYWIwZWMxMWRjODJhOTYxOTI3ZGNkN2VkIiwKICAgICAgIm1ldGFkYXRhIiA6IHsKICAgICAgICAibW9kZWwiIDogInNsaW0iCiAgICAgIH0KICAgIH0KICB9Cn0=
+      ItemDisplay: NONE
+      Transform:
+        Translation:
+        - 0.0
+        - 0.4375
+        - 0.0
+        LeftRotation:
+        - 0.0
+        - 0.0
+        - 0.0
+        - 1.0
+        RightRotation:
+        - -0.0
+        - -0.0
+        - -0.0
+        - 1.0
+        Scale:
+        - 1.0
+        - 0.8
+        - 1.0
+    '2':
+      Item:
+        ==: org.bukkit.inventory.ItemStack
+        v: 3955
+        type: PLAYER_HEAD
+        meta:
+          ==: ItemMeta
+          meta-type: SKULL
+          skull-owner:
+            ==: PlayerProfile
+            uniqueId: 1ca0fe79-9d8b-c373-c675-058e2fd891e8
+            properties:
+            - name: textures
+              value: eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvNTcxZDhhM2I4Njg1Y2EzNzQ1YjkxYmZlODhmZTQxNTU4OTU0NDFmYmMyOGEzOTE0NjljMjc2N2EwNGM5YiJ9fX0=
+      ItemDisplay: NONE
+      Transform:
+        Translation:
+        - 0.0
+        - 0.75
+        - 0.0
+        LeftRotation:
+        - 0.0
+        - 0.0
+        - 0.0
+        - 1.0
+        RightRotation:
+        - -0.0
+        - -0.0
+        - -0.0
+        - 1.0
+        Scale:
+        - 0.5
+        - 0.4
+        - 0.5
+  坚果墙:
+    '0':
+      Item:
+        ==: org.bukkit.inventory.ItemStack
+        v: 3955
+        type: PLAYER_HEAD
+        meta:
+          ==: ItemMeta
+          meta-type: SKULL
+          skull-owner:
+            ==: PlayerProfile
+            uniqueId: e312d0ac-c4ba-a23b-b2f0-fa2a1ae0d9d9
+            properties:
+            - name: textures
+              value: ewogICJ0aW1lc3RhbXAiIDogMTcyOTIzOTk5MjA3MywKICAicHJvZmlsZUlkIiA6ICI2YWVmMjM3Y2RhNDY0Y2QzYTdiZDcxYjg3YzFlMDEwNSIsCiAgInByb2ZpbGVOYW1lIiA6ICJLYWlqdW5va2kiLAogICJzaWduYXR1cmVSZXF1aXJlZCIgOiB0cnVlLAogICJ0ZXh0dXJlcyIgOiB7CiAgICAiU0tJTiIgOiB7CiAgICAgICJ1cmwiIDogImh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvYWM1ZTJmZGVkMGVhYTU3NGQ2OGJlYWY0ZmU0MzJmODllNTViYTAwYWRmYTYyM2U4ZjMxZTVkN2M1ZWNmYjk3ZiIsCiAgICAgICJtZXRhZGF0YSIgOiB7CiAgICAgICAgIm1vZGVsIiA6ICJzbGltIgogICAgICB9CiAgICB9CiAgfQp9
+      ItemDisplay: NONE
+      Transform:
+        Translation:
+        - 0.0
+        - 1.0
+        - 0.0
+        LeftRotation:
+        - 0.0
+        - -0.70710677
+        - 0.0
+        - 0.70710677
+        RightRotation:
+        - -0.0
+        - -0.0
+        - -0.0
+        - 1.0
+        Scale:
+        - 1.6999999
+        - 2.0
+        - 1.6999999
+  路障:
+    '0':
+      Item:
+        ==: org.bukkit.inventory.ItemStack
+        v: 3955
+        type: ORANGE_TERRACOTTA
+      ItemDisplay: NONE
+      Transform:
+        Translation:
+        - 0.0
+        - 0.0
+        - 0.0
+        LeftRotation:
+        - 0.0
+        - 0.0
+        - 0.0
+        - 1.0
+        RightRotation:
+        - -0.0
+        - -0.0
+        - -0.0
+        - 1.0
+        Scale:
+        - 0.7
+        - 0.2
+        - 0.7
+    '1':
+      Item:
+        ==: org.bukkit.inventory.ItemStack
+        v: 3955
+        type: ORANGE_TERRACOTTA
+      ItemDisplay: NONE
+      Transform:
+        Translation:
+        - 0.0
+        - 0.125
+        - 0.0
+        LeftRotation:
+        - 0.0
+        - -0.3826834
+        - 0.0
+        - 0.92387944
+        RightRotation:
+        - -0.0
+        - -0.0
+        - -0.0
+        - 1.0
+        Scale:
+        - 0.5000658
+        - 0.3
+        - 0.5000658
+    '2':
+      Item:
+        ==: org.bukkit.inventory.ItemStack
+        v: 3955
+        type: ORANGE_TERRACOTTA
+      ItemDisplay: NONE
+      Transform:
+        Translation:
+        - 0.0
+        - 0.3125
+        - 0.0
+        LeftRotation:
+        - 0.0
+        - -0.38268346
+        - 0.0
+        - 0.92387956
+        RightRotation:
+        - -0.0
+        - -0.0
+        - -0.0
+        - 1.0
+        Scale:
+        - 0.3999396
+        - 0.3
+        - 0.3999396
+    '3':
+      Item:
+        ==: org.bukkit.inventory.ItemStack
+        v: 3955
+        type: ORANGE_TERRACOTTA
+      ItemDisplay: NONE
+      Transform:
+        Translation:
+        - 0.0
+        - 0.5
+        - 0.0
+        LeftRotation:
+        - 0.0
+        - -0.38268346
+        - 0.0
+        - 0.92387956
+        RightRotation:
+        - -0.0
+        - -0.0
+        - -0.0
+        - 1.0
+        Scale:
+        - 0.2999547
+        - 0.3
+        - 0.2999547
+  铁桶:
+    '0':
+      Item:
+        ==: org.bukkit.inventory.ItemStack
+        v: 3955
+        type: IRON_BLOCK
+      ItemDisplay: NONE
+      Transform:
+        Translation:
+        - 0.0
+        - 0.0625
+        - 0.0
+        LeftRotation:
+        - 0.0
+        - 0.0
+        - 0.0
+        - 1.0
+        RightRotation:
+        - -0.0
+        - -0.0
+        - -0.0
+        - 1.0
+        Scale:
+        - 0.6
+        - 0.4
+        - 0.6
+    '1':
+      Item:
+        ==: org.bukkit.inventory.ItemStack
+        v: 3955
+        type: IRON_BLOCK
+      ItemDisplay: NONE
+      Transform:
+        Translation:
+        - -0.3125
+        - -0.1875
+        - 0.25
+        LeftRotation:
+        - 0.5001387
+        - 0.0
+        - 0.0
+        - 0.8659453
+        RightRotation:
+        - -0.0
+        - -0.0
+        - -0.0
+        - 1.0
+        Scale:
+        - 0.075
+        - 0.07504165
+        - 0.59998673
+    '2':
+      Item:
+        ==: org.bukkit.inventory.ItemStack
+        v: 3955
+        type: IRON_BLOCK
+      ItemDisplay: NONE
+      Transform:
+        Translation:
+        - 0.3125
+        - -0.1875
+        - 0.25
+        LeftRotation:
+        - 0.5001387
+        - 0.0
+        - 0.0
+        - 0.8659453
+        RightRotation:
+        - -0.0
+        - -0.0
+        - -0.0
+        - 1.0
+        Scale:
+        - 0.075
+        - 0.07504165
+        - 0.59998673
+    '3':
+      Item:
+        ==: org.bukkit.inventory.ItemStack
+        v: 3955
+        type: IRON_BLOCK
+      ItemDisplay: NONE
+      Transform:
+        Translation:
+        - 0.0
+        - -0.4375
+        - 0.375
+        LeftRotation:
+        - 0.0
+        - -0.70710677
+        - 0.0
+        - 0.70710677
+        RightRotation:
+        - -0.0
+        - -0.0
+        - -0.0
+        - 1.0
+        Scale:
+        - 0.074999996
+        - 0.075
+        - 0.59999996
+    '4':
+      Item:
+        ==: org.bukkit.inventory.ItemStack
+        v: 3955
+        type: REDSTONE
+      ItemDisplay: NONE
+      Transform:
+        Translation:
+        - 0.0
+        - 0.0
+        - 0.3125
+        LeftRotation:
+        - 0.0
+        - 0.0
+        - 0.0
+        - 1.0
+        RightRotation:
+        - -0.0
+        - -0.0
+        - -0.0
+        - 1.0
+        Scale:
+        - 0.1
+        - 0.4
+        - 0.1
+  火把:
+    '0':
+      Item:
+        ==: org.bukkit.inventory.ItemStack
+        v: 3955
+        type: DARK_OAK_WOOD
+      ItemDisplay: NONE
+      Transform:
+        Translation:
+        - 0.4375
+        - -0.3125
+        - 0.25
+        LeftRotation:
+        - 0.0
+        - 0.70710677
+        - 0.0
+        - 0.70710677
+        RightRotation:
+        - -0.0
+        - -0.0
+        - -0.0
+        - 1.0
+        Scale:
+        - 0.14999999
+        - 0.6563
+        - 0.14999999
+    '1':
+      Item:
+        ==: org.bukkit.inventory.ItemStack
+        v: 3955
+        type: PLAYER_HEAD
+        meta:
+          ==: ItemMeta
+          meta-type: SKULL
+          skull-owner:
+            ==: PlayerProfile
+            uniqueId: 4fa31b16-c84c-482e-ad66-5f55859bdec1
+            properties:
+            - name: textures
+              value: eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvYzA0NTAxYjI5MjVkOTE3NTZkY2UzNTJmM2M0M2ZhOTVjOTE1YmY5NTJmNWM4YjgxM2M0Zjg0NmUwZjExZGUzNCJ9fX0=
+      ItemDisplay: NONE
+      Transform:
+        Translation:
+        - 0.4375
+        - 0.3125
+        - 0.25
+        LeftRotation:
+        - 0.0
+        - -0.70710677
+        - 0.0
+        - 0.70710677
+        RightRotation:
+        - -0.0
+        - -0.0
+        - -0.0
+        - 1.0
+        Scale:
+        - 0.59999996
+        - 0.6
+        - 0.59999996
+  冰冻生菜:
+    '0':
+      Item:
+        ==: org.bukkit.inventory.ItemStack
+        v: 3955
+        type: PLAYER_HEAD
+        meta:
+          ==: ItemMeta
+          meta-type: SKULL
+          skull-owner:
+            ==: PlayerProfile
+            uniqueId: ce47644c-37ed-c557-eb06-0d255531a213
+            properties:
+            - name: textures
+              value: ewogICJ0aW1lc3RhbXAiIDogMTcyOTQ4ODUzNDMxOSwKICAicHJvZmlsZUlkIiA6ICJkYzA5MjA4MTM2ZDg0Y2Y5OWIwMzFmMGI1NzM4OTdmNSIsCiAgInByb2ZpbGVOYW1lIiA6ICJLRUlUSF8wMzAyIiwKICAic2lnbmF0dXJlUmVxdWlyZWQiIDogdHJ1ZSwKICAidGV4dHVyZXMiIDogewogICAgIlNLSU4iIDogewogICAgICAidXJsIiA6ICJodHRwOi8vdGV4dHVyZXMubWluZWNyYWZ0Lm5ldC90ZXh0dXJlL2NlZjVjNDcxNWQ1MTA3NTZjZGY5NGE4ZDhmZGIyZTA4YjcyOTY5YWQ0YTY2M2EwNmFiZTEzMGJjMjUyMzBmN2QiLAogICAgICAibWV0YWRhdGEiIDogewogICAgICAgICJtb2RlbCIgOiAic2xpbSIKICAgICAgfQogICAgfQogIH0KfQ==
+      ItemDisplay: NONE
+      Transform:
+        Translation:
+        - 0.0532
+        - 0.6032
+        - 0.0532
+        LeftRotation:
+        - 0.0
+        - 0.043626044
+        - 0.0
+        - 0.9990479
+        RightRotation:
+        - -0.0
+        - -0.0
+        - -0.0
+        - 1.0
+        Scale:
+        - 1.1999675
+        - 1.1999999
+        - 1.1999676
+  冰冻:
+    '0':
+      Item:
+        ==: org.bukkit.inventory.ItemStack
+        v: 3955
+        type: BLUE_ICE
+      ItemDisplay: NONE
+      Transform:
+        Translation:
+        - -0.0625
+        - 0.0
+        - 0.25
+        LeftRotation:
+        - 0.0
+        - 0.25874743
+        - 0.0
+        - 0.96594507
+        RightRotation:
+        - -0.0
+        - -0.0
+        - -0.0
+        - 1.0
+        Scale:
+        - 0.40630436
+        - 0.1875
+        - 0.40630436
+    '1':
+      Item:
+        ==: org.bukkit.inventory.ItemStack
+        v: 3955
+        type: BLUE_ICE
+      ItemDisplay: NONE
+      Transform:
+        Translation:
+        - -0.1875
+        - -0.0625
+        - -0.125
+        LeftRotation:
+        - 0.0
+        - -0.13056147
+        - 0.0
+        - 0.99144006
+        RightRotation:
+        - -0.0
+        - -0.0
+        - -0.0
+        - 1.0
+        Scale:
+        - 0.40635356
+        - 0.18749996
+        - 0.40635356
+    '2':
+      Item:
+        ==: org.bukkit.inventory.ItemStack
+        v: 3955
+        type: BLUE_ICE
+      ItemDisplay: NONE
+      Transform:
+        Translation:
+        - 0.1875
+        - -0.05
+        - 0.0
+        LeftRotation:
+        - 0.0
+        - -0.5000642
+        - 0.0
+        - 0.8659883
+        RightRotation:
+        - -0.0
+        - -0.0
+        - -0.0
+        - 1.0
+        Scale:
+        - 0.40630433
+        - 0.1875
+        - 0.40630433
+  熄灭的火把:
+    '0':
+      Item:
+        ==: org.bukkit.inventory.ItemStack
+        v: 3955
+        type: DARK_OAK_WOOD
+      ItemDisplay: NONE
+      Transform:
+        Translation:
+        - 0.5625
+        - -0.5625
+        - 0.3125
+        LeftRotation:
+        - 0.0
+        - 0.70710677
+        - 0.0
+        - 0.70710677
+        RightRotation:
+        - -0.0
+        - -0.0
+        - -0.0
+        - 1.0
+        Scale:
+        - 0.14999999
+        - 0.6563
+        - 0.14999999
+    '1':
+      Item:
+        ==: org.bukkit.inventory.ItemStack
+        v: 3955
+        type: PLAYER_HEAD
+        meta:
+          ==: ItemMeta
+          meta-type: SKULL
+          skull-owner:
+            ==: PlayerProfile
+            uniqueId: cf83ee76-a553-b53d-a182-02962392a54e
+            properties:
+            - name: textures
+              value: eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvNTY4ZGNhOGUwMzc0YTI0MWU1NjA2MjlkYWI0MGI0N2QzOTYwYzYyM2ZjZTAwODc3ZjAwZWI1YjFjYWI5YWJiOCJ9fX0=
+      ItemDisplay: NONE
+      Transform:
+        Translation:
+        - 0.5625
+        - 0.0625
+        - 0.3125
+        LeftRotation:
+        - 0.0
+        - 0.0
+        - 0.0
+        - 1.0
+        RightRotation:
+        - -0.0
+        - -0.0
+        - -0.0
+        - 1.0
+        Scale:
+        - 0.6
+        - 0.6
+        - 0.6
+  撑杆跳僵尸:
+    '0':
+      Item:
+        ==: org.bukkit.inventory.ItemStack
+        v: 3955
+        type: LIGHT_BLUE_CONCRETE
+      ItemDisplay: NONE
+      Transform:
+        Translation:
+        - 0.0
+        - -0.125
+        - 0.0
+        LeftRotation:
+        - 0.0
+        - 0.0
+        - 0.0
+        - 1.0
+        RightRotation:
+        - -0.0
+        - -0.0
+        - -0.0
+        - 1.0
+        Scale:
+        - 0.7
+        - 0.1563
+        - 0.7
+    '1':
+      Item:
+        ==: org.bukkit.inventory.ItemStack
+        v: 3955
+        type: WHITE_CONCRETE
+      ItemDisplay: NONE
+      Transform:
+        Translation:
+        - 0.5625
+        - 0.0
+        - 0.3125
+        LeftRotation:
+        - 0.0
+        - 0.0
+        - 0.0
+        - 1.0
+        RightRotation:
+        - -0.0
+        - -0.0
+        - -0.0
+        - 1.0
+        Scale:
+        - 0.1
+        - 0.9
+        - 0.1
+    '2':
+      Item:
+        ==: org.bukkit.inventory.ItemStack
+        v: 3955
+        type: WHITE_CONCRETE
+      ItemDisplay: NONE
+      Transform:
+        Translation:
+        - 0.5625
+        - -1.375
+        - 0.3125
+        LeftRotation:
+        - 0.0
+        - 0.0
+        - 0.0
+        - 1.0
+        RightRotation:
+        - -0.0
+        - -0.0
+        - -0.0
+        - 1.0
+        Scale:
+        - 0.1
+        - 0.9
+        - 0.1
+    '3':
+      Item:
+        ==: org.bukkit.inventory.ItemStack
+        v: 3955
+        type: RED_CONCRETE
+      ItemDisplay: NONE
+      Transform:
+        Translation:
+        - 0.5625
+        - -0.6875
+        - 0.3125
+        LeftRotation:
+        - 0.0
+        - 0.0
+        - 0.0
+        - 0.99999994
+        RightRotation:
+        - -0.0
+        - -0.0
+        - -0.0
+        - 1.0
+        Scale:
+        - 0.1
+        - 0.44829994
+        - 0.09999999
+    '4':
+      Item:
+        ==: org.bukkit.inventory.ItemStack
+        v: 3955
+        type: YELLOW_WOOL
+      ItemDisplay: NONE
+      Transform:
+        Translation:
+        - -0.375
+        - 0.0
+        - 0.0
+        LeftRotation:
+        - 0.0
+        - 0.0
+        - 0.13048753
+        - 0.99144995
+        RightRotation:
+        - -0.0
+        - -0.0
+        - -0.0
+        - 1.0
+        Scale:
+        - 0.43749854
+        - 0.10942294
+        - 0.6641
+    '5':
+      Item:
+        ==: org.bukkit.inventory.ItemStack
+        v: 3955
+        type: YELLOW_WOOL
+      ItemDisplay: NONE
+      Transform:
+        Translation:
+        - -0.375
+        - -0.25
+        - 0.0
+        LeftRotation:
+        - 0.0
+        - 0.0
+        - 0.6087645
+        - 0.79335093
+        RightRotation:
+        - -0.0
+        - -0.0
+        - -0.0
+        - 1.0
+        Scale:
+        - 0.57416296
+        - 0.10942294
+        - 0.6641
+    '6':
+      Item:
+        ==: org.bukkit.inventory.ItemStack
+        v: 3955
+        type: YELLOW_WOOL
+      ItemDisplay: NONE
+      Transform:
+        Translation:
+        - 0.0625
+        - 0.0
+        - 0.0
+        LeftRotation:
+        - 0.0
+        - 0.0
+        - 0.0
+        - 1.0
+        RightRotation:
+        - -0.0
+        - -0.0
+        - -0.0
+        - 1.0
+        Scale:
+        - 0.4375
+        - 0.1094
+        - 0.6641
+  撑杆跳僵尸头发:
+    '0':
+      Item:
+        ==: org.bukkit.inventory.ItemStack
+        v: 3955
+        type: LIGHT_BLUE_CONCRETE
+      ItemDisplay: NONE
+      Transform:
+        Translation:
+        - 0.0
+        - -0.125
+        - 0.0
+        LeftRotation:
+        - 0.0
+        - 0.0
+        - 0.0
+        - 1.0
+        RightRotation:
+        - -0.0
+        - -0.0
+        - -0.0
+        - 1.0
+        Scale:
+        - 0.7
+        - 0.1563
+        - 0.7
+    '1':
+      Item:
+        ==: org.bukkit.inventory.ItemStack
+        v: 3955
+        type: YELLOW_WOOL
+      ItemDisplay: NONE
+      Transform:
+        Translation:
+        - -0.375
+        - 0.0
+        - 0.0
+        LeftRotation:
+        - 0.0
+        - 0.0
+        - 0.13048753
+        - 0.99144995
+        RightRotation:
+        - -0.0
+        - -0.0
+        - -0.0
+        - 1.0
+        Scale:
+        - 0.43749854
+        - 0.10942294
+        - 0.6641
+    '2':
+      Item:
+        ==: org.bukkit.inventory.ItemStack
+        v: 3955
+        type: YELLOW_WOOL
+      ItemDisplay: NONE
+      Transform:
+        Translation:
+        - -0.375
+        - -0.25
+        - 0.0
+        LeftRotation:
+        - 0.0
+        - 0.0
+        - 0.6087645
+        - 0.79335093
+        RightRotation:
+        - -0.0
+        - -0.0
+        - -0.0
+        - 1.0
+        Scale:
+        - 0.57416296
+        - 0.10942294
+        - 0.6641
+    '3':
+      Item:
+        ==: org.bukkit.inventory.ItemStack
+        v: 3955
+        type: YELLOW_WOOL
+      ItemDisplay: NONE
+      Transform:
+        Translation:
+        - 0.0625
+        - 0.0
+        - 0.0
+        LeftRotation:
+        - 0.0
+        - 0.0
+        - 0.0
+        - 1.0
+        RightRotation:
+        - -0.0
+        - -0.0
+        - -0.0
+        - 1.0
+        Scale:
+        - 0.4375
+        - 0.1094
+        - 0.6641
+  撑杆跳僵尸撑杆:
+    '0':
+      Item:
+        ==: org.bukkit.inventory.ItemStack
+        v: 3955
+        type: WHITE_CONCRETE
+      ItemDisplay: NONE
+      Transform:
+        Translation:
+        - 0.5625
+        - -1.375
+        - 0.3125
+        LeftRotation:
+        - 0.0
+        - 0.0
+        - 0.0
+        - 1.0
+        RightRotation:
+        - -0.0
+        - -0.0
+        - -0.0
+        - 1.0
+        Scale:
+        - 0.1
+        - 0.9
+        - 0.1
+    '1':
+      Item:
+        ==: org.bukkit.inventory.ItemStack
+        v: 3955
+        type: RED_CONCRETE
+      ItemDisplay: NONE
+      Transform:
+        Translation:
+        - 0.5625
+        - -0.6875
+        - 0.3125
+        LeftRotation:
+        - 0.0
+        - 0.0
+        - 0.0
+        - 0.99999994
+        RightRotation:
+        - -0.0
+        - -0.0
+        - -0.0
+        - 1.0
+        Scale:
+        - 0.1
+        - 0.44829994
+        - 0.09999999
+    '2':
+      Item:
+        ==: org.bukkit.inventory.ItemStack
+        v: 3955
+        type: WHITE_CONCRETE
+      ItemDisplay: NONE
+      Transform:
+        Translation:
+        - 0.5625
+        - 0.0
+        - 0.3125
+        LeftRotation:
+        - 0.0
+        - 0.0
+        - 0.0
+        - 1.0
+        RightRotation:
+        - -0.0
+        - -0.0
+        - -0.0
+        - 1.0
+        Scale:
+        - 0.1
+        - 0.9
+        - 0.1
+  大嘴花:
+    '0':
+      Item:
+        ==: org.bukkit.inventory.ItemStack
+        v: 3955
+        type: GREEN_CONCRETE
+      ItemDisplay: NONE
+      Transform:
+        Translation:
+        - 0.0
+        - 0.0625
+        - -0.1875
+        LeftRotation:
+        - 0.0
+        - -0.25882518
+        - 0.0
+        - 0.96592414
+        RightRotation:
+        - -0.0
+        - -0.0
+        - -0.0
+        - 1.0
+        Scale:
+        - 0.39999115
+        - 0.15
+        - 0.39999115
+    '1':
+      Item:
+        ==: org.bukkit.inventory.ItemStack
+        v: 3955
+        type: GREEN_CONCRETE
+      ItemDisplay: NONE
+      Transform:
+        Translation:
+        - 0.0
+        - 0.125
+        - 0.1875
+        LeftRotation:
+        - 0.050444044
+        - 0.9395592
+        - 0.103380725
+        - 0.3224846
+        RightRotation:
+        - -0.0
+        - -0.0
+        - -0.0
+        - 1.0
+        Scale:
+        - 0.4750176
+        - 0.14996547
+        - 0.3999973
+    '2':
+      Item:
+        ==: org.bukkit.inventory.ItemStack
+        v: 3955
+        type: GREEN_CONCRETE
+      ItemDisplay: NONE
+      Transform:
+        Translation:
+        - -0.375
+        - 0.125
+        - -0.1875
+        LeftRotation:
+        - -0.12028461
+        - 0.9471369
+        - -0.030316778
+        - 0.29587892
+        RightRotation:
+        - -0.0
+        - -0.0
+        - -0.0
+        - 1.0
+        Scale:
+        - 0.500016
+        - 0.15001968
+        - 0.39997166
+    '3':
+      Item:
+        ==: org.bukkit.inventory.ItemStack
+        v: 3955
+        type: GREEN_CONCRETE
+      ItemDisplay: NONE
+      Transform:
+        Translation:
+        - -0.375
+        - 0.0625
+        - 0.25
+        LeftRotation:
+        - 0.0
+        - -0.25882518
+        - 0.0
+        - 0.96592414
+        RightRotation:
+        - -0.0
+        - -0.0
+        - -0.0
+        - 1.0
+        Scale:
+        - 0.39999115
+        - 0.15
+        - 0.39999115
+    '4':
+      Item:
+        ==: org.bukkit.inventory.ItemStack
+        v: 3955
+        type: PLAYER_HEAD
+        meta:
+          ==: ItemMeta
+          meta-type: SKULL
+          skull-owner:
+            ==: PlayerProfile
+            uniqueId: 15ae75c4-a27d-22da-3982-221cd8430b87
+            properties:
+            - name: textures
+              value: eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvOTc4MjRiNjk3YjA3ZWE1ZDRkNmM0Njc4ZmUyZWRmZjczYzg0YjM1YmU5NGQ0ZTU0OTFmYmM1MmU2ZmI2N2UxZCJ9fX0=
+      ItemDisplay: NONE
+      Transform:
+        Translation:
+        - 0.0625
+        - 1.625
+        - 0.0
+        LeftRotation:
+        - 0.0
+        - -0.7071067
+        - 0.0
+        - 0.7071067
+        RightRotation:
+        - -0.0
+        - -0.0
+        - -0.0
+        - 1.0
+        Scale:
+        - 1.6999999
+        - 1.6999998
+        - 1.6999997
+    '5':
+      Item:
+        ==: org.bukkit.inventory.ItemStack
+        v: 3955
+        type: PURPLE_CONCRETE
+      ItemDisplay: NONE
+      Transform:
+        Translation:
+        - -0.25
+        - 0.375
+        - 0.0
+        LeftRotation:
+        - 0.23686612
+        - -0.6145367
+        - 0.29556808
+        - 0.6920106
+        RightRotation:
+        - -0.0
+        - -0.0
+        - -0.0
+        - 1.0
+        Scale:
+        - 0.10004525
+        - 0.68754685
+        - 0.10002128
+    '6':
+      Item:
+        ==: org.bukkit.inventory.ItemStack
+        v: 3955
+        type: PURPLE_CONCRETE
+      ItemDisplay: NONE
+      Transform:
+        Translation:
+        - -0.3125
+        - 0.75
+        - 0.0
+        LeftRotation:
+        - 0.68262655
+        - -0.366785
+        - 0.5970479
+        - 0.20742154
+        RightRotation:
+        - -0.0
+        - -0.0
+        - -0.0
+        - 1.0
+        Scale:
+        - 0.0999711
+        - 0.49997365
+        - 0.099990554
+    '7':
+      Item:
+        ==: org.bukkit.inventory.ItemStack
+        v: 3955
+        type: LIGHT_GRAY_CONCRETE
+      ItemDisplay: NONE
+      Transform:
+        Translation:
+        - -0.4375
+        - 1.625
+        - 0.0
+        LeftRotation:
+        - 0.26689562
+        - -0.6242835
+        - 0.2752791
+        - 0.6806308
+        RightRotation:
+        - -0.0
+        - -0.0
+        - -0.0
+        - 1.0
+        Scale:
+        - 0.20004924
+        - 0.20000802
+        - 0.11249221
+  咀嚼的大嘴花:
+    '0':
+      Item:
+        ==: org.bukkit.inventory.ItemStack
+        v: 3955
+        type: GREEN_CONCRETE
+      ItemDisplay: NONE
+      Transform:
+        Translation:
+        - 0.0
+        - 0.0625
+        - -0.1875
+        LeftRotation:
+        - 0.0
+        - -0.25882518
+        - 0.0
+        - 0.96592414
+        RightRotation:
+        - -0.0
+        - -0.0
+        - -0.0
+        - 1.0
+        Scale:
+        - 0.39999115
+        - 0.15
+        - 0.39999115
+    '1':
+      Item:
+        ==: org.bukkit.inventory.ItemStack
+        v: 3955
+        type: GREEN_CONCRETE
+      ItemDisplay: NONE
+      Transform:
+        Translation:
+        - 0.0
+        - 0.125
+        - 0.1875
+        LeftRotation:
+        - 0.050444044
+        - 0.9395592
+        - 0.103380725
+        - 0.3224846
+        RightRotation:
+        - -0.0
+        - -0.0
+        - -0.0
+        - 1.0
+        Scale:
+        - 0.4750176
+        - 0.14996547
+        - 0.3999973
+    '2':
+      Item:
+        ==: org.bukkit.inventory.ItemStack
+        v: 3955
+        type: GREEN_CONCRETE
+      ItemDisplay: NONE
+      Transform:
+        Translation:
+        - -0.375
+        - 0.125
+        - -0.1875
+        LeftRotation:
+        - -0.12028461
+        - 0.9471369
+        - -0.030316778
+        - 0.29587892
+        RightRotation:
+        - -0.0
+        - -0.0
+        - -0.0
+        - 1.0
+        Scale:
+        - 0.500016
+        - 0.15001968
+        - 0.39997166
+    '3':
+      Item:
+        ==: org.bukkit.inventory.ItemStack
+        v: 3955
+        type: GREEN_CONCRETE
+      ItemDisplay: NONE
+      Transform:
+        Translation:
+        - -0.375
+        - 0.0625
+        - 0.25
+        LeftRotation:
+        - 0.0
+        - -0.25882518
+        - 0.0
+        - 0.96592414
+        RightRotation:
+        - -0.0
+        - -0.0
+        - -0.0
+        - 1.0
+        Scale:
+        - 0.39999115
+        - 0.15
+        - 0.39999115
+    '4':
+      Item:
+        ==: org.bukkit.inventory.ItemStack
+        v: 3955
+        type: PLAYER_HEAD
+        meta:
+          ==: ItemMeta
+          meta-type: SKULL
+          skull-owner:
+            ==: PlayerProfile
+            uniqueId: 57fa62dd-9ddf-cc51-a78b-a5db1aa27541
+            properties:
+            - name: textures
+              value: eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvOTc4MjRiNjk3YjA3ZWE1ZDRkNmM0Njc4ZmUyZWRmZjczYzg0YjM1YmU5NGQ0ZTU0OTFmYmM1MmU2ZmI2N2UxZCJ9fX0=
+      ItemDisplay: NONE
+      Transform:
+        Translation:
+        - 0.3125
+        - 1.625
+        - 0.0
+        LeftRotation:
+        - -0.09229608
+        - -0.7010574
+        - -0.09229608
+        - 0.7010574
+        RightRotation:
+        - -0.0
+        - -0.0
+        - -0.0
+        - 1.0
+        Scale:
+        - 1.6999999
+        - 1.7000272
+        - 1.7000271
+    '5':
+      Item:
+        ==: org.bukkit.inventory.ItemStack
+        v: 3955
+        type: PURPLE_CONCRETE
+      ItemDisplay: NONE
+      Transform:
+        Translation:
+        - -0.25
+        - 0.375
+        - 0.0
+        LeftRotation:
+        - 0.23686612
+        - -0.6145367
+        - 0.29556808
+        - 0.6920106
+        RightRotation:
+        - -0.0
+        - -0.0
+        - -0.0
+        - 1.0
+        Scale:
+        - 0.10004525
+        - 0.68754685
+        - 0.10002128
+    '6':
+      Item:
+        ==: org.bukkit.inventory.ItemStack
+        v: 3955
+        type: PURPLE_CONCRETE
+      ItemDisplay: NONE
+      Transform:
+        Translation:
+        - -0.3125
+        - 0.75
+        - 0.0
+        LeftRotation:
+        - 0.68262655
+        - -0.366785
+        - 0.5970479
+        - 0.20742154
+        RightRotation:
+        - -0.0
+        - -0.0
+        - -0.0
+        - 1.0
+        Scale:
+        - 0.0999711
+        - 0.49997365
+        - 0.099990554
+    '7':
+      Item:
+        ==: org.bukkit.inventory.ItemStack
+        v: 3955
+        type: LIGHT_GRAY_CONCRETE
+      ItemDisplay: NONE
+      Transform:
+        Translation:
+        - -0.1875
+        - 1.75
+        - 0.0
+        LeftRotation:
+        - 0.26689562
+        - -0.6242835
+        - 0.2752791
+        - 0.6806308
+        RightRotation:
+        - -0.0
+        - -0.0
+        - -0.0
+        - 1.0
+        Scale:
+        - 0.20004924
+        - 0.20000802
+        - 0.11249221
+    '8':
+      Item:
+        ==: org.bukkit.inventory.ItemStack
+        v: 3955
+        type: GREEN_TERRACOTTA
+      ItemDisplay: NONE
+      Transform:
+        Translation:
+        - 0.375
+        - 1.125
+        - 0.0
+        LeftRotation:
+        - 0.0
+        - 0.0
+        - -0.13044906
+        - 0.991455
+        RightRotation:
+        - -0.0
+        - -0.0
+        - -0.0
+        - 1.0
+        Scale:
+        - 0.37113103
+        - 0.26949608
+        - 1.25
+  小喷菇:
+    '0':
+      Item:
+        ==: org.bukkit.inventory.ItemStack
+        v: 3955
+        type: PLAYER_HEAD
+        meta:
+          ==: ItemMeta
+          meta-type: SKULL
+          skull-owner:
+            ==: PlayerProfile
+            uniqueId: cd918a88-5f48-2750-03e0-e82285eba2b2
+            properties:
+            - name: textures
+              value: ewogICJ0aW1lc3RhbXAiIDogMTcyOTgzNTgwOTQzMywKICAicHJvZmlsZUlkIiA6ICI3YTVkYmRlNDk0NWU0YTE4Yjg2OWY1MGY1NTJjNjlkYiIsCiAgInByb2ZpbGVOYW1lIiA6ICJCdWtraXRBUEkiLAogICJzaWduYXR1cmVSZXF1aXJlZCIgOiB0cnVlLAogICJ0ZXh0dXJlcyIgOiB7CiAgICAiU0tJTiIgOiB7CiAgICAgICJ1cmwiIDogImh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvMjQ1ZjJkYjQ2MTM0ZWUwZjYwOWQ5NThlODAwZGYzNGRhMmUwNjA3YmI5NDllZmNkYTc4YWYwYjVlMDliOTJhZiIsCiAgICAgICJtZXRhZGF0YSIgOiB7CiAgICAgICAgIm1vZGVsIiA6ICJzbGltIgogICAgICB9CiAgICB9CiAgfQp9
+      ItemDisplay: NONE
+      Transform:
+        Translation:
+        - 0.0
+        - 0.375
+        - 0.0
+        LeftRotation:
+        - 0.0
+        - 0.0
+        - 0.0
+        - 1.0
+        RightRotation:
+        - -0.0
+        - -0.0
+        - -0.0
+        - 1.0
+        Scale:
+        - 0.9
+        - 0.8
+        - 0.9
+    '1':
+      Item:
+        ==: org.bukkit.inventory.ItemStack
+        v: 3955
+        type: PLAYER_HEAD
+        meta:
+          ==: ItemMeta
+          meta-type: SKULL
+          skull-owner:
+            ==: PlayerProfile
+            uniqueId: 4e2750fa-6bda-d129-0485-cf42cb525e48
+            properties:
+            - name: textures
+              value: eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvMjgxZWYzZGU1M2EzNTM4YmVjZGFiNDMwMDcyYTg5Y2EyMjA1YzIxNDdkNDFiNzRlNTlkYzIyMGVhYjY5MGFkOSJ9fX0=
+      ItemDisplay: NONE
+      Transform:
+        Translation:
+        - 0.0
+        - 0.65
+        - 0.0
+        LeftRotation:
+        - 0.0
+        - 0.0
+        - 0.0
+        - 1.0
+        RightRotation:
+        - -0.0
+        - -0.0
+        - -0.0
+        - 1.0
+        Scale:
+        - 1.3
+        - 0.8
+        - 1.3
+    '2':
+      Item:
+        ==: org.bukkit.inventory.ItemStack
+        v: 3955
+        type: MUSHROOM_STEM
+      ItemDisplay: NONE
+      Transform:
+        Translation:
+        - 0.23
+        - 0.0625
+        - 0.0
+        LeftRotation:
+        - 0.0
+        - 0.0
+        - 0.0
+        - 1.0
+        RightRotation:
+        - -0.0
+        - -0.0
+        - -0.0
+        - 1.0
+        Scale:
+        - 0.0703
+        - 0.0879
+        - 0.1057
+    '3':
+      Item:
+        ==: org.bukkit.inventory.ItemStack
+        v: 3955
+        type: BLACK_CONCRETE
+      ItemDisplay: NONE
+      Transform:
+        Translation:
+        - 0.2319
+        - 0.0625
+        - 0.0
+        LeftRotation:
+        - 0.0
+        - 0.0
+        - 0.0
+        - 1.0
+        RightRotation:
+        - -0.0
+        - -0.0
+        - -0.0
+        - 1.0
+        Scale:
+        - 0.0703
+        - 0.0633
+        - 0.0661
+  小阳光菇:
+    '0':
+      Item:
+        ==: org.bukkit.inventory.ItemStack
+        v: 3955
+        type: PLAYER_HEAD
+        meta:
+          ==: ItemMeta
+          meta-type: SKULL
+          skull-owner:
+            ==: PlayerProfile
+            uniqueId: 795b275d-9444-ce05-5490-fc73ac97cdd8
+            properties:
+            - name: textures
+              value: eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvMWQ5NzgyNWRkNzM3YjgzYjM4MTc1NDIzODNhMmJjYzU0YzU5ODJhYjViZWZhYWQ3NmI1NGUwZWZiMDc4ZThiNCJ9fX0=
+      ItemDisplay: NONE
+      Transform:
+        Translation:
+        - 0.0
+        - 0.6875
+        - 0.0
+        LeftRotation:
+        - 0.0
+        - 0.0
+        - 0.0
+        - 1.0
+        RightRotation:
+        - -0.0
+        - -0.0
+        - -0.0
+        - 1.0
+        Scale:
+        - 1.3
+        - 0.8
+        - 1.3
+    '1':
+      Item:
+        ==: org.bukkit.inventory.ItemStack
+        v: 3955
+        type: PLAYER_HEAD
+        meta:
+          ==: ItemMeta
+          meta-type: SKULL
+          skull-owner:
+            ==: PlayerProfile
+            uniqueId: 5341c590-d4d0-7f5f-7886-72fe7b0b1aae
+            properties:
+            - name: textures
+              value: ewogICJ0aW1lc3RhbXAiIDogMTcyOTIzODQxNzM0NCwKICAicHJvZmlsZUlkIiA6ICI3YjA5ZDg5NWQyYjc0NTU3YmM0YTkzNWYyNjU0NWNjNCIsCiAgInByb2ZpbGVOYW1lIiA6ICJBaXJwbGFuZUdvQnJyIiwKICAic2lnbmF0dXJlUmVxdWlyZWQiIDogdHJ1ZSwKICAidGV4dHVyZXMiIDogewogICAgIlNLSU4iIDogewogICAgICAidXJsIiA6ICJodHRwOi8vdGV4dHVyZXMubWluZWNyYWZ0Lm5ldC90ZXh0dXJlLzI3MjVjNGI1MmUyMzhjYTI5NjlkMjc3MmJlMDg1MzZkMTY0MDQ2MjRkZmZiODkyNzIzODM0M2RhYWZmYTA1M2EiLAogICAgICAibWV0YWRhdGEiIDogewogICAgICAgICJtb2RlbCIgOiAic2xpbSIKICAgICAgfQogICAgfQogIH0KfQ==
+      ItemDisplay: NONE
+      Transform:
+        Translation:
+        - 0.0
+        - 0.375
+        - 0.0
+        LeftRotation:
+        - 0.0
+        - 0.0
+        - 0.0
+        - 1.0
+        RightRotation:
+        - -0.0
+        - -0.0
+        - -0.0
+        - 1.0
+        Scale:
+        - 0.9
+        - 0.8
+        - 0.9
+  大阳光菇:
+    '0':
+      Item:
+        ==: org.bukkit.inventory.ItemStack
+        v: 3955
+        type: PLAYER_HEAD
+        meta:
+          ==: ItemMeta
+          meta-type: SKULL
+          skull-owner:
+            ==: PlayerProfile
+            uniqueId: 9e6c4386-fc99-9586-92a7-18e04e9b4741
+            properties:
+            - name: textures
+              value: eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvMWQ5NzgyNWRkNzM3YjgzYjM4MTc1NDIzODNhMmJjYzU0YzU5ODJhYjViZWZhYWQ3NmI1NGUwZWZiMDc4ZThiNCJ9fX0=
+      ItemDisplay: NONE
+      Transform:
+        Translation:
+        - 0.0
+        - 1.1875
+        - 0.0
+        LeftRotation:
+        - 0.0
+        - 0.0
+        - 0.0
+        - 1.0
+        RightRotation:
+        - -0.0
+        - -0.0
+        - -0.0
+        - 1.0
+        Scale:
+        - 2.0
+        - 1.2646
+        - 2.0
+    '1':
+      Item:
+        ==: org.bukkit.inventory.ItemStack
+        v: 3955
+        type: PLAYER_HEAD
+        meta:
+          ==: ItemMeta
+          meta-type: SKULL
+          skull-owner:
+            ==: PlayerProfile
+            uniqueId: 25e52fd2-f62a-8de3-71b0-2444490b5c9d
+            properties:
+            - name: textures
+              value: ewogICJ0aW1lc3RhbXAiIDogMTcyOTIzODQxNzM0NCwKICAicHJvZmlsZUlkIiA6ICI3YjA5ZDg5NWQyYjc0NTU3YmM0YTkzNWYyNjU0NWNjNCIsCiAgInByb2ZpbGVOYW1lIiA6ICJBaXJwbGFuZUdvQnJyIiwKICAic2lnbmF0dXJlUmVxdWlyZWQiIDogdHJ1ZSwKICAidGV4dHVyZXMiIDogewogICAgIlNLSU4iIDogewogICAgICAidXJsIiA6ICJodHRwOi8vdGV4dHVyZXMubWluZWNyYWZ0Lm5ldC90ZXh0dXJlLzI3MjVjNGI1MmUyMzhjYTI5NjlkMjc3MmJlMDg1MzZkMTY0MDQ2MjRkZmZiODkyNzIzODM0M2RhYWZmYTA1M2EiLAogICAgICAibWV0YWRhdGEiIDogewogICAgICAgICJtb2RlbCIgOiAic2xpbSIKICAgICAgfQogICAgfQogIH0KfQ==
+      ItemDisplay: NONE
+      Transform:
+        Translation:
+        - 0.0
+        - 0.625
+        - 0.0
+        LeftRotation:
+        - 0.0
+        - 0.0
+        - 0.0
+        - 1.0
+        RightRotation:
+        - -0.0
+        - -0.0
+        - -0.0
+        - 1.0
+        Scale:
+        - 1.4
+        - 1.2891
+        - 1.4
+  大喷菇:
+    '0':
+      Item:
+        ==: org.bukkit.inventory.ItemStack
+        v: 3955
+        type: PLAYER_HEAD
+        meta:
+          ==: ItemMeta
+          meta-type: SKULL
+          skull-owner:
+            ==: PlayerProfile
+            uniqueId: ab7e90ba-c6ff-8b74-bbc5-c8ac40adb37b
+            properties:
+            - name: textures
+              value: ewogICJ0aW1lc3RhbXAiIDogMTcyOTgzNjUzMjk1NiwKICAicHJvZmlsZUlkIiA6ICI0NDAzZGM1NDc1YmM0YjE1YTU0OGNmZGE2YjBlYjdkOSIsCiAgInByb2ZpbGVOYW1lIiA6ICI4Qml0czFCeXRlIiwKICAic2lnbmF0dXJlUmVxdWlyZWQiIDogdHJ1ZSwKICAidGV4dHVyZXMiIDogewogICAgIlNLSU4iIDogewogICAgICAidXJsIiA6ICJodHRwOi8vdGV4dHVyZXMubWluZWNyYWZ0Lm5ldC90ZXh0dXJlLzI5NDc3YzExNWM2NmVmYWI5N2ZjZDg4ZjhiZGVhMzkzYzgzMTRkZTU4ODkyNTUyYTEyZDRhM2Q4N2JkOTQ3NjQiLAogICAgICAibWV0YWRhdGEiIDogewogICAgICAgICJtb2RlbCIgOiAic2xpbSIKICAgICAgfQogICAgfQogIH0KfQ==
+      ItemDisplay: NONE
+      Transform:
+        Translation:
+        - 0.0
+        - 0.5625
+        - 0.0
+        LeftRotation:
+        - 0.0
+        - 0.0
+        - 0.0
+        - 1.0
+        RightRotation:
+        - -0.0
+        - -0.0
+        - -0.0
+        - 1.0
+        Scale:
+        - 1.5
+        - 1.1
+        - 1.5
+    '1':
+      Item:
+        ==: org.bukkit.inventory.ItemStack
+        v: 3955
+        type: PLAYER_HEAD
+        meta:
+          ==: ItemMeta
+          meta-type: SKULL
+          skull-owner:
+            ==: PlayerProfile
+            uniqueId: 550249f9-67d4-149d-374e-170bac4b38f9
+            properties:
+            - name: textures
+              value: eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvMjgxZWYzZGU1M2EzNTM4YmVjZGFiNDMwMDcyYTg5Y2EyMjA1YzIxNDdkNDFiNzRlNTlkYzIyMGVhYjY5MGFkOSJ9fX0=
+      ItemDisplay: NONE
+      Transform:
+        Translation:
+        - 0.0
+        - 1.1875
+        - 0.0
+        LeftRotation:
+        - 0.0
+        - 0.0
+        - 0.0
+        - 1.0
+        RightRotation:
+        - -0.0
+        - -0.0
+        - -0.0
+        - 1.0
+        Scale:
+        - 2.1
+        - 1.2803
+        - 2.1
+    '2':
+      Item:
+        ==: org.bukkit.inventory.ItemStack
+        v: 3955
+        type: PURPLE_CONCRETE
+      ItemDisplay: NONE
+      Transform:
+        Translation:
+        - 0.5
+        - 0.875
+        - 0.0
+        LeftRotation:
+        - 0.0
+        - 0.0
+        - 0.0
+        - 1.0
+        RightRotation:
+        - -0.0
+        - -0.0
+        - -0.0
+        - 1.0
+        Scale:
+        - 0.1719
+        - 0.2813
+        - 0.2813
+    '3':
+      Item:
+        ==: org.bukkit.inventory.ItemStack
+        v: 3955
+        type: BLACK_CONCRETE
+      ItemDisplay: NONE
+      Transform:
+        Translation:
+        - 0.525
+        - 0.875
+        - 0.0
+        LeftRotation:
+        - 0.0
+        - 0.0
+        - 0.0
+        - 1.0
+        RightRotation:
+        - -0.0
+        - -0.0
+        - -0.0
+        - 1.0
+        Scale:
+        - 0.125
+        - 0.1719
+        - 0.1719
+  菜问:
+    '0':
+      Item:
+        ==: org.bukkit.inventory.ItemStack
+        v: 3955
+        type: PLAYER_HEAD
+        meta:
+          ==: ItemMeta
+          meta-type: SKULL
+          skull-owner:
+            ==: PlayerProfile
+            uniqueId: 5a860475-a329-281a-d410-075b0eec6bf3
+            properties:
+            - name: textures
+              value: ewogICJ0aW1lc3RhbXAiIDogMTcyOTcwMjUxMjI2OSwKICAicHJvZmlsZUlkIiA6ICJjYmNkNDQzZGE1NTI0OGU3ODM3NWNmZjYwMmQzZWI0NyIsCiAgInByb2ZpbGVOYW1lIiA6ICJPX1JlaSIsCiAgInNpZ25hdHVyZVJlcXVpcmVkIiA6IHRydWUsCiAgInRleHR1cmVzIiA6IHsKICAgICJTS0lOIiA6IHsKICAgICAgInVybCIgOiAiaHR0cDovL3RleHR1cmVzLm1pbmVjcmFmdC5uZXQvdGV4dHVyZS9hOWE3ZGU4MzgzMjQ0OGNlZGM4ZWU3ZDcyM2IxMWMzNzRmMzgwOWI4ZWIxNmRmYjM3M2UxNGRkNTllYmQ1Yjg2IiwKICAgICAgIm1ldGFkYXRhIiA6IHsKICAgICAgICAibW9kZWwiIDogInNsaW0iCiAgICAgIH0KICAgIH0KICB9Cn0=
+      ItemDisplay: NONE
+      Transform:
+        Translation:
+        - 0.0
+        - 0.8125
+        - 0.0
+        LeftRotation:
+        - 0.0
+        - 0.0
+        - 0.0
+        - 1.0
+        RightRotation:
+        - -0.0
+        - -0.0
+        - -0.0
+        - 1.0
+        Scale:
+        - 1.6
+        - 1.6
+        - 1.6
+    '1':
+      Item:
+        ==: org.bukkit.inventory.ItemStack
+        v: 3955
+        type: LIME_CONCRETE
+      ItemDisplay: NONE
+      Transform:
+        Translation:
+        - 0.4375
+        - 0.5
+        - 0.0
+        LeftRotation:
+        - 0.0
+        - 0.0
+        - -0.3826834
+        - 0.92387944
+        RightRotation:
+        - -0.0
+        - -0.0
+        - -0.0
+        - 1.0
+        Scale:
+        - 0.2500329
+        - 0.99999017
+        - 0.25
+    '2':
+      Item:
+        ==: org.bukkit.inventory.ItemStack
+        v: 3955
+        type: LIME_CONCRETE
+      ItemDisplay: NONE
+      Transform:
+        Translation:
+        - -0.5
+        - 0.5
+        - 0.0
+        LeftRotation:
+        - 0.0
+        - 0.0
+        - 0.3826834
+        - 0.92387944
+        RightRotation:
+        - -0.0
+        - -0.0
+        - -0.0
+        - 1.0
+        Scale:
+        - 0.2500329
+        - 0.99999017
+        - 0.25
+    '3':
+      Item:
+        ==: org.bukkit.inventory.ItemStack
+        v: 3955
+        type: LIME_CONCRETE
+      ItemDisplay: NONE
+      Transform:
+        Translation:
+        - 0.8125
+        - 1.0625
+        - 0.0
+        LeftRotation:
+        - 0.0
+        - 0.0
+        - 0.86599267
+        - -0.5000567
+        RightRotation:
+        - -0.0
+        - -0.0
+        - -0.0
+        - 1.0
+        Scale:
+        - 0.42189568
+        - 0.42189568
+        - 0.3594
+    '4':
+      Item:
+        ==: org.bukkit.inventory.ItemStack
+        v: 3955
+        type: LIME_CONCRETE
+      ItemDisplay: NONE
+      Transform:
+        Translation:
+        - -0.875
+        - 1.0625
+        - 0.0
+        LeftRotation:
+        - 0.0
+        - 0.0
+        - 0.86599267
+        - 0.5000567
+        RightRotation:
+        - -0.0
+        - -0.0
+        - -0.0
+        - 1.0
+        Scale:
+        - 0.42189568
+        - 0.42189568
+        - 0.3594
+    '5':
+      Item:
+        ==: org.bukkit.inventory.ItemStack
+        v: 3955
+        type: LIME_CONCRETE
+      ItemDisplay: NONE
+      Transform:
+        Translation:
+        - 0.0625
+        - 0.8125
+        - 0.0
+        LeftRotation:
+        - 0.0
+        - 0.0
+        - 0.86599267
+        - -0.5000567
+        RightRotation:
+        - -0.0
+        - -0.0
+        - -0.0
+        - 1.0
+        Scale:
+        - 0.42189568
+        - 0.42189568
+        - 0.3594
+    '6':
+      Item:
+        ==: org.bukkit.inventory.ItemStack
+        v: 3955
+        type: LIME_CONCRETE
+      ItemDisplay: NONE
+      Transform:
+        Translation:
+        - 0.125
+        - 0.8125
+        - 0.0
+        LeftRotation:
+        - 0.0
+        - 0.0
+        - 0.8660237
+        - -0.50000286
+        RightRotation:
+        - -0.0
+        - -0.0
+        - -0.0
+        - 1.0
+        Scale:
+        - 0.8174093
+        - 0.23726821
+        - 0.3594
+  蘑菇孢子:
+    '0':
+      Item:
+        ==: org.bukkit.inventory.ItemStack
+        v: 3955
+        type: PLAYER_HEAD
+        meta:
+          ==: ItemMeta
+          meta-type: SKULL
+          skull-owner:
+            ==: PlayerProfile
+            uniqueId: 97c6ef5d-d7a8-4bd2-2956-91d2292932af
+            properties:
+            - name: textures
+              value: ewogICJ0aW1lc3RhbXAiIDogMTcyOTgzNjc5NzI2MiwKICAicHJvZmlsZUlkIiA6ICI1NjQ4ZTA1Njg4NWU0NGQyYTVhYTBkYmVkMjZhZmFlMyIsCiAgInByb2ZpbGVOYW1lIiA6ICJaX2ZseSIsCiAgInNpZ25hdHVyZVJlcXVpcmVkIiA6IHRydWUsCiAgInRleHR1cmVzIiA6IHsKICAgICJTS0lOIiA6IHsKICAgICAgInVybCIgOiAiaHR0cDovL3RleHR1cmVzLm1pbmVjcmFmdC5uZXQvdGV4dHVyZS9lZjkzNDFlOGViOTQwODIxMzkzZWZlY2ViODA0YTRhZTVjZWRhZDFhZTNhZTU5ZTE1OTFlNDI0YzBlYjc0NDUiLAogICAgICAibWV0YWRhdGEiIDogewogICAgICAgICJtb2RlbCIgOiAic2xpbSIKICAgICAgfQogICAgfQogIH0KfQ==
+      ItemDisplay: NONE
+      Transform:
+        Translation:
+        - 0.0
+        - 0.375
+        - 0.0
+        LeftRotation:
+        - 0.0
+        - 0.0
+        - 0.0
+        - 1.0
+        RightRotation:
+        - -0.0
+        - -0.0
+        - -0.0
+        - 1.0
+        Scale:
+        - 0.8
+        - 0.8
+        - 0.8
+  寒冰菇:
+    '0':
+      Item:
+        ==: org.bukkit.inventory.ItemStack
+        v: 3955
+        type: PLAYER_HEAD
+        meta:
+          ==: ItemMeta
+          meta-type: SKULL
+          skull-owner:
+            ==: PlayerProfile
+            uniqueId: efdf0d9a-e392-b80e-6b7d-cdce67f02ede
+            properties:
+            - name: textures
+              value: ewogICJ0aW1lc3RhbXAiIDogMTcyOTgzOTYwMjI4MiwKICAicHJvZmlsZUlkIiA6ICIwMzY2OTMwNzgwY2U0NWMzYWM2OWRiOWZjODdmYzcxYiIsCiAgInByb2ZpbGVOYW1lIiA6ICJpcm9uZGVzbyIsCiAgInNpZ25hdHVyZVJlcXVpcmVkIiA6IHRydWUsCiAgInRleHR1cmVzIiA6IHsKICAgICJTS0lOIiA6IHsKICAgICAgInVybCIgOiAiaHR0cDovL3RleHR1cmVzLm1pbmVjcmFmdC5uZXQvdGV4dHVyZS8xZDNiMmQwNjk1MGUwMTI1ZjgzZjQyYmYzMzBmNjA1NzIzNzc3MTFjMWRkMjE1MGZmZjk0ODliZGNhMDM1Y2RlIiwKICAgICAgIm1ldGFkYXRhIiA6IHsKICAgICAgICAibW9kZWwiIDogInNsaW0iCiAgICAgIH0KICAgIH0KICB9Cn0=
+      ItemDisplay: NONE
+      Transform:
+        Translation:
+        - 0.0
+        - 0.5625
+        - 0.0
+        LeftRotation:
+        - 0.0
+        - 0.0
+        - 0.0
+        - 1.0
+        RightRotation:
+        - -0.0
+        - -0.0
+        - -0.0
+        - 1.0
+        Scale:
+        - 1.56
+        - 1.1
+        - 1.56
+    '1':
+      Item:
+        ==: org.bukkit.inventory.ItemStack
+        v: 3955
+        type: PLAYER_HEAD
+        meta:
+          ==: ItemMeta
+          meta-type: SKULL
+          skull-owner:
+            ==: PlayerProfile
+            uniqueId: 7d13786a-7e42-6792-0c63-431ebd5af69e
+            properties:
+            - name: textures
+              value: eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvMzhkOTMxM2M3ZGM5OWVlZWMxOTZhMzEzNjBiMWU0MzFjZDkyNDkwMWVjMDE2ODk2NzA3Njk2MDVkN2RhNDkxZCJ9fX0=
+      ItemDisplay: NONE
+      Transform:
+        Translation:
+        - 0.0
+        - 1.125
+        - 0.0
+        LeftRotation:
+        - 0.0
+        - 0.0
+        - 0.0
+        - 1.0
+        RightRotation:
+        - -0.0
+        - -0.0
+        - -0.0
+        - 1.0
+        Scale:
+        - 2.1
+        - 1.2
+        - 2.1
+    '2':
+      Item:
+        ==: org.bukkit.inventory.ItemStack
+        v: 3955
+        type: BLUE_ICE
+      ItemDisplay: NONE
+      Transform:
+        Translation:
+        - 0.0
+        - 1.125
+        - 0.4375
+        LeftRotation:
+        - -0.15756403
+        - -0.20534542
+        - 0.7662991
+        - -0.58804137
+        RightRotation:
+        - -0.0
+        - -0.0
+        - -0.0
+        - 1.0
+        Scale:
+        - 0.7238313
+        - 0.30529463
+        - 0.2578335
+    '3':
+      Item:
+        ==: org.bukkit.inventory.ItemStack
+        v: 3955
+        type: BLUE_ICE
+      ItemDisplay: NONE
+      Transform:
+        Translation:
+        - -0.25
+        - 1.0625
+        - 0.25
+        LeftRotation:
+        - 0.36019397
+        - 0.025023863
+        - -0.54323095
+        - 0.7579803
+        RightRotation:
+        - -0.0
+        - -0.0
+        - -0.0
+        - 1.0
+        Scale:
+        - 0.723783
+        - 0.30527848
+        - 0.25785774
+    '4':
+      Item:
+        ==: org.bukkit.inventory.ItemStack
+        v: 3955
+        type: BLUE_ICE
+      ItemDisplay: NONE
+      Transform:
+        Translation:
+        - 0.25
+        - 1.125
+        - 0.25
+        LeftRotation:
+        - -0.18301144
+        - -0.18301319
+        - 0.8365204
+        - -0.48295584
+        RightRotation:
+        - -0.0
+        - -0.0
+        - -0.0
+        - 1.0
+        Scale:
+        - 0.72386897
+        - 0.30525464
+        - 0.2578829
+    '5':
+      Item:
+        ==: org.bukkit.inventory.ItemStack
+        v: 3955
+        type: BLUE_ICE
+      ItemDisplay: NONE
+      Transform:
+        Translation:
+        - 0.25
+        - 1.125
+        - -0.1875
+        LeftRotation:
+        - 0.09228165
+        - 0.09239742
+        - 0.85859567
+        - -0.4957423
+        RightRotation:
+        - -0.0
+        - -0.0
+        - -0.0
+        - 1.0
+        Scale:
+        - 0.72378045
+        - 0.30528393
+        - 0.257896
+    '6':
+      Item:
+        ==: org.bukkit.inventory.ItemStack
+        v: 3955
+        type: BLUE_ICE
+      ItemDisplay: NONE
+      Transform:
+        Translation:
+        - -0.25
+        - 1.125
+        - -0.1875
+        LeftRotation:
+        - 0.23297235
+        - 0.30359593
+        - 0.73294544
+        - -0.56244504
+        RightRotation:
+        - -0.0
+        - -0.0
+        - -0.0
+        - 1.0
+        Scale:
+        - 0.7238398
+        - 0.3053124
+        - 0.25795257
+    '7':
+      Item:
+        ==: org.bukkit.inventory.ItemStack
+        v: 3955
+        type: BLUE_ICE
+      ItemDisplay: NONE
+      Transform:
+        Translation:
+        - 0.0
+        - 1.125
+        - 0.0
+        LeftRotation:
+        - 0.07943691
+        - 0.10364238
+        - 0.78654087
+        - -0.6035739
+        RightRotation:
+        - -0.0
+        - -0.0
+        - -0.0
+        - 1.0
+        Scale:
+        - 0.72379017
+        - 0.30529976
+        - 0.25787535
+    '8':
+      Item:
+        ==: org.bukkit.inventory.ItemStack
+        v: 3955
+        type: BLUE_ICE
+      ItemDisplay: NONE
+      Transform:
+        Translation:
+        - -0.25
+        - 1.125
+        - 0.0
+        LeftRotation:
+        - 0.067019194
+        - 0.2499945
+        - -0.48295173
+        - 0.836522
+        RightRotation:
+        - -0.0
+        - -0.0
+        - -0.0
+        - 1.0
+        Scale:
+        - 0.723831
+        - 0.30527022
+        - 0.25787166
+    '9':
+      Item:
+        ==: org.bukkit.inventory.ItemStack
+        v: 3955
+        type: BLUE_ICE
+      ItemDisplay: NONE
+      Transform:
+        Translation:
+        - 0.0
+        - 1.125
+        - -0.375
+        LeftRotation:
+        - 0.15756403
+        - 0.20534542
+        - 0.7662991
+        - -0.58804137
+        RightRotation:
+        - -0.0
+        - -0.0
+        - -0.0
+        - 1.0
+        Scale:
+        - 0.7238313
+        - 0.30529463
+        - 0.2578835
+  报纸:
+    '0':
+      Item:
+        ==: org.bukkit.inventory.ItemStack
+        v: 3955
+        type: PAPER
+      ItemDisplay: NONE
+      Transform:
+        Translation:
+        - -0.25
+        - -0.3125
+        - -0.625
+        LeftRotation:
+        - -0.0990387
+        - 0.23909754
+        - -0.36965
+        - 0.8924027
+        RightRotation:
+        - -0.0
+        - -0.0
+        - -0.0
+        - 1.0
+        Scale:
+        - 1.5000429
+        - 1.5000429
+        - 3.1219733
+    '1':
+      Item:
+        ==: org.bukkit.inventory.ItemStack
+        v: 3955
+        type: PAPER
+      ItemDisplay: NONE
+      Transform:
+        Translation:
+        - 0.25
+        - -0.3125
+        - -0.625
+        LeftRotation:
+        - 0.0990387
+        - -0.23909754
+        - -0.36965
+        - 0.8924027
+        RightRotation:
+        - -0.0
+        - -0.0
+        - -0.0
+        - 1.0
+        Scale:
+        - 1.5000429
+        - 1.5000429
+        - 3.1219733
+    '2':
+      Item:
+        ==: org.bukkit.inventory.ItemStack
+        v: 3955
+        type: PLAYER_HEAD
+        meta:
+          ==: ItemMeta
+          meta-type: SKULL
+          skull-owner:
+            ==: PlayerProfile
+            uniqueId: 9c198c21-7848-77fd-60de-30096bb859e6
+            properties:
+            - name: textures
+              value: eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvZDRiMzk3NWM2ZDlhMTcxMzFmMzgzNmYzNjA5YmEzZGNjMzU0MTU4ZTY3NzVmZWE5YTJjOTZmOWIwMmQwNGYwMCJ9fX0=
+      ItemDisplay: NONE
+      Transform:
+        Translation:
+        - 0.3125
+        - 0.125
+        - -0.75
+        LeftRotation:
+        - 0.0
+        - -0.25882518
+        - 0.0
+        - 0.96592414
+        RightRotation:
+        - -0.0
+        - -0.0
+        - -0.0
+        - 1.0
+        Scale:
+        - 0.99997795
+        - 0.9999999
+        - 0.062501974
+    '3':
+      Item:
+        ==: org.bukkit.inventory.ItemStack
+        v: 3955
+        type: PLAYER_HEAD
+        meta:
+          ==: ItemMeta
+          meta-type: SKULL
+          skull-owner:
+            ==: PlayerProfile
+            uniqueId: c45e6e05-278b-e5a7-0417-f8cfc294b2c2
+            properties:
+            - name: textures
+              value: eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvZTk3M2RjYmNiYmRlNGFlNDg3YTU4NGI1MGYxNzY2OTczMGJhYTMzMWJiNjg4YzIzMzNjYTc4YTIyYTVkNzE5NiJ9fX0=
+      ItemDisplay: NONE
+      Transform:
+        Translation:
+        - -0.4375
+        - 0.0625
+        - -0.625
+        LeftRotation:
+        - 0.0
+        - 0.25882518
+        - 0.0
+        - 0.96592414
+        RightRotation:
+        - -0.0
+        - -0.0
+        - -0.0
+        - 1.0
+        Scale:
+        - 0.99997795
+        - 0.9999999
+        - 0.062501974
+  钦灵的帽子:
+    '0':
+      Item:
+        ==: org.bukkit.inventory.ItemStack
+        v: 3955
+        type: PLAYER_HEAD
+        meta:
+          ==: ItemMeta
+          meta-type: SKULL
+          skull-owner:
+            ==: PlayerProfile
+            uniqueId: 7d88a976-a484-8f14-6c38-b26ab61da1fd
+            properties:
+            - name: textures
+              value: eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvMjc3YThiODlhYTU1OWE4YWNjY2NhMGE3ZDI0MGE5YjhiMGRlODJhMGE5YzU3Yjk4NzFmZjk4ZTc3ZWIyYmI1MCJ9fX0=
+      ItemDisplay: NONE
+      Transform:
+        Translation:
+        - 0.25
+        - 0.0604
+        - -0.2624
+        LeftRotation:
+        - 0.0
+        - -0.70710677
+        - 0.0
+        - 0.70710677
+        RightRotation:
+        - -0.0
+        - -0.0
+        - -0.0
+        - 1.0
+        Scale:
+        - 0.99999994
+        - 0.2
+        - 0.99999994
+    '1':
+      Item:
+        ==: org.bukkit.inventory.ItemStack
+        v: 3955
+        type: PLAYER_HEAD
+        meta:
+          ==: ItemMeta
+          meta-type: SKULL
+          skull-owner:
+            ==: PlayerProfile
+            uniqueId: a8c2798c-4215-5cce-b1cb-d5b6b3d81d80
+            properties:
+            - name: textures
+              value: eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvMjc3YThiODlhYTU1OWE4YWNjY2NhMGE3ZDI0MGE5YjhiMGRlODJhMGE5YzU3Yjk4NzFmZjk4ZTc3ZWIyYmI1MCJ9fX0=
+      ItemDisplay: NONE
+      Transform:
+        Translation:
+        - 0.25
+        - 0.0604
+        - 0.2376
+        LeftRotation:
+        - 0.0
+        - 1.0
+        - 0.0
+        - 0.0
+        RightRotation:
+        - -0.0
+        - -0.0
+        - -0.0
+        - 1.0
+        Scale:
+        - 1.0
+        - 0.2
+        - 1.0
+    '2':
+      Item:
+        ==: org.bukkit.inventory.ItemStack
+        v: 3955
+        type: PLAYER_HEAD
+        meta:
+          ==: ItemMeta
+          meta-type: SKULL
+          skull-owner:
+            ==: PlayerProfile
+            uniqueId: 413ca771-57e0-6516-5696-7980f491d8eb
+            properties:
+            - name: textures
+              value: eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvMjc3YThiODlhYTU1OWE4YWNjY2NhMGE3ZDI0MGE5YjhiMGRlODJhMGE5YzU3Yjk4NzFmZjk4ZTc3ZWIyYmI1MCJ9fX0=
+      ItemDisplay: NONE
+      Transform:
+        Translation:
+        - -0.25
+        - 0.0604
+        - 0.2376
+        LeftRotation:
+        - 0.0
+        - 0.70710677
+        - 0.0
+        - 0.70710677
+        RightRotation:
+        - -0.0
+        - -0.0
+        - -0.0
+        - 1.0
+        Scale:
+        - 0.99999994
+        - 0.2
+        - 0.99999994
+    '3':
+      Item:
+        ==: org.bukkit.inventory.ItemStack
+        v: 3955
+        type: PLAYER_HEAD
+        meta:
+          ==: ItemMeta
+          meta-type: SKULL
+          skull-owner:
+            ==: PlayerProfile
+            uniqueId: aea74ce2-d0ed-3006-9450-e8d4feb25c74
+            properties:
+            - name: textures
+              value: eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvMjc3YThiODlhYTU1OWE4YWNjY2NhMGE3ZDI0MGE5YjhiMGRlODJhMGE5YzU3Yjk4NzFmZjk4ZTc3ZWIyYmI1MCJ9fX0=
+      ItemDisplay: NONE
+      Transform:
+        Translation:
+        - -0.25
+        - 0.0604
+        - -0.2624
+        LeftRotation:
+        - 0.0
+        - 0.0
+        - 0.0
+        - 1.0
+        RightRotation:
+        - -0.0
+        - -0.0
+        - -0.0
+        - 1.0
+        Scale:
+        - 1.0
+        - 0.2
+        - 1.0
+    '4':
+      Item:
+        ==: org.bukkit.inventory.ItemStack
+        v: 3955
+        type: PLAYER_HEAD
+        meta:
+          ==: ItemMeta
+          meta-type: SKULL
+          skull-owner:
+            ==: PlayerProfile
+            uniqueId: e4db9c47-eee0-e855-ede6-c4cfacda365f
+            properties:
+            - name: textures
+              value: eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvNjFmMjhlNmJhOGE3MDRlZWFmOGVmYjQ0MzM2YzVhOGRiNTdhMTZlNjk4MDNlMTVhYWM2Y2VkZDZjNGQ3MDgxMSJ9fX0=
+      ItemDisplay: NONE
+      Transform:
+        Translation:
+        - 0.0
+        - 0.503
+        - -0.0849
+        LeftRotation:
+        - -0.05485797
+        - -0.7049756
+        - 0.05485797
+        - 0.7049756
+        RightRotation:
+        - -0.0
+        - -0.0
+        - -0.0
+        - 1.0
+        Scale:
+        - 1.000038
+        - 1.0000379
+        - 0.9999999
+    '5':
+      Item:
+        ==: org.bukkit.inventory.ItemStack
+        v: 3955
+        type: PLAYER_HEAD
+        meta:
+          ==: ItemMeta
+          meta-type: SKULL
+          skull-owner:
+            ==: PlayerProfile
+            uniqueId: 556ef40e-51cb-05d8-66e8-b5c444fae7e7
+            properties:
+            - name: textures
+              value: eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvMjhhMTkwODQ5MjVmMzg3OGExZjc0MTdlYzUxYzBmNzdkYjc2YzU2N2I5OTgxMmZhOTMyMjg2MzNkYTc3NDk2YyJ9fX0=
+      ItemDisplay: NONE
+      Transform:
+        Translation:
+        - 0.0
+        - 0.9964
+        - -0.1625
+        LeftRotation:
+        - -0.05485797
+        - -0.7049756
+        - 0.05485797
+        - 0.7049756
+        RightRotation:
+        - -0.0
+        - -0.0
+        - -0.0
+        - 1.0
+        Scale:
+        - 1.000038
+        - 1.0000379
+        - 0.9999999
+  铁栅栏:
+    '0':
+      Item:
+        ==: org.bukkit.inventory.ItemStack
+        v: 3955
+        type: IRON_DOOR
+      ItemDisplay: NONE
+      Transform:
+        Translation:
+        - 0.0
+        - -0.375
+        - -0.5
+        LeftRotation:
+        - 0.0
+        - 0.0
+        - 0.0
+        - 1.0
+        RightRotation:
+        - -0.0
+        - -0.0
+        - -0.0
+        - 1.0
+        Scale:
+        - 1.6919
+        - 2.3163
+        - 2.6875
+  胆小菇:
+    '0':
+      Item:
+        ==: org.bukkit.inventory.ItemStack
+        v: 3955
+        type: PLAYER_HEAD
+        meta:
+          ==: ItemMeta
+          meta-type: SKULL
+          skull-owner:
+            ==: PlayerProfile
+            uniqueId: 90ab6322-43dd-7371-25f7-faedcdacca57
+            properties:
+            - name: textures
+              value: ewogICJ0aW1lc3RhbXAiIDogMTcyOTgzNTgwOTQzMywKICAicHJvZmlsZUlkIiA6ICI3YTVkYmRlNDk0NWU0YTE4Yjg2OWY1MGY1NTJjNjlkYiIsCiAgInByb2ZpbGVOYW1lIiA6ICJCdWtraXRBUEkiLAogICJzaWduYXR1cmVSZXF1aXJlZCIgOiB0cnVlLAogICJ0ZXh0dXJlcyIgOiB7CiAgICAiU0tJTiIgOiB7CiAgICAgICJ1cmwiIDogImh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvMjQ1ZjJkYjQ2MTM0ZWUwZjYwOWQ5NThlODAwZGYzNGRhMmUwNjA3YmI5NDllZmNkYTc4YWYwYjVlMDliOTJhZiIsCiAgICAgICJtZXRhZGF0YSIgOiB7CiAgICAgICAgIm1vZGVsIiA6ICJzbGltIgogICAgICB9CiAgICB9CiAgfQp9
+      ItemDisplay: NONE
+      Transform:
+        Translation:
+        - 0.0
+        - 0.9375
+        - 0.0
+        LeftRotation:
+        - 0.0
+        - 0.0
+        - 0.0
+        - 1.0
+        RightRotation:
+        - -0.0
+        - -0.0
+        - -0.0
+        - 1.0
+        Scale:
+        - 0.75
+        - 1.8688
+        - 0.75
+    '1':
+      Item:
+        ==: org.bukkit.inventory.ItemStack
+        v: 3955
+        type: PLAYER_HEAD
+        meta:
+          ==: ItemMeta
+          meta-type: SKULL
+          skull-owner:
+            ==: PlayerProfile
+            uniqueId: 0c810c2c-cf72-6540-8ade-fd92f227b46f
+            properties:
+            - name: textures
+              value: eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvMjgxZWYzZGU1M2EzNTM4YmVjZGFiNDMwMDcyYTg5Y2EyMjA1YzIxNDdkNDFiNzRlNTlkYzIyMGVhYjY5MGFkOSJ9fX0=
+      ItemDisplay: NONE
+      Transform:
+        Translation:
+        - 0.0
+        - 1.125
+        - 0.0
+        LeftRotation:
+        - 0.0
+        - 0.0
+        - 0.0
+        - 1.0
+        RightRotation:
+        - -0.0
+        - -0.0
+        - -0.0
+        - 1.0
+        Scale:
+        - 1.35
+        - 0.9
+        - 1.35
+    '2':
+      Item:
+        ==: org.bukkit.inventory.ItemStack
+        v: 3955
+        type: MUSHROOM_STEM
+      ItemDisplay: NONE
+      Transform:
+        Translation:
+        - 0.1875
+        - 0.25
+        - 0.0
+        LeftRotation:
+        - 0.0
+        - 0.0
+        - 0.0
+        - 1.0
+        RightRotation:
+        - -0.0
+        - -0.0
+        - -0.0
+        - 1.0
+        Scale:
+        - 0.0703
+        - 0.0879
+        - 0.1057
+    '3':
+      Item:
+        ==: org.bukkit.inventory.ItemStack
+        v: 3955
+        type: BLACK_CONCRETE
+      ItemDisplay: NONE
+      Transform:
+        Translation:
+        - 0.19
+        - 0.25
+        - 0.0
+        LeftRotation:
+        - 0.0
+        - 0.0
+        - 0.0
+        - 1.0
+        RightRotation:
+        - -0.0
+        - -0.0
+        - -0.0
+        - 1.0
+        Scale:
+        - 0.0703
+        - 0.0633
+        - 0.0661
+  害怕的胆小菇:
+    '0':
+      Item:
+        ==: org.bukkit.inventory.ItemStack
+        v: 3955
+        type: PLAYER_HEAD
+        meta:
+          ==: ItemMeta
+          meta-type: SKULL
+          skull-owner:
+            ==: PlayerProfile
+            uniqueId: 1ce83951-0a2f-80bc-9fab-881233fcc04c
+            properties:
+            - name: textures
+              value: ewogICJ0aW1lc3RhbXAiIDogMTcyOTgzNTgwOTQzMywKICAicHJvZmlsZUlkIiA6ICI3YTVkYmRlNDk0NWU0YTE4Yjg2OWY1MGY1NTJjNjlkYiIsCiAgInByb2ZpbGVOYW1lIiA6ICJCdWtraXRBUEkiLAogICJzaWduYXR1cmVSZXF1aXJlZCIgOiB0cnVlLAogICJ0ZXh0dXJlcyIgOiB7CiAgICAiU0tJTiIgOiB7CiAgICAgICJ1cmwiIDogImh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvMjQ1ZjJkYjQ2MTM0ZWUwZjYwOWQ5NThlODAwZGYzNGRhMmUwNjA3YmI5NDllZmNkYTc4YWYwYjVlMDliOTJhZiIsCiAgICAgICJtZXRhZGF0YSIgOiB7CiAgICAgICAgIm1vZGVsIiA6ICJzbGltIgogICAgICB9CiAgICB9CiAgfQp9
+      ItemDisplay: NONE
+      Transform:
+        Translation:
+        - 0.0
+        - 0.4375
+        - 0.0
+        LeftRotation:
+        - 0.0
+        - 0.0
+        - 0.0
+        - 1.0
+        RightRotation:
+        - -0.0
+        - -0.0
+        - -0.0
+        - 1.0
+        Scale:
+        - 0.75
+        - 0.8176
+        - 0.75
+    '1':
+      Item:
+        ==: org.bukkit.inventory.ItemStack
+        v: 3955
+        type: PLAYER_HEAD
+        meta:
+          ==: ItemMeta
+          meta-type: SKULL
+          skull-owner:
+            ==: PlayerProfile
+            uniqueId: d21ee8ed-1952-fe8e-6a09-d842006d13e6
+            properties:
+            - name: textures
+              value: eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvMjgxZWYzZGU1M2EzNTM4YmVjZGFiNDMwMDcyYTg5Y2EyMjA1YzIxNDdkNDFiNzRlNTlkYzIyMGVhYjY5MGFkOSJ9fX0=
+      ItemDisplay: NONE
+      Transform:
+        Translation:
+        - 0.0
+        - 0.625
+        - 0.0
+        LeftRotation:
+        - 0.0
+        - 0.0
+        - 0.0
+        - 1.0
+        RightRotation:
+        - -0.0
+        - -0.0
+        - -0.0
+        - 1.0
+        Scale:
+        - 1.35
+        - 0.9
+        - 1.35
+    '2':
+      Item:
+        ==: org.bukkit.inventory.ItemStack
+        v: 3955
+        type: MUSHROOM_STEM
+      ItemDisplay: NONE
+      Transform:
+        Translation:
+        - 0.1875
+        - 0.25
+        - 0.0
+        LeftRotation:
+        - 0.0
+        - 0.0
+        - 0.0
+        - 1.0
+        RightRotation:
+        - -0.0
+        - -0.0
+        - -0.0
+        - 1.0
+        Scale:
+        - 0.0703
+        - 0.0879
+        - 0.1057
+    '3':
+      Item:
+        ==: org.bukkit.inventory.ItemStack
+        v: 3955
+        type: BLACK_CONCRETE
+      ItemDisplay: NONE
+      Transform:
+        Translation:
+        - 0.19
+        - 0.25
+        - 0.0
+        LeftRotation:
+        - 0.0
+        - 0.0
+        - 0.0
+        - 1.0
+        RightRotation:
+        - -0.0
+        - -0.0
+        - -0.0
+        - 1.0
+        Scale:
+        - 0.0703
+        - 0.0633
+        - 0.0661
+  毁灭菇:
+    '0':
+      Item:
+        ==: org.bukkit.inventory.ItemStack
+        v: 3955
+        type: PLAYER_HEAD
+        meta:
+          ==: ItemMeta
+          meta-type: SKULL
+          skull-owner:
+            ==: PlayerProfile
+            uniqueId: 4e50d52b-9a8a-956b-0e8e-1cb4a8f62779
+            properties:
+            - name: textures
+              value: ewogICJ0aW1lc3RhbXAiIDogMTczMDIxMDI5MTQ3OSwKICAicHJvZmlsZUlkIiA6ICI5N2VmNDYyMzdhNGY0ZTQxYWY2ZTljYjg2MTdmNzc2OSIsCiAgInByb2ZpbGVOYW1lIiA6ICJZdWthcmlLYXplIiwKICAic2lnbmF0dXJlUmVxdWlyZWQiIDogdHJ1ZSwKICAidGV4dHVyZXMiIDogewogICAgIlNLSU4iIDogewogICAgICAidXJsIiA6ICJodHRwOi8vdGV4dHVyZXMubWluZWNyYWZ0Lm5ldC90ZXh0dXJlL2RjMTA1M2IwZjBjMTk3MTIxZDFmZTFiMDhjMTEzYTAwMDcyYTQ1YWNkNjUxZjgzZjBjYjc5MWVjOGQ3YTc3OTAiLAogICAgICAibWV0YWRhdGEiIDogewogICAgICAgICJtb2RlbCIgOiAic2xpbSIKICAgICAgfQogICAgfQogIH0KfQ==
+      ItemDisplay: NONE
+      Transform:
+        Translation:
+        - 0.0
+        - 0.5625
+        - 0.0
+        LeftRotation:
+        - 0.0
+        - 0.0
+        - 0.0
+        - 1.0
+        RightRotation:
+        - -0.0
+        - -0.0
+        - -0.0
+        - 1.0
+        Scale:
+        - 1.2656
+        - 1.1
+        - 1.2656
+    '1':
+      Item:
+        ==: org.bukkit.inventory.ItemStack
+        v: 3955
+        type: PLAYER_HEAD
+        meta:
+          ==: ItemMeta
+          meta-type: SKULL
+          skull-owner:
+            ==: PlayerProfile
+            uniqueId: f7ac5deb-5ae6-7e2d-8287-b55fb98a63c3
+            properties:
+            - name: textures
+              value: ewogICJ0aW1lc3RhbXAiIDogMTczMDIxMDIxOTI1OSwKICAicHJvZmlsZUlkIiA6ICJhMWQzNzljMjhhODA0ZTMxYjY3YjcyMDcyNWE0ZjI3NSIsCiAgInByb2ZpbGVOYW1lIiA6ICJDeXNwZWN0IiwKICAic2lnbmF0dXJlUmVxdWlyZWQiIDogdHJ1ZSwKICAidGV4dHVyZXMiIDogewogICAgIlNLSU4iIDogewogICAgICAidXJsIiA6ICJodHRwOi8vdGV4dHVyZXMubWluZWNyYWZ0Lm5ldC90ZXh0dXJlL2MyZDZjNzg5ZGMyNDNhN2FkZGZlZmMzNzgyYjQwYzlmZWMzNWVmMjIxMTQ0YmM1OGQ2ZWJmZmYyY2Y3NjRjY2YiLAogICAgICAibWV0YWRhdGEiIDogewogICAgICAgICJtb2RlbCIgOiAic2xpbSIKICAgICAgfQogICAgfQogIH0KfQ==
+      ItemDisplay: NONE
+      Transform:
+        Translation:
+        - -0.0069
+        - 1.0414
+        - -0.0176
+        LeftRotation:
+        - 0.0
+        - 0.0
+        - 0.0
+        - 0.9999999
+        RightRotation:
+        - -0.0
+        - -0.0
+        - -0.0
+        - 1.0
+        Scale:
+        - 1.8562998
+        - 1.0499997
+        - 1.8562998
+  魅惑菇:
+    '0':
+      Item:
+        ==: org.bukkit.inventory.ItemStack
+        v: 3955
+        type: PLAYER_HEAD
+        meta:
+          ==: ItemMeta
+          meta-type: SKULL
+          skull-owner:
+            ==: PlayerProfile
+            uniqueId: ed6b910e-e8da-e0d4-5217-2daf212c7637
+            properties:
+            - name: textures
+              value: ewogICJ0aW1lc3RhbXAiIDogMTczMDIxMDUzMTQ0MiwKICAicHJvZmlsZUlkIiA6ICI3OTQzODZiMzFhZTI0Nzk2OGNmMzc1MTk1NzUxY2U3YSIsCiAgInByb2ZpbGVOYW1lIiA6ICJSZWlkeTQyIiwKICAic2lnbmF0dXJlUmVxdWlyZWQiIDogdHJ1ZSwKICAidGV4dHVyZXMiIDogewogICAgIlNLSU4iIDogewogICAgICAidXJsIiA6ICJodHRwOi8vdGV4dHVyZXMubWluZWNyYWZ0Lm5ldC90ZXh0dXJlL2Q1NzljYzM5ODQxODhmNmU1ZWMwNzBiNmM0MGU1MTFiZGVhZTAzM2MwMjQwMGI0MTA2M2EyNDY3MzAwOGQ4YiIsCiAgICAgICJtZXRhZGF0YSIgOiB7CiAgICAgICAgIm1vZGVsIiA6ICJzbGltIgogICAgICB9CiAgICB9CiAgfQp9
+      ItemDisplay: NONE
+      Transform:
+        Translation:
+        - 0.0
+        - 0.6875
+        - 0.0
+        LeftRotation:
+        - 0.0
+        - 0.0
+        - 0.0
+        - 1.0
+        RightRotation:
+        - -0.0
+        - -0.0
+        - -0.0
+        - 1.0
+        Scale:
+        - 1.2656
+        - 1.375
+        - 1.2656
+    '1':
+      Item:
+        ==: org.bukkit.inventory.ItemStack
+        v: 3955
+        type: PLAYER_HEAD
+        meta:
+          ==: ItemMeta
+          meta-type: SKULL
+          skull-owner:
+            ==: PlayerProfile
+            uniqueId: 81ed7833-ec35-2a4a-a071-fe9be226fc5c
+            properties:
+            - name: textures
+              value: ewogICJ0aW1lc3RhbXAiIDogMTczMDIxMDUzODQ4MSwKICAicHJvZmlsZUlkIiA6ICJkMDlkOTg1NzRiNjM0ZmNiOWNiN2I5MWZhYmE4ZGIzYSIsCiAgInByb2ZpbGVOYW1lIiA6ICJEdWNrVGVsbHoiLAogICJzaWduYXR1cmVSZXF1aXJlZCIgOiB0cnVlLAogICJ0ZXh0dXJlcyIgOiB7CiAgICAiU0tJTiIgOiB7CiAgICAgICJ1cmwiIDogImh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvNDdmNTMxNjQ3OWJlNjM0ODQ2YmRjNjI5ZGE3MGJlOTI5NTljMTcyZDUzNTlkMjI5NjAyODE0OWJhODI3NDhiMyIsCiAgICAgICJtZXRhZGF0YSIgOiB7CiAgICAgICAgIm1vZGVsIiA6ICJzbGltIgogICAgICB9CiAgICB9CiAgfQp9
+      ItemDisplay: NONE
+      Transform:
+        Translation:
+        - -0.2865
+        - 1.4832
+        - -0.0069
+        LeftRotation:
+        - 0.0
+        - 0.0
+        - 0.13051769
+        - 0.9914459
+        RightRotation:
+        - -0.0
+        - -0.0
+        - -0.0
+        - 1.0
+        Scale:
+        - 1.8562416
+        - 1.9687951
+        - 1.8562998
+  墓碑0:
+    '0':
+      Item:
+        ==: org.bukkit.inventory.ItemStack
+        v: 3955
+        type: POLISHED_BLACKSTONE
+      ItemDisplay: NONE
+      Transform:
+        Translation:
+        - 0.0
+        - 0.8125
+        - 0.0
+        LeftRotation:
+        - 0.0
+        - 0.0
+        - 0.0
+        - 0.99999994
+        RightRotation:
+        - -0.0
+        - -0.0
+        - -0.0
+        - 1.0
+        Scale:
+        - 0.6
+        - 1.6999998
+        - 1.3499999
+    '1':
+      Item:
+        ==: org.bukkit.inventory.ItemStack
+        v: 3955
+        type: PODZOL
+      ItemDisplay: NONE
+      Transform:
+        Translation:
+        - 0.0
+        - 0.0625
+        - 0.0
+        LeftRotation:
+        - 0.0
+        - 0.0
+        - 0.0
+        - 1.0
+        RightRotation:
+        - -0.0
+        - -0.0
+        - -0.0
+        - 1.0
+        Scale:
+        - 1.0
+        - 0.2
+        - 1.4
+  墓碑1:
+    '0':
+      Item:
+        ==: org.bukkit.inventory.ItemStack
+        v: 3955
+        type: PODZOL
+      ItemDisplay: NONE
+      Transform:
+        Translation:
+        - 0.0
+        - 0.0625
+        - 0.0
+        LeftRotation:
+        - 0.0
+        - 0.0
+        - 0.0
+        - 1.0
+        RightRotation:
+        - -0.0
+        - -0.0
+        - -0.0
+        - 1.0
+        Scale:
+        - 1.0
+        - 0.2
+        - 1.4
+    '1':
+      Item:
+        ==: org.bukkit.inventory.ItemStack
+        v: 3955
+        type: ANDESITE
+      ItemDisplay: NONE
+      Transform:
+        Translation:
+        - 0.0
+        - 0.875
+        - 0.0
+        LeftRotation:
+        - 0.0
+        - 0.0
+        - 0.0
+        - 1.0
+        RightRotation:
+        - -0.0
+        - -0.0
+        - -0.0
+        - 1.0
+        Scale:
+        - 0.6
+        - 1.8
+        - 0.5
+    '2':
+      Item:
+        ==: org.bukkit.inventory.ItemStack
+        v: 3955
+        type: ANDESITE
+      ItemDisplay: NONE
+      Transform:
+        Translation:
+        - 0.0
+        - 1.125
+        - 0.0
+        LeftRotation:
+        - -0.70710677
+        - 0.0
+        - 0.0
+        - 0.70710677
+        RightRotation:
+        - -0.0
+        - -0.0
+        - -0.0
+        - 1.0
+        Scale:
+        - 0.65
+        - 1.1999999
+        - 0.39999998
+  墓碑3:
+    '0':
+      Item:
+        ==: org.bukkit.inventory.ItemStack
+        v: 3955
+        type: PODZOL
+      ItemDisplay: NONE
+      Transform:
+        Translation:
+        - 0.0
+        - 0.0625
+        - 0.0
+        LeftRotation:
+        - 0.0
+        - 0.0
+        - 0.0
+        - 1.0
+        RightRotation:
+        - -0.0
+        - -0.0
+        - -0.0
+        - 1.0
+        Scale:
+        - 1.0
+        - 0.2
+        - 1.4
+    '1':
+      Item:
+        ==: org.bukkit.inventory.ItemStack
+        v: 3955
+        type: POLISHED_BLACKSTONE
+      ItemDisplay: NONE
+      Transform:
+        Translation:
+        - 0.0
+        - 0.8125
+        - 0.0
+        LeftRotation:
+        - 0.0
+        - 0.0
+        - 0.0
+        - 0.99999994
+        RightRotation:
+        - -0.0
+        - -0.0
+        - -0.0
+        - 1.0
+        Scale:
+        - 0.6
+        - 1.6999998
+        - 1.1390998
+    '2':
+      Item:
+        ==: org.bukkit.inventory.ItemStack
+        v: 3955
+        type: POLISHED_BLACKSTONE
+      ItemDisplay: NONE
+      Transform:
+        Translation:
+        - 0.0
+        - 1.5625
+        - 0.5
+        LeftRotation:
+        - -0.13051581
+        - 0.0
+        - 0.0
+        - 0.9914462
+        RightRotation:
+        - -0.0
+        - -0.0
+        - -0.0
+        - 1.0
+        Scale:
+        - 0.6375
+        - 0.5313007
+        - 0.82272387
+    '3':
+      Item:
+        ==: org.bukkit.inventory.ItemStack
+        v: 3955
+        type: POLISHED_BLACKSTONE
+      ItemDisplay: NONE
+      Transform:
+        Translation:
+        - 0.0
+        - 1.5625
+        - -0.5625
+        LeftRotation:
+        - 0.9914462
+        - 0.0
+        - 0.0
+        - -0.13051581
+        RightRotation:
+        - -0.0
+        - -0.0
+        - -0.0
+        - 1.0
+        Scale:
+        - 0.6375
+        - 0.5313007
+        - 0.82272387
+  墓碑2:
+    '0':
+      Item:
+        ==: org.bukkit.inventory.ItemStack
+        v: 3955
+        type: POLISHED_BLACKSTONE
+      ItemDisplay: NONE
+      Transform:
+        Translation:
+        - 0.0
+        - 0.8125
+        - 0.0
+        LeftRotation:
+        - 0.0
+        - 0.0
+        - 0.0
+        - 0.99999994
+        RightRotation:
+        - -0.0
+        - -0.0
+        - -0.0
+        - 1.0
+        Scale:
+        - 0.6
+        - 1.6999998
+        - 1.3499999
+    '1':
+      Item:
+        ==: org.bukkit.inventory.ItemStack
+        v: 3955
+        type: PODZOL
+      ItemDisplay: NONE
+      Transform:
+        Translation:
+        - 0.0
+        - 0.0625
+        - 0.0
+        LeftRotation:
+        - 0.0
+        - 0.0
+        - 0.0
+        - 1.0
+        RightRotation:
+        - -0.0
+        - -0.0
+        - -0.0
+        - 1.0
+        Scale:
+        - 1.0
+        - 0.2
+        - 1.4
+    '2':
+      Item:
+        ==: org.bukkit.inventory.ItemStack
+        v: 3955
+        type: POLISHED_BLACKSTONE
+      ItemDisplay: NONE
+      Transform:
+        Translation:
+        - 0.0
+        - 1.6875
+        - 0.625
+        LeftRotation:
+        - 0.79337
+        - 0.0
+        - 0.0
+        - -0.6087398
+        RightRotation:
+        - -0.0
+        - -0.0
+        - -0.0
+        - 1.0
+        Scale:
+        - 0.6625
+        - 0.6999606
+        - 0.41246676
+    '3':
+      Item:
+        ==: org.bukkit.inventory.ItemStack
+        v: 3955
+        type: POLISHED_BLACKSTONE
+      ItemDisplay: NONE
+      Transform:
+        Translation:
+        - 0.0
+        - 1.6875
+        - -0.625
+        LeftRotation:
+        - -0.6087398
+        - 0.0
+        - 0.0
+        - 0.79337
+        RightRotation:
+        - -0.0
+        - -0.0
+        - -0.0
+        - 1.0
+        Scale:
+        - 0.6625
+        - 0.6999606
+        - 0.41246676
+  死神骨头:
+    '0':
+      Item:
+        ==: org.bukkit.inventory.ItemStack
+        v: 3955
+        type: BONE
+      ItemDisplay: NONE
+      Transform:
+        Translation:
+        - 0.0
+        - 0.125
+        - 0.0
+        LeftRotation:
+        - 0.0
+        - 0.0
+        - 0.0
+        - 1.0
+        RightRotation:
+        - -0.0
+        - -0.0
+        - -0.0
+        - 1.0
+        Scale:
+        - 1.0
+        - 1.0
+        - 2.5
+  死神狗头:
+    '0':
+      Item:
+        ==: org.bukkit.inventory.ItemStack
+        v: 3955
+        type: MUD
+      ItemDisplay: NONE
+      Transform:
+        Translation:
+        - 0.0
+        - 0.25
+        - 0.0
+        LeftRotation:
+        - 0.0
+        - -0.70710677
+        - 0.0
+        - 0.70710677
+        RightRotation:
+        - -0.0
+        - -0.0
+        - -0.0
+        - 1.0
+        Scale:
+        - 0.99999994
+        - 0.5625
+        - 0.99999994
+    '1':
+      Item:
+        ==: org.bukkit.inventory.ItemStack
+        v: 3955
+        type: STRIPPED_DARK_OAK_WOOD
+      ItemDisplay: NONE
+      Transform:
+        Translation:
+        - -0.125
+        - 0.5625
+        - 0.5625
+        LeftRotation:
+        - 0.0
+        - -0.7071068
+        - 0.0
+        - 0.7071068
+        RightRotation:
+        - -0.0
+        - -0.0
+        - -0.0
+        - 1.0
+        Scale:
+        - 0.37500006
+        - 1.0
+        - 0.68750006
+    '2':
+      Item:
+        ==: org.bukkit.inventory.ItemStack
+        v: 3955
+        type: STRIPPED_DARK_OAK_WOOD
+      ItemDisplay: NONE
+      Transform:
+        Translation:
+        - -0.125
+        - 0.5625
+        - -0.5625
+        LeftRotation:
+        - 0.0
+        - -0.7071068
+        - 0.0
+        - 0.7071068
+        RightRotation:
+        - -0.0
+        - -0.0
+        - -0.0
+        - 1.0
+        Scale:
+        - 0.37500006
+        - 1.0
+        - 0.68750006
+    '3':
+      Item:
+        ==: org.bukkit.inventory.ItemStack
+        v: 3955
+        type: STRIPPED_BIRCH_LOG
+      ItemDisplay: NONE
+      Transform:
+        Translation:
+        - 0.375
+        - -0.1875
+        - 0.5625
+        LeftRotation:
+        - 0.0
+        - -0.70710677
+        - 0.0
+        - 0.70710677
+        RightRotation:
+        - -0.0
+        - -0.0
+        - -0.0
+        - 1.0
+        Scale:
+        - 0.24999999
+        - 0.8125
+        - 0.37499997
+    '4':
+      Item:
+        ==: org.bukkit.inventory.ItemStack
+        v: 3955
+        type: STRIPPED_BIRCH_LOG
+      ItemDisplay: NONE
+      Transform:
+        Translation:
+        - 0.375
+        - -0.1875
+        - -0.5
+        LeftRotation:
+        - 0.0
+        - -0.70710677
+        - 0.0
+        - 0.70710677
+        RightRotation:
+        - -0.0
+        - -0.0
+        - -0.0
+        - 1.0
+        Scale:
+        - 0.24999999
+        - 0.8125
+        - 0.31249997
+  墓碑吞噬者:
+    '0':
+      Item:
+        ==: org.bukkit.inventory.ItemStack
+        v: 3955
+        type: PLAYER_HEAD
+        meta:
+          ==: ItemMeta
+          meta-type: SKULL
+          skull-owner:
+            ==: PlayerProfile
+            uniqueId: 582fb919-b8a1-aa51-7388-9626def92d2b
+            properties:
+            - name: textures
+              value: eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvM2Q3YWNjZjBkMTU1MTdjNTJkZmYxNjc1ZDE4MTllYWM0OTZiZmEyMGJhYjYxMWNkNzM5MGEwMWNlM2IxNWNhYyJ9fX0=
+      ItemDisplay: NONE
+      Transform:
+        Translation:
+        - 0.0
+        - 1.1875
+        - 0.0
+        LeftRotation:
+        - 0.0
+        - -0.7071067
+        - 0.0
+        - 0.7071067
+        RightRotation:
+        - -0.0
+        - -0.0
+        - -0.0
+        - 1.0
+        Scale:
+        - 3.2499995
+        - 2.4375
+        - 1.5624998
+    '1':
+      Item:
+        ==: org.bukkit.inventory.ItemStack
+        v: 3955
+        type: BLACK_CONCRETE
+      ItemDisplay: NONE
+      Transform:
+        Translation:
+        - 0.0
+        - 1.3125
+        - 0.0
+        LeftRotation:
+        - 0.0
+        - 0.0
+        - 0.0
+        - 1.0
+        RightRotation:
+        - -0.0
+        - -0.0
+        - -0.0
+        - 1.0
+        Scale:
+        - 0.9375
+        - 0.25
+        - 1.875
+    '2':
+      Item:
+        ==: org.bukkit.inventory.ItemStack
+        v: 3955
+        type: MANGROVE_LEAVES
+      ItemDisplay: NONE
+      Transform:
+        Translation:
+        - 0.0
+        - 1.6875
+        - 0.8125
+        LeftRotation:
+        - 0.0
+        - 0.0
+        - 0.0
+        - 1.0
+        RightRotation:
+        - -0.0
+        - -0.0
+        - -0.0
+        - 1.0
+        Scale:
+        - 1.1875
+        - 0.625
+        - 0.6875
+    '3':
+      Item:
+        ==: org.bukkit.inventory.ItemStack
+        v: 3955
+        type: MANGROVE_LEAVES
+      ItemDisplay: NONE
+      Transform:
+        Translation:
+        - 0.0
+        - 1.6875
+        - 0.0
+        LeftRotation:
+        - 0.0
+        - 0.0
+        - 0.0
+        - 1.0
+        RightRotation:
+        - -0.0
+        - -0.0
+        - -0.0
+        - 1.0
+        Scale:
+        - 1.1875
+        - 0.625
+        - 0.6875
+    '4':
+      Item:
+        ==: org.bukkit.inventory.ItemStack
+        v: 3955
+        type: MANGROVE_LEAVES
+      ItemDisplay: NONE
+      Transform:
+        Translation:
+        - 0.0
+        - 1.6875
+        - -0.8125
+        LeftRotation:
+        - 0.0
+        - 0.0
+        - 0.0
+        - 1.0
+        RightRotation:
+        - -0.0
+        - -0.0
+        - -0.0
+        - 1.0
+        Scale:
+        - 1.1875
+        - 0.625
+        - 0.6875
+  迷香菇:
+    '0':
+      Item:
+        ==: org.bukkit.inventory.ItemStack
+        v: 3955
+        type: PLAYER_HEAD
+        meta:
+          ==: ItemMeta
+          meta-type: SKULL
+          skull-owner:
+            ==: PlayerProfile
+            uniqueId: df45678e-13a3-7c73-ccb9-d100996b8f8c
+            properties:
+            - name: textures
+              value: ewogICJ0aW1lc3RhbXAiIDogMTczMTkwMjIwMjg0MSwKICAicHJvZmlsZUlkIiA6ICI1NjExYmE1MjFmNDM0OWYwOWE0MTI5ZTM0NjQzMDM1OSIsCiAgInByb2ZpbGVOYW1lIiA6ICJHdXlOYW1lZEthaW5lIiwKICAic2lnbmF0dXJlUmVxdWlyZWQiIDogdHJ1ZSwKICAidGV4dHVyZXMiIDogewogICAgIlNLSU4iIDogewogICAgICAidXJsIiA6ICJodHRwOi8vdGV4dHVyZXMubWluZWNyYWZ0Lm5ldC90ZXh0dXJlLzNmNjgxMTY2NDdjMTVlZmE4ZTJhM2Y2NDUwYzRiZDk3MmMwMmQyN2FkYTAwMzVmZGFmZDQyZjEyOGI3NTc3YzciLAogICAgICAibWV0YWRhdGEiIDogewogICAgICAgICJtb2RlbCIgOiAic2xpbSIKICAgICAgfQogICAgfQogIH0KfQ==
+      ItemDisplay: NONE
+      Transform:
+        Translation:
+        - 0.0
+        - 0.5625
+        - 0.0
+        LeftRotation:
+        - 0.0
+        - 0.0
+        - 0.0
+        - 1.0
+        RightRotation:
+        - -0.0
+        - -0.0
+        - -0.0
+        - 1.0
+        Scale:
+        - 1.2656
+        - 1.1
+        - 1.2656
+    '1':
+      Item:
+        ==: org.bukkit.inventory.ItemStack
+        v: 3955
+        type: PLAYER_HEAD
+        meta:
+          ==: ItemMeta
+          meta-type: SKULL
+          skull-owner:
+            ==: PlayerProfile
+            uniqueId: 9fadcd55-e9b5-4a74-fd1d-24160244f92d
+            properties:
+            - name: textures
+              value: eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvNWU3OTgzYTg0NjYzZTY2Zjg0YWEzMjQ3NmRkZTI2OWJkZTcxODhjZTcwZDA5ZmEzOWQzMzJhNDE3MTRmZWQzYSJ9fX0=
+      ItemDisplay: NONE
+      Transform:
+        Translation:
+        - -0.0625
+        - 1.0625
+        - 0.0
+        LeftRotation:
+        - 0.0
+        - 0.0
+        - 0.10451826
+        - 0.994523
+        RightRotation:
+        - -0.0
+        - -0.0
+        - -0.0
+        - 1.0
+        Scale:
+        - 1.8562559
+        - 1.2000237
+        - 1.8563
+    '2':
+      Item:
+        ==: org.bukkit.inventory.ItemStack
+        v: 3955
+        type: PLAYER_HEAD
+        meta:
+          ==: ItemMeta
+          meta-type: SKULL
+          skull-owner:
+            ==: PlayerProfile
+            uniqueId: 2f0ca6cc-1f32-03be-de33-1adc5be9ee35
+            properties:
+            - name: textures
+              value: eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvNjE0ZDIzMzk5ZmM5YjY3NzdlMjdjYjY4NGIzNTU0MDcwMDVkYzNiYThiYThkMTMzZDExOThlMGE0Nzc0YTVlNSJ9fX0=
+      ItemDisplay: NONE
+      Transform:
+        Translation:
+        - -0.375
+        - 1.1875
+        - -0.375
+        LeftRotation:
+        - 0.0
+        - 0.0
+        - 0.13052039
+        - 0.9914456
+        RightRotation:
+        - -0.0
+        - -0.0
+        - -0.0
+        - 1.0
+        Scale:
+        - 0.9999701
+        - 0.7499534
+        - 1.0
+  亡灵法杖:
+    '0':
+      Item:
+        ==: org.bukkit.inventory.ItemStack
+        v: 3955
+        type: STICK
+      ItemDisplay: NONE
+      Transform:
+        Translation:
+        - 0.625
+        - -0.5
+        - -0.4375
+        LeftRotation:
+        - 0.27059805
+        - -0.6532815
+        - -0.27059805
+        - 0.6532815
+        RightRotation:
+        - -0.0
+        - -0.0
+        - -0.0
+        - 1.0
+        Scale:
+        - 1.4375482
+        - 1.437548
+        - 1.25
+    '1':
+      Item:
+        ==: org.bukkit.inventory.ItemStack
+        v: 3955
+        type: PLAYER_HEAD
+        meta:
+          ==: ItemMeta
+          meta-type: SKULL
+          skull-owner:
+            ==: PlayerProfile
+            uniqueId: cfb1f4b0-5607-71d3-0986-9e2024acfdf6
+            properties:
+            - name: textures
+              value: eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvNDQ0MThhYzc5MzVlOTBiOTMxMzI2NDA4Nzg3NzIzMzQ5Yjc2ODQ4MDcyNThmN2EwNjdiYjQzYzEzNjJlMjQ2YyJ9fX0=
+      ItemDisplay: NONE
+      Transform:
+        Translation:
+        - 0.5625
+        - 0.5625
+        - -0.4375
+        LeftRotation:
+        - 0.0
+        - -0.70710677
+        - 0.0
+        - 0.70710677
+        RightRotation:
+        - -0.0
+        - -0.0
+        - -0.0
+        - 1.0
+        Scale:
+        - 1.1874999
+        - 1.1875
+        - 1.1874999
+  橄榄球僵尸头盔:
+    '0':
+      Item:
+        ==: org.bukkit.inventory.ItemStack
+        v: 3955
+        type: WHITE_CONCRETE
+      ItemDisplay: NONE
+      Transform:
+        Translation:
+        - -0.5
+        - -0.5
+        - -0.4375
+        LeftRotation:
+        - -0.09226864
+        - -0.701061
+        - -0.09226864
+        - 0.701061
+        RightRotation:
+        - -0.0
+        - -0.0
+        - -0.0
+        - 1.0
+        Scale:
+        - 0.37500006
+        - 0.43749854
+        - 0.8124883
+    '1':
+      Item:
+        ==: org.bukkit.inventory.ItemStack
+        v: 3955
+        type: WHITE_CONCRETE
+      ItemDisplay: NONE
+      Transform:
+        Translation:
+        - -0.5
+        - -0.5
+        - 0.5625
+        LeftRotation:
+        - -0.09226864
+        - -0.701061
+        - -0.09226864
+        - 0.701061
+        RightRotation:
+        - -0.0
+        - -0.0
+        - -0.0
+        - 1.0
+        Scale:
+        - 0.37500006
+        - 0.43749854
+        - 0.8124883
+    '2':
+      Item:
+        ==: org.bukkit.inventory.ItemStack
+        v: 3955
+        type: RED_CONCRETE
+      ItemDisplay: NONE
+      Transform:
+        Translation:
+        - -0.0625
+        - 0.0625
+        - -0.375
+        LeftRotation:
+        - 0.7071068
+        - 0.7071068
+        - 0.0
+        - 0.0
+        RightRotation:
+        - -0.0
+        - -0.0
+        - -0.0
+        - 1.0
+        Scale:
+        - 0.7500001
+        - 0.8750001
+        - 0.1875
+    '3':
+      Item:
+        ==: org.bukkit.inventory.ItemStack
+        v: 3955
+        type: RED_CONCRETE
+      ItemDisplay: NONE
+      Transform:
+        Translation:
+        - -0.375
+        - -0.0625
+        - 0.0625
+        LeftRotation:
+        - 0.0
+        - -0.7071068
+        - 0.0
+        - 0.7071068
+        RightRotation:
+        - -0.0
+        - -0.0
+        - -0.0
+        - 1.0
+        Scale:
+        - 0.7500001
+        - 0.875
+        - 0.43750006
+    '4':
+      Item:
+        ==: org.bukkit.inventory.ItemStack
+        v: 3955
+        type: RED_CONCRETE
+      ItemDisplay: NONE
+      Transform:
+        Translation:
+        - -0.0625
+        - 0.3125
+        - 0.0625
+        LeftRotation:
+        - -0.5
+        - -0.5
+        - -0.5
+        - 0.5
+        RightRotation:
+        - -0.0
+        - -0.0
+        - -0.0
+        - 1.0
+        Scale:
+        - 0.7500001
+        - 0.87500006
+        - 0.43749997
+    '5':
+      Item:
+        ==: org.bukkit.inventory.ItemStack
+        v: 3955
+        type: IRON_BARS
+      ItemDisplay: NONE
+      Transform:
+        Translation:
+        - 0.4375
+        - -0.25
+        - 0.0625
+        LeftRotation:
+        - 0.0
+        - -0.70710677
+        - 0.0
+        - 0.70710677
+        RightRotation:
+        - -0.0
+        - -0.0
+        - -0.0
+        - 1.0
+        Scale:
+        - 0.99999994
+        - 0.5625
+        - 0.99999994
+    '6':
+      Item:
+        ==: org.bukkit.inventory.ItemStack
+        v: 3955
+        type: RED_CONCRETE
+      ItemDisplay: NONE
+      Transform:
+        Translation:
+        - -0.0625
+        - 0.0625
+        - 0.5
+        LeftRotation:
+        - 0.7071068
+        - 0.7071068
+        - 0.0
+        - 0.0
+        RightRotation:
+        - -0.0
+        - -0.0
+        - -0.0
+        - 1.0
+        Scale:
+        - 0.7500001
+        - 0.8750001
+        - 0.1875
+  橄榄球僵尸背心:
+    '0':
+      Item:
+        ==: org.bukkit.inventory.ItemStack
+        v: 3955
+        type: WHITE_CONCRETE
+      ItemDisplay: NONE
+      Transform:
+        Translation:
+        - -0.5
+        - -0.5
+        - -0.4375
+        LeftRotation:
+        - -0.09226864
+        - -0.701061
+        - -0.09226864
+        - 0.701061
+        RightRotation:
+        - -0.0
+        - -0.0
+        - -0.0
+        - 1.0
+        Scale:
+        - 0.37500006
+        - 0.43749854
+        - 0.8124883
+    '1':
+      Item:
+        ==: org.bukkit.inventory.ItemStack
+        v: 3955
+        type: WHITE_CONCRETE
+      ItemDisplay: NONE
+      Transform:
+        Translation:
+        - -0.5
+        - -0.5
+        - 0.5625
+        LeftRotation:
+        - -0.09226864
+        - -0.701061
+        - -0.09226864
+        - 0.701061
+        RightRotation:
+        - -0.0
+        - -0.0
+        - -0.0
+        - 1.0
+        Scale:
+        - 0.37500006
+        - 0.43749854
+        - 0.8124883

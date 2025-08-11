@@ -1,0 +1,20 @@
+Activator:
+  Name: '&a如影随行'
+Commands:
+- 'console: execute as %player% at %player% run particle smoke ~ ~1 ~ 1 1 1 0 650
+  force'
+- 'console: execute as %player% at %player% run execute as @e[tag=shadowF1,type=minecraft:armor_stand,scores={shadowF1=0}]
+  at @s run tp %player% ~ ~ ~ '
+- 'console: execute as %player% at %player% run effect give @s speed 2 0'
+- 'console: execute as @e[tag=shadowF1] at @e[tag=shadowF1] run effect give @a[distance=0..6,tag=kongju]
+  slowness 4 0'
+- 'console: execute as @e[tag=shadowF1] at @e[tag=shadowF1] run tag @a[distance=0..6]
+  remove kongju '
+- 'console: execute as @e[tag=shadowF1,type=minecraft:armor_stand,scores={shadowF1=0}]
+  at @s run kill @s[tag=shadowF1]'
+- 'console: execute as %player% at %player% run playsound minecraft:entity.enderman.teleport
+  voice @a[distance=0..6] ~ ~ ~ 2 1.2 '
+- 'console: execute as %player% at %player% run particle smoke ~ ~1 ~ 1 1 1 0 650
+  force'
+CoolDown:
+  CoolDown: 10S

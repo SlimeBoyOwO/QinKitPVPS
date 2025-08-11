@@ -1,0 +1,14 @@
+Activator:
+  Material: TARGET
+  Name: '&c&l相位打击'
+Commands:
+- 'console: execute as %player% at %player% run tp @p[distance=1..20]'
+- 'console: execute as %player% at @s run particle enchant ^ ^ ^ 0 2 0 0.0 200 force'
+- 'console: execute as %player% at @s run summon arrow ^ ^3 ^ {damage:20d,Motion:[0.0,-1.0,0.0]}'
+- 'console: execute as %player% at @s run tp ^ ^4 ^-6'
+- 'console: execute as %player% at @s run particle enchant ^ ^ ^ 0 2 0 0.0 200 force'
+- 'console: execute as %player% at @s run effect give @s speed 6 1'
+- 'console: execute as %player% at @s run playsound minecraft:entity.enderman.teleport
+  player @s ~ ~ ~ 1 1 1'
+CoolDown:
+  CoolDown: 25S

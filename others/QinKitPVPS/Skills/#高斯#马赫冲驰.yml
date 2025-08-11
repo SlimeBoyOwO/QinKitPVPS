@@ -1,0 +1,32 @@
+Activator:
+  Material: DIAMOND_HORSE_ARMOR
+  Name: '&d马赫冲驰'
+Commands:
+- 'console: execute as %player% at %player% run effect give @s speed 8 20'
+- 'console: execute as %player% at %player% run effect give @s[scores={LX=0}] speed
+  4 3'
+- 'console: execute as %player% at %player% run effect give @s[scores={LX=1}] speed
+  4 6'
+- 'console: execute as %player% at %player% run effect give @s[scores={LX=2}] speed
+  4 9'
+- 'console: execute as %player% at %player% run effect give @s[scores={LX=3}] speed
+  4 12'
+- 'console: execute as %player% at %player% run effect give @s[scores={LX=4}] speed
+  4 15'
+- 'console: execute as %player% at %player% run scoreboard players set @s reload 0'
+- 'console: execute as %player% at %player% run scoreboard players add @s LX 1 '
+- 'console: execute as %player% at %player% run scoreboard players set @s[scores={LX=5}]
+  LX 0 '
+- 'console: execute as %player% at %player% run scoreboard players add @s MHJS 1 '
+- 'console: execute as %player% at %player% run effect give @s[scores={MHJS=5}] speed
+  infinite'
+- 'console: execute as %player% at %player% run effect give @s[scores={MHJS=5}] slowness
+  16 4'
+- 'console: execute as %player% at %player% run clear @s[scores={MHJS=5}] minecraft:diamond_horse_armor'
+- 'console: execute as %player% at %player% run tag @s[scores={MHJS=5}] add MH'
+- 'console: execute as %player% at %player% run scoreboard players set @s[scores={MHJS=5}]
+  MHJS 0 '
+- 'console: execute as %player% at %player% run playsound minecraft:entity.horse.gallop
+  voice @a[distance=0..8] ~ ~ ~ 1 1'
+CoolDown:
+  CoolDown: 6S

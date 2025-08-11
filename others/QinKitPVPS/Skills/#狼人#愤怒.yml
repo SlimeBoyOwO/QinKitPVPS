@@ -1,0 +1,15 @@
+Activator:
+  Name: '&a愤怒'
+Commands:
+- 'console: execute at %player% run playsound minecraft:entity.wolf.howl player @a
+  ~ ~ ~'
+- 'console: execute as %player% at %player% run title @a[distance=0..10] subtitle '
+CoolDown:
+  CoolDown: 35S
+Effects:
+  SPEED:
+    Amplifier: 4
+    Duration: 10
+  STRENGTH:
+    Amplifier: 4
+    Duration: 4

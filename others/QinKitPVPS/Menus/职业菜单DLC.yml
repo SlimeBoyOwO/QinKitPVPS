@@ -1,0 +1,245 @@
+MenuTitle: '&8[&3QinKitPVP&8] &5职业菜单 &8DLC'
+Lines: 6
+
+Items:
+  '0':
+    DisplayName: '&c&l【进攻】'
+    Material: red_stained_glass_pane
+  '1':
+    DisplayName: '&2&l【坦克】'
+    Material: green_stained_glass_pane
+  '2':
+    DisplayName: '&b&l【精准】'
+    Material: light_blue_stained_glass_pane
+  '3':
+    DisplayName: '&7&l【游击】'
+    Material: gray_stained_glass_pane
+  '4':
+    DisplayName: '&b&l> > QinKitPVPS < <'
+    Material: End_Crystal
+  '5':
+    DisplayName: '&6&l【爆发】'
+    Material: orange_stained_glass_pane
+  '6':
+    DisplayName: '&3&l【控制】'
+    Material: cyan_stained_glass_pane
+  '7':
+    DisplayName: '&#ccfff8&l【位移】'
+    Material: white_stained_glass_pane
+  '8':
+    DisplayName: '&#ee8dfc&l【支援】'
+    Material: pink_stained_glass_pane
+  '36':
+    DisplayName: '&b&l我是边界qwq'
+    Material: cyan_stained_glass_pane
+  '37':
+    DisplayName: '&b&l我是边界qwq'
+    Material: cyan_stained_glass_pane
+  '38':
+    DisplayName: '&a&l返回上一页'
+    Material: COD
+    LeftClickCommands:
+    - 'player: qinkit openMenu 职业菜单2'
+    - 'console: execute as %player% at @s run playsound minecraft:entity.fish.swim
+      ambient @s'
+  '39':
+    DisplayName: '&b&l我是边界qwq'
+    Material: cyan_stained_glass_pane
+  '40':
+    DisplayName: '&e&l随机选择'
+    Material: pumpkin_pie
+    LeftClickCommands:
+    - 'player: qinkit randomKit'
+    - 'console: execute as %player% at @s run playsound minecraft:entity.fish.swim
+      ambient @s'
+    - '[close]'
+  '41':
+    DisplayName: '&b&l我是边界qwq'
+    Material: cyan_stained_glass_pane
+  '42':
+    DisplayName: '&a&l返回下一页'
+    Material: COD
+  '43':
+    DisplayName: '&b&l我是边界qwq'
+    Material: cyan_stained_glass_pane
+  '44':
+    DisplayName: '&b&l我是边界qwq'
+    Material: cyan_stained_glass_pane
+  '45':
+    DisplayName: '&a&l海草'
+    Material: seagrass
+  '46':
+    DisplayName: '&a&l海草'
+    Material: seagrass
+  '47':
+    DisplayName: '&a&l海草'
+    Material: seagrass
+  '48':
+    DisplayName: '&a&l海草'
+    Material: seagrass
+  '49':
+    DisplayName: '&a&l海草'
+    Material: seagrass
+  '50':
+    DisplayName: '&a&l海草'
+    Material: seagrass
+  '51':
+    DisplayName: '&a&l海草'
+    Material: seagrass
+  '52':
+    DisplayName: '&a&l海草'
+    Material: seagrass
+  '53':
+    DisplayName: '&a&l海草'
+    Material: seagrass
+  '9':
+    DisplayName: '&7[>&e&l高斯&7<]>&#000000>&l厕所qwq总部<&#5b75ee<'
+    Material: DIAMOND_BOOTS
+    Lore:
+    - '&#ee8dfc&l造物    &7&l游击'
+    - '&e&o=-=-=-=-=-=-=-=-=-=-=-='
+    - '&7他是电与光的化身，其所到之处，电光石火紧跟其后'
+    - '&7他往往不需要自己出手，便能将敌人击败'
+    - '&e&o=-=-=-=-=-=-=-=-=-=-=-='
+    - '&#d96562&l生命：&b||||||||||||||&7|||||| &f60.0'
+    - '&#c776db&l攻击：&b||||||||||||||||||||||  &f0.0'
+    - '&#997c2b&l防御：&b|||||||||||||&7|||||||  &f16+5'
+    - '&e&o=-=-=-=-=-=-=-=-=-=-=-='
+    - '&a【马赫冲驰】高斯将闪电的力量传导至自己身上，获得速度加成'
+    - '&a【电光石火】高斯引导电与光的力量，召唤火焰与闪电'
+    - '&a【迅电驰影】高斯将电与光的力量结合起来，短时间内强化自身。'
+    LeftClickCommands:
+    - 'player: qinkit kit Gauss'
+    - 'console: execute as %player% at @s run playsound minecraft:entity.fishing_bobber.splash
+      ambient @s'
+    - '[close]'
+    RightClickCommands:
+    - 'player: qinkit intro Gauss'
+    - '[close]'
+  '10':
+    DisplayName: '&7[>&#7bd1ca&l&l恶魔猎手&7<]'
+    Material: SOUL_CAMPFIRE
+    Lore:
+    - '&#7bd1ca&l&l人类    &6&l爆发'
+    - '&e&o=-=-=-=-=-=-=-=-=-=-=-='
+    - '&7狩猎恶魔是他的工作，但如果有人敢挡在这位少年面前的话'
+    - '&7他不介意用他的两个忠实伙伴让那个人滚去地狱'
+    - '&e&o=-=-=-=-=-=-=-=-=-=-=-='
+    - '&#d96562&l生命：&b|||||||||||&7|||||||||  &f50.0'
+    - '&#c776db&l攻击：&b||||&7||||||||||||||||  &f2.0'
+    - '&#997c2b&l防御：&b|||||&7|||||||||||||||  &f10+11'
+    - '&e&o=-=-=-=-=-=-=-=-=-=-=-='
+    - '&a【绯红女皇】能够制造火焰的大刀'
+    - '&a【湛蓝玫瑰】代表着灵活的长弩'
+    - '&a【扳机】扣下绯红女皇或湛蓝玫瑰的扳机'
+    - '&7&o“恶魔也有发出哀嚎的时候”'
+    LeftClickCommands:
+    - 'player: qinkit kit Nero'
+    - 'console: execute as %player% at @s run playsound minecraft:entity.fishing_bobber.splash
+      ambient @s'
+    - '[close]'
+    RightClickCommands:
+    - 'player: qinkit intro Nero'
+    - '[close]'
+  '11':
+    DisplayName: '&7[>&#9afc6d&l蝰蛇&7<]'
+    Material: MOSS_BLOCK
+    Lore:
+    - '&3&l人类    &#ee8dfc&l支援'
+    - '&e&o=-=-=-=-=-=-=-=-=-=-=-='
+    - '&7掌控毒素的专家，能给为队友驱散负面状态'
+    - '&7他是战争上的毒蛇，能够制造范围的毒雾让敌人难以接近'
+    - '&e&o=-=-=-=-=-=-=-=-=-=-=-='
+    - '&#d96562&l生命：&b|||||||||&7|||||||||||  &f40.0'
+    - '&#c776db&l攻击：&b||||||||&7||||||||||||  &f6.0'
+    - '&#997c2b&l防御：&b||||||||||&7||||||||||  &f11.0'
+    - '&e&o=-=-=-=-=-=-=-=-=-=-=-='
+    - '&a【毒博士】拥有对“中毒”效果的抗性，技能会标记其他玩家'
+    - '&a【毒之狂潮】令周围的玩家“中毒”'
+    - '&a【毒之汲取】清除一名玩家的大多数负面效果'
+    - '&a【蛇腹】展开一片大范围的强力毒雾'
+    - '&a【毒爆】连锁式的叠加伤害'
+    - '&7&o“欢迎来到，我的领域”'
+    LeftClickCommands:
+    - 'player: qinkit kit Snake'
+    - 'console: execute as %player% at @s run playsound minecraft:entity.fishing_bobber.splash
+      ambient @s'
+    - '[close]'
+    RightClickCommands:
+    - 'player: qinkit intro Snake'
+    - '[close]'
+  '12':
+    DisplayName: '&7[>&e&l湿垃圾&7<]'
+    Material: Enchanting_table
+    Lore:
+    - '&3&l人类    &#ee8dfc&l支援/游击'
+    LeftClickCommands:
+    - 'player: qinkit kit Shuraig'
+    - 'console: execute as %player% at @s run playsound minecraft:entity.fishing_bobber.splash
+      ambient @s'
+    - '[close]'
+    RightClickCommands:
+    - 'player: qinkit intro Shuraig'
+    - '[close]'
+  '13':
+    DisplayName: '&7[>&3&l鳄龟&7<]'
+    Material: turtle_egg
+    Lore:
+    - '&3&l海洋    &#ee8dfc&l支援/坦克'
+    LeftClickCommands:
+    - 'player: qinkit kit Turtle'
+    - 'console: execute as %player% at @s run playsound minecraft:entity.fishing_bobber.splash
+      ambient @s'
+    - '[close]'
+    RightClickCommands:
+    - 'player: qinkit intro Turtle'
+    - '[close]'
+  '14':
+    DisplayName: '&7[>&e&l狱火机&7<]'
+    Material: blaze_rod
+    Lore:
+    - '&e&l神明    &#ee8dfc&l攻击/持久'
+    LeftClickCommands:
+    - 'player: qinkit kit Lava'
+    - 'console: execute as %player% at @s run playsound minecraft:entity.fishing_bobber.splash
+      ambient @s'
+    - '[close]'
+    RightClickCommands:
+    - 'player: qinkit intro Lava'
+    - '[close]'
+  '15':
+    DisplayName: '&7[>&e&l火龙&7<]'
+    Material: red_dye
+    Lore:
+    - '&e&l传奇    &#ee8dfc&l攻击/突破'
+    LeftClickCommands:
+    - 'player: qinkit kit FireDragon'
+    - 'console: execute as %player% at @s run playsound minecraft:entity.fishing_bobber.splash
+      ambient @s'
+    - '[close]'
+    RightClickCommands:
+    - 'player: qinkit intro FireDragon'
+    - '[close]'
+  
+  '16':
+    DisplayName: '&7[>&#ee8dfc&l七夕丘比特&7<]'
+    Material: pink_petals
+    Lore:
+    - '&e&l限定    &b&l精准'
+    - '&e&o=-=-=-=-=-=-=-=-=-=-=-='
+    - '&7爱情的丘比特降落到人间'
+    - '&7给人们带来爱情和美好'
+    - '&e&o=-=-=-=-=-=-=-=-=-=-=-='
+    - '&#d96562&l生命：&b||||||||||&7||||||||||  &f40.0'
+    - '&#c776db&l攻击：&b||||||&7||||||||||||||  &f5.0'
+    - '&#997c2b&l防御：&b||||&7||||||||||||||||  &f8.0'
+    - '&e&o=-=-=-=-=-=-=-=-=-=-=-='
+    - '&a【勾魂】每10s上弹一颗爱情勾魂子弹，虚弱目标5s'
+    - '&a【羽翼】每次射击获得2s速度II效果'
+    - '&7&o“祝天下情人终成眷属”'
+    LeftClickCommands:
+    - 'player: qinkit kit Love_Sniper'
+    - 'console: execute as %player% at @s run playsound minecraft:entity.fishing_bobber.splash
+      ambient @s'
+    - '[close]'
+

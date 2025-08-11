@@ -1,0 +1,43 @@
+MenuTitle: '&8[&3AllayWar&8] &8&l车场菜单'
+Lines: 6
+OpenCommands:
+- 'console: execute as %player% at @s run playsound minecraft:block.beacon.power_select
+  ambient @s'
+
+Items:
+  '4':
+    DisplayName: '&b&l制造坦克'
+    Material: nether_star
+  '19':
+    DisplayName: '&a&l部队 - 普通坦克'
+    Material: echo_shard
+    Lore:
+    - '&7针对坦克和建筑的毁灭性打击'
+    - '&7售价：1000'
+    LeftClickCommands:
+    - '[buy] normal_tank'
+  '20':
+    DisplayName: '&a&l部队 - 激光坦克'
+    Material: echo_shard
+    Lore:
+    - '&7恐怖的远程AOE毁灭机器'
+    - '&7售价：3000'
+    LeftClickCommands:
+    - '[buy] laser_tank'
+  
+  '10':
+    Material: gray_stained_glass_pane
+  '11':
+    Material: gray_stained_glass_pane
+  '12':
+    Material: gray_stained_glass_pane
+  '13':
+    Material: lime_stained_glass_pane
+  '14':
+    Material: gray_stained_glass_pane
+  '15':
+    Material: gray_stained_glass_pane
+  '16':
+    Material: gray_stained_glass_pane
+  '17':
+    Material: gray_stained_glass_pane

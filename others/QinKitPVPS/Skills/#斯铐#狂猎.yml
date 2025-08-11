@@ -1,0 +1,22 @@
+Activator:
+  Name: 狂猎
+Commands:
+- 'console: execute as %player% at %player% run playsound minecraft:entity.horse.gallop
+  voice @s ~ ~ ~ 2 0.5'
+- 'console: execute as %player% at %player% run effect give @s invisibility 5 0'
+- 'console: execute as %player% at %player% run effect give @s weakness 5 5'
+- 'console: execute as %player% at %player% run effect give @a[distance=0..5,tag=LW]
+  glowing 5 1'
+- 'console: execute as %player% at %player% run tag @a[distance=1..7,tag=!LW] add
+  LW '
+- 'console: execute as %player% at %player% run item replace entity %player% armor.chest
+  with air 1'
+- 'console: execute as %player% at %player% run item replace entity %player% armor.head
+  with air 1'
+- 'console: execute as %player% at %player% run item replace entity %player% armor.legs
+  with air 1'
+- 'console: execute as %player% at %player% run item replace entity %player% armor.feet
+  with air 1'
+- 'console: execute as %player% at %player% run tag %player% add SC1'
+CoolDown:
+  CoolDown: 15S

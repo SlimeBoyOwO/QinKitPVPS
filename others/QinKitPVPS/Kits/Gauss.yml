@@ -1,0 +1,51 @@
+Kit:
+  Permission: kp.kit.Gauss
+  DisplayName: 高斯
+  Available: false
+  Cooldown: 0
+  Level: 0
+  Health: 30
+Inventory:
+  Items:
+    '0':
+      Name: '&d马赫冲驰'
+      Material: DIAMOND_HORSE_ARMOR
+    '1':
+      Name: '&8&l电光石火'
+      Material: FLINT
+    '2':
+      Name: '&b&l迅电驰影'
+      Material: LIGHTNING_ROD
+    '3':
+      Material: BOW
+    '5':
+      Material: COOKED_BEEF
+      Amount: 8
+    '6':
+      Name: '&a医疗包'
+      Material: GREEN_GLAZED_TERRACOTTA
+      Amount: 3
+    '7':
+      Material: ARROW
+      Amount: 32
+    '8':
+      Name: '&aPlayer Tracker &7(Right Click)'
+      Material: COMPASS
+Commands:
+- 'console: tag %player% add gauss'
+- 'console: scoreboard players set %player% LX 0'
+- 'console: item replace entity %player% armor.head with netherite_helmet[enchantments={levels:{"minecraft:fire_protection":5}}]
+  1 '
+- 'console: item replace entity %player% armor.chest with iron_chestplate[enchantments={levels:{"minecraft:channeling":10}}]
+  1 '
+- 'console: item replace entity %player% armor.legs with diamond_leggings[enchantments={levels:{"minecraft:blast_protection":1}}]
+  1 '
+- 'console: item replace entity %player% armor.feet with leather_boots[enchantments={levels:{"minecraft:soul_speed":1}},dyed_color=194303]
+  1 '
+Introduction:
+- '&7>> &b&l高斯 &7-->'
+- '&7生命：&a60  &7防御：&a16+5  &7攻击：&a0'
+- '&7上手难度：&f★★☆☆☆'
+- '  &8● &3马赫冲驰 &7: &7获得&a4s速度4&7；这个技能&a连续使用&7的场合，每使用1次，速度的&a等级+3（至多+12）&7；当&a连续使用技能4次&7时，自身会获得&a动能镀层&7，&a获得抗性提升1&7,并且在靠近敌人时将对他们&a造成动能伤害&7并给予他们&a缓慢2&7；每使用1次马赫冲驰，便会&a计数1次&7（称为为马赫计数），当&a达到5次&7时，高斯&a15s内无法使用马赫冲驰&7，并重置计数，清除自身速度的同时获得&a15s缓慢5'
+- '  &8● &3电光石火 &7: &7在自身所在&a平面&7爆发出&a面积为81格的正方形火焰&7，处于技能范围内的其他玩家将受到&a4s缓慢3，虚弱1&7；马赫计数达到&a>=4&7的场合，不会召唤火焰，而是在&a半径6格内&7的所有其他玩家的位置&a召唤一条闪电束&7,并对他们造成&a8点伤害&7；马赫&a计数为5&7的场合，使自己的马赫&a计数-1'
+- '  &8● &3迅电驰影 &7: &7获得&a饱和2&7以及&a8s发光，速度21&7；持续时间内，自己&a无法使用马赫冲驰&7，并获得&a强化&7版的&a动能镀层（生效范围+1，每次伤害+1，抗性提升等级+1）&7；&a通过此技能&7让马赫&a计数到达6&7的场合，&a不受其负面效果影响&7；持续时间内，每过1S，在&a自己身后4格处&7召唤一条&a闪电束&7；持续时间内，使用&a电光石火&7时，拥有&a额外&7效果：对自身周围&a半径8格&7内的&a最近的敌人&7造成&a16点动能伤害'

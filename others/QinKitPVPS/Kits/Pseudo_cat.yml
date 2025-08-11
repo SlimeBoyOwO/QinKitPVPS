@@ -1,0 +1,60 @@
+Kit:
+  Permission: kp.kit.pseudocat
+  DisplayName: 伪猫
+  Available: true
+  Price: 10000
+  Health: 20
+Inventory:
+  Armor:
+    Helmet:
+      Name: '&c&l盛开的地狱之花'
+      Material: GOLDEN_HELMET
+      Enchantments:
+        THORNS: 1
+    Chestplate:
+      Name: '&c&l沸腾的地狱之海'
+      Material: GOLDEN_CHESTPLATE
+      Enchantments:
+        THORNS: 1
+    Leggings:
+      Name: '&c&l阴森的地狱之森'
+      Material: GOLDEN_LEGGINGS
+      Enchantments:
+        THORNS: 1
+        SWIFT_SNEAK: 10
+    Boots:
+      Name: '&c&l凝望的地狱之眼'
+      Material: GOLDEN_BOOTS
+      Enchantments:
+        THORNS: 1
+  Items:
+    '0':
+      Name: '&e&l卍&c灼热的炎之剑&e&l卐'
+      Material: GOLDEN_SWORD
+      AttackDamageBase: 5.5
+      ArmorKnockBackResistBase: 0.5
+      Enchantments:
+        FIRE_ASPECT: 1
+    '1':
+      Name: '&c&o贯穿下界的流星'
+      Material: BOW
+    '2':
+      Name: '&6领主降临'
+      Material: GOLD_INGOT
+    '3':
+      Material: COOKED_BEEF
+      Amount: 8
+    '4':
+      Name: '&a医疗包'
+      Material: GREEN_GLAZED_TERRACOTTA
+      Amount: 3
+    '7':
+      Name: '&aPlayer Tracker &7(Right Click)'
+      Material: COMPASS
+    '8':
+      Material: ARROW
+      Amount: 24
+Effects:
+  RESISTANCE:
+    Amplifier: 1
+    Duration: 100000

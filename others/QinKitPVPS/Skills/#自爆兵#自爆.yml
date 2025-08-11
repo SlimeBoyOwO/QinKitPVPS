@@ -1,0 +1,16 @@
+Activator:
+  Material: REDSTONE_TORCH
+  Name: '&a自爆'
+Commands:
+- 'console: execute as %player% at @s run summon tnt ~ ~ ~ {fuse:60s,Tags:["Boom_F"]}'
+- 'console: execute as %player% at @s run playsound minecraft:entity.ghast.hurt player
+  @a'
+CoolDown:
+  CoolDown: 45S
+Effects:
+  RESISTANCE:
+    Amplifier: 3
+    Duration: 4
+  SPEED:
+    Amplifier: 2
+    Duration: 3

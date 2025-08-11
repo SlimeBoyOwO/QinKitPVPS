@@ -1,0 +1,10 @@
+Activator:
+  Name: '&b雷神之斧'
+Commands:
+- 'console: execute as %player% at @s run effect give @a[distance=0..10] levitation
+  10 0'
+- 'console: execute as %player% at @s as @a[tag=!Thunder,distance=0..6] at @s run
+  summon lightning_bolt ~ ~ ~'
+- 'console: execute as %player% at @s run tag @s remove Thunder'
+CoolDown:
+  CoolDown: 4S

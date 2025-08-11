@@ -1,0 +1,17 @@
+{
+	"display": {
+		"icon": {
+			"id": "minecraft:golden_apple"
+		},
+		"title": {"translate":"小成就们~"},
+		"description": {"color":"green","translate":"记录你成长的点滴时刻"},
+		"announce_to_chat": true,
+		"frame": "goal"
+	},
+	"parent": "kitspvp:qinkitpvps/root",	
+	"criteria": {
+		"dummy": {
+			"trigger": "minecraft:impossible"
+		  }
+	}
+}

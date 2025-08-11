@@ -1,0 +1,51 @@
+Kit:
+  Permission: kp.kit.horrid
+  DisplayName: 恐惧恶魔
+  Available: false
+  Cooldown: 0
+  Level: 0
+  Health: 20
+Inventory:
+  Armor:
+    Helmet:
+      Name: '&5黑暗的诅咒'
+      Material: SKELETON_SKULL
+    Chestplate:
+      Name: '&5恶魔的赞歌'
+      Material: DIAMOND_CHESTPLATE
+      Enchantments:
+        PROTECTION: 2
+    Leggings:
+      Name: '&5残破的旧影'
+      Material: IRON_LEGGINGS
+    Boots:
+      Name: '&5逝去的光辉'
+      Material: IRON_BOOTS
+  Items:
+    '0':
+      Name: '&5&l恐惧&d&l之刃'
+      Material: STONE_SWORD
+      lore:
+      - '&d让自己遁入永恒的黑暗中'
+      - '&d去寻找敌人的噩梦'
+      Enchantments:
+        DURABILITY: 1
+    '8':
+      Name: '&aPlayer Tracker &7(Right Click)'
+      Material: COMPASS
+    '1':
+      Name: '&5恐惧噩梦'
+      Material: ENDER_EYE
+    '2':
+      Name: '&aRegenerative Soup &7(Right Click)'
+      Material: MUSHROOM_STEW
+    '3':
+      Name: '&aRegenerative Soup &7(Right Click)'
+      Material: MUSHROOM_STEW
+
+
+
+
+
+
+

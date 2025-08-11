@@ -1,0 +1,23 @@
+{
+    "display": {
+        "icon": {
+            "id": "minecraft:sweet_berries"
+        },
+        "title": {
+            "color": "red",
+            "translate": "完成 1-2 关卡 困难难度"
+        },
+        "description": {
+            "color": "aqua",
+            "translate": "困难难度完成"
+        },
+        "announce_to_chat": true,
+        "frame": "goal"
+    },
+    "parent": "kitspvp:pvz/fin1_1_hard",
+    "criteria": {
+        "dummy": {
+            "trigger": "minecraft:impossible"
+        }
+    }
+}

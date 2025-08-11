@@ -1,0 +1,5178 @@
+BossBars:
+  TWorld:
+    Max: 100
+    ifASC: false
+    Title: 时停时间
+    ScoreBoard: reload
+  Octane_Running:
+    Max: 120
+    ifASC: false
+    Title: '&a&l>> 兴奋模式 <<'
+    ScoreBoard: reload
+  FastSword_S:
+    Max: 60
+    ifASC: false
+    Title: '&f&l>> 极速快刀 <<'
+    ScoreBoard: reload
+  kongju:
+    Max: 600
+    ifASC: false
+    Title: '&8&l>> 陷入恐惧 <<'
+    ScoreBoard: kongju
+  FireMan_S:
+    Max: 100
+    ifASC: false
+    Title: '&c&l>> 极限爆发 <<'
+    ScoreBoard: reload
+  Taoist_Wolf:
+    Max: 200
+    ifASC: false
+    Title: '&c&l>> 狼人狂暴 <<'
+    ScoreBoard: reload
+  Taoist_attack_regeneration:
+    Max: 60
+    ifASC: false
+    Title: '&c&l>> 攻击吸血 <<'
+    ScoreBoard: reload
+TowerData:
+  Army:
+    -1_-1_-1:
+      type: GRASS_BLOCK
+    -1_-1_0:
+      type: GRASS_BLOCK
+    -1_-1_1:
+      type: GRASS_BLOCK
+    0_-1_-1:
+      type: GRASS_BLOCK
+    0_-1_0:
+      type: GRASS_BLOCK
+    0_-1_1:
+      type: GRASS_BLOCK
+    1_-1_-1:
+      type: GRASS_BLOCK
+    1_-1_0:
+      type: GRASS_BLOCK
+    1_-1_1:
+      type: GRASS_BLOCK
+    -1_0_-1:
+      type: MOSS_CARPET
+    '-1_0_0':
+      type: MOSS_CARPET
+    '-1_0_1':
+      type: CRAFTING_TABLE
+    0_0_-1:
+      type: MOSS_CARPET
+    '0_0_0':
+      type: DEEPSLATE_BRICK_SLAB
+      slabType: BOTTOM
+    '1_0_1':
+      type: DEEPSLATE_BRICK_WALL
+      wallNorth: NONE
+      wallSouth: NONE
+      wallEast: NONE
+      wallWest: NONE
+      wallIsUp: true
+    1_1_-1:
+      type: LANTERN
+      hanging: true
+    '1_1_1':
+      type: DEEPSLATE_BRICK_WALL
+      wallNorth: NONE
+      wallSouth: NONE
+      wallEast: NONE
+      wallWest: NONE
+      wallIsUp: true
+    1_2_-1:
+      type: DEEPSLATE_TILE_SLAB
+      slabType: DOUBLE
+    '1_2_0':
+      type: DEEPSLATE_TILE_SLAB
+      wallNorth: LOW
+      wallSouth: LOW
+      wallEast: NONE
+      wallWest: NONE
+      wallIsUp: false
+      slabType: TOP
+    '1_2_1':
+      type: DEEPSLATE_TILE_SLAB
+      slabType: DOUBLE
+  荒地:
+    size: 3
+    -1_-1_-1:
+      type: COARSE_DIRT
+    -1_-1_0:
+      type: ROOTED_DIRT
+    -1_-1_1:
+      type: COARSE_DIRT
+    0_-1_-1:
+      type: ROOTED_DIRT
+    0_-1_0:
+      type: PODZOL
+    0_-1_1:
+      type: ROOTED_DIRT
+    1_-1_-1:
+      type: COARSE_DIRT
+    1_-1_0:
+      type: ROOTED_DIRT
+    1_-1_1:
+      type: COARSE_DIRT
+    -1_0_-1:
+      type: MOSS_CARPET
+    '-1_0_0':
+      type: DANDELION
+    '-1_0_1':
+      type: TORCH
+    0_0_-1:
+      type: PINK_PETALS
+    '0_0_0':
+      type: CHISELED_SANDSTONE
+    '0_0_1':
+      type: SHORT_GRASS
+    1_0_-1:
+      type: FERN
+    '1_0_0':
+      type: PINK_PETALS
+    '1_0_1':
+      type: OAK_LEAVES
+    -2_-1_-2:
+      type: GRASS_BLOCK
+    -2_-1_-1:
+      type: GRASS_BLOCK
+    -2_-1_0:
+      type: GRASS_BLOCK
+    -2_-1_1:
+      type: GRASS_BLOCK
+    -2_-1_2:
+      type: GRASS_BLOCK
+    -1_-1_-2:
+      type: GRASS_BLOCK
+    -1_-1_2:
+      type: GRASS_BLOCK
+    0_-1_-2:
+      type: GRASS_BLOCK
+    0_-1_2:
+      type: GRASS_BLOCK
+    1_-1_-2:
+      type: GRASS_BLOCK
+    1_-1_2:
+      type: GRASS_BLOCK
+    2_-1_-2:
+      type: GRASS_BLOCK
+    2_-1_-1:
+      type: GRASS_BLOCK
+    2_-1_0:
+      type: GRASS_BLOCK
+    2_-1_1:
+      type: GRASS_BLOCK
+    2_-1_2:
+      type: GRASS_BLOCK
+  生命核心:
+    -1_-1_-1:
+      type: SEA_LANTERN
+    -1_-1_0:
+      type: GLOWSTONE
+    -1_-1_1:
+      type: SEA_LANTERN
+    0_-1_-1:
+      type: GLOWSTONE
+    0_-1_0:
+      type: GRASS_BLOCK
+    0_-1_1:
+      type: GLOWSTONE
+    1_-1_-1:
+      type: SEA_LANTERN
+    1_-1_0:
+      type: GLOWSTONE
+    1_-1_1:
+      type: SEA_LANTERN
+    '-1_0_0':
+      type: DEEPSLATE_TILE_WALL
+      wallNorth: NONE
+      wallSouth: NONE
+      wallEast: LOW
+      wallWest: NONE
+      wallIsUp: true
+    0_0_-1:
+      type: DEEPSLATE_TILE_WALL
+      wallNorth: NONE
+      wallSouth: LOW
+      wallEast: NONE
+      wallWest: NONE
+      wallIsUp: true
+    '0_0_0':
+      type: REINFORCED_DEEPSLATE
+    '0_0_1':
+      type: DEEPSLATE_TILE_WALL
+      wallNorth: LOW
+      wallSouth: NONE
+      wallEast: NONE
+      wallWest: NONE
+      wallIsUp: true
+    '1_0_0':
+      type: DEEPSLATE_TILE_WALL
+      wallNorth: NONE
+      wallSouth: NONE
+      wallEast: NONE
+      wallWest: LOW
+      wallIsUp: true
+    '0_1_0':
+      type: TUFF_BRICK_SLAB
+      slabType: BOTTOM
+    -2_-1_-2:
+      type: GRASS_BLOCK
+    -2_-1_-1:
+      type: GRASS_BLOCK
+    -2_-1_0:
+      type: GRASS_BLOCK
+    -2_-1_1:
+      type: GRASS_BLOCK
+    -2_-1_2:
+      type: GRASS_BLOCK
+    -1_-1_-2:
+      type: GRASS_BLOCK
+    -1_-1_2:
+      type: GRASS_BLOCK
+    0_-1_-2:
+      type: GRASS_BLOCK
+    0_-1_2:
+      type: GRASS_BLOCK
+    1_-1_-2:
+      type: GRASS_BLOCK
+    1_-1_2:
+      type: GRASS_BLOCK
+    2_-1_-2:
+      type: GRASS_BLOCK
+    2_-1_-1:
+      type: GRASS_BLOCK
+    2_-1_0:
+      type: GRASS_BLOCK
+    2_-1_1:
+      type: GRASS_BLOCK
+    2_-1_2:
+      type: GRASS_BLOCK
+  高阶魔法防御塔:
+    -2_-1_-2:
+      type: AMETHYST_BLOCK
+    -2_-1_-1:
+      type: GRASS_BLOCK
+    -2_-1_0:
+      type: GRASS_BLOCK
+    -2_-1_1:
+      type: GRASS_BLOCK
+    -2_-1_2:
+      type: AMETHYST_BLOCK
+    -1_-1_-2:
+      type: GRASS_BLOCK
+    -1_-1_-1:
+      type: AMETHYST_BLOCK
+    -1_-1_0:
+      type: AMETHYST_BLOCK
+    -1_-1_1:
+      type: AMETHYST_BLOCK
+    -1_-1_2:
+      type: GRASS_BLOCK
+    0_-1_-2:
+      type: GRASS_BLOCK
+    0_-1_-1:
+      type: AMETHYST_BLOCK
+    0_-1_0:
+      type: WAXED_COPPER_BULB
+    0_-1_1:
+      type: AMETHYST_BLOCK
+    0_-1_2:
+      type: GRASS_BLOCK
+    1_-1_-2:
+      type: GRASS_BLOCK
+    1_-1_-1:
+      type: AMETHYST_BLOCK
+    1_-1_0:
+      type: AMETHYST_BLOCK
+    1_-1_1:
+      type: AMETHYST_BLOCK
+    1_-1_2:
+      type: GRASS_BLOCK
+    2_-1_-2:
+      type: AMETHYST_BLOCK
+    2_-1_-1:
+      type: GRASS_BLOCK
+    2_-1_0:
+      type: GRASS_BLOCK
+    2_-1_1:
+      type: GRASS_BLOCK
+    2_-1_2:
+      type: AMETHYST_BLOCK
+    -2_0_-2:
+      type: DEEPSLATE_TILE_WALL
+      wallNorth: NONE
+      wallSouth: NONE
+      wallEast: NONE
+      wallWest: NONE
+      wallIsUp: true
+    -2_0_-1:
+      type: MAGENTA_CARPET
+    '-2_0_0':
+      type: PINK_CARPET
+    '-2_0_1':
+      type: MAGENTA_CARPET
+    '-2_0_2':
+      type: DEEPSLATE_TILE_WALL
+      wallNorth: NONE
+      wallSouth: NONE
+      wallEast: NONE
+      wallWest: NONE
+      wallIsUp: true
+    -1_0_-2:
+      type: MAGENTA_CARPET
+    -1_0_-1:
+      type: AMETHYST_CLUSTER
+    '-1_0_0':
+      type: STONE_BRICK_WALL
+      wallNorth: LOW
+      wallSouth: NONE
+      wallEast: NONE
+      wallWest: NONE
+      wallIsUp: true
+    '-1_0_1':
+      type: AMETHYST_CLUSTER
+    '-1_0_2':
+      type: MAGENTA_CARPET
+    0_0_-2:
+      type: PINK_CARPET
+    0_0_-1:
+      type: STONE_BRICK_WALL
+      wallNorth: NONE
+      wallSouth: NONE
+      wallEast: LOW
+      wallWest: NONE
+      wallIsUp: true
+    '0_0_0':
+      type: SEA_LANTERN
+    '0_0_1':
+      type: STONE_BRICK_WALL
+      wallNorth: NONE
+      wallSouth: NONE
+      wallEast: NONE
+      wallWest: LOW
+      wallIsUp: true
+    '0_0_2':
+      type: PINK_CARPET
+    1_0_-2:
+      type: MAGENTA_CARPET
+    1_0_-1:
+      type: AMETHYST_CLUSTER
+    '1_0_0':
+      type: STONE_BRICK_WALL
+      wallNorth: NONE
+      wallSouth: LOW
+      wallEast: NONE
+      wallWest: NONE
+      wallIsUp: true
+    '1_0_1':
+      type: AMETHYST_CLUSTER
+    '1_0_2':
+      type: MAGENTA_CARPET
+    2_0_-2:
+      type: DEEPSLATE_TILE_WALL
+      wallNorth: NONE
+      wallSouth: NONE
+      wallEast: NONE
+      wallWest: NONE
+      wallIsUp: true
+    2_0_-1:
+      type: MAGENTA_CARPET
+    '2_0_0':
+      type: PINK_CARPET
+    '2_0_1':
+      type: MAGENTA_CARPET
+    '2_0_2':
+      type: DEEPSLATE_TILE_WALL
+      wallNorth: NONE
+      wallSouth: NONE
+      wallEast: NONE
+      wallWest: NONE
+      wallIsUp: true
+    -2_1_-2:
+      type: DEEPSLATE_TILE_WALL
+      wallNorth: NONE
+      wallSouth: NONE
+      wallEast: NONE
+      wallWest: NONE
+      wallIsUp: true
+    '-2_1_2':
+      type: DEEPSLATE_TILE_WALL
+      wallNorth: NONE
+      wallSouth: NONE
+      wallEast: NONE
+      wallWest: NONE
+      wallIsUp: true
+    '0_1_0':
+      type: POLISHED_DIORITE_SLAB
+      slabType: BOTTOM
+    2_1_-2:
+      type: DEEPSLATE_TILE_WALL
+      wallNorth: NONE
+      wallSouth: NONE
+      wallEast: NONE
+      wallWest: NONE
+      wallIsUp: true
+    '2_1_2':
+      type: DEEPSLATE_TILE_WALL
+      wallNorth: NONE
+      wallSouth: NONE
+      wallEast: NONE
+      wallWest: NONE
+      wallIsUp: true
+    -2_2_-2:
+      type: DEEPSLATE_TILE_WALL
+      wallNorth: NONE
+      wallSouth: NONE
+      wallEast: NONE
+      wallWest: NONE
+      wallIsUp: true
+    '-2_2_2':
+      type: DEEPSLATE_TILE_WALL
+      wallNorth: NONE
+      wallSouth: NONE
+      wallEast: NONE
+      wallWest: NONE
+      wallIsUp: true
+    2_2_-2:
+      type: DEEPSLATE_TILE_WALL
+      wallNorth: NONE
+      wallSouth: NONE
+      wallEast: NONE
+      wallWest: NONE
+      wallIsUp: true
+    '2_2_2':
+      type: DEEPSLATE_TILE_WALL
+      wallNorth: NONE
+      wallSouth: NONE
+      wallEast: NONE
+      wallWest: NONE
+      wallIsUp: true
+    -2_3_-2:
+      type: DEEPSLATE_BRICKS
+    -2_3_-1:
+      type: DEEPSLATE_TILE_WALL
+      wallNorth: LOW
+      wallSouth: TALL
+      wallEast: NONE
+      wallWest: NONE
+      wallIsUp: true
+    '-2_3_0':
+      type: PURPLE_STAINED_GLASS_PANE
+    '-2_3_1':
+      type: DEEPSLATE_TILE_WALL
+      wallNorth: TALL
+      wallSouth: LOW
+      wallEast: NONE
+      wallWest: NONE
+      wallIsUp: true
+    '-2_3_2':
+      type: DEEPSLATE_BRICKS
+    -1_3_-2:
+      type: DEEPSLATE_TILE_WALL
+      wallNorth: NONE
+      wallSouth: NONE
+      wallEast: TALL
+      wallWest: LOW
+      wallIsUp: true
+    '-1_3_2':
+      type: DEEPSLATE_TILE_WALL
+      wallNorth: NONE
+      wallSouth: NONE
+      wallEast: TALL
+      wallWest: LOW
+      wallIsUp: true
+    0_3_-2:
+      type: PURPLE_STAINED_GLASS_PANE
+    '0_3_2':
+      type: PURPLE_STAINED_GLASS_PANE
+    1_3_-2:
+      type: DEEPSLATE_TILE_WALL
+      wallNorth: NONE
+      wallSouth: NONE
+      wallEast: LOW
+      wallWest: TALL
+      wallIsUp: true
+    '1_3_2':
+      type: DEEPSLATE_TILE_WALL
+      wallNorth: NONE
+      wallSouth: NONE
+      wallEast: LOW
+      wallWest: TALL
+      wallIsUp: true
+    2_3_-2:
+      type: DEEPSLATE_BRICKS
+    2_3_-1:
+      type: DEEPSLATE_TILE_WALL
+      wallNorth: LOW
+      wallSouth: TALL
+      wallEast: NONE
+      wallWest: NONE
+      wallIsUp: true
+    '2_3_0':
+      type: PURPLE_STAINED_GLASS_PANE
+    '2_3_1':
+      type: DEEPSLATE_TILE_WALL
+      wallNorth: TALL
+      wallSouth: LOW
+      wallEast: NONE
+      wallWest: NONE
+      wallIsUp: true
+    '2_3_2':
+      type: DEEPSLATE_BRICKS
+    -2_4_-2:
+      type: AMETHYST_CLUSTER
+    -2_4_-1:
+      type: DEEPSLATE_TILE_WALL
+      wallNorth: NONE
+      wallSouth: LOW
+      wallEast: NONE
+      wallWest: NONE
+      wallIsUp: true
+    '-2_4_0':
+      type: DEEPSLATE_TILE_WALL
+      wallNorth: LOW
+      wallSouth: LOW
+      wallEast: NONE
+      wallWest: NONE
+      wallIsUp: false
+    '-2_4_1':
+      type: DEEPSLATE_TILE_WALL
+      wallNorth: LOW
+      wallSouth: NONE
+      wallEast: NONE
+      wallWest: NONE
+      wallIsUp: true
+    '-2_4_2':
+      type: AMETHYST_CLUSTER
+    -1_4_-2:
+      type: DEEPSLATE_TILE_WALL
+      wallNorth: NONE
+      wallSouth: NONE
+      wallEast: LOW
+      wallWest: NONE
+      wallIsUp: true
+    '-1_4_2':
+      type: DEEPSLATE_TILE_WALL
+      wallNorth: NONE
+      wallSouth: NONE
+      wallEast: LOW
+      wallWest: NONE
+      wallIsUp: true
+    0_4_-2:
+      type: DEEPSLATE_TILE_WALL
+      wallNorth: NONE
+      wallSouth: NONE
+      wallEast: LOW
+      wallWest: LOW
+      wallIsUp: false
+    '0_4_2':
+      type: DEEPSLATE_TILE_WALL
+      wallNorth: NONE
+      wallSouth: NONE
+      wallEast: LOW
+      wallWest: LOW
+      wallIsUp: false
+    1_4_-2:
+      type: DEEPSLATE_TILE_WALL
+      wallNorth: NONE
+      wallSouth: NONE
+      wallEast: NONE
+      wallWest: LOW
+      wallIsUp: true
+    '1_4_2':
+      type: DEEPSLATE_TILE_WALL
+      wallNorth: NONE
+      wallSouth: NONE
+      wallEast: NONE
+      wallWest: LOW
+      wallIsUp: true
+    2_4_-2:
+      type: AMETHYST_CLUSTER
+    2_4_-1:
+      type: DEEPSLATE_TILE_WALL
+      wallNorth: NONE
+      wallSouth: LOW
+      wallEast: NONE
+      wallWest: NONE
+      wallIsUp: true
+    '2_4_0':
+      type: DEEPSLATE_TILE_WALL
+      wallNorth: LOW
+      wallSouth: LOW
+      wallEast: NONE
+      wallWest: NONE
+      wallIsUp: false
+    '2_4_1':
+      type: DEEPSLATE_TILE_WALL
+      wallNorth: LOW
+      wallSouth: NONE
+      wallEast: NONE
+      wallWest: NONE
+      wallIsUp: true
+    '2_4_2':
+      type: AMETHYST_CLUSTER
+  中阶魔法防御塔:
+    -2_-1_-2:
+      type: AMETHYST_BLOCK
+    -2_-1_-1:
+      type: GRASS_BLOCK
+    -2_-1_0:
+      type: GRASS_BLOCK
+    -2_-1_1:
+      type: GRASS_BLOCK
+    -2_-1_2:
+      type: AMETHYST_BLOCK
+    -1_-1_-2:
+      type: GRASS_BLOCK
+    -1_-1_-1:
+      type: AMETHYST_BLOCK
+    -1_-1_0:
+      type: AMETHYST_BLOCK
+    -1_-1_1:
+      type: AMETHYST_BLOCK
+    -1_-1_2:
+      type: GRASS_BLOCK
+    0_-1_-2:
+      type: GRASS_BLOCK
+    0_-1_-1:
+      type: AMETHYST_BLOCK
+    0_-1_0:
+      type: WAXED_COPPER_BULB
+    0_-1_1:
+      type: AMETHYST_BLOCK
+    0_-1_2:
+      type: GRASS_BLOCK
+    1_-1_-2:
+      type: GRASS_BLOCK
+    1_-1_-1:
+      type: AMETHYST_BLOCK
+    1_-1_0:
+      type: AMETHYST_BLOCK
+    1_-1_1:
+      type: AMETHYST_BLOCK
+    1_-1_2:
+      type: GRASS_BLOCK
+    2_-1_-2:
+      type: AMETHYST_BLOCK
+    2_-1_-1:
+      type: GRASS_BLOCK
+    2_-1_0:
+      type: GRASS_BLOCK
+    2_-1_1:
+      type: GRASS_BLOCK
+    2_-1_2:
+      type: AMETHYST_BLOCK
+    -2_0_-2:
+      type: DEEPSLATE_TILE_WALL
+      wallNorth: NONE
+      wallSouth: NONE
+      wallEast: NONE
+      wallWest: NONE
+      wallIsUp: true
+    -2_0_-1:
+      type: MAGENTA_CARPET
+    '-2_0_0':
+      type: MAGENTA_CARPET
+    '-2_0_1':
+      type: MAGENTA_CARPET
+    '-2_0_2':
+      type: DEEPSLATE_TILE_WALL
+      wallNorth: NONE
+      wallSouth: NONE
+      wallEast: NONE
+      wallWest: NONE
+      wallIsUp: true
+    -1_0_-2:
+      type: MAGENTA_CARPET
+    -1_0_-1:
+      type: AMETHYST_CLUSTER
+    '-1_0_0':
+      type: STONE_BRICK_WALL
+      wallNorth: LOW
+      wallSouth: NONE
+      wallEast: NONE
+      wallWest: NONE
+      wallIsUp: true
+    '-1_0_1':
+      type: AMETHYST_CLUSTER
+    '-1_0_2':
+      type: MAGENTA_CARPET
+    0_0_-2:
+      type: MAGENTA_CARPET
+    0_0_-1:
+      type: STONE_BRICK_WALL
+      wallNorth: NONE
+      wallSouth: NONE
+      wallEast: LOW
+      wallWest: NONE
+      wallIsUp: true
+    '0_0_0':
+      type: SEA_LANTERN
+    '0_0_1':
+      type: STONE_BRICK_WALL
+      wallNorth: NONE
+      wallSouth: NONE
+      wallEast: NONE
+      wallWest: LOW
+      wallIsUp: true
+    '0_0_2':
+      type: MAGENTA_CARPET
+    1_0_-2:
+      type: MAGENTA_CARPET
+    1_0_-1:
+      type: AMETHYST_CLUSTER
+    '1_0_0':
+      type: STONE_BRICK_WALL
+      wallNorth: NONE
+      wallSouth: LOW
+      wallEast: NONE
+      wallWest: NONE
+      wallIsUp: true
+    '1_0_1':
+      type: AMETHYST_CLUSTER
+    '1_0_2':
+      type: MAGENTA_CARPET
+    2_0_-2:
+      type: DEEPSLATE_TILE_WALL
+      wallNorth: NONE
+      wallSouth: NONE
+      wallEast: NONE
+      wallWest: NONE
+      wallIsUp: true
+    2_0_-1:
+      type: MAGENTA_CARPET
+    '2_0_0':
+      type: MAGENTA_CARPET
+    '2_0_1':
+      type: MAGENTA_CARPET
+    '2_0_2':
+      type: DEEPSLATE_TILE_WALL
+      wallNorth: NONE
+      wallSouth: NONE
+      wallEast: NONE
+      wallWest: NONE
+      wallIsUp: true
+    -2_1_-2:
+      type: DEEPSLATE_TILE_WALL
+      wallNorth: NONE
+      wallSouth: NONE
+      wallEast: NONE
+      wallWest: NONE
+      wallIsUp: true
+    '-2_1_2':
+      type: DEEPSLATE_TILE_WALL
+      wallNorth: NONE
+      wallSouth: NONE
+      wallEast: NONE
+      wallWest: NONE
+      wallIsUp: true
+    '0_1_0':
+      type: POLISHED_DIORITE_SLAB
+      slabType: BOTTOM
+    2_1_-2:
+      type: DEEPSLATE_TILE_WALL
+      wallNorth: NONE
+      wallSouth: NONE
+      wallEast: NONE
+      wallWest: NONE
+      wallIsUp: true
+    '2_1_2':
+      type: DEEPSLATE_TILE_WALL
+      wallNorth: NONE
+      wallSouth: NONE
+      wallEast: NONE
+      wallWest: NONE
+      wallIsUp: true
+    -2_2_-2:
+      type: PURPLE_GLAZED_TERRACOTTA
+    '-2_2_2':
+      type: PURPLE_GLAZED_TERRACOTTA
+    2_2_-2:
+      type: PURPLE_GLAZED_TERRACOTTA
+    '2_2_2':
+      type: PURPLE_GLAZED_TERRACOTTA
+  中阶炸弹塔:
+    -2_-1_-2:
+      type: NETHERRACK
+    -2_-1_-1:
+      type: GRASS_BLOCK
+    -2_-1_0:
+      type: NETHERRACK
+    -2_-1_1:
+      type: NETHERRACK
+    -2_-1_2:
+      type: NETHERRACK
+    -1_-1_-2:
+      type: NETHERRACK
+    -1_-1_-1:
+      type: SHROOMLIGHT
+    -1_-1_0:
+      type: SHROOMLIGHT
+    -1_-1_1:
+      type: SHROOMLIGHT
+    -1_-1_2:
+      type: NETHERRACK
+    0_-1_-2:
+      type: NETHERRACK
+    0_-1_-1:
+      type: SHROOMLIGHT
+    0_-1_0:
+      type: GRASS_BLOCK
+    0_-1_1:
+      type: SHROOMLIGHT
+    0_-1_2:
+      type: GRASS_BLOCK
+    1_-1_-2:
+      type: GRASS_BLOCK
+    1_-1_-1:
+      type: SHROOMLIGHT
+    1_-1_0:
+      type: SHROOMLIGHT
+    1_-1_1:
+      type: SHROOMLIGHT
+    1_-1_2:
+      type: NETHERRACK
+    2_-1_-2:
+      type: NETHERRACK
+    2_-1_-1:
+      type: NETHERRACK
+    2_-1_0:
+      type: NETHERRACK
+    2_-1_1:
+      type: GRASS_BLOCK
+    2_-1_2:
+      type: NETHERRACK
+    -2_0_-1:
+      type: CRIMSON_FUNGUS
+    -1_0_-1:
+      type: POINTED_DRIPSTONE
+    '-1_0_0':
+      type: RED_NETHER_BRICK_WALL
+      wallNorth: NONE
+      wallSouth: NONE
+      wallEast: LOW
+      wallWest: NONE
+      wallIsUp: true
+    '-1_0_1':
+      type: POINTED_DRIPSTONE
+    0_0_-1:
+      type: RED_NETHER_BRICK_WALL
+      wallNorth: NONE
+      wallSouth: LOW
+      wallEast: NONE
+      wallWest: NONE
+      wallIsUp: true
+    '0_0_0':
+      type: CHERRY_WOOD
+    '0_0_1':
+      type: RED_NETHER_BRICK_WALL
+      wallNorth: LOW
+      wallSouth: NONE
+      wallEast: NONE
+      wallWest: NONE
+      wallIsUp: true
+    '0_0_2':
+      type: CRIMSON_FUNGUS
+    1_0_-2:
+      type: CRIMSON_FUNGUS
+    1_0_-1:
+      type: POINTED_DRIPSTONE
+    '1_0_0':
+      type: RED_NETHER_BRICK_WALL
+      wallNorth: NONE
+      wallSouth: NONE
+      wallEast: NONE
+      wallWest: LOW
+      wallIsUp: true
+    '1_0_1':
+      type: POINTED_DRIPSTONE
+    '2_0_1':
+      type: CRIMSON_FUNGUS
+    '0_1_0':
+      type: RED_NETHER_BRICK_SLAB
+      slabType: BOTTOM
+  高阶炸弹塔:
+    -2_-1_-2:
+      type: CRIMSON_HYPHAE
+    -2_-1_-1:
+      type: RED_GLAZED_TERRACOTTA
+    -2_-1_0:
+      type: BLACK_GLAZED_TERRACOTTA
+    -2_-1_1:
+      type: RED_GLAZED_TERRACOTTA
+    -2_-1_2:
+      type: CRIMSON_HYPHAE
+    -1_-1_-2:
+      type: RED_GLAZED_TERRACOTTA
+    -1_-1_-1:
+      type: SHROOMLIGHT
+    -1_-1_0:
+      type: SHROOMLIGHT
+    -1_-1_1:
+      type: SHROOMLIGHT
+    -1_-1_2:
+      type: RED_GLAZED_TERRACOTTA
+    0_-1_-2:
+      type: BLACK_GLAZED_TERRACOTTA
+    0_-1_-1:
+      type: SHROOMLIGHT
+    0_-1_0:
+      type: GRASS_BLOCK
+    0_-1_1:
+      type: SHROOMLIGHT
+    0_-1_2:
+      type: BLACK_GLAZED_TERRACOTTA
+    1_-1_-2:
+      type: RED_GLAZED_TERRACOTTA
+    1_-1_-1:
+      type: SHROOMLIGHT
+    1_-1_0:
+      type: SHROOMLIGHT
+    1_-1_1:
+      type: SHROOMLIGHT
+    1_-1_2:
+      type: RED_GLAZED_TERRACOTTA
+    2_-1_-2:
+      type: CRIMSON_HYPHAE
+    2_-1_-1:
+      type: RED_GLAZED_TERRACOTTA
+    2_-1_0:
+      type: BLACK_GLAZED_TERRACOTTA
+    2_-1_1:
+      type: RED_GLAZED_TERRACOTTA
+    2_-1_2:
+      type: CRIMSON_HYPHAE
+    -2_0_-2:
+      type: NETHER_BRICK_FENCE
+      connectedFaces: []
+    '-2_0_2':
+      type: NETHER_BRICK_FENCE
+      connectedFaces: []
+    -1_0_-1:
+      type: POINTED_DRIPSTONE
+    '-1_0_0':
+      type: RED_NETHER_BRICK_WALL
+      wallNorth: NONE
+      wallSouth: NONE
+      wallEast: LOW
+      wallWest: NONE
+      wallIsUp: true
+    '-1_0_1':
+      type: POINTED_DRIPSTONE
+    0_0_-1:
+      type: RED_NETHER_BRICK_WALL
+      wallNorth: NONE
+      wallSouth: LOW
+      wallEast: NONE
+      wallWest: NONE
+      wallIsUp: true
+    '0_0_0':
+      type: CHERRY_WOOD
+    '0_0_1':
+      type: RED_NETHER_BRICK_WALL
+      wallNorth: LOW
+      wallSouth: NONE
+      wallEast: NONE
+      wallWest: NONE
+      wallIsUp: true
+    1_0_-1:
+      type: POINTED_DRIPSTONE
+    '1_0_0':
+      type: RED_NETHER_BRICK_WALL
+      wallNorth: NONE
+      wallSouth: NONE
+      wallEast: NONE
+      wallWest: LOW
+      wallIsUp: true
+    '1_0_1':
+      type: POINTED_DRIPSTONE
+    2_0_-2:
+      type: NETHER_BRICK_FENCE
+      connectedFaces: []
+    '2_0_2':
+      type: NETHER_BRICK_FENCE
+      connectedFaces: []
+    -2_1_-2:
+      type: NETHER_BRICK_SLAB
+      slabType: BOTTOM
+    '-2_1_2':
+      type: NETHER_BRICK_SLAB
+      slabType: BOTTOM
+    '0_1_0':
+      type: RED_NETHER_BRICK_SLAB
+      slabType: BOTTOM
+    2_1_-2:
+      type: NETHER_BRICK_SLAB
+      slabType: BOTTOM
+    '2_1_2':
+      type: NETHER_BRICK_SLAB
+      slabType: BOTTOM
+  中阶狙击塔:
+    -2_-1_-2:
+      type: GRASS_BLOCK
+    -2_-1_-1:
+      type: GRASS_BLOCK
+    -2_-1_0:
+      type: GRASS_BLOCK
+    -2_-1_1:
+      type: GRASS_BLOCK
+    -2_-1_2:
+      type: GRASS_BLOCK
+    -1_-1_-2:
+      type: GRASS_BLOCK
+    -1_-1_-1:
+      type: BONE_BLOCK
+    -1_-1_0:
+      type: BONE_BLOCK
+    -1_-1_1:
+      type: BONE_BLOCK
+    -1_-1_2:
+      type: GRASS_BLOCK
+    0_-1_-2:
+      type: GRASS_BLOCK
+    0_-1_-1:
+      type: BONE_BLOCK
+    0_-1_0:
+      type: GRASS_BLOCK
+    0_-1_1:
+      type: BONE_BLOCK
+    0_-1_2:
+      type: GRASS_BLOCK
+    1_-1_-2:
+      type: GRASS_BLOCK
+    1_-1_-1:
+      type: BONE_BLOCK
+    1_-1_0:
+      type: BONE_BLOCK
+    1_-1_1:
+      type: BONE_BLOCK
+    1_-1_2:
+      type: GRASS_BLOCK
+    2_-1_-2:
+      type: GRASS_BLOCK
+    2_-1_-1:
+      type: GRASS_BLOCK
+    2_-1_0:
+      type: GRASS_BLOCK
+    2_-1_1:
+      type: GRASS_BLOCK
+    2_-1_2:
+      type: GRASS_BLOCK
+    -2_0_-2:
+      type: BONE_BLOCK
+    '-2_0_0':
+      type: SOUL_TORCH
+    '-2_0_2':
+      type: BONE_BLOCK
+    -1_0_-1:
+      type: SKELETON_SKULL
+      rotation: SOUTH_SOUTH_EAST
+    '-1_0_0':
+      type: DIORITE_WALL
+      wallNorth: NONE
+      wallSouth: NONE
+      wallEast: LOW
+      wallWest: NONE
+      wallIsUp: true
+    '-1_0_1':
+      type: SKELETON_SKULL
+      rotation: NORTH_EAST
+    0_0_-2:
+      type: SOUL_TORCH
+    0_0_-1:
+      type: DIORITE_WALL
+      wallNorth: NONE
+      wallSouth: LOW
+      wallEast: NONE
+      wallWest: NONE
+      wallIsUp: true
+    '0_0_0':
+      type: DIORITE
+    '0_0_1':
+      type: DIORITE_WALL
+      wallNorth: LOW
+      wallSouth: NONE
+      wallEast: NONE
+      wallWest: NONE
+      wallIsUp: true
+    '0_0_2':
+      type: SOUL_TORCH
+    1_0_-1:
+      type: SKELETON_SKULL
+      rotation: WEST_SOUTH_WEST
+    '1_0_0':
+      type: DIORITE_WALL
+      wallNorth: NONE
+      wallSouth: NONE
+      wallEast: NONE
+      wallWest: LOW
+      wallIsUp: true
+    '1_0_1':
+      type: SKELETON_SKULL
+      rotation: WEST_NORTH_WEST
+    2_0_-2:
+      type: BONE_BLOCK
+    '2_0_0':
+      type: SOUL_TORCH
+    '2_0_2':
+      type: BONE_BLOCK
+    -2_1_-2:
+      type: SOUL_TORCH
+    '-2_1_2':
+      type: SOUL_TORCH
+    '0_1_0':
+      type: SANDSTONE_SLAB
+      slabType: BOTTOM
+    2_1_-2:
+      type: SOUL_TORCH
+    '2_1_2':
+      type: SOUL_TORCH
+  高阶狙击塔:
+    -2_-1_-2:
+      type: GRASS_BLOCK
+    -2_-1_-1:
+      type: GRASS_BLOCK
+    -2_-1_0:
+      type: GRASS_BLOCK
+    -2_-1_1:
+      type: GRASS_BLOCK
+    -2_-1_2:
+      type: GRASS_BLOCK
+    -1_-1_-2:
+      type: GRASS_BLOCK
+    -1_-1_-1:
+      type: BONE_BLOCK
+    -1_-1_0:
+      type: BONE_BLOCK
+    -1_-1_1:
+      type: BONE_BLOCK
+    -1_-1_2:
+      type: GRASS_BLOCK
+    0_-1_-2:
+      type: GRASS_BLOCK
+    0_-1_-1:
+      type: BONE_BLOCK
+    0_-1_0:
+      type: GRASS_BLOCK
+    0_-1_1:
+      type: BONE_BLOCK
+    0_-1_2:
+      type: GRASS_BLOCK
+    1_-1_-2:
+      type: GRASS_BLOCK
+    1_-1_-1:
+      type: BONE_BLOCK
+    1_-1_0:
+      type: BONE_BLOCK
+    1_-1_1:
+      type: BONE_BLOCK
+    1_-1_2:
+      type: GRASS_BLOCK
+    2_-1_-2:
+      type: GRASS_BLOCK
+    2_-1_-1:
+      type: GRASS_BLOCK
+    2_-1_0:
+      type: GRASS_BLOCK
+    2_-1_1:
+      type: GRASS_BLOCK
+    2_-1_2:
+      type: GRASS_BLOCK
+    -2_0_-2:
+      type: END_ROD
+    -2_0_-1:
+      type: DIORITE_SLAB
+      slabType: BOTTOM
+    '-2_0_0':
+      type: DIORITE_SLAB
+      slabType: BOTTOM
+    '-2_0_1':
+      type: DIORITE_SLAB
+      slabType: BOTTOM
+    '-2_0_2':
+      type: END_ROD
+    -1_0_-2:
+      type: DIORITE_SLAB
+      slabType: BOTTOM
+    -1_0_-1:
+      type: SKELETON_SKULL
+      rotation: SOUTH_SOUTH_EAST
+    '-1_0_0':
+      type: DIORITE_WALL
+      wallNorth: NONE
+      wallSouth: NONE
+      wallEast: LOW
+      wallWest: NONE
+      wallIsUp: true
+    '-1_0_1':
+      type: SKELETON_SKULL
+      rotation: NORTH_EAST
+    '-1_0_2':
+      type: DIORITE_SLAB
+      slabType: BOTTOM
+    0_0_-2:
+      type: DIORITE_SLAB
+      slabType: BOTTOM
+    0_0_-1:
+      type: DIORITE_WALL
+      wallNorth: NONE
+      wallSouth: LOW
+      wallEast: NONE
+      wallWest: NONE
+      wallIsUp: true
+    '0_0_0':
+      type: DIORITE
+    '0_0_1':
+      type: DIORITE_WALL
+      wallNorth: LOW
+      wallSouth: NONE
+      wallEast: NONE
+      wallWest: NONE
+      wallIsUp: true
+    '0_0_2':
+      type: DIORITE_SLAB
+      slabType: BOTTOM
+    1_0_-2:
+      type: DIORITE_SLAB
+      slabType: BOTTOM
+    1_0_-1:
+      type: SKELETON_SKULL
+      rotation: WEST_SOUTH_WEST
+    '1_0_0':
+      type: DIORITE_WALL
+      wallNorth: NONE
+      wallSouth: NONE
+      wallEast: NONE
+      wallWest: LOW
+      wallIsUp: true
+    '1_0_1':
+      type: SKELETON_SKULL
+      rotation: WEST_NORTH_WEST
+    '1_0_2':
+      type: DIORITE_SLAB
+      slabType: BOTTOM
+    2_0_-2:
+      type: END_ROD
+    2_0_-1:
+      type: DIORITE_SLAB
+      slabType: BOTTOM
+    '2_0_0':
+      type: DIORITE_SLAB
+      slabType: BOTTOM
+    '2_0_1':
+      type: DIORITE_SLAB
+      slabType: BOTTOM
+    '2_0_2':
+      type: END_ROD
+    '-1_1_0':
+      type: SOUL_TORCH
+    0_1_-1:
+      type: SOUL_TORCH
+    '0_1_0':
+      type: SANDSTONE_SLAB
+      slabType: BOTTOM
+    '0_1_1':
+      type: SOUL_TORCH
+    '1_1_0':
+      type: SOUL_TORCH
+  高阶矿场:
+    -2_-1_-2:
+      type: GRASS_BLOCK
+    -2_-1_-1:
+      type: GRASS_BLOCK
+    -2_-1_0:
+      type: NETHER_GOLD_ORE
+    -2_-1_1:
+      type: GRASS_BLOCK
+    -2_-1_2:
+      type: GRASS_BLOCK
+    -1_-1_-2:
+      type: GRASS_BLOCK
+    -1_-1_-1:
+      type: DEEPSLATE_GOLD_ORE
+    -1_-1_0:
+      type: RAW_GOLD_BLOCK
+    -1_-1_1:
+      type: RAW_GOLD_BLOCK
+    -1_-1_2:
+      type: GRASS_BLOCK
+    0_-1_-2:
+      type: GILDED_BLACKSTONE
+    0_-1_-1:
+      type: NETHER_GOLD_ORE
+    0_-1_0:
+      type: WAXED_COPPER_BULB
+    0_-1_1:
+      type: GILDED_BLACKSTONE
+    0_-1_2:
+      type: GRASS_BLOCK
+    1_-1_-2:
+      type: GRASS_BLOCK
+    1_-1_-1:
+      type: GOLD_BLOCK
+    1_-1_0:
+      type: GILDED_BLACKSTONE
+    1_-1_1:
+      type: RAW_GOLD_BLOCK
+    1_-1_2:
+      type: DEEPSLATE_GOLD_ORE
+    2_-1_-2:
+      type: GRASS_BLOCK
+    2_-1_-1:
+      type: NETHER_GOLD_ORE
+    2_-1_0:
+      type: DEEPSLATE_GOLD_ORE
+    2_-1_1:
+      type: GRASS_BLOCK
+    2_-1_2:
+      type: GRASS_BLOCK
+    -2_0_-2:
+      type: GOLD_BLOCK
+    -2_0_-1:
+      type: GOLD_BLOCK
+    '-2_0_1':
+      type: GOLD_BLOCK
+    '-2_0_2':
+      type: GOLD_BLOCK
+    -1_0_-2:
+      type: GOLD_BLOCK
+    -1_0_-1:
+      type: GRINDSTONE
+    '0_0_0':
+      type: WAXED_CUT_COPPER_SLAB
+      slabType: BOTTOM
+    '0_0_2':
+      type: RAW_GOLD_BLOCK
+    1_0_-2:
+      type: GLOWSTONE
+    1_0_-1:
+      type: CAMPFIRE
+    '1_0_2':
+      type: RAW_GOLD_BLOCK
+    2_0_-2:
+      type: GLOWSTONE
+    '2_0_1':
+      type: RAW_GOLD_BLOCK
+    '2_0_2':
+      type: RAW_GOLD_BLOCK
+    -2_1_-2:
+      type: GOLD_BLOCK
+    '1_1_2':
+      type: RAW_GOLD_BLOCK
+    2_1_-2:
+      type: GLOWSTONE
+    '2_1_2':
+      type: RAW_GOLD_BLOCK
+  中阶矿场:
+    -2_-1_-2:
+      type: GRASS_BLOCK
+    -2_-1_-1:
+      type: GRASS_BLOCK
+    -2_-1_0:
+      type: GRASS_BLOCK
+    -2_-1_1:
+      type: GRASS_BLOCK
+    -2_-1_2:
+      type: GRASS_BLOCK
+    -1_-1_-2:
+      type: GRASS_BLOCK
+    -1_-1_-1:
+      type: DEEPSLATE_GOLD_ORE
+    -1_-1_0:
+      type: RAW_GOLD_BLOCK
+    -1_-1_1:
+      type: RAW_GOLD_BLOCK
+    -1_-1_2:
+      type: GRASS_BLOCK
+    0_-1_-2:
+      type: GRASS_BLOCK
+    0_-1_-1:
+      type: NETHER_GOLD_ORE
+    0_-1_0:
+      type: WAXED_COPPER_BULB
+    0_-1_1:
+      type: GILDED_BLACKSTONE
+    0_-1_2:
+      type: GRASS_BLOCK
+    1_-1_-2:
+      type: GRASS_BLOCK
+    1_-1_-1:
+      type: GOLD_BLOCK
+    1_-1_0:
+      type: GILDED_BLACKSTONE
+    1_-1_1:
+      type: RAW_GOLD_BLOCK
+    1_-1_2:
+      type: GRASS_BLOCK
+    2_-1_-2:
+      type: GRASS_BLOCK
+    2_-1_-1:
+      type: GRASS_BLOCK
+    2_-1_0:
+      type: GRASS_BLOCK
+    2_-1_1:
+      type: GRASS_BLOCK
+    2_-1_2:
+      type: GRASS_BLOCK
+    -2_0_-2:
+      type: SMOKER
+    -2_0_-1:
+      type: SMOKER
+    '-2_0_1':
+      type: RAW_GOLD_BLOCK
+    '-2_0_2':
+      type: RAW_GOLD_BLOCK
+    -1_0_-1:
+      type: GRINDSTONE
+    '-1_0_2':
+      type: RAW_GOLD_BLOCK
+    0_0_-2:
+      type: SMOKER
+    '0_0_0':
+      type: WAXED_CUT_COPPER_SLAB
+      slabType: BOTTOM
+    1_0_-1:
+      type: CAMPFIRE
+    '1_0_2':
+      type: BLAST_FURNACE
+    '2_0_0':
+      type: BLAST_FURNACE
+    '2_0_1':
+      type: BLAST_FURNACE
+    '2_0_2':
+      type: BLAST_FURNACE
+    '-2_1_2':
+      type: RAW_GOLD_BLOCK
+    '2_1_2':
+      type: BLAST_FURNACE
+  凋零塔:
+    -2_-1_-2:
+      type: SOUL_SOIL
+    -2_-1_-1:
+      type: NETHERRACK
+    -2_-1_0:
+      type: NETHERRACK
+    -2_-1_1:
+      type: SOUL_SAND
+    -2_-1_2:
+      type: NETHERRACK
+    -1_-1_-2:
+      type: NETHERRACK
+    -1_-1_-1:
+      type: SOUL_SOIL
+    -1_-1_0:
+      type: ANCIENT_DEBRIS
+    -1_-1_1:
+      type: SOUL_SOIL
+    -1_-1_2:
+      type: SOUL_SOIL
+    0_-1_-2:
+      type: NETHERRACK
+    0_-1_-1:
+      type: ANCIENT_DEBRIS
+    0_-1_0:
+      type: SOUL_SAND
+    0_-1_1:
+      type: ANCIENT_DEBRIS
+    0_-1_2:
+      type: SOUL_SOIL
+    1_-1_-2:
+      type: SOUL_SOIL
+    1_-1_-1:
+      type: SOUL_SAND
+    1_-1_0:
+      type: ANCIENT_DEBRIS
+    1_-1_1:
+      type: SOUL_SOIL
+    1_-1_2:
+      type: SOUL_SAND
+    2_-1_-2:
+      type: SOUL_SOIL
+    2_-1_-1:
+      type: NETHERRACK
+    2_-1_0:
+      type: NETHERRACK
+    2_-1_1:
+      type: SOUL_SOIL
+    2_-1_2:
+      type: SOUL_SAND
+    -2_0_-2:
+      type: NETHER_BRICK_FENCE
+      connectedFaces: []
+    -2_0_-1:
+      type: WITHER_ROSE
+    '-2_0_0':
+      type: WITHER_ROSE
+    '-2_0_1':
+      type: WITHER_ROSE
+    '-2_0_2':
+      type: NETHER_BRICK_FENCE
+      connectedFaces: []
+    -1_0_-2:
+      type: WITHER_ROSE
+    -1_0_-1:
+      type: WITHER_ROSE
+    '-1_0_0':
+      type: NETHER_BRICK_WALL
+      wallNorth: NONE
+      wallSouth: NONE
+      wallEast: LOW
+      wallWest: NONE
+      wallIsUp: true
+    '-1_0_1':
+      type: WITHER_ROSE
+    '-1_0_2':
+      type: WITHER_ROSE
+    0_0_-2:
+      type: WITHER_ROSE
+    0_0_-1:
+      type: NETHER_BRICK_WALL
+      wallNorth: NONE
+      wallSouth: LOW
+      wallEast: NONE
+      wallWest: NONE
+      wallIsUp: true
+    '0_0_0':
+      type: ANCIENT_DEBRIS
+    '0_0_1':
+      type: NETHER_BRICK_WALL
+      wallNorth: LOW
+      wallSouth: NONE
+      wallEast: NONE
+      wallWest: NONE
+      wallIsUp: true
+    '0_0_2':
+      type: WITHER_ROSE
+    1_0_-2:
+      type: WITHER_ROSE
+    1_0_-1:
+      type: WITHER_ROSE
+    '1_0_0':
+      type: NETHER_BRICK_WALL
+      wallNorth: NONE
+      wallSouth: NONE
+      wallEast: NONE
+      wallWest: LOW
+      wallIsUp: true
+    '1_0_1':
+      type: WITHER_ROSE
+    '1_0_2':
+      type: WITHER_ROSE
+    2_0_-2:
+      type: NETHER_BRICK_FENCE
+      connectedFaces: []
+    2_0_-1:
+      type: WITHER_ROSE
+    '2_0_0':
+      type: WITHER_ROSE
+    '2_0_1':
+      type: WITHER_ROSE
+    '2_0_2':
+      type: NETHER_BRICK_FENCE
+      connectedFaces: []
+    -2_1_-2:
+      type: WITHER_SKELETON_SKULL
+      rotation: SOUTH_EAST
+    '-2_1_2':
+      type: WITHER_SKELETON_SKULL
+      rotation: NORTH_EAST
+    '0_1_0':
+      type: RED_NETHER_BRICK_SLAB
+      slabType: BOTTOM
+    2_1_-2:
+      type: WITHER_SKELETON_SKULL
+      rotation: SOUTH_WEST
+    '2_1_2':
+      type: WITHER_SKELETON_SKULL
+      rotation: NORTH_WEST
+    '-2_3_0':
+      type: RED_NETHER_BRICK_WALL
+      wallNorth: NONE
+      wallSouth: NONE
+      wallEast: TALL
+      wallWest: NONE
+      wallIsUp: true
+    '-1_3_0':
+      type: NETHER_BRICK_WALL
+      wallNorth: NONE
+      wallSouth: NONE
+      wallEast: LOW
+      wallWest: LOW
+      wallIsUp: true
+    0_3_-2:
+      type: RED_NETHER_BRICK_WALL
+      wallNorth: NONE
+      wallSouth: TALL
+      wallEast: NONE
+      wallWest: NONE
+      wallIsUp: true
+    0_3_-1:
+      type: NETHER_BRICK_WALL
+      wallNorth: LOW
+      wallSouth: LOW
+      wallEast: NONE
+      wallWest: NONE
+      wallIsUp: true
+    '0_3_0':
+      type: NETHERRACK
+    '0_3_1':
+      type: NETHER_BRICK_WALL
+      wallNorth: LOW
+      wallSouth: LOW
+      wallEast: NONE
+      wallWest: NONE
+      wallIsUp: true
+    '0_3_2':
+      type: RED_NETHER_BRICK_WALL
+      wallNorth: TALL
+      wallSouth: NONE
+      wallEast: NONE
+      wallWest: NONE
+      wallIsUp: true
+    '1_3_0':
+      type: NETHER_BRICK_WALL
+      wallNorth: NONE
+      wallSouth: NONE
+      wallEast: LOW
+      wallWest: LOW
+      wallIsUp: true
+    '2_3_0':
+      type: RED_NETHER_BRICK_WALL
+      wallNorth: NONE
+      wallSouth: NONE
+      wallEast: NONE
+      wallWest: TALL
+      wallIsUp: true
+    '-2_4_0':
+      type: RED_NETHER_BRICK_SLAB
+      slabType: BOTTOM
+    '-1_4_0':
+      type: NETHER_BRICK_FENCE
+      connectedFaces: []
+    0_4_-2:
+      type: RED_NETHER_BRICK_SLAB
+      slabType: BOTTOM
+    0_4_-1:
+      type: NETHER_BRICK_FENCE
+      connectedFaces: []
+    '0_4_0':
+      type: FIRE
+    '0_4_1':
+      type: NETHER_BRICK_FENCE
+      connectedFaces: []
+    '0_4_2':
+      type: RED_NETHER_BRICK_SLAB
+      slabType: BOTTOM
+    '1_4_0':
+      type: NETHER_BRICK_FENCE
+      connectedFaces: []
+    '2_4_0':
+      type: RED_NETHER_BRICK_SLAB
+      slabType: BOTTOM
+  海洋塔:
+    -2_-1_-2:
+      type: DARK_PRISMARINE_SLAB
+      slabType: BOTTOM
+    -2_-1_-1:
+      type: DARK_PRISMARINE_SLAB
+      slabType: BOTTOM
+    -2_-1_0:
+      type: PRISMARINE
+    -2_-1_1:
+      type: DARK_PRISMARINE_SLAB
+      slabType: BOTTOM
+    -2_-1_2:
+      type: DARK_PRISMARINE_SLAB
+      slabType: BOTTOM
+    -1_-1_-2:
+      type: DARK_PRISMARINE_SLAB
+      slabType: BOTTOM
+    -1_-1_-1:
+      type: PRISMARINE_BRICKS
+    -1_-1_0:
+      type: GRASS_BLOCK
+    -1_-1_1:
+      type: PRISMARINE_BRICKS
+    -1_-1_2:
+      type: DARK_PRISMARINE_SLAB
+      slabType: BOTTOM
+    0_-1_-2:
+      type: PRISMARINE
+    0_-1_-1:
+      type: GRASS_BLOCK
+    0_-1_1:
+      type: GRASS_BLOCK
+    0_-1_2:
+      type: PRISMARINE
+    1_-1_-2:
+      type: DARK_PRISMARINE_SLAB
+      slabType: BOTTOM
+    1_-1_-1:
+      type: PRISMARINE_BRICKS
+    1_-1_0:
+      type: GRASS_BLOCK
+    1_-1_1:
+      type: PRISMARINE_BRICKS
+    1_-1_2:
+      type: DARK_PRISMARINE_SLAB
+      slabType: BOTTOM
+    2_-1_-2:
+      type: DARK_PRISMARINE_SLAB
+      slabType: BOTTOM
+    2_-1_-1:
+      type: DARK_PRISMARINE_SLAB
+      slabType: BOTTOM
+    2_-1_0:
+      type: PRISMARINE
+    2_-1_1:
+      type: DARK_PRISMARINE_SLAB
+      slabType: BOTTOM
+    2_-1_2:
+      type: DARK_PRISMARINE_SLAB
+      slabType: BOTTOM
+    -1_0_-1:
+      type: END_ROD
+    '-1_0_0':
+      type: PRISMARINE_BRICK_STAIRS
+    '-1_0_1':
+      type: END_ROD
+    0_0_-1:
+      type: PRISMARINE_BRICK_STAIRS
+    '0_0_0':
+      type: DARK_PRISMARINE
+    '0_0_1':
+      type: PRISMARINE_BRICK_STAIRS
+    1_0_-1:
+      type: END_ROD
+    '1_0_0':
+      type: PRISMARINE_BRICK_STAIRS
+    '1_0_1':
+      type: END_ROD
+    -1_1_-1:
+      type: CREEPER_HEAD
+      rotation: SOUTH_EAST
+    '-1_1_1':
+      type: CREEPER_HEAD
+      rotation: NORTH_EAST
+    '0_1_0':
+      type: DARK_PRISMARINE_SLAB
+      slabType: BOTTOM
+    1_1_-1:
+      type: CREEPER_HEAD
+      rotation: SOUTH_WEST
+    '1_1_1':
+      type: CREEPER_HEAD
+      rotation: NORTH_WEST
+    '-1_3_0':
+      type: PRISMARINE_BRICK_STAIRS
+    0_3_-1:
+      type: PRISMARINE_BRICK_STAIRS
+    '0_3_0':
+      type: DARK_PRISMARINE_SLAB
+      slabType: TOP
+    '0_3_1':
+      type: PRISMARINE_BRICK_STAIRS
+    '1_3_0':
+      type: PRISMARINE_BRICK_STAIRS
+    '0_4_0':
+      type: END_ROD
+  矿场:
+    size: 3
+    -1_-1_-1:
+      type: DEEPSLATE_GOLD_ORE
+    -1_-1_0:
+      type: RAW_GOLD_BLOCK
+    -1_-1_1:
+      type: RAW_GOLD_BLOCK
+    0_-1_-1:
+      type: NETHER_GOLD_ORE
+    0_-1_0:
+      type: REDSTONE_BLOCK
+    0_-1_1:
+      type: GILDED_BLACKSTONE
+    1_-1_-1:
+      type: GOLD_BLOCK
+    1_-1_0:
+      type: GILDED_BLACKSTONE
+    1_-1_1:
+      type: RAW_GOLD_BLOCK
+    -1_0_-1:
+      type: TORCH
+    '-1_0_1':
+      type: GRINDSTONE
+    '0_0_0':
+      type: WAXED_COPPER_BULB
+    1_0_-1:
+      type: FURNACE
+    '1_0_1':
+      type: TORCH
+    '0_1_0':
+      type: DEEPSLATE_TILE_SLAB
+      slabType: BOTTOM
+  狙击塔:
+    size: 3
+    -1_-1_-1:
+      type: BONE_BLOCK
+    -1_-1_0:
+      type: BONE_BLOCK
+    -1_-1_1:
+      type: BONE_BLOCK
+    0_-1_-1:
+      type: BONE_BLOCK
+    0_-1_0:
+      type: GRASS_BLOCK
+    0_-1_1:
+      type: BONE_BLOCK
+    1_-1_-1:
+      type: BONE_BLOCK
+    1_-1_0:
+      type: BONE_BLOCK
+    1_-1_1:
+      type: BONE_BLOCK
+    -1_0_-1:
+      type: SKELETON_SKULL
+      rotation: WEST_SOUTH_WEST
+    '-1_0_0':
+      type: DIORITE_WALL
+      wallNorth: NONE
+      wallSouth: LOW
+      wallEast: NONE
+      wallWest: NONE
+      wallIsUp: true
+    '-1_0_1':
+      type: SKELETON_SKULL
+      rotation: SOUTH_SOUTH_EAST
+    0_0_-1:
+      type: DIORITE_WALL
+      wallNorth: NONE
+      wallSouth: NONE
+      wallEast: NONE
+      wallWest: LOW
+      wallIsUp: true
+    '0_0_0':
+      type: DIORITE
+    '0_0_1':
+      type: DIORITE_WALL
+      wallNorth: NONE
+      wallSouth: NONE
+      wallEast: LOW
+      wallWest: NONE
+      wallIsUp: true
+    1_0_-1:
+      type: SKELETON_SKULL
+      rotation: WEST_NORTH_WEST
+    '1_0_0':
+      type: DIORITE_WALL
+      wallNorth: LOW
+      wallSouth: NONE
+      wallEast: NONE
+      wallWest: NONE
+      wallIsUp: true
+    '1_0_1':
+      type: SKELETON_SKULL
+      rotation: NORTH_EAST
+    '0_1_0':
+      type: SANDSTONE_SLAB
+      slabType: BOTTOM
+  炸弹塔:
+    size: 3
+    -1_-1_-1:
+      type: SHROOMLIGHT
+    -1_-1_0:
+      type: SHROOMLIGHT
+    -1_-1_1:
+      type: SHROOMLIGHT
+    0_-1_-1:
+      type: SHROOMLIGHT
+    0_-1_0:
+      type: GRASS_BLOCK
+    0_-1_1:
+      type: SHROOMLIGHT
+    1_-1_-1:
+      type: SHROOMLIGHT
+    1_-1_0:
+      type: SHROOMLIGHT
+    1_-1_1:
+      type: SHROOMLIGHT
+    -1_0_-1:
+      type: POINTED_DRIPSTONE
+    '-1_0_0':
+      type: RED_NETHER_BRICK_WALL
+      wallNorth: NONE
+      wallSouth: NONE
+      wallEast: NONE
+      wallWest: NONE
+      wallIsUp: true
+    '-1_0_1':
+      type: POINTED_DRIPSTONE
+    0_0_-1:
+      type: RED_NETHER_BRICK_WALL
+      wallNorth: NONE
+      wallSouth: NONE
+      wallEast: NONE
+      wallWest: NONE
+      wallIsUp: true
+    '0_0_0':
+      type: CHERRY_WOOD
+    '0_0_1':
+      type: RED_NETHER_BRICK_WALL
+      wallNorth: NONE
+      wallSouth: NONE
+      wallEast: NONE
+      wallWest: NONE
+      wallIsUp: true
+    1_0_-1:
+      type: POINTED_DRIPSTONE
+    '1_0_0':
+      type: RED_NETHER_BRICK_WALL
+      wallNorth: NONE
+      wallSouth: NONE
+      wallEast: NONE
+      wallWest: NONE
+      wallIsUp: true
+    '1_0_1':
+      type: POINTED_DRIPSTONE
+    '0_1_0':
+      type: RED_NETHER_BRICK_SLAB
+      slabType: BOTTOM
+  魔法防御塔:
+    size: 3
+    -1_-1_-1:
+      type: AMETHYST_BLOCK
+    -1_-1_0:
+      type: AMETHYST_BLOCK
+    -1_-1_1:
+      type: AMETHYST_BLOCK
+    0_-1_-1:
+      type: AMETHYST_BLOCK
+    0_-1_0:
+      type: WAXED_COPPER_BULB
+    0_-1_1:
+      type: AMETHYST_BLOCK
+    1_-1_-1:
+      type: AMETHYST_BLOCK
+    1_-1_0:
+      type: AMETHYST_BLOCK
+    1_-1_1:
+      type: AMETHYST_BLOCK
+    -1_0_-1:
+      type: AMETHYST_CLUSTER
+    '-1_0_0':
+      type: STONE_BRICK_WALL
+      wallNorth: NONE
+      wallSouth: LOW
+      wallEast: NONE
+      wallWest: NONE
+      wallIsUp: true
+    '-1_0_1':
+      type: AMETHYST_CLUSTER
+    0_0_-1:
+      type: STONE_BRICK_WALL
+      wallNorth: NONE
+      wallSouth: NONE
+      wallEast: NONE
+      wallWest: LOW
+      wallIsUp: true
+    '0_0_0':
+      type: SEA_LANTERN
+    '0_0_1':
+      type: STONE_BRICK_WALL
+      wallNorth: NONE
+      wallSouth: NONE
+      wallEast: LOW
+      wallWest: NONE
+      wallIsUp: true
+    1_0_-1:
+      type: AMETHYST_CLUSTER
+    '1_0_0':
+      type: STONE_BRICK_WALL
+      wallNorth: LOW
+      wallSouth: NONE
+      wallEast: NONE
+      wallWest: NONE
+      wallIsUp: true
+    '1_0_1':
+      type: AMETHYST_CLUSTER
+    '0_1_0':
+      type: POLISHED_DIORITE_SLAB
+      slabType: BOTTOM
+  兵营:
+    size: 3
+    -1_-1_-1:
+      type: WHITE_CONCRETE
+    -1_-1_0:
+      type: GRASS_BLOCK
+    -1_-1_1:
+      type: GRASS_BLOCK
+    0_-1_-1:
+      type: GRASS_BLOCK
+    0_-1_0:
+      type: GRASS_BLOCK
+    0_-1_1:
+      type: GRASS_BLOCK
+    1_-1_-1:
+      type: GRASS_BLOCK
+    1_-1_0:
+      type: GRASS_BLOCK
+    1_-1_1:
+      type: GRASS_BLOCK
+    -1_0_-1:
+      type: CRAFTING_TABLE
+    '-1_0_0':
+      type: MOSS_CARPET
+    0_0_-1:
+      type: MOSS_CARPET
+    '0_0_0':
+      type: BEACON
+    '0_0_1':
+      type: MOSS_CARPET
+    1_0_-1:
+      type: MOSS_CARPET
+    '1_0_0':
+      type: MOSS_CARPET
+    '1_0_1':
+      type: DEEPSLATE_BRICK_WALL
+      wallNorth: NONE
+      wallSouth: NONE
+      wallEast: NONE
+      wallWest: NONE
+      wallIsUp: true
+    '0_1_0':
+      type: DEEPSLATE_TILE_SLAB
+      slabType: BOTTOM
+    1_1_-1:
+      type: LANTERN
+      hanging: true
+    '1_1_1':
+      type: DEEPSLATE_BRICK_WALL
+      wallNorth: NONE
+      wallSouth: NONE
+      wallEast: NONE
+      wallWest: NONE
+      wallIsUp: true
+    1_2_-1:
+      type: DEEPSLATE_TILE_SLAB
+      slabType: DOUBLE
+    '1_2_0':
+      type: DEEPSLATE_TILE_SLAB
+      slabType: TOP
+    '1_2_1':
+      type: DEEPSLATE_TILE_SLAB
+      slabType: DOUBLE
+  实验书楼:
+    size: 3
+    -1_-1_-1:
+      type: COARSE_DIRT
+    -1_-1_0:
+      type: ROOTED_DIRT
+    -1_-1_1:
+      type: COARSE_DIRT
+    0_-1_-1:
+      type: ROOTED_DIRT
+    0_-1_0:
+      type: PODZOL
+    0_-1_1:
+      type: ROOTED_DIRT
+    1_-1_-1:
+      type: COARSE_DIRT
+    1_-1_0:
+      type: ROOTED_DIRT
+    1_-1_1:
+      type: COARSE_DIRT
+    -1_0_-1:
+      type: BOOKSHELF
+    '-1_0_0':
+      type: DARK_PRISMARINE_SLAB
+      slabType: BOTTOM
+    '-1_0_1':
+      type: BOOKSHELF
+    0_0_-1:
+      type: DARK_PRISMARINE_SLAB
+      slabType: BOTTOM
+    '0_0_0':
+      type: ENCHANTING_TABLE
+    '0_0_1':
+      type: DARK_PRISMARINE_SLAB
+      slabType: BOTTOM
+    1_0_-1:
+      type: BOOKSHELF
+    '1_0_0':
+      type: DARK_PRISMARINE_SLAB
+      slabType: BOTTOM
+    '1_0_1':
+      type: BOOKSHELF
+    -1_1_-1:
+      type: END_ROD
+    '-1_1_1':
+      type: END_ROD
+    '0_1_0':
+      type: PRISMARINE_BRICK_SLAB
+      slabType: BOTTOM
+    1_1_-1:
+      type: END_ROD
+    '1_1_1':
+      type: END_ROD
+  机枪塔:
+    size: 3
+    -1_-1_-1:
+      type: TUFF
+    -1_-1_0:
+      type: CALCITE
+    -1_-1_1:
+      type: TUFF
+    0_-1_-1:
+      type: CALCITE
+    0_-1_0:
+      type: PODZOL
+    0_-1_1:
+      type: CALCITE
+    1_-1_-1:
+      type: TUFF
+    1_-1_0:
+      type: ROOTED_DIRT
+    1_-1_1:
+      type: TUFF
+    -1_0_-1:
+      type: WITHER_SKELETON_SKULL
+      rotation: EAST_SOUTH_EAST
+    '-1_0_0':
+      type: BRICK_WALL
+      wallNorth: NONE
+      wallSouth: NONE
+      wallEast: LOW
+      wallWest: NONE
+      wallIsUp: true
+    '-1_0_1':
+      type: WITHER_SKELETON_SKULL
+      rotation: NORTH_EAST
+    0_0_-1:
+      type: BRICK_WALL
+      wallNorth: NONE
+      wallSouth: LOW
+      wallEast: NONE
+      wallWest: NONE
+      wallIsUp: true
+    '0_0_0':
+      type: GRAY_GLAZED_TERRACOTTA
+    '0_0_1':
+      type: BRICK_WALL
+      wallNorth: LOW
+      wallSouth: NONE
+      wallEast: NONE
+      wallWest: NONE
+      wallIsUp: true
+    1_0_-1:
+      type: WITHER_SKELETON_SKULL
+      rotation: SOUTH_WEST
+    '1_0_0':
+      type: BRICK_WALL
+      wallNorth: NONE
+      wallSouth: NONE
+      wallEast: NONE
+      wallWest: LOW
+      wallIsUp: true
+    '1_0_1':
+      type: WITHER_SKELETON_SKULL
+      rotation: NORTH_WEST
+    '0_1_0':
+      type: SMOOTH_STONE_SLAB
+      slabType: BOTTOM
+  资源收集器:
+    size: 3
+    -1_-1_-1:
+      type: GILDED_BLACKSTONE
+    -1_-1_0:
+      type: ROOTED_DIRT
+    -1_-1_1:
+      type: GILDED_BLACKSTONE
+    0_-1_-1:
+      type: ROOTED_DIRT
+    0_-1_0:
+      type: PODZOL
+    0_-1_1:
+      type: ROOTED_DIRT
+    1_-1_-1:
+      type: GILDED_BLACKSTONE
+    1_-1_0:
+      type: ROOTED_DIRT
+    1_-1_1:
+      type: GILDED_BLACKSTONE
+    -1_0_-1:
+      type: YELLOW_STAINED_GLASS_PANE
+    '-1_0_0':
+      type: BAMBOO_SLAB
+      slabType: BOTTOM
+    '-1_0_1':
+      type: YELLOW_STAINED_GLASS_PANE
+    0_0_-1:
+      type: BAMBOO_SLAB
+      slabType: BOTTOM
+    '0_0_0':
+      type: GOLD_BLOCK
+    '0_0_1':
+      type: BAMBOO_SLAB
+      slabType: BOTTOM
+    1_0_-1:
+      type: YELLOW_STAINED_GLASS_PANE
+    '1_0_0':
+      type: BAMBOO_SLAB
+      slabType: BOTTOM
+    '1_0_1':
+      type: YELLOW_STAINED_GLASS_PANE
+    -1_1_-1:
+      type: LIGHT_WEIGHTED_PRESSURE_PLATE
+    '-1_1_1':
+      type: LIGHT_WEIGHTED_PRESSURE_PLATE
+    '0_1_0':
+      type: POLISHED_TUFF_SLAB
+      slabType: BOTTOM
+    1_1_-1:
+      type: LIGHT_WEIGHTED_PRESSURE_PLATE
+    '1_1_1':
+      type: LIGHT_WEIGHTED_PRESSURE_PLATE
+  迫击炮:
+    size: 5
+    -2_-1_-2:
+      type: CRIMSON_STEM
+    -2_-1_-1:
+      type: CRIMSON_HYPHAE
+    -2_-1_0:
+      type: CRIMSON_HYPHAE
+    -2_-1_1:
+      type: CRIMSON_HYPHAE
+    -2_-1_2:
+      type: CRIMSON_STEM
+    -1_-1_-2:
+      type: CRIMSON_HYPHAE
+    -1_-1_-1:
+      type: COARSE_DIRT
+    -1_-1_0:
+      type: WAXED_COPPER_BULB
+    -1_-1_1:
+      type: COARSE_DIRT
+    -1_-1_2:
+      type: CRIMSON_HYPHAE
+    0_-1_-2:
+      type: CRIMSON_HYPHAE
+    0_-1_-1:
+      type: WAXED_COPPER_BULB
+    0_-1_0:
+      type: PODZOL
+    0_-1_1:
+      type: WAXED_COPPER_BULB
+    0_-1_2:
+      type: CRIMSON_HYPHAE
+    1_-1_-2:
+      type: CRIMSON_HYPHAE
+    1_-1_-1:
+      type: COARSE_DIRT
+    1_-1_0:
+      type: WAXED_COPPER_BULB
+    1_-1_1:
+      type: COARSE_DIRT
+    1_-1_2:
+      type: CRIMSON_HYPHAE
+    2_-1_-2:
+      type: CRIMSON_STEM
+    2_-1_-1:
+      type: CRIMSON_HYPHAE
+    2_-1_0:
+      type: CRIMSON_HYPHAE
+    2_-1_1:
+      type: CRIMSON_HYPHAE
+    2_-1_2:
+      type: CRIMSON_STEM
+    -2_0_-2:
+      type: RED_NETHER_BRICK_WALL
+      wallNorth: NONE
+      wallSouth: NONE
+      wallEast: NONE
+      wallWest: NONE
+      wallIsUp: true
+    '-2_0_2':
+      type: RED_NETHER_BRICK_WALL
+      wallNorth: NONE
+      wallSouth: NONE
+      wallEast: NONE
+      wallWest: NONE
+      wallIsUp: true
+    -1_0_-1:
+      type: CRIMSON_SLAB
+      slabType: BOTTOM
+    '-1_0_0':
+      type: CREEPER_HEAD
+      rotation: EAST
+    '-1_0_1':
+      type: CRIMSON_SLAB
+      slabType: BOTTOM
+    0_0_-1:
+      type: CREEPER_HEAD
+      rotation: SOUTH
+    '0_0_0':
+      type: REDSTONE_BLOCK
+    '0_0_1':
+      type: CREEPER_HEAD
+      rotation: NORTH
+    1_0_-1:
+      type: CRIMSON_SLAB
+      slabType: BOTTOM
+    '1_0_0':
+      type: CREEPER_HEAD
+      rotation: WEST
+    '1_0_1':
+      type: CRIMSON_SLAB
+      slabType: BOTTOM
+    2_0_-2:
+      type: RED_NETHER_BRICK_WALL
+      wallNorth: NONE
+      wallSouth: NONE
+      wallEast: NONE
+      wallWest: NONE
+      wallIsUp: true
+    '2_0_2':
+      type: RED_NETHER_BRICK_WALL
+      wallNorth: NONE
+      wallSouth: NONE
+      wallEast: NONE
+      wallWest: NONE
+      wallIsUp: true
+    -2_1_-2:
+      type: NETHER_BRICK_SLAB
+      slabType: BOTTOM
+    '-2_1_2':
+      type: NETHER_BRICK_SLAB
+      slabType: BOTTOM
+    '0_1_0':
+      type: RED_NETHER_BRICK_SLAB
+      slabType: BOTTOM
+    2_1_-2:
+      type: NETHER_BRICK_SLAB
+      slabType: BOTTOM
+    '2_1_2':
+      type: NETHER_BRICK_SLAB
+      slabType: BOTTOM
+  雷达:
+    size: 3
+    -1_-1_-1:
+      type: LIGHT_GRAY_GLAZED_TERRACOTTA
+    -1_-1_0:
+      type: ROOTED_DIRT
+    -1_-1_1:
+      type: LIGHT_GRAY_GLAZED_TERRACOTTA
+    0_-1_-1:
+      type: LIGHT_GRAY_GLAZED_TERRACOTTA
+    0_-1_0:
+      type: PODZOL
+    0_-1_1:
+      type: LIGHT_GRAY_GLAZED_TERRACOTTA
+    1_-1_-1:
+      type: LIGHT_GRAY_GLAZED_TERRACOTTA
+    1_-1_0:
+      type: LIGHT_GRAY_GLAZED_TERRACOTTA
+    1_-1_1:
+      type: LIGHT_GRAY_GLAZED_TERRACOTTA
+    -1_0_-1:
+      type: END_ROD
+    '-1_0_0':
+      type: DIORITE_SLAB
+      slabType: BOTTOM
+    '-1_0_1':
+      type: LIGHTNING_ROD
+    0_0_-1:
+      type: CHAIN
+    '0_0_0':
+      type: GRAY_GLAZED_TERRACOTTA
+    '0_0_1':
+      type: DIORITE_SLAB
+      slabType: BOTTOM
+    1_0_-1:
+      type: DIORITE_WALL
+      wallNorth: NONE
+      wallSouth: NONE
+      wallEast: NONE
+      wallWest: NONE
+      wallIsUp: true
+    '1_0_0':
+      type: CHAIN
+    '1_0_1':
+      type: END_ROD
+    0_1_-1:
+      type: CHAIN
+    '0_1_0':
+      type: DIORITE_SLAB
+      slabType: BOTTOM
+    1_1_-1:
+      type: DIORITE_WALL
+      wallNorth: NONE
+      wallSouth: NONE
+      wallEast: NONE
+      wallWest: NONE
+      wallIsUp: true
+    '1_1_0':
+      type: CHAIN
+    0_2_-1:
+      type: CHAIN
+    1_2_-1:
+      type: DIORITE_WALL
+      wallNorth: NONE
+      wallSouth: NONE
+      wallEast: NONE
+      wallWest: NONE
+      wallIsUp: true
+    '1_2_0':
+      type: CHAIN
+    0_3_-1:
+      type: LIGHT_GRAY_CONCRETE
+    1_3_-1:
+      type: LIGHT_GRAY_CONCRETE
+    '1_3_0':
+      type: LIGHT_GRAY_CONCRETE
+  加农炮:
+    size: 3
+    -1_-1_-1:
+      type: GRASS_BLOCK
+    -1_-1_0:
+      type: GRASS_BLOCK
+    -1_-1_1:
+      type: GRASS_BLOCK
+    0_-1_-1:
+      type: GRASS_BLOCK
+    0_-1_0:
+      type: GRASS_BLOCK
+    0_-1_1:
+      type: GRASS_BLOCK
+    1_-1_-1:
+      type: GRASS_BLOCK
+    1_-1_0:
+      type: GRASS_BLOCK
+    1_-1_1:
+      type: GRASS_BLOCK
+    -1_0_-1:
+      type: DISPENSER
+    '-1_0_0':
+      type: POLISHED_TUFF_SLAB
+      slabType: BOTTOM
+    '-1_0_1':
+      type: DISPENSER
+    0_0_-1:
+      type: POLISHED_TUFF_SLAB
+      slabType: BOTTOM
+    '0_0_0':
+      type: DEEPSLATE_BRICKS
+    '0_0_1':
+      type: POLISHED_TUFF_SLAB
+      slabType: BOTTOM
+    1_0_-1:
+      type: DISPENSER
+    '1_0_0':
+      type: POLISHED_TUFF_SLAB
+      slabType: BOTTOM
+    '1_0_1':
+      type: DISPENSER
+    '0_1_0':
+      type: DEEPSLATE_BRICK_SLAB
+      slabType: BOTTOM
+    '-1_3_0':
+      type: DEEPSLATE_TILE_WALL
+      wallNorth: NONE
+      wallSouth: NONE
+      wallEast: NONE
+      wallWest: NONE
+      wallIsUp: true
+    0_3_-1:
+      type: DEEPSLATE_TILE_WALL
+      wallNorth: NONE
+      wallSouth: NONE
+      wallEast: NONE
+      wallWest: NONE
+      wallIsUp: true
+    '0_3_0':
+      type: DEEPSLATE_BRICK_SLAB
+      slabType: TOP
+    '0_3_1':
+      type: DEEPSLATE_TILE_WALL
+      wallNorth: NONE
+      wallSouth: NONE
+      wallEast: NONE
+      wallWest: NONE
+      wallIsUp: true
+    '1_3_0':
+      type: DEEPSLATE_TILE_WALL
+      wallNorth: NONE
+      wallSouth: NONE
+      wallEast: NONE
+      wallWest: NONE
+      wallIsUp: true
+    '0_4_0':
+      type: SOUL_LANTERN
+      hanging: false
+  油井:
+    size: 3
+    -1_-1_-1:
+      type: BLACK_TERRACOTTA
+    -1_-1_0:
+      type: GRASS_BLOCK
+    -1_-1_1:
+      type: BLACK_TERRACOTTA
+    0_-1_-1:
+      type: GRASS_BLOCK
+    0_-1_0:
+      type: GRASS_BLOCK
+    0_-1_1:
+      type: GRASS_BLOCK
+    1_-1_-1:
+      type: BLACK_TERRACOTTA
+    1_-1_0:
+      type: GRASS_BLOCK
+    1_-1_1:
+      type: BLACK_TERRACOTTA
+    '-1_0_0':
+      type: DEEPSLATE_TILE_SLAB
+      slabType: BOTTOM
+    '-1_0_1':
+      type: DIORITE_WALL
+      wallNorth: NONE
+      wallSouth: NONE
+      wallEast: NONE
+      wallWest: NONE
+      wallIsUp: true
+    0_0_-1:
+      type: DEEPSLATE_TILE_SLAB
+      slabType: BOTTOM
+    '0_0_0':
+      type: IRON_BLOCK
+    '0_0_1':
+      type: DEEPSLATE_TILE_SLAB
+      slabType: BOTTOM
+    '1_0_0':
+      type: DEEPSLATE_TILE_SLAB
+      slabType: BOTTOM
+    '-1_1_1':
+      type: DIORITE_WALL
+      wallNorth: NONE
+      wallSouth: NONE
+      wallEast: NONE
+      wallWest: NONE
+      wallIsUp: true
+    '0_1_0':
+      type: POLISHED_DIORITE_SLAB
+      slabType: BOTTOM
+    '-1_2_1':
+      type: DIORITE_WALL
+      wallNorth: NONE
+      wallSouth: NONE
+      wallEast: NONE
+      wallWest: NONE
+      wallIsUp: true
+  医院:
+    size: 3
+    -1_-1_-1:
+      type: GRASS_BLOCK
+    -1_-1_0:
+      type: WHITE_CONCRETE
+    -1_-1_1:
+      type: GRASS_BLOCK
+    0_-1_-1:
+      type: WHITE_CONCRETE
+    0_-1_0:
+      type: WHITE_CONCRETE
+    0_-1_1:
+      type: WHITE_CONCRETE
+    1_-1_-1:
+      type: GRASS_BLOCK
+    1_-1_0:
+      type: WHITE_CONCRETE
+    1_-1_1:
+      type: GRASS_BLOCK
+    -1_0_-1:
+      type: PINK_PETALS
+    '-1_0_1':
+      type: CHERRY_LEAVES
+    '0_0_0':
+      type: PINK_CONCRETE
+    1_0_-1:
+      type: RED_GLAZED_TERRACOTTA
+    '1_0_1':
+      type: CHERRY_LEAVES
+    '0_1_0':
+      type: CHERRY_SLAB
+      slabType: BOTTOM
+    1_1_-1:
+      type: LANTERN
+      hanging: false
+    '1_1_1':
+      type: CHERRY_LEAVES
+  造车工坊:
+    size: 5
+    -2_-1_-2:
+      type: GRASS_BLOCK
+    -2_-1_-1:
+      type: GRASS_BLOCK
+    -2_-1_0:
+      type: GRASS_BLOCK
+    -2_-1_1:
+      type: GRASS_BLOCK
+    -2_-1_2:
+      type: GRASS_BLOCK
+    -1_-1_-2:
+      type: GRASS_BLOCK
+    -1_-1_-1:
+      type: WHITE_TERRACOTTA
+    -1_-1_0:
+      type: WHITE_TERRACOTTA
+    -1_-1_1:
+      type: WHITE_TERRACOTTA
+    -1_-1_2:
+      type: GRASS_BLOCK
+    0_-1_-2:
+      type: GRASS_BLOCK
+    0_-1_-1:
+      type: GRASS_BLOCK
+    0_-1_0:
+      type: GRASS_BLOCK
+    0_-1_1:
+      type: GRASS_BLOCK
+    0_-1_2:
+      type: GRASS_BLOCK
+    1_-1_-2:
+      type: GRASS_BLOCK
+    1_-1_-1:
+      type: BLACK_CONCRETE
+    1_-1_0:
+      type: BLACK_CONCRETE
+    1_-1_1:
+      type: BLACK_CONCRETE
+    1_-1_2:
+      type: GRASS_BLOCK
+    2_-1_-2:
+      type: GRASS_BLOCK
+    2_-1_-1:
+      type: GRASS_BLOCK
+    2_-1_0:
+      type: GRASS_BLOCK
+    2_-1_1:
+      type: GRASS_BLOCK
+    2_-1_2:
+      type: GRASS_BLOCK
+    -2_0_-2:
+      type: SMOOTH_STONE_SLAB
+      slabType: BOTTOM
+    -2_0_-1:
+      type: SMOOTH_STONE_SLAB
+      slabType: BOTTOM
+    '-2_0_0':
+      type: SMOOTH_STONE_SLAB
+      slabType: BOTTOM
+    '-2_0_1':
+      type: SMOOTH_STONE_SLAB
+      slabType: BOTTOM
+    '-2_0_2':
+      type: CHISELED_STONE_BRICKS
+    -1_0_-2:
+      type: SMOOTH_STONE_SLAB
+      slabType: BOTTOM
+    -1_0_-1:
+      type: SMOOTH_STONE_SLAB
+      slabType: BOTTOM
+    '-1_0_0':
+      type: SMOOTH_STONE_SLAB
+      slabType: BOTTOM
+    '-1_0_1':
+      type: SMOOTH_STONE_SLAB
+      slabType: BOTTOM
+    '-1_0_2':
+      type: SMOOTH_STONE_SLAB
+      slabType: BOTTOM
+    0_0_-2:
+      type: STONE_BRICK_SLAB
+      slabType: DOUBLE
+    0_0_-1:
+      type: STONE_BRICK_SLAB
+      slabType: DOUBLE
+    '0_0_0':
+      type: STONE_BRICK_SLAB
+      slabType: DOUBLE
+    '0_0_1':
+      type: STONE_BRICK_SLAB
+      slabType: DOUBLE
+    '0_0_2':
+      type: STONE_BRICK_SLAB
+      slabType: DOUBLE
+    1_0_-1:
+      type: STONE_BRICK_SLAB
+      slabType: DOUBLE
+    '1_0_0':
+      type: STONE_BRICK_SLAB
+      slabType: BOTTOM
+    '1_0_1':
+      type: STONE_BRICK_SLAB
+      slabType: DOUBLE
+    2_0_-2:
+      type: STONE_BRICK_SLAB
+      slabType: DOUBLE
+    2_0_-1:
+      type: STONE_BRICK_SLAB
+      slabType: DOUBLE
+    '2_0_0':
+      type: STONE_BRICK_SLAB
+      slabType: DOUBLE
+    '2_0_1':
+      type: STONE_BRICK_SLAB
+      slabType: DOUBLE
+    '2_0_2':
+      type: STONE_BRICK_SLAB
+      slabType: DOUBLE
+    '-2_1_2':
+      type: END_ROD
+    0_1_-2:
+      type: STONE_BRICK_SLAB
+      slabType: DOUBLE
+    0_1_-1:
+      type: STONE_BRICK_SLAB
+      slabType: BOTTOM
+    '0_1_0':
+      type: STONE_BRICK_SLAB
+      slabType: BOTTOM
+    '0_1_1':
+      type: STONE_BRICK_SLAB
+      slabType: BOTTOM
+    '0_1_2':
+      type: STONE_BRICK_SLAB
+      slabType: DOUBLE
+    1_1_-2:
+      type: SMOOTH_STONE_SLAB
+      slabType: TOP
+    1_1_-1:
+      type: STONE_BRICK_SLAB
+      slabType: DOUBLE
+    '1_1_0':
+      type: STONE_BRICK_SLAB
+      slabType: TOP
+    '1_1_1':
+      type: STONE_BRICK_SLAB
+      slabType: DOUBLE
+    '1_1_2':
+      type: SMOOTH_STONE_SLAB
+      slabType: TOP
+    2_1_-2:
+      type: STONE_BRICK_SLAB
+      slabType: DOUBLE
+    2_1_-1:
+      type: STONE_BRICK_SLAB
+      slabType: BOTTOM
+    '2_1_0':
+      type: STONE_BRICK_SLAB
+      slabType: BOTTOM
+    '2_1_1':
+      type: STONE_BRICK_SLAB
+      slabType: BOTTOM
+    '2_1_2':
+      type: STONE_BRICK_SLAB
+      slabType: DOUBLE
+    '-2_2_2':
+      type: END_ROD
+    1_2_-2:
+      type: STONE_BRICK_SLAB
+      slabType: BOTTOM
+    1_2_-1:
+      type: STONE_BRICK_SLAB
+      slabType: DOUBLE
+    '1_2_0':
+      type: STONE_BRICK_SLAB
+      slabType: BOTTOM
+    '1_2_1':
+      type: STONE_BRICK_SLAB
+      slabType: DOUBLE
+    '1_2_2':
+      type: STONE_BRICK_SLAB
+      slabType: BOTTOM
+  大荒地:
+    size: 5
+    -2_-1_-2:
+      type: ROOTED_DIRT
+    -2_-1_-1:
+      type: GRASS_BLOCK
+    -2_-1_0:
+      type: GRASS_BLOCK
+    -2_-1_1:
+      type: GRASS_BLOCK
+    -2_-1_2:
+      type: ROOTED_DIRT
+    -1_-1_-2:
+      type: GRASS_BLOCK
+    -1_-1_-1:
+      type: COARSE_DIRT
+    -1_-1_0:
+      type: ROOTED_DIRT
+    -1_-1_1:
+      type: COARSE_DIRT
+    -1_-1_2:
+      type: ROOTED_DIRT
+    0_-1_-2:
+      type: GRASS_BLOCK
+    0_-1_-1:
+      type: ROOTED_DIRT
+    0_-1_0:
+      type: PODZOL
+    0_-1_1:
+      type: ROOTED_DIRT
+    0_-1_2:
+      type: GRASS_BLOCK
+    1_-1_-2:
+      type: ROOTED_DIRT
+    1_-1_-1:
+      type: COARSE_DIRT
+    1_-1_0:
+      type: ROOTED_DIRT
+    1_-1_1:
+      type: COARSE_DIRT
+    1_-1_2:
+      type: ROOTED_DIRT
+    2_-1_-2:
+      type: GRASS_BLOCK
+    2_-1_-1:
+      type: GRASS_BLOCK
+    2_-1_0:
+      type: COARSE_DIRT
+    2_-1_1:
+      type: COARSE_DIRT
+    2_-1_2:
+      type: GRASS_BLOCK
+    '-2_0_0':
+      type: MOSS_CARPET
+    -1_0_-1:
+      type: FERN
+    '-1_0_0':
+      type: PINK_PETALS
+    '-1_0_1':
+      type: MOSS_CARPET
+    0_0_-1:
+      type: PINK_PETALS
+    '0_0_0':
+      type: CHISELED_SANDSTONE
+    '0_0_1':
+      type: DANDELION
+    '1_0_0':
+      type: SHORT_GRASS
+    '1_0_1':
+      type: TORCH
+  小店铺:
+    size: 3
+    -1_-1_-1:
+      type: GRASS_BLOCK
+    -1_-1_0:
+      type: GRASS_BLOCK
+    -1_-1_1:
+      type: GRASS_BLOCK
+    0_-1_-1:
+      type: GRASS_BLOCK
+    0_-1_0:
+      type: GRASS_BLOCK
+    0_-1_1:
+      type: GRASS_BLOCK
+    1_-1_-1:
+      type: GRASS_BLOCK
+    1_-1_0:
+      type: GRASS_BLOCK
+    1_-1_1:
+      type: GRASS_BLOCK
+    -1_0_-1:
+      type: WHITE_CARPET
+    '-1_0_0':
+      type: BAMBOO_SLAB
+      slabType: BOTTOM
+    '-1_0_1':
+      type: RED_CARPET
+    0_0_-1:
+      type: BAMBOO_SLAB
+      slabType: BOTTOM
+    '0_0_0':
+      type: BEACON
+    '0_0_1':
+      type: BAMBOO_SLAB
+      slabType: BOTTOM
+    1_0_-1:
+      type: RED_CARPET
+    '1_0_0':
+      type: BAMBOO_SLAB
+      slabType: BOTTOM
+    '1_0_1':
+      type: WHITE_CARPET
+    '0_1_0':
+      type: ACACIA_SLAB
+      slabType: BOTTOM
+TankData:
+  激光坦克:
+    '0':
+      Item:
+        ==: org.bukkit.inventory.ItemStack
+        v: 3955
+        type: POLISHED_DEEPSLATE
+      ItemDisplay: NONE
+      Transform:
+        Translation:
+        - 0.0
+        - 0.75
+        - 0.0
+        LeftRotation:
+        - 0.0
+        - 0.0
+        - 0.0
+        - 1.0
+        RightRotation:
+        - -0.0
+        - -0.0
+        - -0.0
+        - 1.0
+        Scale:
+        - 1.8125
+        - 0.5742
+        - 4.1875
+    '1':
+      Item:
+        ==: org.bukkit.inventory.ItemStack
+        v: 3955
+        type: POLISHED_DEEPSLATE
+      ItemDisplay: NONE
+      Transform:
+        Translation:
+        - 0.0
+        - 0.9689
+        - -1.3105
+        LeftRotation:
+        - 0.6427904
+        - 0.0
+        - 0.0
+        - 0.7660422
+        RightRotation:
+        - -0.0
+        - -0.0
+        - -0.0
+        - 1.0
+        Scale:
+        - 1.79
+        - 1.6620485
+        - 0.437551
+    '2':
+      Item:
+        ==: org.bukkit.inventory.ItemStack
+        v: 3955
+        type: POLISHED_DEEPSLATE
+      ItemDisplay: NONE
+      Transform:
+        Translation:
+        - 0.0
+        - 1.125
+        - 0.5
+        LeftRotation:
+        - 0.70710677
+        - 0.0
+        - 0.0
+        - 0.70710677
+        RightRotation:
+        - -0.0
+        - -0.0
+        - -0.0
+        - 1.0
+        Scale:
+        - 1.79
+        - 2.0456998
+        - 0.43749997
+    '3':
+      Item:
+        ==: org.bukkit.inventory.ItemStack
+        v: 3955
+        type: POLISHED_ANDESITE
+      ItemDisplay: NONE
+      Transform:
+        Translation:
+        - 0.0
+        - 1.0
+        - 0.25
+        LeftRotation:
+        - 0.0
+        - 0.0
+        - 0.0
+        - 1.0
+        RightRotation:
+        - -0.0
+        - -0.0
+        - -0.0
+        - 1.0
+        Scale:
+        - 1.0
+        - 1.0
+        - 1.0
+    '4':
+      Item:
+        ==: org.bukkit.inventory.ItemStack
+        v: 3955
+        type: ANDESITE
+      ItemDisplay: NONE
+      Transform:
+        Translation:
+        - -1.1875
+        - 1.1875
+        - 0.04
+        LeftRotation:
+        - 0.0
+        - 0.0
+        - 0.0
+        - 1.0
+        RightRotation:
+        - -0.0
+        - -0.0
+        - -0.0
+        - 1.0
+        Scale:
+        - 0.6094
+        - 0.4375
+        - 3.795
+    '5':
+      Item:
+        ==: org.bukkit.inventory.ItemStack
+        v: 3955
+        type: ANDESITE
+      ItemDisplay: NONE
+      Transform:
+        Translation:
+        - -1.1925
+        - 0.985
+        - -2.0488
+        LeftRotation:
+        - -0.3826834
+        - 0.0
+        - 0.0
+        - 0.92387944
+        RightRotation:
+        - -0.0
+        - -0.0
+        - -0.0
+        - 1.0
+        Scale:
+        - 0.6
+        - 0.32809746
+        - 0.85206354
+    '6':
+      Item:
+        ==: org.bukkit.inventory.ItemStack
+        v: 3955
+        type: ANDESITE
+      ItemDisplay: NONE
+      Transform:
+        Translation:
+        - -1.1925
+        - 0.6789
+        - -2.2676
+        LeftRotation:
+        - 0.60877675
+        - 0.0
+        - 0.0
+        - 0.79334164
+        RightRotation:
+        - -0.0
+        - -0.0
+        - -0.0
+        - 1.0
+        Scale:
+        - 0.6
+        - 0.32807568
+        - 0.3328295
+    '7':
+      Item:
+        ==: org.bukkit.inventory.ItemStack
+        v: 3955
+        type: IRON_BLOCK
+      ItemDisplay: NONE
+      Transform:
+        Translation:
+        - 0.0
+        - 1.3192
+        - 2.0399
+        LeftRotation:
+        - 0.13052467
+        - 0.0
+        - 0.0
+        - 0.99144506
+        RightRotation:
+        - -0.0
+        - -0.0
+        - -0.0
+        - 1.0
+        Scale:
+        - 3.0234
+        - 0.74995345
+        - 0.99997014
+    '8':
+      Item:
+        ==: org.bukkit.inventory.ItemStack
+        v: 3955
+        type: ANDESITE
+      ItemDisplay: NONE
+      Transform:
+        Translation:
+        - -1.1875
+        - 0.8204
+        - 2.1453
+        LeftRotation:
+        - 0.60877675
+        - 0.0
+        - 0.0
+        - 0.79334164
+        RightRotation:
+        - -0.0
+        - -0.0
+        - -0.0
+        - 1.0
+        Scale:
+        - 0.6
+        - 0.32807568
+        - 0.49920887
+    '9':
+      Item:
+        ==: org.bukkit.inventory.ItemStack
+        v: 3955
+        type: GRINDSTONE
+      ItemDisplay: NONE
+      Transform:
+        Translation:
+        - -1.125
+        - 0.8313
+        - 1.5625
+        LeftRotation:
+        - 1.0
+        - 0.0
+        - 0.0
+        - 0.0
+        RightRotation:
+        - -0.0
+        - -0.0
+        - -0.0
+        - 1.0
+        Scale:
+        - 0.8125
+        - 0.875
+        - 0.875
+    '10':
+      Item:
+        ==: org.bukkit.inventory.ItemStack
+        v: 3955
+        type: GRINDSTONE
+      ItemDisplay: NONE
+      Transform:
+        Translation:
+        - -1.125
+        - 0.8313
+        - -1.6875
+        LeftRotation:
+        - 1.0
+        - 0.0
+        - 0.0
+        - 0.0
+        RightRotation:
+        - -0.0
+        - -0.0
+        - -0.0
+        - 1.0
+        Scale:
+        - 0.8125
+        - 0.875
+        - 0.875
+    '11':
+      Item:
+        ==: org.bukkit.inventory.ItemStack
+        v: 3955
+        type: GRINDSTONE
+      ItemDisplay: NONE
+      Transform:
+        Translation:
+        - -1.125
+        - 0.3313
+        - -1.125
+        LeftRotation:
+        - 1.0
+        - 0.0
+        - 0.0
+        - 0.0
+        RightRotation:
+        - -0.0
+        - -0.0
+        - -0.0
+        - 1.0
+        Scale:
+        - 0.8125
+        - 0.625
+        - 0.6875
+    '12':
+      Item:
+        ==: org.bukkit.inventory.ItemStack
+        v: 3955
+        type: GRINDSTONE
+      ItemDisplay: NONE
+      Transform:
+        Translation:
+        - -1.125
+        - 0.3313
+        - -0.5625
+        LeftRotation:
+        - 1.0
+        - 0.0
+        - 0.0
+        - 0.0
+        RightRotation:
+        - -0.0
+        - -0.0
+        - -0.0
+        - 1.0
+        Scale:
+        - 0.8125
+        - 0.625
+        - 0.6875
+    '13':
+      Item:
+        ==: org.bukkit.inventory.ItemStack
+        v: 3955
+        type: GRINDSTONE
+      ItemDisplay: NONE
+      Transform:
+        Translation:
+        - -1.125
+        - 0.3313
+        - 0.0
+        LeftRotation:
+        - 1.0
+        - 0.0
+        - 0.0
+        - 0.0
+        RightRotation:
+        - -0.0
+        - -0.0
+        - -0.0
+        - 1.0
+        Scale:
+        - 0.8125
+        - 0.625
+        - 0.6875
+    '14':
+      Item:
+        ==: org.bukkit.inventory.ItemStack
+        v: 3955
+        type: GRINDSTONE
+      ItemDisplay: NONE
+      Transform:
+        Translation:
+        - -1.125
+        - 0.3313
+        - 0.5625
+        LeftRotation:
+        - 1.0
+        - 0.0
+        - 0.0
+        - 0.0
+        RightRotation:
+        - -0.0
+        - -0.0
+        - -0.0
+        - 1.0
+        Scale:
+        - 0.8125
+        - 0.625
+        - 0.6875
+    '15':
+      Item:
+        ==: org.bukkit.inventory.ItemStack
+        v: 3955
+        type: GRINDSTONE
+      ItemDisplay: NONE
+      Transform:
+        Translation:
+        - -1.125
+        - 0.3313
+        - 1.125
+        LeftRotation:
+        - 1.0
+        - 0.0
+        - 0.0
+        - 0.0
+        RightRotation:
+        - -0.0
+        - -0.0
+        - -0.0
+        - 1.0
+        Scale:
+        - 0.8125
+        - 0.625
+        - 0.6875
+    '16':
+      Item:
+        ==: org.bukkit.inventory.ItemStack
+        v: 3955
+        type: IRON_BLOCK
+      ItemDisplay: NONE
+      Transform:
+        Translation:
+        - -1.1875
+        - 0.8313
+        - 0.0
+        LeftRotation:
+        - 0.0
+        - 0.0
+        - 0.0
+        - 1.0
+        RightRotation:
+        - -0.0
+        - -0.0
+        - -0.0
+        - 1.0
+        Scale:
+        - 0.375
+        - 0.375
+        - 2.75
+    '17':
+      Item:
+        ==: org.bukkit.inventory.ItemStack
+        v: 3955
+        type: BLACK_CONCRETE_POWDER
+      ItemDisplay: NONE
+      Transform:
+        Translation:
+        - -1.1875
+        - 0.4361
+        - -2.0452
+        LeftRotation:
+        - -0.25882518
+        - 0.0
+        - 0.0
+        - 0.9659242
+        RightRotation:
+        - -0.0
+        - -0.0
+        - -0.0
+        - 1.0
+        Scale:
+        - 0.5859
+        - 0.99997807
+        - 0.062451974
+    '18':
+      Item:
+        ==: org.bukkit.inventory.ItemStack
+        v: 3955
+        type: BLACK_CONCRETE_POWDER
+      ItemDisplay: NONE
+      Transform:
+        Translation:
+        - -1.1875
+        - 0.0188
+        - -0.0625
+        LeftRotation:
+        - -0.70710677
+        - 0.0
+        - 0.0
+        - 0.70710677
+        RightRotation:
+        - -0.0
+        - -0.0
+        - -0.0
+        - 1.0
+        Scale:
+        - 0.5859
+        - 3.5194998
+        - 0.062499996
+    '19':
+      Item:
+        ==: org.bukkit.inventory.ItemStack
+        v: 3955
+        type: BLACK_CONCRETE_POWDER
+      ItemDisplay: NONE
+      Transform:
+        Translation:
+        - -1.1875
+        - 0.4487
+        - 1.9318
+        LeftRotation:
+        - 0.25882518
+        - 0.0
+        - 0.0
+        - 0.9659242
+        RightRotation:
+        - -0.0
+        - -0.0
+        - -0.0
+        - 1.0
+        Scale:
+        - 0.5859
+        - 0.99997807
+        - 0.062501974
+    '20':
+      Item:
+        ==: org.bukkit.inventory.ItemStack
+        v: 3955
+        type: ANDESITE
+      ItemDisplay: NONE
+      Transform:
+        Translation:
+        - 1.1564
+        - 1.1875
+        - 0.04
+        LeftRotation:
+        - 0.0
+        - 0.0
+        - 0.0
+        - 1.0
+        RightRotation:
+        - -0.0
+        - -0.0
+        - -0.0
+        - 1.0
+        Scale:
+        - 0.6094
+        - 0.4375
+        - 3.795
+    '21':
+      Item:
+        ==: org.bukkit.inventory.ItemStack
+        v: 3955
+        type: ANDESITE
+      ItemDisplay: NONE
+      Transform:
+        Translation:
+        - 1.1514
+        - 0.985
+        - -2.0488
+        LeftRotation:
+        - -0.3826834
+        - 0.0
+        - 0.0
+        - 0.92387944
+        RightRotation:
+        - -0.0
+        - -0.0
+        - -0.0
+        - 1.0
+        Scale:
+        - 0.6
+        - 0.32809746
+        - 0.85206354
+    '22':
+      Item:
+        ==: org.bukkit.inventory.ItemStack
+        v: 3955
+        type: ANDESITE
+      ItemDisplay: NONE
+      Transform:
+        Translation:
+        - 1.1514
+        - 0.6789
+        - -2.2676
+        LeftRotation:
+        - 0.60877675
+        - 0.0
+        - 0.0
+        - 0.79334164
+        RightRotation:
+        - -0.0
+        - -0.0
+        - -0.0
+        - 1.0
+        Scale:
+        - 0.6
+        - 0.32807568
+        - 0.3328295
+    '23':
+      Item:
+        ==: org.bukkit.inventory.ItemStack
+        v: 3955
+        type: ANDESITE
+      ItemDisplay: NONE
+      Transform:
+        Translation:
+        - 1.1564
+        - 0.8204
+        - 2.1453
+        LeftRotation:
+        - 0.60877675
+        - 0.0
+        - 0.0
+        - 0.79334164
+        RightRotation:
+        - -0.0
+        - -0.0
+        - -0.0
+        - 1.0
+        Scale:
+        - 0.6
+        - 0.32807568
+        - 0.49920887
+    '24':
+      Item:
+        ==: org.bukkit.inventory.ItemStack
+        v: 3955
+        type: GRINDSTONE
+      ItemDisplay: NONE
+      Transform:
+        Translation:
+        - 1.125
+        - 0.8313
+        - 1.5625
+        LeftRotation:
+        - 1.0
+        - 0.0
+        - 0.0
+        - 0.0
+        RightRotation:
+        - -0.0
+        - -0.0
+        - -0.0
+        - 1.0
+        Scale:
+        - 0.8125
+        - 0.875
+        - 0.875
+    '25':
+      Item:
+        ==: org.bukkit.inventory.ItemStack
+        v: 3955
+        type: GRINDSTONE
+      ItemDisplay: NONE
+      Transform:
+        Translation:
+        - 1.125
+        - 0.8313
+        - -1.6875
+        LeftRotation:
+        - 1.0
+        - 0.0
+        - 0.0
+        - 0.0
+        RightRotation:
+        - -0.0
+        - -0.0
+        - -0.0
+        - 1.0
+        Scale:
+        - 0.8125
+        - 0.875
+        - 0.875
+    '26':
+      Item:
+        ==: org.bukkit.inventory.ItemStack
+        v: 3955
+        type: GRINDSTONE
+      ItemDisplay: NONE
+      Transform:
+        Translation:
+        - 1.0625
+        - 0.3313
+        - -1.1244
+        LeftRotation:
+        - 1.0
+        - 0.0
+        - 0.0
+        - 0.0
+        RightRotation:
+        - -0.0
+        - -0.0
+        - -0.0
+        - 1.0
+        Scale:
+        - 0.8125
+        - 0.625
+        - 0.6875
+    '27':
+      Item:
+        ==: org.bukkit.inventory.ItemStack
+        v: 3955
+        type: GRINDSTONE
+      ItemDisplay: NONE
+      Transform:
+        Translation:
+        - 1.0625
+        - 0.3313
+        - -0.5625
+        LeftRotation:
+        - 1.0
+        - 0.0
+        - 0.0
+        - 0.0
+        RightRotation:
+        - -0.0
+        - -0.0
+        - -0.0
+        - 1.0
+        Scale:
+        - 0.8125
+        - 0.625
+        - 0.6875
+    '28':
+      Item:
+        ==: org.bukkit.inventory.ItemStack
+        v: 3955
+        type: GRINDSTONE
+      ItemDisplay: NONE
+      Transform:
+        Translation:
+        - 1.0625
+        - 0.3313
+        - 6.0E-4
+        LeftRotation:
+        - 1.0
+        - 0.0
+        - 0.0
+        - 0.0
+        RightRotation:
+        - -0.0
+        - -0.0
+        - -0.0
+        - 1.0
+        Scale:
+        - 0.8125
+        - 0.625
+        - 0.6875
+    '29':
+      Item:
+        ==: org.bukkit.inventory.ItemStack
+        v: 3955
+        type: GRINDSTONE
+      ItemDisplay: NONE
+      Transform:
+        Translation:
+        - 1.0625
+        - 0.3313
+        - 0.5631
+        LeftRotation:
+        - 1.0
+        - 0.0
+        - 0.0
+        - 0.0
+        RightRotation:
+        - -0.0
+        - -0.0
+        - -0.0
+        - 1.0
+        Scale:
+        - 0.8125
+        - 0.625
+        - 0.6875
+    '30':
+      Item:
+        ==: org.bukkit.inventory.ItemStack
+        v: 3955
+        type: GRINDSTONE
+      ItemDisplay: NONE
+      Transform:
+        Translation:
+        - 1.0625
+        - 0.3313
+        - 1.1256
+        LeftRotation:
+        - 1.0
+        - 0.0
+        - 0.0
+        - 0.0
+        RightRotation:
+        - -0.0
+        - -0.0
+        - -0.0
+        - 1.0
+        Scale:
+        - 0.8125
+        - 0.625
+        - 0.6875
+    '31':
+      Item:
+        ==: org.bukkit.inventory.ItemStack
+        v: 3955
+        type: IRON_BLOCK
+      ItemDisplay: NONE
+      Transform:
+        Translation:
+        - 1.1564
+        - 0.8313
+        - 0.0
+        LeftRotation:
+        - 0.0
+        - 0.0
+        - 0.0
+        - 1.0
+        RightRotation:
+        - -0.0
+        - -0.0
+        - -0.0
+        - 1.0
+        Scale:
+        - 0.375
+        - 0.375
+        - 2.75
+    '32':
+      Item:
+        ==: org.bukkit.inventory.ItemStack
+        v: 3955
+        type: BLACK_CONCRETE_POWDER
+      ItemDisplay: NONE
+      Transform:
+        Translation:
+        - 1.1564
+        - 0.4361
+        - -2.0452
+        LeftRotation:
+        - -0.25882518
+        - 0.0
+        - 0.0
+        - 0.9659242
+        RightRotation:
+        - -0.0
+        - -0.0
+        - -0.0
+        - 1.0
+        Scale:
+        - 0.5859
+        - 0.99997807
+        - 0.062451974
+    '33':
+      Item:
+        ==: org.bukkit.inventory.ItemStack
+        v: 3955
+        type: BLACK_CONCRETE_POWDER
+      ItemDisplay: NONE
+      Transform:
+        Translation:
+        - 1.1564
+        - 0.0188
+        - -0.0625
+        LeftRotation:
+        - -0.70710677
+        - 0.0
+        - 0.0
+        - 0.70710677
+        RightRotation:
+        - -0.0
+        - -0.0
+        - -0.0
+        - 1.0
+        Scale:
+        - 0.5859
+        - 3.5194998
+        - 0.062499996
+    '34':
+      Item:
+        ==: org.bukkit.inventory.ItemStack
+        v: 3955
+        type: BLACK_CONCRETE_POWDER
+      ItemDisplay: NONE
+      Transform:
+        Translation:
+        - 1.1564
+        - 0.4487
+        - 1.9318
+        LeftRotation:
+        - 0.25882518
+        - 0.0
+        - 0.0
+        - 0.9659242
+        RightRotation:
+        - -0.0
+        - -0.0
+        - -0.0
+        - 1.0
+        Scale:
+        - 0.5859
+        - 0.99997807
+        - 0.062501974
+    '35':
+      Item:
+        ==: org.bukkit.inventory.ItemStack
+        v: 3955
+        type: IRON_BLOCK
+      ItemDisplay: NONE
+      Transform:
+        Translation:
+        - 0.0
+        - 0.9012
+        - -1.185
+        LeftRotation:
+        - -0.09585479
+        - 0.0
+        - 0.0
+        - 0.9953953
+        RightRotation:
+        - -0.0
+        - -0.0
+        - -0.0
+        - 1.0
+        Scale:
+        - 1.0
+        - 0.6875343
+        - 0.99997157
+    '36':
+      Item:
+        ==: org.bukkit.inventory.ItemStack
+        v: 3955
+        type: REINFORCED_DEEPSLATE
+      ItemDisplay: NONE
+      IsTankHead: true
+      Transform:
+        Translation:
+        - 0.0
+        - 1.4563
+        - 0.25
+        LeftRotation:
+        - 0.0
+        - 0.0
+        - 0.0
+        - 1.0
+        RightRotation:
+        - -0.0
+        - -0.0
+        - -0.0
+        - 1.0
+        Scale:
+        - 0.5364
+        - 1.0
+        - 0.5364
+    '37':
+      Item:
+        ==: org.bukkit.inventory.ItemStack
+        v: 3955
+        type: POLISHED_BLACKSTONE
+      ItemDisplay: NONE
+      IsTankHead: true
+      Transform:
+        Translation:
+        - 0.0
+        - 2.3937
+        - 0.125
+        LeftRotation:
+        - 0.0
+        - 0.0
+        - 0.0
+        - 1.0
+        RightRotation:
+        - -0.0
+        - -0.0
+        - -0.0
+        - 1.0
+        Scale:
+        - 0.8125
+        - 1.0
+        - 0.875
+    '38':
+      Item:
+        ==: org.bukkit.inventory.ItemStack
+        v: 3955
+        type: RESPAWN_ANCHOR
+      ItemDisplay: NONE
+      IsTankHead: true
+      Transform:
+        Translation:
+        - 0.0
+        - 2.3937
+        - 0.0
+        LeftRotation:
+        - -0.70710677
+        - 0.0
+        - 0.0
+        - 0.70710677
+        RightRotation:
+        - -0.0
+        - -0.0
+        - -0.0
+        - 1.0
+        Scale:
+        - 0.5078
+        - 0.99999994
+        - 0.87499994
+    '39':
+      Item:
+        ==: org.bukkit.inventory.ItemStack
+        v: 3955
+        type: SEA_LANTERN
+      ItemDisplay: NONE
+      IsTankHead: true
+      Transform:
+        Translation:
+        - 0.0
+        - 2.3937
+        - -0.0625
+        LeftRotation:
+        - 0.0
+        - 0.0
+        - 0.0
+        - 1.0
+        RightRotation:
+        - -0.0
+        - -0.0
+        - -0.0
+        - 1.0
+        Scale:
+        - 0.4375
+        - 0.75
+        - 1.0
+    '40':
+      Item:
+        ==: org.bukkit.inventory.ItemStack
+        v: 3955
+        type: IRON_HOE
+      ItemDisplay: NONE
+      IsTankHead: true
+      Transform:
+        Translation:
+        - 0.4375
+        - 2.5187
+        - 0.75
+        LeftRotation:
+        - 0.0
+        - 0.70710677
+        - 0.0
+        - 0.70710677
+        RightRotation:
+        - -0.0
+        - -0.0
+        - -0.0
+        - 1.0
+        Scale:
+        - 0.99999994
+        - 1.0
+        - 0.99999994
+    '41':
+      Item:
+        ==: org.bukkit.inventory.ItemStack
+        v: 3955
+        type: IRON_HOE
+      ItemDisplay: NONE
+      IsTankHead: true
+      Transform:
+        Translation:
+        - -0.4375
+        - 2.5187
+        - 0.75
+        LeftRotation:
+        - 0.0
+        - 0.70710677
+        - 0.0
+        - 0.70710677
+        RightRotation:
+        - -0.0
+        - -0.0
+        - -0.0
+        - 1.0
+        Scale:
+        - 0.99999994
+        - 1.0
+        - 0.99999994
+    '42':
+      Item:
+        ==: org.bukkit.inventory.ItemStack
+        v: 3955
+        type: IRON_TRAPDOOR
+      ItemDisplay: NONE
+      IsTankHead: true
+      Transform:
+        Translation:
+        - -0.9063
+        - 2.1437
+        - 0.4375
+        LeftRotation:
+        - 0.0
+        - 0.0
+        - 0.7071068
+        - 0.7071068
+        RightRotation:
+        - -0.0
+        - -0.0
+        - -0.0
+        - 1.0
+        Scale:
+        - 0.7500001
+        - 1.0000001
+        - 0.75
+    '43':
+      Item:
+        ==: org.bukkit.inventory.ItemStack
+        v: 3955
+        type: IRON_TRAPDOOR
+      ItemDisplay: NONE
+      IsTankHead: true
+      Transform:
+        Translation:
+        - 0.9062
+        - 2.1437
+        - 0.4375
+        LeftRotation:
+        - 0.0
+        - 0.0
+        - -0.7071068
+        - 0.7071068
+        RightRotation:
+        - -0.0
+        - -0.0
+        - -0.0
+        - 1.0
+        Scale:
+        - 0.7500001
+        - 1.0000001
+        - 0.75
+    '44':
+      Item:
+        ==: org.bukkit.inventory.ItemStack
+        v: 3955
+        type: POLISHED_ANDESITE
+      ItemDisplay: NONE
+      IsTankHead: true
+      Transform:
+        Translation:
+        - 0.0
+        - 2.0812
+        - 0.875
+        LeftRotation:
+        - -0.25877762
+        - 0.0
+        - 0.0
+        - 0.965937
+        RightRotation:
+        - -0.0
+        - -0.0
+        - -0.0
+        - 1.0
+        Scale:
+        - 0.625
+        - 0.3124465
+        - 0.6250296
+    '45':
+      Item:
+        ==: org.bukkit.inventory.ItemStack
+        v: 3955
+        type: POLISHED_DIORITE_SLAB
+      ItemDisplay: NONE
+      IsTankHead: true
+      Transform:
+        Translation:
+        - 0.0
+        - 2.4619
+        - 0.7759
+        LeftRotation:
+        - 0.79333407
+        - 0.0
+        - 0.0
+        - -0.6087865
+        RightRotation:
+        - -0.0
+        - -0.0
+        - -0.0
+        - 1.0
+        Scale:
+        - 0.5625
+        - 0.68751526
+        - 0.8124882
+    '46':
+      Item:
+        ==: org.bukkit.inventory.ItemStack
+        v: 3955
+        type: QUARTZ_SLAB
+      ItemDisplay: NONE
+      IsTankHead: true
+      Transform:
+        Translation:
+        - 0.0
+        - 3.0933
+        - 0.6926
+        LeftRotation:
+        - 0.25882518
+        - 0.0
+        - 0.0
+        - 0.9659242
+        RightRotation:
+        - -0.0
+        - -0.0
+        - -0.0
+        - 1.0
+        Scale:
+        - 0.5625
+        - 0.49998903
+        - 0.6874815
+  普通坦克:
+    '0':
+      Item:
+        ==: org.bukkit.inventory.ItemStack
+        v: 3955
+        type: POLISHED_DEEPSLATE
+      ItemDisplay: NONE
+      Transform:
+        Translation:
+        - 0.0
+        - 0.9689
+        - -1.3105
+        LeftRotation:
+        - 0.6427904
+        - 0.0
+        - 0.0
+        - 0.7660422
+        RightRotation:
+        - -0.0
+        - -0.0
+        - -0.0
+        - 1.0
+        Scale:
+        - 1.79
+        - 1.6620485
+        - 0.437551
+    '1':
+      Item:
+        ==: org.bukkit.inventory.ItemStack
+        v: 3955
+        type: POLISHED_DEEPSLATE
+      ItemDisplay: NONE
+      Transform:
+        Translation:
+        - 0.0
+        - 1.125
+        - 0.375
+        LeftRotation:
+        - 0.70710677
+        - 0.0
+        - 0.0
+        - 0.70710677
+        RightRotation:
+        - -0.0
+        - -0.0
+        - -0.0
+        - 1.0
+        Scale:
+        - 1.79
+        - 1.9699999
+        - 0.43749997
+    '2':
+      Item:
+        ==: org.bukkit.inventory.ItemStack
+        v: 3955
+        type: POLISHED_ANDESITE
+      ItemDisplay: NONE
+      Transform:
+        Translation:
+        - 0.0
+        - 1.0
+        - 0.25
+        LeftRotation:
+        - 0.0
+        - 0.0
+        - 0.0
+        - 1.0
+        RightRotation:
+        - -0.0
+        - -0.0
+        - -0.0
+        - 1.0
+        Scale:
+        - 1.0
+        - 1.0
+        - 1.0
+    '3':
+      Item:
+        ==: org.bukkit.inventory.ItemStack
+        v: 3955
+        type: ANDESITE
+      ItemDisplay: NONE
+      Transform:
+        Translation:
+        - -1.1875
+        - 1.1875
+        - 0.04
+        LeftRotation:
+        - 0.0
+        - 0.0
+        - 0.0
+        - 1.0
+        RightRotation:
+        - -0.0
+        - -0.0
+        - -0.0
+        - 1.0
+        Scale:
+        - 0.6094
+        - 0.4375
+        - 3.795
+    '4':
+      Item:
+        ==: org.bukkit.inventory.ItemStack
+        v: 3955
+        type: ANDESITE
+      ItemDisplay: NONE
+      Transform:
+        Translation:
+        - -1.1925
+        - 0.6789
+        - -2.2676
+        LeftRotation:
+        - 0.60877675
+        - 0.0
+        - 0.0
+        - 0.79334164
+        RightRotation:
+        - -0.0
+        - -0.0
+        - -0.0
+        - 1.0
+        Scale:
+        - 0.6
+        - 0.32807568
+        - 0.3328295
+    '5':
+      Item:
+        ==: org.bukkit.inventory.ItemStack
+        v: 3955
+        type: ANDESITE
+      ItemDisplay: NONE
+      Transform:
+        Translation:
+        - -1.1875
+        - 0.625
+        - 2.125
+        LeftRotation:
+        - 0.92387944
+        - 0.0
+        - 0.0
+        - 0.3826834
+        RightRotation:
+        - -0.0
+        - -0.0
+        - -0.0
+        - 1.0
+        Scale:
+        - 0.56
+        - 0.32809746
+        - 0.49921727
+    '6':
+      Item:
+        ==: org.bukkit.inventory.ItemStack
+        v: 3955
+        type: GRINDSTONE
+      ItemDisplay: NONE
+      Transform:
+        Translation:
+        - -1.125
+        - 0.8313
+        - 1.5625
+        LeftRotation:
+        - 1.0
+        - 0.0
+        - 0.0
+        - 0.0
+        RightRotation:
+        - -0.0
+        - -0.0
+        - -0.0
+        - 1.0
+        Scale:
+        - 0.8125
+        - 0.875
+        - 0.875
+    '7':
+      Item:
+        ==: org.bukkit.inventory.ItemStack
+        v: 3955
+        type: GRINDSTONE
+      ItemDisplay: NONE
+      Transform:
+        Translation:
+        - -1.125
+        - 0.8313
+        - -1.6875
+        LeftRotation:
+        - 1.0
+        - 0.0
+        - 0.0
+        - 0.0
+        RightRotation:
+        - -0.0
+        - -0.0
+        - -0.0
+        - 1.0
+        Scale:
+        - 0.8125
+        - 0.875
+        - 0.875
+    '8':
+      Item:
+        ==: org.bukkit.inventory.ItemStack
+        v: 3955
+        type: GRINDSTONE
+      ItemDisplay: NONE
+      Transform:
+        Translation:
+        - -1.125
+        - 0.3313
+        - -1.125
+        LeftRotation:
+        - 1.0
+        - 0.0
+        - 0.0
+        - 0.0
+        RightRotation:
+        - -0.0
+        - -0.0
+        - -0.0
+        - 1.0
+        Scale:
+        - 0.8125
+        - 0.625
+        - 0.6875
+    '9':
+      Item:
+        ==: org.bukkit.inventory.ItemStack
+        v: 3955
+        type: GRINDSTONE
+      ItemDisplay: NONE
+      Transform:
+        Translation:
+        - -1.125
+        - 0.3313
+        - -0.5625
+        LeftRotation:
+        - 1.0
+        - 0.0
+        - 0.0
+        - 0.0
+        RightRotation:
+        - -0.0
+        - -0.0
+        - -0.0
+        - 1.0
+        Scale:
+        - 0.8125
+        - 0.625
+        - 0.6875
+    '10':
+      Item:
+        ==: org.bukkit.inventory.ItemStack
+        v: 3955
+        type: GRINDSTONE
+      ItemDisplay: NONE
+      Transform:
+        Translation:
+        - -1.125
+        - 0.3313
+        - 0.0
+        LeftRotation:
+        - 1.0
+        - 0.0
+        - 0.0
+        - 0.0
+        RightRotation:
+        - -0.0
+        - -0.0
+        - -0.0
+        - 1.0
+        Scale:
+        - 0.8125
+        - 0.625
+        - 0.6875
+    '11':
+      Item:
+        ==: org.bukkit.inventory.ItemStack
+        v: 3955
+        type: GRINDSTONE
+      ItemDisplay: NONE
+      Transform:
+        Translation:
+        - -1.125
+        - 0.3313
+        - 0.5625
+        LeftRotation:
+        - 1.0
+        - 0.0
+        - 0.0
+        - 0.0
+        RightRotation:
+        - -0.0
+        - -0.0
+        - -0.0
+        - 1.0
+        Scale:
+        - 0.8125
+        - 0.625
+        - 0.6875
+    '12':
+      Item:
+        ==: org.bukkit.inventory.ItemStack
+        v: 3955
+        type: GRINDSTONE
+      ItemDisplay: NONE
+      Transform:
+        Translation:
+        - -1.125
+        - 0.3313
+        - 1.125
+        LeftRotation:
+        - 1.0
+        - 0.0
+        - 0.0
+        - 0.0
+        RightRotation:
+        - -0.0
+        - -0.0
+        - -0.0
+        - 1.0
+        Scale:
+        - 0.8125
+        - 0.625
+        - 0.6875
+    '13':
+      Item:
+        ==: org.bukkit.inventory.ItemStack
+        v: 3955
+        type: IRON_BLOCK
+      ItemDisplay: NONE
+      Transform:
+        Translation:
+        - -1.1875
+        - 0.8313
+        - 0.0
+        LeftRotation:
+        - 0.0
+        - 0.0
+        - 0.0
+        - 1.0
+        RightRotation:
+        - -0.0
+        - -0.0
+        - -0.0
+        - 1.0
+        Scale:
+        - 0.375
+        - 0.375
+        - 2.75
+    '14':
+      Item:
+        ==: org.bukkit.inventory.ItemStack
+        v: 3955
+        type: BLACK_CONCRETE_POWDER
+      ItemDisplay: NONE
+      Transform:
+        Translation:
+        - -1.1875
+        - 0.0188
+        - -0.0625
+        LeftRotation:
+        - -0.70710677
+        - 0.0
+        - 0.0
+        - 0.70710677
+        RightRotation:
+        - -0.0
+        - -0.0
+        - -0.0
+        - 1.0
+        Scale:
+        - 0.5859
+        - 3.5194998
+        - 0.062499996
+    '15':
+      Item:
+        ==: org.bukkit.inventory.ItemStack
+        v: 3955
+        type: BLACK_CONCRETE_POWDER
+      ItemDisplay: NONE
+      Transform:
+        Translation:
+        - -1.1875
+        - 0.4487
+        - 1.9318
+        LeftRotation:
+        - 0.25882518
+        - 0.0
+        - 0.0
+        - 0.9659242
+        RightRotation:
+        - -0.0
+        - -0.0
+        - -0.0
+        - 1.0
+        Scale:
+        - 0.5859
+        - 0.99997807
+        - 0.062501974
+    '16':
+      Item:
+        ==: org.bukkit.inventory.ItemStack
+        v: 3955
+        type: ANDESITE
+      ItemDisplay: NONE
+      Transform:
+        Translation:
+        - 1.1564
+        - 1.1875
+        - 0.04
+        LeftRotation:
+        - 0.0
+        - 0.0
+        - 0.0
+        - 1.0
+        RightRotation:
+        - -0.0
+        - -0.0
+        - -0.0
+        - 1.0
+        Scale:
+        - 0.6094
+        - 0.4375
+        - 3.795
+    '17':
+      Item:
+        ==: org.bukkit.inventory.ItemStack
+        v: 3955
+        type: ANDESITE
+      ItemDisplay: NONE
+      Transform:
+        Translation:
+        - 1.1514
+        - 1.0
+        - 2.1875
+        LeftRotation:
+        - 0.92387944
+        - 0.0
+        - 0.0
+        - -0.3826834
+        RightRotation:
+        - -0.0
+        - -0.0
+        - -0.0
+        - 1.0
+        Scale:
+        - 0.6
+        - 0.32809746
+        - 0.85206354
+    '18':
+      Item:
+        ==: org.bukkit.inventory.ItemStack
+        v: 3955
+        type: ANDESITE
+      ItemDisplay: NONE
+      Transform:
+        Translation:
+        - 1.1514
+        - 0.6789
+        - -2.2676
+        LeftRotation:
+        - 0.60877675
+        - 0.0
+        - 0.0
+        - 0.79334164
+        RightRotation:
+        - -0.0
+        - -0.0
+        - -0.0
+        - 1.0
+        Scale:
+        - 0.6
+        - 0.32807568
+        - 0.3328295
+    '19':
+      Item:
+        ==: org.bukkit.inventory.ItemStack
+        v: 3955
+        type: GRINDSTONE
+      ItemDisplay: NONE
+      Transform:
+        Translation:
+        - 1.125
+        - 0.8313
+        - 1.5625
+        LeftRotation:
+        - 1.0
+        - 0.0
+        - 0.0
+        - 0.0
+        RightRotation:
+        - -0.0
+        - -0.0
+        - -0.0
+        - 1.0
+        Scale:
+        - 0.8125
+        - 0.875
+        - 0.875
+    '20':
+      Item:
+        ==: org.bukkit.inventory.ItemStack
+        v: 3955
+        type: GRINDSTONE
+      ItemDisplay: NONE
+      Transform:
+        Translation:
+        - 1.125
+        - 0.8313
+        - -1.6875
+        LeftRotation:
+        - 1.0
+        - 0.0
+        - 0.0
+        - 0.0
+        RightRotation:
+        - -0.0
+        - -0.0
+        - -0.0
+        - 1.0
+        Scale:
+        - 0.8125
+        - 0.875
+        - 0.875
+    '21':
+      Item:
+        ==: org.bukkit.inventory.ItemStack
+        v: 3955
+        type: GRINDSTONE
+      ItemDisplay: NONE
+      Transform:
+        Translation:
+        - 1.0625
+        - 0.3313
+        - -1.1244
+        LeftRotation:
+        - 1.0
+        - 0.0
+        - 0.0
+        - 0.0
+        RightRotation:
+        - -0.0
+        - -0.0
+        - -0.0
+        - 1.0
+        Scale:
+        - 0.8125
+        - 0.625
+        - 0.6875
+    '22':
+      Item:
+        ==: org.bukkit.inventory.ItemStack
+        v: 3955
+        type: GRINDSTONE
+      ItemDisplay: NONE
+      Transform:
+        Translation:
+        - 1.0625
+        - 0.3313
+        - -0.5625
+        LeftRotation:
+        - 1.0
+        - 0.0
+        - 0.0
+        - 0.0
+        RightRotation:
+        - -0.0
+        - -0.0
+        - -0.0
+        - 1.0
+        Scale:
+        - 0.8125
+        - 0.625
+        - 0.6875
+    '23':
+      Item:
+        ==: org.bukkit.inventory.ItemStack
+        v: 3955
+        type: GRINDSTONE
+      ItemDisplay: NONE
+      Transform:
+        Translation:
+        - 1.0625
+        - 0.3313
+        - 6.0E-4
+        LeftRotation:
+        - 1.0
+        - 0.0
+        - 0.0
+        - 0.0
+        RightRotation:
+        - -0.0
+        - -0.0
+        - -0.0
+        - 1.0
+        Scale:
+        - 0.8125
+        - 0.625
+        - 0.6875
+    '24':
+      Item:
+        ==: org.bukkit.inventory.ItemStack
+        v: 3955
+        type: GRINDSTONE
+      ItemDisplay: NONE
+      Transform:
+        Translation:
+        - 1.0625
+        - 0.3313
+        - 0.5631
+        LeftRotation:
+        - 1.0
+        - 0.0
+        - 0.0
+        - 0.0
+        RightRotation:
+        - -0.0
+        - -0.0
+        - -0.0
+        - 1.0
+        Scale:
+        - 0.8125
+        - 0.625
+        - 0.6875
+    '25':
+      Item:
+        ==: org.bukkit.inventory.ItemStack
+        v: 3955
+        type: GRINDSTONE
+      ItemDisplay: NONE
+      Transform:
+        Translation:
+        - 1.0625
+        - 0.3313
+        - 1.1256
+        LeftRotation:
+        - 1.0
+        - 0.0
+        - 0.0
+        - 0.0
+        RightRotation:
+        - -0.0
+        - -0.0
+        - -0.0
+        - 1.0
+        Scale:
+        - 0.8125
+        - 0.625
+        - 0.6875
+    '26':
+      Item:
+        ==: org.bukkit.inventory.ItemStack
+        v: 3955
+        type: IRON_BLOCK
+      ItemDisplay: NONE
+      Transform:
+        Translation:
+        - 1.1564
+        - 0.8313
+        - 0.0
+        LeftRotation:
+        - 0.0
+        - 0.0
+        - 0.0
+        - 1.0
+        RightRotation:
+        - -0.0
+        - -0.0
+        - -0.0
+        - 1.0
+        Scale:
+        - 0.375
+        - 0.375
+        - 2.75
+    '27':
+      Item:
+        ==: org.bukkit.inventory.ItemStack
+        v: 3955
+        type: BLACK_CONCRETE_POWDER
+      ItemDisplay: NONE
+      Transform:
+        Translation:
+        - 1.1564
+        - 0.4361
+        - -2.0452
+        LeftRotation:
+        - -0.25882518
+        - 0.0
+        - 0.0
+        - 0.9659242
+        RightRotation:
+        - -0.0
+        - -0.0
+        - -0.0
+        - 1.0
+        Scale:
+        - 0.5859
+        - 0.99997807
+        - 0.062451974
+    '28':
+      Item:
+        ==: org.bukkit.inventory.ItemStack
+        v: 3955
+        type: BLACK_CONCRETE_POWDER
+      ItemDisplay: NONE
+      Transform:
+        Translation:
+        - 1.1564
+        - 0.0188
+        - -0.0625
+        LeftRotation:
+        - -0.70710677
+        - 0.0
+        - 0.0
+        - 0.70710677
+        RightRotation:
+        - -0.0
+        - -0.0
+        - -0.0
+        - 1.0
+        Scale:
+        - 0.5859
+        - 3.5194998
+        - 0.062499996
+    '29':
+      Item:
+        ==: org.bukkit.inventory.ItemStack
+        v: 3955
+        type: BLACK_CONCRETE_POWDER
+      ItemDisplay: NONE
+      Transform:
+        Translation:
+        - 1.1564
+        - 0.4487
+        - 1.9318
+        LeftRotation:
+        - 0.25882518
+        - 0.0
+        - 0.0
+        - 0.9659242
+        RightRotation:
+        - -0.0
+        - -0.0
+        - -0.0
+        - 1.0
+        Scale:
+        - 0.5859
+        - 0.99997807
+        - 0.062501974
+    '30':
+      Item:
+        ==: org.bukkit.inventory.ItemStack
+        v: 3955
+        type: ANDESITE
+      ItemDisplay: NONE
+      IsTankHead: true
+      Transform:
+        Translation:
+        - 0.0
+        - 1.8125
+        - 0.25
+        LeftRotation:
+        - 0.0
+        - 0.0
+        - 0.0
+        - 0.99999994
+        RightRotation:
+        - -0.0
+        - -0.0
+        - -0.0
+        - 1.0
+        Scale:
+        - 1.6999998
+        - 0.59999996
+        - 1.3
+    '31':
+      Item:
+        ==: org.bukkit.inventory.ItemStack
+        v: 3955
+        type: ANDESITE_WALL
+      ItemDisplay: NONE
+      IsTankHead: true
+      Transform:
+        Translation:
+        - 0.0
+        - 1.8125
+        - 1.0625
+        LeftRotation:
+        - 0.0
+        - 0.7071068
+        - 0.0
+        - 0.7071068
+        RightRotation:
+        - -0.0
+        - -0.0
+        - -0.0
+        - 1.0
+        Scale:
+        - 0.7500001
+        - 1.14
+        - 2.3000002
+    '32':
+      Item:
+        ==: org.bukkit.inventory.ItemStack
+        v: 3955
+        type: ANDESITE_SLAB
+      ItemDisplay: NONE
+      IsTankHead: true
+      Transform:
+        Translation:
+        - 0.0
+        - 1.8125
+        - -0.875
+        LeftRotation:
+        - 0.0
+        - 0.0
+        - 0.0
+        - 0.99999994
+        RightRotation:
+        - -0.0
+        - -0.0
+        - -0.0
+        - 1.0
+        Scale:
+        - 1.6999998
+        - 0.49999994
+        - 1.0
+    '33':
+      Item:
+        ==: org.bukkit.inventory.ItemStack
+        v: 3955
+        type: POLISHED_DEEPSLATE_SLAB
+      ItemDisplay: NONE
+      IsTankHead: true
+      Transform:
+        Translation:
+        - 0.0
+        - 1.9587
+        - -0.9006
+        LeftRotation:
+        - -0.14777316
+        - 0.0
+        - 0.0
+        - 0.9890213
+        RightRotation:
+        - -0.0
+        - -0.0
+        - -0.0
+        - 1.0
+        Scale:
+        - 1.6999998
+        - 0.5200109
+        - 1.0000038
+    '34':
+      Item:
+        ==: org.bukkit.inventory.ItemStack
+        v: 3955
+        type: POLISHED_DIORITE_SLAB
+      ItemDisplay: NONE
+      IsTankHead: true
+      Transform:
+        Translation:
+        - 0.0
+        - 2.25
+        - 0.25
+        LeftRotation:
+        - 0.0
+        - 0.0
+        - 0.0
+        - 1.0
+        RightRotation:
+        - -0.0
+        - -0.0
+        - -0.0
+        - 1.0
+        Scale:
+        - 1.0
+        - 1.0
+        - 1.0
+    '35':
+      Item:
+        ==: org.bukkit.inventory.ItemStack
+        v: 3955
+        type: POLISHED_DEEPSLATE
+      ItemDisplay: NONE
+      IsTankHead: true
+      Transform:
+        Translation:
+        - 0.0
+        - 1.8125
+        - -2.0
+        LeftRotation:
+        - 0.0
+        - 0.0
+        - 0.0
+        - 1.0
+        RightRotation:
+        - -0.0
+        - -0.0
+        - -0.0
+        - 1.0
+        Scale:
+        - 0.25
+        - 0.25
+        - 3.0
+    '36':
+      Item:
+        ==: org.bukkit.inventory.ItemStack
+        v: 3955
+        type: POLISHED_DEEPSLATE_WALL
+      ItemDisplay: NONE
+      IsTankHead: true
+      Transform:
+        Translation:
+        - 0.0
+        - 1.8125
+        - -3.6875
+        LeftRotation:
+        - 0.49999997
+        - 0.49999997
+        - 0.49999997
+        - 0.49999997
+        RightRotation:
+        - -0.0
+        - -0.0
+        - -0.0
+        - 1.0
+        Scale:
+        - 0.59999996
+        - 0.39999998
+        - 0.5399999
+    '37':
+      Item:
+        ==: org.bukkit.inventory.ItemStack
+        v: 3955
+        type: IRON_BLOCK
+      ItemDisplay: NONE
+      IsTankHead: true
+      Transform:
+        Translation:
+        - 0.75
+        - 2.375
+        - 1.0625
+        LeftRotation:
+        - 0.0
+        - 0.0
+        - 0.0
+        - 1.0
+        RightRotation:
+        - -0.0
+        - -0.0
+        - -0.0
+        - 1.0
+        Scale:
+        - 0.11
+        - 1.6
+        - 0.11
+    '38':
+      Item:
+        ==: org.bukkit.inventory.ItemStack
+        v: 3955
+        type: ANDESITE
+      ItemDisplay: NONE
+      Transform:
+        Translation:
+        - -1.1875
+        - 0.985
+        - -2.0488
+        LeftRotation:
+        - -0.3826834
+        - 0.0
+        - 0.0
+        - 0.92387944
+        RightRotation:
+        - -0.0
+        - -0.0
+        - -0.0
+        - 1.0
+        Scale:
+        - 0.6
+        - 0.32809746
+        - 0.85206354
+    '39':
+      Item:
+        ==: org.bukkit.inventory.ItemStack
+        v: 3955
+        type: ANDESITE
+      ItemDisplay: NONE
+      Transform:
+        Translation:
+        - -1.1875
+        - 0.985
+        - 2.125
+        LeftRotation:
+        - 0.92387944
+        - 0.0
+        - 0.0
+        - -0.3826834
+        RightRotation:
+        - -0.0
+        - -0.0
+        - -0.0
+        - 1.0
+        Scale:
+        - 0.6
+        - 0.32809746
+        - 0.85206354
+    '40':
+      Item:
+        ==: org.bukkit.inventory.ItemStack
+        v: 3955
+        type: ANDESITE
+      ItemDisplay: NONE
+      Transform:
+        Translation:
+        - 1.1514
+        - 0.985
+        - -2.0488
+        LeftRotation:
+        - -0.3826834
+        - 0.0
+        - 0.0
+        - 0.92387944
+        RightRotation:
+        - -0.0
+        - -0.0
+        - -0.0
+        - 1.0
+        Scale:
+        - 0.6
+        - 0.32809746
+        - 0.85206354
+    '41':
+      Item:
+        ==: org.bukkit.inventory.ItemStack
+        v: 3955
+        type: ANDESITE
+      ItemDisplay: NONE
+      Transform:
+        Translation:
+        - 1.125
+        - 0.625
+        - 2.125
+        LeftRotation:
+        - 0.92387944
+        - 0.0
+        - 0.0
+        - 0.3826834
+        RightRotation:
+        - -0.0
+        - -0.0
+        - -0.0
+        - 1.0
+        Scale:
+        - 0.56
+        - 0.32809746
+        - 0.49921727
+    '42':
+      Item:
+        ==: org.bukkit.inventory.ItemStack
+        v: 3955
+        type: BLACK_CONCRETE_POWDER
+      ItemDisplay: NONE
+      Transform:
+        Translation:
+        - -1.1875
+        - 0.4361
+        - -2.0452
+        LeftRotation:
+        - -0.25882518
+        - 0.0
+        - 0.0
+        - 0.9659242
+        RightRotation:
+        - -0.0
+        - -0.0
+        - -0.0
+        - 1.0
+        Scale:
+        - 0.5859
+        - 0.99997807
+        - 0.062451974

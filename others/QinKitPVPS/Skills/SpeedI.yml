@@ -1,0 +1,9 @@
+Activator:
+  Name: SpeedI
+Commands:
+- 'console: execute as %player% at @s as @a[distance=1..6] at @a[distance=1..5] run
+  teleport @s ~ ~ ~ -90 90'
+- 'player: me This is an example player command that can be run when you use your
+  ability.'
+CoolDown:
+  CoolDown: 40

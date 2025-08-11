@@ -1,0 +1,17 @@
+{
+	"display": {
+		"icon": {
+			"id": "minecraft:wither_rose"
+		},
+		"title": {"color":"dark_purple","translate":"死神降临"},
+		"description": {"color":"gold","translate":"单局游戏连杀数达到40人"},
+		"announce_to_chat": true,
+		"frame": "challenge"
+	},
+	"parent": "kitspvp:qinkitpvps/qin_achievements",	
+	"criteria": {
+		"dummy": {
+			"trigger": "minecraft:impossible"
+		  }
+	}
+}

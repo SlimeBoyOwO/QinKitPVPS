@@ -1,0 +1,13 @@
+Activator:
+  Name: 喷火
+Commands:
+- 'console: tag %player% add FireDragon_Firing'
+- 'console: execute at %player% run summon armor_stand ~ ~ ~ {Marker:1b,Invisible:1b,Tags:["Firing"]}'
+- 'console: execute at %player% run playsound minecraft:entity.ender_dragon.ambient
+  player @a'
+CoolDown:
+  CoolDown: 30S
+Effects:
+  WEAKNESS:
+    Amplifier: 4
+    Duration: 6

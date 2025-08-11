@@ -1,0 +1,19 @@
+Activator:
+  Name: 后备能源
+Commands:
+- 'console: execute as %player% at @s run playsound minecraft:item.totem.use player
+  @a'
+- 'console: execute as %player% at @s run particle happy_villager ~ ~1 ~ 1 1 1 0 50
+  force'
+CoolDown:
+  CoolDown: 40S
+Effects:
+  DARKNESS:
+    Amplifier: 1
+    Duration: 8
+  REGENERATION:
+    Amplifier: 3
+    Duration: 10
+  SPEED:
+    Amplifier: 2
+    Duration: 6

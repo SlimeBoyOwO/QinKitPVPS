@@ -1,0 +1,40 @@
+Activator:
+  Material: REDSTONE_TORCH
+  Name: 天使
+Commands:
+- 'console: execute as %player% as %player% run effect give @a[distance=2..6] slowness
+  5 2 true'
+- 'console: execute as %player% run clear @s elytra'
+- 'console: execute as %player% run clear @s ender_eye'
+- 'console: execute as %player% run clear @s fire_charge'
+- 'console: execute as %player% run clear @s goat_horn'
+- 'console: execute as %player% at @s run tag @s remove dante'
+- 'console: execute as %player% at @s run tag @s add gun'
+- 'console: execute as %player% at @s run tag @s remove sword'
+- 'console: execute as %player% at @s run effect give @s slow_falling infinite'
+- 'console: execute as %player% at @s run effect give @s jump_boost infinite'
+- 'console: execute as %player% at @s run effect give @s invisibility 5 0 true'
+- 'console: execute as %player% at @s run effect give @s slow_falling infinite 0 true'
+- 'console: execute as %player% at @s run effect give @s speed infinite'
+- 'console: execute as %player% at @s run effect give @s speed infinite 0 true'
+- 'console: execute as %player% at @s run scoreboard players set @s reload 0'
+- 'console: execute as %player% at @s run give @s firework_star[custom_name=''"救赎与审判"'',firework_explosion={shape:"small_ball"}]
+  1'
+- 'console: execute as %player% at @s run give @s amethyst_shard[custom_name=''"雷霆降临"'']
+  1'
+- 'console: execute as %player% if entity @s[nbt={Inventory:[{id:"minecraft:firework_star",Count:2b}]}]
+  run clear @s firework_star 1'
+- 'console: execute as %player% if entity @s[nbt={Inventory:[{id:"minecraft:amethyst_shard",Count:2b}]}]
+  run clear @s amethyst_shard 1'
+- 'console: execute as %player% if entity @s[nbt={Inventory:[{id:"minecraft:ender_eye",Count:2b}]}]
+  run clear @s ender_eye 1'
+- 'console: execute as %player% if entity @s[nbt={Inventory:[{id:"minecraft:fire_charge",Count:2b}]}]
+  run clear @s fire_charge 1'
+- 'console: execute as %player% if entity @s[nbt={Inventory:[{id:"minecraft:goat_horn",Count:2b}]}]
+  run clear @s goat_horn 1'
+- 'console: execute as %player% if entity @s[nbt={Inventory:[{id:"minecraft:rail",Count:2b}]}]
+  run clear @s rail 1'
+- 'console: execute as %player% if entity @s[nbt={Inventory:[{id:"minecraft:elytra",Count:2b}]}]
+  run clear @s elytra 1'
+CoolDown:
+  CoolDown: 10S

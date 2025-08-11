@@ -1,0 +1,51 @@
+Kit:
+  Permission: kp.kit.newfight
+  DisplayName: 新版本战士
+  Available: false
+  Cooldown: 0
+  Level: 0
+  Health: 20
+  NewAttack: true
+Inventory:
+  Armor:
+    Helmet:
+      Material: NETHERITE_HELMET
+    Chestplate:
+      Material: NETHERITE_CHESTPLATE
+    Leggings:
+      Material: NETHERITE_LEGGINGS
+    Boots:
+      Material: NETHERITE_BOOTS
+  Items:
+    '0':
+      Material: NETHERITE_SWORD
+      Enchantments:
+        SHARPNESS: 4
+    '1':
+      Material: NETHERITE_AXE
+      Enchantments:
+        SHARPNESS: 4
+    '2':
+      Material: CROSSBOW
+    '3':
+      Material: COOKED_BEEF
+      Amount: 8
+    '4':
+      Name: '&a医疗包'
+      Material: GREEN_GLAZED_TERRACOTTA
+      Amount: 3
+    '7':
+      Material: ARROW
+      Amount: 64
+    '8':
+      Name: '&aPlayer Tracker &7(Right Click)'
+      Material: COMPASS
+Effects:
+  WEAKNESS:
+    Amplifier: 1
+    Duration: 100000
+  SLOWNESS:
+    Amplifier: 1
+    Duration: 100000
+Commands:
+- 'console: tag %player% add WarFight'

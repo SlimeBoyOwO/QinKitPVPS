@@ -1,0 +1,17 @@
+{
+	"display": {
+		"icon": {
+			"id": "minecraft:diamond_block"
+		},
+		"title": {"color":"dark_purple","translate":"史诗成就"},
+		"description": {"color":"gold","translate":"最难完成的最难成就挑战！"},
+		"announce_to_chat": true,
+		"frame": "challenge"
+	},
+	"parent": "kitspvp:qinkitpvps/root",	
+	"criteria": {
+		"dummy": {
+			"trigger": "minecraft:impossible"
+		  }
+	}
+}

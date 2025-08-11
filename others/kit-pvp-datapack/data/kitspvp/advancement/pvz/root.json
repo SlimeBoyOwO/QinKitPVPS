@@ -1,0 +1,22 @@
+{
+	"display": {
+		"icon": {
+			"id": "minecraft:zombie_head"
+		},
+		"title": {"color":"dark_green","translate":"植物大战僵尸"},
+		"description": {"color":"green","translate":"你的草坪上有一只僵尸~"},
+		"background": "minecraft:textures/block/moss_block.png",
+		"announce_to_chat": true,
+		"frame": "goal"
+	},	
+	"criteria": {
+		"植物大战僵尸": {
+      		"trigger": "minecraft:player_killed_entity",
+      		"conditions": {
+        		"entity": {
+          			"type": "minecraft:zombie"
+        		}
+      		}
+    	}
+	}
+}

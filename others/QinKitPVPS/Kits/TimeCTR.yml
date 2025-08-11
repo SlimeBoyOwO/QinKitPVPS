@@ -1,0 +1,40 @@
+Kit:
+  Permission: kp.kit.timectr
+  DisplayName: DIO
+  Available: true
+  Cooldown: 0
+  Level: 0
+  Health: 20
+Inventory:
+  Armor:
+    Helmet:
+      Material: GOLDEN_HELMET
+    Chestplate:
+      Material: IRON_CHESTPLATE
+    Leggings:
+      Material: CHAINMAIL_LEGGINGS
+    Boots:
+      Material: GOLDEN_BOOTS
+  Items:
+    '0':
+      Material: GOLDEN_SWORD
+      Enchantments:
+        SHARPNESS: 3
+    '2':
+      Name: '&a时间停止'
+      Material: CLOCK
+    '3':
+      Material: COOKED_BEEF
+      Amount: 8
+    '4':
+      Name: '&a医疗包'
+      Material: GREEN_GLAZED_TERRACOTTA
+      Amount: 3
+    '1':
+      Material: ARROW
+      Amount: 12
+    '8':
+      Name: '&aPlayer Tracker &7(Right Click)'
+      Material: COMPASS
+Commands:
+- 'console: tag %player% add DIO'

@@ -1,0 +1,83 @@
+Kit:
+  Permission: kp.kit.snake
+  DisplayName: 蝰蛇
+  Available: true
+  Cooldown: 0
+  Level: 0
+  Health: 20
+Inventory:
+  Armor:
+    Helmet:
+      Material: LEATHER_HELMET
+      Dye:
+        Red: 58
+        Green: 179
+        Blue: 218
+      Enchantments:
+        MENDING: 1
+    Chestplate:
+      Material: DIAMOND_CHESTPLATE
+      Enchantments:
+        MENDING: 1
+    Leggings:
+      Material: LEATHER_LEGGINGS
+      Dye:
+        Red: 58
+        Green: 179
+        Blue: 218
+      Enchantments:
+        MENDING: 1
+    Boots:
+      Material: LEATHER_BOOTS
+      Dye:
+        Red: 58
+        Green: 179
+        Blue: 218
+      Enchantments:
+        MENDING: 1
+  Items:
+    '0':
+      Name: '&b毒剑'
+      Material: IRON_SWORD
+      Enchantments:
+        MENDING: 1
+    '6':
+      Name: '&b毒之狂潮'
+      Material: LIME_WOOL
+    '1':
+      Name: '&b毒之汲取'
+      Material: GREEN_WOOL
+    '2':
+      Name: '&b蛇腹'
+      Material: LIME_CONCRETE
+    '3':
+      Material: COOKED_BEEF
+      Amount: 8
+    '4':
+      Name: '&a医疗包'
+      Material: GREEN_GLAZED_TERRACOTTA
+      Amount: 3
+    '5':
+      Name: '&b毒爆'
+      Material: LIME_CONCRETE_POWDER
+    '7':
+      Material: ARROW
+      Amount: 24
+    '8':
+      Name: '&aPlayer Tracker &7(Right Click)'
+      Material: COMPASS
+Commands:
+- 'console: tag %player% add Snake'
+- 'console: item replace entity %player% armor.head with minecraft:iron_helmet{Unbreakable:true,Enchantments:[{id:"thorns",lvl:1s}]}'
+- 'console: item replace entity %player% armor.chest with minecraft:leather_chestplate{Unbreakable:true,Enchantments:[{id:"thorns",lvl:1s}],AttributeModifiers:[{AttributeName:"generic.armor",Name:"generic.armor",Slot:"chest",Operation:0,Amount:4.0d,UUID:[I;-88344571,-274642260,-1477626806,-683359925]}],display:{color:1501216}}'
+- 'console: item replace entity %player% armor.legs with minecraft:leather_leggings{Unbreakable:true,Enchantments:[{id:"thorns",lvl:1s}],display:{color:1501216}}'
+- 'console: item replace entity %player% armor.feet with minecraft:leather_boots{Unbreakable:true,Enchantments:[{id:"feather_falling",lvl:1s}],AttributeModifiers:[{AttributeName:"generic.armor",Name:"generic.armor",Slot:"legs",Operation:0,Amount:3.0d,UUID:[I;-1920750099,476203585,-1702303088,1105273389]}],display:{color:1501216}}'
+Introduction:
+- '&7>> &b&l蝰蛇 &7-->'
+- '&7生命：&a40  &7防御：&a16  &7攻击：&a7'
+- '&7上手难度：&f★★★★☆'
+- '  &8● &3充能 &7: &7蝰蛇每秒会增加&a20点&7充能，直至其上限&a1800点，&7此外，蝰蛇&a免疫“中毒”'
+- '  &8● &3毒之狂潮 &7: &7以自身为中心，半径&a6格&7所在的其他玩家为对象，令他们获得&a“中毒”，&7同时&a驱散&7其身上的&a“伤害吸收”和“隐身”；&7对半径&a4格&7以内的敌人使用时，&a“中毒”&7的&a等级会更高且持续时间更久'
+- '  &8● &3毒之汲取 &7: &7以自身为中心，半径&a7格&7所在的最近一名其他玩家为对象，&a驱散&7该玩家身上的&a“凋零”，“中毒”，“失明”，“黑暗”，“发光”，“饥饿”&7效果；成功释放时，自己会失去一定的生命值，但会获得更高数值的&a“伤害吸收”，&7同时增加&a100点&7充能。'
+- '  &8● &3蛇腹 &7: &7消耗&a1000&7点充能才能使用；以自身为中心，释放半径&a16&7格的“毒幕”（不会随着蝰蛇的移动而移动,蝰蛇自己离开毒幕范围后，毒幕将立刻消失。），进入“毒幕”的玩家在离开或进入“毒幕”的瞬间都会受到&a“中毒”，“虚弱”，“减速”，“发光”&7效果；如果是生命值&a＞20&7的玩家还会获得短暂的&a“失明”&7效果，生命值&a<20&7的玩家则获得短暂的&a“黑暗”&7效果；&a蝰蛇和上一个受到“毒之汲取”效果的玩家&不会收到“蛇腹”的负面效果，&7同时在&a“毒幕”范围内&7，蝰蛇将会获得&a“速度”，“抗性提升”，“跳跃提升”效果。'
+- '  &8● &3毒爆 &7: &7受蝰蛇技能影响的&a所有玩家&7将会被标记&a“毒”；&7释放此技能时，&a引爆&7所有玩家身上的“毒”标记，并&a驱散&7蝰蛇身上的所有效果，蝰蛇&a失去对“中毒”的抗性&7的同时获得&a200&7点充能；然后，那些身上&a有“毒”标记&7的玩家都会受到伤害，并对周围其他&a所有持有“毒”标记&7的玩家造成伤害。'

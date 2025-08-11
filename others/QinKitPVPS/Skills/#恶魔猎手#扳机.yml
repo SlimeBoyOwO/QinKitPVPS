@@ -1,0 +1,53 @@
+Activator:
+  Material: CHAIN
+  Name: '&a扳机'
+Commands:
+- 'console: execute as %player% at %player% if entity @s[nbt={Inventory:[{Slot:-106b,id:"minecraft:crossbow"}]}]
+  run playsound minecraft:entity.skeleton.shoot voice @s ~ ~ ~ 100 1 '
+- 'console: execute as %player% at %player% if entity @s[nbt={Inventory:[{Slot:-106b,id:"minecraft:crossbow"}]}]
+  run particle firework ~ ~1 ~ 1.0 1.0 1.0 0 40 force'
+- 'console: execute as %player% at %player% if entity @s[tag=BL1,nbt={Inventory:[{Slot:-106b,id:"minecraft:crossbow"}]}]
+  as @a[distance=1..5] at @a[distance=1..5] run summon arrow ~ ~5 ~ {damage:10d,Motion:[0.0,-1.0,0.0]}'
+- 'console: execute as %player% at %player% if entity @s[tag=BL1,nbt={Inventory:[{Slot:-106b,id:"minecraft:crossbow"}]}]
+  as @a[distance=1..5] at @a[distance=1..5] run summon arrow ~1 ~5 ~1 {damage:10d,Motion:[0.0,-1.0,0.0]}'
+- 'console: execute as %player% at %player% if entity @s[tag=BL1,nbt={Inventory:[{Slot:-106b,id:"minecraft:crossbow"}]}]
+  as @a[distance=1..5] at @a[distance=1..5] run summon arrow ~1 ~5 ~-1 {damage:10d,Motion:[0.0,-1.0,0.0]}'
+- 'console: execute as %player% at %player% if entity @s[tag=BL1,nbt={Inventory:[{Slot:-106b,id:"minecraft:crossbow"}]}]
+  as @a[distance=1..5] at @a[distance=1..5] run summon arrow ~-1 ~5 ~1 {damage:10d,Motion:[0.0,-1.0,0.0]}'
+- 'console: execute as %player% at %player% if entity @s[tag=BL1,nbt={Inventory:[{Slot:-106b,id:"minecraft:crossbow"}]}]
+  as @a[distance=1..5] at @a[distance=1..5] run summon arrow ~-1 ~5 ~-1 {damage:5d,Motion:[0.0,-1.0,0.0]}'
+- 'console: execute as %player% at %player% if entity @s[tag=BL1,nbt={Inventory:[{Slot:-106b,id:"minecraft:crossbow"}]}]
+  as @a[distance=1..5] at @a[distance=1..5] run summon arrow ~1 ~5 ~ {damage:10d,Motion:[0.0,-1.0,0.0]}'
+- 'console: execute as %player% at %player% if entity @s[tag=BL1,nbt={Inventory:[{Slot:-106b,id:"minecraft:crossbow"}]}]
+  as @a[distance=1..5] at @a[distance=1..5] run summon arrow ~-1 ~5 ~ {damage:10d,Motion:[0.0,-1.0,0.0]}'
+- 'console: execute as %player% at %player% if entity @s[tag=BL1,nbt={Inventory:[{Slot:-106b,id:"minecraft:crossbow"}]}]
+  as @a[distance=1..5] at @a[distance=1..5] run summon arrow ~ ~5 ~1 {damage:10d,Motion:[0.0,-1.0,0.0]}'
+- 'console: execute as %player% at %player% if entity @s[tag=BL1,nbt={Inventory:[{Slot:-106b,id:"minecraft:crossbow"}]}]
+  as @a[distance=1..5] at @a[distance=1..5] run summon arrow ~ ~5 ~-1 {damage:10d,Motion:[0.0,-1.0,0.0]}'
+- 'console: execute as %player% at %player% if entity @s[tag=BL2,nbt={Inventory:[{Slot:-106b,id:"minecraft:crossbow"}]}]
+  as @a[distance=1..8] at @a[distance=1..8] run summon arrow ~2 ~5 ~-2 {damage:12d,Motion:[0.0,-1.0,0.0]}'
+- 'console: execute as %player% at %player% if entity @s[tag=BL2,nbt={Inventory:[{Slot:-106b,id:"minecraft:crossbow"}]}]
+  as @a[distance=1..8] at @a[distance=1..8] run summon arrow ~2 ~5 ~2 {damage:12d,Motion:[0.0,-1.0,0.0]}'
+- 'console: execute as %player% at %player% if entity @s[tag=BL2,nbt={Inventory:[{Slot:-106b,id:"minecraft:crossbow"}]}]
+  as @a[distance=1..8] at @a[distance=1..8] run summon arrow ~-2 ~5 ~-2{damage:12,Motion:[0.0,-1.0,0.0]}
+  {damage:12d,Motion:[0.0,-1.0,0.0]}'
+- 'console: execute as %player% at %player% if entity @s[tag=BL2,nbt={Inventory:[{Slot:-106b,id:"minecraft:crossbow"}]}]
+  as @a[distance=1..8] at @a[distance=1..8] run summon arrow ~-2 ~5 ~2 {damage:12d,Motion:[0.0,-1.0,0.0]}'
+- 'console: execute as %player% at %player% if entity @s[tag=BL2,nbt={Inventory:[{Slot:-106b,id:"minecraft:crossbow"}]}]
+  as @a[distance=1..8] at @a[distance=1..8] run summon arrow ~ ~5 ~-2 {damage:12d,Motion:[0.0,-1.0,0.0]}'
+- 'console: execute as %player% at %player% if entity @s[tag=BL2,nbt={Inventory:[{Slot:-106b,id:"minecraft:crossbow"}]}]
+  as @a[distance=1..8] at @a[distance=1..8] run summon arrow ~ ~5 ~2 {damage:12d,Motion:[0.0,-1.0,0.0]}'
+- 'console: execute as %player% at %player% if entity @s[tag=BL2,nbt={Inventory:[{Slot:-106b,id:"minecraft:crossbow"}]}]
+  as @a[distance=1..8] at @a[distance=1..8] run summon arrow ~2 ~5 ~ {damage:12d,Motion:[0.0,-1.0,0.0]}'
+- 'console: execute as %player% at %player% if entity @s[tag=BL2,nbt={Inventory:[{Slot:-106b,id:"minecraft:crossbow"}]}]
+  as @a[distance=1..8] at @a[distance=1..8] run summon arrow ~-2 ~5 ~ {damage:12d,Motion:[0.0,-1.0,0.0]}'
+- 'console: execute as %player% at %player% if entity @s[tag=BL3,nbt={Inventory:[{Slot:-106b,id:"minecraft:crossbow"}]}]
+  run effect give @s speed 2 3'
+- 'console: execute as %player% at %player% if entity @s[tag=BL3,nbt={Inventory:[{Slot:-106b,id:"minecraft:crossbow"}]}]
+  run effect give @a[distance=1..7] glowing 2 1'
+- 'console: execute as %player% at %player% run tag @s remove BL1 '
+- 'console: execute as %player% at %player% run tag @s remove BL2 '
+- 'console: execute as %player% at %player% run tag @s remove BL3 '
+- 'console: execute as %player% at %player% run scoreboard players set @s ZL 0 '
+CoolDown:
+  CoolDown: 7S

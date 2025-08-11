@@ -1,0 +1,15 @@
+Activator:
+  Material: SHULKER_SHELL
+  Name: '&a错乱的命运之门'
+Commands:
+- 'console: execute as %player% at @s run effect give @a[distance=1..6] wither 1 2'
+- 'console: execute as %player% at @s run effect give @a[distance=1..6] nausea 1 2'
+CoolDown:
+  CoolDown: 20S
+Effects:
+  INVISIBILITY:
+    Amplifier: 1
+    Duration: 10
+  SPEED:
+    Amplifier: 1
+    Duration: 10

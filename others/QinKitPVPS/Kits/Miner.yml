@@ -1,0 +1,85 @@
+Kit:
+  Permission: kp.kit.Miner
+  DisplayName: 黄昏使徒
+  Available: true
+  Cooldown: 0
+  Level: 0
+  Health: 20
+Inventory:
+  Armor:
+    Helmet:
+      Material: LEATHER_HELMET
+      Dye:
+        Red: 254
+        Green: 216
+        Blue: 61
+      ArmorDefenseBase: 1
+    Chestplate:
+      Material: LEATHER_CHESTPLATE
+      Dye:
+        Red: 254
+        Green: 216
+        Blue: 61
+    Leggings:
+      Material: LEATHER_LEGGINGS
+      Dye:
+        Red: 254
+        Green: 216
+        Blue: 61
+    Boots:
+      Material: LEATHER_BOOTS
+      Dye:
+        Red: 254
+        Green: 216
+        Blue: 61
+  Items:
+    '0':
+      Name: '&7矿工的剑'
+      Material: STONE_SWORD
+      Enchantments:
+        DURABILITY: 1
+      AttackDamageBase: 5.5
+      Lore:
+      - '  &8● &3黄昏 &7: &7无限的 &a夜视 速度II &7药水效果'
+      - '  &8● &3脆弱铠甲 &7: &7每受到 &a15 &7次伤害，护甲损坏， &a5s &7后回复'
+    '1':
+      Material: BOW
+    '3':
+      Material: COOKED_BEEF
+      Amount: 8
+    '4':
+      Name: '&a医疗包'
+      Material: GREEN_GLAZED_TERRACOTTA
+      Amount: 3
+    '6':
+      Name: '&e黎明闪耀'
+      Material: LANTERN
+      Lore:
+      - '  &8● &3黎明闪耀 &7: &7发射一道可以造成 &a17 &7物理伤害的光线攻击并立即破甲黑暗 &a3s'
+    '7':
+      Material: ARROW
+      Amount: 24
+    '8':
+      Name: '&aPlayer Tracker &7(Right Click)'
+      Material: COMPASS
+Effects:
+  SPEED:
+    Amplifier: 2
+    Duration: 100000
+  STRENGTH:
+    Amplifier: 1
+    Duration: 100000
+  NIGHT_VISION:
+    Amplifier: 1
+    Duration: 100000
+Commands:
+- 'console: tag %player% add Miner'
+Introduction:
+- '&7>> &b&l黄昏使徒 &7-->'
+- '&7生命：&a40  &7防御：&a9  &7攻击：&a9'
+- '&7上手难度：&f★☆☆☆☆'
+- '  &8● &3黄昏 &7: &7无限的 &a夜视 速度II &7药水效果'
+- '  &8● &3黎明闪耀 &7: &7发射一道可以造成 &a17 &7物理伤害的光线攻击并立即破甲黑暗 &a3s'
+- '  &8● &3脆弱铠甲 &7: &7每受到 &a15 &7次伤害，护甲损坏， &a5s &7后回复'
+- '  &8○ &7同样是以伤害和速度取决胜利的狂战士'
+- '  &8○ &7没有什么诀窍，单纯的输出'

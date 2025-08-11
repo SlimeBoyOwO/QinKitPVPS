@@ -1,0 +1,470 @@
+Traders:
+  ۞_生命核心_۞:
+    Menu: 核心商店菜单
+  ۞_小店铺_۞:
+    Menu: 核心商店菜单
+  ⚔_兵营_⚔:
+    Menu: 兵营菜单
+  ◈_实验书楼_◈:
+    Menu: 实验书楼-升级
+  🚗_造车工坊_🚗:
+    Menu: 车场菜单
+  疯狂戴夫:
+    Menu: 戴夫商店
+  【植物大战僵尸】:
+    Commands:
+    - 'console: qinkit superTp %player% pvz_world -983.5 1 -987.5 180 0'
+  【悦灵战争】:
+    Commands:
+    - 'console: qinkit superTp %player% skyblock_copy 1032.5 29 1032.5 135 0'
+    - 'console: qinkit superGive %player% clock 1 &a&l选队菜单 4'
+  前往塔防世界:
+    Commands:
+    - 'console: qinkit superTp %player% skyblock_copy 500.5 30 500.5'
+  前往PVE世界（测试）:
+    Commands:
+    - 'console: qinkit superTp %player% world 24999 192 24995 360 0'
+
+Market:
+  building_mine:
+    Material: RAW_GOLD_BLOCK
+    Name: '&e&l建筑 - 矿场'
+    Lore:
+    - '&8===================='
+    - '&#CCCCFF生产资金的基本能源'
+    - '&8===================='
+    SellPrice: 10
+    PurchasePrice: 2000
+  building_sniper:
+    Material: BONE_BLOCK
+    Name: '&e&l建筑 - 狙击塔'
+    Lore:
+    - '&8===================='
+    - '&#CCCCFF基本的防御措施'
+    - '&8===================='
+    SellPrice: 10
+    PurchasePrice: 400
+  building_boom:
+    Material: RED_GLAZED_TERRACOTTA
+    Name: '&e&l建筑 - 炸弹塔'
+    Lore:
+    - '&8===================='
+    - '&#CCCCFF针对步兵的有效防御'
+    - '&8===================='
+    SellPrice: 10
+    PurchasePrice: 1250
+  building_magic:
+    Material: AMETHYST_BLOCK
+    Name: '&e&l建筑 - 魔法防御塔'
+    Lore:
+    - '&8===================='
+    - '&#CCCCFF穿墙必中AOE缓速防御塔'
+    - '&8===================='
+    SellPrice: 10
+    PurchasePrice: 800
+  building_army:
+    Material: CRAFTER
+    Name: '&e&l建筑 - 兵营'
+    Lore:
+    - '&8===================='
+    - '&#CCCCFF招兵买马的好地方'
+    - '&8===================='
+    SellPrice: 10
+    PurchasePrice: 500
+  building_machine:
+    Material: DISPENSER
+    Name: '&e&l建筑 - 机枪塔'
+    Lore:
+    - '&8===================='
+    - '&#CCCCFF快速攻击的防御塔'
+    - '&8===================='
+    SellPrice: 10
+    PurchasePrice: 2000
+  building_resource:
+    Material: YELLOW_GLAZED_TERRACOTTA
+    Name: '&e&l建筑 - 资源收集器'
+    Lore:
+    - '&8===================='
+    - '&#CCCCFF收集半径8m内的资源'
+    - '&8===================='
+    SellPrice: 10
+    PurchasePrice: 2500
+  building_cannon:
+    Material: BLACK_GLAZED_TERRACOTTA
+    Name: '&e&l建筑 - 迫击炮'
+    Lore:
+    - '&8===================='
+    - '&#CCCCFF自动攻击50m内的防御塔'
+    - '&8===================='
+    SellPrice: 10
+    PurchasePrice: 3500
+  building_lab:
+    Material: ENCHANTING_TABLE
+    Name: '&e&l建筑 - 实验书楼'
+    Lore:
+    - '&8===================='
+    - '&#CCCCFF解锁更高级的科技'
+    - '&8===================='
+    SellPrice: 10
+    PurchasePrice: 1200
+  building_raider:
+    Material: GRAY_GLAZED_TERRACOTTA
+    Name: '&e&l建筑 - 雷达'
+    Lore:
+    - '&8===================='
+    - '&#CCCCFF拥有观察全图的能力'
+    - '&8===================='
+    SellPrice: 10
+    PurchasePrice: 600
+  building_hospital:
+    Material: QUARTZ_BRICKS
+    Name: '&e&l建筑 - 医院'
+    Lore:
+    - '&8===================='
+    - '&#CCCCFF恢复周围6m部队生命值'
+    - '&8===================='
+    SellPrice: 10
+    PurchasePrice: 1000
+  building_tankers:
+    Material: IRON_BLOCK
+    Name: '&e&l建筑 - 造车工坊'
+    Lore:
+    - '&8===================='
+    - '&#CCCCFF拥有制造坦克的权限'
+    - '&8===================='
+    SellPrice: 10
+    PurchasePrice: 2000
+  building_shop:
+    Material: RED_WOOL
+    Name: '&e&l建筑 - 小店铺'
+    Lore:
+    - '&8===================='
+    - '&#CCCCFF可以充当一个额外的商店'
+    - '&8===================='
+    SellPrice: 10
+    PurchasePrice: 1000
+  stone_sword:
+    Material: AIR
+    SellPrice: 10
+    PurchasePrice: 25
+    Commands:
+    - 'console: clear %player% minecraft:wooden_sword'
+    - '[team_sword] STONE_SWORD'
+  iron_sword:
+    Material: AIR
+    SellPrice: 10
+    PurchasePrice: 150
+    Commands:
+    - 'console: clear %player% minecraft:wooden_sword'
+    - '[team_sword] IRON_SWORD'
+  diamond_sword:
+    Material: AIR
+    SellPrice: 10
+    PurchasePrice: 450
+    Commands:
+    - 'console: clear %player% minecraft:wooden_sword'
+    - '[team_sword] DIAMOND_SWORD'
+  netherite_sword:
+    Material: AIR
+    SellPrice: 10
+    PurchasePrice: 1000
+    Commands:
+    - 'console: clear %player% minecraft:wooden_sword'
+    - '[team_sword] NETHERITE_SWORD'
+  chainmail_armor:
+    Material: AIR
+    Name: 空气
+    SellPrice: 10
+    PurchasePrice: 200
+    Commands:
+    - '[team_armor] CHAINMAIL_LEGGINGS'
+    - '[team_armor] CHAINMAIL_BOOTS'
+    - 'console: tag %player% add chainmail_armored'
+  iron_armor:
+    Material: AIR
+    Name: 空气
+    SellPrice: 10
+    PurchasePrice: 800
+    Commands:
+    - '[team_armor] IRON_LEGGINGS'
+    - '[team_armor] IRON_BOOTS'
+    - 'console: tag %player% add iron_armored'
+  diamond_armor:
+    Material: AIR
+    Name: 空气
+    SellPrice: 10
+    PurchasePrice: 2000
+    Commands:
+    - '[team_armor] DIAMOND_LEGGINGS'
+    - '[team_armor] DIAMOND_BOOTS'
+    - 'console: tag %player% add diamond_armored'
+  netherite_armor:
+    Material: AIR
+    Name: 空气
+    SellPrice: 10
+    PurchasePrice: 5000
+    Commands:
+    - '[team_armor] NETHERITE_LEGGINGS'
+    - '[team_armor] NETHERITE_BOOTS'
+    - 'console: tag %player% add netherite_armored'
+  zombie_mite:
+    Material: GREEN_DYE
+    Name: '&e&l部队 - 僵尸精锐'
+    Lore:
+    - '&8===================='
+    - '&#CCCCFF召唤3只高级僵尸部队'
+    - '&8===================='
+    SellPrice: 10
+    PurchasePrice: 350
+  skeleton_army:
+    Material: BONE
+    Name: '&e&l部队 - 骷髅军团'
+    Lore:
+    - '&8===================='
+    - '&#CCCCFF召唤8个杂鱼骷髅兵'
+    - '&8===================='
+    SellPrice: 10
+    PurchasePrice: 200
+  zombie_tank:
+    Name: '&e&l部队 - 丧尸巨人'
+    Material: ORANGE_DYE
+    Lore:
+    - '&8===================='
+    - '&#CCCCFF召唤1个攻城巨人'
+    - '&8===================='
+    SellPrice: 10
+    PurchasePrice: 250
+  zombie_rifle:
+    Name: '&e&l部队 - 步枪士兵'
+    Material: GRAY_DYE
+    Lore:
+    - '&8===================='
+    - '&#CCCCFF召唤3个步枪士兵'
+    - '&8===================='
+    SellPrice: 10
+    PurchasePrice: 350
+  engineer:
+    Name: '&e&l部队 - 工程师'
+    Material: NETHERITE_SCRAP
+    Lore:
+    - '&8===================='
+    - '&#CCCCFF召唤1个工程师'
+    - '&8===================='
+    SellPrice: 10
+    PurchasePrice: 250
+  tower_attacker:
+    Name: '&e&l部队 - 拆塔步兵'
+    Material: RED_DYE
+    Lore:
+    - '&8===================='
+    - '&#CCCCFF召唤2个拆塔步兵'
+    - '&8===================='
+    SellPrice: 10
+    PurchasePrice: 500
+  hell_army:
+    Name: '&e&l部队 - 地狱蛮兵'
+    Material: MAGMA_CREAM
+    Lore:
+    - '&8===================='
+    - '&#CCCCFF召唤2个地狱蛮兵'
+    - '&8===================='
+    SellPrice: 10
+    PurchasePrice: 1200
+  boomer_army:
+    Name: '&e&l部队 - 自爆步兵'
+    Material: SPIDER_EYE
+    Lore:
+    - '&8===================='
+    - '&#CCCCFF召唤2个自爆步兵'
+    - '&8===================='
+    SellPrice: 10
+    PurchasePrice: 800
+  laser_tank:
+    Name: '&e&l部队 - 激光坦克'
+    Material: ECHO_SHARD
+    Lore:
+    - '&8===================='
+    - '&#CCCCFF召唤1个激光坦克'
+    - '&8===================='
+    SellPrice: 10
+    PurchasePrice: 3000
+  normal_tank:
+    Name: '&e&l部队 - 普通坦克'
+    Material: ECHO_SHARD
+    Lore:
+    - '&8===================='
+    - '&#CCCCFF召唤1个普通坦克'
+    - '&8===================='
+    SellPrice: 10
+    PurchasePrice: 1000
+  beef:
+    Material: COOKED_BEEF
+    SellPrice: 10
+    PurchasePrice: 10
+  golden_apple:
+    Material: GOLDEN_APPLE
+    SellPrice: 10
+    PurchasePrice: 100
+  wooden_pickaxe:
+    Material: WOODEN_PICKAXE
+    Enchantments:
+      SHARPNESS: 1
+    SellPrice: 10
+    PurchasePrice: 100
+  stone_pickaxe:
+    Material: STONE_PICKAXE
+    Enchantments:
+      SHARPNESS: 1
+    SellPrice: 10
+    PurchasePrice: 300
+  iron_pickaxe:
+    Material: IRON_PICKAXE
+    Enchantments:
+      SHARPNESS: 1
+    SellPrice: 10
+    PurchasePrice: 800
+  diamond_pickaxe:
+    Material: DIAMOND_PICKAXE
+    Enchantments:
+      SHARPNESS: 1
+    SellPrice: 10
+    PurchasePrice: 1500
+  six_arrows:
+    Material: ARROW
+    Amount: 6
+    SellPrice: 10
+    PurchasePrice: 250
+  normal_bow:
+    Material: BOW
+    SellPrice: 10
+    PurchasePrice: 750
+  punch_bow:
+    Material: BOW
+    Enchantments:
+      PUNCH: 1
+    SellPrice: 10
+    PurchasePrice: 750
+  power_bow:
+    Material: BOW
+    Enchantments:
+      POWER: 2
+    SellPrice: 10
+    PurchasePrice: 750
+  health_pack:
+    Name: '&a&l医疗包'
+    Material: GREEN_GLAZED_TERRACOTTA
+    SellPrice: 10
+    PurchasePrice: 300
+  grenade:
+    Name: '&c&l手榴弹'
+    Material: TNT
+    SellPrice: 10
+    PurchasePrice: 500
+  ender_pearl:
+    Name: '&d&l传送装置'
+    Material: ENDER_PEARL
+    SellPrice: 10
+    PurchasePrice: 1000
+  sandstone:
+    Material: SANDSTONE
+    Amount: 8
+    SellPrice: 10
+    PurchasePrice: 25
+  team_wool:
+    Material: AIR
+    SellPrice: 10
+    PurchasePrice: 10
+    Commands:
+    - '[teamWool] 16'
+  scissors:
+    Material: SHEARS
+    SellPrice: 10
+    PurchasePrice: 25
+  planks:
+    Material: OAK_PLANKS
+    Amount: 8
+    SellPrice: 10
+    PurchasePrice: 100
+  end_stone:
+    Material: END_STONE
+    Amount: 8
+    SellPrice: 10
+    PurchasePrice: 50
+  cobblestone:
+    Material: COBBLESTONE
+    Amount: 8
+    SellPrice: 10
+    PurchasePrice: 100
+  boom_glass:
+    Material: WHITE_STAINED_GLASS
+    Amount: 16
+    SellPrice: 100
+    PurchasePrice: 250
+  sharpness_up_1:
+    Material: AIR
+    PurchasePrice: 1000
+    Commands:
+    - '[team_upgrade] sharpness_up_1'
+  sharpness_up_2:
+    Material: AIR
+    PurchasePrice: 2000
+    Commands:
+    - '[team_upgrade] sharpness_up_2'
+  sharpness_up_3:
+    Material: AIR
+    PurchasePrice: 4000
+    Commands:
+    - '[team_upgrade] sharpness_up_3'
+  protection_up_1:
+    Material: AIR
+    PurchasePrice: 750
+    Commands:
+    - '[team_upgrade] protection_up_1'
+  protection_up_2:
+    Material: AIR
+    PurchasePrice: 1500
+    Commands:
+    - '[team_upgrade] protection_up_2'
+  protection_up_3:
+    Material: AIR
+    PurchasePrice: 4000
+    Commands:
+    - '[team_upgrade] protection_up_3'
+  protection_up_4:
+    Material: AIR
+    PurchasePrice: 8000
+    Commands:
+    - '[team_upgrade] protection_up_4'
+  money_up_1:
+    Material: AIR
+    PurchasePrice: 500
+    Commands:
+    - '[team_upgrade] money_up_1'
+  money_up_2:
+    Material: AIR
+    PurchasePrice: 1500
+    Commands:
+    - '[team_upgrade] money_up_2'
+  money_up_3:
+    Material: AIR
+    PurchasePrice: 4500
+    Commands:
+    - '[team_upgrade] money_up_3'
+  cake_boom:
+    ItemID: 蛋糕炸弹
+    PurchasePrice: 30
+  fast_sword:
+    ItemID: 快刀手武器
+    PurchasePrice: 150
+  speed_ore:
+    ItemID: 速度宝石
+    PurchasePrice: 50
+  health_potion:
+    ItemID: 治疗药水
+    PurchasePrice: 25
+  death_sword:
+    ItemID: 死神武器
+    PurchasePrice: 150
+  shit:
+    ItemID: 粑粑
+    PurchasePrice: 0

@@ -1,0 +1,16 @@
+Activator:
+  Material: GREEN_DYE
+  Name: '&a尸吼'
+Commands: []
+CoolDown:
+  CoolDown: 15S
+Effects:
+  SPEED:
+    Amplifier: 3
+    Duration: 10
+Message:
+  Message: '%prefix% &7Brain~~~~~~'
+Sound:
+  Pitch: 1
+  Sound: ENTITY_ZOMBIE_AMBIENT
+  Volume: 1

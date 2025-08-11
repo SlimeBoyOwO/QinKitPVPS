@@ -1,0 +1,14 @@
+Activator:
+  Material: END_STONE
+  Name: '&b失重'
+Commands:
+- 'console: execute as %player% at @s run effect give @a[distance=0..10] levitation
+  10 0'
+CoolDown:
+  CoolDown: 25S
+Message:
+  Message: 重力取消模式开启
+Sound:
+  Pitch: 1
+  Sound: BLOCK_NOTE_BLOCK_PLING
+  Volume: 1

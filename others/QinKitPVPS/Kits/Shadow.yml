@@ -1,0 +1,90 @@
+Kit:
+  Permission: kp.kit.shadow
+  DisplayName: 影魔
+  Available: true
+  Cooldown: 0
+  Level: 0
+  Health: 16
+Inventory:
+  Armor:
+    Helmet:
+      Material: GOLDEN_HELMET
+      Enchantments:
+        BLAST_PROTECTION: 2
+    Chestplate:
+      Material: IRON_CHESTPLATE
+      Enchantments:
+        PROTECTION: 1
+    Boots:
+      Material: LEATHER_BOOTS
+      Dye:
+        Red: 160
+        Green: 101
+        Blue: 64
+      Enchantments:
+        FEATHER_FALLING: 2
+        PROJECTILE_PROTECTION: 1
+  Items:
+    '0':
+      Name: '&8自卫石剑'
+      Material: STONE_SWORD
+      Lore:
+      - '  &8● &3鬼影&7:&7一个&a不可被摧毁&7的盔甲架&a，“鬼影”&7在存在&a35s&7后或&a玩家死亡后&7消失'
+    '1':
+      Name: '&8鬼影重重'
+      Material: TINTED_GLASS
+      Lore:
+      - '  &8● &3鬼影重重 &7: &7在短暂蓄力后进入&a6秒的“观察者模式”，结束后恢复“冒险模式”;&7技能释放的瞬间在&a原地&7留下一个&a“鬼影”，&7并使&a半径10格&7以内&a最近的一名其他玩家&7获得&a“恐惧”;&a技能结束前0.5秒，&7在&a半径10格&7以内&a最近的一名其他玩家&7的位置召唤一个&a“鬼影”，&7同时令那个玩家获得&a“恐惧”。'
+    '2':
+      Name: '&a支配死灵'
+      Material: WITHER_SKELETON_SKULL
+      Lore:
+      - '  &8● &3支配死灵 &7: &7朝所指方向&a至多8格处&7召唤一个&a“鬼影”，&7并令周围&a半径7格以内最近&7的一名其他玩家获得&a“恐惧”；对&a生命值低于10或高于30的玩家，&7将成为额外的目标，且检测范围提升至&a半径11格。'
+    '3':
+      Name: '&a如影随行'
+      Material: CRYING_OBSIDIAN
+      Lore:
+      - '  &8● &3如影随行&7:&7传送到地图上&a最早被放置&7的一个&a“鬼影”&7的位置，并获得&a2s的力量1，速度1，&7并清除这个&a“鬼影”&7（若“鬼影”距离过远，则无法传送并保留“鬼影”)'
+    '4':
+      Name: '&a魂之挽歌'
+      Material: SPAWNER
+      Lore:
+      - '  &8● &3魂之挽歌 &7: &7传送到地图上一名&a最近的&7拥有&a“恐惧”&7的玩家的位置，并获得&a5s的力量1，抗性提升1，伤害吸收1,&7那之后，&a引爆&7地图上的所有&a“鬼影”，“鬼影”&7周围&a6格&7以内有其他玩家的场合，令那些玩家获得&a5s的缓慢2，4s的失明，以及瞬间伤害1,&7同时，地图上所有拥有&a“恐惧”&7的玩家，失去其&a“恐惧”&7并受到&a5s的凋零1，失明，虚弱2 '
+    '5':
+      Material: BOW
+    '6':
+      Name: '&aPlayer Tracker &7(Right Click)'
+      Material: COMPASS
+    '8':
+      Material: COOKED_BEEF
+      Amount: 4
+    '7':
+      Name: '&a医疗包'
+      Material: GREEN_GLAZED_TERRACOTTA
+      Amount: 3
+    '10':
+      Material: ARROW
+      Amount: 20
+Effects:
+  INVISIBILITY:
+    Amplifier: 1
+    Duration: 100000
+Commands:
+- 'console: tag %player% add shadowF'
+- 'console: item replace entity %player% armor.head with jack_o_lantern[enchantments={levels:{"minecraft:unbreaking":10}},attribute_modifiers=[{id:"armor",type:"generic.knockback_resistance",amount:-1.0d,operation:"add_value",slot:"head"}]]
+  1'
+- 'console: item replace entity %player% armor.chest with leather_chestplate[enchantments={levels:{"minecraft:protection":1}},dyed_color=0]
+  1'
+- 'console: item replace entity %player% armor.feet with leather_boots[enchantments={levels:{"minecraft:feather_falling":3,"minecraft:depth_strider":3,"minecraft:soul_speed":3}},attribute_modifiers=[{id:"armor",type:"generic.movement_speed",amount:0.05d,operation:"add_multiplied_base",slot:"feet"},{id:"armor",type:"generic.armor",amount:7.0d,operation:"add_value",slot:"feet"},{id:"armor",type:"generic.armor_toughness",amount:5.0d,operation:"add_value",slot:"feet"}],dyed_color=16777215]
+  1'
+- 'console: item replace entity %player% container.0 with stone_sword[enchantments={levels:{"minecraft:sharpness":1}},attribute_modifiers=[{id:"armor",type:"generic.attack_damage",amount:6.0d,operation:"add_value",slot:"mainhand"}]]
+  1'
+Introduction:
+- '&7>> &b&l影魔 &7-->'
+- '&7生命：&a32  &7防御：&a10  &7攻击：&a6.0'
+- '&7上手难度：&f★★★☆☆'
+- '  &8● &3如影随行&7:&7传送到地图上&a最早被放置&7的一个&a“鬼影”&7的位置，并获得&a2s的力量1，速度1，&7并清除这个&a“鬼影”&7（若“鬼影”距离过远，则无法传送并保留“鬼影”)'
+- '  &8● &3支配死灵 &7: &7朝所指方向&a至多8格处&7召唤一个&a“鬼影”，&7并令周围&a半径7格以内最近&7的一名其他玩家获得&a“恐惧”；对&a生命值低于10或高于30的玩家，&7将成为额外的目标，且检测范围提升至&a半径11格。'
+- '  &8● &3鬼影重重 &7: &7进入&a6秒的“观察者模式”，结束后恢复“冒险模式”;&7技能释放的瞬间在&a原地&7留下一个&a“鬼影”，&7并使&a半径10格&7以内&a最近的一名其他玩家&7获得&a“恐惧”;&a技能结束前0.5秒，&7在&a半径10格&7以内&a最近的一名其他玩家&7的位置召唤一个&a“鬼影”，&7同时令那个玩家获得&a“恐惧”。'
+- '  &8● &3魂之挽歌 &7: &7传送到地图上一名&a最近的&7拥有&a“恐惧”&7的玩家的位置，并获得&a5s的力量1，抗性提升1，伤害吸收1,&7那之后，&a引爆&7地图上的所有&a“鬼影”，“鬼影”&7周围&a6格&7以内有其他玩家的场合，令那些玩家获得&a5s的缓慢2，4s的失明，以及瞬间伤害1,&7同时，地图上所有拥有&a“恐惧”&7的玩家，失去其&a“恐惧”&7并受到&a5s的凋零1，失明，虚弱2 '
+- '  &8● &3鬼影&7:&7一个&a不可被摧毁&7的盔甲架&a，“鬼影”&7在存在&a35s&7后或&a玩家死亡后&7消失'

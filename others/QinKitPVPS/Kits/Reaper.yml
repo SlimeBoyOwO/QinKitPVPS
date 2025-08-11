@@ -1,0 +1,73 @@
+Kit:
+  Permission: kp.kit.reaper
+  DisplayName: 战争狂人
+  Available: true
+  Cooldown: 0
+  Level: 0
+  Health: 20
+Inventory:
+  Armor:
+    Helmet:
+      Name: '&6狂人之星'
+      Material: GOLDEN_HELMET
+    Chestplate:
+      Name: '&4狂人之盾'
+      Material: DIAMOND_CHESTPLATE
+    Leggings:
+      Name: '&5狂人之影'
+      Material: LEATHER_LEGGINGS
+    Boots:
+      Name: '&d狂人之焰'
+      Material: GOLDEN_BOOTS
+  Items:
+    '0':
+      Name: '&d狂人之握'
+      Material: NETHERITE_SHOVEL
+      AttackDamageBase: 6
+      AttackSpeedBase: -2.4
+      Lore:
+      - '  &8● &3庞大巨兽 &7: 下落时伤害受到 &a4❤&7 以上时，对周围的敌人造成 &ax1.5倍 &7摔落伤害'
+      Enchantments:
+        DURABILITY: 1
+    '1':
+      Material: BOW
+    '2':
+      Name: '&7战争突刺'
+      Material: COAL
+      Lore:
+      - '  &8● &3战争突刺 &7: 向前方冲刺一段距离'
+    '6':
+      Name: '&d战争践踏'
+      Material: FLINT
+      Lore:
+      - '  &8● &3战争践踏 &7: 下落时对下落到8m内的敌人造成 &a10❤&7 真伤和 &a8❤&7 物理伤害并冲击'
+    '3':
+      Material: COOKED_BEEF
+      Amount: 8
+    '4':
+      Name: '&a医疗包'
+      Material: GREEN_GLAZED_TERRACOTTA
+      Amount: 3
+    '7':
+      Material: ARROW
+      Amount: 24
+    '8':
+      Name: '&b&lTarget: &3NoiQing_Ling &b&lDistance: &33.7'
+      Material: COMPASS
+Commands:
+- 'console: tag %player% add Reaper'
+Introduction:
+- '&7>> &b&l战争狂人 &7-->'
+- '&7生命：&a40  &7防御：&a14  &7攻击：&a6'
+- '&7上手难度：&f★★★☆☆'
+- '  &8● &3战争突刺 &7: 向前方冲刺一段距离'
+- '  &8● &3战争践踏 &7: 下落时对下落到8m内的敌人造成 &a10❤&7 真伤和 &a8❤&7 物理伤害并冲击'
+- '  &8● &3庞大巨兽 &7: 下落时伤害受到 &a4❤&7 以上时，对周围的敌人造成 &ax1.5倍 &7摔落伤害'
+- '  &8○ &7击退和冲刺，强大有力的战争强者'
+- '  &8○ &7没有冲不烂的人，只有怯弱的胆小鬼'
+
+
+
+
+
+

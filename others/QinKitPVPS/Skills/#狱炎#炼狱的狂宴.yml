@@ -1,0 +1,23 @@
+Activator:
+  Name: '&6炼狱的狂宴'
+Commands:
+- 'console: execute as %player% at %player% run playsound minecraft:item.trident.thunder
+  player @a[distance=0..9] ~ ~ ~ 1 1.5 1'
+- 'console: execute as %player% at %player% run playsound minecraft:entity.wither.ambient
+  player @a[distance=0..9] ~ ~ ~ 0.7 1.5 0.7'
+- 'console: execute as %player% at %player% run playsound minecraft:entity.ender_dragon.ambient
+  player @a[distance=0..9] ~ ~ ~ 0.5 1.5 0.5'
+- 'console: execute as %player% at %player% run effect clear @s[tag=Hellfire_Z]'
+- 'console: execute as %player% at %player% run effect give @s[tag=Hellfire_Z] minecraft:instant_health
+  1 1'
+- 'console: execute as %player% at @s run execute as @a[distance=0..7,tag=!Hellfire]
+  run damage @s 15 minecraft:lava by @p[tag=Hellfire]'
+- 'console: execute as %player% at %player% run summon armor_stand ~ ~ ~ {NoGravity:1b,Invisible:1b,Tags:["Hellfire"]}'
+- 'console: execute as %player% at %player% run fill ~7 ~-1 ~-7 ~-7 ~1 ~7 fire keep'
+- 'console: execute as %player% at %player% run effect give @s[tag=Hellfire_Y] minecraft:strength
+  9 0'
+- 'console: execute as %player% at %player% run scoreboard players set @s reload 639'
+- 'console: execute as %player% at %player% run effect give @s[tag=Hellfire_Z] minecraft:resistance
+  9 0'
+CoolDown:
+  CoolDown: 38S

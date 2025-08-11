@@ -1,0 +1,28 @@
+MapID: 1
+MapName: 无块方格
+World: skyblock_copy
+Center:
+  X: 2037
+  Y: 31
+  Z: 2037
+Radius:
+  X: 43
+  Y: 6
+  Z: 43
+Locations:
+  '0':
+    X: 1998
+    Y: 29
+    Z: 1998
+  '1':
+    X: 1998
+    Y: 29
+    Z: 2074
+  '2':
+    X: 2074
+    Y: 29
+    Z: 2074
+  '3':
+    X: 2074
+    Y: 29
+    Z: 1998

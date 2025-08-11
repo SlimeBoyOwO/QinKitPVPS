@@ -1,0 +1,9 @@
+Activator:
+  Material: ELYTRA
+  Name: 欺诈
+Commands:
+- 'console: execute as %player% at %player% run tp ^ ^ ^-3'
+- 'console: execute as %player% at %player% run tp @p[distance=2..5]'
+- 'console: execute as %player% at @s run scoreboard players set @s reload 0'
+CoolDown:
+  CoolDown: 4S

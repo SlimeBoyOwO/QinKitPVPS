@@ -1,0 +1,11 @@
+Activator:
+  Name: '&a极限爆发'
+Commands:
+- 'console: tag %player% add FireMan_S'
+- 'console: execute as %player% at @s run playsound minecraft:entity.blaze.death player
+  @a ~ ~ ~'
+- 'console: execute as %player% at @s run particle lava ~ ~1 ~ 0 0 0 1 50 force'
+- 'console: execute as %player% at @s run effect give @s minecraft:fire_resistance
+  4 0'
+CoolDown:
+  CoolDown: 30S

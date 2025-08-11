@@ -1,0 +1,72 @@
+Kit:
+  Permission: kp.kit.sniper
+  DisplayName: 死亡丘比特
+  Available: true
+  Cooldown: 0
+  Level: 0
+Inventory:
+  Armor:
+    Helmet:
+      Name: '&7头盔'
+      Material: LEATHER_HELMET
+      Dye:
+        Red: 0
+        Green: 0
+        Blue: 0
+    Chestplate:
+      Name: '&7护甲'
+      Material: LEATHER_CHESTPLATE
+      Dye:
+        Red: 0
+        Green: 0
+        Blue: 0
+      ArmorDefenseBase: 6
+    Boots:
+      Name: '&7鞋靴'
+      Material: LEATHER_BOOTS
+      Dye:
+        Red: 0
+        Green: 0
+        Blue: 0
+  Items:
+    '0':
+      Name: '&a匕首'
+      Material: IRON_SWORD
+    '1':
+      Name: '&c爱之弓'
+      Material: BOW
+      Lore:
+      - '  &8● &3勾魂 &7: &7每过 &a10s &7上膛一个拥有 &a力量X &7的弓，无重力'
+      - '  &8● &3勾魂欲望 &7: &7发射勾魂弓箭后可以获得 &a2s速度II &7的加速buff &a3s'
+    '2':
+      Name: '&c勾魂弓'
+      Material: BOW
+      Lore:
+      - '&7每过 &a10s &7上膛一个拥有 &a力量X &7的弓，无重力'
+      Enchantments:
+        POWER: 10
+      Unbreakable: false
+      Durability: 383
+    '3':
+      Material: COOKED_BEEF
+      Amount: 8
+    '4':
+      Name: '&a医疗包'
+      Material: GREEN_GLAZED_TERRACOTTA
+      Amount: 3
+    '7':
+      Material: ARROW
+      Amount: 32
+    '8':
+      Name: '&aPlayer Tracker &7(Right Click)'
+      Material: COMPASS
+Commands:
+- 'console: tag %player% add Sniper'
+Introduction:
+- '&7>> &b&l勾魂丘比特 &7-->'
+- '&7生命：&a40  &7防御：&a8  &7攻击：&a6'
+- '&7上手难度：&f★★★★★'
+- '  &8● &3勾魂 &7: &7每过 &a10s &7上膛一个拥有 &a力量X &7的弓，无重力'
+- '  &8● &3勾魂欲望 &7: &7发射勾魂弓箭后可以获得 &a2s速度II &7的加速buff &a3s'
+- '  &8○ &7准度取决胜利的魔鬼天使'
+- '  &8○ &7只有最精准的狙击手可以掌控这个角色'

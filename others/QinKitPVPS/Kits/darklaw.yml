@@ -1,0 +1,67 @@
+Kit:
+  Permission: kp.kit.darklaw
+  DisplayName: 暗法
+  Available: false
+  Cooldown: 0
+  Level: 0
+  Health: 23
+Inventory:
+  Armor:
+    Helmet:
+      Material: GOLDEN_HELMET
+      Enchantments:
+        BLAST_PROTECTION: 2
+    Chestplate:
+      Material: IRON_CHESTPLATE
+      Enchantments:
+        PROTECTION: 1
+    Leggings:
+      Material: CHAINMAIL_LEGGINGS
+      Enchantments:
+        FIRE_PROTECTION: 2
+    Boots:
+      Material: LEATHER_BOOTS
+      Dye:
+        Red: 160
+        Green: 101
+        Blue: 64
+      Enchantments:
+        FEATHER_FALLING: 2
+        PROJECTILE_PROTECTION: 1
+  Items:
+    '0':
+      Name: 炮塔
+      Lore:
+      - 感受要塞的怒火吧！
+      Material: BOW
+      Enchantments:
+        FLAME: 1
+        INFINITY: 1
+        KNOCKBACK: 2
+        PUNCH: 2
+    '1':
+      Name: '&a狂飙'
+      Material: DIAMOND_HORSE_ARMOR
+    '2':
+      Name: '&a血之渴望'
+      Material: GILDED_BLACKSTONE
+    '3':
+      Name: '&a暴动之共鸣'
+      Material: MAGMA_BLOCK
+    '4':
+      Name: '&a血之诅咒'
+      Material: REDSTONE_ORE
+    '5':
+      Name: '&a精准把控'
+      Material: TOTEM_OF_UNDYING
+Effects:
+  ABSORPTION:
+    Amplifier: 1
+    Duration: 100000
+Commands:
+- 'console: tag %player% add darklaw'
+- 'console: item replace entity %player% armor.head with minecraft:iron_helmet{Unbreakable:true,Enchantments:[{id:"protection",lvl:1s}],AttributeModifiers:[{AttributeName:"generic.armor",Name:"generic.armor",Slot:"head",Operation:0,Amount:3.0d,UUID:[I;-1848577926,1866419599,-1349034009,-2020345735]}]}'
+- 'console: item replace entity %player% armor.chest with minecraft:golden_chestplate{Unbreakable:true,Enchantments:[{id:"blast_protection",lvl:1s}],AttributeModifiers:[{AttributeName:"generic.armor",Name:"generic.armor",Slot:"chest",Operation:0,Amount:4.0d,UUID:[I;-2037249965,1745568655,-1364246039,1443836217]},{AttributeName:"generic.knockback_resistance",Name:"generic.knockback_resistance",Slot:"chest",Operation:1,Amount:-0.1d,UUID:[I;-1716661886,-1041675371,-1929142008,-265969491]}]}'
+- 'console: item replace entity %player% armor.legs with minecraft:chainmail_leggings{Unbreakable:true,Enchantments:[{id:"fire_protection",lvl:1s}],AttributeModifiers:[{AttributeName:"generic.armor",Name:"generic.armor",Slot:"legs",Operation:0,Amount:3.0d,UUID:[I;-1020553525,848119606,-1218661884,2051016326]}]}'
+- 'console: item replace entity %player% armor.feet with minecraft:chainmail_boots{Unbreakable:true,Enchantments:[{id:"feather_falling",lvl:10s}],AttributeModifiers:[{AttributeName:"generic.movement_speed",Name:"generic.movement_speed",Slot:"feet",Operation:1,Amount:0.085d,UUID:[I;302288058,76828383,-2058919415,1915479389]},{AttributeName:"generic.armor",Name:"generic.armor",Slot:"feet",Operation:0,Amount:3.0d,UUID:[I;2034338881,-214088386,-1262643839,-1661111552]}]}'
+- 'console: item replace entity %player% container.0 with minecraft:golden_sword{Unbreakable:true,Enchantments:[{id:"fire_aspect",lvl:1s}],AttributeModifiers:[{AttributeName:"generic.attack_damage",Name:"generic.attack_damage",Slot:"mainhand",Operation:0,Amount:6.2d,UUID:[I;77429543,-187677978,-1246533245,365755989]},{AttributeName:"generic.knockback_resistance",Name:"generic.knockback_resistance",Slot:"mainhand",Operation:1,Amount:0.2d,UUID:[I;1102527314,-968143607,-1498363885,2048359062]},{AttributeName:"generic.attack_speed",Name:"generic.attack_speed",Slot:"mainhand",Operation:1,Amount:-0.65d,UUID:[I;61570286,1432045010,-1162115707,-640265149]}],display:{Name:"{\"text\":\"血色之刃\"}"}}'

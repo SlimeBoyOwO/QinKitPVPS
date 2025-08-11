@@ -1,0 +1,95 @@
+MenuTitle: '&8[&3QinKitPVP&8] &5个性化设置'
+Lines: 6
+OpenCommands:
+- 'console: execute as %player% at @s run playsound minecraft:block.beacon.power_select
+  ambient @s'
+
+Items:
+  '10':
+    DisplayName: '&7&l> > &b&l击杀特效 &7&l< <'
+    Material: glow_item_frame
+    Lore:
+    - '&8===================='
+    - '&#CCCCFF在这里选择你的击杀特效！'
+    - '&8===================='
+    LeftClickCommands:
+    - 'player: qinkit openMenu 击杀特效'
+    RightClickCommands:
+    - 'player: qinkit openMenu 击杀特效'
+  '12':
+    DisplayName: '&7&l> > &b&l个性职战 &7&l< <'
+    Material: glow_berries
+    Lore:
+    - '&8===================='
+    - '&#CCCCFF在这里选择你的个人偏好！'
+    - '&8===================='
+    LeftClickCommands:
+    - 'player: qinkit openMenu 个性设置'
+    RightClickCommands:
+    - 'player: qinkit openMenu 个性设置'
+  '14':
+    DisplayName: '&7&l> > &b&l击杀音效 &7&l< <'
+    Material: echo_shard
+    Lore:
+    - '&8===================='
+    - '&#CCCCFF让你的敌人发出你想要的叫声吧！'
+    - '&8===================='
+    LeftClickCommands:
+    - 'player: qinkit openMenu 击杀音效'
+    RightClickCommands:
+    - 'player: qinkit openMenu 击杀音效'
+  '16':
+    DisplayName: '&7&l> > &b&l击杀信息 &7&l< <'
+    Material: writable_book
+    Lore:
+    - '&8===================='
+    - '&#CCCCFF用喜欢的方式提示你的击杀~'
+    - '&8===================='
+    LeftClickCommands:
+    - 'player: qinkit openMenu 个性设置'
+    RightClickCommands:
+    - 'player: qinkit openMenu 个性设置'
+  '28':
+    DisplayName: '&7&l> > &b&l成就系统 &7&l< <'
+    Material: end_crystal
+    Lore:
+    - '&8===================='
+    - '&#CCCCFF查看那些令人骄傲的成就八~'
+    - '&8===================='
+    LeftClickCommands:
+    - 'player: qinkit openMenu 个性设置'
+    RightClickCommands:
+    - 'player: qinkit openMenu 个性设置'
+  '30':
+    DisplayName: '&7&l> > &b&l奇怪的小游戏 &7&l< <'
+    Material: cherry_sapling
+    Lore:
+    - '&8===================='
+    - '&#CCCCFF轻松愉快的小游戏uwu'
+    - '&8===================='
+    LeftClickCommands:
+    - 'player: qinkit openMenu 奇怪的小游戏'
+    RightClickCommands:
+    - 'player: qinkit openMenu 奇怪的小游戏'
+  '32':
+    DisplayName: '&7&l> > &b&l道具 &7&l< <'
+    Material: dragon_breath
+    Lore:
+    - '&8===================='
+    - '&#CCCCFF一些有趣的小玩具捏'
+    - '&8===================='
+    LeftClickCommands:
+    - 'player: qinkit openMenu 个性设置'
+    RightClickCommands:
+    - 'player: qinkit openMenu 个性设置'
+  '34':
+    DisplayName: '&7&l> > &b&l画廊 &7&l< <'
+    Material: painting
+    Lore:
+    - '&8===================='
+    - '&#CCCCFF一些奇奇怪怪的东西'
+    - '&8===================='
+    LeftClickCommands:
+    - 'player: ir warp 画廊'
+    RightClickCommands:
+    - 'player: ir warp 画廊'

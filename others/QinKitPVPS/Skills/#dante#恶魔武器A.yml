@@ -1,0 +1,15 @@
+Activator:
+  Material: LANTERN
+  Name: 恶魔武器A
+Commands:
+- 'console: execute as %player% at @s run give @s iron_sword[custom_name=''"§0叛逆之刃"'',enchantments={levels:{"minecraft:knockback":2}},attribute_modifiers=[{id:"armor",type:"generic.knockback_resistance",amount:0.2d,operation:"add_value",slot:"mainhand"},{id:"armor",type:"generic.attack_damage",amount:6.5d,operation:"add_value",slot:"mainhand"},{id:"armor",type:"generic.attack_speed",amount:2.0d,operation:"add_value",slot:"mainhand"}]]
+  1'
+- 'console: execute as %player% at @s run clear @s fishing_rod 1'
+- 'console: execute as %player% at @s run tag @s add sword1'
+- 'console: execute as %player% at @s run tag @s remove sword3'
+- 'console: execute as %player% at @s run clear @s minecraft:lantern '
+- 'console: execute as %player% at @s run give @s campfire[custom_name=''"恶魔武器B"'']
+  1'
+- 'console: execute as %player% at @s run scoreboard players set @s reload 0'
+CoolDown:
+  CoolDown: 8S

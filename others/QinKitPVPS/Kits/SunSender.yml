@@ -1,0 +1,69 @@
+Kit:
+  Permission: kp.kit.sunsender
+  DisplayName: 日之使者
+  Available: true
+  Cooldown: 0
+  Level: 0
+Inventory:
+  Armor:
+    Helmet:
+      Material: CHAINMAIL_HELMET
+      ArmorTrim:
+        Material: GOLD_INGOT
+        Pattern: SHAPER
+      ArmorDefenseBase: 4
+    Chestplate:
+      Material: LEATHER_CHESTPLATE
+      ArmorTrim:
+        Material: GOLD_INGOT
+        Pattern: WARD
+    Leggings:
+      Material: CHAINMAIL_LEGGINGS
+    Boots:
+      Material: CHAINMAIL_BOOTS
+  Items:
+    '0':
+      Name: '&a日光剑'
+      Material: GOLDEN_SWORD
+      Enchantments:
+        SHARPNESS: 3
+      Lore:
+      - '  &8● &3日曜 &7: &7射出和获得的箭是发光箭'
+    '1':
+      Material: CROSSBOW
+      GlowArrow: true
+      Enchantments:
+        QUICK_CHARGE: 1
+    '2':
+      Material: CROSSBOW
+      GlowArrow: true
+      Enchantments:
+        QUICK_CHARGE: 1
+    '3':
+      Material: COOKED_BEEF
+      Amount: 8
+    '4':
+      Name: '&a医疗包'
+      Material: GREEN_GLAZED_TERRACOTTA
+      Amount: 3
+    '6':
+      Name: '&e滋崩'
+      Material: CANDLE
+      Lore:
+      - '  &8● &3滋崩 &7: &7直线射击，四发弹夹，造成 &a（滋）5+(蹦)12 &7伤害'
+    '7':
+      Material: SPECTRAL_ARROW
+      Amount: 24
+    '8':
+      Name: '&aPlayer Tracker &7(Right Click)'
+      Material: COMPASS
+Commands:
+- 'console: tag %player% add SunSender'
+Introduction:
+- '&7>> &b&l日之使者 &7-->'
+- '&7生命：&a40  &7防御：&a12  &7攻击：&a6'
+- '&7上手难度：&f★☆☆☆☆'
+- '  &8● &3滋崩 &7: &7直线射击，四发弹夹，造成 &a（滋）5+(蹦)12 &7伤害'
+- '  &8● &3日曜 &7: &7射出和获得的箭是发光箭'
+- '  &8○ &7世间最高莫过滋崩'
+- '  &8○ &7最简单的机制，最强的能力'

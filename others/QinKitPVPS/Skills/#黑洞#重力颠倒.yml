@@ -1,0 +1,15 @@
+Activator:
+  Name: '&a重力颠倒'
+Commands:
+- 'console: execute as %player% at @s run playsound minecraft:block.conduit.deactivate
+  player @a[distance=0..9] ~ ~ ~ 1 2 1'
+- 'console: execute as %player% at @s run execute as @a[distance=1..6] at @s run tp
+  ~ ~-1 ~ '
+- 'console: execute as %player% at @s run teleport @s ~ ~4 ~'
+- 'console: execute as %player% at @s run effect give @s slow_falling 2 1'
+- 'console: execute as %player% at @s run give @a[distance=1..6] minecraft:blindness
+  2 '
+- 'console: execute as %player% at @s as @a[distance=1..6] at @a[distance=1..5] run
+  teleport @s ~ ~ ~ -90 90'
+CoolDown:
+  CoolDown: 25S

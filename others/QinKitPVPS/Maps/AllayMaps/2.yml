@@ -1,0 +1,28 @@
+MapID: 2
+MapName: 雪地空岛
+World: skyblock_copy
+Center:
+  X: 3125
+  Y: 1
+  Z: 3125
+Radius:
+  X: 126
+  Y: 7
+  Z: 126
+Locations:
+  '0':
+    X: 3125
+    Y: 6
+    Z: 3025
+  '1':
+    X: 3225
+    Y: 6
+    Z: 3125
+  '2':
+    X: 3125
+    Y: 6
+    Z: 3225
+  '3':
+    X: 3025
+    Y: 6
+    Z: 3125

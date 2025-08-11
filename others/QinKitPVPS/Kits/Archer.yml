@@ -1,0 +1,59 @@
+Kit:
+  Permission: kp.kit.archer
+  DisplayName: 亡灵卫兵
+  Available: true
+  Cooldown: 0
+  Level: 0
+Inventory:
+  Armor:
+    Helmet:
+      Name: '&7卫兵头盔'
+      Material: CHAINMAIL_HELMET
+    Chestplate:
+      Name: '&7卫兵胸甲'
+      Material: CHAINMAIL_CHESTPLATE
+    Leggings:
+      Name: '&7卫兵护腿'
+      Material: CHAINMAIL_LEGGINGS
+    Boots:
+      Name: '&7卫兵鞋子'
+      Material: CHAINMAIL_BOOTS
+  Items:
+    '0':
+      Name: '&b夺魂剑'
+      Material: IRON_SWORD
+      Enchantments:
+        POWER: 1
+      AttackDamageBase: 5.5
+    '1':
+      Name: '&b夺灵弓'
+      Material: BOW
+      Enchantments:
+        POWER: 2
+      Lore:
+      - '  &8● &3精弓 &7: &7弓拥有近乎 &a力量II &7的射击强度'
+      - '  &8● &3慰藉 &7: &7射中敌人获得 &a0.5❤ &7回复和 &a2s &7生命恢复 &aII'
+    
+    '3':
+      Material: COOKED_BEEF
+      Amount: 8
+    '4':
+      Name: '&a医疗包'
+      Material: GREEN_GLAZED_TERRACOTTA
+      Amount: 3
+    '7':
+      Material: ARROW
+      Amount: 64
+    '8':
+      Name: '&aPlayer Tracker &7(Right Click)'
+      Material: COMPASS
+Commands:
+- 'console: tag %player% add Archer'
+Introduction:
+- '&7>> &b&l亡灵卫兵 &7-->'
+- '&7生命：&a40  &7防御：&a12  &7攻击：&a6'
+- '&7上手难度：&f★★☆☆☆'
+- '  &8● &3精弓 &7: &7弓拥有近乎 &a力量II &7的射击强度'
+- '  &8● &3慰藉 &7: &7射中敌人获得 &a0.5❤ &7回复和 &a2s &7生命恢复 &aII'
+- '  &8○ &7注重持久的弓箭卫兵'
+- '  &8○ &7可以在战场上依靠强大的远程持久战斗'

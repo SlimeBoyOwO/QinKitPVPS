@@ -1,0 +1,22 @@
+{
+    "display": {
+        "icon": {
+            "id": "minecraft:nautilus_shell"
+        },
+        "title": {
+            "translate": "完成 2-5 关卡"
+        },
+        "description": {
+            "color": "green",
+            "translate": "解锁魅惑菇"
+        },
+        "announce_to_chat": true,
+        "frame": "task"
+    },
+    "parent": "kitspvp:pvz/fin2_4",
+    "criteria": {
+        "dummy": {
+            "trigger": "minecraft:impossible"
+        }
+    }
+}

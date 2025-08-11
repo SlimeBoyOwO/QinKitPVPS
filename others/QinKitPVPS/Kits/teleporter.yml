@@ -1,0 +1,66 @@
+Kit:
+  Permission: kp.kit.teleporter
+  DisplayName: 末影人
+  Available: true
+  Cooldown: 0
+  Level: 0
+  Health: 20
+Inventory:
+  Armor:
+    Helmet:
+      Material: LEATHER_HELMET
+      Dye:
+        Red: 29
+        Green: 29
+        Blue: 33
+      ArmorDefenseBase: 1
+    Chestplate:
+      Material: IRON_CHESTPLATE
+    Leggings:
+      Material: LEATHER_LEGGINGS
+      Dye:
+        Red: 29
+        Green: 29
+        Blue: 33
+    Boots:
+      Material: DIAMOND_BOOTS
+      Enchantments:
+        FEATHER_FALLING: 2
+  Items:
+    '0':
+      Material: IRON_SWORD
+    '6':
+      Name: '&d瞬现'
+      Material: ENDER_EYE
+      Lore:
+      - '  &8● &3瞬现 &7: &7把自己传送到最近 &a20m &7的玩家，并且给予他 &a黑暗1s'
+    '1':
+      Material: BOW
+    '3':
+      Material: COOKED_BEEF
+      Amount: 8
+    '4':
+      Name: '&a医疗包'
+      Material: GREEN_GLAZED_TERRACOTTA
+      Amount: 3
+    '2':
+      Name: '&d末影珍珠'
+      Material: ENDER_PEARL
+      Amount: 3
+      Lore:
+      - '  &8● &3瞬移 &7: &7可以瞬间移动到 &a100m &7内的指向方块，获得 &a缓慢，失明3s &7，否则为常规末影珍珠'
+    '7':
+      Material: ARROW
+      Amount: 16
+    '8':
+      Name: '&aPlayer Tracker &7(Right Click)'
+      Material: COMPASS
+Commands:
+- 'console: tag %player% add Teleporter'
+Introduction:
+- '&7>> &b&l末影人 &7-->'
+- '&7生命：&a40  &7防御：&a14  &7攻击：&a7'
+- '&7上手难度：&f★★☆☆☆'
+- '  &8● &3末影珍珠 &7: &7可以瞬间移动到 &a100m &7内的指向方块，获得 &a缓慢，失明3s &7，否则为常规末影珍珠'
+- '  &8● &3瞬现 &7: &7把自己传送到最近 &a20m &7的玩家，并且给予他 &a黑暗1s'
+- '  &8● &3末影之眼 &7: &7不受&a失明&7和&a黑暗&7效果的影响'

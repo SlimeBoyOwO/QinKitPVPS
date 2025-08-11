@@ -1,0 +1,68 @@
+Kit:
+  Permission: kp.kit.octane
+  DisplayName: 动力小子
+  Available: true
+Inventory:
+  Armor:
+    Helmet:
+      Material: LEATHER_HELMET
+      ArmorDefenseBase: 3
+      Dye:
+        Red: 12
+        Green: 101
+        Blue: 12
+    Chestplate:
+      Material: LEATHER_CHESTPLATE
+      ArmorTrim:
+        Material: IRON_INGOT
+        Pattern: RIB
+      ArmorDefenseBase: 6
+      Dye:
+        Red: 12
+        Green: 101
+        Blue: 12
+    Leggings:
+      Material: CHAINMAIL_LEGGINGS
+    Boots:
+      Material: CHAINMAIL_BOOTS
+  Items:
+    '0':
+      Name: '&a蝴蝶刀'
+      Material: DIAMOND_SWORD
+      Lore:
+      - '  &8● &3自我修复 &7: &7血量低于 &a20❤ &7时，持续获得 &a生命恢复II'
+    '1':
+      Material: BOW
+    '3':
+      Material: COOKED_BEEF
+      Amount: 8
+    '4':
+      Name: '&a医疗包'
+      Material: GREEN_GLAZED_TERRACOTTA
+      Amount: 3
+    '2':
+      Name: '&a兴奋剂'
+      Material: END_ROD
+      Lore:
+      - '  &8● &3兴奋剂 &7: &7牺牲&a5❤&7获得 &a8s速度IV 跳跃提升II &7弓箭对你造成 &a120% &7伤害'
+    '6':
+      Name: '&a跳板'
+      Material: SLIME_BLOCK
+      Lore:
+      - '  &8● &3跳板 &7: &7发射一个可以存在 &a50s &7的可以飞翔的跳板'
+    '7':
+      Material: ARROW
+      Amount: 24
+    '8':
+      Name: '&aPlayer Tracker &7(Right Click)'
+      Material: COMPASS
+Commands:
+- 'console: tag %player% add Octane'
+Introduction:
+- '&7>> &b&l动力小子 &7-->'
+- '&7生命：&a40  &7防御：&a12  &7攻击：&a7'
+- '&7上手难度：&f★★★☆☆'
+- '  &8● &3自我修复 &7: &7血量低于 &a20❤ &7时，持续获得 &a生命恢复II'
+- '  &8● &3兴奋剂 &7: &7牺牲&a5❤&7获得 &a8s速度IV 跳跃提升II &7弓箭对你造成 &a120% &7伤害'
+- '  &8○ &7谁喜欢冲就谁喜欢用的职业'
+- '  &8○ &7对反应力，身法，速度，控制都是绝对的考验'

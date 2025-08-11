@@ -1,0 +1,25 @@
+Activator:
+  Name: '&d亡命之徒'
+Commands:
+- 'console: execute as %player% at @s run tellraw @s[scores={health=..5},nbt={Inventory:[{Slot:-106b,id:"minecraft:nether_star"}]}]
+  {"color":"yellow","text":"这件衣服算是毁了."}'
+- 'console: execute as %player% at %player% run particle damage_indicator ~ ~1 ~ 1
+  1 1 0 20 force'
+- 'console: execute as %player% at %player% run effect give @s absorption infinite'
+- 'console: execute as %player% at %player% run playsound minecraft:entity.wither.ambient
+  voice @a[distance=0..6] ~ ~ ~ 100 1 '
+- 'console: execute as %player% at %player% run effect give %player% invisibility
+  6 0'
+- 'console: execute as %player% at %player% run effect give %player% speed 6 2'
+- 'console: execute as %player% at %player% run effect give %player% strength 6 1'
+- 'console: execute as %player% at %player% run effect give @s instant_health 1 20'
+- 'console: execute as %player% at %player% run effect give @s[scores={WCK=3..,health=..15}]
+  invisibility 10 0'
+- 'console: execute as %player% at %player% run effect give @s[scores={WCK=3..,health=..15}]
+  speed 10 2'
+- 'console: execute as %player% at %player% run effect give @s[scores={WCK=3..,health=..15}]
+  strength 10 1'
+- 'console: execute as %player% at %player% run tag @s add WC1 '
+- 'console: execute as %player% at %player% run tag @s add WC2 '
+CoolDown:
+  CoolDown: 12S

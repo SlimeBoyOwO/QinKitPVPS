@@ -1,0 +1,6 @@
+Activator:
+  Name: 打狗棍
+Commands:
+- 'console: kill Harbeth_'
+CoolDown:
+  CoolDown: 1S

@@ -1,0 +1,22 @@
+{
+    "display": {
+        "icon": {
+            "id": "minecraft:horn_coral"
+        },
+        "title": {
+            "translate": "完成 2-1 关卡"
+        },
+        "description": {
+            "color": "green",
+            "translate": "解锁阳光菇"
+        },
+        "announce_to_chat": true,
+        "frame": "task"
+    },
+    "parent": "kitspvp:pvz/fin1_9",
+    "criteria": {
+        "dummy": {
+            "trigger": "minecraft:impossible"
+        }
+    }
+}

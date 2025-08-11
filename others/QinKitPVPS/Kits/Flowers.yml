@@ -1,0 +1,77 @@
+Kit:
+  Permission: kp.kit.Flowers
+  DisplayName: 花花
+  Available: false
+  Cooldown: 0
+  Level: 0
+  Health: 30
+Inventory:
+  Armor:
+    Helmet:
+      Name: '&bOLD MASK'
+      Material: LEATHER_HELMET
+      ArmorDefenseBase: 1
+      Dye:
+        Red: 219
+        Green: 132
+        Blue: 33
+    Chestplate:
+      Name: '&bOLD TOP'
+      Material: LEATHER_CHESTPLATE
+      ArmorDefenseBase: 1
+      Dye:
+        Red: 191
+        Green: 55
+        Blue: 58
+    Leggings:
+      Name: '&bOLD SKIRT'
+      Material: LEATHER_LEGGINGS
+      ArmorDefenseBase: 1
+      Dye:
+        Red: 235
+        Green: 56
+        Blue: 220
+    Boots:
+      Name: '&bOLD BOOTS'
+      Material: LEATHER_BOOTS
+      ArmorDefenseBase: 0
+      Dye:
+        Red: 148
+        Green: 56
+        Blue: 235
+  Items:
+    '0':
+      Name: '&c&lPOPPY'
+      Material: POPPY
+      AttackDamageBase: 5
+    '1':
+      Name: '&b&lORCHID'
+      Material: BLUE_ORCHID
+      AttackDamageBase: 4
+    '2':
+      Name: '&3&lCORNFLOWER LONG BOW'
+      Material: BOW
+      Enchantments:
+        POWER: 1
+      AttackDamageBase: 4
+    '3':
+      Name: '&5&lOLD ROSE'
+      Material: WITHER_ROSE
+      AttackDamageBase: 4
+    '4':
+      Material: COOKED_BEEF
+      Amount: 8
+    '5':
+      Name: '&a医疗包'
+      Material: GREEN_GLAZED_TERRACOTTA
+      Amount: 4
+    '7':
+      Material: ARROW
+      Amount: 64
+    '8':
+      Name: '&aPlayer Tracker &7(Right Click)'
+      Material: COMPASS
+Effects:
+  REGENERATION:
+    Amplifier: 1
+    Duration: 100000

@@ -1,0 +1,64 @@
+Kit:
+  Permission: kp.kit.firedragon
+  DisplayName: 火龙
+  Available: true
+Inventory:
+  Armor:
+    Helmet:
+      Name: '&7火龙头'
+      Material: LEATHER_HELMET
+      Dye:
+        Red: 230
+        Green: 13
+        Blue: 13
+      Enchantments:
+        FIRE_PROTECTION: 2
+    Chestplate:
+      Name: '&7战士的护甲'
+      Material: CHAINMAIL_CHESTPLATE
+      ArmorTrim:
+        Material: DIAMOND
+        Pattern: RIB
+    Leggings:
+      Name: '&7火龙腿'
+      Material: LEATHER_LEGGINGS
+      Dye:
+        Red: 168
+        Green: 13
+        Blue: 13
+    Boots:
+      Name: '&7火龙jio'
+      Material: DIAMOND_BOOTS
+  Items:
+    '0':
+      Name: '&c火龙剑'
+      Material: DIAMOND_SWORD
+    '1':
+      Name: '&c火龙弓'
+      Material: BOW
+    '3':
+      Material: COOKED_BEEF
+      Amount: 8
+    '4':
+      Name: '&a医疗包'
+      Material: GREEN_GLAZED_TERRACOTTA
+      Amount: 3
+    '6':
+      Name: '&c喷火'
+      Material: FIRE_CHARGE
+    '7':
+      Material: ARROW
+      Amount: 24
+    '8':
+      Name: '&aPlayer Tracker &7(Right Click)'
+      Material: COMPASS
+Commands:
+- 'console: tag %player% add FireDragon'
+Introduction:
+- '&7>> &b&l勇者 &7-->'
+- '&7生命：&a40  &7防御：&a16  &7攻击：&a7'
+- '&7上手难度：&f★☆☆☆☆'
+- '  &8● &3天赋 &7: &7开局即拥有 &a4❤ &7护盾'
+- '  &8● &3慰藉 &7: &7杀死敌人补满 &a4❤ &7护盾和 &a8s &7生命恢复 &aII'
+- '  &8○ &7高强的攻击力和防御力，还有强大的持续力'
+- '  &8○ &7天然的优势让这位勇士变得更加卓越'

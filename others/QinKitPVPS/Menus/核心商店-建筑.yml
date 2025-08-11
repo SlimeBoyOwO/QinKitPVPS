@@ -1,0 +1,227 @@
+MenuTitle: '&8[&3AllayWar&8] &8&l核心商店-建筑'
+Lines: 6
+OpenCommands:
+- 'console: execute as %player% at @s run playsound minecraft:block.beacon.power_select
+  ambient @s'
+
+Items:
+  '0':
+    DisplayName: '&b&l快捷购买'
+    Material: nether_star
+    LeftClickCommands:
+    - '[openMenu] 核心商店菜单'
+    - 'console: execute as %player% at @s run playsound minecraft:block.note_block.bit
+      ambient @a ~ ~ ~'
+  '1':
+    DisplayName: '&b&l方块'
+    Material: sandstone
+    LeftClickCommands:
+    - '[openMenu] 核心商店-方块'
+    - 'console: execute as %player% at @s run playsound minecraft:block.note_block.bit
+      ambient @a ~ ~ ~'
+  '2':
+    DisplayName: '&b&l武器 & 装备'
+    Material: golden_sword
+    LeftClickCommands:
+    - '[openMenu] 核心商店-武器'
+    - 'console: execute as %player% at @s run playsound minecraft:block.note_block.bit
+      ambient @a ~ ~ ~'
+  '3':
+    DisplayName: '&b&l装备'
+    Material: chainmail_boots
+    LeftClickCommands:
+    - '[openMenu] 核心商店-装备'
+    - 'console: execute as %player% at @s run playsound minecraft:block.note_block.bit
+      ambient @a ~ ~ ~'
+  '4':
+    DisplayName: '&b&l攻城磊'
+    Material: stone_pickaxe
+    LeftClickCommands:
+    - '[openMenu] 核心商店-攻城磊'
+    - 'console: execute as %player% at @s run playsound minecraft:block.note_block.bit
+      ambient @a ~ ~ ~'
+  '5':
+    DisplayName: '&b&l远程武器'
+    Material: bow
+    LeftClickCommands:
+    - '[openMenu] 核心商店-远程武器'
+    - 'console: execute as %player% at @s run playsound minecraft:block.note_block.bit
+      ambient @a ~ ~ ~'
+  '6':
+    DisplayName: '&b&l建筑'
+    Material: bricks
+    LeftClickCommands:
+    - '[openMenu] 核心商店-建筑'
+    - 'console: execute as %player% at @s run playsound minecraft:block.note_block.bit
+      ambient @a ~ ~ ~'
+  '7':
+    DisplayName: '&b&l特殊道具'
+    Material: tnt
+    LeftClickCommands:
+    - '[openMenu] 核心商店-特殊道具'
+    - 'console: execute as %player% at @s run playsound minecraft:block.note_block.bit
+      ambient @a ~ ~ ~'
+  '8':
+    DisplayName: '&b&l职业能力'
+    Material: clock
+    LeftClickCommands:
+    - '[openMenu] 核心商店-职业能力'
+    - 'console: execute as %player% at @s run playsound minecraft:block.note_block.bit
+      ambient @a ~ ~ ~'
+  
+  '19':
+    DisplayName: '&e&l建筑 - 矿场'
+    Material: raw_gold_block
+    Lore:
+    - '&8===================='
+    - '&#CCCCFF生产资金的基本能源'
+    - '&8===================='
+    - '&7售价：2000'
+    LeftClickCommands:
+    - '[buy] building_mine'
+  
+  '20':
+    DisplayName: '&e&l建筑 - 狙击塔'
+    Material: Bone_Block
+    Lore:
+    - '&8===================='
+    - '&#CCCCFF基本的防御措施，对玩家有高额的伤害，距离远'
+    - '&8===================='
+    - '&7售价：400'
+    LeftClickCommands:
+    - '[buy] building_sniper'
+  
+  '21':
+    DisplayName: '&e&l建筑 - 炸弹塔'
+    Material: red_glazed_terracotta
+    Lore:
+    - '&8===================='
+    - '&#CCCCFF抛物线AOE击退防御塔'
+    - '&8===================='
+    - '&7售价：1250'
+    LeftClickCommands:
+    - '[buy] building_boom'
+  
+  '22':
+    DisplayName: '&e&l建筑 - 魔法防御塔'
+    Material: amethyst_block
+    Lore:
+    - '&8===================='
+    - '&#CCCCFF穿墙必中AOE缓速防御塔'
+    - '&8===================='
+    - '&7售价：800'
+    LeftClickCommands:
+    - '[buy] building_magic'
+  
+  '23':
+    DisplayName: '&e&l建筑 - 兵营'
+    Material: crafter
+    Lore:
+    - '&8===================='
+    - '&#CCCCFF组建你的军队攻击！'
+    - '&8===================='
+    - '&7售价：500'
+    LeftClickCommands:
+    - '[buy] building_army'
+  
+  '24':
+    DisplayName: '&e&l建筑 - 雷达'
+    Material: GRAY_GLAZED_TERRACOTTA
+    Lore:
+    - '&8===================='
+    - '&#CCCCFF获取指挥军队的能力！'
+    - '&8===================='
+    - '&7售价：600'
+    LeftClickCommands:
+    - '[buy] building_raider'
+  
+  '25':
+    DisplayName: '&e&l建筑 - 实验书楼'
+    Material: enchanting_table
+    Lore:
+    - '&8===================='
+    - '&#CCCCFF购买团队升级的必要建筑'
+    - '&8===================='
+    - '&7售价：1200'
+    LeftClickCommands:
+    - '[buy] building_lab'
+  
+  '28':
+    DisplayName: '&e&l建筑 - 机枪塔'
+    Material: DISPENSER
+    Lore:
+    - '&8===================='
+    - '&#CCCCFF超高DPS与玩家绝对防御塔'
+    - '&8===================='
+    - '&7售价：2000'
+    LeftClickCommands:
+    - '[buy] building_machine'
+  '29':
+    DisplayName: '&e&l建筑 - 资源收集器'
+    Material: YELLOW_GLAZED_TERRACOTTA
+    Lore:
+    - '&8===================='
+    - '&#CCCCFF用于自动加速8m内矿场，额外提供33%生产速度'
+    - '&8===================='
+    - '&7售价：2500'
+    LeftClickCommands:
+    - '[buy] building_resource'
+  '30':
+    DisplayName: '&e&l建筑 - 迫击炮'
+    Material: BLACK_GLAZED_TERRACOTTA
+    Lore:
+    - '&8===================='
+    - '&#CCCCFF超远50m距离轰炸敌方防御塔'
+    - '&8===================='
+    - '&7售价：3500'
+    LeftClickCommands:
+    - '[buy] building_cannon'
+  '31':
+    DisplayName: '&e&l建筑 - 医院'
+    Material: quartz_bricks
+    Lore:
+    - '&8===================='
+    - '&#CCCCFF自动回复周围玩家与兵种血量'
+    - '&8===================='
+    - '&7售价：1000'
+    LeftClickCommands:
+    - '[buy] building_hospital'
+  '32':
+    DisplayName: '&e&l建筑 - 造车工坊'
+    Material: IRON_BLOCK
+    Lore:
+    - '&8===================='
+    - '&#CCCCFF用于制造强大的坦克'
+    - '&8===================='
+    - '&7售价：2000'
+    LeftClickCommands:
+    - '[buy] building_tankers'
+  '33':
+    DisplayName: '&e&l建筑 - 小店铺'
+    Material: RED_WOOL
+    Lore:
+    - '&8===================='
+    - '&#CCCCFF提供额外的购买物品的地方'
+    - '&8===================='
+    - '&7售价：1000'
+    LeftClickCommands:
+    - '[buy] building_shop'
+  
+  '9':
+    Material: gray_stained_glass_pane
+  '10':
+    Material: lime_stained_glass_pane
+  '11':
+    Material: gray_stained_glass_pane
+  '12':
+    Material: gray_stained_glass_pane
+  '13':
+    Material: gray_stained_glass_pane
+  '14':
+    Material: gray_stained_glass_pane
+  '15':
+    Material: gray_stained_glass_pane
+  '16':
+    Material: gray_stained_glass_pane
+  '17':
+    Material: gray_stained_glass_pane

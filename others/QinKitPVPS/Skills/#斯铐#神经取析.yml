@@ -1,0 +1,17 @@
+Activator:
+  Name: 神经取析
+Commands:
+- 'console: execute as %player% at %player% run playsound minecraft:block.stone_pressure_plate.click_on
+  voice 5629437 ~ ~ ~ 100 0.1 '
+- 'console: execute as %player% at %player% run effect give @a[distance=1..10] glowing
+  8 0'
+- 'console: execute as %player% at %player% run effect give @a[distance=1..10] weakness
+  8 0'
+- 'console: execute as %player% at %player% run effect give @a[distance=1..10,tag=LW]
+  slowness 8 2'
+- 'console: execute as %player% at %player% run effect give @a[distance=1..10,tag=LW]
+  blindness 5 0'
+- 'console: execute as %player% at %player% run effect give @a[distance=1..10,tag=LW]
+  null 8 3'
+CoolDown:
+  CoolDown: 35S

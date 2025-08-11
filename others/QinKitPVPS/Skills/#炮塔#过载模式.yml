@@ -1,0 +1,25 @@
+Activator:
+  Name: 过载模式
+Commands:
+- 'console: execute as %player% at @s run playsound minecraft:entity.iron_golem.death
+  player @a ~ ~ ~ 1 0.8'
+- 'console: execute as %player% at @s run particle happy_villager ~ ~1 ~ 1 1 1 0 50
+  force'
+CoolDown:
+  CoolDown: 30S
+Effects:
+  ABSORPTION:
+    Amplifier: 2
+    Duration: 5
+  POISON:
+    Amplifier: 3
+    Duration: 15
+  RESISTANCE:
+    Amplifier: 3
+    Duration: 8
+  SLOW:
+    Amplifier: 2
+    Duration: 5
+  WATER_BREATHING:
+    Amplifier: 2
+    Duration: 5

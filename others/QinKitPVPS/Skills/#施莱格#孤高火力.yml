@@ -1,0 +1,13 @@
+Activator:
+  Material: TARGET
+  Name: '&e孤高火力'
+Commands:
+- '#待处理 console: execute as %player% at @s run give @s minecraft:tipped_arrow{Enchantments:[{id:"mending",lvl:1s}],CustomPotionEffects:[{Id:7b,Amplifier:0b,Duration:1,Ambient:false,ShowParticles:true,ShowIcon:true},{Id:24b,Amplifier:0b,Duration:80,Ambient:false,ShowParticles:true,ShowIcon:true}],Potion:"awkward"}
+  8'
+- 'console: execute as %player% at @s run give @s crossbow[enchantments={levels:{"minecraft:quick_charge":4}}]
+  1'
+- 'console: execute as %player% at @s run tag @s add GGHL '
+- 'console: execute as %player% at @s run scoreboard players add @s[scores={GGHLCS=..4}]
+  GGHLCS 1'
+CoolDown:
+  CoolDown: 35S

@@ -1,0 +1,21 @@
+Activator:
+  Material: WITHER_ROSE
+  Name: '&a枯萎'
+Commands:
+- 'console: tag %player% add Death_S'
+- 'console: execute as %player% at @s run effect give @a[distance=0..8,tag=!Death_S]
+  darkness 5 2'
+- 'console: execute as %player% at @s run playsound minecraft:entity.wither.ambient
+  voice @a'
+- 'console: execute as %player% at @s run execute as @a[distance=0..8] at @s run particle
+  minecraft:large_smoke ~ ~ ~ 0.5 0.5 0.5 0.3 100'
+- 'console: tag %player% remove Death_S'
+CoolDown:
+  CoolDown: 25S
+Effects:
+  INVISIBILITY:
+    Amplifier: 2
+    Duration: 5
+  SPEED:
+    Amplifier: 2
+    Duration: 5

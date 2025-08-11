@@ -1,0 +1,60 @@
+Kit:
+  Permission: kp.kit.tan
+  DisplayName: 坦克
+  Available: true
+  Cooldown: 0
+  Level: 0
+Inventory:
+  Armor:
+    Helmet:
+      Name: '&7坦克的头盔'
+      Material: IRON_HELMET
+    Chestplate:
+      Name: '&7坦克的盔甲'
+      Material: DIAMOND_CHESTPLATE
+      ArmorTrim:
+        Material: QUARTZ
+        Pattern: DUNE
+    Leggings:
+      Name: '&7坦克的护腿'
+      Material: DIAMOND_LEGGINGS
+    Boots:
+      Name: '&7坦克的鞋子'
+      Material: IRON_BOOTS
+  Items:
+    '0':
+      Name: '&8炮管'
+      Material: IRON_SWORD
+      Lore:
+      - '  &8● &3坚硬 &7: &7每次被攻击有 &a10% &7的概率获得 &a2s抗性提升I'
+    '1':
+      Name: '&8辅助手枪'
+      Material: BOW
+    '6':
+      Name: '&8炮弹'
+      Material: FIRE_CHARGE
+      Lore:
+      - '  &8● &3大炮 &7: &7向前方发射一颗威力接近&a 25 &7的火球'
+    '3':
+      Material: COOKED_BEEF
+      Amount: 8
+    '4':
+      Name: '&a医疗包'
+      Material: GREEN_GLAZED_TERRACOTTA
+      Amount: 1
+    '7':
+      Material: ARROW
+      Amount: 24
+    '8':
+      Name: '&aPlayer Tracker &7(Right Click)'
+      Material: COMPASS
+Commands:
+- 'console: tag %player% add Tank'
+Introduction:
+- '&7>> &b&l坦克 &7-->'
+- '&7生命：&a40  &7防御：&a18 + 4  &7攻击：&a6'
+- '&7上手难度：&f★★★☆☆'
+- '  &8● &3大炮 &7: &7向前方发射一颗威力接近&a 25 &7的火球'
+- '  &8● &3坚硬 &7: &7每次被攻击有 &a10% &7的概率获得 &a2s抗性提升I'
+- '  &8○ &7最高级别的防御，还有最恐怖的爆发'
+- '  &8○ &7战争的兵器，唯一的缺点就是难耐用呢'

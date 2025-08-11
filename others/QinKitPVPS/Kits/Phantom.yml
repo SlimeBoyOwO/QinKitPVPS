@@ -1,0 +1,66 @@
+Kit:
+  Permission: kp.kit.phantom
+  DisplayName: 魅影
+  Available: true
+  Cooldown: 0
+  Level: 0
+Inventory:
+  Armor:
+    Helmet:
+      Material: LEATHER_HELMET
+      Dye:
+        Red: 12
+        Green: 12
+        Blue: 12
+    Chestplate:
+      Material: CHAINMAIL_CHESTPLATE
+    Leggings:
+      Material: CHAINMAIL_LEGGINGS
+    Boots:
+      Material: NETHERITE_BOOTS
+      ArmorDefenseBase: 2
+      ArmorKnockBackResistBase: 0
+      ArmorToughnessBase: 0
+  Items:
+    '0':
+      Name: '&7漆影剑'
+      Material: NETHERITE_SWORD
+      Enchantments:
+        UNBREAKABLE: 5
+      Lore:
+      - '  &8● &3影噬 &7: &7周围8m内有低于 &a15❤ &7的敌人，获得 &a速度 II'
+    '1':
+      Name: '&7还魂弓'
+      Material: BOW
+      Enchantments:
+        UNBREAKABLE: 5
+    '3':
+      Material: COOKED_BEEF
+      Amount: 8
+    '4':
+      Name: '&a医疗包'
+      Material: GREEN_GLAZED_TERRACOTTA
+      Amount: 3
+    '6':
+      Name: '&7幻影'
+      Material: SNOUT_ARMOR_TRIM_SMITHING_TEMPLATE
+      Lore:
+      - '  &8● &3幻影 &7: &7&a1s &7后进入幻影状态，如果被敌人击中会传送到敌人身后并获得 '
+      - '                   &a3s速度III &7如果没有人击中则 &a4s &7后获得 &a2s虚弱II，'
+    '7':
+      Material: ARROW
+      Amount: 24
+    '8':
+      Name: '&aPlayer Tracker &7(Right Click)'
+      Material: COMPASS
+Commands:
+- 'console: tag %player% add Phantom'
+Introduction:
+- '&7>> &b&l魅影 &7-->'
+- '&7生命：&a40  &7防御：&a12  &7攻击：&a8'
+- '&7上手难度：&f★★★★☆'
+- '  &8● &3幻影 &7: &7&a1s &7后进入幻影状态，如果被敌人击中会传送到敌人身后并获得 '
+- '                   &a3s速度III &7如果没有人击中则 &a4s &7后获得 &a2s虚弱II，'
+- '  &8● &3影噬 &7: &7周围8m内有低于 &a15❤ &7的敌人，获得 &a速度 II'
+- '  &8○ &7犹如鬼魂般来无影去无踪的威胁'
+- '  &8○ &7尽可能魅惑敌人是你扭转战局的强大动力'

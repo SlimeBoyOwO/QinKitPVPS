@@ -1,0 +1,17 @@
+{
+	"display": {
+		"icon": {
+			"id": "minecraft:emerald_block"
+		},
+		"title": {"color":"dark_purple","translate":"无伤通关~"},
+		"description": {"color":"gold","translate":"在血量大于等于 40 的情况下击杀一个人"},
+		"announce_to_chat": true,
+		"frame": "challenge"
+	},
+	"parent": "kitspvp:qinkitpvps/kit_fighter_challenges",	
+	"criteria": {
+		"dummy": {
+			"trigger": "minecraft:impossible"
+		  }
+	}
+}

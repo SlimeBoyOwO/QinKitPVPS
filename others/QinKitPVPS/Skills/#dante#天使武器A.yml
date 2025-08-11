@@ -1,0 +1,16 @@
+Activator:
+  Material: SOUL_LANTERN
+  Name: 天使武器A
+Commands:
+- 'console: execute as %player% at @s run give @s bow[custom_name=''"§8猎手之弓"'',enchantments={levels:{"minecraft:infinity":1}},attribute_modifiers=[{id:"armor",type:"generic.movement_speed",amount:0.15d,operation:"add_multiplied_base",slot:"mainhand"},{id:"armor",type:"generic.movement_speed",amount:0.075d,operation:"add_multiplied_base",slot:"offhand"}]]
+  1'
+- 'console: execute as %player% at @s run clear @s minecraft:trident 1'
+- 'console: execute as %player% at @s run tag @s add gun1'
+- 'console: execute as %player% at @s run tag @s remove gun2'
+- 'console: execute as %player% at @s run clear @s minecraft:soul_Lantern '
+- 'console: execute as %player% at @s run give @s soul_campfire[custom_name=''"天使武器B"'']
+  1'
+- 'console: execute as %player% at @s run scoreboard players set @s reload 0'
+- 'console: execute as %player% run clear @s minecraft:soul_lantern'
+CoolDown:
+  CoolDown: 8S

@@ -1,0 +1,23 @@
+{
+    "display": {
+        "icon": {
+            "id": "minecraft:glow_ink_sac"
+        },
+        "title": {
+            "color": "dark_purple",
+            "translate": "完成 2-7 关卡 地狱难度"
+        },
+        "description": {
+            "color": "gold",
+            "translate": "地狱难度完成"
+        },
+        "announce_to_chat": true,
+        "frame": "challenge"
+    },
+    "parent": "kitspvp:pvz/fin2_6_hell",
+    "criteria": {
+        "dummy": {
+            "trigger": "minecraft:impossible"
+        }
+    }
+}

@@ -1,0 +1,17 @@
+{
+	"display": {
+		"icon": {
+			"id": "minecraft:sunflower"
+		},
+		"title": {"translate":"完成 1-1 关卡"},
+		"description": {"color":"green","translate":"解锁向日葵"},
+		"announce_to_chat": true,
+		"frame": "task"
+	},
+	"parent": "kitspvp:pvz/main_line",	
+	"criteria": {
+		"dummy": {
+			"trigger": "minecraft:impossible"
+		  }
+	}
+}

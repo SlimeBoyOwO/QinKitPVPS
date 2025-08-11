@@ -1,0 +1,112 @@
+MenuTitle: '&8[&3AllayWar&8] &8&l兵营菜单'
+Lines: 6
+OpenCommands:
+- 'console: execute as %player% at @s run playsound minecraft:block.beacon.power_select
+  ambient @s'
+
+Items:
+  '3':
+    DisplayName: '&b&l制造兵种'
+    Material: nether_star
+    LeftClickCommands:
+    - '[openMenu] 兵营菜单'
+    - 'console: execute as %player% at @s run playsound minecraft:block.note_block.bit
+      ambient @a ~ ~ ~'
+  '5':
+    DisplayName: '&b&l购买装背 '
+    Material: diamond_sword
+    LeftClickCommands:
+    - '[openMenu] 兵营菜单-装备'
+    - 'console: execute as %player% at @s run playsound minecraft:block.note_block.bit
+      ambient @a ~ ~ ~'
+  
+  '9':
+    Material: gray_stained_glass_pane
+  '10':
+    Material: gray_stained_glass_pane
+  '11':
+    Material: gray_stained_glass_pane
+  '12':
+    Material: lime_stained_glass_pane
+  '13':
+    Material: gray_stained_glass_pane
+  '14':
+    Material: gray_stained_glass_pane
+  '15':
+    Material: gray_stained_glass_pane
+  '16':
+    Material: gray_stained_glass_pane
+  '17':
+    Material: gray_stained_glass_pane
+  
+  '19':
+    DisplayName: '&a&l部队 - 僵尸精锐'
+    Material: green_dye
+    Lore:
+    - '&7召唤3只高级僵尸部队'
+    - '&7售价：350'
+    LeftClickCommands:
+    - '[buy] zombie_mite'
+  
+  '20':
+    DisplayName: '&e&l部队 - 骷髅军团'
+    Material: bone
+    Lore:
+    - '&7召唤8个杂鱼骷髅兵'
+    - '&7售价：200'
+    LeftClickCommands:
+    - '[buy] skeleton_army'
+  
+  '21':
+    DisplayName: '&e&l部队 - 丧尸巨人'
+    Material: ORANGE_DYE
+    Lore:
+    - '&7召唤1个攻城巨人'
+    - '&7售价：250'
+    LeftClickCommands:
+    - '[buy] zombie_tank'
+  
+  '22':
+    DisplayName: '&e&l部队 - 步枪士兵'
+    Material: GRAY_DYE
+    Lore:
+    - '&7召唤3个远程步枪士兵'
+    - '&7售价：350'
+    LeftClickCommands:
+    - '[buy] zombie_rifle'
+  
+  '23':
+    DisplayName: '&e&l部队 - 工程师'
+    Material: NETHERITE_SCRAP
+    Lore:
+    - '&7召唤1个占领建筑的工程师'
+    - '&7售价：250'
+    LeftClickCommands:
+    - '[buy] engineer'
+  
+  '24':
+    DisplayName: '&e&l部队 - 拆塔步兵'
+    Material: RED_DYE
+    Lore:
+    - '&7召唤2个拿着攻城磊的步兵'
+    - '&7售价：500'
+    LeftClickCommands:
+    - '[buy] tower_attacker'
+  
+  '25':
+    DisplayName: '&e&l部队 - 地狱蛮兵'
+    Material: MAGMA_CREAM
+    Lore:
+    - '&7召唤2个高工高防蛮兵'
+    - '&7售价：1200'
+    LeftClickCommands:
+    - '[buy] hell_army'
+  
+  '28':
+    DisplayName: '&e&l部队 - 自爆步兵'
+    Material: SPIDER_EYE
+    Lore:
+    - '&7召唤2个高伤害低血量自爆步兵'
+    - '&7售价：800'
+    LeftClickCommands:
+    - '[buy] boomer_army'

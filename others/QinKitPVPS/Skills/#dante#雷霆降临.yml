@@ -1,0 +1,20 @@
+Activator:
+  Material: AMETHYST_SHARD
+  Name: 雷霆降临
+Commands:
+- 'console: execute as @a[tag=gun1,tag=gun,tag=!sword,tag=!dante] if entity @s[scores={reload=180..}]
+  run clear @s minecraft:trident 1'
+- 'console: execute as @a[tag=gun1,tag=gun,tag=!sword,tag=!dante] if entity @s[scores={reload=180..}]
+  run give @s trident[custom_name=''"§1§n§o雷"'',enchantments={levels:{"minecraft:channeling":1,"minecraft:impaling":2,"minecraft:loyalty":3}},attribute_modifiers=[{id:"armor",type:"generic.attack_damage",amount:8.0d,operation:"add_value",slot:"mainhand"},{id:"armor",type:"generic.armor",amount:2.0d,operation:"add_value",slot:"mainhand"}]]
+  1'
+- 'console: execute as @a[tag=gun1,tag=gun,tag=!sword,tag=!dante] if entity @s[scores={reload=180..}]
+  run summon lightning_bolt ~ ~ ~5'
+- 'console: execute as @a[tag=gun1,tag=gun,tag=!sword,tag=!dante] if entity @s[scores={reload=180..}]
+  run summon lightning_bolt ~5 ~ ~'
+- 'console: execute as @a[tag=gun1,tag=gun,tag=!sword,tag=!dante] if entity @s[scores={reload=180..}]
+  run summon lightning_bolt ~ ~ ~-5'
+- 'console: execute as @a[tag=gun1,tag=gun,tag=!sword,tag=!dante] if entity @s[scores={reload=180..}]
+  run summon lightning_bolt ~-5 ~ ~'
+- 'console: execute as %player% at @s run scoreboard players set @s reload 0'
+CoolDown:
+  CoolDown: 31S

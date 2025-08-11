@@ -1,0 +1,23 @@
+Activator:
+  Material: NETHER_STAR
+  Name: '&a遁影模式'
+Commands:
+- 'console: tag %player% add INVIS'
+- 'console: tag %player% add Ninja_S'
+- 'console: tag %player% remove Ninja_S'
+- 'console: execute as %player% at @s run playsound minecraft:entity.allay.death player
+  @a ~ ~ ~ 0.5 1'
+- 'console: execute at %player% run particle campfire_cosy_smoke ~ ~1 ~ 0.5 1 0.5
+  0 50 normal'
+CoolDown:
+  CoolDown: 30S
+Effects:
+  INVISIBILITY:
+    Amplifier: 1
+    Duration: 10
+  SPEED:
+    Amplifier: 2
+    Duration: 10
+  STRENGTH:
+    Amplifier: 3
+    Duration: 10

@@ -1,0 +1,20 @@
+Activator:
+  Name: '&e亡羊补牢'
+Commands:
+- 'console: execute as %player% at %player% run effect give @s[scores={health=1}]
+  absorption 5 4'
+- 'console: execute as %player% at %player% run effect give @s[scores={health=1}]
+  weakness 5 4'
+- 'console: execute as %player% at %player% run effect give @s[scores={health=1}]
+  strength infinite'
+- 'console: execute as %player% at %player% run effect give @s[scores={health=1}]
+  invisibility infinite'
+- 'console: execute as %player% at %player% run effect give @s[scores={health=1}]
+  speed infinite'
+- 'console: execute as %player% at %player% run playsound minecraft:entity.skeleton.hurt
+  voice @s[scores={health=1}] ~ ~ ~ 1 0.1'
+- 'console: execute as %player% at %player% run scoreboard players set @s WC2 0 '
+- 'console: execute as %player% at %player% run run tag @s remove WC2 '
+- 'console: execute as %player% at %player% run tellraw @s[scores={health=2..}] [{"color":"red","text":"还不能"},{"color":"black","text":"使用"}]'
+CoolDown:
+  CoolDown: 30S

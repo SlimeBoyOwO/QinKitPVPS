@@ -1,0 +1,11 @@
+Activator:
+  Material: BLAZE_POWDER
+  Name: '&a止息'
+Commands:
+- 'console: execute as %player% at @s run fill ~18 ~-5 ~-18 ~-17 ~18 ~17 air replace
+  fire'
+- 'console: execute as %player% at @s run fill ~18 ~-5 ~-18 ~-17 ~18 ~17 air replace
+  soul_fire'
+- 'console: execute as %player% at @s run effect give @s wither infinite'
+CoolDown:
+  CoolDown: 20S

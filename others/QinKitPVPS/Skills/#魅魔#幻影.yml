@@ -1,0 +1,12 @@
+Activator:
+  Name: 幻影
+Commands:
+- 'console: tag %player% add Pre_Maid_Skill'
+- 'console: execute as %player% at @s run playsound minecraft:block.sculk.break player
+  @s ~ ~ ~ 1 1'
+CoolDown:
+  CoolDown: 20S
+Effects:
+  WEAKNESS:
+    Amplifier: 4
+    Duration: 5

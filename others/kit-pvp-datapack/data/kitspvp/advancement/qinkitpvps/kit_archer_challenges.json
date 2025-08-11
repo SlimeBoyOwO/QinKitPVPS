@@ -1,0 +1,17 @@
+{
+	"display": {
+		"icon": {
+			"id": "minecraft:bow"
+		},
+		"title": {"color":"dark_purple","translate":"亡灵卫兵挑战"},
+		"description": {"color":"gold","translate":"为了灵魂之主的诞生!"},
+		"announce_to_chat": true,
+		"frame": "challenge"
+	},
+	"parent": "kitspvp:qinkitpvps/kits_challenge",	
+	"criteria": {
+		"dummy": {
+			"trigger": "minecraft:impossible"
+		  }
+	}
+}

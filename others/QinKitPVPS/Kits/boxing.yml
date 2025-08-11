@@ -1,0 +1,68 @@
+Kit:
+  Permission: kp.kit.boxing
+  Cooldown: 0
+  Available: false
+  Level: 0
+  Health: 24
+Inventory:
+  Armor:
+    Helmet:
+      Name: '&8护具'
+      Material: LEATHER_HELMET
+      Dye:
+        Red: 255
+        Green: 255
+        Blue: 255
+      Enchantments:
+        PROTECTION: 2
+    Leggings:
+      Name: '&8护具'
+      Material: LEATHER_LEGGINGS
+      ArmorKnockBackResistBase: 0.1
+      ArmorDefenseBase: 1
+      Enchantments:
+        PROTECTION: 2
+    Boots:
+      Name: '&8护具'
+      Material: LEATHER_BOOTS
+      Enchantments:
+        PROTECTION: 2
+  Items:
+    '1':
+      Name: '&5&l暗器'
+      Material: CROSSBOW
+      Enchantments:
+        PUNCH: 3
+        QUICK_CHARGE: 3
+    '2':
+      Name: '&a&l聚精会神'
+      Material: SLIME_BALL
+      Amount: 1
+    '3':
+      Material: COOKED_BEEF
+      Amount: 6
+    '4':
+      Name: '&a医疗包'
+      Material: GREEN_GLAZED_TERRACOTTA
+      Amount: 2
+    '6':
+      Name: '&c&l极限爆发'
+      Material: REDSTONE
+    '7':
+      Material: ARROW
+      Amount: 3
+    '8':
+      Name: '&aPlayer Tracker &7(Right Click)'
+      Material: COMPASS
+Effects:
+  SPEED:
+    Amplifier: 1
+    Duration: 100000
+  JUMP_BOOST:
+    Amplifier: 1
+    Duration: 100000
+  STRENGTH:
+    Amplifier: 2
+    Duration: 100000
+
+

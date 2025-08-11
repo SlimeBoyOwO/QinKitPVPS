@@ -1,0 +1,21 @@
+Activator:
+  Material: WHITE_DYE
+  Name: '&d灭世之子'
+Commands:
+- 'console: execute as %player% at @s run playsound minecraft:entity.wolf.ambient
+  console @a ~ ~ ~ 1 1'
+- 'console: execute as %player% at @s run effect give @p hunger infinite'
+- 'console: execute as %player% at @s run effect give @a[distance=0..6,tag=!QingLing_S]
+  slowness 1 2 true'
+- 'console: execute as %player% at @s run effect give @a[distance=0..6,tag=!QingLing_S]
+  weakness 5 2 true'
+- 'console: execute as %player% at @s run effect give @a[distance=0..6,tag=!QingLing_S]
+  strength 5 1 true'
+- 'console: execute as %player% at @s run particle heart ~ ~2 ~ 5 1 5 0 100 normal'
+- 'console: execute as %player% at @s run tag @s remove QingLing_S'
+CoolDown:
+  CoolDown: 30S
+Effects:
+  SPEED:
+    Amplifier: 4
+    Duration: 10

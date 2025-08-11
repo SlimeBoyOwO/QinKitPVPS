@@ -1,0 +1,17 @@
+{
+	"display": {
+		"icon": {
+			"id": "minecraft:grass_block"
+		},
+		"title": {"translate":"冒险模式"},
+		"description": {"color":"green","translate":"开始你的PVZ之旅~"},
+		"announce_to_chat": true,
+		"frame": "task"
+	},
+	"parent": "kitspvp:pvz/root",	
+	"criteria": {
+		"dummy": {
+			"trigger": "minecraft:impossible"
+		  }
+	}
+}

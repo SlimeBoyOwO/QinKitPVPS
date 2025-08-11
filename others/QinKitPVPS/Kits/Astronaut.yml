@@ -1,0 +1,54 @@
+Kit:
+  Permission: kp.kit.astronaut
+  DisplayName: 宇航员
+  Available: true
+  Cooldown: 0
+  Level: 0
+  Health: 20
+Inventory:
+  Armor:
+    Helmet:
+      Name: Astronaut Helmet
+      Material: PLAYER_HEAD
+    Chestplate:
+      Material: IRON_CHESTPLATE
+    Leggings:
+      Material: IRON_LEGGINGS
+    Boots:
+      Material: IRON_BOOTS
+  Items:
+    '0':
+      Material: IRON_SWORD
+      Enchantments:
+        SHARPNESS: 1
+      Lore:
+      - '  &8● &3月球操控 &7: &7对处于 &a浮空 &7状态的敌人，伤害提升至 &a%125 '
+    '1':
+      Material: BOW
+      Lore:
+      - '  &8● &3月球操控 &7: &7对处于 &a浮空 &7状态的敌人，伤害提升至 &a%125 '
+    '2':
+      Name: '&b失重引擎'
+      Material: CLAY_BALL
+      Lore:
+      - '  &8● &3重力 &7: &7随意切换失重和非失重状态 '
+    '3':
+      Material: COOKED_BEEF
+      Amount: 8
+    '4':
+      Name: '&a医疗包'
+      Material: GREEN_GLAZED_TERRACOTTA
+      Amount: 3
+    '6':
+      Name: '&b失重核心'
+      Material: END_STONE
+      Lore:
+      - '  &8● &3失重 &7: &7释放 &a15 &7个 &a末影悬浮球 '
+    '7':
+      Material: ARROW
+      Amount: 48
+    '8':
+      Name: '&aPlayer Tracker &7(Right Click)'
+      Material: COMPASS
+Commands:
+- 'console: tag %player% add Astronaut'

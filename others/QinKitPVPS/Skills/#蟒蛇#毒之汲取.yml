@@ -1,0 +1,18 @@
+Activator:
+  Name: 毒之汲取
+Commands:
+- 'console: execute as %player% at @s run effect give @p darkness infinite'
+- 'console: execute as %player% at @s run effect give @p poison infinite'
+- 'console: execute as %player% at @s run effect give @p blindness infinite'
+- 'console: execute as %player% at @s run effect give @p glowing infinite'
+- 'console: execute as %player% at @s run effect give @p wither infinite'
+- 'console: execute as %player% at @s run effect give @p hunger infinite'
+CoolDown:
+  CoolDown: 10S
+Effects:
+  ABSORPTION:
+    Amplifier: 5
+    Duration: 10
+  INSTANT_DAMAGE:
+    Amplifier: 2
+    Duration: 1

@@ -1,0 +1,15 @@
+Activator:
+  Material: CHAIN
+  Name: 恶魔武器C
+Commands:
+- 'console: execute as %player% at @s run give @s fishing_rod[custom_name=''"§1灵魂之杆"'',enchantments={levels:{"minecraft:fire_aspect":2,"minecraft:knockback":2}},attribute_modifiers=[{id:"armor",type:"generic.movement_speed",amount:0.1d,operation:"add_multiplied_base",slot:"mainhand"},{id:"armor",type:"generic.armor",amount:5.0d,operation:"add_value",slot:"offhand"}]]
+  1'
+- 'console: execute as %player% at @s run clear @s minecraft:netherite_axe 1'
+- 'console: execute as %player% at @s run tag @s add sword3'
+- 'console: execute as %player% at @s run tag @s remove sword2'
+- 'console: execute as %player% at @s run give @s lantern[custom_name=''"恶魔武器A"'']
+  1'
+- 'console: execute as %player% at @s run clear @s minecraft:chain '
+- 'console: execute as %player% at @s run scoreboard players set @s reload 0'
+CoolDown:
+  CoolDown: 8S

@@ -1,0 +1,22 @@
+{
+    "display": {
+        "icon": {
+            "id": "minecraft:magenta_dye"
+        },
+        "title": {
+            "translate": "完成 1-9 关卡"
+        },
+        "description": {
+            "color": "green",
+            "translate": "解锁小喷菇"
+        },
+        "announce_to_chat": true,
+        "frame": "task"
+    },
+    "parent": "kitspvp:pvz/fin1_8",
+    "criteria": {
+        "dummy": {
+            "trigger": "minecraft:impossible"
+        }
+    }
+}

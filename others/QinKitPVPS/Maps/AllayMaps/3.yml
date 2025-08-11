@@ -1,0 +1,28 @@
+MapID: 3
+MapName: 每人一小块地
+World: skyblock_copy
+Center:
+  X: 4000
+  Y: 1
+  Z: 4000
+Radius:
+  X: 43
+  Y: 6
+  Z: 43
+Locations:
+  '0':
+    X: 3982
+    Y: 1
+    Z: 3976
+  '1':
+    X: 4018
+    Y: 1
+    Z: 3976
+  '2':
+    X: 4018
+    Y: 1
+    Z: 4024
+  '3':
+    X: 3982
+    Y: 1
+    Z: 4024

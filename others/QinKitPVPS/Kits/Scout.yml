@@ -1,0 +1,67 @@
+Kit:
+  Permission: kp.kit.Scout
+  DisplayName: 斯铐
+  Available: true
+  Cooldown: 0
+  Level: 0
+  Health: 22
+Inventory:
+  Items:
+    '0':
+      Name: '&a残旧的剑'
+      Material: IRON_SWORD
+      Lore:
+      - '  &8● &3操灵术（被动效果） &7: &a斯铐能持有的雪球上限至多为3，且当断魂与聚魂同时存在时，雪球将同时引导两个灵体；当一个灵体进入“虚空”或死亡时，另一个灵体短时间内会召唤失败。'
+    '1':
+      Name: '&a狂猎'
+      Material: LEAD
+      Lore:
+      - '  &8● &3狂猎&7: &7进入&a5S隐身，虚弱6；&7技能开启瞬间，令所有&a被标记为“猎物”，持续120s&7的其他玩家获得&a5s发光；&7技能开启后或结束后，为&a半径7格&a7内最近的的其他玩家&a给予“猎物”标记&7（已经拥有此标记的敌人不会再获得）'
+    '2':
+      Name: '&a神经取析'
+      Material: SPYGLASS
+      Lore:
+      - '  &8● &3神经取析 &7: &7使周围半径&a10格&7内的所有&a其他&7玩家获得&a8s发光，虚弱1；&7有&a“猎物”标记&7的其他玩家受到影响时，还会&a额外&7获得&a8s缓慢3，5s失明，5s挖掘疲劳4'
+    '3':
+      Name: '&8断魂索道'
+      Material: STRING
+      Lore:
+      - '  &8● &3断魂索道 &7: &7在&a原地&7召唤出一个&a断魂&7，持续&a15秒&7，在此期间，所有在&a断魂附近（半径5格），且被标记为“猎物”的其他玩家&7都会持续受到伤害并受到&a5s发光，缓慢2（没有被标记的玩家则受到凋零6，虚弱3。）；&7自己同时获得3个雪球，当掷出雪球时，断魂将会被持续引导至雪球的位置。；断魂存在期间，自己获得&a速度1，抗性提升1，虚弱10'
+    '4':
+      Name: '&8聚魂夜临'
+      Material: BLACK_DYE
+      Lore:
+      - '  &8● &3聚魂夜临 &7: &7使周围半径&a12&7格内的&a所有其他玩家&7获得&a黑暗&7，&a有“猎物”标记&7的其他玩家受到影响时，&a改为获得发光，失明；&7同时在原地召唤出一个&a聚魂&7，持续&a15秒&7，在此期间，所有在&a聚魂(半径5格）&7附近，且被标记为&a“猎物”的其他玩家&7将会获得&a虚弱2，漂浮，中毒6，&7没有被标记的玩家则受到&a速度1，抗性提升1；&7自己同时获得3个雪球，当掷出雪球时，聚魂将会被持续引导至雪球的位置，聚魂存在期间，自己获得缓慢，虚弱 '
+    '6':
+      Material: COOKED_BEEF
+      Amount: 6
+    '7':
+      Name: '&a医疗包'
+      Material: GREEN_GLAZED_TERRACOTTA
+      Amount: 3
+    '8':
+      Name: '&aPlayer Tracker &7(Right Click)'
+      Material: COMPASS
+Commands:
+- 'console: tag %player% add Scout'
+- 'console: item replace entity %player% armor.head with leather_helmet[enchantments={levels:{"minecraft:protection":1}},attribute_modifiers=[{id:"armor",type:"generic.armor",amount:4.0d,operation:"add_value",slot:"head"}],dyed_color=0]
+  1'
+- 'console: item replace entity %player% armor.feet with leather_boots[attribute_modifiers=[{id:"armor",type:"generic.movement_speed",amount:0.2d,operation:"add_multiplied_base",slot:"feet"},{id:"armor",type:"generic.armor",amount:2.0d,operation:"add_value",slot:"feet"}],dyed_color=0]
+  1'
+- 'console: item replace entity %player% armor.chest with diamond_chestplate[attribute_modifiers=[{id:"armor",type:"generic.armor",amount:1.0d,operation:"add_value",slot:"chest"},{id:"armor",type:"generic.movement_speed",amount:0.05d,operation:"add_multiplied_base",slot:"chest"}]]
+  1'
+- 'console: item replace entity %player% armor.legs with chainmail_leggings[enchantments={levels:{"minecraft:protection":1}},attribute_modifiers=[{id:"armor",type:"generic.armor",amount:2.0d,operation:"add_value",slot:"legs"}]]
+  1'
+Effects:
+  JUMP_BOOST:
+    Amplifier: 1
+    Duration: 100000
+Introduction:
+- '&7>> &b&l斯铐 &7-->'
+- '&7生命：&a44  &7防御：&a9  &7攻击：&a6'
+- '&7上手难度：&f★★★☆☆'
+- '  &8● &3狂猎&7: &7进入&a5S隐身，虚弱6；&7技能开启瞬间，令所有&a被标记为“猎物”，持续120s&7的其他玩家获得&a5s发光；&7技能开启后或结束后，为&a半径7格&a7内最近的的其他玩家&a给予“猎物”标记&7（已经拥有此标记的敌人不会再获得）'
+- '  &8● &3神经取析 &7: &7使周围半径&a10格&7内的所有&a其他&7玩家获得&a8s发光，虚弱1；&7有&a“猎物”标记&7的其他玩家受到影响时，还会&a额外&7获得&a8s缓慢3，5s失明，5s挖掘疲劳4'
+- '  &8● &3断魂索道 &7: &7在&a原地&7召唤出一个&a断魂&7，持续&a15秒&7，在此期间，所有在&a断魂附近（半径5格），且被标记为“猎物”的其他玩家&7都会持续受到伤害并受到&a5s发光，缓慢2（没有被标记的玩家则受到凋零6，虚弱3。）；&7自己同时获得3个雪球，当掷出雪球时，断魂将会被持续引导至雪球的位置。；断魂存在期间，自己获得&a速度1，抗性提升1，虚弱10'
+- '  &8● &3聚魂夜临 &7: &7使周围半径&a12&7格内的&a所有其他玩家&7获得&a黑暗&7，&a有“猎物”标记&7的其他玩家受到影响时，&a改为获得发光，失明；&7同时在原地召唤出一个&a聚魂&7，持续&a15秒&7，在此期间，所有在&a聚魂(半径5格）&7附近，且被标记为&a“猎物”的其他玩家&7将会获得&a虚弱2，漂浮，中毒6，&7没有被标记的玩家则受到&a速度1，抗性提升1；&7自己同时获得3个雪球，当掷出雪球时，聚魂将会被持续引导至雪球的位置，聚魂存在期间，自己获得缓慢，虚弱 '
+- '  &8● &3操灵术（被动效果） &7: &a斯铐能持有的雪球上限至多为3，且当断魂与聚魂同时存在时，雪球将同时引导两个灵体；当一个灵体进入“虚空”或死亡时，另一个灵体短时间内会召唤失败。'

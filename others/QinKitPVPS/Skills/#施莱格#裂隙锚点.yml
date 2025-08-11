@@ -1,0 +1,44 @@
+Activator:
+  Material: OAK_SIGN
+  Name: '&b裂隙锚点'
+Commands:
+- 'console: execute as %player% at @s run kill @e[type=minecraft:armor_stand,tag=WTBL] '
+- 'console: execute as %player% at %player% run summon armor_stand ~4 ~6 ~5 {Invisible:1b,Tags:["WTBL"],Pose:{Body:[0f,0f,0f],LeftArm:[0f,0f,0f],RightArm:[0f,0f,0f],LeftLeg:[0f,0f,0f],RightLeg:[0f,0f,0f],Head:[0f,0f,0f]},Rotation:[0F,NaNF]}'
+- 'console: execute as %player% at @s[nbt={Inventory:[{Slot:-106b,id:"minecraft:iron_sword"}]}]
+  run kill @e[tag=LXMD,type=minecraft:armor_stand] '
+- 'console: execute as %player% at @s[nbt={Inventory:[{Slot:-106b,id:"minecraft:iron_sword"}]}]
+  run particle happy_villager ~ ~ ~ 2 2 2 0 15 force'
+- 'console: execute as %player% at @s[nbt={Inventory:[{Slot:-106b,id:"minecraft:iron_sword"}]}]
+  run playsound minecraft:entity.experience_orb.pickup voice @s ~ ~ ~ 1 0.8'
+- 'console: execute as %player% at @s[nbt={Inventory:[{Slot:-106b,id:"minecraft:nether_star"}]}]
+  run particle totem_of_undying ~ ~ ~ 0.5 4 0.5 0 50 force'
+- 'console: execute as %player% at @s[nbt={Inventory:[{Slot:-106b,id:"minecraft:iron_sword"}]}]
+  run summon armor_stand ~ ~ ~ {Invisible:1b,Tags:["LXMD"],Pose:{Body:[0f,0f,0f],LeftArm:[0f,0f,0f],RightArm:[0f,0f,0f],LeftLeg:[0f,0f,0f],RightLeg:[0f,0f,0f],Head:[0f,0f,0f]},Rotation:[0F,NaNF]}'
+- 'console: execute as %player% at @s run execute as @e[type=minecraft:armor_stand,tag=LXMD]
+  at @s run tellraw @p[scores={health=..10},distance=8..,tag=SLG,nbt={Inventory:[{Slot:-106b,id:"minecraft:nether_star"}]}]
+  [{"text":"太远了","color":"red"}] '
+- 'console: execute as %player% at @s run execute as @e[type=minecraft:armor_stand,tag=LXMD]
+  at @s run tellraw @p[scores={health=11..},distance=8..,tag=SLG,nbt={Inventory:[{Slot:-106b,id:"minecraft:nether_star"}]}]
+  [{"text":"超出范围","color":"red"}] '
+- 'console: execute as %player% at @s[scores={health=..8},nbt={Inventory:[{Slot:-106b,id:"minecraft:nether_star"}]}]
+  run tellraw @a[distance=1..4] {"color":"yellow","text":"下次努力"}'
+- 'console: execute as %player% at @s[scores={health=9..16},nbt={Inventory:[{Slot:-106b,id:"minecraft:nether_star"}]}]
+  run tellraw @a[distance=1..4] {"color":"red","text":"别了"}'
+- 'console: execute as %player% at @s[scores={health=17..},nbt={Inventory:[{Slot:-106b,id:"minecraft:nether_star"}]}]
+  run tellraw @a[distance=1..4] {"color":"red","text":"太慢了"}'
+- 'console: execute as %player% at @s[nbt={Inventory:[{Slot:-106b,id:"minecraft:nether_star"}]}]
+  run tp @e[distance=0..7,tag=LXMD,type=minecraft:armor_stand,limit=1] '
+- 'console: execute as %player% at @s[nbt={Inventory:[{Slot:-106b,id:"minecraft:nether_star"}]}]
+  run particle totem_of_undying ~ ~ ~ 0.5 4 0.5 0 50 force'
+- 'console: execute as %player% at @s[nbt={Inventory:[{Slot:-106b,id:"minecraft:nether_star"}]}]
+  run effect give @s slow_falling 1 0'
+- 'console: execute as %player% at @s run tellraw @s[scores={health=..5},nbt={Inventory:[{Slot:-106b,id:"minecraft:nether_star"}]}]
+  {"color":"yellow","text":"这件衣服算是毁了."}'
+- 'console: execute as %player% at @s run playsound minecraft:block.conduit.activate
+  voice @s[nbt={Inventory:[{Slot:-106b,id:"minecraft:nether_star"}]}] ~ ~ ~ 1 2 '
+- 'console: execute as %player% at @s[nbt={Inventory:[{Slot:-106b,id:"minecraft:nether_star"}]}]
+  run playsound minecraft:block.conduit.activate voice @a[distance=1..5] ~ ~ ~ 1 2 '
+- 'console: execute as %player% at @s[nbt={Inventory:[{Slot:-106b,id:"minecraft:nether_star"}]}]
+  run kill @e[distance=0..7,tag=LXMD,type=minecraft:armor_stand] '
+CoolDown:
+  CoolDown: 9S

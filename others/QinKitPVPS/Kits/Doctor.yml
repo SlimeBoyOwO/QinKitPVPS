@@ -1,0 +1,61 @@
+Kit:
+  Permission: kp.kit.doctor
+  DisplayName: 医生
+  Available: false
+  Cooldown: 0
+  Level: 0
+  Health: 20
+Inventory:
+  Armor:
+    Helmet:
+      Material: LEATHER_HELMET
+      Dye:
+        Red: 255
+        Green: 239
+        Blue: 246
+    Chestplate:
+      Material: IRON_CHESTPLATE
+      Dye:
+        Red: 255
+        Green: 255
+        Blue: 255
+    Leggings:
+      Material: LEATHER_LEGGINGS
+      Dye:
+        Red: 255
+        Green: 239
+        Blue: 246
+    Boots:
+      Material: LEATHER_BOOTS
+      Dye:
+        Red: 255
+        Green: 255
+        Blue: 255
+  Items:
+    '0':
+      Name: '&d针'
+      Material: IRON_SWORD
+      Enchantments:
+        SHARPNESS: 1
+    '2':
+      Name: '&d治疗'
+      Material: RED_WOOL
+      Enchantments:
+        UNBREAKING: 1
+    '1':
+      Material: BOW
+    '3':
+      Material: COOKED_BEEF
+      Amount: 8
+    '4':
+      Name: '&a医疗包'
+      Material: GREEN_GLAZED_TERRACOTTA
+      Amount: 3
+    '7':
+      Material: ARROW
+      Amount: 48
+    '8':
+      Name: '&aPlayer Tracker &7(Right Click)'
+      Material: COMPASS
+Commands:
+- 'console: tag %player% add Doctor'

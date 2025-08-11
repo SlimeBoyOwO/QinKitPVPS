@@ -1,0 +1,21 @@
+Activator:
+  Name: '&a次元裂隙'
+Commands:
+- 'console: execute as %player% at @s run effect give @a[distance=1..8] slowness 8
+  6'
+- 'console: execute as %player% at @s run effect give @a[distance=1..8] blindness
+  5 0'
+- 'console: execute as %player% at @s run effect give @a[distance=1..8] wither 8 1'
+- 'console: execute as %player% at @s run clear @s minecraft:stone_sword 1 '
+- 'console: execute as %player% at @s run tellraw @a[distance=1..10] [{"color":"black","text":"黑洞:"},{"color":"gray","text":"我建议你闪开！"}]'
+- 'console: execute as %player% at @s run give @s stone_sword[damage=130,enchantments={levels:{"minecraft:knockback":10}},attribute_modifiers=[{id:"armor",type:"generic.attack_speed",amount:-3.86d,operation:"add_value",slot:"mainhand"},{id:"armor",type:"generic.attack_damage",amount:16.0d,operation:"add_value",slot:"mainhand"},{id:"armor",type:"generic.knockback_resistance",amount:1.0d,operation:"add_value",slot:"mainhand"}]]
+  1'
+- 'console: execute as %player% at @s run effect give @s slowness 3 2'
+- 'console: execute as %player% at @s run effect give @s blindness 2 0'
+- 'console: execute as %player% at @s run playsound minecraft:entity.warden.dig voice
+  @a[distance=0..8] ~ ~ ~ 2 1.4 '
+- 'console: execute as %player% at @s run particle minecraft:smoke ~ ~1 ~ 8 8 8 0
+  4000'
+- 'console: execute as %player% at @s run tellraw @s [{"color":"black","text":"黑洞:"},{"color":"gray","text":"他们将落荒而逃！"}]'
+CoolDown:
+  CoolDown: 40S

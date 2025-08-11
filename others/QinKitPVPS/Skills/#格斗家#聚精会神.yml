@@ -1,0 +1,18 @@
+Activator:
+  Material: SLIME_BALL
+  Name: '&a&l聚精会神'
+Commands:
+- 'console: execute as %player% at @s run particle end_rod ^ ^ ^ 0 1 0 0.5 200 force'
+- 'console: execute as %player% at @s run give @s arrow 1'
+CoolDown:
+  CoolDown: 15S
+Effects:
+  NIGHT_VISION:
+    Amplifier: 1
+    Duration: 10
+  REGENERATION:
+    Amplifier: 2
+    Duration: 6
+  SLOWNESS:
+    Amplifier: 3
+    Duration: 6

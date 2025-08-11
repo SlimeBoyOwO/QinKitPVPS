@@ -1,0 +1,23 @@
+{
+    "display": {
+        "icon": {
+            "id": "minecraft:popped_chorus_fruit"
+        },
+        "title": {
+            "color": "red",
+            "translate": "完成 2-6 关卡 困难难度"
+        },
+        "description": {
+            "color": "aqua",
+            "translate": "困难难度完成"
+        },
+        "announce_to_chat": true,
+        "frame": "goal"
+    },
+    "parent": "kitspvp:pvz/fin2_5_hard",
+    "criteria": {
+        "dummy": {
+            "trigger": "minecraft:impossible"
+        }
+    }
+}

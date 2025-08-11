@@ -1,0 +1,17 @@
+Activator:
+  Name: '&a超越生死'
+Commands:
+- 'console: execute as %player% at %player% run tellraw @a[distance=1..8,scores={health=..15}]
+  {"color":"red","text":"别说我不给你机会"}'
+- 'console: execute as %player% at %player% run playsound minecraft:entity.player.levelup
+  voice @s[scores={health=20,WCK=1..}] ~ ~ ~ 1 0.5'
+- 'console: execute as %player% at %player% run give @s[scores={health=20,WCK=1..}]
+  totem_of_undying 1'
+- 'console: execute as %player% at %player% run tellraw @s[scores={health=..19}] [{"color":"red","text":"我的状态"},{"color":"black","text":"不好"}]'
+- 'console: execute as %player% at %player% run tellraw @s[scores={WCK=0}] [{"color":"red","text":"灵魂"},{"color":"black","text":"还不够"}]'
+- 'console: execute as %player% at %player% run effect give @s[scores={health=20,WCK=1..}]
+  regeneration infinite'
+- 'console: execute as %player% at %player% run scoreboard players remove @s[scores={health=20,WCK=1..}]
+  WCK 1 '
+CoolDown:
+  CoolDown: 25S

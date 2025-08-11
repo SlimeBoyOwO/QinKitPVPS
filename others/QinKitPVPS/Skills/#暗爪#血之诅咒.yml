@@ -1,0 +1,13 @@
+Activator:
+  Material: REDSTONE_ORE
+  Name: '&a血之诅咒'
+Commands:
+- 'console: execute as %player% at @s run effect give @r[distance=1..5,scores={health=..20}]
+  wither 10 0'
+- 'console: damage %player% 18'
+- 'console: execute as %player% at @s run damage @r[distance=1..5,scores={health=12..}]
+  10'
+CoolDown:
+  CoolDown: 12S
+Message:
+  Message: ''

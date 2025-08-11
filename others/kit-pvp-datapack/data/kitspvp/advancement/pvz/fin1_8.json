@@ -1,0 +1,22 @@
+{
+    "display": {
+        "icon": {
+            "id": "minecraft:green_dye"
+        },
+        "title": {
+            "translate": "完成 1-8 关卡"
+        },
+        "description": {
+            "color": "green",
+            "translate": "解锁双发射手"
+        },
+        "announce_to_chat": true,
+        "frame": "task"
+    },
+    "parent": "kitspvp:pvz/fin1_7",
+    "criteria": {
+        "dummy": {
+            "trigger": "minecraft:impossible"
+        }
+    }
+}

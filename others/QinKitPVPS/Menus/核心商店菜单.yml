@@ -1,0 +1,250 @@
+MenuTitle: '&8[&3AllayWar&8] &8&l核心商店菜单'
+Lines: 6
+OpenCommands:
+- 'console: execute as %player% at @s run playsound minecraft:block.beacon.power_select
+  ambient @s'
+
+Items:
+  '0':
+    DisplayName: '&b&l快捷购买'
+    Material: nether_star
+    LeftClickCommands:
+    - '[openMenu] 核心商店菜单'
+    - 'console: execute as %player% at @s run playsound minecraft:block.note_block.bit
+      ambient @a ~ ~ ~'
+  '1':
+    DisplayName: '&b&l方块'
+    Material: sandstone
+    LeftClickCommands:
+    - '[openMenu] 核心商店-方块'
+    - 'console: execute as %player% at @s run playsound minecraft:block.note_block.bit
+      ambient @a ~ ~ ~'
+  '2':
+    DisplayName: '&b&l武器 & 装备'
+    Material: golden_sword
+    LeftClickCommands:
+    - '[openMenu] 核心商店-武器'
+    - 'console: execute as %player% at @s run playsound minecraft:block.note_block.bit
+      ambient @a ~ ~ ~'
+  '3':
+    DisplayName: '&b&l装备'
+    Material: chainmail_boots
+    LeftClickCommands:
+    - '[openMenu] 核心商店-装备'
+    - 'console: execute as %player% at @s run playsound minecraft:block.note_block.bit
+      ambient @a ~ ~ ~'
+  '4':
+    DisplayName: '&b&l攻城磊'
+    Material: stone_pickaxe
+    LeftClickCommands:
+    - '[openMenu] 核心商店-攻城磊'
+    - 'console: execute as %player% at @s run playsound minecraft:block.note_block.bit
+      ambient @a ~ ~ ~'
+  '5':
+    DisplayName: '&b&l远程武器'
+    Material: bow
+    LeftClickCommands:
+    - '[openMenu] 核心商店-远程武器'
+    - 'console: execute as %player% at @s run playsound minecraft:block.note_block.bit
+      ambient @a ~ ~ ~'
+  '6':
+    DisplayName: '&b&l建筑'
+    Material: bricks
+    LeftClickCommands:
+    - '[openMenu] 核心商店-建筑'
+    - 'console: execute as %player% at @s run playsound minecraft:block.note_block.bit
+      ambient @a ~ ~ ~'
+  '7':
+    DisplayName: '&b&l特殊道具'
+    Material: tnt
+    LeftClickCommands:
+    - '[openMenu] 核心商店-特殊道具'
+    - 'console: execute as %player% at @s run playsound minecraft:block.note_block.bit
+      ambient @a ~ ~ ~'
+  '8':
+    DisplayName: '&b&l职业能力'
+    Material: clock
+    LeftClickCommands:
+    - '[openMenu] 核心商店-职业能力'
+    - 'console: execute as %player% at @s run playsound minecraft:block.note_block.bit
+      ambient @a ~ ~ ~'
+  '19':
+    DisplayName: '&e&l建筑 - 矿场'
+    Material: raw_gold_block
+    Lore:
+    - '&8===================='
+    - '&#CCCCFF生产资金的基本能源'
+    - '&8===================='
+    - '&7售价：2000'
+    LeftClickCommands:
+    - '[buy] building_mine'
+  
+  '20':
+    DisplayName: '&e&l建筑 - 狙击塔'
+    Material: Bone_Block
+    Lore:
+    - '&8===================='
+    - '&#CCCCFF基本的防御措施，对玩家有高额的伤害，距离远'
+    - '&8===================='
+    - '&7售价：400'
+    LeftClickCommands:
+    - '[buy] building_sniper'
+  
+  '21':
+    DisplayName: '&e&l建筑 - 炸弹塔'
+    Material: red_glazed_terracotta
+    Lore:
+    - '&8===================='
+    - '&#CCCCFF抛物线AOE击退防御塔'
+    - '&8===================='
+    - '&7售价：1250'
+    LeftClickCommands:
+    - '[buy] building_boom'
+  
+  '22':
+    DisplayName: '&e&l建筑 - 魔法防御塔'
+    Material: amethyst_block
+    Lore:
+    - '&8===================='
+    - '&#CCCCFF穿墙必中AOE缓速防御塔'
+    - '&8===================='
+    - '&7售价：800'
+    LeftClickCommands:
+    - '[buy] building_magic'
+  
+  '23':
+    DisplayName: '&e&l建筑 - 兵营'
+    Material: crafter
+    Lore:
+    - '&8===================='
+    - '&#CCCCFF组建你的军队攻击！'
+    - '&8===================='
+    - '&7售价：500'
+    LeftClickCommands:
+    - '[buy] building_army'
+  
+  '24':
+    DisplayName: '&e&l建筑 - 雷达'
+    Material: GRAY_GLAZED_TERRACOTTA
+    Lore:
+    - '&8===================='
+    - '&#CCCCFF获取指挥军队的能力！'
+    - '&8===================='
+    - '&7售价：600'
+    LeftClickCommands:
+    - '[buy] building_raider'
+  
+  '25':
+    DisplayName: '&e&l建筑 - 实验书楼'
+    Material: enchanting_table
+    Lore:
+    - '&8===================='
+    - '&#CCCCFF购买团队升级的必要建筑'
+    - '&8===================='
+    - '&7售价：1200'
+    LeftClickCommands:
+    - '[buy] building_lab'
+  
+  '28':
+    DisplayName: '&a&l石剑'
+    Material: Stone_Sword
+    Lore:
+    - '&7售价：10'
+    LeftClickCommands:
+    - '[buy] stone_sword'
+  
+  '29':
+    DisplayName: '&a&l铁剑'
+    Material: Iron_Sword
+    Lore:
+    - '&7售价：150'
+    LeftClickCommands:
+    - '[buy] iron_sword'
+  
+  '30':
+    DisplayName: '&a&l钻石剑'
+    Material: Diamond_Sword
+    Lore:
+    - '&7售价：500'
+    LeftClickCommands:
+    - '[buy] diamond_sword'
+  '31':
+    DisplayName: '&a&l下界合金剑'
+    Material: Netherite_Sword
+    Lore:
+    - '&7售价：1000'
+    LeftClickCommands:
+    - '[buy] netherite_sword'
+  
+  '32':
+    DisplayName: '&a&l牛排'
+    Material: cooked_beef
+    Lore:
+    - '&7售价：10'
+    LeftClickCommands:
+    - '[buy] beef'
+  '33':
+    DisplayName: '&e&l金苹果'
+    Material: golden_apple
+    Lore:
+    - '&7售价：100'
+    LeftClickCommands:
+    - '[buy] golden_apple'
+  '34':
+    DisplayName: '&e&l医疗包'
+    Material: green_glazed_terracotta
+    Lore:
+    - '&7售价：300'
+    LeftClickCommands:
+    - '[buy] health_pack'
+  
+  '37':
+    DisplayName: '&a&l锁链甲 - 永久'
+    Material: chainmail_boots
+    Lore:
+    - '&7售价：200'
+    LeftClickCommands:
+    - '[buy] chainmail_armor'
+  
+  '38':
+    DisplayName: '&a&l铁甲 - 永久'
+    Material: Iron_Boots
+    Lore:
+    - '&7售价：800'
+    LeftClickCommands:
+    - '[buy] iron_armor'
+  
+  '39':
+    DisplayName: '&a&l钻石甲 - 永久'
+    Material: Diamond_Boots
+    Lore:
+    - '&7售价：2000'
+    LeftClickCommands:
+    - '[buy] diamond_armor'
+  
+  '40':
+    DisplayName: '&a&l合金甲 - 永久'
+    Material: Netherite_Boots
+    Lore:
+    - '&7售价：5000'
+    LeftClickCommands:
+    - '[buy] netherite_armor'
+  
+  '9':
+    Material: lime_stained_glass_pane
+  '10':
+    Material: gray_stained_glass_pane
+  '11':
+    Material: gray_stained_glass_pane
+  '12':
+    Material: gray_stained_glass_pane
+  '13':
+    Material: gray_stained_glass_pane
+  '14':
+    Material: gray_stained_glass_pane
+  '15':
+    Material: gray_stained_glass_pane
+  '16':
+    Material: gray_stained_glass_pane
+  '17':
+    Material: gray_stained_glass_pane

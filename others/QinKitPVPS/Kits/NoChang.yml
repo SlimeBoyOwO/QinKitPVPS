@@ -1,0 +1,67 @@
+Kit:
+  Permission: kp.kit.nochang
+  DisplayName: 无常
+  Available: true
+  Cooldown: 0
+  Level: 0
+  Health: 10
+  NewAttack: true
+Inventory:
+  Items:
+    '0':
+      Name: 钓鱼竿
+      Material: FISHING_ROD
+      Lore:
+      - '  &8● &3被动 &7: &7无常的初始灵魂层数为1；无常&a击杀1个玩家&7的场合,无常会获得&a1份灵魂&7，同时恢复些许生命值以及获得&a2s抗性提升5&7；无常将根据收割的灵魂&a层数&7获得强化；&a1&7层：获得常驻的&a跳跃提升，水下呼吸，抗火&7；&a2&7层：获得常驻的&a速度&7BUFF；当获得&a“缓慢”，“凋零”&7效果时，将立刻&a清除&7；&a3&7层：获得常驻的&a力量&7BUFF；技能“亡命之徒”，“亡羊补牢”的药水效果&a时长+2s&7；自身生命值&a低于15的场合&7，这些效果才会生效'
+    '2':
+      Name: '&d亡命之徒'
+      Material: RESPAWN_ANCHOR
+      Lore:
+      - '  &8● &3亡命之徒 &7: &7清除自身所有医疗包，并将自己的&a生命值削减到1&7，在此期间，自己会获得&a6s速度3，力量1，隐身&7；技能发动后&a5s内击杀敌人&7的场合，自己&a恢复所有生命值&7，并且获得&a4s力量&7，同时使地图上所有&a生命值低于21&7的其他玩家获得&a5s发光。'
+    '3':
+      Name: '&e亡羊补牢'
+      Material: OAK_FENCE
+      Lore:
+      - '  &8● &3亡羊补牢 &7: &7这个技能在自己&a生命值不是1的场合将发动失败&7;获得&a5s伤害吸收5，虚弱5&7；使用此技能后，将&a清除&7身上通过&a亡命之徒&7获得的所有效果（包括击杀奖励）'
+    '4':
+      Name: '&8亡魂丧胆'
+      Material: CLOCK
+      Lore:
+      - '  &8● &3亡魂丧胆 &7: &7这个技能在自己&a生命值不是低于8的场合将发动失败&7;以&a半径8格内生命值小于20的所有其他玩家为对象&7，进入一个&a5秒&7倒计时，并令他们&a在背包获得“不死图腾”&7（地图上&a生命值低于8的其他玩家也将成为技能对象）&7；在倒数的&a最后2秒中&7，没有&a主手持有“不死图腾”的玩家&7每秒将收到无常造成的&a25点虚空伤害'
+    '5':
+      Name: '&c超越生死'
+      Material: RECOVERY_COMPASS
+      Lore:
+      - '  &8● &3超越生死 &7: &7这个技能在自己&a生命值不是20的场合将发动失败&7；这个技能在自己&a灵魂层数<1的场合将发动失败&7；清除自己身上的生命恢复效果，同时&a移除自己的一层灵魂&7，并&a清除&7身上的所有不死图腾，在那之后&a获得1个不死图腾'
+    '1':
+      Name: '&8追命'
+      Material: BOW
+    '7':
+      Material: COOKED_BEEF
+      Amount: 6
+    '9':
+      Material: ARROW
+      Amount: 48
+    '8':
+      Name: '&aPlayer Tracker &7(Right Click)'
+      Material: COMPASS
+Effects:
+  NIGHT_VISION:
+    Amplifier: 2
+    Duration: 100000
+Commands:
+- 'console: tag %player% add wuchang'
+- 'console: scoreboard players add %player% WCK 1'
+- 'console: execute as @a[tag=wuchang] run item replace entity @s container.0 with
+  fishing_rod[enchantments={levels:{"minecraft:bane_of_arthropods":10,"minecraft:smite":10}},attribute_modifiers=[{id:"armor",type:"generic.attack_damage",amount:8.0d,operation:"add_value",slot:"mainhand"},{id:"armor",type:"generic.knockback_resistance",amount:0.4d,operation:"add_value",slot:"mainhand"},{id:"armor",type:"generic.armor",amount:2.0d,operation:"add_value",slot:"offhand"},{id:"armor",type:"generic.armor_toughness",amount:2.0d,operation:"add_value",slot:"offhand"},{id:"armor",type:"generic.movement_speed",amount:0.05d,operation:"add_multiplied_base",slot:"offhand"}]]
+  1'
+- 'console: tag %player% add NoChang'
+Introduction:
+- '&7>> &b&l无常 &7-->'
+- '&7生命：&a20  &7防御：&a10  &7攻击：&a9.5'
+- '&7上手难度：&f★★★★☆'
+- '  &8● &3被动 &7: &7无常的初始灵魂层数为1；无常&a击杀1个玩家&7的场合,无常会获得&a1份灵魂&7，同时恢复些许生命值以及获得&a2s抗性提升5&7；无常将根据收割的灵魂&a层数&7获得强化；&a1&7层：获得常驻的&a跳跃提升，水下呼吸，抗火&7；&a2&7层：获得常驻的&a速度&7BUFF；当获得&a“缓慢”，“凋零”&7效果时，将立刻&a清除&7；&a3&7层：获得常驻的&a力量&7BUFF；技能“亡命之徒”，“亡羊补牢”的药水效果&a时长+2s&7；自身生命值&a低于15的场合&7，这些效果才会生效'
+- '  &8● &3亡命之徒 &7: &7清除自身所有医疗包，并将自己的&a生命值削减到1&7，在此期间，自己会获得&a6s速度3，力量1，隐身&7；技能发动后&a5s内击杀敌人&7的场合，自己&a恢复所有生命值&7，并且获得&a4s力量&7，同时使地图上所有&a生命值低于21&7的其他玩家获得&a5s发光。'
+- '  &8● &3亡羊补牢 &7: &7这个技能在自己&a生命值不是1的场合将发动失败&7;获得&a5s伤害吸收5，虚弱5&7；使用此技能后，将&a清除&7身上通过&a亡命之徒&7获得的所有效果（包括击杀奖励）'
+- '  &8● &3亡魂丧胆 &7: &7这个技能在自己&a生命值不是低于8的场合将发动失败&7;以&a半径8格内生命值小于20的所有其他玩家为对象&7，进入一个&a5秒&7倒计时，并令他们&a在背包获得“不死图腾”&7（地图上&a生命值低于8的其他玩家也将成为技能对象）&7；在倒数的&a最后2秒中&7，没有&a主手持有“不死图腾”的玩家&7每秒将收到无常造成的&a25点虚空伤害'
+- '  &8● &3超越生死 &7: &7这个技能在自己&a生命值不是20的场合将发动失败&7；这个技能在自己&a灵魂层数<1的场合将发动失败&7；清除自己身上的生命恢复效果，同时&a移除自己的一层灵魂&7，并&a清除&7身上的所有不死图腾，在那之后&a获得1个不死图腾'

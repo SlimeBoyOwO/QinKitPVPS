@@ -1,0 +1,11 @@
+Activator:
+  Material: BLACKSTONE
+  Name: '&a虚无空间'
+Commands:
+- 'console: execute as %player% at @s run effect give @a[distance=1..3] weakness 3
+  0'
+- 'console: execute as %player% at @s run clear @s minecraft:shield '
+- 'console: execute as %player% at @s run give @s shield[damage=294,enchantments={levels:{"minecraft:thorns":13}},base_color="black",banner_patterns=[{pattern:"minecraft:gradient_up",color:"white"}]]
+  1'
+CoolDown:
+  CoolDown: 23S

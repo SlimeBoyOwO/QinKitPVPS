@@ -1,0 +1,9 @@
+Activator:
+  Name: '&a暴雷'
+Commands:
+- 'console: execute as %player% at @s run tag @s add Drowned_S'
+- 'console: execute as %player% at @s run summon armor_stand ~ ~ ~ {NoGravity:1b,Invisible:1b,Tags:["Drowned_A"]}'
+- 'console: execute as %player% at @s run playsound minecraft:block.bell.resonate
+  player @a ~ ~ ~ 0.5 1'
+CoolDown:
+  CoolDown: 30S

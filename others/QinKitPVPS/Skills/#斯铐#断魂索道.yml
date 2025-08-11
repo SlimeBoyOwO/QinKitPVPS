@@ -1,0 +1,14 @@
+Activator:
+  Name: 断魂索道
+Commands:
+- 'console: execute as %player% at @s run tellraw @a[distance=1..12] [{"color":"white","text":"斯铐:"},{"color":"red","text":"你无处可逃！"}]'
+- 'console: execute as %player% at %player% run playsound minecraft:block.portal.travel
+  voice @s ~ ~ ~ 100 1'
+- 'console: execute as %player% at %player% run effect give @s speed 15 0'
+- 'console: execute as %player% at %player% run effect give @s resistance 15 0'
+- 'console: execute as %player% at %player% run effect give @s weakness 15 9'
+- 'console: execute as %player% at %player% run clear @s minecraft:snowball '
+- 'console: execute as %player% at %player% run give @s snowball 5'
+- 'console: execute as %player% at %player% run summon armor_stand ~ ~1 ~ {Marker:1,Invisible:1b,NoGravity:1b,Silent:1b,Invulnerable:1b,Glowing:0b,Tags:["soul"]}'
+CoolDown:
+  CoolDown: 41S

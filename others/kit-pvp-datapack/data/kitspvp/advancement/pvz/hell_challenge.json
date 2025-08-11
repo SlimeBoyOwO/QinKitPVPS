@@ -1,0 +1,18 @@
+{
+	"display": {
+		"icon": {
+			"id": "minecraft:crimson_nylium"
+		},
+		"title": {"color":"dark_purple","translate":"地狱模式"},
+		"description": {"color":"green","translate":"挑战真正的末日吧！"},
+		"background": "minecraft:textures/block/moss_block.png",
+		"announce_to_chat": true,
+		"frame": "challenge"
+	},
+	"parent": "kitspvp:pvz/root",
+	"criteria": {
+		"dummy": {
+			"trigger": "minecraft:impossible"
+		  }
+	}
+}

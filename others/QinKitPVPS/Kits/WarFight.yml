@@ -1,0 +1,51 @@
+Kit:
+  Permission: kp.kit.warfight
+  DisplayName: 狂战士
+  Available: true
+  Cooldown: 0
+  Level: 0
+  Health: 20
+  NewAttack: true
+Inventory:
+  Armor:
+    Helmet:
+      Material: NETHERITE_HELMET
+    Chestplate:
+      Material: NETHERITE_CHESTPLATE
+    Boots:
+      Material: NETHERITE_BOOTS
+  Items:
+    '0':
+      Material: NETHERITE_AXE
+      AttackDamageBase: 10.5
+      Enchantments:
+        SHARPNESS: 2
+      Lore:
+      - '  &8● &3保守攻击 &7: &7近战攻击方式为 &a1.9 &7版本模式'
+      - '  &8● &3嗜血欲望 &7: &7将敌人打到低于 &a20❤ &7后，获得 &a2s &7力量 &aI，&a2s &7速度 &aI'
+    '1':
+      Material: BOW
+    '3':
+      Material: COOKED_BEEF
+      Amount: 8
+    '4':
+      Name: '&a医疗包'
+      Material: GREEN_GLAZED_TERRACOTTA
+      Amount: 3
+    '7':
+      Material: ARROW
+      Amount: 32
+    '8':
+      Name: '&b&lTarget: &3NoiQing_Ling &b&lDistance: &33.7'
+      Material: COMPASS
+Commands:
+- 'console: tag %player% add WarFight'
+- 'console: tag %player% add WarFight_Extra'
+Introduction:
+- '&7>> &b&l杰尼 &7-->'
+- '&7生命：&a40  &7防御：&a11.5  &7攻击：&a9.5+2'
+- '&7上手难度：&f★★★☆☆'
+- '  &8● &3保守攻击 &7: &7近战攻击方式为 &a1.9 &7版本模式'
+- '  &8● &3嗜血欲望 &7: &7将敌人打到低于 &a20❤ &7后，获得 &a2s &7力量 &aI，&a2s &7速度 &aI'
+- '  &8○ &7伤害至上的高版本攻击选手'
+- '  &8○ &7绝杀是他的强项'

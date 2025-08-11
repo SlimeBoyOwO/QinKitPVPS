@@ -1,0 +1,65 @@
+Kit:
+  Permission: kp.kit.death
+  DisplayName: 戴斯
+  Available: true
+Inventory:
+  Armor:
+    Helmet:
+      Name: '&7死神之盔'
+      Material: LEATHER_HELMET
+      Dye: Red:0 Green:0 Blue:0
+      Enchantments:
+        PROTECTION_ENVIRONMENTAL: 3
+        BINDING_CURSE: 1
+    Chestplate:
+      Name: '&7死神胸甲'
+      Material: LEATHER_CHESTPLATE
+      Dye: Red:0 Green:0 Blue:0
+      Enchantments:
+        PROTECTION_ENVIRONMENTAL: 3
+        BINDING_CURSE: 1
+  Items:
+    '0':
+      Name: '&8死神之镰'
+      Material: NETHERITE_HOE
+      AttackDamageBase: 3
+      AttackSpeedBase: -2.4
+      Enchantments:
+        SHARPNESS: 4
+      Lore:
+      - '  &8● &3死亡 &7: &7发射自己造成 &a6点 &7物理伤害和 &a3s凋零IV &7，如果击中CD为 &a4s &7，否则 &a12s'
+    '6':
+      Name: '&8枯萎'
+      Material: WITHER_ROSE
+      Lore:
+      - '  &8● &3枯萎 &7: &7隐匿于 &a黑暗(隐身) &7，使周围 &a8m &7的人获得 &a8s &7黑暗效果'
+    '8':
+      Name: '&aPlayer Tracker &7(Right Click)'
+      Material: COMPASS
+    '1':
+      Name: '&8灭亡之枪'
+      Material: BOW
+    '3':
+      Material: COOKED_BEEF
+      Amount: 8
+    '4':
+      Name: '&a医疗包'
+      Material: GREEN_GLAZED_TERRACOTTA
+      Amount: 3
+    '7':
+      Material: ARROW
+      Amount: 24
+Effects:
+  SPEED:
+    Amplifier: 1
+    Duration: 100000
+Commands:
+- 'console: tag %player% add Death'
+Introduction:
+- '&7>> &b&l戴斯 &7-->'
+- '&7生命：&a40  &7防御：&a4（保护VI）  &7攻击：&a6'
+- '&7上手难度：&f★★★☆☆'
+- '  &8● &3死神之触 &7: &7每次攻击有 &a%5 &7的概率使对方获得 &a3s 凋零X &7药水效果'
+- '  &8● &3枯萎 &7: &7使得周围 &a8m&7 内的敌人获得 &a3s 凋零III &7和 &a黑暗效果'
+- '  &8○ &7十分适合游击骚扰的高伤高防型角色'
+- '  &8○ &7隐蔽的身姿和干扰视野的能力将超人一等'

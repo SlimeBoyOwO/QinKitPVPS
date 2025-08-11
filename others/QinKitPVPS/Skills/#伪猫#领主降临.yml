@@ -1,0 +1,32 @@
+Activator:
+  Material: GOLD_INGOT
+  Name: '&6领主降临'
+Commands:
+- 'console: execute as %player% at @s run particle flame ^ ^ ^ 2 0 2 0.1 500 force'
+- 'console: execute as %player% at @s run particle lava ^ ^ ^ 0 2 0 0.0 80 force'
+- 'console: execute as %player% at @s run playsound minecraft:entity.ender_dragon.growl
+  player @a ~ ~ ~'
+CoolDown:
+  CoolDown: 30S
+Effects:
+  ABSORPTION:
+    Amplifier: 3
+    Duration: 5
+  FIRE_RESISTANCE:
+    Amplifier: 1
+    Duration: 20
+  GLOWING:
+    Amplifier: 1
+    Duration: 30
+  HASTE:
+    Amplifier: 2
+    Duration: 20
+  NIGHT_VISION:
+    Amplifier: 1
+    Duration: 30
+  REGENERATION:
+    Amplifier: 4
+    Duration: 2
+  SPEED:
+    Amplifier: 1
+    Duration: 20

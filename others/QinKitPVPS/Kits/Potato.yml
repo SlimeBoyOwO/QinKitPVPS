@@ -1,0 +1,71 @@
+Kit:
+  Permission: kp.kit.potato
+  DisplayName: 土豆人
+  Available: true
+Inventory:
+  Armor:
+    Helmet:
+      Name: '&7土豆引线'
+      Material: LEATHER_HELMET
+      Dye:
+        Red: 123
+        Green: 13
+        Blue: 13
+      Enchantments:
+        PROTECTION_ENVIROMENTAL: 2
+    Chestplate:
+      Name: '&7土豆本体'
+      Material: LEATHER_CHESTPLATE
+      Dye:
+        Red: 230
+        Green: 189
+        Blue: 26
+    Leggings:
+      Name: '&7土豆根'
+      Material: NETHERITE_LEGGINGS
+    Boots:
+      Name: '&7土豆根'
+      Material: NETHERITE_BOOTS
+  Items:
+    '0':
+      Name: '&e土豆剑'
+      Material: IRON_SWORD
+      Lore:
+      - '  &8● &3羁绊 &7: &7周围&a 8m&7 内有土豆地雷时，获得 &a抗性提升II'
+    '1':
+      Name: '&e土豆片'
+      Material: CROSSBOW
+    '2':
+      Name: '&e土豆片'
+      Material: CROSSBOW
+    '3':
+      Material: COOKED_BEEF
+      Amount: 8
+    '4':
+      Name: '&a医疗包'
+      Material: GREEN_GLAZED_TERRACOTTA
+      Amount: 3
+    '6':
+      Name: '&e土豆地雷'
+      Material: HONEY_BLOCK
+      Lore:
+      - '  &8● &3土豆地雷 &7: &7在脚底下释放一个最多存活 &a40s &7的土豆地雷'
+      - '           &7被炸到的人承受大量爆炸伤害并获得 &a3s 缓慢VI 虚弱I'
+    '7':
+      Material: ARROW
+      Amount: 24
+    '8':
+      Name: '&aPlayer Tracker &7(Right Click)'
+      Material: COMPASS
+Commands:
+- 'console: tag %player% add potato'
+Introduction:
+- '&7>> &b&l炸土豆 &7-->'
+- '&7生命：&a40  &7防御：&a13.0+6.0  &7攻击：&a6'
+- '&7上手难度：&f★★☆☆☆'
+- '  &8● &3土豆地雷 &7: &7在脚底下释放一个最多存活 &a40s &7的土豆地雷'
+- '           &7被炸到的人承受大量爆炸伤害并获得 &a3s 缓慢VI 虚弱I'
+- '  &8● &3羁绊 &7: &7周围&a 8m&7 内有土豆地雷时，获得 &a抗性提升II'
+- '  &8● &3急速 &7: &7获得永久&a速度I'
+- '  &8○ &7适合守点和阴谋的坚固后盾'
+- '  &8○ &7一颗小小的土豆可以扭转一整个局势'

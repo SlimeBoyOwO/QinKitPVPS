@@ -1,0 +1,14 @@
+Activator:
+  Material: FIRE_CHARGE
+  Name: 地狱重压
+Commands:
+- 'console: execute as %player% as %player% run particle dripping_lava ~9 ~1 ~8 8
+  1 9 5 850 normal'
+- 'console: execute as %player% as %player% run effect give @s darkness 5 0'
+- 'console: execute as %player% as %player% run effect give @a[distance=2..6] wither
+  5 2 true'
+- 'console: execute as %player% as %player% run effect give @a[distance=2..6] slowness
+  5 2 true'
+- 'console: execute as %player% at @s run scoreboard players set @s reload 0'
+CoolDown:
+  CoolDown: 25S

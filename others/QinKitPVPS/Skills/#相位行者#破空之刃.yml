@@ -1,0 +1,18 @@
+Activator:
+  Material: GOLDEN_SWORD
+  Name: '&b&l破空&e&l之刃'
+Commands:
+- 'console: execute as %player% at @s run particle cloud ^ ^ ^ 2 1 2 0.1 50 force'
+- 'console: execute as %player% at @s run teleport @s ^ ^1 ^6'
+- 'console: execute as %player% at @s run particle cloud ^ ^ ^ 2 1 2 0.1 50 force'
+- 'console: execute as %player% at @s run playsound minecraft:entity.enderman.teleport
+  player @s ~ ~ ~ 1 1 1'
+CoolDown:
+  CoolDown: 15S
+Effects:
+  REGENERATION:
+    Amplifier: 1
+    Duration: 3
+  SPEED:
+    Amplifier: 1
+    Duration: 4

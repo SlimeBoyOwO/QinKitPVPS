@@ -1,0 +1,20 @@
+Activator:
+  Material: BEACON
+  Name: '&a噩梦'
+Commands:
+- 'console: execute as %player% at @s run playsound minecraft:entity.warden.roar ambient
+  @a ~ ~ ~ 1 1.5'
+- 'console: tag %player% add Founder'
+- 'console: execute as %player% at @s run particle smoke ~ ~1 ~ 1 1 1 0 100 force'
+CoolDown:
+  CoolDown: 30
+Effects:
+  DARKNESS:
+    Amplifier: 1
+    Duration: 20
+  SPEED:
+    Amplifier: 1
+    Duration: 20
+  STRENGTH:
+    Amplifier: 1
+    Duration: 20

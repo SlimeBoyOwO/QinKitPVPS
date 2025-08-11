@@ -1,0 +1,14 @@
+Storage:
+  MySQL:
+    Host: 127.0.0.1
+    Port: 18465
+    Database: qinkit_pvps
+    Username: root
+    Password: password
+Admins:
+- NoiQing_Ling
+- Walkcat_qwq
+- SmerryBeta
+- Fortysoldier
+- Meow_LynxSea
+- IAMSB

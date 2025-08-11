@@ -1,0 +1,65 @@
+Kit:
+  Permission: kp.kit.blackhole
+  DisplayName: 黑洞
+  Available: true
+  Cooldown: 0
+  Level: 0
+  Health: 15
+  NewAttack: true
+Inventory:
+  Armor:
+    Helmet:
+      Material: CHAINMAIL_HELMET
+    Chestplate:
+      Material: CHAINMAIL_CHESTPLATE
+    Leggings:
+      Material: CHAINMAIL_LEGGINGS
+    Boots:
+      Material: CHAINMAIL_BOOTS
+  Items:
+    '0':
+      Name: '&d宇宙之力'
+      Material: HOPPER
+      Lore:
+      - '  &8● &3宇宙之力 &7: &7以自身为中心，将半径&a至多9格&7以内所在区域的所以玩家吸附至自己身上'
+    '1':
+      Name: '&d重力颠倒'
+      Material: MUSIC_DISC_STAL
+      Lore:
+      - '  &8● &3重力颠倒 &7: &7自己向自身&a正上方传送&a4格，&7同时获得&a2秒的缓降；&7同时，以自身为中心，以半径至多&a6格&7以内所在区域的其他玩家为对象，他们的&aY轴坐标-1&7，同时视角&a强制向下转移'
+    '2':
+      Name: '&8次元裂隙'
+      Material: MUSIC_DISC_11
+      Lore:
+      - '  &8● &3次元裂隙 &7: &7以自身为中心，以半径&a至多8格&7所在区域的其他玩家为对象，令他们获得&a8s缓慢7，5s失明，8s凋零2；&7同时自身获得一把&a石剑&7（无法储存第二把）：&a伤害16，击退10，+10击退抗性，蓄力时间8s,耐久1；&7技能开启瞬间，&a自己&7也会受到&a3s缓慢2，2s失明'
+    '3':
+      Name: '&8虚无空间'
+      Material: BLACKSTONE
+      Lore:
+      - '  &8● &3虚无空间 &7: &7以自身为中心，以半径&a至多3格&7所在区域的其他玩家为对象，令他们获得&a3s虚弱1，&7在那之后，自己获得一个耐久30的盾牌，并清除自身所持有的上一个盾牌；技能释放瞬间，自己损失8生命值，同时获得5s缓慢2'
+    '4':
+      Material: COOKED_BEEF
+      Amount: 7
+    '8':
+      Name: '&aPlayer Tracker &7(Right Click)'
+      Material: COMPASS
+Effects:
+  RESISTANCE:
+    Amplifier: 2
+    Duration: 100000
+  STRENGTH:
+    Amplifier: 1
+    Duration: 100000
+Commands:
+- 'console: tag %player% add BlackHole'
+- 'console: item replace entity %player% weapon.offhand with shield[damage=321,enchantments={levels:{"minecraft:thorns":12}},base_color="black",banner_patterns=[{pattern:"minecraft:gradient_up",color:"white"}]]
+  1'
+
+Introduction:
+- '&7>> &b&l黑洞 &7-->'
+- '&7生命：&a30  &7防御：&a12  &7攻击：&a4'
+- '&7上手难度：&f★☆☆☆☆'
+- '  &8● &3宇宙之力 &7: &7以自身为中心，将半径&a至多9格&7以内所在区域的所以玩家吸附至自己身上'
+- '  &8● &3重力颠倒 &7: &7自己向自身&a正上方传送&a4格，&7同时获得&a2秒的缓降；&7同时，以自身为中心，以半径至多&a6格&7以内所在区域的其他玩家为对象，他们的&aY轴坐标-1&7，同时视角&a强制向下转移'
+- '  &8● &3次元裂隙 &7: &7以自身为中心，以半径&a至多8格&7所在区域的其他玩家为对象，令他们获得&a8s缓慢7，5s失明，8s凋零2；&7同时自身获得一把&a石剑&7（无法储存第二把）：&a伤害16，击退10，+10击退抗性，蓄力时间8s,耐久1；&7技能开启瞬间，&a自己&7也会受到&a3s缓慢2，2s失明'
+- '  &8● &3虚无空间 &7: &7以自身为中心，以半径&a至多3格&7所在区域的其他玩家为对象，令他们获得&a3s虚弱1，&7在那之后，自己获得一个耐久30的盾牌，并清除自身所持有的上一个盾牌；技能释放瞬间，自己损失8生命值，同时获得5s缓慢2'

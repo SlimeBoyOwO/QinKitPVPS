@@ -1,0 +1,124 @@
+MenuTitle: '&8[&3QinKitPVP&8] &5黑市商店'
+Lines: 6
+OpenCommands:
+- 'console: execute as %player% at @s run playsound minecraft:entity.puffer_fish.blow_up
+  ambient @s'
+
+Items:
+  '0':
+    DisplayName: '&3&l浮游'
+    Material: sea_pickle
+  '1':
+    DisplayName: '&3&l浮游'
+    Material: sea_pickle
+  '2':
+    DisplayName: '&3&l黑市商店'
+    Material: light_blue_banner
+  '6':
+    DisplayName: '&3&l黑市商店'
+    Material: light_blue_banner
+  '3':
+    DisplayName: '&3&l浮游'
+    Material: sea_pickle
+  '5':
+    DisplayName: '&3&l浮游'
+    Material: sea_pickle
+  '7':
+    DisplayName: '&3&l浮游'
+    Material: sea_pickle
+  '8':
+    DisplayName: '&3&l浮游'
+    Material: sea_pickle
+  '4':
+    DisplayName: '&3&l黑市商人'
+    Material: pitcher_plant
+  '9':
+    DisplayName: '&a&l海草'
+    Material: seagrass
+  '17':
+    DisplayName: '&a&l海草'
+    Material: seagrass
+  '18':
+    DisplayName: '&a&l海草'
+    Material: seagrass
+  '26':
+    DisplayName: '&a&l海草'
+    Material: seagrass
+  '27':
+    DisplayName: '&a&l海草'
+    Material: seagrass
+  '35':
+    DisplayName: '&a&l海草'
+    Material: seagrass
+  '36':
+    DisplayName: '&a&l海草'
+    Material: seagrass
+  '44':
+    DisplayName: '&a&l海草'
+    Material: seagrass
+  '45':
+    DisplayName: '&a&l海草'
+    Material: seagrass
+  '53':
+    DisplayName: '&a&l海草'
+    Material: seagrass
+  '10':
+    DisplayName: '&b&l海水'
+    Material: blue_stained_glass_pane
+  '11':
+    DisplayName: '&b&l海水'
+    Material: light_blue_stained_glass_pane
+  '12':
+    DisplayName: '&b&l海水'
+    Material: blue_stained_glass_pane
+  '13':
+    DisplayName: '&b&l海水'
+    Material: light_blue_stained_glass_pane
+  '14':
+    DisplayName: '&b&l海水'
+    Material: blue_stained_glass_pane
+  '15':
+    DisplayName: '&b&l海水'
+    Material: light_blue_stained_glass_pane
+  '16':
+    DisplayName: '&b&l海水'
+    Material: blue_stained_glass_pane
+  '19':
+    DisplayName: '&b&l海水'
+    Material: light_blue_stained_glass_pane
+  '25':
+    DisplayName: '&b&l海水'
+    Material: light_blue_stained_glass_pane
+  '28':
+    DisplayName: '&b&l海水'
+    Material: blue_stained_glass_pane
+  '34':
+    DisplayName: '&b&l海水'
+    Material: blue_stained_glass_pane
+  '37':
+    DisplayName: '&b&l海水'
+    Material: light_blue_stained_glass_pane
+  '43':
+    DisplayName: '&b&l海水'
+    Material: light_blue_stained_glass_pane
+  '46':
+    DisplayName: '&b&l海水'
+    Material: blue_stained_glass_pane
+  '47':
+    DisplayName: '&b&l海水'
+    Material: light_blue_stained_glass_pane
+  '48':
+    DisplayName: '&b&l海水'
+    Material: blue_stained_glass_pane
+  '49':
+    DisplayName: '&b&l海水'
+    Material: light_blue_stained_glass_pane
+  '50':
+    DisplayName: '&b&l海水'
+    Material: blue_stained_glass_pane
+  '51':
+    DisplayName: '&b&l海水'
+    Material: light_blue_stained_glass_pane
+  '52':
+    DisplayName: '&b&l海水'
+    Material: blue_stained_glass_pane

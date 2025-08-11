@@ -1,0 +1,50 @@
+Kit:
+  Permission: kp.kit.ghost
+  DisplayName: 幽灵
+  Level: 0
+  Cooldown: 0
+  Available: true
+  Health: 20
+  NewAttack: true
+Inventory:
+  Items:
+    '0':
+      Name: '&a鬼刃'
+      Material: DIAMOND_SWORD
+      Enchantments:
+        SHARPNESS: 7
+      Lore:
+      - '  &8● &3暴露 &7: &7被人射中会让你暴露&a5s'
+    '1':
+      Name: '&a幽灵弓'
+      Material: BOW
+      Enchantments:
+        DURABILITY: 1
+    '3':
+      Material: COOKED_BEEF
+      Amount: 8
+    '4':
+      Name: '&a医疗包'
+      Material: GREEN_GLAZED_TERRACOTTA
+      Amount: 3
+    '7':
+      Material: ARROW
+      Amount: 24
+    '8':
+      Name: '&aPlayer Tracker &7(Right Click)'
+      Material: COMPASS
+Effects:
+  INVISIBILITY:
+    Amplifier: 1
+    Duration: 100000
+Commands:
+- 'console: tag %player% add Ghost'
+Introduction:
+- '&7>> &b&l鬼魂 &7-->'
+- '&7生命：&a40  &7防御：&a0  &7攻击：&a8'
+- '&7上手难度：&f★☆☆☆☆'
+- '  &8● &3易伤 &7: &7其他玩家对你造成 &a150% &7的伤害'
+- '  &8● &3暴露 &7: &7被人射中会让你暴露&a5s'
+- '  &8● &3怨恨 &7: &7每隔 &a8s 你可以获得 &a力量III &7加强刀一次'
+- '  &8○ &7隐形是你最大的优势，也是最大的缺点'
+- '  &8○ &7杀于无形中，才是怨灵的了结'

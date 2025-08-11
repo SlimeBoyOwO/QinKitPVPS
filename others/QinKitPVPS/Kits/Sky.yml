@@ -1,0 +1,64 @@
+Kit:
+  Permission: kp.kit.sky
+  DisplayName: 风袭弩者
+  Available: true
+  Cooldown: 0
+  Level: 0
+  Health: 14
+Inventory:
+  Armor:
+    Helmet:
+      Material: LEATHER_HELMET
+    Chestplate:
+      Material: LEATHER_CHESTPLATE
+    Leggings:
+      Material: GOLDEN_LEGGINGS
+    Boots:
+      Material: DIAMOND_BOOTS
+      Enchantments:
+        FEATHER_FALLING: 2
+  Items:
+    '0':
+      Name: 连弩
+      Material: CROSSBOW
+      Enchantments:
+        QUICK_CHARGE: 5
+        MULTISHOT: 1
+      Lore:
+      - '  &8● &3折翼 &7: &7每次使用技能时会进行计数，达到4次时下一次使用的技能将没有效果且仍进入冷却,同时对自己造成15点摔落伤害'
+    '1':
+      Name: '&3跃空'
+      Material: TARGET
+      Lore:
+      - '  &8● &3跃空 &7: &7获得&a1s漂浮15，&7同时获得&a“箭”*5，“光灵箭”*3'
+    '2':
+      Name: '&3逐风'
+      Material: PHANTOM_MEMBRANE
+      Lore:
+      - '  &8● &3逐风 &7: &7获得&a5s缓降，1s速度3'
+    '3':
+      Material: COOKED_BEEF
+      Amount: 2
+    '4':
+      Name: '&a医疗包'
+      Material: GREEN_GLAZED_TERRACOTTA
+      Amount: 4
+    '6':
+      Material: SPECTRAL_ARROW
+      Amount: 9
+    '7':
+      Material: ARROW
+      Amount: 11
+    '8':
+      Name: '&aPlayer Tracker &7(Right Click)'
+      Material: COMPASS
+Commands:
+- 'console: tag %player% add Sky'
+Introduction:
+- '&7>> &b&l风袭弩者 &7-->'
+- '&7生命：&a32  &7防御：&a12+3  &7攻击：&a90％'
+- '&7上手难度：&f★★★☆☆'
+- '  &8● &3跃空 &7: &7获得&a1s漂浮15，&7同时获得&a“箭”*5，“光灵箭”*3'
+- '  &8● &3逐风 &7: &7获得&a5s缓降，1s速度3'
+- '  &8● &3折翼 &7: &7每次使用技能时会进行计数，达到4次时下一次使用的技能将没有效果且仍进入冷却,同时对自己造成15点摔落伤害'
+- '  &8○ &7随风而动，踏空而行'

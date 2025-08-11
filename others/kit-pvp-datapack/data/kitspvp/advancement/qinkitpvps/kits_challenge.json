@@ -1,0 +1,17 @@
+{
+	"display": {
+		"icon": {
+			"id": "minecraft:nether_star"
+		},
+		"title": {"color":"dark_purple","translate":"职业挑战"},
+		"description": {"color":"gold","translate":"完成这些史诗级成就证明自己！"},
+		"announce_to_chat": true,
+		"frame": "challenge"
+	},
+	"parent": "kitspvp:qinkitpvps/root",	
+	"criteria": {
+		"dummy": {
+			"trigger": "minecraft:impossible"
+		  }
+	}
+}

@@ -1,0 +1,58 @@
+Kit:
+  Permission: kp.kit.anonymous
+  DisplayName: 匿者
+  Available: false
+  Cooldown: 0
+  Level: 0
+  Health: 20
+Inventory:
+  Armor:
+    Helmet:
+      Material: LEATHER_HELMET
+      Dye:
+        Red: 100
+        Green: 100
+        Blue: 100
+    Chestplate:
+      Material: CHAINMAIL_CHESTPLATE
+    Leggings:
+      Material: LEATHER_LEGGINGS
+      Dye:
+        Red: 50
+        Green: 50
+        Blue: 50
+    Boots:
+      Material: CHAINMAIL_BOOTS
+  Items:
+    '0':
+      Name: '&7&l刺客之刃'
+      Material: NETHERITE_SWORD
+      Enchantments:
+        SWEEPING: 3
+        SHARPNESS: 1
+    '1':
+      Name: '&8&l黑夜长弓'
+      Material: BOW
+      Enchantments:
+        POWER: 1
+    '2':
+      Name: '&7&l匿名行动'
+      Material: IRON_HORSE_ARMOR
+    '3':
+      Name: '&e&l好吃的牛扒'
+      Material: COOKED_BEEF
+      Amount: 4
+    '4':
+      Name: '&a医疗包'
+      Material: GREEN_GLAZED_TERRACOTTA
+      Amount: 3
+    '7':
+      Material: SPECTRAL_ARROW
+      Amount: 32
+    '8':
+      Name: '&b&lTarget: &3Limu_Wonder &b&lDistance: &31.8'
+      Material: COMPASS
+Effects:
+  SPEED:
+    Amplifier: 1
+    Duration: 100000

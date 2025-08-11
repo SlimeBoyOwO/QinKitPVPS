@@ -1,0 +1,23 @@
+Activator:
+  Material: PHANTOM_MEMBRANE
+  Name: '&a逐风'
+Commands:
+- 'console: execute as %player% at @s[scores={reload=3}] run particle minecraft:white_ash
+  ~ ~2 ~ 1 1 1 0.01 420 '
+- 'console: execute as %player% at @s[scores={reload=3}] run playsound minecraft:entity.experience_orb.pickup
+  player @s ~ ~ ~ 1 1 1 '
+- 'console: execute as %player% at @s[tag=!UNFLY] run effect give @s slow_falling
+  5 0'
+- 'console: execute as %player% at @s[tag=UNFLY] run damage @s 15 falling_block by
+  @s'
+- 'console: execute as %player% at @s[tag=UNFLY] run playsound minecraft:entity.phantom.hurt
+  voice @s ~ ~ ~ 2 1 '
+- 'console: execute as %player% at @s[tag=!UNFLY] run effect give %player% speed 1
+  2'
+- 'console: execute as %player% at @s[tag=!UNFLY] run playsound minecraft:entity.ender_dragon.flap
+  voice @a[distance=0..7] ~ ~ ~ 1 2 '
+- 'console: execute as %player% at @s[tag=!UNFLY] run particle firework ~ ~1 ~ 2.0
+  2.0 2.0 0 125 force'
+- 'console: execute as %player% at @s run scoreboard players add @s reload 1 '
+CoolDown:
+  CoolDown: 11S

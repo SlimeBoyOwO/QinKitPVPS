@@ -1,0 +1,17 @@
+Activator:
+  Material: RABBIT_STEW
+  Name: '&e鸡汤来咯'
+Commands:
+- 'console: execute as %player% at @s run give @s red_wool[custom_name=''"直接来吧！"'']
+  1'
+- 'console: execute as %player% at @s run effect give @a[distance=0..2,tag=!JiTang]
+  poison 20 4'
+- 'console: execute as %player% at @s run effect give @a[distance=0..2,tag=!JiTang]
+  instant_damage 1 2'
+- 'console: execute as %player% at @s if entity @a[distance=0..2,tag=!JiTang] run
+  tellraw @s "§c§l吾滴任务完成辣，啊哈哈哈哈"'
+- 'console: execute as %player% at @s unless entity @a[distance=0..2,tag=!JiTang]
+  run give @s tnt[custom_name=''{"color":"red","italic":false,"text":"炸死你们！"}''] 1'
+- 'console: execute as %player% at @s unless entity @a[distance=0..2,tag=!JiTang]
+  run tellraw @s "§c§lTNND，为什么不喝！喝！喝啊！"'
+- 'console: execute as %player% at @s run tag @s remove JiTang'

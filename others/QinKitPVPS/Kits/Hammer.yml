@@ -1,0 +1,62 @@
+Kit:
+  Permission: kp.kit.hammer
+  DisplayName: 风锤大师
+  Available: true
+  Cooldown: 0
+  Level: 0
+Inventory:
+  Armor:
+    Helmet:
+      Name: '&7风之头盔'
+      Material: DIAMOND_HELMET
+    Chestplate:
+      Name: '&7闪耀的护甲'
+      Material: IRON_CHESTPLATE
+      ArmorTrim:
+        Material: AMETHYST_CLUSTER
+        Pattern: FLOW
+    Leggings:
+      Name: '&7残旧的护腿'
+      Material: LEATHER_LEGGINGS
+    Boots:
+      Name: '&7风锤大师的鞋子'
+      Material: CHAINMAIL_BOOTS
+  Items:
+    '0':
+      Name: '&3审判之锤'
+      Material: MACE
+      Enchantments:
+        SHARPNESS: 1
+    '2':
+      Name: '&b唤风'
+      Material: BRUSH
+    '6':
+      Material: WIND_CHARGE
+      Amount: 12
+    '1':
+      Material: BOW
+    '3':
+      Material: COOKED_BEEF
+      Amount: 8
+    '4':
+      Name: '&a医疗包'
+      Material: GREEN_GLAZED_TERRACOTTA
+      Amount: 3
+    '5':
+      Name: '&b风驱'
+      Material: PRISMARINE_CRYSTALS
+    '7':
+      Material: ARROW
+      Amount: 32
+    '8':
+      Name: '&aPlayer Tracker &7(Right Click)'
+      Material: COMPASS
+Commands:
+- 'console: tag %player% add Wind_Man'
+Introduction:
+- '&7>> &b&l风锤大师 &7-->'
+- '&7生命：&a40  &7防御：&a16  &7攻击：&a7'
+- '&7上手难度：&f★★☆☆☆'
+- '  &8● &3唤风 &7: &7在脚下召唤风弹并获得3s生命恢复I'
+- '  &8● &3驱风 &7: &在以自身为中心召唤一环风弹从身边落下,总共20个'
+

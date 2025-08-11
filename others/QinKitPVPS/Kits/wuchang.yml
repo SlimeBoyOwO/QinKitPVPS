@@ -1,0 +1,52 @@
+Kit:
+  Permission: kp.kit.wuchang
+  DisplayName: 无常
+  Available: false
+  Cooldown: 0
+  Level: 0
+  Health: 10
+Inventory:
+  Armor:
+    Chestplate:
+      Material: IRON_CHESTPLATE
+    Leggings:
+      Material: CHAINMAIL_LEGGINGS
+      Enchantments:
+        FIRE_PROTECTION: 2
+    Boots:
+      Material: LEATHER_BOOTS
+      Dye:
+        Red: 160
+        Green: 101
+        Blue: 64
+      Enchantments:
+        FEATHER_FALLING: 1
+        PROJECTILE_PROTECTION: 1
+  Items:
+    '0':
+      Name: 钓鱼竿
+      Material: FISHING_ROD
+    '2':
+      Name: '&a天下太平！'
+      Material: RESPAWN_ANCHOR
+    '1':
+      Material: BOW
+    '3':
+      Material: COOKED_BEEF
+      Amount: 8
+    '4':
+      Name: '&a医疗包'
+      Material: GREEN_GLAZED_TERRACOTTA
+      Amount: 3
+    '7':
+      Material: ARROW
+      Amount: 48
+    '8':
+      Name: '&aPlayer Tracker &7(Right Click)'
+      Material: COMPASS
+Effects:
+  NIGHT_VISION:
+    Amplifier: 1
+    Duration: 100000
+Commands:
+- 'console: tag %player% add wuchang_D'

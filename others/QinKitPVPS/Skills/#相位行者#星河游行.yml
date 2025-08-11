@@ -1,0 +1,26 @@
+Activator:
+  Material: FEATHER
+  Name: '&d&l星河游行'
+Commands:
+- 'console: execute as %player% at @s run particle dragon_breath ^ ^ ^ 2 1 2 0.1 100
+  force'
+- 'console: execute as %player% at @s run summon arrow ^ ^4 ^1 {damage:20d,Motion:[0.0,-1.0,0.0]}'
+- 'console: execute as %player% at @s run summon arrow ^ ^4 ^2 {damage:20d,Motion:[0.0,-1.0,0.0]}'
+- 'console: execute as %player% at @s run summon arrow ^ ^4 ^3 {damage:20d,Motion:[0.0,-1.0,0.0]}'
+- 'console: execute as %player% at @s run summon minecraft:arrow ^ ^4 ^3 {damage:20,Motion:[0.0,-1.0,0.0]}'
+- 'console: execute as %player% at @s run summon minecraft:arrow ^ ^4 ^3 {damage:20,Motion:[0.0,-1.0,0.0]}'
+- 'console: execute as %player% at @s run summon arrow ^ ^4 ^4 {damage:20d,Motion:[0.0,-1.0,0.0]}'
+- 'console: execute as %player% at @s run summon arrow ^1 ^4 ^3 {damage:20d,Motion:[0.0,-1.0,0.0]}'
+- 'console: execute as %player% at @s run summon arrow ^2 ^4 ^3 {damage:20d,Motion:[0.0,-1.0,0.0]}'
+- 'console: execute as %player% at @s run summon arrow ^-1 ^4 ^3 {damage:20d,Motion:[0.0,-1.0,0.0]}'
+- 'console: execute as %player% at @s run summon arrow ^-2 ^4 ^3 {damage:20d,Motion:[0.0,-1.0,0.0]}'
+- 'console: execute as %player% at @s run summon arrow ^ ^4 ^5 {damage:20d,Motion:[0.0,-1.0,0.0]}'
+- 'console: execute as %player% at @s run tp ^ ^1 ^-5'
+- 'console: execute as %player% at @s run playsound minecraft:entity.enderman.teleport
+  player @s ~ ~ ~ 1 1 1'
+CoolDown:
+  CoolDown: 30S
+Effects:
+  SPEED:
+    Amplifier: 1
+    Duration: 3

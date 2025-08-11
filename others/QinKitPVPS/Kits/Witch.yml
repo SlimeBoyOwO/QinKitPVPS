@@ -1,0 +1,89 @@
+Kit:
+  Permission: kp.kit.witch
+  DisplayName: 女巫
+  Available: false
+  Level: 0
+  Cooldown: 0
+Inventory:
+  Armor:
+    Helmet:
+      Name: '&7女巫的帽子'
+      Material: LEATHER_HELMET
+      Dye:
+        Red: 139
+        Green: 0
+        Blue: 139
+    Chestplate:
+      Name: '&7女巫的衣服'
+      Material: LEATHER_CHESTPLATE
+      Dye:
+        Red: 139
+        Green: 0
+        Blue: 139
+    Leggings:
+      Name: '&7女巫的白丝'
+      Material: IRON_LEGGINGS
+      Dye:
+        Red: 139
+        Green: 0
+        Blue: 139
+    Boots:
+      Name: '&7女巫的白丝'
+      Material: IRON_BOOTS
+      Dye:
+        Red: 139
+        Green: 0
+        Blue: 139
+  Items:
+    '0':
+      Name: '&a法师的近战'
+      Material: DIAMOND_SWORD
+    '1':
+      Name: '&aPotion Switcher &7(Right Click)'
+      Material: GLASS_BOTTLE
+    '2':
+      Name: '&b速度药水'
+      Material: SPLASH_POTION
+      Type: SPEED_POTION
+      Effects:
+        SPEED:
+          Amplifier: 1
+          Duration: 60
+    '3':
+      Name: '&a跳跃药水'
+      Material: SPLASH_POTION
+      Type: POTION
+      Effects:
+        JUMP:
+          Amplifier: 1
+          Duration: 60
+    '4':
+      Name: '&d治疗药水'
+      Material: SPLASH_POTION
+      Type: POTION
+      Effects:
+        HEAL:
+          Amplifier: 1
+          Duration: 1
+    '5':
+      Name: '&d治疗药水'
+      Material: SPLASH_POTION
+      Type: POTION
+      Effects:
+        HEAL:
+          Amplifier: 1
+          Duration: 1
+    '6':
+      Name: '&d治疗药水'
+      Material: SPLASH_POTION
+      Type: POTION
+      Effects:
+        HEAL:
+          Amplifier: 1
+          Duration: 1
+    '8':
+      Name: '&aPlayer Tracker &7(Right Click)'
+      Material: COMPASS
+Commands:
+- 'console: tag %player% add Zombie'
+

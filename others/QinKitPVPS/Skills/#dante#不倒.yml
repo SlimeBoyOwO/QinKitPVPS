@@ -1,0 +1,8 @@
+Activator:
+  Material: RAIL
+  Name: 不倒
+Commands:
+- 'console: execute as %player% at %player% run effect give @s weakness 1 10 true'
+- 'console: execute as %player% at @s scoreboard players set @s reload 0'
+CoolDown:
+  CoolDown: 8S

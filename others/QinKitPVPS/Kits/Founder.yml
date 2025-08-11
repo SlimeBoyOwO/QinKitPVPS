@@ -1,0 +1,59 @@
+Kit:
+  Permission: kp.kit.founder
+  DisplayName: 循声守卫
+  Available: true
+  Cooldown: 0
+  Level: 0
+  Health: 20
+Inventory:
+  Armor:
+    Helmet:
+      Material: IRON_HELMET
+    Chestplate:
+      Material: DIAMOND_CHESTPLATE
+    Leggings:
+      Material: LEATHER_LEGGINGS
+      Dye:
+        Red: 94
+        Green: 124
+        Blue: 22
+    Boots:
+      Material: NETHERITE_BOOTS
+  Items:
+    '0':
+      Name: '&8幽匿剑'
+      Material: DIAMOND_SWORD
+      AttackDamageBase: 3
+    '2':
+      Name: '&a噩梦'
+      Material: BEACON
+    '1':
+      Material: BOW
+    '3':
+      Material: COOKED_BEEF
+      Amount: 8
+    '4':
+      Name: '&a医疗包'
+      Material: GREEN_GLAZED_TERRACOTTA
+      Amount: 3
+    '6':
+      Name: '&8黑暗咆哮'
+      Material: ECHO_SHARD
+      Amount: 1
+    '7':
+      Material: ARROW
+      Amount: 24
+    '8':
+      Name: '&aPlayer Tracker &7(Right Click)'
+      Material: COMPASS
+Commands:
+- 'console: tag %player% add Founder_D'
+Introduction:
+- '&7>> &b&l循声守卫 &7-->'
+- '&7生命：&a40  &7防御：&a15+5  &7攻击：&a3.5'
+- '&7上手难度：&f★★★★☆'
+- '  &8● &3黑暗 &7: &7给予自己 &a黑暗I 力量I 速度I 20s'
+- '           &7在该状态下附近8m内的玩家脚底下会发出光效用于追踪'
+- '  &8● &3黑暗咆哮 &7: &7蓄力 &a1s &7后对前方发射一束音波造成大量伤害并使玩家发光 &a5s'
+- '  &8○ &7向暗而生的阴影'
+- '  &8○ &7习惯了黑暗才能成为顶尖'

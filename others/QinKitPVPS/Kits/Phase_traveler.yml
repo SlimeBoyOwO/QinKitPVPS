@@ -1,0 +1,62 @@
+Kit:
+  Permission: kp.kit.phase_traveler
+  Available: true
+  Cooldown: 0
+  Level: 0
+  Health: 25
+Inventory:
+  Armor:
+    Helmet:
+      Name: '&7头盔'
+      Material: CHAINMAIL_HELMET
+    Chestplate:
+      Name: '&7胸甲'
+      Material: LEATHER_CHESTPLATE
+    Leggings:
+      Name: '&7护腿'
+      Material: LEATHER_LEGGINGS
+    Boots:
+      Name: '&5相位行者靴子'
+      Material: DIAMOND_BOOTS
+      Enchantments:
+        FEATHER_FALLING: 4
+      ArmorTrim:
+        Material: IRON
+        Pattern: RIB
+  Items:
+    '0':
+      Name: '&b&l破空&e&l之刃'
+      Material: GOLDEN_SWORD
+      AttackDamageBase: 6
+    '1':
+      Name: '&5&l[>&6&l相位行者&5&l<]'
+      Material: CROSSBOW
+      Enchantments:
+        PIERCING: 100
+        QUICK_CHARGE: 3
+    '2':
+      Name: '&d&l星河游行'
+      Material: FEATHER
+    '3':
+      Name: '&c&l相位打击'
+      Material: TARGET
+    '5':
+      Material: COOKED_BEEF
+      Amount: 8
+    '6':
+      Name: '&a医疗包'
+      Material: GREEN_GLAZED_TERRACOTTA
+      Amount: 3
+    '7':
+      Material: ARROW
+      Amount: 36
+    '8':
+      Name: '&aPlayer Tracker &7(Right Click)'
+      Material: COMPASS
+Introduction:
+- '&7>> &b&l相位行者 &7-->'
+- '&7生命：&a50  &7防御：&a10  &7攻击：&a6'
+- '&7上手难度：&f★★★★☆'
+- '  &8● &b&l破空&e&l之刃 &7: &7朝&a指针方向传送6格&7,传送后自身&a高度+1,&7随后获得&a3s生命恢复I和4s速度I'
+- '  &8● &d&l星河游行 &7: &7在前方&a召唤箭雨(每支箭造成15伤害)&7落下,随后朝&a指针反方向传送5格&7,传送后自身&a高度+1&7,随后获得&a3s速度I'
+- '  &8● &c&l相位打击 &7: &7传送至&a20格内最近&7的一名其他玩家的位置,并在上方召唤一支&a伤害为20的箭&7,随后自身朝&a指针反方向传送6格&7,传送后自身&a高度+4&7,随后获得&a6s速度II'

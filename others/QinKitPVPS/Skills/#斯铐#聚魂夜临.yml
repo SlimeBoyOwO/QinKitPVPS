@@ -1,0 +1,20 @@
+Activator:
+  Name: 聚魂夜临
+Commands:
+- 'console: execute as %player% at %player% run title @s title "\u00A71\u00A7o永夜降临" '
+- 'console: execute as %player% at %player% run title @s subtitle "\u00A7l\u00A78噩梦开启！"  '
+- 'console: execute as %player% at %player% run playsound minecraft:block.portal.ambient
+  voice @s ~ ~ ~ 100 0.5'
+- 'console: execute as %player% at %player% run effect give @a[distance=1..12] darkness
+  5 0'
+- 'console: execute as %player% at %player% run effect give @a[distance=1..12,tag=LW]
+  glowing 6 0'
+- 'console: execute as %player% at %player% run effect give @a[distance=1..12,tag=LW]
+  blindness 5 0'
+- 'console: execute as %player% at %player% run effect give @s slowness 15 0'
+- 'console: execute as %player% at %player% run effect give @s weakness 15 0'
+- 'console: execute as %player% at %player% run clear @s minecraft:snowball '
+- 'console: execute as %player% at %player% run give @s snowball 5'
+- 'console: execute as %player% at %player% run summon armor_stand ~ ~ ~ {Marker:1,Invisible:1b,NoGravity:1b,Silent:1b,Invulnerable:1b,Glowing:0b,Tags:["Jsoul"]}'
+CoolDown:
+  CoolDown: 41S

@@ -1,0 +1,77 @@
+Kit:
+  Permission: kp.kit.ninja
+  DisplayName: 忍者
+  Available: true
+  Level: 0
+  Cooldown: 0
+Inventory:
+  Armor:
+    Helmet:
+      Name: '&7头盔'
+      Material: LEATHER_HELMET
+      Dye:
+        Red: 0
+        Green: 0
+        Blue: 0
+    Chestplate:
+      Name: '&7护甲'
+      Material: CHAINMAIL_CHESTPLATE
+      Dye:
+        Red: 0
+        Green: 0
+        Blue: 0
+    Leggings:
+      Name: '&7护腿'
+      Material: CHAINMAIL_LEGGINGS
+      Dye:
+        Red: 0
+        Green: 0
+        Blue: 0
+    Boots:
+      Name: '&7鞋靴'
+      Material: DIAMOND_BOOTS
+      Enchantments:
+        FEATHER_FALLING: 2
+      Dye:
+        Red: 0
+        Green: 0
+        Blue: 0
+      ArmorDefenseBase: 2
+  Items:
+    '0':
+      Name: '&7暗杀匕首'
+      Material: DIAMOND_SWORD
+      Enchantments:
+        SHARPNESS: 1
+      Lore:
+      - '  &8● &3迅捷 &7: &7永久的 &a2s速度I &7加速buff'
+    '6':
+      Name: '&7遁影模式'
+      Material: NETHER_STAR
+      Lore:
+      - '  &8● &3入影 &7: &7完全隐形，获得一次 &a力量II &7的伤害提升，周围6m玩家 &a失明3s'
+    '1':
+      Material: BOW
+    '3':
+      Material: COOKED_BEEF
+      Amount: 8
+    '4':
+      Name: '&a医疗包'
+      Material: GREEN_GLAZED_TERRACOTTA
+      Amount: 3
+    '7':
+      Material: ARROW
+      Amount: 24
+    '8':
+      Name: '&aPlayer Tracker &7(Right Click)'
+      Material: COMPASS
+Commands:
+- 'console: tag %player% add ninja'
+Introduction:
+- '&7>> &b&l形影刺客 &7-->'
+- '&7生命：&a40  &7防御：&a7  &7攻击：&a8'
+- '&7上手难度：&f★★☆☆☆'
+- '  &8● &3入影 &7: &7完全隐形，获得一次 &a力量II &7的伤害提升，周围6m玩家 &a失明3s'
+- '  &8● &3迅捷 &7: &7永久的 &a2s速度I &7加速buff'
+- '  &8○ &7完全无法硬钢的速度型选手'
+- '  &8○ &7正确的暗杀时机是他的第一原则'

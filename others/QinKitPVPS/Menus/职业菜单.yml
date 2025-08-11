@@ -1,0 +1,747 @@
+MenuTitle: '&#e15fed&l职业菜单 &8&l⚔ >&#056e6c>&l&oQinKitPVP<&#05b0ad< &8&l⚔ &3&l第 &b&l1
+  &3&l页'
+Lines: 6
+OpenCommands:
+- 'console: execute as %player% at @s run playsound minecraft:entity.puffer_fish.blow_up
+  ambient @s'
+
+Items:
+  '0':
+    DisplayName: '&c&l【进攻】'
+    Material: red_stained_glass_pane
+  '1':
+    DisplayName: '&2&l【坦克】'
+    Material: green_stained_glass_pane
+  '2':
+    DisplayName: '&b&l【精准】'
+    Material: light_blue_stained_glass_pane
+  '3':
+    DisplayName: '&7&l【游击】'
+    Material: gray_stained_glass_pane
+  '4':
+    DisplayName: '&b&l> > QinKitPVPS < <'
+    Material: End_Crystal
+  '5':
+    DisplayName: '&6&l【爆发】'
+    Material: orange_stained_glass_pane
+  '6':
+    DisplayName: '&3&l【控制】'
+    Material: cyan_stained_glass_pane
+  '7':
+    DisplayName: '&#ccfff8&l【位移】'
+    Material: white_stained_glass_pane
+  '8':
+    DisplayName: '&#ee8dfc&l【支援】'
+    Material: pink_stained_glass_pane
+  '36':
+    DisplayName: '&b&l我是边界qwq'
+    Material: cyan_stained_glass_pane
+  '37':
+    DisplayName: '&b&l我是边界qwq'
+    Material: cyan_stained_glass_pane
+  '38':
+    DisplayName: '&a&l返回上一页'
+    Material: COD
+  '39':
+    DisplayName: '&b&l我是边界qwq'
+    Material: cyan_stained_glass_pane
+  '40':
+    DisplayName: '&e&l随机选择'
+    Material: pumpkin_pie
+    LeftClickCommands:
+    - 'player: qinkit randomKit'
+    - 'console: execute as %player% at @s run playsound minecraft:entity.fish.swim
+      ambient @s'
+    - '[close]'
+  '41':
+    DisplayName: '&b&l我是边界qwq'
+    Material: cyan_stained_glass_pane
+  '42':
+    DisplayName: '&a&l前往下一页'
+    Material: COD
+    LeftClickCommands:
+    - 'player: qinkit openMenu 职业菜单2'
+    - 'console: execute as %player% at @s run playsound minecraft:entity.fish.swim
+      ambient @s'
+  '43':
+    DisplayName: '&b&l我是边界qwq'
+    Material: cyan_stained_glass_pane
+  '44':
+    DisplayName: '&b&l我是边界qwq'
+    Material: cyan_stained_glass_pane
+  '45':
+    DisplayName: '&a&l海草'
+    Material: seagrass
+  '46':
+    DisplayName: '&a&l海草'
+    Material: seagrass
+  '47':
+    DisplayName: '&a&l海草'
+    Material: seagrass
+  '48':
+    DisplayName: '&a&l海草'
+    Material: seagrass
+  '49':
+    DisplayName: '&a&l海草'
+    Material: seagrass
+  '50':
+    DisplayName: '&a&l海草'
+    Material: seagrass
+  '51':
+    DisplayName: '&a&l海草'
+    Material: seagrass
+  '52':
+    DisplayName: '&a&l海草'
+    Material: seagrass
+  '53':
+    DisplayName: '&a&l海草'
+    Material: seagrass
+  '9':
+    DisplayName: '&7[>&3&l战士&7<]'
+    Material: Diamond_Sword
+    Lore:
+    - '&3&l人类    &c&l进攻'
+    - '&e&o=-=-=-=-=-=-=-=-=-=-=-='
+    - '&7人言常说的正义执行勇者，'
+    - '&7但谁说勇者一定要正义呢'
+    - '&e&o=-=-=-=-=-=-=-=-=-=-=-='
+    - '&#d96562&l生命：&b||||||||||&7||||||||||  &f40.0'
+    - '&#c776db&l攻击：&b||||||||||&7||||||||||  &f7.0'
+    - '&#997c2b&l防御：&b|||||||||||||&7|||||||  &f15.0'
+    - '&e&o=-=-=-=-=-=-=-=-=-=-=-='
+    - '&a【慰藉】击杀目标获得护盾'
+    - '&a 并缓慢恢复血量'
+    - '&7&o“从来没有什么RPG主角”'
+    LeftClickCommands:
+    - 'player: qinkit kit Fighter'
+    - 'console: execute as %player% at @s run playsound minecraft:entity.fishing_bobber.splash
+      ambient @s'
+    - '[close]'
+    RightClickCommands:
+    - 'player: qinkit intro Fighter'
+    - '[close]'
+  '10':
+    DisplayName: '&7[>&b&l亡灵卫兵&7<]'
+    Material: Bow
+    Lore:
+    - '&b&l幽灵    &b&l精准'
+    - '&e&o=-=-=-=-=-=-=-=-=-=-=-='
+    - '&7死去的卫兵仍然不愿就此离世，'
+    - '&7手中的弓箭仍可帮他夺取世间的生机'
+    - '&e&o=-=-=-=-=-=-=-=-=-=-=-='
+    - '&#d96562&l生命：&b||||||||||&7||||||||||  &f40.0'
+    - '&#c776db&l攻击：&b||||||||&7||||||||||||  &f6.0'
+    - '&#997c2b&l防御：&b||||||||&7||||||||||||  &f12.0'
+    - '&e&o=-=-=-=-=-=-=-=-=-=-=-='
+    - '&a【灵气箭】射中目标获得2秒回复II'
+    - '&7&o“我的旅行还没有结束”'
+    LeftClickCommands:
+    - 'player: qinkit kit Archer'
+    - 'console: execute as %player% at @s run playsound minecraft:entity.fishing_bobber.splash
+      ambient @s'
+    - '[close]'
+    RightClickCommands:
+    - 'player: qinkit intro Archer'
+    - '[close]'
+  '11':
+    DisplayName: '&7[>&8&lTK701重装坦克&7<]'
+    Material: DIAMOND_CHESTPLATE
+    Lore:
+    - '&8&l机械    &2&l坦克'
+    - '&e&o=-=-=-=-=-=-=-=-=-=-=-='
+    - '&7身上的装甲即是身上的荣誉'
+    - '&7笨重的武装却是绝对的防御'
+    - '&e&o=-=-=-=-=-=-=-=-=-=-=-='
+    - '&#d96562&l生命：&b||||||||||&7||||||||||  &f40.0'
+    - '&#c776db&l攻击：&b||||||||&7||||||||||||  &f6.0'
+    - '&#997c2b&l防御：&b||||||||||||||||||||&7  &f20.0 + 8.0'
+    - '&e&o=-=-=-=-=-=-=-=-=-=-=-='
+    - '&a【炮弹】向前方发射一枚重型炮弹'
+    - '&a【坚挺】10%的概率被攻击时获得2s抗性I'
+    - '&7&o“生物是脆弱的，坦克是无敌的”'
+    LeftClickCommands:
+    - 'player: qinkit kit Tank'
+    - 'console: execute as %player% at @s run playsound minecraft:entity.fishing_bobber.splash
+      ambient @s'
+    - '[close]'
+    RightClickCommands:
+    - 'player: qinkit intro Tank'
+    - '[close]'
+  '12':
+    DisplayName: '&7[>&#7bd1ca&l溺尸&7<]'
+    Material: TRIDENT
+    Lore:
+    - '&#7bd1ca&l海洋    &c&l进攻'
+    - '&e&o=-=-=-=-=-=-=-=-=-=-=-='
+    - '&7MC宇宙中出类柏翠的三叉戟使用者'
+    - '&7除了进攻用来打鱼也不错呢'
+    - '&e&o=-=-=-=-=-=-=-=-=-=-=-='
+    - '&#d96562&l生命：&b||||||||||&7||||||||||  &f40.0'
+    - '&#c776db&l攻击：&b|||||||||&7|||||||||||  &f7.0'
+    - '&#997c2b&l防御：&b||||||||&7||||||||||||  &f11.0'
+    - '&e&o=-=-=-=-=-=-=-=-=-=-=-='
+    - '&a【暴雷】在半径9m降落闪电'
+    - '&a【水生】在水中获得生命恢复I'
+    - '&7&o“听说有一种玩法叫贯穿，你想试试吗？”'
+    LeftClickCommands:
+    - 'player: qinkit kit Drowned'
+    - 'console: execute as %player% at @s run playsound minecraft:entity.fishing_bobber.splash
+      ambient @s'
+    - '[close]'
+    RightClickCommands:
+    - 'player: qinkit intro Drowned'
+    - '[close]'
+  '13':
+    DisplayName: '&7[>&3&l杰尼&7<]'
+    Material: NETHERITE_AXE
+    Lore:
+    - '&3&l人类    &c&l进攻'
+    - '&e&o=-=-=-=-=-=-=-=-=-=-=-='
+    - '&7锋利的斧头上已沾满了无穷的鲜血'
+    - '&7厚实的武装，强力的攻击，无所能敌'
+    - '&e&o=-=-=-=-=-=-=-=-=-=-=-='
+    - '&#d96562&l生命：&b||||||||||&7||||||||||  &f40.0'
+    - '&#c776db&l攻击：&b|||||||||||||||||||&7|  &f11.5'
+    - '&#997c2b&l防御：&b|||||||||||||||||&7|||  &f14.0 + 9.0'
+    - '&e&o=-=-=-=-=-=-=-=-=-=-=-='
+    - '&a【保守攻击】攻击模式为1.9'
+    - '&7&o“我墙上装饰还需要更多的头颅”'
+    LeftClickCommands:
+    - 'player: qinkit kit WarFight'
+    - 'console: execute as %player% at @s run playsound minecraft:entity.fishing_bobber.splash
+      ambient @s'
+    - '[close]'
+    RightClickCommands:
+    - 'player: qinkit intro WarFight'
+    - '[close]'
+  '14':
+    DisplayName: '&7[>&b&l循声守卫&7<]'
+    Material: OBSERVER
+    Lore:
+    - '&b&l亡灵    &2&l坦克'
+    - '&e&o=-=-=-=-=-=-=-=-=-=-=-='
+    - '&7失去了视力，但是拥有更强的听力'
+    - '&7它可以让所有被他听到的人被诅咒'
+    - '&e&o=-=-=-=-=-=-=-=-=-=-=-='
+    - '&#d96562&l生命：&b||||||||||&7||||||||||  &f40.0'
+    - '&#c776db&l攻击：&b||||||||||&7||||||||||  &f7.0'
+    - '&#997c2b&l防御：&b|||||||||||||&7|||||||  &f15.0'
+    - '&e&o=-=-=-=-=-=-=-=-=-=-=-='
+    - '&a【循声】永久失明，但是靠近的玩家会发光'
+    - '&a【急速III】永久速度III'
+    - '&7&o“那是你的声音吗？”'
+    LeftClickCommands:
+    - 'player: qinkit kit Founder'
+    - 'console: execute as %player% at @s run playsound minecraft:entity.fishing_bobber.splash
+      ambient @s'
+    - '[close]'
+    RightClickCommands:
+    - 'player: qinkit intro Founder'
+    - '[close]'
+  '15':
+    DisplayName: '&7[>&#ee8dfc&l土豆人&7<]'
+    Material: BAKED_POTATO
+    Lore:
+    - '&#ee8dfc&l造物    &2&l坦克'
+    - '&e&o=-=-=-=-=-=-=-=-=-=-=-='
+    - '&7强韧的土豆雷拥有扎根固实的能力'
+    - '&7为了自己的家园和同伴轰炸外敌'
+    - '&e&o=-=-=-=-=-=-=-=-=-=-=-='
+    - '&#d96562&l生命：&b||||||||||&7||||||||||  &f40.0'
+    - '&#c776db&l攻击：&b||||||||&7||||||||||||  &f6.0'
+    - '&#997c2b&l防御：&b|||||||||||||||&7|||||  &f13.0 + 6.0'
+    - '&e&o=-=-=-=-=-=-=-=-=-=-=-='
+    - '&a【埋雷】在脚底下放置一颗高伤害地雷'
+    - '&a【急速】永久速度I'
+    - '&7&o“轰隆！就这样，你死了”'
+    LeftClickCommands:
+    - 'player: qinkit kit Potato'
+    - 'console: execute as %player% at @s run playsound minecraft:entity.fishing_bobber.splash
+      ambient @s'
+    - '[close]'
+    RightClickCommands:
+    - 'player: qinkit intro Potato'
+    - '[close]'
+  '16':
+    DisplayName: '&7[>&b&l戴斯·镰&7<]'
+    Material: WITHER_SKELETON_SKULL
+    Lore:
+    - '&b&l亡灵    &c&l进攻'
+    - '&e&o=-=-=-=-=-=-=-=-=-=-=-='
+    - '&7戴斯从小就是死神的粉丝，希望成为死神'
+    - '&7他慢慢学会了死亡法术，掌握了死亡的开关'
+    - '&e&o=-=-=-=-=-=-=-=-=-=-=-='
+    - '&#d96562&l生命：&b||||||||||&7||||||||||  &f40.0'
+    - '&#c776db&l攻击：&b|||||||&7|||||||||||||  &f4.5'
+    - '&#997c2b&l防御：&b||||||&7||||||||||||||  &f10.0'
+    - '&e&o=-=-=-=-=-=-=-=-=-=-=-='
+    - '&a【死生之触】被打到的人获得2s的凋零II'
+    - '&a【枯萎】周围6m玩家获得6s凋零II和失明I'
+    - '&7&o“我的死神之路可少不了你的灵魂”'
+    LeftClickCommands:
+    - 'player: qinkit kit Death'
+    - 'console: execute as %player% at @s run playsound minecraft:entity.fishing_bobber.splash
+      ambient @s'
+    - '[close]'
+    RightClickCommands:
+    - 'player: qinkit intro Death'
+    - '[close]'
+  '17':
+    DisplayName: '&7[>&e&l勾命丘比特&7<]'
+    Material: SKELETON_SKULL
+    Lore:
+    - '&e&l神仙    &b&l精准'
+    - '&e&o=-=-=-=-=-=-=-=-=-=-=-='
+    - '&7丘比特勾的不再是心，而是命'
+    - '&7高伤害，高风险，高回报'
+    - '&e&o=-=-=-=-=-=-=-=-=-=-=-='
+    - '&#d96562&l生命：&b||||||||||&7||||||||||  &f40.0'
+    - '&#c776db&l攻击：&b||||||&7||||||||||||||  &f5.0'
+    - '&#997c2b&l防御：&b||||&7||||||||||||||||  &f8.0'
+    - '&e&o=-=-=-=-=-=-=-=-=-=-=-='
+    - '&a【勾魂】每10s上弹一颗勾命亡魂子弹'
+    - '&a【羽翼】每次射击获得2s速度II效果'
+    - '&7&o“想要爱，还是死？”'
+    LeftClickCommands:
+    - 'player: qinkit kit Sniper'
+    - 'console: execute as %player% at @s run playsound minecraft:entity.fishing_bobber.splash
+      ambient @s'
+    - '[close]'
+    RightClickCommands:
+    - 'player: qinkit intro Sniper'
+    - '[close]'
+  '18':
+    DisplayName: '&7[>&8&l夜空把关堡垒&7<]'
+    Material: IRON_BLOCK
+    Lore:
+    - '&8&l机械    &b&l精准'
+    - '&e&o=-=-=-=-=-=-=-=-=-=-=-='
+    - '&7人类的夜晚由它点亮黎明'
+    - '&7守护之土乃是堡垒最深的执着'
+    - '&e&o=-=-=-=-=-=-=-=-=-=-=-='
+    - '&#d96562&l生命：&b||||||||||&7||||||||||  &f44.0'
+    - '&#c776db&l攻击：&b|||||||&7|||||||||||||  &f5.0'
+    - '&#997c2b&l防御：&b||||||||||&7||||||||||  &f13.0'
+    - '&e&o=-=-=-=-=-=-=-=-=-=-=-='
+    - '&a【过载】短时间内坚不可摧，之后进入虚弱状态'
+    - '&a【后备能源】从危险中逃脱的最佳手段'
+    - '&a【切换模式】左手右手使用弓箭效果不同'
+    - '&7&o“到此为止了”'
+    LeftClickCommands:
+    - 'player: qinkit kit fort'
+    - 'console: execute as %player% at @s run playsound minecraft:entity.fishing_bobber.splash
+      ambient @s'
+    - '[close]'
+    RightClickCommands:
+    - 'player: qinkit intro fort'
+    - '[close]'
+  '19':
+    DisplayName: '&7[>&#ee8dfc&l炸弹布丁&7<]'
+    Material: TNT
+    Lore:
+    - '&#ee8dfc&l造物    &6&l爆发'
+    - '&e&o=-=-=-=-=-=-=-=-=-=-=-='
+    - '&7被附魔炸弹的红布丁'
+    - '&7这下布丁变成爆丁了'
+    - '&e&o=-=-=-=-=-=-=-=-=-=-=-='
+    - '&#d96562&l生命：&b||||||||||&7||||||||||  &f40.0'
+    - '&#c776db&l攻击：&b||||||||&7||||||||||||  &f6.0'
+    - '&#997c2b&l防御：&b||||||||||&7||||||||||  &f12.0+3.0'
+    - '&e&o=-=-=-=-=-=-=-=-=-=-=-='
+    - '&a【手榴弹】每隔15秒获得一颗手榴弹，最多保留3个'
+    - '&7&o“喜欢吃布丁吗？那你肯定不会介意我呐？”'
+    LeftClickCommands:
+    - 'player: qinkit kit Bomber'
+    - 'console: execute as %player% at @s run playsound minecraft:entity.fishing_bobber.splash
+      ambient @s'
+    - '[close]'
+    RightClickCommands:
+    - 'player: qinkit intro Bomber'
+    - '[close]'
+  '20':
+    DisplayName: '&7[>&3&l樱花刀刃&7<]'
+    Material: IRON_SWORD
+    Lore:
+    - '&3&l人类    &6&l爆发'
+    - '&e&o=-=-=-=-=-=-=-=-=-=-=-='
+    - '&7大日本帝国の高级快刀手'
+    - '&7每一寸肌肤都散发着家乡的味道'
+    - '&e&o=-=-=-=-=-=-=-=-=-=-=-='
+    - '&#d96562&l生命：&b||||||||||&7||||||||||  &f40.0'
+    - '&#c776db&l攻击：&b||||||||&7||||||||||||  &f5.0'
+    - '&#997c2b&l防御：&b|||||||||&7|||||||||||  &f13.0'
+    - '&e&o=-=-=-=-=-=-=-=-=-=-=-='
+    - '&a【千刀万仞】右键剑取消攻击间隔3s'
+    - '&a              获得10s速度II'
+    - '&a【极限刀速】常驻25%的攻速提升'
+    - '&7&o“故郷の桜が咲いた”'
+    LeftClickCommands:
+    - 'player: qinkit kit FastSword'
+    - 'console: execute as %player% at @s run playsound minecraft:entity.fishing_bobber.splash
+      ambient @s'
+    - '[close]'
+    RightClickCommands:
+    - 'player: qinkit intro FastSword'
+    - '[close]'
+  '21':
+    DisplayName: '&7[>&e&l战争狂人&7<]'
+    Material: NETHERITE_SHOVEL
+    Lore:
+    - '&3&l人类    &6&l爆发'
+    - '&e&o=-=-=-=-=-=-=-=-=-=-=-='
+    - '&7巨大的喜欢战争的战争狂人'
+    - '&7最爱的事莫过于用自己碾压他人'
+    - '&e&o=-=-=-=-=-=-=-=-=-=-=-='
+    - '&#d96562&l生命：&b||||||||||&7||||||||||  &f40.0'
+    - '&#c776db&l攻击：&b||||||||&7||||||||||||  &f6.0'
+    - '&#997c2b&l防御：&b||||||||||||&7||||||||  &f15.0 + 2.0'
+    - '&e&o=-=-=-=-=-=-=-=-=-=-=-='
+    - '&a【战争践踏】可以飞跃并且压垮敌人'
+    - '&a【硕大身躯】摔落伤害可以影响周围敌人'
+    - '&7&o“没有战争，没有人生”'
+    LeftClickCommands:
+    - 'player: qinkit kit Reaper'
+    - 'console: execute as %player% at @s run playsound minecraft:entity.fishing_bobber.splash
+      ambient @s'
+    - '[close]'
+    RightClickCommands:
+    - 'player: qinkit intro Reaper'
+    - '[close]'
+  '22':
+    DisplayName: '&7[>&#9afc6d&l迪奥·布兰多&7<]'
+    Material: CLOCK
+    Lore:
+    - '&#9afc6d&l联动    &3&l控制'
+    - '&e&o=-=-=-=-=-=-=-=-=-=-=-='
+    - '&7至高的吸血鬼，最强大的时停能力'
+    - '&7不灭的身体，永恒的生命，屎蛋都怕我！'
+    - '&e&o=-=-=-=-=-=-=-=-=-=-=-='
+    - '&#d96562&l生命：&b||||||||||&7||||||||||  &f40.0'
+    - '&#c776db&l攻击：&b|||||||&7|||||||||||||  &f7.0'
+    - '&#997c2b&l防御：&b|||||||||&7|||||||||||  &f13.0'
+    - '&e&o=-=-=-=-=-=-=-=-=-=-=-='
+    - '&a【时停】半径10m内的玩家被时停3秒'
+    - '&a【吸血鬼】击杀其他玩家时恢复生命值'
+    - '&7&o“THE WORLD!時間が止まった!”'
+    LeftClickCommands:
+    - 'player: qinkit kit TimeCTR'
+    - 'console: execute as %player% at @s run playsound minecraft:entity.fishing_bobber.splash
+      ambient @s'
+    - '[close]'
+    RightClickCommands:
+    - 'player: qinkit intro TimeCTR'
+    - '[close]'
+  '23':
+    DisplayName: '&7[>&d&l伪&e&l★&c&l猫&7<]'
+    Material: GOLDEN_HORSE_ARMOR
+    Lore:
+    - '&d&l神灵    &3&l控制'
+    - '&e&o=-=-=-=-=-=-=-=-=-=-=-='
+    - '&7地狱的岩浆开始焦躁的沸腾'
+    - '&7不像是出于自然运动，更像是出于恐惧'
+    - '&e&o=-=-=-=-=-=-=-=-=-=-=-='
+    - '&#d96562&l生命：&b|||||||&7|||||||||||||  &f40.0'
+    - '&#c776db&l攻击：&b|||||&7|||||||||||||||  &f5.5'
+    - '&#997c2b&l防御：&b||||||&7||||||||||||||  &f11.0'
+    - '&e&o=-=-=-=-=-=-=-=-=-=-=-='
+    - '&a【君临】永久的抗性提升'
+    - '&a【伪善】潜行移速更快'
+    - '&7&o“唤醒那地狱中最深的罪恶..”'
+    LeftClickCommands:
+    - 'player: qinkit kit Pseudo_cat'
+    - 'console: execute as %player% at @s run playsound minecraft:entity.fishing_bobber.splash
+      ambient @s'
+    - '[close]'
+    RightClickCommands:
+    - 'player: qinkit intro Pseudo_cat'
+    - '[close]'
+  '24':
+    DisplayName: '&7[>&#7bd1ca&l&l渔夫&7<]'
+    Material: COD
+    Lore:
+    - '&#7bd1ca&l&l海洋    &3&l控制'
+    - '&e&o=-=-=-=-=-=-=-=-=-=-=-='
+    - '&7一位不愿透露姓名的神秘渔夫'
+    - '&7鱼和人对他来说没有区别'
+    - '&e&o=-=-=-=-=-=-=-=-=-=-=-='
+    - '&#d96562&l生命：&b||||||||||&7||||||||||  &f40.0'
+    - '&#c776db&l攻击：&b||||||||||&7||||||||||  &f7.0'
+    - '&#997c2b&l防御：&b|||||||||||&7|||||||||  &f11.0'
+    - '&e&o=-=-=-=-=-=-=-=-=-=-=-='
+    - '&a【钓鱼】鱼竿可以把其他人勾到自己的位置'
+    - '&a【收获】释放一大堆鱼，形成控制'
+    - '&a【渔枪】远程攻击可以赋予2s缓慢II'
+    - '&7&o“授人予鱼，不如授人予渔”'
+    LeftClickCommands:
+    - 'player: qinkit kit FishMan'
+    - 'console: execute as %player% at @s run playsound minecraft:entity.fishing_bobber.splash
+      ambient @s'
+    - '[close]'
+    RightClickCommands:
+    - 'player: qinkit intro FishMan'
+    - '[close]'
+  '25':
+    DisplayName: '&7[>&#aa4ecf&l末影人&7<]'
+    Material: ENDER_EYE
+    Lore:
+    - '&#aa4ecf&l怪物    &#ccfff8&l位移'
+    - '&e&o=-=-=-=-=-=-=-=-=-=-=-='
+    - '&7怪物中最高的机动性，最强的拉扯'
+    - '&7不仅如此，高大的身材让它能力所向披靡'
+    - '&e&o=-=-=-=-=-=-=-=-=-=-=-='
+    - '&#d96562&l生命：&b||||||||||&7||||||||||  &f40.0'
+    - '&#c776db&l攻击：&b||||||||&7||||||||||||  &f6.0'
+    - '&#997c2b&l防御：&b||||||||||||&7||||||||  &f14.0'
+    - '&e&o=-=-=-=-=-=-=-=-=-=-=-='
+    - '&a【瞬移】瞬间移动到半径10m内的玩家'
+    - '&7&o“在你后面哦”'
+    LeftClickCommands:
+    - 'player: qinkit kit teleporter'
+    - 'console: execute as %player% at @s run playsound minecraft:entity.fishing_bobber.splash
+      ambient @s'
+    - '[close]'
+    RightClickCommands:
+    - 'player: qinkit intro teleporter'
+    - '[close]'
+  '26':
+    DisplayName: '&7[>&e&l相位行者&7<]'
+    Material: GOLDEN_SHOVEL
+    Lore:
+    - '&3&l人类    &#ccfff8&l位移'
+    - '&e&o=-=-=-=-=-=-=-=-=-=-=-='
+    - '&7拥有撕裂空间进行相位穿梭的能力'
+    - '&7还可以通过空间打击敌人'
+    - '&e&o=-=-=-=-=-=-=-=-=-=-=-='
+    - '&#d96562&l生命：&b||||||||||||||&7||||||  &f50.0'
+    - '&#c776db&l攻击：&b||||||&7||||||||||||||  &f6.0'
+    - '&#997c2b&l防御：&b|||||&7|||||||||||||||  &f10.0'
+    - '&e&o=-=-=-=-=-=-=-=-=-=-=-='
+    - '&a【破空】使用三把武器多段位移'
+    - '&7&o“旅行对我来说是轻而易举的”'
+    LeftClickCommands:
+    - 'player: qinkit kit Phase_traveler'
+    - 'console: execute as %player% at @s run playsound minecraft:entity.fishing_bobber.splash
+      ambient @s'
+    - '[close]'
+    RightClickCommands:
+    - 'player: qinkit intro Phase_traveler'
+    - '[close]'
+  '27':
+    DisplayName: '&7[>&#9afc6d&l动力小子&7<]'
+    Material: LIME_DYE
+    Lore:
+    - '&#9afc6d&l联动    &#ccfff8&l位移'
+    - '&e&o=-=-=-=-=-=-=-=-=-=-=-='
+    - '&7牺牲血量换取高额的位移'
+    - '&7以完全的速度征服敌人'
+    - '&e&o=-=-=-=-=-=-=-=-=-=-=-='
+    - '&#d96562&l生命：&b||||||||||&7||||||||||  &f40.0'
+    - '&#c776db&l攻击：&b||||||||||&7||||||||||  &f7.0'
+    - '&#997c2b&l防御：&b||||||||&7||||||||||||  &f12.0'
+    - '&e&o=-=-=-=-=-=-=-=-=-=-=-='
+    - '&a【兴奋剂】在8s内获得速度IV和跳跃II'
+    - '&a【自我修复】血量低于20时，获得生命恢复II'
+    - '&7&o“Non terra plus ultra!”'
+    LeftClickCommands:
+    - 'player: qinkit kit Octane'
+    - 'console: execute as %player% at @s run playsound minecraft:entity.fishing_bobber.splash
+      ambient @s'
+    - '[close]'
+    RightClickCommands:
+    - 'player: qinkit intro Octane'
+    - '[close]'
+  '28':
+    DisplayName: '&7[>&#ee8dfc&l影魔&7<]'
+    Material: CRYING_OBSIDIAN
+    Lore:
+    - '&#aa4ecf&l幽灵    &#ccfff8&l位移'
+    - '&e&o=-=-=-=-=-=-=-=-=-=-=-='
+    - '&7他是所有人内心恐惧的一个缩影'
+    - '&7他无处不在，当你的内心产生恐惧时，他便会在你身旁'
+    - '&e&o=-=-=-=-=-=-=-=-=-=-=-='
+    - '&#d96562&l生命：&b||||||&7||||||||||||||  &f32.0'
+    - '&#c776db&l攻击：&b|||||||||&7|||||||||||  &f6.0'
+    - '&#997c2b&l防御：&b||||||||||&7||||||||||  &f10.0'
+    - '&e&o=-=-=-=-=-=-=-=-=-=-=-='
+    - '&a【如影随形】和鬼影换位'
+    - '&a【支配死灵】召唤鬼影并对敌人造成恐惧'
+    - '&a【鬼影重重】召唤鬼影并进入灵魂状态'
+    - '&a【魂之挽歌】传送到敌人附近并强化自身'
+    - '&7&o“别回头，人类”'
+    LeftClickCommands:
+    - 'player: qinkit kit Shadow'
+    - 'console: execute as %player% at @s run playsound minecraft:entity.skeleton.converted_to_stray
+      voice @a[distance=0..8] ~ ~ ~ 2 0.1 1'
+    - '[close]'
+    RightClickCommands:
+    - 'player: qinkit intro Shadow'
+    - '[close]'
+  '29':
+    DisplayName: '&7[>&#ee8dfc&l黄昏使徒&7<]'
+    Material: STONE_PICKAXE
+    Lore:
+    - '&#ee8dfc&l造物    &c&l进攻'
+    - '&e&o=-=-=-=-=-=-=-=-=-=-=-='
+    - '&7向着光芒的人不一定是创造光芒的人'
+    - '&7他也有可能是夺走你光芒的恶魔使徒'
+    - '&e&o=-=-=-=-=-=-=-=-=-=-=-='
+    - '&#d96562&l生命：&b||||||||||&7||||||||||  &f40.0'
+    - '&#c776db&l攻击：&b||||||||||||||||&7||||  &f9.0'
+    - '&#997c2b&l防御：&b|||&7|||||||||||||||||  &f7.0'
+    - '&e&o=-=-=-=-=-=-=-=-=-=-=-='
+    - '&a【黄昏】永久的速度II和夜视I'
+    - '&7&o“落日即将逝去的那一丝余晖，将是你最后的光明”'
+    LeftClickCommands:
+    - 'player: qinkit kit Miner'
+    - 'console: execute as %player% at @s run playsound minecraft:entity.fishing_bobber.splash
+      ambient @s'
+    - '[close]'
+    RightClickCommands:
+    - 'player: qinkit intro Miner'
+    - '[close]'
+  '30':
+    DisplayName: '&7[>&3&l行影刺客&7<]'
+    Material: NETHER_STAR
+    Lore:
+    - '&3&l人类    &7&l游击'
+    - '&e&o=-=-=-=-=-=-=-=-=-=-=-='
+    - '&7遁入暗夜，来去无影，出其不意'
+    - '&7毙命瞬息之间，转念之间，顷刻之间'
+    - '&e&o=-=-=-=-=-=-=-=-=-=-=-='
+    - '&#d96562&l生命：&b||||||||||&7||||||||||  &f40.0'
+    - '&#c776db&l攻击：&b||||||||||||&7||||||||  &f8.0'
+    - '&#997c2b&l防御：&b|||&7|||||||||||||||||  &f7.0'
+    - '&e&o=-=-=-=-=-=-=-=-=-=-=-='
+    - '&a【入影】十秒内完全隐身，并且有一次伤害提升'
+    - '&7&o“荆轲和我并非一路人，也不会是”'
+    LeftClickCommands:
+    - 'player: qinkit kit Ninja'
+    - 'console: execute as %player% at @s run playsound minecraft:entity.fishing_bobber.splash
+      ambient @s'
+    - '[close]'
+    RightClickCommands:
+    - 'player: qinkit intro Ninja'
+    - '[close]'
+  '31':
+    DisplayName: '&7[>&3&l维克多&7<]'
+    Material: DIAMOND_AXE
+    Lore:
+    - '&3&l人类    &c&l进攻'
+    - '&e&o=-=-=-=-=-=-=-=-=-=-=-='
+    - '&7诞生于血与泪的残忍船舶中'
+    - '&7以斧与欺诈征服大西洋'
+    - '&e&o=-=-=-=-=-=-=-=-=-=-=-='
+    - '&#d96562&l生命：&b||||||||||&7||||||||||  &f40.0'
+    - '&#c776db&l攻击：&b||||||||||||||||||&7||  &f12.0'
+    - '&#997c2b&l防御：&b|||||||||||||||&7|||||  &f15.0 + 3.0'
+    - '&e&o=-=-=-=-=-=-=-=-=-=-=-='
+    - '&a【抗性】全护甲保护I'
+    - '&a【换位】使用后1s与10m内玩家换位，并获得3s速度II'
+    - '&7&o“Arrrrr”'
+    LeftClickCommands:
+    - 'player: qinkit kit Vector'
+    - 'console: execute as %player% at @s run playsound minecraft:entity.fishing_bobber.splash
+      ambient @s'
+    - '[close]'
+    RightClickCommands:
+    - 'player: qinkit intro Vector'
+    - '[close]'
+  '32':
+    DisplayName: '&7[>&8&l黑洞&7<]'
+    Material: HOPPER
+    Lore:
+    - '&#7bd1ca&l宇宙    &2&l控制'
+    - '&e&o=-=-=-=-=-=-=-=-=-=-=-='
+    - '&7掌控宇宙之力的化身，可以肆意压制他的敌人'
+    - '&7他将使用他的盾与剑让他的敌人从他的眼前消失'
+    - '&e&o=-=-=-=-=-=-=-=-=-=-=-='
+    - '&#d96562&l生命：&b||||||&7||||||||||||||  &f34.0'
+    - '&#c776db&l攻击：&b||||&7||||||||||||||||  &f4.0'
+    - '&#997c2b&l防御：&b||||||||||||&7||||||||  &f12.0'
+    - '&e&o=-=-=-=-=-=-=-=-=-=-=-='
+    - '&a【重力压迫】在他附近的敌人将会持续受到中毒'
+    - '&a【大宇宙之力】将周围的所有人吸附到自己身上'
+    - '&a【重力颠倒】自己上升的同时，让周围其他玩家强制下降'
+    - '&a【次元裂隙】自己获得一把武器，并将其他玩家卷入进一个小范围的次元裂隙'
+    - '&a【虚无空间】虚弱的敌人与自身，获得盾牌'
+    - '&7&o“my territory，my rule！”'
+    LeftClickCommands:
+    - 'player: qinkit kit BlackHole'
+    - 'console: execute as %player% at @s run playsound minecraft:entity.fishing_bobber.splash
+      ambient @s'
+    - '[close]'
+    RightClickCommands:
+    - 'player: qinkit intro BlackHole'
+    - '[close]'
+  '33':
+    DisplayName: '&7[>&#ee8dfc&l火豆射手&7<]'
+    Material: FLINT_AND_STEEL
+    Lore:
+    - '&#ee8dfc&l造物    &b&l精准'
+    - '&e&o=-=-=-=-=-=-=-=-=-=-=-='
+    - '&7一个充满火焰的造物，能燃尽攻击的一切'
+    - '&7嗯，烤豌豆也挺香的嘛'
+    - '&e&o=-=-=-=-=-=-=-=-=-=-=-='
+    - '&#d96562&l生命：&b||||||||||&7||||||||||  &f40.0'
+    - '&#c776db&l攻击：&b||||||||&7||||||||||||  &f6.0'
+    - '&#997c2b&l防御：&b|||||||&7|||||||||||||  &f11.0'
+    - '&e&o=-=-=-=-=-=-=-=-=-=-=-='
+    - '&a【灼烧】武器拥有火焰附加II的效果'
+    - '&7&o“我的豌豆可不是给你吃的，是给你贡的”'
+    LeftClickCommands:
+    - 'player: qinkit kit FireMan'
+    - 'console: execute as %player% at @s run playsound minecraft:entity.fishing_bobber.splash
+      ambient @s'
+    - '[close]'
+    RightClickCommands:
+    - 'player: qinkit intro FireMan'
+    - '[close]'
+  '34':
+    DisplayName: '&7[>&#ee8dfc&l烂腐尸蛆&7<]'
+    Material: ZOMBIE_HEAD
+    Lore:
+    - '&#ee8dfc&l造物    &#ee8dfc&l支援'
+    - '&e&o=-=-=-=-=-=-=-=-=-=-=-='
+    - '&7虽然变成了尸魂，但却获得了无人超越的回复力'
+    - '&7不死的不仅是亡魂，还有无法破坏的肢体'
+    - '&e&o=-=-=-=-=-=-=-=-=-=-=-='
+    - '&#d96562&l生命：&b||||||||||||||||||||&7  &f80.0'
+    - '&#c776db&l攻击：&b||||||||&7||||||||||||  &f6.0'
+    - '&#997c2b&l防御：&b||||&7||||||||||||||||  &f6.0'
+    - '&e&o=-=-=-=-=-=-=-=-=-=-=-='
+    - '&a【永生】永久生命恢复I'
+    - '&a【尸体派对】使用召唤5个支援僵尸并获3s速度II'
+    - '&a【腐烂】令贴近的敌人获得饥饿'
+    - '&7&o“死亡是新生，对你则是终焉”'
+    LeftClickCommands:
+    - 'player: qinkit kit Zombie'
+    - 'console: execute as %player% at @s run playsound minecraft:entity.fishing_bobber.splash
+      ambient @s'
+    - '[close]'
+    RightClickCommands:
+    - 'player: qinkit intro Zombie'
+    - '[close]'
+  '35':
+    DisplayName: '&7[>&4&l魅魔&7<]'
+    Material: PINK_DYE
+    Lore:
+    - '&4&l恶魔    &3&l控制'
+    - '&e&o=-=-=-=-=-=-=-=-=-=-=-='
+    - '&7美丽而迷人的地狱魅魔'
+    - '&7依靠人类的欲望强大自我的欲望'
+    - '&e&o=-=-=-=-=-=-=-=-=-=-=-='
+    - '&#d96562&l生命：&b||||||||||&7||||||||||  &f46.0'
+    - '&#c776db&l攻击：&b|||||||||&7|||||||||||  &f6.0'
+    - '&#997c2b&l防御：&b||||||||||||&7||||||||  &f13.0'
+    - '&e&o=-=-=-=-=-=-=-=-=-=-=-='
+    - '&a【诱惑】触碰到自己的玩家获得2s虚弱I'
+    - '&a【魅惑】周围10m范围内所有玩家5s虚弱III'
+    - '&7&o“想要来一场危❤险❤的❤恋❤爱吗？”'
+    LeftClickCommands:
+    - 'player: qinkit kit LoveDemo'
+    - 'console: execute as %player% at @s run playsound minecraft:entity.fishing_bobber.splash
+      ambient @s'
+    - '[close]'
+    RightClickCommands:
+    - 'player: qinkit intro LoveDemo'
+    - '[close]'

@@ -1,0 +1,17 @@
+{
+	"display": {
+		"icon": {
+			"id": "minecraft:wolf_spawn_egg"
+		},
+		"title": {"translate":"K头狗U•ェ•*U"},
+		"description": {"color":"green","translate":"击杀的玩家被其他人攻击过且一击杀死"},
+		"announce_to_chat": true,
+		"frame": "goal"
+	},
+	"parent": "kitspvp:qinkitpvps/fun_goals",	
+	"criteria": {
+		"dummy": {
+			"trigger": "minecraft:impossible"
+		  }
+	}
+}

@@ -1,0 +1,22 @@
+{
+    "display": {
+        "icon": {
+            "id": "minecraft:netherite_ingot"
+        },
+        "title": {
+            "translate": "完成 2-8 关卡"
+        },
+        "description": {
+            "color": "green",
+            "translate": "解锁毁灭菇"
+        },
+        "announce_to_chat": true,
+        "frame": "task"
+    },
+    "parent": "kitspvp:pvz/fin2_7",
+    "criteria": {
+        "dummy": {
+            "trigger": "minecraft:impossible"
+        }
+    }
+}

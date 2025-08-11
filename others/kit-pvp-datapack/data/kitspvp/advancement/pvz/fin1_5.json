@@ -1,0 +1,22 @@
+{
+    "display": {
+        "icon": {
+            "id": "minecraft:potato"
+        },
+        "title": {
+            "translate": "完成 1-5 关卡"
+        },
+        "description": {
+            "color": "green",
+            "translate": "解锁土豆地雷"
+        },
+        "announce_to_chat": true,
+        "frame": "task"
+    },
+    "parent": "kitspvp:pvz/fin1_4",
+    "criteria": {
+        "dummy": {
+            "trigger": "minecraft:impossible"
+        }
+    }
+}

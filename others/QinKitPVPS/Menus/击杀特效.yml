@@ -1,0 +1,55 @@
+MenuTitle: '&8[&3QinKitPVP&8] &5击杀特效'
+Lines: 6
+
+Items:
+  '10':
+    DisplayName: '&c&l🔥 > 火焰审判 < 🔥'
+    Material: Blaze_Powder
+    Lore:
+    - '&8===================='
+    - '&7- 稀有度：%killEffect_rare_fire%'
+    - '&7- 是否拥有： %player_hasKillEffect_fire%'
+    - '&7- 价格：&e%killEffect_price_fire%'
+    - '&#CCCCFF让你的敌人像火焰一样炸裂！'
+    - '&8===================='
+    - '&b→ &a左键 &7装背   &b→ &a右键 &7购买'
+    LeftClickCommands:
+    - 'player: qinkit killEffectApply fire'
+    - '[close]'
+    RightClickCommands:
+    - 'player: qinkit buykillEffect fire'
+    - '[close]'
+  '11':
+    DisplayName: '&b&l❄ > 寒冰刺骨 < ❄'
+    Material: Snowball
+    Lore:
+    - '&8===================='
+    - '&7- 稀有度：%killEffect_rare_ice%'
+    - '&7- 是否拥有： %player_hasKillEffect_ice%'
+    - '&7- 价格：&e%killEffect_price_ice%'
+    - '&#CCCCFF像冰之樱花那般绽放至破碎吧！'
+    - '&8===================='
+    - '&b→ &a左键 &7装背   &b→ &a右键 &7购买'
+    LeftClickCommands:
+    - 'player: qinkit killEffectApply ice'
+    - '[close]'
+    RightClickCommands:
+    - 'player: qinkit buykillEffect ice'
+    - '[close]'
+  '12':
+    DisplayName: '&#0096FF&l❇ > 魂之爆裂< ❇'
+    Material: tnt
+    Lore:
+    - '&8===================='
+    - '&7- 稀有度：%killEffect_rare_explosion%'
+    - '&7- 是否拥有： %player_hasKillEffect_explosion%'
+    - '&7- 价格：&e%killEffect_price_explosion%'
+    - '&#CCCCFF灵魂之炸裂乃深邃之终焉也...'
+    - '&8===================='
+    - '&b→ &a左键 &7装背   &b→ &a右键 &7购买'
+    LeftClickCommands:
+    - 'player: qinkit killEffectApply explosion'
+    - '[close]'
+    RightClickCommands:
+    - 'player: qinkit buykillEffect explosion'
+    - '[close]'

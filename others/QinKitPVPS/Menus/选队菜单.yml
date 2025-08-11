@@ -1,0 +1,96 @@
+MenuTitle: '&8[&3AllayWar&8] &8&l选队菜单'
+Lines: 6
+OpenCommands:
+- 'console: execute as %player% at @s run playsound minecraft:block.beacon.power_select
+  ambient @s'
+
+Items:
+  '3':
+    DisplayName: '&b&l选择经典地图'
+    Material: sand
+    LeftClickCommands:
+    - 'player: qinkit allayMap 1'
+  '4':
+    DisplayName: '&b&l选择超大地图'
+    Material: nether_star
+    LeftClickCommands:
+    - 'player: qinkit allayMap 2'
+  '5':
+    DisplayName: '&b&l选择小快递地图'
+    Material: grass_block
+    LeftClickCommands:
+    - 'player: qinkit allayMap 3'
+  
+  '9':
+    Material: gray_stained_glass_pane
+  '10':
+    Material: gray_stained_glass_pane
+  '11':
+    Material: gray_stained_glass_pane
+  '12':
+    Material: gray_stained_glass_pane
+  '13':
+    DisplayName: '&b&l开始游戏'
+    Material: glow_item_frame
+    LeftClickCommands:
+    - 'player: qinkit startAW'
+  '14':
+    Material: gray_stained_glass_pane
+  '15':
+    Material: gray_stained_glass_pane
+  '16':
+    Material: gray_stained_glass_pane
+  '17':
+    Material: gray_stained_glass_pane
+  
+  '28':
+    DisplayName: '&a&l选择蓝队'
+    Material: blue_dye
+    Lore:
+    - '&7为蓝队效忠'
+    LeftClickCommands:
+    - 'console: tag %player% add AW_ready_blue'
+    - 'console: tag %player% remove AW_ready_red'
+    - 'console: tag %player% remove AW_ready_yellow'
+    - 'console: tag %player% remove AW_ready_green'
+    - 'console: tellraw @a ["%player% 选择了蓝队~"]'
+  '30':
+    DisplayName: '&a&l选择红'
+    Material: red_dye
+    Lore:
+    - '&7为红队效忠'
+    LeftClickCommands:
+    - 'console: tag %player% add AW_ready_red'
+    - 'console: tag %player% remove AW_ready_yellow'
+    - 'console: tag %player% remove AW_ready_green'
+    - 'console: tag %player% remove AW_ready_blue'
+    - 'console: tellraw @a ["%player% 选择了红队~"]'
+  '32':
+    DisplayName: '&a&l选择绿队'
+    Material: green_dye
+    Lore:
+    - '&7为绿队效忠'
+    LeftClickCommands:
+    - 'console: tag %player% add AW_ready_green'
+    - 'console: tag %player% remove AW_ready_red'
+    - 'console: tag %player% remove AW_ready_yellow'
+    - 'console: tag %player% remove AW_ready_blue'
+    - 'console: tellraw @a ["%player% 选择了绿队~"]'
+  '34':
+    DisplayName: '&a&l选择黄队'
+    Material: yellow_dye
+    Lore:
+    - '&7为黄队效忠'
+    LeftClickCommands:
+    - 'console: tag %player% add AW_ready_yellow'
+    - 'console: tag %player% remove AW_ready_red'
+    - 'console: tag %player% remove AW_ready_green'
+    - 'console: tag %player% remove AW_ready_blue'
+    - 'console: tellraw @a ["%player% 选择了黄队~"]'
+  '49':
+    DisplayName: '&a&l前往PVZ的世界~'
+    Material: lime_dye
+    Lore:
+    - '&7去打打姜丝~'
+    LeftClickCommands:
+    - 'console: tp %player% -982 1 -1000'

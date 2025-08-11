@@ -1,0 +1,84 @@
+Kit:
+  Permission: kp.kit.clls
+  DisplayName: 森林蟒蛇
+  Available: true
+  Cooldown: 0
+  Level: 0
+Inventory:
+  Armor:
+    Helmet:
+      Name: '&2丛林猎手头盔'
+      Material: LEATHER_HELMET
+      Dye:
+        Red: 0
+        Green: 100
+        Blue: 0
+      Enchantments:
+        PROTECTION_ENVIROMENTAL: 1
+    Chestplate:
+      Name: '&2丛林猎手胸甲'
+      Material: LEATHER_CHESTPLATE
+      Dye:
+        Red: 0
+        Green: 100
+        Blue: 0
+    Leggings:
+      Name: '&2丛林猎手裤腿'
+      Material: CHAINMAIL_LEGGINGS
+    Boots:
+      Name: '&2丛林猎手靴子'
+      Material: DIAMOND_BOOTS
+      Enchantments:
+        PROTECTION_ENVIROMENTAL: 1
+  Items:
+    '0':
+      Name: '&2丛林猎手匕首'
+      Material: WOODEN_SWORD
+      Enchantments:
+        SHARPNESS: 2
+      Lore:
+      - '  &8● &3森林之子 &7: &7永久 &a速度II 跳跃II 夜视'
+    '1':
+      Name: '&a丛林猎手的弓'
+      Material: BOW
+      Enchantments:
+        PUNCH: 1
+      Lore:
+      - '  &8● &3毒舌&7: &7射出的箭带有 &a中毒I &7的药水效果'
+    '7':
+      Name: '&a隐秘丛林'
+      Material: SLIME_BALL
+      Amount: 1
+      Lore:
+      - '  &8● &3林生 &7: &7获得速度V &a5s &7并且获得 &a20 &7个毒箭'
+    '3':
+      Material: COOKED_BEEF
+      Amount: 8
+    '4':
+      Name: '&a医疗包'
+      Material: GREEN_GLAZED_TERRACOTTA
+      Amount: 3
+    '8':
+      Name: '&aPlayer Tracker &7(Right Click)'
+      Material: COMPASS
+Effects:
+  SPEED:
+    Amplifier: 1
+    Duration: 100000
+  NIGHT_VISION:
+    Amplifier: 1
+    Duration: 100000
+  JUMP_BOOST:
+    Amplifier: 2
+    Duration: 100000
+Commands:
+- 'console: give %player% tipped_arrow[potion_contents={custom_effects:[{id:"minecraft:poison",amplifier:0,duration:100}]}]
+  20'
+- 'console: tag %player% add Clls'
+Introduction:
+- '&7>> &b&l勇者 &7-->'
+- '&7生命：&a40  &7防御：&a11+2  &7攻击：&a5'
+- '&7上手难度：&f★★☆☆☆'
+- '  &8● &3森林之子 &7: &7永久 &a速度II 跳跃II 夜视'
+- '  &8● &3毒舌&7: &7射出的箭带有 &a中毒I &7的药水效果'
+- '  &8● &3隐秘丛林 &7: &7获得速度V &a5s &7并且获得 &a20 &7个毒箭'

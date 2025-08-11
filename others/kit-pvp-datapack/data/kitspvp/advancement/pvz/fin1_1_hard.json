@@ -1,0 +1,17 @@
+{
+	"display": {
+		"icon": {
+			"id": "minecraft:sunflower"
+		},
+		"title": {"color":"red", "translate":"完成 1-1 关卡 困难难度"},
+		"description": {"color":"aqua","translate":"困难难度完成"},
+		"announce_to_chat": true,
+		"frame": "goal"
+	},
+	"parent": "kitspvp:pvz/hard_challenge",	
+	"criteria": {
+		"dummy": {
+			"trigger": "minecraft:impossible"
+		}
+	}
+}

@@ -1,0 +1,46 @@
+Kit:
+  Permission: kp.kit.Nero
+  DisplayName: 恶魔猎手
+  Available: false
+  Cooldown: 0
+  Level: 0
+  Health: 25
+Inventory:
+  Items:
+    '2':
+      Name: '&e扳机'
+      Material: CHAIN
+    '6':
+      Material: COOKED_BEEF
+      Amount: 3
+    '7':
+      Name: '&a医疗包'
+      Material: GREEN_GLAZED_TERRACOTTA
+      Amount: 7
+    '8':
+      Name: '&aPlayer Tracker &7(Right Click)'
+      Material: COMPASS
+Commands:
+- 'console: tag %player% add Nero'
+- 'console: tag %player% add Nero1'
+- 'console: tag %player% add Nero2'
+- 'console: item replace entity %player% armor.chest with minecraft:leather_chestplate{Unbreakable:true,Enchantments:[{id:"blast_protection",lvl:1s}],AttributeModifiers:[{AttributeName:"generic.armor",Name:"generic.armor",Slot:"chest",Operation:0,Amount:3.0d,UUID:[I;2126958583,-1290123050,-1126629358,-1170507392]},{AttributeName:"generic.armor_toughness",Name:"generic.armor_toughness",Slot:"chest",Operation:0,Amount:3.0d,UUID:[I;1591681999,424561161,-1532474148,366226495]}],display:{color:6684927}} '
+- 'console: item replace entity %player% armor.legs with minecraft:leather_leggings{Unbreakable:true,Enchantments:[{id:"fire_protection",lvl:1s}],AttributeModifiers:[{AttributeName:"generic.armor",Name:"generic.armor",Slot:"legs",Operation:0,Amount:3.0d,UUID:[I;-1624748239,1963411436,-1960337772,-167737903]},{AttributeName:"generic.armor_toughness",Name:"generic.armor_toughness",Slot:"legs",Operation:0,Amount:5.0d,UUID:[I;-487490292,2070824666,-1509839014,-983560422]}],display:{color:4020580}}'
+- 'console: item replace entity %player% armor.feet with minecraft:iron_boots{Unbreakable:true,Enchantments:[{id:"blast_protection",lvl:1s},{id:"projectile_protection",lvl:1s},{id:"protection",lvl:1s}],AttributeModifiers:[{AttributeName:"generic.armor",Name:"generic.armor",Slot:"feet",Operation:0,Amount:4.0d,UUID:[I;92243264,-30521190,-1489820713,-739273296]},{AttributeName:"generic.armor_toughness",Name:"generic.armor_toughness",Slot:"feet",Operation:0,Amount:3.0d,UUID:[I;-392146042,-762689140,-1845189905,1267115753]}]}'
+Introduction:
+- '&7>> &b&l恶魔猎手 尼禄 &7-->'
+- '&7生命：&a50  &7防御：&a10+11  &7攻击：&a2'
+- '&7上手难度：&f★★★★★'
+- '  &8● &3 绯红女皇（属性）&7: 此武器拥有技能；&a耐久度：3 伤害：2&7'
+- '  &8● &3 绯红女皇（技能）&7: 使用技能瞬间，获得&a2s力量&7，并&a重新获得绯红女皇&7；使用技能时绯红女皇将会获得一层&a充能，&7持续&a6S，&7技能提供的力量的&等级&a等于&7充能层数（上限为3）；当充能持续时间&a结束后，清除所有充能;&7当使用此技能时，&a刷新&7所有充能持续时间
+  &7'
+- '  &8● &3 湛蓝玫瑰（被动）&7: 每过&a5s，&7湛蓝玫瑰将会获得&a一层充能（上限为三），&7当充能&a蓄满&7时，停止充能，并且&a10s后清除&7自己的充能；&a每获得一层充能，&7便会获得&a1支“箭”，&7“箭”的效果&a随充能层数而增强；&7当达到下一层充能时，（充能被清除时并不会）会&a清除身上所有的“箭”&7'
+- '  &8● &3 备注&7: 武器的&a充能并不相通，&7“刷新”，“清除”等效果不会对另一把武器的充能生效。&7'
+- '  &8● &3 扳机&7: 本身并无效果，当&扳机处于副手时，主手的绯红女皇&7技能将拥有额外效果；当&a湛蓝玫瑰处于副手时，主手的扳机&7将拥有效果；根据武器充能的层数，所获得的效果也不同&7'
+- '  &8● &3 绯红女皇（扳机+充能1）&7: 支付8生命值，以自身为中心，爆发&a十字形火焰（每条火焰束长度为8，可蔓延至墙体上）&7'
+- '  &8● &3 绯红女皇（扳机+充能2）&7: 支付8生命值，向周围发出高温气流并造成&a6点&7伤害,自己获得&a3s伤害吸收2，抗火&7'
+- '  &8● &3 绯红女皇（扳机+充能3）&7: 支付8生命值，向所指方向瞬移至多&a6格&7距离，并对离你&a半径6格内&7最近的其他玩家造成&a19点&7伤害&7'
+- '  &8● &3 湛蓝玫瑰（扳机+充能1）&7: 使&a半径5格内&7最近的一个其他玩家头上出现&a箭雨&7(每支箭造成&a10点伤害&7）&7'
+- '  &8● &3 湛蓝玫瑰（扳机+充能2）&7: 检测敌人的判定范围&a半径+3，箭雨的数量，范围增大，&7额外出现的箭雨的&a伤害+2&7'
+- '  &8● &3 湛蓝玫瑰（扳机+充能3）&7: 自己获得&a2s的速度4，&7同时使周围&a半径7格内&7的其他玩家获得&a2S发光&7'
+

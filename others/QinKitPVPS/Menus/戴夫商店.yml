@@ -1,0 +1,119 @@
+MenuTitle: '&8[&3AllayWar&8] &8&l戴夫商店'
+Lines: 6
+OpenCommands:
+- 'console: execute as %player% at @s run playsound minecraft:block.beacon.power_select
+  ambient @s'
+
+Items:
+  '0':
+    DisplayName: '&b&l快捷购买'
+    Material: nether_star
+    LeftClickCommands:
+    - 'console: execute as %player% at @s run playsound minecraft:block.note_block.bit
+      ambient @a ~ ~ ~'
+  '1':
+    DisplayName: '&b&l方块'
+    Material: sandstone
+    LeftClickCommands:
+    - 'console: execute as %player% at @s run playsound minecraft:block.note_block.bit
+      ambient @a ~ ~ ~'
+  '2':
+    DisplayName: '&b&l武器 & 装备'
+    Material: golden_sword
+    LeftClickCommands:
+    - 'console: execute as %player% at @s run playsound minecraft:block.note_block.bit
+      ambient @a ~ ~ ~'
+  '3':
+    DisplayName: '&b&l装备'
+    Material: chainmail_boots
+    LeftClickCommands:
+    - 'console: execute as %player% at @s run playsound minecraft:block.note_block.bit
+      ambient @a ~ ~ ~'
+  '4':
+    DisplayName: '&b&l攻城磊'
+    Material: stone_pickaxe
+    LeftClickCommands:
+    - 'console: execute as %player% at @s run playsound minecraft:block.note_block.bit
+      ambient @a ~ ~ ~'
+  '5':
+    DisplayName: '&b&l远程武器'
+    Material: bow
+    LeftClickCommands:
+    - 'console: execute as %player% at @s run playsound minecraft:block.note_block.bit
+      ambient @a ~ ~ ~'
+  '6':
+    DisplayName: '&b&l建筑'
+    Material: bricks
+    LeftClickCommands:
+    - 'console: execute as %player% at @s run playsound minecraft:block.note_block.bit
+      ambient @a ~ ~ ~'
+  '7':
+    DisplayName: '&b&l特殊道具'
+    Material: tnt
+    LeftClickCommands:
+    - 'console: execute as %player% at @s run playsound minecraft:block.note_block.bit
+      ambient @a ~ ~ ~'
+  '8':
+    DisplayName: '&b&l职业能力'
+    Material: clock
+    LeftClickCommands:
+    - 'console: execute as %player% at @s run playsound minecraft:block.note_block.bit
+      ambient @a ~ ~ ~'
+  '19':
+    ItemID: 蛋糕炸弹
+    DisplayName: '&c&l蛋糕炸弹'
+    Lore:
+    - '&7售价：30'
+    LeftClickCommands:
+    - '[buy] cake_boom'
+  '20':
+    ItemID: 速度宝石
+    DisplayName: '&b&l速度宝石'
+    Lore:
+    - '&7售价：50'
+    LeftClickCommands:
+    - '[buy] speed_ore'
+  '21':
+    ItemID: 快刀手武器
+    Lore:
+    - '&7售价：150'
+    LeftClickCommands:
+    - '[buy] fast_sword'
+  '22':
+    ItemID: 治疗药水
+    DisplayName: '&c&l治疗药水'
+    Lore:
+    - '&7售价：25'
+    LeftClickCommands:
+    - '[buy] health_potion'
+  '23':
+    ItemID: 死神武器
+    Lore:
+    - '&7售价：150'
+    LeftClickCommands:
+    - '[buy] death_sword'
+  '24':
+    ItemID: 粑粑
+    Lore:
+    - '&7售价：0'
+    LeftClickCommands:
+    - '[buy] shit'
+  
+  '9':
+    Material: lime_stained_glass_pane
+  '10':
+    Material: gray_stained_glass_pane
+  '11':
+    Material: gray_stained_glass_pane
+  '12':
+    Material: gray_stained_glass_pane
+  '13':
+    Material: gray_stained_glass_pane
+  '14':
+    Material: gray_stained_glass_pane
+  '15':
+    Material: gray_stained_glass_pane
+  '16':
+    Material: gray_stained_glass_pane
+  '17':
+    Material: gray_stained_glass_pane

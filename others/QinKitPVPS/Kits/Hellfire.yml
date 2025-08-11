@@ -1,0 +1,62 @@
+Kit:
+  Permission: kp.kit.Hellfire
+  DisplayName: 狱炎
+  Available: true
+  Cooldown: 0
+  Level: 0
+  Health: 50
+Inventory:
+  Armor:
+    Boots:
+      Name: '&7不灭之炎'
+      Material: IRON_BOOTS
+      ArmorDefenseBase: 0
+      Enchantments:
+        FIRE_PROTECTION: 2
+        FEATHER_FALLING: 2
+        BLAST_PROTECTION: 2
+        PROJECTILE_PROTECTION: 1
+  Items:
+    '0':
+      Name: 永火
+      Material: BLAZE_ROD
+      AttackDamageBase: 5.5
+      Enchantments:
+        KNOCKBACK: 1
+        FIRE_ASPECT: 2
+    '2':
+      Name: '&6炼狱的狂宴'
+      Material: MAGMA_CREAM
+    '1':
+      Name: '&c不灭之火'
+      Material: BLAZE_POWDER
+      Amount: 4
+      Lore:
+      - 冷却时间为4s，充能时间为32s
+    '3':
+      Material: COOKED_BEEF
+      Amount: 8
+    '4':
+      Name: '&a医疗包'
+      Material: GREEN_GLAZED_TERRACOTTA
+      Amount: 3
+    '8':
+      Name: '&aPlayer Tracker &7(Right Click)'
+      Material: COMPASS
+Commands:
+- 'console: tag %player% add Hellfire'
+- 'console: tag %player% add Hellfire_Y'
+Introduction:
+- '&7>> &b&l狱炎 &7-->'
+- '&7生命：&a90  &7防御：&a0  &7攻击：&a5.5'
+- '&7上手难度：&f★★★☆☆'
+- '  &8● &4驱炎 &7: &7开局进入 &c炎形态 &7在25s（计数达到500）后进入&6灼形态,&7在25s后进入&c炎形态&7,每次切换形态将释放&f切换技&7,并获得&a1s饱和8'
+- '  &8○ &c炎：&7常驻&a抗火，发光，&7在靠近&a岩浆边缘时&7获得&a跳跃提升;&f切换技：&7获得&a4s伤害吸收3&7,并对周围&a半径4格&7以内的敌人造成&a10点火焰伤害&7,并且让他们获得&a4s发光'
+- '  &8○ &6灼：&7受到的&a伤害-4&7,常驻&a虚弱5,速度1&7,并且&a免疫缓慢;&f切换技：&a清除自身所有药水效果&7,并&a恢复8点生命值'
+- '  &8● &c不灭之火 &7: &7初始拥有&a4层充能&7,每次充能都会&a消耗3层充能&7，并获得&a4层充能'
+- '  &8○ &c炎形态效果：恢复&a8生命值&7，并获得&a1s抗性提升'
+- '  &8○ &6灼形态效果：获得&a2s隐身&7，期间对近距离的敌人持续造成&a火焰伤害'
+- '  &8● &6炼狱的狂宴 &7:技能&a范围半径:7格,持续时间9s&7释放瞬间对范围内的敌人造成15点火焰伤害,同时在范围内爆发出火焰领域'
+- '  &8○ &a领域效果：&7令范围内的其他玩家获得&a缓慢7,虚弱1&7,并持续&a清除&7其身上的&a伤害吸收,生命恢复&7;领域内的&f爆炸物与箭&7实体会被持续清除'
+- '  &8○ &c炎形态效果：获得&a力量1&7,并且立刻&a充满&c不灭之火&a的充能'
+- '  &8○ &6灼形态效果：获得&a抗性提升1&7,并且立刻释放一次&f切换技'

@@ -1,0 +1,22 @@
+{
+    "display": {
+        "icon": {
+            "id": "minecraft:diamond"
+        },
+        "title": {
+            "translate": "完成 1-4 关卡"
+        },
+        "description": {
+            "color": "green",
+            "translate": "解锁冰冻生菜"
+        },
+        "announce_to_chat": true,
+        "frame": "task"
+    },
+    "parent": "kitspvp:pvz/fin1_3",
+    "criteria": {
+        "dummy": {
+            "trigger": "minecraft:impossible"
+        }
+    }
+}

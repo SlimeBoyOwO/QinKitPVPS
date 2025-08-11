@@ -1,0 +1,60 @@
+Kit:
+  Permission: kp.kit.fastsword
+  DisplayName: 快刀手
+  Available: true
+  Cooldown: 0
+  Level: 0
+  Price: 1250
+Inventory:
+  Armor:
+    Helmet:
+      Name: '&7故郷のスカーフ'
+      Material: IRON_HELMET
+      ArmorTrim:
+        Material: REDSTONE
+        Pattern: SENTRY
+    Chestplate:
+      Name: '&7故郷の戦甲'
+      Material: CHAINMAIL_CHESTPLATE
+    Leggings:
+      Name: '&7故郷の網タイツ'
+      Material: GOLDEN_LEGGINGS
+      ArmorDefenseBase: 3
+    Boots:
+      Name: '&7故郷の軍靴'
+      Material: CHAINMAIL_BOOTS
+  Items:
+    '0':
+      Name: '&c日本一の快刀'
+      Material: IRON_SWORD
+      AttackDamageBase: 5
+      AttackSpeedBase: -0.3
+      Lore:
+      - '  &8● &3快刀 &7: &7常驻 &a30% &7攻速提升'
+      - '  &8● &3千刀万仞 &7: &7取消攻击间隔，无限连击'
+    '1':
+      Name: '&a日本一の苦无'
+      Material: BOW
+    '3':
+      Material: COOKED_BEEF
+      Amount: 8
+    '4':
+      Name: '&a医疗包'
+      Material: GREEN_GLAZED_TERRACOTTA
+      Amount: 3
+    '7':
+      Material: ARROW
+      Amount: 24
+    '8':
+      Name: '&aPlayer Tracker &7(Right Click)'
+      Material: COMPASS
+Commands:
+- 'console: tag %player% add FastSword'
+Introduction:
+- '&7>> &b&l樱花刀刃 &7-->'
+- '&7生命：&a40  &7防御：&a13  &7攻击：&a5'
+- '&7上手难度：&f★★★☆☆'
+- '  &8● &3快刀 &7: &7常驻 &a30% &7攻速提升'
+- '  &8● &3千刀万仞 &7: &7取消攻击间隔，无限连击'
+- '  &8○ &7这是一个手速决定强度的角色'
+- '  &8○ &7适合一切cps高的1.8玩家'

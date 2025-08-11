@@ -1,0 +1,19 @@
+Activator:
+  Name: '&a不灭之火'
+Commands:
+- 'console: execute as %player% at @s[tag=Hellfire_Y] run effect give @s minecraft:instant_health
+  1 1'
+- 'console: execute as %player% at @s[tag=Hellfire_Y] run effect give @s minecraft:resistance
+  1 0'
+- 'console: execute as %player% at @s[tag=Hellfire_Z] run effect give @s minecraft:invisibility
+  2 0'
+- 'console: execute as %player% at @s[tag=Hellfire_Z] run tag @s add Hellfire_INS'
+- 'console: execute as %player% at @s run clear @s minecraft:blaze_powder 1'
+- 'console: execute as %player% at @s run playsound minecraft:entity.tnt.primed player
+  @s ~ ~ ~ 1 1 1'
+- 'console: execute as %player% at @s[tag=Hellfire_Z] run particle smoke ~ ~1 ~ 1
+  1 1 0 100 force'
+- 'console: execute as %player% at @s[tag=Hellfire_Y] run particle minecraft:lava
+  ~ ~ ~ 0 0 0 0 100'
+CoolDown:
+  CoolDown: 4S

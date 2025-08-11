@@ -1,0 +1,26 @@
+Activator:
+  Name: '&a魂之挽歌'
+Commands:
+- 'console: execute as %player% at %player% run particle portal ~ ~1 ~ 1 1 1 1 1000
+  force'
+- 'console: execute as %player% at %player% run execute as @p[tag=kongju] at @s run
+  tp %player% ~ ~ ~ '
+- 'console: execute as %player% at %player% run effect give @s strength 2 0'
+- 'console: execute as %player% at %player% run effect give @s absorption 5 0'
+- 'console: execute as %player% at %player% run effect give @s resistance 2 0'
+- 'console: execute as @e[tag=shadowF1] at @e[tag=shadowF1] run effect give @a[distance=0..6,tag=!shadowF]
+  slowness 5 1'
+- 'console: execute as @e[tag=shadowF1] at @e[tag=shadowF1] run effect give @a[distance=0..6,tag=!shadowF]
+  instant_damage 1 0'
+- 'console: execute as %player% at %player% run kill @e[type=minecraft:armor_stand,tag=shadowF1] '
+- 'console: execute as %player% at %player% run effect give @a[tag=kongju] wither
+  5 0'
+- 'console: execute as %player% at %player% run effect give @a[tag=kongju] darkness
+  5 0'
+- 'console: execute as %player% at %player% run tag @a remove kongju '
+- 'console: execute as %player% at %player% run execute as %player% at %player% run
+  playsound minecraft:entity.wither.death voice @a[distance=0..10] ~ ~ ~ 2 0.1 '
+- 'console: execute as %player% at @s run tellraw @s [{"color":"black","text":"瑟瑟"},{"color":"black","text":"发抖吧！"}]'
+- 'console: execute as %player% at @s run tellraw @p[limit=1,tag=kongju] [{"color":"black","text":"瑟瑟"},{"color":"black","text":"发抖吧！"}]'
+CoolDown:
+  CoolDown: 46S

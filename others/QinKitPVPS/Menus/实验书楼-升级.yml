@@ -1,0 +1,112 @@
+MenuTitle: '&8[&3AllayWar&8] &8&l实验书楼-升级'
+Lines: 6
+OpenCommands:
+- 'console: execute as %player% at @s run playsound minecraft:block.beacon.power_select
+  ambient @s'
+
+Items:
+  '4':
+    DisplayName: '&b&l核心升级'
+    Material: diamond
+  '19':
+    DisplayName: '&a&l护甲升级 - I'
+    Material: chainmail_chestplate
+    Lore:
+    - '&7队伍获得保护I装背'
+    - '&7售价：750'
+    LeftClickCommands:
+    - '[buy] protection_up_1'
+  
+  '20':
+    DisplayName: '&a&l护甲升级 - II'
+    Material: iron_chestplate
+    Lore:
+    - '&7队伍获得保护II护甲'
+    - '&7售价：1500'
+    LeftClickCommands:
+    - '[buy] protection_up_2'
+  
+  '21':
+    DisplayName: '&a&l护甲升级 - III'
+    Material: diamond_chestplate
+    Lore:
+    - '&7队伍获得保护III护甲'
+    - '&7售价：4000'
+    LeftClickCommands:
+    - '[buy] protection_up_3'
+  
+  '22':
+    DisplayName: '&a&l护甲升级 - IV'
+    Material: netherite_chestplate
+    Lore:
+    - '&7队伍获得保护IV护甲'
+    - '&7售价：8000'
+    LeftClickCommands:
+    - '[buy] protection_up_4'
+  '28':
+    DisplayName: '&a&l锋利 - I'
+    Material: IRON_SWORD
+    Lore:
+    - '&7队伍获得锋利I'
+    - '&7售价：1000'
+    LeftClickCommands:
+    - '[buy] sharpness_up_1'
+  '29':
+    DisplayName: '&a&l锋利 - II'
+    Material: DIAMOND_SWORD
+    Lore:
+    - '&7队伍获得锋利II'
+    - '&7售价：2000'
+    LeftClickCommands:
+    - '[buy] sharpness_up_2'
+  '30':
+    DisplayName: '&a&l锋利 - III'
+    Material: NETHERITE_SWORD
+    Lore:
+    - '&7队伍获得锋利III'
+    - '&7售价：4000'
+    LeftClickCommands:
+    - '[buy] sharpness_up_3'
+  '37':
+    DisplayName: '&a&l产量升级 - I'
+    Material: GLISTERING_MELON_SLICE
+    Lore:
+    - '&7产出金锭的概率增加10%'
+    - '&7售价：500'
+    LeftClickCommands:
+    - '[buy] money_up_1'
+  '38':
+    DisplayName: '&a&l产量升级 - II'
+    Material: GLISTERING_MELON_SLICE
+    Lore:
+    - '&7产出金锭的概率增加20%'
+    - '&7售价：1500'
+    LeftClickCommands:
+    - '[buy] money_up_2'
+  '39':
+    DisplayName: '&a&l产量升级 - III'
+    Material: GLISTERING_MELON_SLICE
+    Lore:
+    - '&7产出金锭的概率增加40%'
+    - '&7售价：4500'
+    LeftClickCommands:
+    - '[buy] money_up_3'
+  
+  '9':
+    Material: gray_stained_glass_pane
+  '10':
+    Material: gray_stained_glass_pane
+  '11':
+    Material: gray_stained_glass_pane
+  '12':
+    Material: gray_stained_glass_pane
+  '13':
+    Material: lime_stained_glass_pane
+  '14':
+    Material: gray_stained_glass_pane
+  '15':
+    Material: gray_stained_glass_pane
+  '16':
+    Material: gray_stained_glass_pane
+  '17':
+    Material: gray_stained_glass_pane

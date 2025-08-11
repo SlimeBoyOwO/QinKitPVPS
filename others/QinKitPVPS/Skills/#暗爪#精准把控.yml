@@ -1,0 +1,18 @@
+Activator:
+  Material: TOTEM_OF_UNDYING
+  Name: '&a精准把控'
+Commands:
+- 'console: effect give %player%[scores={health=1}] absorption infinite 0'
+- 'console: effect give %player%[scores={health=1..}] instant_damage 1 0'
+- 'console: execute as %player% at @s run effect give @a[distance=0..8,scores={health=9}]
+  slowness 5 1'
+- 'console: execute as %player% at @s run effect give @adistance=0..8,scores={health=16}]
+  minecraft:weakness 5 0'
+- 'console: execute as %player% at @s run effect give @a[distance=0..8,scores={health=24}]
+  blindness 5 0'
+- 'console: execute as %player% at @s run effect give @a[distance=0..8,scores={health=30}]
+  poison 5 1'
+CoolDown:
+  CoolDown: 12S
+Message:
+  Message: ''

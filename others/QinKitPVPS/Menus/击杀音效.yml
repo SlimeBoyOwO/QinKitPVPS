@@ -1,0 +1,72 @@
+MenuTitle: '&8[&3QinKitPVP&8] &5击杀音效'
+Lines: 6
+
+Items:
+  '10':
+    DisplayName: '&c&l🔥 > 铃铛 < 🔥'
+    Material: bell
+    Lore:
+    - '&8===================='
+    - '&7- 稀有度：%killSound_rare_bell%'
+    - '&7- 是否拥有： %player_hasKillSound_bell%'
+    - '&7- 价格：&e%killSound_price_bell%'
+    - '&#CCCCFF叮叮当~叮叮当~'
+    - '&8===================='
+    - '&b→ &a左键 &7装背   &b→ &a右键 &7购买'
+    LeftClickCommands:
+    - 'player: qinkit killSoundApply bell'
+    - '[close]'
+    RightClickCommands:
+    - 'player: qinkit buykillSound bell'
+    - '[close]'
+  '11':
+    DisplayName: '&b&l❄ > 猪叫 < ❄'
+    Material: cooked_porkchop
+    Lore:
+    - '&8===================='
+    - '&7- 稀有度：%killSound_rare_pig%'
+    - '&7- 是否拥有： %player_hasKillSound_pig%'
+    - '&7- 价格：&e%killSound_price_pig%'
+    - '&#CCCCFF哼唧唧，哼唧唧，>w<'
+    - '&8===================='
+    - '&b→ &a左键 &7装背   &b→ &a右键 &7购买'
+    LeftClickCommands:
+    - 'player: qinkit killSoundApply pig'
+    - '[close]'
+    RightClickCommands:
+    - 'player: qinkit buykillSound pig'
+    - '[close]'
+  '12':
+    DisplayName: '&b&l❄ > 狗叫 < ❄'
+    Material: bone
+    Lore:
+    - '&8===================='
+    - '&7- 稀有度：%killSound_rare_wolf%'
+    - '&7- 是否拥有： %player_hasKillSound_wolf%'
+    - '&7- 价格：&e%killSound_price_wolf%'
+    - '&#CCCCFF可怜的小狗狗，落到我手里了吧~'
+    - '&8===================='
+    - '&b→ &a左键 &7装背   &b→ &a右键 &7购买'
+    LeftClickCommands:
+    - 'player: qinkit killSoundApply wolf'
+    - '[close]'
+    RightClickCommands:
+    - 'player: qinkit buykillSound wolf'
+    - '[close]'
+  '13':
+    DisplayName: '&b&l❄ > 猫叫 < ❄'
+    Material: pink_dye
+    Lore:
+    - '&8===================='
+    - '&7- 稀有度：%killSound_rare_cat%'
+    - '&7- 是否拥有： %player_hasKillSound_cat%'
+    - '&7- 价格：&e%killSound_price_cat%'
+    - '&#CCCCFF被我打死，可就要作为我的猫娘哦~'
+    - '&8===================='
+    - '&b→ &a左键 &7装背   &b→ &a右键 &7购买'
+    LeftClickCommands:
+    - 'player: qinkit killSoundApply cat'
+    - '[close]'
+    RightClickCommands:
+    - 'player: qinkit buykillSound cat'
+    - '[close]'

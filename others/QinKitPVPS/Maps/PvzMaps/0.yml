@@ -1,0 +1,1989 @@
+MapID: 0
+MapName: 草坪
+World: pvz_world
+Center:
+  X: -982
+  Y: 1
+  Z: -1000
+VillagerCenter:
+  X: -982.5
+  Y: 1
+  Z: -1008
+MonsterArea:
+  '1':
+    X: -968
+    Y: 1
+    Z: -942
+  '2':
+    X: -1001
+    Y: 1
+    Z: -931
+PlantsArea:
+  '1':
+    X: -999
+    Y: 0
+    Z: -1000
+  '2':
+    X: -970
+    Y: 0
+    Z: -947
+GraveArea:
+  '1':
+    X: -999
+    Y: 0
+    Z: -976
+  '2':
+    X: -970
+    Y: 0
+    Z: -947
+
+Levels:
+  1-1:
+    TotalTime:
+    - 2100
+    Waves:
+      '500':
+        Type: 普通僵尸
+        Amount: 1
+      '900':
+        Type: 普通僵尸
+        Amount: 1
+      '1300':
+        Type: 普通僵尸
+        Amount: 2
+      '1700':
+        Type: 普通僵尸
+        Amount: 2
+      '2100':
+        Type: 普通僵尸
+        Amount: 5
+  1-2:
+    TotalTime:
+    - 3600
+    Waves:
+      '500':
+        Type: 普通僵尸
+        Amount: 1
+      '750':
+        Type: 普通僵尸
+        Amount: 3
+      '1000':
+        Type: 普通僵尸
+        Amount: 5
+      '1600':
+        Type: 普通僵尸
+        Amount: 5
+      '2100':
+        Type: 普通僵尸
+        Amount: 10
+      '2600':
+        Type: 普通僵尸
+        Amount: 10
+      '3100':
+        Type: 普通僵尸
+        Amount: 20
+      '3600':
+        Type: 普通僵尸
+        Amount: 20
+  1-3:
+    TotalTime:
+    - 3100
+    Waves:
+      '500':
+        Type: 普通僵尸
+        Amount: 1
+      '800':
+        Type: 普通僵尸
+        Amount: 4
+      '1200':
+        Type: 路障僵尸
+        Amount: 5
+      '1600':
+        Type: 皮革僵尸
+        Amount: 5
+      '1800':
+        Type: 普通僵尸
+        Amount: 4
+      '2000':
+        Type: 普通僵尸
+        Amount: 12
+      '2500':
+        Type: 路障僵尸
+        Amount: 8
+      '3100':
+        Type: 普通僵尸
+        Amount: 15
+      '3101':
+        Type: 路障僵尸
+        Amount: 6
+  1-4:
+    TotalTime:
+    - 3100
+    Waves:
+      '500':
+        Type: 普通僵尸
+        Amount: 1
+      '800':
+        Type: 普通僵尸
+        Amount: 4
+      '1200':
+        Type: 路障僵尸
+        Amount: 3
+      '1600':
+        Type: 路障僵尸
+        Amount: 5
+      '1800':
+        Type: 皮革僵尸
+        Amount: 4
+      
+      '2000':
+        Type: 普通僵尸
+        Amount: 7
+      '2001':
+        Type: 路障僵尸
+        Amount: 5
+      
+      '2500':
+        Type: 路障僵尸
+        Amount: 8
+      
+      '3100':
+        Type: 普通僵尸
+        Amount: 15
+      '3101':
+        Type: 路障僵尸
+        Amount: 10
+  
+  1-5:
+    TotalTime:
+    - 4200
+    Waves:
+      '501':
+        Type: 普通僵尸
+        Amount: 1
+      
+      '1001':
+        Type: 路障僵尸
+        Amount: 1
+      '1002':
+        Type: 普通僵尸
+        Amount: 1
+      
+      '1500':
+        Type: 铁桶僵尸
+        Amount: 1
+      '1501':
+        Type: 路障僵尸
+        Amount: 2
+      '1502':
+        Type: 普通僵尸
+        Amount: 4
+      
+      '2000':
+        Type: 普通僵尸
+        Amount: 6
+      '2001':
+        Type: 路障僵尸
+        Amount: 2
+      '2002':
+        Type: 铁桶僵尸
+        Amount: 1
+      
+      '2400':
+        Type: 普通僵尸
+        Amount: 8
+      '2401':
+        Type: 路障僵尸
+        Amount: 4
+      '2402':
+        Type: 铁桶僵尸
+        Amount: 2
+      
+      '2900':
+        Type: 普通僵尸
+        Amount: 10
+      '2901':
+        Type: 路障僵尸
+        Amount: 4
+      '2902':
+        Type: 铁桶僵尸
+        Amount: 1
+      
+      '3600':
+        Type: 普通僵尸
+        Amount: 10
+      '3602':
+        Type: 铁桶僵尸
+        Amount: 5
+      
+      '4200':
+        Type: 普通僵尸
+        Amount: 15
+      '4202':
+        Type: 路障僵尸
+        Amount: 10
+      '4203':
+        Type: 铁桶僵尸
+        Amount: 8
+  1-6:
+    TotalTime:
+    - 4500
+    - 9000
+    Waves:
+      '500':
+        Type: 火把僵尸
+        Amount: 1
+      
+      '1000':
+        Type: 路障僵尸
+        Amount: 1
+      '1001':
+        Type: 火把僵尸
+        Amount: 1
+      '1002':
+        Type: 普通僵尸
+        Amount: 2
+      
+      '1500':
+        Type: 铁桶僵尸
+        Amount: 2
+      '1501':
+        Type: 火把僵尸
+        Amount: 3
+      '1502':
+        Type: 普通僵尸
+        Amount: 5
+      
+      '2000':
+        Type: 火把僵尸
+        Amount: 4
+      '2001':
+        Type: 路障僵尸
+        Amount: 4
+      '2002':
+        Type: 普通僵尸
+        Amount: 3
+      
+      '2400':
+        Type: 普通僵尸
+        Amount: 10
+      '2401':
+        Type: 路障僵尸
+        Amount: 2
+      '2402':
+        Type: 铁桶僵尸
+        Amount: 4
+      '2403':
+        Type: 火把僵尸
+        Amount: 4
+      
+      '2900':
+        Type: 皮革僵尸
+        Amount: 3
+      '2901':
+        Type: 路障僵尸
+        Amount: 5
+      '2902':
+        Type: 铁桶僵尸
+        Amount: 3
+      
+      '3600':
+        Type: 普通僵尸
+        Amount: 9
+      '3602':
+        Type: 路障僵尸
+        Amount: 8
+      '3603':
+        Type: 铁桶僵尸
+        Amount: 8
+      '3604':
+        Type: 火把僵尸
+        Amount: 3
+      
+      '4500':
+        Type: 普通僵尸
+        Amount: 13
+      '4501':
+        Type: 皮革僵尸
+        Amount: 5
+      '4502':
+        Type: 路障僵尸
+        Amount: 9
+      '4503':
+        Type: 铁桶僵尸
+        Amount: 13
+      
+      '5400':
+        Type: 小鬼僵尸
+        Amount: 3
+      '5401':
+        Type: 僵尸精锐
+        Amount: 5
+      '5402':
+        Type: 普通僵尸
+        Amount: 5
+      '5403':
+        Type: 路障僵尸
+        Amount: 13
+      
+      '5900':
+        Type: 小鬼僵尸
+        Amount: 5
+      '5901':
+        Type: 路障僵尸
+        Amount: 10
+      '5902':
+        Type: 普通僵尸
+        Amount: 12
+      '5903':
+        Type: 火把僵尸
+        Amount: 2
+      
+      '6500':
+        Type: 皮革僵尸
+        Amount: 8
+      '6501':
+        Type: 普通僵尸
+        Amount: 6
+      '6502':
+        Type: 铁桶僵尸
+        Amount: 3
+      '6503':
+        Type: 路障僵尸
+        Amount: 5
+      '6504':
+        Type: 僵尸精锐
+        Amount: 5
+      '6505':
+        Type: 火把僵尸
+        Amount: 1
+      
+      '7100':
+        Type: 小鬼僵尸
+        Amount: 8
+      '7101':
+        Type: 普通僵尸
+        Amount: 10
+      '7102':
+        Type: 铁桶僵尸
+        Amount: 3
+      '7103':
+        Type: 路障僵尸
+        Amount: 5
+      '7104':
+        Type: 火把僵尸
+        Amount: 2
+      
+      '7700':
+        Type: 路障僵尸
+        Amount: 10
+      '7701':
+        Type: 普通僵尸
+        Amount: 15
+      '7702':
+        Type: 铁桶僵尸
+        Amount: 5
+      '7703':
+        Type: 火把僵尸
+        Amount: 3
+      
+      '8200':
+        Type: 小鬼僵尸
+        Amount: 5
+      '8201':
+        Type: 普通僵尸
+        Amount: 12
+      '8202':
+        Type: 铁桶僵尸
+        Amount: 3
+      '8203':
+        Type: 路障僵尸
+        Amount: 8
+      '8204':
+        Type: 僵尸精锐
+        Amount: 8
+      '8205':
+        Type: 火把僵尸
+        Amount: 4
+      
+      '9000':
+        Type: 小鬼僵尸
+        Amount: 8
+      '9001':
+        Type: 普通僵尸
+        Amount: 10
+      '9002':
+        Type: 铁桶僵尸
+        Amount: 5
+      '9003':
+        Type: 路障僵尸
+        Amount: 8
+      '9004':
+        Type: 火把僵尸
+        Amount: 3
+  1-7:
+    TotalTime:
+    - 5500
+    - 11500
+    Waves:
+      '500':
+        Type: 普通僵尸
+        Amount: 1
+      
+      '801':
+        Type: 火把僵尸
+        Amount: 1
+      '802':
+        Type: 普通僵尸
+        Amount: 1
+      
+      '1301':
+        Type: 路障僵尸
+        Amount: 1
+      '1302':
+        Type: 普通僵尸
+        Amount: 1
+      
+      '1800':
+        Type: 撑杆跳僵尸
+        Amount: 1
+      '1801':
+        Type: 路障僵尸
+        Amount: 2
+      '1802':
+        Type: 普通僵尸
+        Amount: 3
+      
+      '2200':
+        Type: 撑杆跳僵尸
+        Amount: 1
+      '2201':
+        Type: 路障僵尸
+        Amount: 2
+      '2202':
+        Type: 普通僵尸
+        Amount: 4
+      
+      '2700':
+        Type: 火把僵尸
+        Amount: 1
+      '2701':
+        Type: 路障僵尸
+        Amount: 4
+      '2702':
+        Type: 铁桶僵尸
+        Amount: 1
+      '2703':
+        Type: 普通僵尸
+        Amount: 6
+      '2704':
+        Type: 撑杆跳僵尸
+        Amount: 2
+      
+      '3200':
+        Type: 普通僵尸
+        Amount: 4
+      '3201':
+        Type: 路障僵尸
+        Amount: 2
+      '3202':
+        Type: 铁桶僵尸
+        Amount: 2
+      
+      '3700':
+        Type: 普通僵尸
+        Amount: 6
+      '3701':
+        Type: 火把僵尸
+        Amount: 2
+      '3702':
+        Type: 路障僵尸
+        Amount: 3
+      
+      '4200':
+        Type: 火把僵尸
+        Amount: 1
+      '4202':
+        Type: 撑杆跳僵尸
+        Amount: 5
+      '4203':
+        Type: 路障僵尸
+        Amount: 3
+      '4204':
+        Type: 普通僵尸
+        Amount: 6
+      
+      '4700':
+        Type: 普通僵尸
+        Amount: 4
+      '4701':
+        Type: 火把僵尸
+        Amount: 1
+      '4702':
+        Type: 路障僵尸
+        Amount: 6
+      '4703':
+        Type: 铁桶僵尸
+        Amount: 1
+      '4704':
+        Type: 撑杆跳僵尸
+        Amount: 3
+      
+      '5500':
+        Type: 普通僵尸
+        Amount: 10
+      '5501':
+        Type: 撑杆跳僵尸
+        Amount: 4
+      '5502':
+        Type: 路障僵尸
+        Amount: 8
+      '5503':
+        Type: 铁桶僵尸
+        Amount: 6
+      '5504':
+        Type: 火把僵尸
+        Amount: 2
+      
+      '6000':
+        Type: 皮革僵尸
+        Amount: 6
+      '6002':
+        Type: 普通僵尸
+        Amount: 8
+      '6003':
+        Type: 路障僵尸
+        Amount: 4
+      
+      '6500':
+        Type: 撑杆跳僵尸
+        Amount: 6
+      '6501':
+        Type: 路障僵尸
+        Amount: 6
+      '6502':
+        Type: 普通僵尸
+        Amount: 10
+      '6503':
+        Type: 火把僵尸
+        Amount: 2
+      '6504':
+        Type: 铁桶僵尸
+        Amount: 6
+      
+      '7001':
+        Type: 普通僵尸
+        Amount: 15
+      '7002':
+        Type: 铁桶僵尸
+        Amount: 4
+      '7003':
+        Type: 路障僵尸
+        Amount: 6
+      '7004':
+        Type: 僵尸精锐
+        Amount: 2
+      '7005':
+        Type: 火把僵尸
+        Amount: 1
+      '7006':
+        Type: 撑杆跳僵尸
+        Amount: 4
+      
+      '7400':
+        Type: 僵尸精锐
+        Amount: 8
+      '7402':
+        Type: 铁桶僵尸
+        Amount: 4
+      '7403':
+        Type: 路障僵尸
+        Amount: 7
+      '7404':
+        Type: 火把僵尸
+        Amount: 2
+      
+      '7900':
+        Type: 铁桶僵尸
+        Amount: 8
+      '7901':
+        Type: 火把僵尸
+        Amount: 6
+      '7902':
+        Type: 普通僵尸
+        Amount: 10
+      '7903':
+        Type: 僵尸精锐
+        Amount: 3
+      
+      '8400':
+        Type: 路障僵尸
+        Amount: 7
+      '8401':
+        Type: 普通僵尸
+        Amount: 12
+      '8402':
+        Type: 火把僵尸
+        Amount: 6
+      '8403':
+        Type: 撑杆跳僵尸
+        Amount: 6
+      
+      '8900':
+        Type: 普通僵尸
+        Amount: 8
+      '8901':
+        Type: 铁桶僵尸
+        Amount: 6
+      '8902':
+        Type: 路障僵尸
+        Amount: 8
+      
+      '9300':
+        Type: 普通僵尸
+        Amount: 12
+      '9301':
+        Type: 火把僵尸
+        Amount: 4
+      '9302':
+        Type: 路障僵尸
+        Amount: 10
+      
+      '9900':
+        Type: 普通僵尸
+        Amount: 10
+      '9901':
+        Type: 铁桶僵尸
+        Amount: 6
+      '9902':
+        Type: 路障僵尸
+        Amount: 8
+      
+      '10300':
+        Type: 普通僵尸
+        Amount: 12
+      '10301':
+        Type: 僵尸精锐
+        Amount: 2
+      '10302':
+        Type: 铁桶僵尸
+        Amount: 8
+      '10303':
+        Type: 路障僵尸
+        Amount: 9
+      '10304':
+        Type: 火把僵尸
+        Amount: 4
+      '10305':
+        Type: 撑杆僵尸
+        Amount: 6
+      
+      '10801':
+        Type: 僵尸精锐
+        Amount: 10
+      '10802':
+        Type: 铁桶僵尸
+        Amount: 12
+      '10803':
+        Type: 路障僵尸
+        Amount: 12
+      '10804':
+        Type: 火把僵尸
+        Amount: 5
+      '10805':
+        Type: 撑杆僵尸
+        Amount: 8
+      
+      '11501':
+        Type: 普通僵尸
+        Amount: 10
+      '11502':
+        Type: 铁桶僵尸
+        Amount: 10
+      '11503':
+        Type: 路障僵尸
+        Amount: 15
+      '11504':
+        Type: 火把僵尸
+        Amount: 8
+      '11505':
+        Type: 撑杆僵尸
+        Amount: 12
+  
+  1-8:
+    TotalTime:
+    - 4200
+    Waves:
+      '501':
+        Type: 普通僵尸
+        Amount: 1
+      
+      '1001':
+        Type: 路障僵尸
+        Amount: 1
+      '1002':
+        Type: 普通僵尸
+        Amount: 1
+      
+      '1500':
+        Type: 铁桶僵尸
+        Amount: 1
+      '1501':
+        Type: 路障僵尸
+        Amount: 2
+      '1502':
+        Type: 普通僵尸
+        Amount: 4
+      
+      '2000':
+        Type: 普通僵尸
+        Amount: 5
+      '2001':
+        Type: 路障僵尸
+        Amount: 2
+      '2002':
+        Type: 铁桶僵尸
+        Amount: 1
+      '2003':
+        Type: 下界僵尸
+        Amount: 1
+      
+      '2400':
+        Type: 普通僵尸
+        Amount: 4
+      '2401':
+        Type: 路障僵尸
+        Amount: 4
+      '2402':
+        Type: 铁桶僵尸
+        Amount: 2
+      '2403':
+        Type: 下界僵尸
+        Amount: 2
+      
+      '2900':
+        Type: 普通僵尸
+        Amount: 8
+      '2901':
+        Type: 下界僵尸
+        Amount: 2
+      '2902':
+        Type: 铁桶僵尸
+        Amount: 6
+      
+      '3600':
+        Type: 普通僵尸
+        Amount: 12
+      '3602':
+        Type: 铁桶僵尸
+        Amount: 5
+      '3603':
+        Type: 下界僵尸
+        Amount: 3
+      
+      '4200':
+        Type: 普通僵尸
+        Amount: 15
+      '4202':
+        Type: 路障僵尸
+        Amount: 5
+      '4203':
+        Type: 铁桶僵尸
+        Amount: 10
+      '4204':
+        Type: 下界僵尸
+        Amount: 6
+  1-9:
+    TotalTime:
+    - 6300
+    - 11100
+    Waves:
+      '500':
+        Type: 普通僵尸
+        Amount: 1
+      
+      '1000':
+        Type: 普通僵尸
+        Amount: 2
+      
+      '1500':
+        Type: 路障僵尸
+        Amount: 1
+      
+      '1900':
+        Type: 路障僵尸
+        Amount: 3
+      '1901':
+        Type: 普通僵尸
+        Amount: 1
+      
+      '2300':
+        Type: 普通僵尸
+        Amount: 3
+      '2301':
+        Type: 铁桶僵尸
+        Amount: 3
+      
+      '2700':
+        Type: 路障僵尸
+        Amount: 2
+      '2701':
+        Type: 普通僵尸
+        Amount: 5
+      '2702':
+        Type: 铁桶僵尸
+        Amount: 2
+      
+      '3100':
+        Type: 路障僵尸
+        Amount: 1
+      '3101':
+        Type: 普通僵尸
+        Amount: 4
+      '3102':
+        Type: 铁桶僵尸
+        Amount: 2
+      
+      '3500':
+        Type: 撑杆跳僵尸
+        Amount: 3
+      '3501':
+        Type: 普通僵尸
+        Amount: 4
+      '3502':
+        Type: 铁桶僵尸
+        Amount: 3
+      
+      '3900':
+        Type: 撑杆跳僵尸
+        Amount: 5
+      '3901':
+        Type: 路障僵尸
+        Amount: 2
+      '3902':
+        Type: 普通僵尸
+        Amount: 3
+      '3903':
+        Type: 铁桶僵尸
+        Amount: 1
+      
+      '4300':
+        Type: 撑杆跳僵尸
+        Amount: 3
+      '4301':
+        Type: 火把僵尸
+        Amount: 5
+      '4302':
+        Type: 路障僵尸
+        Amount: 1
+      '4303':
+        Type: 普通僵尸
+        Amount: 1
+      '4304':
+        Type: 铁桶僵尸
+        Amount: 2
+      
+      '4700':
+        Type: 撑杆跳僵尸
+        Amount: 2
+      '4701':
+        Type: 火把僵尸
+        Amount: 4
+      '4702':
+        Type: 路障僵尸
+        Amount: 5
+      '4703':
+        Type: 普通僵尸
+        Amount: 5
+      '4704':
+        Type: 铁桶僵尸
+        Amount: 1
+      
+      '5300':
+        Type: 僵尸精锐
+        Amount: 4
+      '5301':
+        Type: 路障僵尸
+        Amount: 1
+      '5302':
+        Type: 普通僵尸
+        Amount: 7
+      '5303':
+        Type: 铁桶僵尸
+        Amount: 7
+      '5304':
+        Type: 下界僵尸
+        Amount: 2
+      
+      '5800':
+        Type: 僵尸精锐
+        Amount: 4
+      '5801':
+        Type: 路障僵尸
+        Amount: 3
+      '5802':
+        Type: 普通僵尸
+        Amount: 6
+      '5803':
+        Type: 铁桶僵尸
+        Amount: 5
+      '5804':
+        Type: 下界僵尸
+        Amount: 4
+      
+      '6200':
+        Type: 僵尸精锐
+        Amount: 8
+      '6201':
+        Type: 路障僵尸
+        Amount: 3
+      '6202':
+        Type: 普通僵尸
+        Amount: 6
+      '6203':
+        Type: 铁桶僵尸
+        Amount: 7
+      '6204':
+        Type: 下界僵尸
+        Amount: 3
+      
+      '6600':
+        Type: 撑杆跳僵尸
+        Amount: 6
+      '6601':
+        Type: 路障僵尸
+        Amount: 2
+      '6602':
+        Type: 普通僵尸
+        Amount: 13
+      '6603':
+        Type: 铁桶僵尸
+        Amount: 4
+      '6604':
+        Type: 下界僵尸
+        Amount: 5
+      
+      '7000':
+        Type: 撑杆跳僵尸
+        Amount: 2
+      '7001':
+        Type: 路障僵尸
+        Amount: 2
+      '7002':
+        Type: 普通僵尸
+        Amount: 7
+      '7003':
+        Type: 铁桶僵尸
+        Amount: 7
+      '7004':
+        Type: 下界僵尸
+        Amount: 7
+      
+      '7400':
+        Type: 撑杆跳僵尸
+        Amount: 5
+      '7401':
+        Type: 火把僵尸
+        Amount: 4
+      '7402':
+        Type: 路障僵尸
+        Amount: 7
+      '7403':
+        Type: 普通僵尸
+        Amount: 8
+      '7404':
+        Type: 铁桶僵尸
+        Amount: 6
+      '7405':
+        Type: 小鬼僵尸
+        Amount: 8
+      
+      '8100':
+        Type: 撑杆跳僵尸
+        Amount: 7
+      '8101':
+        Type: 火把僵尸
+        Amount: 2
+      '8102':
+        Type: 路障僵尸
+        Amount: 8
+      '8103':
+        Type: 普通僵尸
+        Amount: 4
+      '8104':
+        Type: 铁桶僵尸
+        Amount: 7
+      '8105':
+        Type: 小鬼僵尸
+        Amount: 7
+      
+      '8500':
+        Type: 僵尸精锐
+        Amount: 8
+      '8501':
+        Type: 路障僵尸
+        Amount: 5
+      '8502':
+        Type: 皮革僵尸
+        Amount: 4
+      '8503':
+        Type: 普通僵尸
+        Amount: 4
+      '8504':
+        Type: 铁桶僵尸
+        Amount: 5
+      '8505':
+        Type: 下界僵尸
+        Amount: 6
+      
+      '8900':
+        Type: 僵尸精锐
+        Amount: 6
+      '8901':
+        Type: 路障僵尸
+        Amount: 8
+      '8902':
+        Type: 皮革僵尸
+        Amount: 9
+      '8903':
+        Type: 普通僵尸
+        Amount: 2
+      '8904':
+        Type: 铁桶僵尸
+        Amount: 10
+      '8905':
+        Type: 下界僵尸
+        Amount: 5
+      
+      '9300':
+        Type: 撑杆跳僵尸
+        Amount: 9
+      '9301':
+        Type: 路障僵尸
+        Amount: 8
+      '9302':
+        Type: 普通僵尸
+        Amount: 14
+      '9303':
+        Type: 铁桶僵尸
+        Amount: 8
+      '9304':
+        Type: 下界僵尸
+        Amount: 7
+      
+      '10100':
+        Type: 撑杆跳僵尸
+        Amount: 13
+      '10101':
+        Type: 火把僵尸
+        Amount: 9
+      '10102':
+        Type: 路障僵尸
+        Amount: 10
+      '10103':
+        Type: 普通僵尸
+        Amount: 17
+      '10104':
+        Type: 铁桶僵尸
+        Amount: 9
+  2-1:
+    GraveAmount: 10
+    TotalTime:
+    - 4200
+    Waves:
+      '500':
+        Type: 普通僵尸
+        Amount: 1
+      
+      '1000':
+        Type: 普通僵尸
+        Amount: 3
+      
+      '1400':
+        Type: 路障僵尸
+        Amount: 3
+      '1401':
+        Type: 普通僵尸
+        Amount: 1
+      
+      '1800':
+        Type: 读报僵尸
+        Amount: 3
+      '1801':
+        Type: 普通僵尸
+        Amount: 6
+      
+      '2200':
+        Type: 读报僵尸
+        Amount: 6
+      '2201':
+        Type: 普通僵尸
+        Amount: 3
+      
+      '2600':
+        Type: 读报僵尸
+        Amount: 3
+      '2601':
+        Type: 路障僵尸
+        Amount: 2
+      '2602':
+        Type: 普通僵尸
+        Amount: 6
+      
+      '3000':
+        Type: 读报僵尸
+        Amount: 4
+      '3001':
+        Type: 路障僵尸
+        Amount: 3
+      '3002':
+        Type: 普通僵尸
+        Amount: 5
+      
+      '3400':
+        Type: 读报僵尸
+        Amount: 5
+      '3401':
+        Type: 路障僵尸
+        Amount: 4
+      '3402':
+        Type: 普通僵尸
+        Amount: 3
+      
+      '4200':
+        Type: 读报僵尸
+        Amount: 8
+      '4201':
+        Type: 路障僵尸
+        Amount: 5
+      '4202':
+        Type: 普通僵尸
+        Amount: 9
+  
+  2-2:
+    GraveAmount: 14
+    TotalTime:
+    - 5800
+    Waves:
+      '500':
+        Type: 小鬼僵尸
+        Amount: 1
+      
+      '1000':
+        Type: 小鬼僵尸
+        Amount: 3
+      
+      '1400':
+        Type: 路障僵尸
+        Amount: 2
+      '1401':
+        Type: 普通僵尸
+        Amount: 5
+      
+      '1800':
+        Type: 读报僵尸
+        Amount: 1
+      '1801':
+        Type: 普通僵尸
+        Amount: 2
+      '1802':
+        Type: 铁桶僵尸
+        Amount: 1
+      '1803':
+        Type: 小鬼僵尸
+        Amount: 6
+      
+      '2200':
+        Type: 读报僵尸
+        Amount: 1
+      '2201':
+        Type: 铁桶僵尸
+        Amount: 3
+      '2202':
+        Type: 小鬼僵尸
+        Amount: 1
+      
+      '2600':
+        Type: 读报僵尸
+        Amount: 4
+      '2601':
+        Type: 路障僵尸
+        Amount: 2
+      '2602':
+        Type: 普通僵尸
+        Amount: 1
+      '2603':
+        Type: 小鬼僵尸
+        Amount: 3
+      
+      '3000':
+        Type: 路障僵尸
+        Amount: 1
+      '3001':
+        Type: 普通僵尸
+        Amount: 8
+      '3002':
+        Type: 铁桶僵尸
+        Amount: 1
+      '3003':
+        Type: 小鬼僵尸
+        Amount: 6
+      
+      '3400':
+        Type: 读报僵尸
+        Amount: 5
+      '3401':
+        Type: 路障僵尸
+        Amount: 3
+      '3402':
+        Type: 普通僵尸
+        Amount: 1
+      '3403':
+        Type: 小鬼僵尸
+        Amount: 5
+      
+      '3800':
+        Type: 读报僵尸
+        Amount: 3
+      '3801':
+        Type: 路障僵尸
+        Amount: 2
+      '3802':
+        Type: 铁桶僵尸
+        Amount: 3
+      '3803':
+        Type: 小鬼僵尸
+        Amount: 1
+      
+      '4200':
+        Type: 读报僵尸
+        Amount: 3
+      '4201':
+        Type: 火把僵尸
+        Amount: 1
+      '4202':
+        Type: 路障僵尸
+        Amount: 4
+      '4203':
+        Type: 普通僵尸
+        Amount: 2
+      '4204':
+        Type: 铁桶僵尸
+        Amount: 1
+      '4205':
+        Type: 小鬼僵尸
+        Amount: 5
+      
+      '4600':
+        Type: 读报僵尸
+        Amount: 4
+      '4601':
+        Type: 火把僵尸
+        Amount: 2
+      '4602':
+        Type: 路障僵尸
+        Amount: 1
+      '4603':
+        Type: 普通僵尸
+        Amount: 3
+      '4604':
+        Type: 铁桶僵尸
+        Amount: 3
+      '4605':
+        Type: 小鬼僵尸
+        Amount: 3
+      
+      '5000':
+        Type: 读报僵尸
+        Amount: 1
+      '5001':
+        Type: 火把僵尸
+        Amount: 4
+      '5002':
+        Type: 路障僵尸
+        Amount: 2
+      '5003':
+        Type: 普通僵尸
+        Amount: 3
+      '5004':
+        Type: 铁桶僵尸
+        Amount: 3
+      '5005':
+        Type: 小鬼僵尸
+        Amount: 5
+      
+      '5800':
+        Type: 读报僵尸
+        Amount: 6
+      '5801':
+        Type: 火把僵尸
+        Amount: 3
+      '5802':
+        Type: 路障僵尸
+        Amount: 2
+      '5803':
+        Type: 普通僵尸
+        Amount: 4
+      '5804':
+        Type: 铁桶僵尸
+        Amount: 3
+      '5805':
+        Type: 小鬼僵尸
+        Amount: 5
+  2-3:
+    GraveAmount: 16
+    TotalTime:
+    - 5800
+    Waves:
+      '500':
+        Type: 普通僵尸
+        Amount: 1
+      
+      '1000':
+        Type: 路障僵尸
+        Amount: 1
+      
+      '1400':
+        Type: 路障僵尸
+        Amount: 3
+      '1401':
+        Type: 普通僵尸
+        Amount: 4
+      
+      '1800':
+        Type: 普通僵尸
+        Amount: 2
+      '1801':
+        Type: 铁桶僵尸
+        Amount: 3
+      
+      '2200':
+        Type: 普通僵尸
+        Amount: 4
+      '2201':
+        Type: 铁桶僵尸
+        Amount: 2
+      '2202':
+        Type: 铁栅栏僵尸
+        Amount: 2
+      
+      '2600':
+        Type: 路障僵尸
+        Amount: 2
+      '2601':
+        Type: 普通僵尸
+        Amount: 5
+      '2602':
+        Type: 铁栅栏僵尸
+        Amount: 3
+      
+      '3000':
+        Type: 读报僵尸
+        Amount: 4
+      '3001':
+        Type: 路障僵尸
+        Amount: 3
+      '3002':
+        Type: 普通僵尸
+        Amount: 5
+      '3003':
+        Type: 铁栅栏僵尸
+        Amount: 1
+      
+      '3400':
+        Type: 读报僵尸
+        Amount: 2
+      '3401':
+        Type: 路障僵尸
+        Amount: 3
+      '3402':
+        Type: 普通僵尸
+        Amount: 2
+      '3403':
+        Type: 铁栅栏僵尸
+        Amount: 4
+      
+      '3800':
+        Type: 读报僵尸
+        Amount: 3
+      '3801':
+        Type: 路障僵尸
+        Amount: 4
+      '3802':
+        Type: 普通僵尸
+        Amount: 4
+      '3803':
+        Type: 铁栅栏僵尸
+        Amount: 3
+      
+      '4200':
+        Type: 读报僵尸
+        Amount: 1
+      '4201':
+        Type: 路障僵尸
+        Amount: 3
+      '4202':
+        Type: 普通僵尸
+        Amount: 6
+      '4203':
+        Type: 铁栅栏僵尸
+        Amount: 6
+      
+      '4600':
+        Type: 读报僵尸
+        Amount: 1
+      '4601':
+        Type: 路障僵尸
+        Amount: 4
+      '4602':
+        Type: 普通僵尸
+        Amount: 5
+      '4603':
+        Type: 铁桶僵尸
+        Amount: 1
+      '4604':
+        Type: 铁栅栏僵尸
+        Amount: 5
+      
+      '5000':
+        Type: 读报僵尸
+        Amount: 3
+      '5001':
+        Type: 路障僵尸
+        Amount: 4
+      '5002':
+        Type: 普通僵尸
+        Amount: 10
+      '5003':
+        Type: 铁桶僵尸
+        Amount: 2
+      '5004':
+        Type: 铁栅栏僵尸
+        Amount: 2
+      
+      '5800':
+        Type: 读报僵尸
+        Amount: 6
+      '5801':
+        Type: 路障僵尸
+        Amount: 5
+      '5802':
+        Type: 普通僵尸
+        Amount: 5
+      '5803':
+        Type: 铁桶僵尸
+        Amount: 1
+      '5804':
+        Type: 铁栅栏僵尸
+        Amount: 5
+  2-4:
+    GraveAmount: 14
+    TotalTime:
+    - 5800
+    Waves:
+      '500':
+        Type: 骷髅亡灵
+        Amount: 1
+      
+      '1000':
+        Type: 骷髅亡灵
+        Amount: 2
+      
+      '1400':
+        Type: 路障僵尸
+        Amount: 2
+      '1401':
+        Type: 普通僵尸
+        Amount: 2
+      '1402':
+        Type: 骷髅亡灵
+        Amount: 3
+      
+      '1800':
+        Type: 路障僵尸
+        Amount: 5
+      '1801':
+        Type: 普通僵尸
+        Amount: 1
+      '1802':
+        Type: 死神僵尸
+        Amount: 1
+      
+      '2200':
+        Type: 路障僵尸
+        Amount: 4
+      '2201':
+        Type: 普通僵尸
+        Amount: 3
+      '2202':
+        Type: 骷髅亡灵
+        Amount: 3
+      
+      '2600':
+        Type: 路障僵尸
+        Amount: 3
+      '2601':
+        Type: 普通僵尸
+        Amount: 6
+      '2602':
+        Type: 死神僵尸
+        Amount: 2
+      '2603':
+        Type: 骷髅亡灵
+        Amount: 1
+      
+      '3000':
+        Type: 路障僵尸
+        Amount: 2
+      '3001':
+        Type: 普通僵尸
+        Amount: 6
+      '3002':
+        Type: 死神僵尸
+        Amount: 3
+      '3003':
+        Type: 骷髅亡灵
+        Amount: 2
+      
+      '3400':
+        Type: 读报僵尸
+        Amount: 1
+      '3401':
+        Type: 路障僵尸
+        Amount: 2
+      '3402':
+        Type: 普通僵尸
+        Amount: 5
+      '3403':
+        Type: 铁栅栏僵尸
+        Amount: 4
+      '3404':
+        Type: 骷髅亡灵
+        Amount: 1
+      
+      '3800':
+        Type: 读报僵尸
+        Amount: 3
+      '3801':
+        Type: 普通僵尸
+        Amount: 3
+      '3802':
+        Type: 死神僵尸
+        Amount: 1
+      '3803':
+        Type: 铁桶僵尸
+        Amount: 1
+      '3804':
+        Type: 铁栅栏僵尸
+        Amount: 5
+      '3805':
+        Type: 骷髅亡灵
+        Amount: 1
+      
+      '4200':
+        Type: 读报僵尸
+        Amount: 3
+      '4201':
+        Type: 路障僵尸
+        Amount: 5
+      '4202':
+        Type: 普通僵尸
+        Amount: 3
+      '4203':
+        Type: 铁栅栏僵尸
+        Amount: 3
+      '4204':
+        Type: 骷髅亡灵
+        Amount: 2
+      
+      '4600':
+        Type: 读报僵尸
+        Amount: 7
+      '4601':
+        Type: 路障僵尸
+        Amount: 3
+      '4602':
+        Type: 普通僵尸
+        Amount: 9
+      '4603':
+        Type: 铁栅栏僵尸
+        Amount: 3
+      
+      '5000':
+        Type: 读报僵尸
+        Amount: 3
+      '5001':
+        Type: 路障僵尸
+        Amount: 4
+      '5002':
+        Type: 普通僵尸
+        Amount: 3
+      '5003':
+        Type: 死神僵尸
+        Amount: 3
+      '5004':
+        Type: 骷髅亡灵
+        Amount: 7
+      
+      '5800':
+        Type: 读报僵尸
+        Amount: 2
+      '5801':
+        Type: 路障僵尸
+        Amount: 5
+      '5802':
+        Type: 普通僵尸
+        Amount: 4
+      '5803':
+        Type: 死神僵尸
+        Amount: 3
+      '5804':
+        Type: 铁桶僵尸
+        Amount: 3
+      '5805':
+        Type: 铁栅栏僵尸
+        Amount: 2
+      '5806':
+        Type: 骷髅亡灵
+        Amount: 3
+  
+  2-5:
+    GraveAmount: 14
+    TotalTime:
+    - 4600
+    - 6600
+    Waves:
+      '500':
+        Type: 普通僵尸
+        Amount: 2
+      
+      '1000':
+        Type: 普通僵尸
+        Amount: 3
+      '1001':
+        Type: 骷髅亡灵
+        Amount: 1
+      
+      '1400':
+        Type: 读报僵尸
+        Amount: 3
+      '1401':
+        Type: 普通僵尸
+        Amount: 3
+      '1402':
+        Type: 骷髅亡灵
+        Amount: 4
+      
+      '1800':
+        Type: 普通僵尸
+        Amount: 9
+      '1801':
+        Type: 亡灵法师
+        Amount: 1
+      
+      '2200':
+        Type: 路障僵尸
+        Amount: 4
+      '2201':
+        Type: 普通僵尸
+        Amount: 3
+      '2202':
+        Type: 死神僵尸
+        Amount: 1
+      '2203':
+        Type: 骷髅亡灵
+        Amount: 3
+      
+      '2600':
+        Type: 路障僵尸
+        Amount: 2
+      '2601':
+        Type: 普通僵尸
+        Amount: 4
+      '2602':
+        Type: 死神僵尸
+        Amount: 3
+      '2603':
+        Type: 骷髅亡灵
+        Amount: 3
+      
+      '3000':
+        Type: 普通僵尸
+        Amount: 4
+      '3001':
+        Type: 亡灵法师
+        Amount: 2
+      
+      '3400':
+        Type: 普通僵尸
+        Amount: 5
+      '3401':
+        Type: 亡灵法师
+        Amount: 2
+      
+      '3800':
+        Type: 读报僵尸
+        Amount: 1
+      '3801':
+        Type: 路障僵尸
+        Amount: 1
+      '3802':
+        Type: 普通僵尸
+        Amount: 2
+      '3803':
+        Type: 铁桶僵尸
+        Amount: 1
+      '3804':
+        Type: 铁栅栏僵尸
+        Amount: 3
+      '3805':
+        Type: 亡灵法师
+        Amount: 2
+      
+      '4600':
+        Type: 读报僵尸
+        Amount: 2
+      '4601':
+        Type: 路障僵尸
+        Amount: 3
+      '4602':
+        Type: 普通僵尸
+        Amount: 3
+      '4603':
+        Type: 铁桶僵尸
+        Amount: 3
+      '4604':
+        Type: 铁栅栏僵尸
+        Amount: 3
+      
+      '5000':
+        Type: 读报僵尸
+        Amount: 3
+      '5001':
+        Type: 路障僵尸
+        Amount: 2
+      '5002':
+        Type: 普通僵尸
+        Amount: 4
+      '5003':
+        Type: 铁桶僵尸
+        Amount: 4
+      '5004':
+        Type: 铁栅栏僵尸
+        Amount: 2
+      
+      '5400':
+        Type: 普通僵尸
+        Amount: 8
+      '5401':
+        Type: 亡灵法师
+        Amount: 3
+      
+      '5800':
+        Type: 读报僵尸
+        Amount: 4
+      '5801':
+        Type: 路障僵尸
+        Amount: 1
+      '5802':
+        Type: 普通僵尸
+        Amount: 2
+      '5803':
+        Type: 死神僵尸
+        Amount: 4
+      '5804':
+        Type: 铁桶僵尸
+        Amount: 2
+      '5805':
+        Type: 铁栅栏僵尸
+        Amount: 1
+      '5806':
+        Type: 亡灵法师
+        Amount: 1
+      
+      '6600':
+        Type: 读报僵尸
+        Amount: 2
+      '6601':
+        Type: 路障僵尸
+        Amount: 3
+      '6602':
+        Type: 普通僵尸
+        Amount: 6
+      '6603':
+        Type: 铁桶僵尸
+        Amount: 4
+      '6604':
+        Type: 铁栅栏僵尸
+        Amount: 6
+      '6605':
+        Type: 亡灵法师
+        Amount: 1
+  2-6:
+    GraveAmount: 14
+    TotalTime:
+    - 5800
+    Waves:
+      '500':
+        Type: 普通僵尸
+        Amount: 1
+      
+      '1000':
+        Type: 普通僵尸
+        Amount: 4
+      
+      '1400':
+        Type: 读报僵尸
+        Amount: 2
+      '1401':
+        Type: 路障僵尸
+        Amount: 3
+      '1402':
+        Type: 普通僵尸
+        Amount: 3
+      
+      '1800':
+        Type: 路障僵尸
+        Amount: 2
+      '1801':
+        Type: 普通僵尸
+        Amount: 2
+      '1802':
+        Type: 橄榄球僵尸
+        Amount: 2
+      
+      '2200':
+        Type: 读报僵尸
+        Amount: 4
+      '2201':
+        Type: 路障僵尸
+        Amount: 4
+      '2202':
+        Type: 普通僵尸
+        Amount: 7
+      
+      '2600':
+        Type: 路障僵尸
+        Amount: 3
+      '2601':
+        Type: 普通僵尸
+        Amount: 4
+      '2602':
+        Type: 橄榄球僵尸
+        Amount: 2
+      
+      '3000':
+        Type: 路障僵尸
+        Amount: 4
+      '3001':
+        Type: 普通僵尸
+        Amount: 2
+      '3002':
+        Type: 小鬼僵尸
+        Amount: 1
+      '3003':
+        Type: 橄榄球僵尸
+        Amount: 2
+      
+      '3400':
+        Type: 路障僵尸
+        Amount: 3
+      '3401':
+        Type: 普通僵尸
+        Amount: 1
+      '3402':
+        Type: 铁桶僵尸
+        Amount: 3
+      '3403':
+        Type: 橄榄球僵尸
+        Amount: 1
+      
+      '3800':
+        Type: 普通僵尸
+        Amount: 10
+      '3801':
+        Type: 亡灵法师
+        Amount: 2
+      '3802':
+        Type: 橄榄球僵尸
+        Amount: 1
+      
+      '4200':
+        Type: 读报僵尸
+        Amount: 8
+      '4201':
+        Type: 路障僵尸
+        Amount: 8
+      '4202':
+        Type: 普通僵尸
+        Amount: 6
+      
+      '4600':
+        Type: 读报僵尸
+        Amount: 3
+      '4601':
+        Type: 路障僵尸
+        Amount: 2
+      '4602':
+        Type: 普通僵尸
+        Amount: 2
+      '4603':
+        Type: 铁桶僵尸
+        Amount: 2
+      '4604':
+        Type: 橄榄球僵尸
+        Amount: 3
+      
+      '5000':
+        Type: 路障僵尸
+        Amount: 1
+      '5001':
+        Type: 普通僵尸
+        Amount: 3
+      '5002':
+        Type: 铁桶僵尸
+        Amount: 2
+      '5003':
+        Type: 小鬼僵尸
+        Amount: 5
+      '5004':
+        Type: 橄榄球僵尸
+        Amount: 4
+      
+      '5800':
+        Type: 读报僵尸
+        Amount: 7
+      '5801':
+        Type: 路障僵尸
+        Amount: 4
+      '5802':
+        Type: 普通僵尸
+        Amount: 2
+      '5803':
+        Type: 铁桶僵尸
+        Amount: 3
+      '5804':
+        Type: 橄榄球僵尸
+        Amount: 4
+  
+  人力巅峰:
+    TotalTime: 1500
+    Waves:
+      '200':
+        Type: 普通僵尸
+        Amount: 30
+      '300':
+        Type: 皮革僵尸
+        Amount: 30
+      '500':
+        Type: 普通僵尸
+        Amount: 30
+      '1000':
+        Type: 普通僵尸
+        Amount: 50
+      '1500':
+        Type: 普通僵尸
+        Amount: 50
+      '1501':
+        Type: 皮革僵尸
+        Amount: 20

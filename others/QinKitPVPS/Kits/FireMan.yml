@@ -1,0 +1,64 @@
+Kit:
+  Permission: kp.kit.fireman
+  DisplayName: 火焰豌豆
+  Available: true
+  Cooldown: 0
+  Level: 0
+  Health: 20
+Inventory:
+  Armor:
+    Helmet:
+      Material: IRON_HELMET
+      Enchantments:
+        FIRE_PROTECTION: 2
+    Chestplate:
+      Material: IRON_CHESTPLATE
+    Leggings:
+      Material: LEATHER_LEGGINGS
+      Dye:
+        Red: 104
+        Green: 37
+        Blue: 35
+    Boots:
+      Material: CHAINMAIL_BOOTS
+  Items:
+    '0':
+      Name: '&c赤叶'
+      Material: IRON_SWORD
+      Enchantments:
+        FIRE_ASPECT: 2
+    '1':
+      Name: '&c豌豆口'
+      Material: BOW
+      Enchantments:
+        POWER: 1
+      Lore:
+      - '  &8● &3火豌豆 &7: &7每射击 &a5 &7次，发出一颗可以爆炸的高伤害火焰豌豆'
+    '6':
+      Name: '&c极限爆发'
+      Material: TORCHFLOWER
+      Lore:
+      - '  &8● &3极限爆发 &7: &7以 &a4s 凋零III &7的代价，使自己的每次射击都成为火焰豌豆,并获得 &a4s 抗火'
+    '7':
+      Material: ARROW
+      Amount: 32
+    '3':
+      Material: COOKED_BEEF
+      Amount: 8
+    '4':
+      Name: '&a医疗包'
+      Material: GREEN_GLAZED_TERRACOTTA
+      Amount: 3
+    '8':
+      Name: '&aPlayer Tracker &7(Right Click)'
+      Material: COMPASS
+Commands:
+- 'console: tag %player% add FireMan '
+Introduction:
+- '&7>> &b&l火豆射手 &7-->'
+- '&7生命：&a40  &7防御：&a11  &7攻击：&a6'
+- '&7上手难度：&f★★★★☆'
+- '  &8● &3火豌豆 &7: &7每射击 &a5 &7次，发出一颗可以爆炸的高伤害火焰豌豆'
+- '  &8● &3极限爆发 &7: &7以 &a4s 凋零III &7的代价，使自己的每次射击都成为火焰豌豆,并获得&a抗火'
+- '  &8○ &7以火焰和爆炸为主题的角色'
+- '  &8○ &7高伤害的豌豆是它决胜的关键'

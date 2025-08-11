@@ -1,0 +1,46 @@
+MenuTitle: '&8[&#048f91&l&oQ&#059b9e&l&oi&#05adb0&l&on&#06b9bd&l&oK&#06c6c9&l&oi&#06d3d6&l&ot&#07e2e6&l&oP&#07eef2&l&oV&#07e6f2&l&oP&8]
+  &5选择你的个性化设置uwu'
+Lines: 6
+
+Items:
+  '10':
+    DisplayName: '&7[>&b&l是否开启蹬墙跳&7<]'
+    Material: Rabbit_Foot
+    Lore:
+    - '&8===================='
+    - '&#CCCCFF开启这个选项会让你无法蹬墙跳！'
+    - '&#CCCCFF如果因为经常弹开厌倦可选择'
+    - '&8===================='
+    - '&b→ &a左键 &b开启   &b→ &a右键 &c关闭'
+    LeftClickCommands:
+    - 'console: tag %player% add NoWallJump'
+    - 'console: say %player% 已经开启禁用蹬墙跳'
+    - '[close]'
+    RightClickCommands:
+    - 'console: tag %player% remove NoWallJump'
+    - 'console: say %player% 已经关闭禁用蹬墙跳'
+    - '[close]'
+  '12':
+    DisplayName: '&7[>&b&l是否开启伤害显示&7<]'
+    Material: REDSTONE
+    Lore:
+    - '&8===================='
+    - '&#CCCCFF开启这个选项会让你每次攻击显示伤害'
+    - '&#CCCCFF可能存在挡视野，不过可以让你更加清晰'
+    - '&8===================='
+    - '&b→ &a左键 &b开启   &b→ &a右键 &c关闭'
+    LeftClickCommands:
+    - 'console: execute as %player% if entity @s[tag=ShowDamage] run tellraw @s ["\u00a77>
+      > \u00a73\u00a7l伤害显示已开启"]'
+    - 'console: execute as %player% if entity @s[tag=!ShowDamage] run tellraw @s ["\u00a77>
+      > \u00a73\u00a7l伤害显示已开启"]'
+    - 'console: execute as %player% if entity @s[tag=!ShowDamage] run tag @s add ShowDamage'
+    - '[close]'
+    RightClickCommands:
+    - 'console: execute as %player% if entity @s[tag=!ShowDamage] run tellraw @s ["\u00a77>
+      > \u00a7c\u00a7l伤害显示已关闭"]'
+    - 'console: execute as %player% if entity @s[tag=ShowDamage] run tellraw @s ["\u00a77>
+      > \u00a7c\u00a7l伤害显示已关闭"]'
+    - 'console: execute as %player% if entity @s[tag=ShowDamage] run tag @s remove
+      ShowDamage'
+    - '[close]'

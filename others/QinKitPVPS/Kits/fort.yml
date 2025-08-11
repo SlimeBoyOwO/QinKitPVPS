@@ -1,0 +1,78 @@
+Kit:
+  Permission: kp.kit.fort
+  DisplayName: 堡垒
+  Available: true
+  Cooldown: 0
+  Level: 0
+  Health: 22
+Inventory:
+  Armor:
+    Helmet:
+      Material: GOLDEN_HELMET
+      Enchantments:
+        BLAST_PROTECTION: 2
+    Chestplate:
+      Material: IRON_CHESTPLATE
+      Enchantments:
+        PROTECTION: 1
+    Leggings:
+      Material: CHAINMAIL_LEGGINGS
+      Enchantments:
+        FIRE_PROTECTION: 2
+    Boots:
+      Material: LEATHER_BOOTS
+      Dye:
+        Red: 160
+        Green: 101
+        Blue: 64
+      Enchantments:
+        FEATHER_FALLING: 2
+        PROJECTILE_PROTECTION: 1
+  Items:
+    '0':
+      Name: '&8自卫石剑'
+      Material: STONE_SWORD
+    '1':
+      Name: 炮塔
+      Lore:
+      - 感受要塞的怒火吧！
+      Material: BOW
+      Enchantments:
+        FLAME: 1
+        KNOCKBACK: 2
+        PUNCH: 2
+    '6':
+      Name: '&a后备能源'
+      Material: NETHER_STAR
+      Lore:
+      - '  &8● &3后备能源 &7: &7获得 &a10s生命恢复3，6s速度2，8s失明'
+    '7':
+      Name: '&a过载模式'
+      Material: FIREWORK_STAR
+      Lore:
+      - '  &8● &3超载模式 &7: &7获得&a8s抗性提升3，5s伤害吸收2，5s水肺，防火，&7和&a15s中毒3，5s缓慢2'
+    '3':
+      Material: COOKED_BEEF
+      Amount: 8
+    '4':
+      Name: '&a医疗包'
+      Material: GREEN_GLAZED_TERRACOTTA
+      Amount: 3
+    '8':
+      Material: ARROW
+      Amount: 48
+Effects:
+  NIGHT_VISION:
+    Amplifier: 1
+    Duration: 100000
+Commands:
+- 'console: tag %player% add Fort'
+- 'console: tag %player% add Fort_Extra'
+Introduction:
+- '&7>> &b&l要塞 &7-->'
+- '&7生命：&a44  &7防御：&a13  &7攻击：&a5'
+- '&7上手难度：&f★☆☆☆☆'
+- '  &8● &3后备能源 &7: &7获得 &a10s生命恢复3，6s速度2，8s失明'
+- '  &8● &3超载模式 &7: &7获得&a8s抗性提升3，5s伤害吸收2，5s水肺，防火，&7和&a15s中毒3，5s缓慢2'
+- '  &8○ &7超强的火力，无穷的倾泻出自己的炮弹'
+- '  &8○ &7强大的坦度，让他在射手里成为最坚韧的存在'

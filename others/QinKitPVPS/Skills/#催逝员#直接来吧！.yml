@@ -1,0 +1,8 @@
+Activator:
+  Material: RED_WOOL
+  Name: 直接来吧！
+Commands: []
+Effects:
+  INCREASE_DAMAGE:
+    Amplifier: 1
+    Duration: 10000

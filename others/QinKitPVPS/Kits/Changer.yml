@@ -1,0 +1,57 @@
+Kit:
+  Permission: kp.kit.dante
+  DisplayName: 但丁
+  Available: false
+  Health: 23
+Inventory:
+  Items:
+    '0':
+      Name: 人类
+      Material: TORCH
+    '1':
+      Name: 恶魔
+      Material: SOUL_TORCH
+    '2':
+      Name: 天使
+      Material: REDSTONE_TORCH
+    '3':
+      Name: 叛逆之刃
+      Material: IRON_SWORD
+    '4':
+      Name: 猎人之弓
+      Material: BOW
+    '6':
+      Name: 不倒
+      Material: RAIL
+    '5':
+      Name: 欺诈
+      Material: ELYTRA
+    '7':
+      Name: 恶魔武器B
+      Material: CAMPFIRE
+    '8':
+      Name: 天使武器B
+      Material: SOUL_CAMPFIRE
+Commands:
+- 'console: tag %player% add dante '
+- 'console: tag %player% add gun1 '
+- 'console: tag %player% add sword1 '
+- 'console: execute as %player% at %player% run effect give @s minecraft:speed infinite
+  0 true  '
+- 'console: execute as %player% at %player% run give @s arrow '
+- 'console: execute as %player% at %player% run effect give @s minecraft:jump_boost
+  infinite 0 true '
+- 'console: execute as %player% at %player% run effect give @s minecraft:slow_falling
+  infinite 0 true '
+- 'console: execute as %player% at %player% run item replace entity @s container.3
+  with minecraft:iron_sword{Unbreakable:true,Enchantments:[{id:"knockback",lvl:2s},{id:"sweeping",lvl:2s}],AttributeModifiers:[{AttributeName:"generic.knockback_resistance",Name:"generic.knockback_resistance",Slot:"mainhand",Operation:0,Amount:0.2d,UUID:[I;1320090641,266421871,-1388364329,596297109]},{AttributeName:"generic.attack_damage",Name:"generic.attack_damage",Slot:"mainhand",Operation:0,Amount:6.5d,UUID:[I;-1612629434,930892253,-1638547437,1168701904]},{AttributeName:"generic.attack_speed",Name:"generic.attack_speed",Slot:"mainhand",Operation:0,Amount:2.0d,UUID:[I;-179406888,1720665819,-1916143714,2139821208]}],display:{Name:"{\"text\":\"\\u00A70叛逆之刃\"}"}} '
+- 'console: execute as %player% at %player% run item replace entity @s container.4
+  with minecraft:bow{Unbreakable:true,Enchantments:[{id:"infinity",lvl:1s}],AttributeModifiers:[{AttributeName:"generic.movement_speed",Name:"generic.movement_speed",Slot:"mainhand",Operation:1,Amount:0.15d,UUID:[I;1501447076,358828177,-2117868561,518180352]},{AttributeName:"generic.movement_speed",Name:"generic.movement_speed",Slot:"offhand",Operation:1,Amount:0.075d,UUID:[I;1952096237,434980297,-2001912650,-1417295974]}],display:{Name:"{\"text\":\"\\u00A78猎手之弓\"}"}} '
+- 'console: execute as %player% at %player% run item replace entity @s armor.chest
+  with minecraft:leather_chestplate{Unbreakable:true,Enchantments:[{id:"fire_protection",lvl:1s},{id:"projectile_protection",lvl:1s}],AttributeModifiers:[{AttributeName:"generic.armor",Name:"generic.armor",Slot:"chest",Operation:0,Amount:3.0d,UUID:[I;133161885,-174174866,-2122424741,1424668917]},{AttributeName:"generic.armor_toughness",Name:"generic.armor_toughness",Slot:"chest",Operation:0,Amount:3.0d,UUID:[I;-1653339886,-182893897,-1439349055,-330456499]}]} '
+- 'console: execute as %player% at %player% run item replace entity @s armor.legs
+  with minecraft:leather_leggings{Unbreakable:true,Enchantments:[{id:"protection",lvl:1s}],AttributeModifiers:[{AttributeName:"generic.armor",Name:"generic.armor",Slot:"legs",Operation:0,Amount:2.0d,UUID:[I;-1024774749,-328315803,-1369615463,-2046486035]},{AttributeName:"generic.armor_toughness",Name:"generic.armor_toughness",Slot:"legs",Operation:0,Amount:2.0d,UUID:[I;-922638217,-591245382,-1131876372,1425593847]}]} '
+- 'console: execute as %player% at %player% run item replace entity @s armor.feet
+  with minecraft:leather_boots{Unbreakable:true,Enchantments:[{id:"depth_strider",lvl:10s},{id:"feather_falling",lvl:2s},{id:"protection",lvl:1s}],AttributeModifiers:[{AttributeName:"generic.armor",Name:"generic.armor",Slot:"feet",Operation:0,Amount:1.0d,UUID:[I;-1042959179,-1742126816,-1097954601,-1942427783]},{AttributeName:"generic.armor_toughness",Name:"generic.armor_toughness",Slot:"feet",Operation:0,Amount:1.0d,UUID:[I;1697328671,-1456386951,-2085918587,-1481484930]},{AttributeName:"generic.knockback_resistance",Name:"generic.knockback_resistance",Slot:"feet",Operation:0,Amount:0.1d,UUID:[I;2082371420,1398752059,-1335589476,1741321879]},{AttributeName:"generic.movement_speed",Name:"generic.movement_speed",Slot:"feet",Operation:1,Amount:0.05d,UUID:[I;-402453016,-1652078402,-1652538536,1559101367]}]} '
+- 'console: execute as %player% run item replace entity @s armor.head with minecraft:leather_helmet{Unbreakable:true,Enchantments:[{id:"respiration",lvl:1s},{id:"thorns",lvl:1s},{id:"blast_protection",lvl:1s}],AttributeModifiers:[{AttributeName:"generic.armor",Name:"generic.armor",Slot:"head",Operation:0,Amount:2.0d,UUID:[I;1303554278,-1468182806,-1587481192,-1738915840]},{AttributeName:"generic.armor_toughness",Name:"generic.armor_toughness",Slot:"head",Operation:0,Amount:4.0d,UUID:[I;-145926773,-1641069798,-1479145590,760305474]},{AttributeName:"generic.movement_speed",Name:"generic.movement_speed",Slot:"head",Operation:1,Amount:0.02d,UUID:[I;-75277327,2003126777,-1940399751,-16842149]}]}'
+- 'console: tag %player% add Changer'

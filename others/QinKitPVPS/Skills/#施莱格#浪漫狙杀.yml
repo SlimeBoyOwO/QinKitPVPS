@@ -1,0 +1,30 @@
+Activator:
+  Material: NETHER_STAR
+  Name: '&d浪漫狙杀'
+Commands:
+- 'console: execute as %player% at @s run particle scrape ~ ~ ~ 4 4 4 0 170 force'
+- 'console: execute as %player% at @s run particle cherry_leaves ~ ~ ~ 4 4 4 0 300
+  force'
+- 'console: execute as %player% at @s run playsound minecraft:entity.ender_dragon.growl
+  voice @s ~ ~ ~ 1 1 '
+- 'console: execute as %player% at @s run kill @e[type=minecraft:armor_stand,tag=WTBL] '
+- 'console: execute as %player% at %player% run summon armor_stand ~6 ~6 ~4 {Invisible:1b,Tags:["WTBL"],Pose:{Body:[0f,0f,0f],LeftArm:[0f,0f,0f],RightArm:[0f,0f,0f],LeftLeg:[0f,0f,0f],RightLeg:[0f,0f,0f],Head:[0f,0f,0f]},Rotation:[0F,NaNF]}'
+- 'console: execute at %player% as %player% run title @s[scores={health=15..}] title  ["",{"text":"他们","color":"gold"},{"text":"走不了了!","color":"red"}] '
+- 'console: execute at %player% as %player% run title @s[scores={health=..15}] title  ["",{"text":"想玩是吧","color":"gold"},{"text":"我奉陪!","color":"red"}] '
+- 'console: execute at %player% as %player% run tellraw @a[distance=1..32,scores={health=..15}]
+  {"color":"gold","text":"是时候拉下帷幕了!"}'
+- 'console: execute as %player% at @s run clear @s minecraft:crossbow '
+- '#待处理 console: execute as %player% at @s run clear %player% minecraft:tipped_arrow '
+- 'console: execute as %player% at @s run scoreboard players set %player% reload 0 '
+- 'console: execute as %player% at @s run tag %player% remove GGHL '
+- 'console: execute as %player% at @s run clear %player% minecraft:target '
+- 'console: execute as %player% at @s run tag @s add LMJS '
+- 'console: execute as %player% at @s run effect give %player% weakness 10 2'
+- 'console: execute as %player% at @s run effect give %player% slowness 10 6'
+- 'console: execute as %player% at @s run effect give %player% darkness 10 1'
+- 'console: execute as %player% at @s run effect give %player% glowing 10 1'
+- 'console: execute as %player% at @s run give @s crossbow[enchantments={levels:{"minecraft:quick_charge":2,"minecraft:piercing":10}}]
+  1'
+- 'console: execute as %player% at @s run damage %player% 6'
+CoolDown:
+  CoolDown: 60S

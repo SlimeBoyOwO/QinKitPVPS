@@ -1,0 +1,81 @@
+Kit:
+  Permission: kp.kit.FishMan
+  DisplayName: 渔夫
+  Available: true
+  Cooldown: 0
+  Level: 0
+  Health: 20
+Inventory:
+  Armor:
+    Helmet:
+      Material: LEATHER_HELMET
+      Dye:
+        Red: 0
+        Green: 160
+        Blue: 234
+    Chestplate:
+      Material: IRON_CHESTPLATE
+      ArmorTrim:
+        Material: DIAMOND
+        Pattern: TIDE
+    Leggings:
+      Material: LEATHER_LEGGINGS
+      ArmorTrim:
+        Material: LAPIS_LAZULI
+        Pattern: SPIRE
+      Dye:
+        Red: 0
+        Green: 160
+        Blue: 234
+    Boots:
+      Material: IRON_BOOTS
+      ArmorTrim:
+        Material: DIAMOND
+        Pattern: SPIRE
+  Items:
+    '0':
+      Name: '&3鱼刃'
+      Material: DIAMOND_SWORD
+      Enchantments:
+        UNBREAKING: 10
+      Lore:
+      - '  &8● &3钓人杆 &7: &7拥有的鱼竿可以钩取玩家到自己前方一格'
+    '1':
+      Name: '&3海洋猎枪'
+      Material: CROSSBOW
+      Enchantments:
+        UNBREAKING: 10
+      Lore:
+      - '  &8● &3鱼枪 &7: &7远程攻击将会对敌人造成 &a2s 缓慢II &7的控制效果'
+    '3':
+      Material: COOKED_BEEF
+      Amount: 8
+    '4':
+      Name: '&a医疗包'
+      Material: GREEN_GLAZED_TERRACOTTA
+      Amount: 3
+    '6':
+      Name: '&3收获'
+      Material: COD_BUCKET
+      Amount: 1
+      Lore:
+      - '  &8● &3收获 &7: &7在自己的位置释放非常多的鱼，包括河豚，并获得 &a生命恢复I 8s'
+    '7':
+      Material: ARROW
+      Amount: 16
+    '8':
+      Name: '&aPlayer Tracker &7(Right Click)'
+      Material: COMPASS
+Commands:
+- 'console: tag %player% add FishMan'
+- 'console: give %player% fishing_rod[custom_name="§3钓人竿",unbreakable={},enchantments={levels:{"minecraft:unbreaking":10}},attribute_modifiers={modifiers:[{id:"armor",type:"generic.movement_speed",amount:-1,operation:"add_value",slot:"offhand"},{id:"armor",type:"generic.attack_damage",amount:-10,operation:"add_value",slot:"offhand"}],show_in_tooltip:false}]
+  1'
+Introduction:
+- '&7>> &b&l渔夫 &7-->'
+- '&7生命：&a40  &7防御：&a10  &7攻击：&a7'
+- '&7上手难度：&f★★★★☆'
+- '  &8● &3钓人杆 &7: &7拥有的鱼竿可以钩取玩家到自己前方一格'
+- '  &8● &3收获 &7: &7在自己的位置释放非常多的鱼，包括河豚'
+- '  &8● &3鱼枪 &7: &7远程攻击将会对敌人造成 &a2s 缓慢II &7的控制效果'
+- '  &8○ &7绝对性的控制类角色'
+- '  &8○ &7适合多核CPU操作玩家'

@@ -1,0 +1,107 @@
+SaveItems:
+  蛋糕炸弹:
+    ==: org.bukkit.inventory.ItemStack
+    v: 3955
+    type: SHEEP_SPAWN_EGG
+    meta:
+      ==: ItemMeta
+      meta-type: SPAWN_EGG
+      item-name: '{"text":"Y","extra":[{"text":"u","color":"#FFB6B6"},{"text":"m","color":"#FF6D6D"},{"text":"m","color":"#FF2424"},{"text":"y
+        ","color":"#FF2424"},{"text":"Y","color":"#FF6D6D"},{"text":"u","color":"#FFB6B6"},{"text":"m","color":"#FFFFFF"},{"text":"m","color":"#FFB6B6"},{"text":"y
+        ","color":"#FF6D6D"},{"text":"C","color":"#FF2424"},{"text":"a","color":"#FF2424"},{"text":"k","color":"#FF6D6D"},{"text":"e","color":"#FFFFFF"}],"color":"#FFFFFF"}'
+      max-stack-size: 1
+      internal: H4sIAAAAAAAA/0XMsQrCMBCH8X+1Q4io+AaSub6AuLk7uojINV7laC8Fcxny9oJL148fnwc8PCcTqyejj8NK3tiqJI5fGuxsyRocriXbrDdSvkuWfuLGwS8R+0fQ7hi6UItqDU+PTT/NcXxlI2OH9q92yzbSyFijHUpmABfgB3iE7zqKAAAA
+  快刀手武器:
+    ==: org.bukkit.inventory.ItemStack
+    v: 3955
+    type: IRON_SWORD
+    meta:
+      ==: ItemMeta
+      meta-type: UNSPECIFIC
+      display-name: '{"text":"","extra":[{"text":"日本一の快刀","obfuscated":false,"italic":false,"underlined":false,"strikethrough":false,"color":"red","bold":false}]}'
+      lore:
+      - '{"text":"","extra":["  ",{"text":"● ","obfuscated":false,"italic":false,"underlined":false,"strikethrough":false,"color":"dark_gray","bold":false},{"text":"快刀
+        ","italic":false,"color":"dark_aqua"},{"text":": ","italic":false,"color":"gray"},{"text":"常驻
+        ","italic":false,"color":"gray"},{"text":"30% ","italic":false,"color":"green"},{"text":"攻速提升","italic":false,"color":"gray"}]}'
+      - '{"text":"","extra":["  ",{"text":"● ","obfuscated":false,"italic":false,"underlined":false,"strikethrough":false,"color":"dark_gray","bold":false},{"text":"千刀万仞
+        ","italic":false,"color":"dark_aqua"},{"text":": ","italic":false,"color":"gray"},{"text":"取消攻击间隔，无限连击","italic":false,"color":"gray"}]}'
+      attribute-modifiers:
+        minecraft:generic.attack_speed:
+        - ==: org.bukkit.attribute.AttributeModifier
+          amount: -0.3
+          slot: mainhand
+          operation: 0
+          key: minecraft:d8d8be16-4ba0-4352-b0c5-9f6eb599b132
+        minecraft:generic.attack_damage:
+        - ==: org.bukkit.attribute.AttributeModifier
+          amount: 6.0
+          slot: mainhand
+          operation: 0
+          key: minecraft:fea56b06-68c4-4486-a971-fe042c93c945
+      Unbreakable: true
+  死神武器:
+    ==: org.bukkit.inventory.ItemStack
+    v: 3955
+    type: NETHERITE_HOE
+    meta:
+      ==: ItemMeta
+      meta-type: UNSPECIFIC
+      display-name: '{"text":"","extra":[{"text":"死神之镰","obfuscated":false,"italic":false,"underlined":false,"strikethrough":false,"color":"dark_gray","bold":false}]}'
+      lore:
+      - '{"text":"","extra":["  ",{"text":"● ","obfuscated":false,"italic":false,"underlined":false,"strikethrough":false,"color":"dark_gray","bold":false},{"text":"死亡
+        ","italic":false,"color":"dark_aqua"},{"text":": ","italic":false,"color":"gray"},{"text":"发射自己造成
+        ","italic":false,"color":"gray"},{"text":"6点 ","italic":false,"color":"green"},{"text":"物理伤害和
+        ","italic":false,"color":"gray"},{"text":"3s凋零IV ","italic":false,"color":"green"},{"text":"，如果击中CD为
+        ","italic":false,"color":"gray"},{"text":"4s ","italic":false,"color":"green"},{"text":"，否则
+        ","italic":false,"color":"gray"},{"text":"12s","italic":false,"color":"green"}]}'
+      enchants:
+        minecraft:sharpness: 4
+      attribute-modifiers:
+        minecraft:generic.attack_speed:
+        - ==: org.bukkit.attribute.AttributeModifier
+          amount: -2.4
+          slot: mainhand
+          operation: 0
+          key: minecraft:d65a2d1d-f4e4-4fe6-96ea-fa6d81c18f16
+        minecraft:generic.attack_damage:
+        - ==: org.bukkit.attribute.AttributeModifier
+          amount: 3.0
+          slot: mainhand
+          operation: 0
+          key: minecraft:22c25c87-00c0-4e54-8d57-6c9c64adb0ba
+      Unbreakable: true
+  速度宝石:
+    ==: org.bukkit.inventory.ItemStack
+    v: 3955
+    type: LAPIS_LAZULI
+    meta:
+      ==: ItemMeta
+      meta-type: UNSPECIFIC
+      display-name: '{"text":"","extra":[{"text":"速度宝石","obfuscated":false,"italic":false,"underlined":false,"strikethrough":false,"color":"dark_blue","bold":true}]}'
+      attribute-modifiers:
+        minecraft:generic.movement_speed:
+        - ==: org.bukkit.attribute.AttributeModifier
+          amount: 0.05
+          slot: offhand
+          operation: 0
+          key: minecraft:movement_speed
+  治疗药水:
+    ==: org.bukkit.inventory.ItemStack
+    v: 3955
+    type: POTION
+    meta:
+      ==: ItemMeta
+      meta-type: POTION
+      display-name: '{"text":"","extra":[{"text":"治疗药水 I","obfuscated":false,"italic":false,"underlined":false,"strikethrough":false,"color":"red","bold":true}]}'
+      Unbreakable: true
+      potion-type: minecraft:strong_healing
+      custom-effects: []
+  粑粑:
+    ==: org.bukkit.inventory.ItemStack
+    v: 3955
+    type: BROWN_DYE
+    meta:
+      ==: ItemMeta
+      meta-type: UNSPECIFIC
+      display-name: '{"text":"","extra":[{"text":"小","obfuscated":false,"italic":false,"underlined":false,"strikethrough":false,"color":"#822200","bold":true},{"text":"灵","obfuscated":false,"italic":false,"underlined":false,"strikethrough":false,"color":"#843013","bold":true},{"text":"灵","obfuscated":false,"italic":false,"underlined":false,"strikethrough":false,"color":"#873F26","bold":true},{"text":"的","obfuscated":false,"italic":false,"underlined":false,"strikethrough":false,"color":"#8A4E39","bold":true},{"text":"粑","obfuscated":false,"italic":false,"underlined":false,"strikethrough":false,"color":"#8D5D4C","bold":true},{"text":"粑
+        ","obfuscated":false,"italic":false,"underlined":false,"strikethrough":false,"color":"#906C5F","bold":true},{"text":"💩","obfuscated":false,"italic":false,"underlined":false,"strikethrough":false,"color":"#937B72","bold":false}]}'

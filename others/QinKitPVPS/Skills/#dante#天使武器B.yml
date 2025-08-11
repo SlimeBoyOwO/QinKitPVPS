@@ -1,0 +1,15 @@
+Activator:
+  Material: SOUL_CAMPFIRE
+  Name: 天使武器B
+Commands:
+- 'console: execute as %player% at @s run give @s trident[custom_name=''"§9惊雷之戟"'',enchantments={levels:{"minecraft:channeling":1,"minecraft:loyalty":2}},attribute_modifiers=[{id:"armor",type:"generic.attack_damage",amount:-10.0d,operation:"add_value",slot:"offhand"},{id:"armor",type:"generic.attack_damage",amount:-10.0d,operation:"add_value",slot:"mainhand"}]]
+  1'
+- 'console: execute as %player% at @s run clear @s minecraft:bow 1'
+- 'console: execute as %player% at @s run tag @s add gun2'
+- 'console: execute as %player% at @s run tag @s remove gun1'
+- 'console: execute as %player% at @s run give @s soul_lantern[custom_name=''"天使武器A"'']
+  1'
+- 'console: execute as %player% at @s run clear @s minecraft:soul_campfire '
+- 'console: execute as %player% at @s scoreboard players set @s reload 0'
+CoolDown:
+  CoolDown: 8S

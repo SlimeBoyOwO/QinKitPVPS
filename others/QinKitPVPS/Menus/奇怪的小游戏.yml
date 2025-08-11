@@ -1,0 +1,65 @@
+MenuTitle: '&8[&3QinKitPVP&8] &5奇怪的小游戏'
+Lines: 6
+OpenCommands:
+- 'console: execute as %player% at @s run playsound minecraft:block.beacon.power_select
+  ambient @s'
+
+Items:
+  '10':
+    DisplayName: '&7&l> > &b&l小小生日 &7&l< <'
+    Material: cake
+    Lore:
+    - '&8===================='
+    - '&#CCCCFFqwq~'
+    - '&8===================='
+    LeftClickCommands:
+    - 'player: ir warp 新手教程'
+    RightClickCommands:
+    - 'player: ir warp 新手教程'
+  '12':
+    DisplayName: '&7&l> > &b&l五子棋 &7&l< <'
+    Material: snowball
+    Lore:
+    - '&8===================='
+    - '&#CCCCFF君想要和我下棋乎？'
+    - '&8===================='
+    LeftClickCommands:
+    - 'player: ir warp 五子棋'
+    RightClickCommands:
+    - 'player: ir warp 五子棋'
+  '14':
+    DisplayName: '&7&l> > &b&l动力小子的跑酷挑战 &7&l< <'
+    Material: slime_block
+    Lore:
+    - '&8===================='
+    - '&#CCCCFF啊嘞？有身法的跑酷哎！'
+    - '&#CCCCFF该跑酷完成可以解锁动力小子'
+    - '&8===================='
+    LeftClickCommands:
+    - 'player: ir warp 动力小子的跑酷挑战'
+    RightClickCommands:
+    - 'player: ir warp 动力小子的跑酷挑战'
+  '16':
+    DisplayName: '&7&l> > &b&l跑酷试炼 &7&l< <'
+    Material: diamond_boots
+    Lore:
+    - '&8===================='
+    - '&#CCCCFF休闲且基于原版的mc跑酷'
+    - '&#CCCCFF可以获得大量金币~'
+    - '&8===================='
+    LeftClickCommands:
+    - 'player: ir warp 跑酷试炼'
+    RightClickCommands:
+    - 'player: ir warp 跑酷试炼'
+  '28':
+    DisplayName: '&7&l> > &b&l新手指导 &7&l< <'
+    Material: apple
+    Lore:
+    - '&8===================='
+    - '&#CCCCFF想回顾一下新手教程？'
+    - '&#CCCCFF这里随时欢迎你捏'
+    - '&8===================='
+    LeftClickCommands:
+    - 'player: ir warp 新手指导'
+    RightClickCommands:
+    - 'player: ir warp 新手指导'

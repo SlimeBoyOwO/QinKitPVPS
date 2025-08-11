@@ -1,0 +1,20 @@
+Activator:
+  Name: '&a隐秘丛林'
+Commands:
+- 'console: execute at %player% run playsound minecraft:entity.silverfish.hurt ambient
+  @a ~ ~ ~ 1 0.1'
+- 'console: execute at %player% run particle totem_of_undying ~ ~1 ~ 1 1 1 0 50 force'
+- 'console: give %player% tipped_arrow[potion_contents={custom_effects:[{id:"minecraft:poison",amplifier:0,duration:100}]}]
+  20'
+CoolDown:
+  CoolDown: 30S
+Effects:
+  INVISIBILITY:
+    Amplifier: 1
+    Duration: 8
+  JUMP:
+    Amplifier: 8
+    Duration: 8
+  SPEED:
+    Amplifier: 4
+    Duration: 8

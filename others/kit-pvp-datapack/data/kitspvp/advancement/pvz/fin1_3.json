@@ -1,0 +1,17 @@
+{
+	"display": {
+		"icon": {
+			"id": "minecraft:orange_dye"
+		},
+		"title": {"translate":"完成 1-3 关卡"},
+		"description": {"color":"green","translate":"解锁坚果墙"},
+		"announce_to_chat": true,
+		"frame": "task"
+	},
+	"parent": "kitspvp:pvz/fin1_2",	
+	"criteria": {
+		"dummy": {
+			"trigger": "minecraft:impossible"
+		  }
+	}
+}

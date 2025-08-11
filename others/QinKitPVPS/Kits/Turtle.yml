@@ -1,0 +1,55 @@
+Kit:
+  Permission: kp.kit.turtle
+  DisplayName: 鳄龟
+  Available: false
+  Cooldown: 0
+  Level: 0
+Inventory:
+  Armor:
+    Helmet:
+      Name: '&a海龟壳'
+      Material: TURTLE_HELMET
+    Chestplate:
+      Name: '&a海龟的盔甲'
+      Material: DIAMOND_CHESTPLATE
+      Enchantments:
+        PROJECTILE_PROTECTION: 1
+    Leggings:
+      Name: '&a海龟的护腿'
+      Material: LEATHER_LEGGINGS
+      Dye:
+        Red: 45
+        Green: 137
+        Blue: 41
+      Enchantments:
+        PROJECTILE_PROTECTION: 1
+    Boots:
+      Name: '&a海龟的鞋子'
+      Material: DIAMOND_BOOTS
+      Enchantments:
+        DEPTH_STRIDER: 4
+  Items:
+    '0':
+      Name: '&a海龟爪'
+      Material: DIAMOND_HOE
+      AttackDamageBase: 4.6
+      AttackSpeedBase: -2.4
+    '1':
+      Name: '&d海龟蛋'
+      Material: TURTLE_EGG
+    '2':
+      Name: '&d缩壳'
+      Material: PRISMARINE_SHARD
+    '3':
+      Material: COOKED_BEEF
+      Amount: 8
+    '4':
+      Name: '&a医疗包'
+      Material: GREEN_GLAZED_TERRACOTTA
+      Amount: 1
+    '8':
+      Name: '&aPlayer Tracker &7(Right Click)'
+      Material: COMPASS
+
+
+

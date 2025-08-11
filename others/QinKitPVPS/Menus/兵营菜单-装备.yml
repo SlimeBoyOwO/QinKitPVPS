@@ -1,0 +1,125 @@
+MenuTitle: '&8[&3AllayWar&8] &8&l兵营菜单-装备'
+Lines: 6
+OpenCommands:
+- 'console: execute as %player% at @s run playsound minecraft:block.beacon.power_select
+  ambient @s'
+
+Items:
+  '3':
+    DisplayName: '&b&l制造兵种'
+    Material: nether_star
+    LeftClickCommands:
+    - '[openMenu] 兵营菜单'
+    - 'console: execute as %player% at @s run playsound minecraft:block.note_block.bit
+      ambient @a ~ ~ ~'
+  '5':
+    DisplayName: '&b&l购买装背 '
+    Material: diamond_sword
+    LeftClickCommands:
+    - '[openMenu] 兵营菜单-装备'
+    - 'console: execute as %player% at @s run playsound minecraft:block.note_block.bit
+      ambient @a ~ ~ ~'
+  
+  '9':
+    Material: gray_stained_glass_pane
+  '10':
+    Material: gray_stained_glass_pane
+  '11':
+    Material: gray_stained_glass_pane
+  '12':
+    Material: gray_stained_glass_pane
+  '13':
+    Material: gray_stained_glass_pane
+  '14':
+    Material: lime_stained_glass_pane
+  '15':
+    Material: gray_stained_glass_pane
+  '16':
+    Material: gray_stained_glass_pane
+  '17':
+    Material: gray_stained_glass_pane
+  
+  '19':
+    DisplayName: '&a&l石剑'
+    Material: Stone_Sword
+    Lore:
+    - '&7售价：25'
+    LeftClickCommands:
+    - '[buy] stone_sword'
+  
+  '20':
+    DisplayName: '&a&l铁剑'
+    Material: Iron_Sword
+    Lore:
+    - '&7售价：150'
+    LeftClickCommands:
+    - '[buy] iron_sword'
+  
+  '21':
+    DisplayName: '&a&l钻石剑'
+    Material: Diamond_Sword
+    Lore:
+    - '&7售价：500'
+    LeftClickCommands:
+    - '[buy] diamond_sword'
+  
+  '22':
+    DisplayName: '&a&l下界合金剑'
+    Material: Netherite_Sword
+    Lore:
+    - '&7售价：1000'
+    LeftClickCommands:
+    - '[buy] netherite_sword'
+  
+  '28':
+    DisplayName: '&a&l锁链甲 - 永久'
+    Material: chainmail_boots
+    Lore:
+    - '&7售价：200'
+    LeftClickCommands:
+    - '[buy] chainmail_armor'
+  
+  '29':
+    DisplayName: '&a&l铁甲 - 永久'
+    Material: Iron_Boots
+    Lore:
+    - '&7售价：800'
+    LeftClickCommands:
+    - '[buy] iron_armor'
+  
+  '30':
+    DisplayName: '&a&l钻石甲 - 永久'
+    Material: Diamond_Boots
+    Lore:
+    - '&7售价：2000'
+    LeftClickCommands:
+    - '[buy] diamond_armor'
+  
+  '37':
+    DisplayName: '&a&l牛排'
+    Material: cooked_beef
+    Lore:
+    - '&7售价：10'
+    LeftClickCommands:
+    - '[buy] beef'
+  '38':
+    DisplayName: '&e&l金苹果'
+    Material: golden_apple
+    Lore:
+    - '&7售价：100'
+    LeftClickCommands:
+    - '[buy] golden_apple'
+  '39':
+    DisplayName: '&e&l医疗包'
+    Material: green_glazed_terracotta
+    Lore:
+    - '&7售价：300'
+    LeftClickCommands:
+    - '[buy] health_pack'
+  '40':
+    DisplayName: '&e&l手榴弹'
+    Material: tnt
+    Lore:
+    - '&7售价：400'
+    LeftClickCommands:
+    - '[buy] grenade'

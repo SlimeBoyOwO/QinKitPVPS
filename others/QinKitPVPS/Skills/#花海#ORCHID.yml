@@ -1,0 +1,18 @@
+Activator:
+  Material: ORCHID
+  Name: '&b&lORCHID'
+Commands:
+- 'console: execute as %player% at @s run particle composter ~ ~ ~ 1 1 1 0.1 50 force'
+- 'console: execute as %player% at @s run damage @s 10'
+- '#待处理 console: give %player% tipped_arrow{CustomPotionColor:2878435,CustomPotionEffects:[{Id:4,Duration:60f,Amplifier:2}]}
+  1'
+CoolDown:
+  CoolDown: 8S
+Effects:
+  SPEED:
+    Amplifier: 1
+    Duration: 3
+Sound:
+  Pitch: 1
+  Sound: BLOCK_NOTE_BLOCK_PLING
+  Volume: 1

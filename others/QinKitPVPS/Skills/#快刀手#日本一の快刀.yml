@@ -1,0 +1,18 @@
+Activator:
+  Name: '&a日本一の快刀'
+Commands:
+- 'console: effect give %player% slowness 1 1 true'
+- 'console: execute as %player% at @s run particle smoke ~ ~ ~ 1 1 1 0 200 force'
+- 'console: execute as %player% at @s run playsound minecraft:item.crossbow.loading_middle
+  player @a[distance=0..6] ~ ~ ~ 1 0.5 1'
+- 'delay: 30'
+- 'console: tag %player% add FastSword_S'
+- 'console: execute as %player% at @s run playsound minecraft:entity.bat.takeoff neutral
+  @a ~ ~ ~'
+- 'console: execute as %player% at @s run particle end_rod ~ ~ ~ 1 1 1 0.2 50 force'
+CoolDown:
+  CoolDown: 16S
+Effects:
+  SPEED:
+    Amplifier: 1
+    Duration: 3

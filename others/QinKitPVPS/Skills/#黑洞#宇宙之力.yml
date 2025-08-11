@@ -1,0 +1,10 @@
+Activator:
+  Material: HOPPER
+  Name: '&d宇宙之力'
+Commands:
+- 'console: execute as %player% at @s run teleport @a[distance=0..9] @s'
+- 'console: execute as %player% at @s run effect give @s absorption 5 3'
+- 'console: execute as %player% at @s run playsound minecraft:block.conduit.activate
+  player @a[distance=0..9] ~ ~ ~ 1 0.8 1'
+CoolDown:
+  CoolDown: 21S

@@ -1,0 +1,83 @@
+Activator:
+  Material: IRON_SWORD
+  Name: '&a绯红女皇'
+Commands:
+- 'console: execute as %player% at %player% if entity @s[tag=BL3,nbt={Inventory:[{Slot:-106b,id:"minecraft:crossbow"}]}]
+  run effect give @a[distance=1..7] glowing 2 1'
+- 'console: execute as %player% at %player% run tag @s[tag=FR3] remove FR2 '
+- 'console: execute as %player% at %player% run tag @s[tag=FR] add FR2 '
+- 'console: execute as %player% at %player% run tag @s[tag=FR2] remove FR '
+- 'console: execute as %player% at %player% run tag @s[tag=!FR,tag=!FR2,tag=!FR3]
+  add FR '
+- 'console: execute as %player% at %player% run tag @s add Nero1 '
+- 'console: execute as %player% at %player% run playsound minecraft:entity.blaze.hurt
+  voice @s[tag=FR] ~ ~ ~ 100 1 '
+- 'console: execute as %player% at %player% run playsound minecraft:entity.tnt.primed
+  voice @s[tag=FR2] ~ ~ ~ 100 0.7 '
+- 'console: execute as %player% at %player% run playsound minecraft:entity.blaze.shoot
+  voice @s[tag=FR3] ~ ~ ~ 100 0.4 '
+- 'console: execute as %player% at @s[tag=FR] run particle lava ~ ~1 ~ 1.0 1.0 1.0
+  0 10 force'
+- 'console: execute as %player% at @s[tag=FR2] run particle lava ~ ~1 ~ 1.0 1.0 1.0
+  0 35 force'
+- 'console: execute as %player% at @s[tag=FR3] run particle lava ~ ~1 ~ 1.0 1.0 1.0
+  0 75 force'
+- 'console: execute as %player% at %player% run effect give @s[tag=FR] strength 2
+  0'
+- 'console: execute as %player% at %player% run effect give @s[tag=FR2] strength 2
+  1'
+- 'console: execute as %player% at %player% run effect give @s[tag=FR3] strength 2
+  2'
+- 'console: execute as %player% at %player% run scoreboard players set @s reload 0 '
+- 'console: execute as %player% at %player% if entity @s[tag=FR,nbt={Inventory:[{Slot:-106b,id:"minecraft:chain"}]}]
+  run damage @s 8'
+- 'console: execute as %player% at %player% if entity @s[tag=FR,nbt={Inventory:[{Slot:-106b,id:"minecraft:chain"}]}]
+  run fill ~8 ~-3 ~ ~ ~4 ~ fire keep'
+- 'console: execute as %player% at %player% if entity @s[tag=FR,nbt={Inventory:[{Slot:-106b,id:"minecraft:chain"}]}]
+  run fill ~ ~-3 ~-8 ~ ~4 ~ fire keep'
+- 'console: execute as %player% at %player% if entity @s[tag=FR,nbt={Inventory:[{Slot:-106b,id:"minecraft:chain"}]}]
+  run fill ~ ~-3 ~8 ~ ~4 ~ fire keep'
+- 'console: execute as %player% at %player% if entity @s[tag=FR,nbt={Inventory:[{Slot:-106b,id:"minecraft:chain"}]}]
+  run fill ~-8 ~-3 ~ ~ ~4 ~ fire keep'
+- 'console: execute as %player% at %player% if entity @s[tag=FR,nbt={Inventory:[{Slot:-106b,id:"minecraft:chain"}]}]
+  run summon armor_stand ~ ~ ~ {NoGravity:1b,Invisible:1b,Tags:["FH"]}'
+- 'console: execute as %player% at %player% if entity @s[tag=FR2,nbt={Inventory:[{Slot:-106b,id:"minecraft:chain"}]}]
+  run damage @s 8'
+- 'console: execute as %player% at %player% if entity @s[tag=FR2,nbt={Inventory:[{Slot:-106b,id:"minecraft:chain"}]}]
+  run playsound minecraft:block.lava.extinguish voice @s ~ ~ ~ 100 1 '
+- 'console: execute as %player% at %player% if entity @s[tag=FR2,nbt={Inventory:[{Slot:-106b,id:"minecraft:chain"}]}]
+  run effect give @s fire_resistance 3 2'
+- 'console: execute as %player% at %player% if entity @s[tag=FR2,nbt={Inventory:[{Slot:-106b,id:"minecraft:chain"}]}]
+  run effect give @s absorption 3 1'
+- 'console: execute as %player% at %player% if entity @s[tag=FR2,nbt={Inventory:[{Slot:-106b,id:"minecraft:chain"}]}]
+  run particle landing_lava ~ ~1 ~ 2.0 2.0 2.0 0 80 force'
+- 'console: execute as %player% at %player% if entity @s[tag=FR2,nbt={Inventory:[{Slot:-106b,id:"minecraft:chain"}]}]
+  run effect give @a[distance=1..4] instant_damage 1 0'
+- 'console: execute as %player% at %player% if entity @s[tag=FR3,nbt={Inventory:[{Slot:-106b,id:"minecraft:chain"}]}]
+  run damage @p[distance=1..6] 19 out_of_world by @p[tag=Nero]'
+- 'console: execute as %player% at %player% if entity @s[tag=FR3,nbt={Inventory:[{Slot:-106b,id:"minecraft:chain"}]}]
+  run tp ^ ^ ^6 '
+- 'console: execute as %player% at %player% if entity @s[tag=FR3,nbt={Inventory:[{Slot:-106b,id:"minecraft:chain"}]}]
+  run damage @s 8'
+- 'console: execute as %player% at %player% if entity @s[tag=FR3,nbt={Inventory:[{Slot:-106b,id:"minecraft:chain"}]}]
+  run playsound minecraft:entity.generic.explode voice %player% ~ ~ ~ 100 0.7 '
+- 'console: execute as %player% at %player% if entity @s[tag=FR3,nbt={Inventory:[{Slot:-106b,id:"minecraft:chain"}]}]
+  run particle lava ^ ^ ^6 2.0 2.0 2.0 0 100 force'
+- 'console: execute as %player% at %player% if entity @s[tag=FR3,nbt={Inventory:[{Slot:-106b,id:"minecraft:chain"}]}]
+  run particle explosion ^ ^ ^6 2.0 2.0 2.0 0 50 force'
+- 'console: execute as %player% at %player% if entity @s[tag=FR3,nbt={Inventory:[{Slot:-106b,id:"minecraft:chain"}]}]
+  run damage @p[distance=1..6] 19 out_of_world by @p[tag=Nero]'
+- 'console: execute as %player% at %player% if entity @s[tag=FR3,scores={health=..12},nbt={Inventory:[{Slot:-106b,id:"minecraft:chain"}]}]
+  run tellraw @s {"color":"red","text":"Blast!"}'
+- 'console: execute as %player% at %player% if entity @s[tag=FR3,scores={health=46..},nbt={Inventory:[{Slot:-106b,id:"minecraft:chain"}]}]
+  run tellraw @s {"color":"yellow","text":"Crash!"}'
+- 'console: execute as %player% at %player% if entity @s[nbt={Inventory:[{Slot:-106b,id:"minecraft:chain"}]}]
+  run tag @s remove FR3 '
+- 'console: execute as %player% at %player% if entity @s[nbt={Inventory:[{Slot:-106b,id:"minecraft:chain"}]}]
+  run tag @s remove FR2 '
+- 'console: execute as %player% at %player% if entity @s[nbt={Inventory:[{Slot:-106b,id:"minecraft:chain"}]}]
+  run tag @s remove FR '
+- 'console: execute as %player% at %player% if entity @s[nbt={Inventory:[{Slot:-106b,id:"minecraft:chain"}]}]
+  run scoreboard players set @s reload 0 '
+CoolDown:
+  CoolDown: 3S

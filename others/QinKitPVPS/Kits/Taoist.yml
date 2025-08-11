@@ -1,0 +1,76 @@
+Kit:
+  Permission: kp.kit.taoist
+  DisplayName: 道士
+  Available: true
+Inventory:
+  Armor:
+    Helmet:
+      Name: '&7道士圣杯'
+      Material: IRON_HELMET
+      ArmorTrim:
+        Material: EMERALD
+        Pattern: SILENCE
+    Chestplate:
+      Name: '&7道士圣甲'
+      Material: GOLDEN_CHESTPLATE
+      ArmorTrim:
+        Material: EMERALD
+        Pattern: SILENCE
+    Boots:
+      Name: '&7道士圣靴'
+      Material: DIAMOND_BOOTS
+      ArmorTrim:
+        Material: EMERALD
+        Pattern: SILENCE
+  Items:
+    '0':
+      Name: '&8道士之剑'
+      Material: DIAMOND_SWORD
+      Lore:
+      - '  &8● &3剑术 &7: &7搭配不同的符文【放置副手】可以触发不同的技能'
+    '1':
+      Name: '&8静心之弓'
+      Material: BOW
+    '2':
+      Name: '&a风 - 追杀'
+      Material: ARMS_UP_POTTERY_SHERD
+      Lore:
+      - '  &8● &3追杀 &7: &7右键一名 &a40m &7内的玩家，让自己向着玩家飞去并且获得 &33s 速度II &7和 &32s 力量I'
+    '3':
+      Name: '&d鬼 - 吸血'
+      Material: HEART_POTTERY_SHERD
+      Lore:
+      - '  &8● &3吸血 &7: &7获得 &33s 速度II&7，接下来的 &35s&7 内对敌人的伤害 &3-25%&7 但回复本次攻击的 &330%'
+    '4':
+      Name: '&8禁 - 狼嚎'
+      Material: HOWL_POTTERY_SHERD
+      Lore:
+      - '  &8● &3狼嚎 &7: &7对自己造成&3当前生命值一半&7的伤害，获得 &310s 速度III，力量I，5s后眩晕15s，10s后凋零10s'
+    Offhand:
+      Name: '&b剑 - 锐利'
+      Material: BLADE_POTTERY_SHERD
+      Lore:
+      - '  &8● &3锐利 &7: &7对6m半径内的玩家造成 &38❤物理伤害&7 并且击退，自身获得 &32s力量I&7 ，CD较短'
+    '8':
+      Name: '&aPlayer Tracker &7(Right Click)'
+      Material: COMPASS
+    '5':
+      Material: COOKED_BEEF
+      Amount: 8
+    '6':
+      Name: '&a医疗包'
+      Material: GREEN_GLAZED_TERRACOTTA
+      Amount: 3
+    '7':
+      Material: ARROW
+      Amount: 24
+Commands:
+- 'console: tag %player% add Taoist'
+Introduction:
+- '&7>> &b&l戴斯 &7-->'
+- '&7生命：&a40  &7防御：&a4（保护VI）  &7攻击：&a6'
+- '&7上手难度：&f★★★☆☆'
+- '  &8● &3死神之触 &7: &7每次攻击有 &a%5 &7的概率使对方获得 &a3s 凋零X &7药水效果'
+- '  &8● &3枯萎 &7: &7使得周围 &a8m&7 内的敌人获得 &a3s 凋零III &7和 &a黑暗效果'
+- '  &8○ &7十分适合游击骚扰的高伤高防型角色'
+- '  &8○ &7隐蔽的身姿和干扰视野的能力将超人一等'

@@ -1,0 +1,22 @@
+{
+    "display": {
+        "icon": {
+            "id": "minecraft:popped_chorus_fruit"
+        },
+        "title": {
+            "translate": "完成 2-6 关卡"
+        },
+        "description": {
+            "color": "green",
+            "translate": "解锁胆小菇"
+        },
+        "announce_to_chat": true,
+        "frame": "task"
+    },
+    "parent": "kitspvp:pvz/fin2_5",
+    "criteria": {
+        "dummy": {
+            "trigger": "minecraft:impossible"
+        }
+    }
+}

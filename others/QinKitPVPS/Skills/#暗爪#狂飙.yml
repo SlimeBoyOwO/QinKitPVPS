@@ -1,0 +1,15 @@
+Activator:
+  Material: DIAMOND_HORSE_ARMOR
+  Name: '&a狂飙'
+Commands:
+- 'console: effect give %player% jump_boost 3 4'
+- 'console: damage %player% 7'
+- 'console: effect give %player% speed 3 2'
+- 'console: item replace entity %player% armor.chest with air 1'
+- 'console: item replace entity %player% armor.head with air 1'
+- 'console: item replace entity %player% armor.legs with air 1'
+- 'console: tag %player% add darklaw1'
+CoolDown:
+  CoolDown: 9S
+Message:
+  Message: ''

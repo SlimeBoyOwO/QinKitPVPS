@@ -1,0 +1,22 @@
+{
+    "display": {
+        "icon": {
+            "id": "minecraft:light_blue_dye"
+        },
+        "title": {
+            "translate": "完成 1-6 关卡"
+        },
+        "description": {
+            "color": "green",
+            "translate": "解锁寒冰射手"
+        },
+        "announce_to_chat": true,
+        "frame": "task"
+    },
+    "parent": "kitspvp:pvz/fin1_5",
+    "criteria": {
+        "dummy": {
+            "trigger": "minecraft:impossible"
+        }
+    }
+}

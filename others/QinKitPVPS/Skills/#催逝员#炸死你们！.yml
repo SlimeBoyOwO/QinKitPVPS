@@ -1,0 +1,9 @@
+Activator:
+  Material: TNT
+  Name: '&c炸死你们！'
+Commands:
+- 'console: execute as %player% at @s run particle campfire_cosy_smoke ~ ~1 ~ 2 1
+  2 0 2500 force'
+- 'console: execute as %player% at @s run tellraw @s "§c§lNND，给我玩阴的是吧？！"'
+- 'console: execute as %player% at @s run give @s red_wool[custom_name=''"直接来吧！"'']
+  1'

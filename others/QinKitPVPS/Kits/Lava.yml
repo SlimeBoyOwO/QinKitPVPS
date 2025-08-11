@@ -1,0 +1,73 @@
+Kit:
+  Permission: kp.kit.lava
+  DisplayName: 狱火机
+  Available: true
+  Cooldown: 0
+  Level: 0
+  Health: 40
+Inventory:
+  Armor:
+    Helmet:
+      Material: LEATHER_HELMET
+      Enchantments:
+        PROTECTION: 1
+    Boots:
+      Material: LEATHER_BOOTS
+      Enchantments:
+        PROTECTION: 1
+  Items:
+    '0':
+      Name: 无限火焰
+      Lore:
+      - 这个职业在出场时:有以下效果
+      - 获得额外8点不可回复的生命值
+      - 3秒内提升100％的移动速度和100％的跳跃高度。
+      Material: BLAZE_ROD
+      AttackDamageBase: 1
+      Enchantments:
+        SHARPNESS: 1
+        KNOCKBACK: 3
+        FIRE_ASPECT: 100
+    '2':
+      Name: '&a究极炼狱'
+      Lore:
+      - 发动技能时，自身立即失去24生命值，并且在接下来的时间内直接到死亡,每秒失去2点生命值。
+      - 在接下来的4秒/10秒内，你将失去移动能力/无法直接攻击敌人。
+      - 向周围爆发出大范围的火焰(会被方块阻挡)，同时对距离自身3格以内的玩家造成与上述相同的失去移动能力效果。
+      - 距离3格内的在接下来的10秒内失去共计5点生命值，但会额外提升其自身100％的攻击速度。
+      - 技能发动时，全体玩家进入极其短暂的失明状态(1秒）清除地上的所有掉落物。
+      - 技能发动时，距离你6格以内的玩家失去身上的“1个蘑菇煲”，自己则额外失去2个。
+      - 自己的武器:技能发动后：攻击力永久-0.5,击退魔咒等级永久-1，火焰附加降低至10(一次生命只降低一次，死亡时重置)。
+      - 自己的武器:技能发动后：手持时最大生命值-4,但增加你的击退抗性，且移动速度极小幅度增加。
+      Material: MAGMA_CREAM
+    '1':
+      Name: '&c止息'
+      Lore:
+      - 熄灭地图上所有玩家周围的火焰，并清除你身上的“凋零”效果。
+      Material: BLAZE_POWDER
+    '3':
+      Material: COOKED_BEEF
+      Amount: 8
+    '4':
+      Name: '&a医疗包'
+      Material: GREEN_GLAZED_TERRACOTTA
+      Amount: 3
+    '8':
+      Name: '&aPlayer Tracker &7(Right Click)'
+      Material: COMPASS
+Effects:
+  FIRE_RESISTANCE:
+    Amplifier: 1
+    Duration: 100000
+  GLOWING:
+    Amplifier: 1
+    Duration: 100000
+  SPEED:
+    Amplifier: 5
+    Duration: 3
+  JUMP:
+    Amplifier: 2
+    Duration: 3
+Commands:
+- 'console: tag %player% add Lava'
+

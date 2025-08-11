@@ -1,0 +1,17 @@
+{
+	"display": {
+		"icon": {
+			"id": "minecraft:clay_ball"
+		},
+		"title": {"translate":"变成肉泥惹"},
+		"description": {"color":"green","translate":"身法虽好，且要慎用"},
+		"announce_to_chat": true,
+		"frame": "goal"
+	},
+	"parent": "kitspvp:qinkitpvps/fun_goals",	
+	"criteria": {
+		"dummy": {
+			"trigger": "minecraft:impossible"
+		  }
+	}
+}

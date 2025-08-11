@@ -1,0 +1,8 @@
+MapID: 0
+MapName: 团队模式大厅
+World: teamkitpvp
+Locations:
+  '0':
+    X: 8.5
+    Y: 20
+    Z: 8.5

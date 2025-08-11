@@ -1,0 +1,16 @@
+Activator:
+  Material: LIGHTNING_ROD
+  Name: '&b&l迅电驰影'
+Commands:
+- 'console: execute as %player% at %player% run effect give @s glowing 8 0'
+- 'console: execute as %player% at %player% run effect give @s saturation 1 1'
+- 'console: execute as %player% at %player% run effect give @s speed 8 20'
+- 'console: execute as %player% at %player% run clear @s minecraft:diamond_horse_armor'
+- 'console: execute as %player% at %player% run tag @s add XDCY '
+- 'console: execute as %player% at %player% run scoreboard players add @s MHJS 1 '
+- 'console: execute as %player% at %player% run playsound minecraft:entity.lightning_bolt.thunder
+  voice %player% ~ ~ ~ 1 2 '
+- 'console: execute as %player% at %player% run title @s[scores={health=..9}] title
+  ["",{"text":"看我","color":"gold"},{"text":"力挽","color":"red"},{"text":"狂澜!","color":"blue"}] '
+CoolDown:
+  CoolDown: 70S

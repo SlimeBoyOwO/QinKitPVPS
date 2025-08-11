@@ -1,0 +1,61 @@
+Kit:
+  Permission: kp.kit.Shuraig
+  DisplayName: 施莱格
+  Available: false
+  Cooldown: 0
+  Level: 0
+  Health: 16
+Inventory:
+  Armor:
+    Helmet:
+      Name: '&7闪耀的头盔'
+      Material: GOLDEN_HELMET
+    Chestplate:
+      Name: '&7闪耀的护甲'
+      Material: GOLDEN_CHESTPLATE
+    Leggings:
+      Name: '&7闪耀的护腿'
+      Material: GOLDEN_LEGGINGS
+    Boots:
+      Name: '&7普通的鞋子'
+      Material: LEATHER_BOOTS
+  Items:
+    '0':
+      Name: '&a金牌猎头'
+      Material: IRON_SWORD
+    '1':
+      Name: '&b裂隙锚点'
+      Material: OAK_SIGN
+    '2':
+      Name: '&e孤高火力'
+      Material: TARGET
+    '3':
+      Name: '&d浪漫狙杀'
+      Material: NETHER_STAR
+    '6':
+      Material: COOKED_BEEF
+      Amount: 5
+    '7':
+      Name: '&a医疗包'
+      Material: GREEN_GLAZED_TERRACOTTA
+      Amount: 4
+    '8':
+      Name: '&aPlayer Tracker &7(Right Click)'
+      Material: COMPASS
+Commands:
+- 'console: tag %player% add SLG'
+- 'console: tag %player% add SLGDC'
+- 'console: execute as %player% at %player% run summon armor_stand ~ ~2 ~ {Invisible:1b,Tags:["WTBL"],Pose:{Body:[0f,0f,0f],LeftArm:[0f,0f,0f],RightArm:[0f,0f,0f],LeftLeg:[0f,0f,0f],RightLeg:[0f,0f,0f],Head:[0f,0f,0f]},Rotation:[0F,0F]} '
+Introduction:
+- '&7>> &b&l凶鸟之施莱格 &7-->'
+- '&7生命：&a32  &7防御：&a11  &7攻击：&a6'
+- '&7上手难度：&f★★★★★'
+- '  &8● &3射击专注 &7: &7主/副手持有弩时，获得速度1'
+- '  &8● &3等价交易 &7: &7击杀敌人时不获得箭，但额外获得两个牛排'
+- '  &8● &3裂隙锚点 &7: &7副手持有“铁剑”时；在自身位置召唤一个“裂隙锚点”（受重力影响.不可被摧毁）持续20s；锚点最多同时存在一个，新的锚点将覆盖旧的锚点'
+- '  &8● &3闪转自如 &7: &7副手持有“浪漫狙杀”时；离锚点距离在7格以内的场合，传送至锚点位置，在空中的场合，无视摔落伤害；传送成功后摧毁锚点。'
+- '  &8● &3拒之门外 &7: &7副手持有“孤高火力”时自动释放，技能不进入cd）；当任意一名玩家处于锚点2格以内时，锚点会自动消失并对锚点半径2格内玩家造成3s“稳态剥离”，同时提示自己。'
+- '  &8● &3孤高火力 &7: &7获得一把“快速装填4”的“弩”，同时获得8支“药水箭”（瞬间伤害1），被命中的敌人将被获得4s“发光”；技能持续22s，22s后清除“弩”以及所有“药水箭”。'
+- '  &8● &3浪漫狙杀 &7: &7使用技能时清除有关“孤高火力”的所有物品;技能持续期间无法使用“孤高火力”；获得一把“穿透10”，“快速装填2”的“弩”；技能持续时间内，自己获得10s“黑暗”,“虚弱3”，“缓慢4”和“发光”,且释放技能瞬间和之后每隔2s，都会获得1支“造成3次，瞬间伤害1+2s缓慢2”的药水箭，同时使距离自己6-15距离内的其他玩家，获得0.8s“稳态剥离”；技能持续10s，在技能期间内击杀其他玩家的场合，这个技能的时长延续2s（但不会延长“失明”和“虚弱”的时间。），副手持有铁剑的场合，还会朝所指方向位移4格,且立刻获得一支箭；技能期间内，半径8格有敌人存在时会让施莱格获得提示音'
+- '  &8● &3稳态剥离 &7: &7移动能力大幅度受限，无法使用技能和副手武器，无法进行攻击，并获得“发光”'
+- '  &8○ &7凶光所至，必起杀戮'

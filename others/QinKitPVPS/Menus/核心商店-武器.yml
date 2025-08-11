@@ -1,0 +1,120 @@
+MenuTitle: '&8[&3AllayWar&8] &8&l核心商店-武器'
+Lines: 6
+OpenCommands:
+- 'console: execute as %player% at @s run playsound minecraft:block.beacon.power_select
+  ambient @s'
+
+Items:
+  '0':
+    DisplayName: '&b&l快捷购买'
+    Material: nether_star
+    LeftClickCommands:
+    - '[openMenu] 核心商店菜单'
+    - 'console: execute as %player% at @s run playsound minecraft:block.note_block.bit
+      ambient @a ~ ~ ~'
+  '1':
+    DisplayName: '&b&l方块'
+    Material: sandstone
+    LeftClickCommands:
+    - '[openMenu] 核心商店-方块'
+    - 'console: execute as %player% at @s run playsound minecraft:block.note_block.bit
+      ambient @a ~ ~ ~'
+  '2':
+    DisplayName: '&b&l武器 & 装备'
+    Material: golden_sword
+    LeftClickCommands:
+    - '[openMenu] 核心商店-武器'
+    - 'console: execute as %player% at @s run playsound minecraft:block.note_block.bit
+      ambient @a ~ ~ ~'
+  '3':
+    DisplayName: '&b&l装备'
+    Material: chainmail_boots
+    LeftClickCommands:
+    - '[openMenu] 核心商店-装备'
+    - 'console: execute as %player% at @s run playsound minecraft:block.note_block.bit
+      ambient @a ~ ~ ~'
+  '4':
+    DisplayName: '&b&l攻城磊'
+    Material: stone_pickaxe
+    LeftClickCommands:
+    - '[openMenu] 核心商店-攻城磊'
+    - 'console: execute as %player% at @s run playsound minecraft:block.note_block.bit
+      ambient @a ~ ~ ~'
+  '5':
+    DisplayName: '&b&l远程武器'
+    Material: bow
+    LeftClickCommands:
+    - '[openMenu] 核心商店-远程武器'
+    - 'console: execute as %player% at @s run playsound minecraft:block.note_block.bit
+      ambient @a ~ ~ ~'
+  '6':
+    DisplayName: '&b&l建筑'
+    Material: bricks
+    LeftClickCommands:
+    - '[openMenu] 核心商店-建筑'
+    - 'console: execute as %player% at @s run playsound minecraft:block.note_block.bit
+      ambient @a ~ ~ ~'
+  '7':
+    DisplayName: '&b&l特殊道具'
+    Material: tnt
+    LeftClickCommands:
+    - '[openMenu] 核心商店-特殊道具'
+    - 'console: execute as %player% at @s run playsound minecraft:block.note_block.bit
+      ambient @a ~ ~ ~'
+  '8':
+    DisplayName: '&b&l职业能力'
+    Material: clock
+    LeftClickCommands:
+    - '[openMenu] 核心商店-职业能力'
+    - 'console: execute as %player% at @s run playsound minecraft:block.note_block.bit
+      ambient @a ~ ~ ~'
+  '19':
+    DisplayName: '&a&l石剑'
+    Material: Stone_Sword
+    Lore:
+    - '&7售价：25'
+    LeftClickCommands:
+    - '[buy] stone_sword'
+  
+  '20':
+    DisplayName: '&a&l铁剑'
+    Material: Iron_Sword
+    Lore:
+    - '&7售价：150'
+    LeftClickCommands:
+    - '[buy] iron_sword'
+  
+  '21':
+    DisplayName: '&a&l钻石剑'
+    Material: Diamond_Sword
+    Lore:
+    - '&7售价：500'
+    LeftClickCommands:
+    - '[buy] diamond_sword'
+  
+  '22':
+    DisplayName: '&a&l下界合金剑'
+    Material: Netherite_Sword
+    Lore:
+    - '&7售价：1000'
+    LeftClickCommands:
+    - '[buy] netherite_sword'
+  
+  '9':
+    Material: gray_stained_glass_pane
+  '10':
+    Material: gray_stained_glass_pane
+  '11':
+    Material: lime_stained_glass_pane
+  '12':
+    Material: gray_stained_glass_pane
+  '13':
+    Material: gray_stained_glass_pane
+  '14':
+    Material: gray_stained_glass_pane
+  '15':
+    Material: gray_stained_glass_pane
+  '16':
+    Material: gray_stained_glass_pane
+  '17':
+    Material: gray_stained_glass_pane

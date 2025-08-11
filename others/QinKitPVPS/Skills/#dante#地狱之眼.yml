@@ -1,0 +1,10 @@
+Activator:
+  Material: ENDER_EYE
+  Name: 地狱之眼
+Commands:
+- 'console: execute as %player% as %player% run effect give @a[distance=1..15] glowing
+  8 1 true'
+- 'console: execute as %player% as %player% run effect give @s weakness 6 1 true'
+- 'console: execute as %player% at @s run scoreboard players set @s reload 0'
+CoolDown:
+  CoolDown: 25S

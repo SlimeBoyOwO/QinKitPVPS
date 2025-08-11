@@ -1,0 +1,31 @@
+Activator:
+  Name: 收获
+Commands:
+- 'console: execute as %player% at @s run summon salmon ~ ~ ~ {Tags:["DyingFish"]}'
+- 'console: execute as %player% at @s run summon minecraft:salmon ~ ~ ~ {Tags:["DyingFish"]}'
+- 'console: execute as %player% at @s run summon minecraft:salmon ~ ~ ~ {Tags:["DyingFish"]}'
+- 'console: execute as %player% at @s run summon minecraft:salmon ~ ~ ~ {Tags:["DyingFish"]}'
+- 'console: execute as %player% at @s run summon cod ~ ~ ~ {Tags:["DyingFish"]}'
+- 'console: execute as %player% at @s run summon minecraft:cod ~ ~ ~ {Tags:["DyingFish"]}'
+- 'console: execute as %player% at @s run summon minecraft:cod ~ ~ ~ {Tags:["DyingFish"]}'
+- 'console: execute as %player% at @s run summon minecraft:cod ~ ~ ~ {Tags:["DyingFish"]}'
+- 'console: execute as %player% at @s run summon tropical_fish ~ ~ ~ {Tags:["DyingFish"]}'
+- 'console: execute as %player% at @s run summon minecraft:tropical_fish ~ ~ ~ {Tags:["DyingFish"]}'
+- 'console: execute as %player% at @s run summon minecraft:tropical_fish ~ ~ ~ {Tags:["DyingFish"]}'
+- 'console: execute as %player% at @s run summon minecraft:tropical_fish ~ ~ ~ {Tags:["DyingFish"]}'
+- 'console: execute as %player% at @s run summon pufferfish ~ ~ ~ {Tags:["DyingFish"]}'
+- 'console: execute as %player% at @s run summon minecraft:pufferfish ~ ~ ~ {Tags:["DyingFish"]}'
+- 'console: execute as %player% at @s run summon minecraft:pufferfish ~ ~ ~ {Tags:["DyingFish"]}'
+- 'console: execute as %player% at @s run summon minecraft:pufferfish ~ ~ ~ {Tags:["DyingFish"]}'
+- 'console: execute as %player% at @s run summon minecraft:pufferfish ~ ~ ~ {Tags:["DyingFish"]}'
+- 'console: execute as %player% at @s run summon minecraft:pufferfish ~ ~ ~ {Tags:["DyingFish"]}'
+- 'console: execute as %player% at @s run summon minecraft:pufferfish ~ ~ ~ {Tags:["DyingFish"]}'
+- 'console: execute as %player% at @s run summon minecraft:pufferfish ~ ~ ~ {Tags:["DyingFish"]}'
+- 'console: execute at %player% at @s run playsound minecraft:entity.fish.swim ambient
+  @a'
+CoolDown:
+  CoolDown: 25S
+Effects:
+  REGENERATION:
+    Amplifier: 1
+    Duration: 8

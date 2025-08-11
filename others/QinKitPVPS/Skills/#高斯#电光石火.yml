@@ -1,0 +1,26 @@
+Activator:
+  Material: FLINT
+  Name: '&8&l电光石火'
+Commands:
+- 'console: execute as %player% at @s[scores={LX=..3}] run fill ~4 ~ ~-4 ~-4 ~ ~4
+  fire keep'
+- 'console: execute as %player% at @s[scores={LX=..3}] run summon armor_stand ~ ~
+  ~ {NoGravity:1b,Invisible:1b,Tags:["Lava"]}'
+- 'console: execute as %player% at @s[scores={LX=..3}] run effect give @a[distance=1..5]
+  slowness 4 2'
+- 'console: execute as %player% at @s[scores={LX=..3}] run effect give @a[distance=1..5]
+  weakness 4 0'
+- 'console: execute as %player% at @s[scores={LX=4..}] as @a[distance=1..6] at @a[distance=1..6]
+  run summon minecraft:lightning_bolt '
+- 'console: execute as %player% at @s[scores={LX=4..}] run effect give [distance=1..6]
+  instant_damage 1 1'
+- 'console: execute as %player% at @s[scores={LX=5}] run scoreboard players remove
+  @s MHJS 1 '
+- 'console: execute as %player% at @s[tag=XDCY] run damage @p[distance=1..8] 16 fly_into_wall
+  by @p[tag=gauss]'
+- 'console: execute as %player% at %player% run playsound minecraft:entity.lightning_bolt.impact
+  voice @a[distance=0..8] ~ ~ ~ 1 0.5'
+- 'console: execute as %player% at %player% run particle flame ~ ~ ~ 1.0 1.0 1.0 0
+  100 force'
+CoolDown:
+  CoolDown: 20S

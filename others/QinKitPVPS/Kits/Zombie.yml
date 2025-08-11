@@ -1,0 +1,77 @@
+Kit:
+  Permission: kp.kit.zombie
+  DisplayName: 尸堆
+  Available: true
+  Cooldown: 0
+  Level: 0
+  Health: 40
+Inventory:
+  Armor:
+    Helmet:
+      Material: ZOMBIE_HEAD
+    Chestplate:
+      Material: LEATHER_CHESTPLATE
+      Dye:
+        Red: 58
+        Green: 165
+        Blue: 212
+      ArmorDefenseBase: 1
+    Leggings:
+      Material: LEATHER_LEGGINGS
+      Dye:
+        Red: 60
+        Green: 68
+        Blue: 170
+      ArmorDefenseBase: 1
+    Boots:
+      Material: LEATHER_BOOTS
+      Dye:
+        Red: 160
+        Green: 167
+        Blue: 168
+      ArmorDefenseBase: 1
+  Items:
+    '0':
+      Name: '&a尸爪'
+      Material: IRON_SWORD
+      Lore:
+      - '  &8● &3永生 &7: &7永久拥有 &a生命恢复II'
+    '6':
+      Name: '&a尸体派对'
+      Material: GREEN_DYE
+      Lore:
+      - '  &8● &3尸体派对 &7: &7召唤8个 &a15❤ &7随机装备的僵尸，获得 &a10s 速度I + 虚弱I '
+    '1':
+      Material: BOW
+    '3':
+      Material: COOKED_BEEF
+      Amount: 12
+    '4':
+      Name: '&a医疗包'
+      Material: GREEN_GLAZED_TERRACOTTA
+      Amount: 6
+    '7':
+      Material: ARROW
+      Amount: 20
+    '8':
+      Name: '&aPlayer Tracker &7(Right Click)'
+      Material: COMPASS
+Effects:
+  REGENERATION:
+    Amplifier: 1
+    Duration: 100000
+Commands:
+- 'console: tag %player% add Zombie'
+- 'console: tag %player% add Zombie_passive'
+- 'console: execute as @a[tag=Zombie] run item replace entity @s armor.legs with leather_leggings[attribute_modifiers=[{id:"armor",type:"generic.armor",amount:5.0d,operation:"add_value",slot:"legs"}],dyed_color=3949738]
+  1'
+- 'console: execute as @a[tag=Zombie] run tag @s remove Zombie'
+Introduction:
+- '&7>> &b&l尸堆 &7-->'
+- '&7生命：&a40  &7防御：&a3  &7攻击：&a6'
+- '&7上手难度：&f★★★☆☆'
+- '  &8● &3永生 &7: &7永久拥有 &a生命恢复II'
+- '  &8● &3永生 &7: &7令贴近的其他玩家获得饥饿'
+- '  &8● &3尸体派对 &7: &7召唤8个 &a15❤ &7随机装备的僵尸，获得 &a10s 速度I + 虚弱I '
+- '  &8○ &7优秀的回复机制和强大的逃脱机制'
+- '  &8○ &7使它成为战场中最扩散恐怖的存在'

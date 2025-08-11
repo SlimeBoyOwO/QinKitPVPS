@@ -1,0 +1,18 @@
+Activator:
+  Name: '&b魅惑'
+Commands:
+- 'console: execute as %player% at @s run summon bat ~ ~ ~ {Silent:1b,NoAI:1b,Tags:["Love_Kiss"]}'
+- 'console: execute as @e[tag=Love_Kiss] run effect give @s invisibility infinite
+  1 true'
+- 'console: execute as %player% at @s run teleport @e[limit=1,sort=nearest,distance=0..1,tag=Love_Kiss]
+  @s'
+- 'console: execute as %player% at @s as @e[tag=Love_Kiss,distance=0..1,sort=nearest,limit=1]
+  at @s run teleport @s ~ ~1 ~'
+- 'console: execute as %player% at @s run playsound minecraft:entity.cat.stray_ambient
+  ambient @a ~ ~ ~ 1 1'
+CoolDown:
+  CoolDown: 25S
+Effects:
+  REGENERATION:
+    Amplifier: 1
+    Duration: 5

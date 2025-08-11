@@ -1,0 +1,72 @@
+Kit:
+  Permission: kp.kit.lovedemo
+  DisplayName: 魅魔
+  Available: true
+  Cooldown: 0
+  Level: 0
+  Health: 23
+Inventory:
+  Armor:
+    Helmet:
+      Material: PLAYER_HEAD
+      Skull: Yoshino
+    Chestplate:
+      Material: LEATHER_CHESTPLATE
+      ArmorDefenseBase: 9
+      Dye:
+        Red: 29
+        Green: 29
+        Blue: 33
+    Leggings:
+      Material: LEATHER_LEGGINGS
+      Dye:
+        Red: 252
+        Green: 229
+        Blue: 236
+    Boots:
+      Material: LEATHER_BOOTS
+      Dye:
+        Red: 29
+        Green: 29
+        Blue: 33
+  Items:
+    '0':
+      Name: '&d魅魔之剑'
+      Material: NETHERITE_SWORD
+      AttackDamageBase: 6
+      Enchantments:
+        UNBREAKING: 10
+      Lore:
+      - '  &8● &3可爱 &7: &7处于 &a魅惑状态 &7的玩家攻击你有 &a15%概率 &7回复 &8 &7血量'
+    '6':
+      Name: '&d魅惑'
+      Material: PINK_DYE
+      Enchantments:
+        UNBREAKING: 10
+      Lore:
+      - '  &8● &3飞吻 &7: &7发射一道飞吻，被命中的玩家 &a虚弱I缓慢I 3s &7并且陷入 &a魅惑状态 10s'
+    '1':
+      Material: BOW
+    '3':
+      Material: COOKED_BEEF
+      Amount: 7
+    '4':
+      Name: '&a医疗包'
+      Material: GREEN_GLAZED_TERRACOTTA
+      Amount: 2
+    '7':
+      Material: ARROW
+      Amount: 32
+    '8':
+      Name: '&aPlayer Tracker &7(Right Click)'
+      Material: COMPASS
+Commands:
+- 'console: tag %player% add LoveDemo'
+- 'console: execute as @a[tag=LoveDemo] run item replace entity @s armor.head with
+  player_head[custom_name="魅魔",profile={id:[I;-730449349,230968249,-1312451749,386357733],properties:[{name:"textures",value:"eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvNmJhZDFlNTQyOWMwZWZiZDBiZDQ0OWFiZjE4YzQ5YmFmMTIwOGU2MGUwZjY0ZTRmNTNlMzU1ODY3YmU5NDAxNyJ9fX0="}]}]
+  1'
+- 'console: execute as @a[tag=LoveDemo] run item replace entity @s armor.legs with
+  leather_leggings[attribute_modifiers=[{id:"armor",type:"generic.armor",amount:3.0d,operation:"add_value",slot:"legs"}],dyed_color=16573932]
+  1'
+- 'console: execute as @a[tag=LoveDemo] run tag @s remove LoveDemo'
+- 'console: tag %player% add LoveDemo_D'

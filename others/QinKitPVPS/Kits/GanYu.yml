@@ -1,0 +1,65 @@
+Kit:
+  Permission: kp.kit.ganyu
+  DisplayName: 甘雨
+  Available: true
+  Cooldown: 0
+  Level: 0
+Inventory:
+  Armor:
+    Helmet:
+      Material: DIAMOND_HELMET
+      ArmorDefenseBase: 6
+    Chestplate:
+      Material: CHAINMAIL_CHESTPLATE
+    Leggings:
+      Name: '&7黑丝'
+      Material: LEATHER_LEGGINGS
+      Dye:
+        Red: 0
+        Green: 0
+        Blue: 0
+    Boots:
+      Name: '&7黑丝'
+      Material: LEATHER_BOOTS
+      Dye:
+        Red: 0
+        Green: 0
+        Blue: 0
+  Items:
+    '0':
+      Name: '&b冰拳'
+      Material: DIAMOND_SWORD
+    '1':
+      Name: '&b冰弓'
+      Material: BOW
+      Enchantments:
+        POWER: 1
+    '2':
+      Name: '&b冰冻莲花'
+      Material: BLUE_ORCHID
+    '3':
+      Material: COOKED_BEEF
+      Amount: 8
+    '4':
+      Name: '&a医疗包'
+      Material: GREEN_GLAZED_TERRACOTTA
+      Amount: 3
+    '6':
+      Name: '&b冰雨'
+      Material: CYAN_DYE
+    '7':
+      Material: ARROW
+      Amount: 48
+    '8':
+      Name: '&aPlayer Tracker &7(Right Click)'
+      Material: COMPASS
+Commands:
+- 'console: tag %player% add GanYu'
+Introduction:
+- '&7>> &b&l勇者 &7-->'
+- '&7生命：&a40  &7防御：&a16  &7攻击：&a7'
+- '&7上手难度：&f★☆☆☆☆'
+- '  &8● &3天赋 &7: &7开局即拥有 &a4❤ &7护盾'
+- '  &8● &3慰藉 &7: &7杀死敌人补满 &a4❤ &7护盾和 &a8s &7生命恢复 &aII'
+- '  &8○ &7高强的攻击力和防御力，还有强大的持续力'
+- '  &8○ &7天然的优势让这位勇士变得更加卓越'

@@ -1,0 +1,78 @@
+Kit:
+  Permission: kp.kit.drowned
+  DisplayName: 溺尸
+  Available: true
+  Cooldown: 0
+  Level: 0
+Inventory:
+  Armor:
+    Helmet:
+      Name: '&7溺尸的头盔'
+      Material: IRON_HELMET
+      Enchatments:
+        OXYGEN: 1
+      ArmorTrim:
+        Material: DIAMOND
+        Pattern: WARD
+    Chestplate:
+      Name: '&7溺尸的盔甲'
+      Material: IRON_CHESTPLATE
+      ArmorDefenseBase: 8
+      ArmorTrim:
+        Material: DIAMOND
+        Pattern: COAST
+    Boots:
+      Name: '&7溺尸的鞋子'
+      Material: IRON_BOOTS
+      Enchantments:
+        DEPTH_STRIDER: 3
+      ArmorTrim:
+        Material: DIAMOND
+        Pattern: SHAPER
+  Items:
+    '0':
+      Name: '&3海神三叉戟'
+      Material: TRIDENT
+      AttackDamageBase: 7.0
+      AttackSpeedBase: -2.4
+      Enchantments:
+        LOYALTY: 5
+        CHANNELING: 2
+      Lore:
+      - '  &8● &3唤雷 &7: &7扔出去的三叉戟有 &a33% &7的概率向击中位置召唤雷电'
+    '8':
+      Name: '&aPlayer Tracker &7(Right Click)'
+      Material: COMPASS
+    '1':
+      Material: BOW
+    '6':
+      Name: '&b暴雷'
+      Material: LIGHTNING_ROD
+      Enchantments:
+        CHANNELING: 10
+      Lore:
+      - '  &8● &3暴雷 &7: &7召唤一个雷电气场每 &a1s &7向半径 &a9m &7内的其他玩家降下雷电'
+    '3':
+      Material: COOKED_BEEF
+      Amount: 8
+    '4':
+      Name: '&a医疗包'
+      Material: GREEN_GLAZED_TERRACOTTA
+      Amount: 3
+    '7':
+      Material: ARROW
+      Amount: 24
+Effects:
+  WATER_BREATHING:
+    Amplifier: 1
+    Duration: 100000
+Commands:
+- 'console: tag %player% add Drowned'
+Introduction:
+- '&7>> &b&l溺尸 &7-->'
+- '&7生命：&a40  &7防御：&a11  &7攻击：&a7'
+- '&7上手难度：&f★★☆☆☆'
+- '  &8● &3水生 &7: &7在水中获得 &a生命恢复I'
+- '  &8● &3唤雷 &7: &7召唤一个雷电气场每 &a1s &7向半径 &a9m &7内的其他玩家降下雷电'
+- '  &8○ &7绝对控场的角色'
+- '  &8○ &7逼迫对方让位并占据有利地形'

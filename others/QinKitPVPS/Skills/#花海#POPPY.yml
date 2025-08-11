@@ -1,0 +1,21 @@
+Activator:
+  Material: POPPY
+  Name: '&c&lPOPPY'
+Commands:
+- 'console: execute as %player% at @s run particle crit ~ ~ ~ 1 1 1 0.1 70 force'
+- 'console: execute as %player% at @s run particle enchanted_hit ~ ~ ~ 1 1 1 0.1 70
+  force'
+- 'console: execute as %player% at @s run damage @s 25'
+CoolDown:
+  CoolDown: 8S
+Effects:
+  SPEED:
+    Amplifier: 1
+    Duration: 3
+  STRENGTH:
+    Amplifier: 1
+    Duration: 3
+Sound:
+  Pitch: 1
+  Sound: BLOCK_NOTE_BLOCK_PLING
+  Volume: 1

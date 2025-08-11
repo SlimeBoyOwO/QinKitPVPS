@@ -1,0 +1,20 @@
+Activator:
+  Material: IRON_HORSE_ARMOR
+  Name: '&7&l匿名行动'
+Commands:
+- 'console: execute as %player% at @s run particle end_rod ^ ^ ^ 0 1 0 0.5 200 force'
+CoolDown:
+  CoolDown: 20S
+Effects:
+  NIGHT_VISION:
+    Amplifier: 1
+    Duration: 5
+  STRENGTH:
+    Amplifier: 0
+    Duration: 5
+  SPEED:
+    Amplifier: 2
+    Duration: 5
+  INVISIBILITY:
+    Amplifier: 1
+    Duration: 5

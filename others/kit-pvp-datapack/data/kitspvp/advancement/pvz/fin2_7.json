@@ -1,0 +1,22 @@
+{
+    "display": {
+        "icon": {
+            "id": "minecraft:glow_ink_sac"
+        },
+        "title": {
+            "translate": "完成 2-7 关卡"
+        },
+        "description": {
+            "color": "green",
+            "translate": "解锁寒冰菇"
+        },
+        "announce_to_chat": true,
+        "frame": "task"
+    },
+    "parent": "kitspvp:pvz/fin2_6",
+    "criteria": {
+        "dummy": {
+            "trigger": "minecraft:impossible"
+        }
+    }
+}

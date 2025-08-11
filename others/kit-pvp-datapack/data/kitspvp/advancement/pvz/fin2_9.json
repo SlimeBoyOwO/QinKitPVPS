@@ -1,0 +1,22 @@
+{
+    "display": {
+        "icon": {
+            "id": "minecraft:lily_pad"
+        },
+        "title": {
+            "translate": "完成 2-9 关卡"
+        },
+        "description": {
+            "color": "green",
+            "translate": "解锁荷叶"
+        },
+        "announce_to_chat": true,
+        "frame": "task"
+    },
+    "parent": "kitspvp:pvz/fin2_8",
+    "criteria": {
+        "dummy": {
+            "trigger": "minecraft:impossible"
+        }
+    }
+}

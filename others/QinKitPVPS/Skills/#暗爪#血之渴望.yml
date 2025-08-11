@@ -1,0 +1,14 @@
+Activator:
+  Material: GILDED_BLACKSTONE
+  Name: '&a血之渴望'
+Commands:
+- 'console: effect give %player% weakness 5 0'
+- 'console: effect give %player% slowness 5 1'
+- 'console: damage %player% 5'
+- 'console: effect give %player% saturation 20'
+- 'console: execute as %player% at @s run effect give @a[distance=0..8] glowing 5
+  0 true'
+CoolDown:
+  CoolDown: 40S
+Message:
+  Message: ''

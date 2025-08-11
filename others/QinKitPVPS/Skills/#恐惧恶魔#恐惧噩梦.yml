@@ -1,0 +1,26 @@
+Activator:
+  Material: ENDER_EYE
+  Name: '&5恐惧噩梦'
+Commands:
+- 'console: execute as %player% at @s run particle end_rod ~ ~ ~ 1 1 1 0.2 50 force'
+- 'console: execute as %player% at @s run teleport @s ^ ^2 ^'
+- 'console: execute as %player% at @s run effect give @a[distance=1..4,tag=!Horrid_S]
+  blindness 5 1'
+- 'console: execute as %player% at @s run effect give @a[distance=1..4,tag=!Horrid_S]
+  wither 1 0'
+- 'console: tag %player% remove Horrid_S'
+CoolDown:
+  CoolDown: 30S
+Effects:
+  ABSORPTION:
+    Amplifier: 2
+    Duration: 10
+  GLOWING:
+    Amplifier: 2
+    Duration: 10
+  NIGHT_VISION:
+    Amplifier: 1
+    Duration: 10
+  SLOWNESS:
+    Amplifier: 255
+    Duration: 1

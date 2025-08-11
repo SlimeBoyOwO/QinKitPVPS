@@ -1,0 +1,26 @@
+Activator:
+  Material: WITHER_ROSE
+  Name: '&5&lOLD ROSE'
+Commands:
+- 'console: execute as %player% at @s run teleport @s @s'
+- 'console: execute as %player% at @s run damage @s 15'
+- 'console: execute as %player% at @s run particle portal ~ ~ ~ 2 0 2 0.1 100 force'
+- 'console: execute as %player% at @s run particle minecraft:portal ~ ~ ~ 2 0 2 0.1
+  100 force'
+- 'console: execute as %player% at @s run particle minecraft:portal ~ ~ ~ 2 0 2 0.1
+  100 force'
+- 'console: execute as %player% at @s run teleport @s @s'
+- 'console: execute as %player% at @s run effect give @a[distance=1..6] wither 5 1'
+- 'console: execute as %player% at @s run effect give @a[distance=1..6] mining_fatigue
+  4 1'
+- 'console: execute as %player% at @s run teleport @s @s'
+CoolDown:
+  CoolDown: 20S
+Effects:
+  SLOWNESS:
+    Amplifier: 10
+    Duration: 1
+Sound:
+  Pitch: 1
+  Sound: BLOCK_NOTE_BLOCK_PLING
+  Volume: 1
