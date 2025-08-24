@@ -5,16 +5,17 @@ import org.NoiQing.util.Function;
 import org.NoiQing.util.PlayerDataSave;
 import org.NoiQing.util.WeatherDataSave;
 import org.bukkit.*;
+import org.bukkit.attribute.Attribute;
 import org.bukkit.block.Block;
 import org.bukkit.enchantments.Enchantment;
 import org.bukkit.entity.*;
 import org.bukkit.event.EventHandler;
+import org.bukkit.event.EventPriority;
 import org.bukkit.event.Listener;
 import org.bukkit.event.block.Action;
 import org.bukkit.event.entity.*;
 import org.bukkit.event.player.*;
 import org.bukkit.inventory.ItemStack;
-import org.bukkit.inventory.meta.ItemMeta;
 import org.bukkit.inventory.meta.PotionMeta;
 import org.bukkit.potion.PotionEffect;
 import org.bukkit.potion.PotionEffectType;
@@ -116,6 +117,8 @@ public class PassiveSkillsListener implements Listener {
             }
         }
     }
+
+
     @EventHandler
     public void FastSwordPassiveSkill(EntityDamageByEntityEvent event){
         if(event.getEntity() instanceof LivingEntity lv){
@@ -128,11 +131,18 @@ public class PassiveSkillsListener implements Listener {
                     lv.setMaximumNoDamageTicks(7);
                 }
                 lv.setNoDamageTicks(0);
-            }else if((event.getDamager() instanceof Player damager && damager.getScoreboardTags().contains("FastSword_S")) ||
-                    event.getDamager().getScoreboardTags().contains("TWorld_Arrow") ||
+            }else if (event.getDamager() instanceof Player damager && damager.getScoreboardTags().contains("FastSword_S")) {
+
+                double newDamage = Math.max(0, event.getDamage() - 1);
+                event.setDamage(newDamage);
+
+                lv.setMaximumNoDamageTicks(0);
+                lv.setNoDamageTicks(0);
+            }
+            else if (event.getDamager().getScoreboardTags().contains("TWorld_Arrow") ||
                     event.getDamager().getScoreboardTags().contains("allay_damage") ||
                     event.getDamager().getScoreboardTags().contains("pvz_plant") ||
-                    event.getDamager().getScoreboardTags().contains("pvz_zombie")){
+                    event.getDamager().getScoreboardTags().contains("pvz_zombie")) {
                 lv.setMaximumNoDamageTicks(0);
                 lv.setNoDamageTicks(0);
             }else if(event.getCause() == EntityDamageEvent.DamageCause.ENTITY_ATTACK){
@@ -148,7 +158,10 @@ public class PassiveSkillsListener implements Listener {
         }
     }
 
-    //夺 命 丘 比 特 被 动 技 能
+
+
+
+//夺 命 丘 比 特 被 动 技 能
     @EventHandler
     public void SniperPassiveSkill(EntityShootBowEvent event){
         if(event.getEntity().getScoreboardTags().contains("Sniper") && event.getEntity() instanceof Player player){
@@ -302,6 +315,7 @@ public class PassiveSkillsListener implements Listener {
             event.setDamage(event.getDamage()*1.5);
         }
     }
+
 
     //花海被动技能
     @EventHandler
@@ -675,6 +689,111 @@ public class PassiveSkillsListener implements Listener {
         }
     }
 
+    //拉格纳被动
+
+    //增伤
+    @EventHandler(priority = EventPriority.NORMAL)
+    public void onRagnaDamage(EntityDamageByEntityEvent event) {
+        if (event.getDamager() instanceof Player damager) {
+            // 检查玩家是否带有 Ragna 标签
+            if (damager.getScoreboardTags().contains("Ragna")) {
+                // 获取玩家当前生命值
+                double currentHealth = damager.getHealth();
+
+                // 检查生命值是否低于10点
+                if (currentHealth < 10.0) {
+                    // 增加20%伤害
+                    double originalDamage = event.getDamage();
+                    double increasedDamage = originalDamage * 1.20;
+                    event.setDamage(increasedDamage);
+
+                }
+            }
+        }
+    }
+
+
+    //吸血
+    @EventHandler(priority = EventPriority.HIGH)
+    public void RagnaPassiveSkill(EntityDamageByEntityEvent event) {
+        if (!(event.getDamager() instanceof Player)) return;
+
+        Player damager = (Player) event.getDamager();
+        if (!damager.getScoreboardTags().contains("Ragna")) return;
+
+
+        final double rawDamage = event.getDamage();
+
+
+        new BukkitRunnable() {
+            @Override
+            public void run() {
+
+                double maxHealth = damager.getMaxHealth();
+                double currentHealth = damager.getHealth();
+
+
+                double healthLostPercentage = (maxHealth - currentHealth) / maxHealth;
+
+
+                double baseConversionRate = 0.56;
+                double bonusConversionRate = Math.floor(healthLostPercentage * 20) * 0.01;
+                double totalConversionRate = baseConversionRate + bonusConversionRate;
+
+
+                double healAmount = rawDamage * totalConversionRate;
+                double newHealth = Math.min(currentHealth + healAmount, maxHealth);
+
+
+                damager.setHealth(newHealth);
+
+
+            }
+        }.runTaskLater(plugin, 19);
+    }
+
+
+    //残 被动技能
+
+
+    @EventHandler(priority = EventPriority.NORMAL)
+    public void onSlaughterAttack(EntityDamageByEntityEvent event) {
+        if (!(event.getDamager() instanceof Player)) return;
+
+        Player damager = (Player) event.getDamager();
+        if (!damager.getScoreboardTags().contains("slaughter")) return;
+
+
+        double damageReductionPercent = calculateDamageReduction(event.getEntity());
+
+
+        double effectiveReduction = damageReductionPercent * 0.6;
+
+        // 调整最终伤害
+        double originalDamage = event.getDamage();
+        double adjustedDamage = originalDamage / (1 - damageReductionPercent) * (1 - effectiveReduction);
+        event.setDamage(adjustedDamage);
+    }
+
+
+    private double calculateDamageReduction(Entity entity) {
+        if (!(entity instanceof LivingEntity)) return 0;
+
+        LivingEntity livingEntity = (LivingEntity) entity;
+
+
+        double armor = livingEntity.getAttribute(Attribute.GENERIC_ARMOR).getValue();
+        double toughness = livingEntity.getAttribute(Attribute.GENERIC_ARMOR_TOUGHNESS).getValue();
+
+
+        double reduction = armor * 0.04;
+        reduction += toughness * 0.001;
+
+        return Math.min(reduction, 0.8);
+    }
+
+
+
     //爱之魅魔被动技能
     @EventHandler
     public void onLoveDemoAttacked(EntityDamageByEntityEvent event){
@@ -782,6 +901,11 @@ public class PassiveSkillsListener implements Listener {
             }
         }
     }
+
+
+
+
+
     //道士吸血技能
     @EventHandler
     public void onDaoShiXiBlood(EntityDamageByEntityEvent e) {
