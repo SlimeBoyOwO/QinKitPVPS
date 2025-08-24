@@ -268,6 +268,15 @@ public class Function {
         Objects.requireNonNull(player.getAttribute(Attribute.GENERIC_ATTACK_DAMAGE)).setBaseValue(1);
         Objects.requireNonNull(player.getAttribute(Attribute.PLAYER_ENTITY_INTERACTION_RANGE)).setBaseValue(3.0);
         Objects.requireNonNull(player.getAttribute(Attribute.GENERIC_SCALE)).setBaseValue(1.0);
+        Objects.requireNonNull(player.getAttribute(Attribute.GENERIC_GRAVITY)).setBaseValue(0.08);
+        Objects.requireNonNull(player.getAttribute(Attribute.PLAYER_SNEAKING_SPEED)).setBaseValue(0.3);
+        Objects.requireNonNull(player.getAttribute(Attribute.GENERIC_STEP_HEIGHT)).setBaseValue(0.6);
+        Objects.requireNonNull(player.getAttribute(Attribute.GENERIC_JUMP_STRENGTH)).setBaseValue(0.42);
+        Objects.requireNonNull(player.getAttribute(Attribute.GENERIC_EXPLOSION_KNOCKBACK_RESISTANCE)).setBaseValue(0);
+        Objects.requireNonNull(player.getAttribute(Attribute.GENERIC_FALL_DAMAGE_MULTIPLIER)).setBaseValue(1);
+        Objects.requireNonNull(player.getAttribute(Attribute.GENERIC_SAFE_FALL_DISTANCE)).setBaseValue(3);
+
+
         player.setLevel(0);
         player.setInvisible(false);
         /* 删 除 玩 家 所 有 t a g s */
