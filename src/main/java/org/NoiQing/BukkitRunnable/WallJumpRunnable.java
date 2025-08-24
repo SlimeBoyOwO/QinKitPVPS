@@ -16,8 +16,18 @@ public class WallJumpRunnable extends BukkitRunnable {
     @Override
     public void run() {
         for(Player player : Bukkit.getOnlinePlayers()){
-            //回复体力
-            if(player.getExp() < 1) player.setExp(player.getExp() + 0.0025F > 1 ? 1 : player.getExp() + 0.0025F);
+            boolean hasSlaughterTag = player.getScoreboardTags().contains("slaughter");
+
+            float recoveryRate = 0.0025F;
+            if(hasSlaughterTag) {
+                recoveryRate *= 1.25F;
+            }
+
+            // 回复体力
+            if(player.getExp() < 1) {
+                float newExp = player.getExp() + recoveryRate;
+                player.setExp(newExp > 1 ? 1 : newExp);
+            }
             if(!player.getScoreboardTags().contains("GanYu")) player.setLevel((int) (player.getExp() * 100));
 
             //滑墙
