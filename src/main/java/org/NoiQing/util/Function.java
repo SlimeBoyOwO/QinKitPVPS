@@ -276,7 +276,6 @@ public class Function {
         Objects.requireNonNull(player.getAttribute(Attribute.GENERIC_FALL_DAMAGE_MULTIPLIER)).setBaseValue(1);
         Objects.requireNonNull(player.getAttribute(Attribute.GENERIC_SAFE_FALL_DISTANCE)).setBaseValue(3);
 
-
         player.setLevel(0);
         player.setInvisible(false);
         /* 删 除 玩 家 所 有 t a g s */
