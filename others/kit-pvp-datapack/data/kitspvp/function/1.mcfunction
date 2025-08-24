@@ -753,24 +753,24 @@ execute as @a[tag=XDCY] at @s run particle firework ~ ~1 ~ 1.5 1.5 1.5 0 3 force
 
 
 #拉格纳#
-execute as @a[tag=Ragna,scores={health=..30}] at @s run effect give @s minecraft:resistance 2 0
+execute as @a[tag=Ragna,scores={health=..30}] at @s run effect give @s minecraft:haste 2 0
+execute as @a[tag=Ragna,scores={health=..20}] at @s run effect give @s minecraft:resistance 2 0
+execute as @a[tag=BlackImpact_Target] at @s run particle minecraft:large_smoke ~ ~1 ~ 1.5 2.0 0.5 0 11
+execute as @a[tag=BlackImpact_Casting] at @s run particle minecraft:dripping_lava ~ ~1 ~ 2 2.5 1 0.2 6
+execute as @a[tag=BlackImpact_Casting] at @s run particle minecraft:large_smoke ~ ~1 ~ 0.5 1.0 0.5 0.02 8
+execute as @a[tag=BlackImpact_Casting] at @s run particle minecraft:soul_fire_flame ~ ~1 ~ 0.5 1.0 0.5 0.01 5
+execute as @a[tag=BlackImpact_Target] at @s run effect give @s minecraft:weakness 1 0
+execute as @a[tag=BlackImpact_Casting] at @s run effect give @s minecraft:weakness 1 5
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+#残#
+execute as @a[tag=JUEJI] at @s run scoreboard players add @s count1 1
+execute as @a[tag=JUEJI,scores={count1=200..}] at @s run item replace entity @s armor.head with minecraft:leather_helmet[minecraft:unbreakable={1:1}]
+execute as @a[tag=JUEJI,scores={count1=200..}] at @s run item replace entity @s armor.chest with minecraft:golden_chestplate[minecraft:unbreakable={1:1}]
+execute as @a[tag=JUEJI,scores={count1=200..}] at @s run item replace entity @s armor.legs with minecraft:golden_leggings[minecraft:unbreakable={1:1}]
+execute as @a[tag=JUEJI,scores={count1=200..}] at @s run item replace entity @s armor.feet with minecraft:chainmail_boots[minecraft:unbreakable={1:1}]
+execute as @a[tag=JUEJI,scores={count1=200..}] at @s run tag @s remove JUEJI
+execute as @a[tag=slaughter,scores={count1=200..}] at @s run scoreboard players set @s count1 0
 
 #击杀奖励
 execute as @e[scores={Kills_S=1..}] run scoreboard players set @s Kills_S 0
