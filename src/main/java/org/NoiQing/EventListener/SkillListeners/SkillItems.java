@@ -20,14 +20,14 @@ import org.bukkit.scoreboard.Team;
 import org.bukkit.util.RayTraceResult;
 import org.bukkit.util.Vector;
 
-import java.util.ArrayList;
-import java.util.List;
-import java.util.Objects;
+import java.util.*;
 import java.util.function.Predicate;
 
 public class SkillItems implements Listener {
     private final QinKitPVPS plugin;
     private final Scoreboard scoreboard;
+    private final Map<Player, Location> blackImpactPlayers = new HashMap<>();
+    private final Map<Player, Location> blackImpactTargets = new HashMap<>();
     public SkillItems(QinKitPVPS plugin){
         this.plugin = plugin;
         ScoreboardManager scoreboardManager = Bukkit.getScoreboardManager();
@@ -155,6 +155,761 @@ public class SkillItems implements Listener {
             }
             event.setCancelled(true);
         }
+//拉格纳 屠杀剪
+        if (Function.isHoldingSPItem(player, "屠杀剪")) {
+            if (PlayerDataSave.ifPlayerSkillPassCoolDownTime(player, "屠杀剪")) {
+                double currentHealth = player.getHealth();
+                double damageTaken = currentHealth * 0.35;
+                double newHealth = Math.max(1.0, currentHealth - damageTaken);
+                player.setHealth(newHealth);
+
+                boolean isAerial = false;
+                Location playerLoc = player.getLocation();
+                int airBlocks = 0;
+                for (int y = 0; y < 10; y++) {
+                    Location below = playerLoc.clone().subtract(0, y + 1, 0);
+                    if (below.getBlock().getType().isSolid()) {
+                        break;
+                    }
+                    airBlocks++;
+                }
+                isAerial = (airBlocks >= 5);
+
+                if (isAerial) {
+                    player.getWorld().playSound(playerLoc, Sound.ENTITY_ENDER_DRAGON_FLAP, 1.5F, 0.7F);
+                    player.getWorld().spawnParticle(
+                            Particle.DRAGON_BREATH,
+                            playerLoc,
+                            35,
+                            1.0, 1.0, 1.0, 0.4
+                    );
+
+                    player.setFallDistance(0);
+
+                    player.setVelocity(new Vector(0, -2.0, 0));
+
+                    new BukkitRunnable() {
+                        boolean hasLanded = false;
+                        Location landingLocation = null;
+
+                        @Override
+                        public void run() {
+                            if (!player.isOnline() || player.isDead()) {
+                                this.cancel();
+                                return;
+                            }
+
+                            if (!hasLanded) {
+                                player.setFallDistance(0);
+
+                                Location currentLoc = player.getLocation();
+                                player.getWorld().spawnParticle(
+                                        Particle.FALLING_LAVA,
+                                        currentLoc,
+                                        15,
+                                        0.5, 0.5, 0.5,
+                                        0.05
+                                );
+                            }
+
+                            if (player.isOnGround() && !hasLanded) {
+                                hasLanded = true;
+                                landingLocation = player.getLocation().clone();
+
+                                player.setFallDistance(0);
+
+                                boolean isLowHealth = player.getHealth() < 20;
+                                double radius = isLowHealth ? 7.0 : 4.0;
+                                double healRatio = isLowHealth ? 0.8 : 0.5;
+
+
+                                Location effectLoc = landingLocation.clone().add(0, 1.5, 0);
+
+
+                                player.getWorld().playSound(landingLocation, Sound.ENTITY_GENERIC_EXPLODE, 1.8F, 0.85F);
+
+
+                                player.getWorld().spawnParticle(
+                                        Particle.DRAGON_BREATH,
+                                        effectLoc,
+                                        isLowHealth ? 60 : 45,
+                                        0, 0.5, 0,
+                                        isLowHealth ? 1.5 : 1.2
+                                );
+
+
+                                for (int i = 0; i < 3; i++) {
+                                    double yOffset = 0.3 * i;
+                                    int rings = isLowHealth ? 4 : 3;
+                                    double ringRadius = 2.0 + (i * 0.8);
+
+                                    for (int j = 0; j < rings; j++) {
+                                        double angleStep = Math.PI * 2 / 20;
+                                        for (double angle = 0; angle < Math.PI * 2; angle += angleStep) {
+                                            double x = Math.cos(angle) * ringRadius;
+                                            double z = Math.sin(angle) * ringRadius;
+                                            Location ringLoc = effectLoc.clone().add(x, yOffset, z);
+
+                                            player.getWorld().spawnParticle(
+                                                    Particle.FLAME,
+                                                    ringLoc,
+                                                    2,
+                                                    0.1, 0.1, 0.1,
+                                                    0.05
+                                            );
+                                        }
+                                    }
+                                }
+
+                                if (isLowHealth) {
+
+                                    for (double y = 0; y <= 3; y += 0.5) {
+                                        Location columnLoc = effectLoc.clone().add(0, y, 0);
+                                        player.getWorld().spawnParticle(
+                                                Particle.DRAGON_BREATH,
+                                                columnLoc,
+                                                15,
+                                                1.0, 0.1, 1.0,
+                                                0.2
+                                        );
+                                    }
+
+
+                                    player.getWorld().playSound(effectLoc, Sound.ENTITY_WITHER_SPAWN, 1.5F, 0.9F);
+                                    for (double r = 1; r <= 4; r += 0.8) {
+                                        double yOffset = 0.5;
+                                        double angleStep = Math.PI * 2 / (15 + r*2);
+
+                                        for (double angle = 0; angle < Math.PI * 2; angle += angleStep) {
+                                            double x = Math.cos(angle) * r;
+                                            double z = Math.sin(angle) * r;
+                                            Location waveLoc = effectLoc.clone().add(x, yOffset, z);
+
+                                            player.getWorld().spawnParticle(
+                                                    Particle.DAMAGE_INDICATOR,
+                                                    waveLoc,
+                                                    3,
+                                                    0.2, 0.2, 0.2,
+                                                    0.05
+                                            );
+                                        }
+                                    }
+                                }
+
+
+                                double totalHeal = 0.0;
+                                for (Entity entity : player.getNearbyEntities(radius, 3.0, radius)) {
+                                    if (entity instanceof LivingEntity target && !target.equals(player)) {
+                                        double distance = landingLocation.distance(target.getLocation());
+                                        if (distance <= radius) {
+
+                                            double damage = isLowHealth ? 16.0 : 13.0;
+                                            target.damage(damage);
+                                            totalHeal += damage * healRatio;
+
+                                            Location targetLoc = target.getLocation().add(0, 1, 0);
+                                            target.getWorld().playSound(
+                                                    targetLoc,
+                                                    Sound.ENTITY_PLAYER_HURT,
+                                                    1.2F,
+                                                    0.8F
+                                            );
+                                            target.getWorld().spawnParticle(
+                                                    Particle.DAMAGE_INDICATOR,
+                                                    targetLoc,
+                                                    isLowHealth ? 15 : 10,
+                                                    0.7, 0.7, 0.7,
+                                                    0.15
+                                            );
+
+                                            if (isLowHealth) {
+                                                target.getWorld().spawnParticle(
+                                                        Particle.FLAME,
+                                                        targetLoc,
+                                                        25,
+                                                        0.7, 0.7, 0.7,
+                                                        0.15
+                                                );
+                                            }
+                                        }
+                                    }
+                                }
+
+
+                                if (totalHeal > 0) {
+                                    double finalHealth = Math.min(player.getMaxHealth(), player.getHealth() + totalHeal);
+                                    player.setHealth(finalHealth);
+
+
+                                    Location healLoc = landingLocation.clone().add(0, 1.8, 0);
+                                    player.getWorld().playSound(
+                                            healLoc,
+                                            Sound.ENTITY_ILLUSIONER_CAST_SPELL,
+                                            1.2F,
+                                            1.2F
+                                    );
+                                    player.getWorld().spawnParticle(
+                                            Particle.HEART,
+                                            healLoc,
+                                            (int) (totalHeal * (isLowHealth ? 5 : 4)),
+                                            1.2, 1.2, 1.2,
+                                            0.1
+                                    );
+
+
+                                    if (isLowHealth) {
+                                        player.getWorld().spawnParticle(
+                                                Particle.SOUL_FIRE_FLAME,
+                                                healLoc.add(0, 0.5, 0),
+                                                35,
+                                                1.0, 1.0, 1.0,
+                                                0.2
+                                        );
+                                    }
+                                }
+
+
+                                int cooldown = 12;
+                                PlayerDataSave.setPlayerSkillCoolDownTime(player, "屠杀剪", cooldown);
+
+
+                                Bukkit.getScheduler().runTaskLater(plugin, () -> this.cancel(), 20);
+                            }
+                        }
+                    }.runTaskTimer(plugin, 0L, 1L);
+                }
+
+                else {
+
+                    boolean isLowHealth = currentHealth < 20;
+
+
+                    if(isLowHealth) {
+                        player.getWorld().playSound(
+                                player.getLocation(),
+                                Sound.ENTITY_ENDER_DRAGON_GROWL,
+                                1.0F,
+                                1.5F
+                        );
+                        player.getWorld().spawnParticle(
+                                Particle.DRAGON_BREATH,
+                                player.getLocation(),
+                                35,
+                                0.8, 1.5, 0.8,
+                                0.4
+                        );
+                    } else {
+                        player.getWorld().playSound(
+                                player.getLocation(),
+                                Sound.ENTITY_IRON_GOLEM_HURT,
+                                1.2F,  //
+                                0.8F
+                        );
+                        player.getWorld().spawnParticle(
+                                Particle.ANGRY_VILLAGER,
+                                player.getLocation(),
+                                30,  //
+                                0.7, 1.5, 0.7,  //
+                                0.6  //
+                        );
+                    }
+
+                    double radius = isLowHealth ? 8.0 : 5.0;
+                    double angleDeg = isLowHealth ? 75.0 : 60.0;
+                    int damage = isLowHealth ? 13 : 8;
+
+
+                    Vector baseDir = player.getLocation().getDirection().setY(0).normalize();
+                    Vector right = new Vector(-baseDir.getZ(), 0, baseDir.getX()).normalize();
+
+
+                    double angleStep = isLowHealth ? 3.0 : 4.0;
+                    double distanceStep = isLowHealth ? 0.4 : 0.5;
+
+                    for (double angle = -angleDeg/2; angle <= angleDeg/2; angle += angleStep) {
+                        Vector dir = baseDir.clone().multiply(Math.cos(Math.toRadians(angle)))
+                                .add(right.clone().multiply(Math.sin(Math.toRadians(angle))))
+                                .normalize();
+
+                        for (double r = 0.5; r <= radius; r += distanceStep) {
+                            Location pLoc = player.getLocation().clone()
+                                    .add(0, 1, 0)
+                                    .add(dir.clone().multiply(r));
+
+
+                            player.getWorld().spawnParticle(
+                                    Particle.FLAME,
+                                    pLoc,
+                                    3,
+                                    0, 0, 0,
+                                    0.05
+                            );
+
+                            if(isLowHealth) {
+                                player.getWorld().spawnParticle(
+                                        Particle.DUST,
+                                        pLoc,
+                                        2,
+                                        0.2, 0.2, 0.2,
+                                        0.05,
+                                        new Particle.DustOptions(
+                                                Color.fromRGB(255, 50, 50),
+                                                1.8f
+                                        )
+                                );
+                            }
+                        }
+                    }
+
+
+                    double totalHeal = 0;
+                    for (Entity entity : player.getNearbyEntities(radius, radius/2, radius)) {
+                        if (!(entity instanceof LivingEntity target) || target.equals(player)) continue;
+
+                        Vector toTarget = target.getLocation().toVector()
+                                .subtract(player.getLocation().toVector())
+                                .setY(0)
+                                .normalize();
+
+                        double angle = Math.toDegrees(Math.acos(baseDir.dot(toTarget)));
+                        if (angle <= angleDeg/2 && player.getLocation().distance(target.getLocation()) <= radius) {
+                            target.setHealth(Math.max(0, target.getHealth() - damage));
+                            totalHeal += damage * 0.5;
+
+
+                            Location targetLoc = target.getLocation().add(0, 1, 0);
+                            target.getWorld().playSound(
+                                    targetLoc,
+                                    isLowHealth ? Sound.ENTITY_ENDER_DRAGON_HURT : Sound.ENTITY_PLAYER_HURT,
+                                    1.2F,
+                                    isLowHealth ? 0.9F : 1.2F
+                            );
+                            target.getWorld().spawnParticle(
+                                    Particle.CRIT,
+                                    targetLoc,
+                                    isLowHealth ? 35 : 25,
+                                    0.8, 0.8, 0.8,
+                                    isLowHealth ? 0.4 : 0.3
+                            );
+                        }
+                    }
+
+                    if(totalHeal > 0) {
+                        player.setHealth(Math.min(
+                                player.getMaxHealth(),
+                                player.getHealth() + totalHeal
+                        ));
+
+                        Location healLoc = player.getLocation().add(0, 1.8, 0);
+                        player.getWorld().playSound(
+                                healLoc,
+                                isLowHealth ? Sound.ITEM_TOTEM_USE : Sound.ENTITY_PLAYER_LEVELUP,
+                                1.0F,
+                                isLowHealth ? 1.2F : 1.5F
+                        );
+                        player.getWorld().spawnParticle(
+                                Particle.HEART,
+                                healLoc,
+                                (int)totalHeal * (isLowHealth ? 5 : 4),
+                                0.8, 0.8, 0.8,
+                                0.1
+                        );
+                    }
+
+
+                    PlayerDataSave.setPlayerSkillCoolDownTime(player, "屠杀剪", 8);
+                }
+
+                event.setCancelled(true);
+            }
+        }
+
+
+    //拉格纳 黑之轰击
+        if (Function.isHoldingSPItem(player, "黑之轰击")) {
+            event.setCancelled(true);
+
+
+            if (!PlayerDataSave.ifPlayerSkillPassCoolDownTime(player, "黑之轰击")) {
+                return;
+            }
+
+
+            Player target = null;
+            for (Entity entity : player.getNearbyEntities(1, 1, 1)) {
+                if (entity instanceof Player && !entity.equals(player)) {
+                    target = (Player) entity;
+                    break;
+                }
+            }
+
+            if (target == null) {
+
+                double healthCost = player.getHealth() * 0.2;
+                player.setHealth(Math.max(1, player.getHealth() - healthCost));
+
+
+                PlayerDataSave.setPlayerSkillCoolDownTime(player, "黑之轰击", 10);
+
+
+                player.getWorld().spawnParticle(Particle.DAMAGE_INDICATOR,
+                        player.getLocation().add(0, 1, 0),
+                        30,
+                        0.5, 0.5, 0.5,
+                        0.1);
+                player.getWorld().playSound(player.getLocation(),
+                        Sound.ENTITY_ENDERMAN_TELEPORT,
+                        1.0f,
+                        0.5f);
+
+
+                player.sendMessage("§c切,失手了么");
+                return;
+            }
+
+
+
+            final Player finalTarget = target;
+
+
+            final boolean isLowHealth = player.getHealth() < 10;
+
+
+            if (isLowHealth) {
+
+                player.sendMessage("§4§lNightmare Edge");
+                finalTarget.sendMessage("§4§l见识一下地狱深渊吧！");
+            } else {
+
+                player.sendMessage("§4§l抓到你了！");
+                finalTarget.sendMessage("§4§l别想跑！");
+            }
+
+
+            double healthCost = player.getHealth() * 0.8;
+            player.setHealth(Math.max(1, player.getHealth() - healthCost));
+
+
+            blackImpactPlayers.put(player, player.getLocation().clone());
+            blackImpactTargets.put(finalTarget, finalTarget.getLocation().clone());
+
+
+            player.addPotionEffect(new PotionEffect(PotionEffectType.DARKNESS, 60, 0));
+            finalTarget.addPotionEffect(new PotionEffect(PotionEffectType.DARKNESS, 60, 0));
+
+
+            int resistanceLevel = isLowHealth ? 3 : 2; // 4级抗性对应level 3
+            player.addPotionEffect(new PotionEffect(PotionEffectType.RESISTANCE, 60, resistanceLevel));
+
+
+            player.addScoreboardTag("BlackImpact_Casting");
+            finalTarget.addScoreboardTag("BlackImpact_Target");
+
+
+            if (isLowHealth) {
+                player.getWorld().spawnParticle(Particle.DRAGON_BREATH,
+                        player.getLocation().add(0, 1, 0),
+                        20,
+                        0.5, 0.5, 0.5,
+                        0.1);
+            }
+
+
+            BukkitRunnable syncTask = new BukkitRunnable() {
+                @Override
+                public void run() {
+
+                    if (!player.isOnline() || player.isDead()) {
+                        this.cancel();
+                        return;
+                    }
+                    if (!finalTarget.isOnline() || finalTarget.isDead()) {
+                        this.cancel();
+                        return;
+                    }
+
+
+                    if (player.getScoreboardTags().contains("BlackImpact_Casting") &&
+                            blackImpactPlayers.containsKey(player)) {
+                        Location loc = blackImpactPlayers.get(player);
+                        player.teleport(loc);
+                    }
+
+                    if (finalTarget.getScoreboardTags().contains("BlackImpact_Target") &&
+                            blackImpactTargets.containsKey(finalTarget)) {
+                        Location loc = blackImpactTargets.get(finalTarget);
+                        finalTarget.teleport(loc);
+                    }
+                }
+            };
+            syncTask.runTaskTimer(plugin, 0, 1); // 每tick运行一次
+
+
+            PlayerDataSave.setPlayerSkillCoolDownTime(player, "黑之轰击", 35);
+
+            final int durationTicks = isLowHealth ? 100 : 60; // 低生命值5秒，正常3秒
+
+
+            new BukkitRunnable() {
+                @Override
+                public void run() {
+
+                    syncTask.cancel();
+
+
+                    Location originalLoc = blackImpactTargets.get(finalTarget);
+
+
+                    player.removeScoreboardTag("BlackImpact_Casting");
+                    finalTarget.removeScoreboardTag("BlackImpact_Target");
+
+
+                    blackImpactPlayers.remove(player);
+                    blackImpactTargets.remove(finalTarget);
+
+
+                    if (originalLoc != null) {
+                        if (originalLoc.distance(finalTarget.getLocation()) < 0.5) {
+
+                            if (isLowHealth) {
+
+                                player.sendTitle("", "§4§lBlack Onslaught!", 0, 40, 10);
+                                finalTarget.sendTitle("", "§4§lDestruction!", 0, 40, 10);
+                            } else {
+
+                                player.sendMessage("§4§l去死吧！");
+                                finalTarget.sendMessage("§4§l去死吧！");
+                            }
+
+
+                            int baseDamage = 20;
+                            int extraDamage = isLowHealth ? 5 : 0;
+                            int totalDamage = baseDamage + extraDamage;
+
+
+                            double newHealth = Math.max(0, finalTarget.getHealth() - totalDamage);
+                            finalTarget.setHealth(newHealth);
+
+
+                            double healMultiplier = isLowHealth ? 1.5 : 1.0;
+                            double healAmount = totalDamage * healMultiplier;
+
+
+                            double playerNewHealth = Math.min(player.getMaxHealth(), player.getHealth() + healAmount);
+                            player.setHealth(playerNewHealth);
+
+
+                            player.getWorld().spawnParticle(Particle.DAMAGE_INDICATOR,
+                                    finalTarget.getLocation().add(0, 1, 0),
+                                    30 + extraDamage * 5);
+
+
+                            player.getWorld().spawnParticle(Particle.HEART,
+                                    player.getLocation().add(0, 1, 0),
+                                    10 + (int)(healAmount * 2));
+
+
+                            float pitch = isLowHealth ? 0.6f : 0.8f;
+                            player.getWorld().playSound(finalTarget.getLocation(),
+                                    Sound.ENTITY_WITHER_SHOOT,
+                                    1.0f,
+                                    pitch);
+
+
+                            if (isLowHealth) {
+                                player.getWorld().spawnParticle(Particle.FLASH,
+                                        player.getLocation().add(0, 1, 0),
+                                        10);
+                                player.getWorld().spawnParticle(Particle.SOUL_FIRE_FLAME,
+                                        finalTarget.getLocation().add(0, 1, 0),
+                                        20);
+                            }
+                        } else {
+
+                            player.sendMessage("§7这不可能...");
+                            finalTarget.sendMessage("§a§l下次不会让你这么走运了");
+                        }
+                    }
+                }
+            }.runTaskLater(plugin, durationTicks);
+        }
+
+
+        if(Function.isHoldingSPItem(player, "劫")) {
+            event.setCancelled(true);
+
+            if(!PlayerDataSave.ifPlayerSkillPassCoolDownTime(player, "劫")) {
+                return;
+            }
+
+
+            Vector direction = player.getEyeLocation().getDirection();
+
+
+            RayTraceResult result = player.getWorld().rayTraceEntities(
+                    player.getEyeLocation(),
+                    direction,
+                    5.0,
+                    0.5,
+                    entity -> entity instanceof Player && !entity.equals(player)
+            );
+
+            if(result != null && result.getHitEntity() instanceof Player target) {
+
+                Location targetLocation = target.getLocation().clone();
+                Vector targetDirection = targetLocation.getDirection().clone().normalize();
+
+
+                Location teleportLocation = targetLocation.subtract(targetDirection.multiply(1.0));
+                teleportLocation.setYaw(player.getLocation().getYaw());
+                teleportLocation.setPitch(player.getLocation().getPitch());
+
+
+                if(teleportLocation.getBlock().getType().isSolid() ||
+                        teleportLocation.clone().add(0, 1, 0).getBlock().getType().isSolid()) {
+
+                    Vector sideDirection = new Vector(-targetDirection.getZ(), 0, targetDirection.getX()).normalize();
+                    teleportLocation = targetLocation.add(sideDirection.multiply(1.0));
+
+
+                    if(teleportLocation.getBlock().getType().isSolid() ||
+                            teleportLocation.clone().add(0, 1, 0).getBlock().getType().isSolid()) {
+                        player.sendMessage("§c空间不足");
+                        PlayerDataSave.setPlayerSkillCoolDownTime(player, "劫", 4);
+                        return;
+                    }
+                }
+
+
+                player.teleport(teleportLocation);
+
+
+                target.damage(10.0, player);
+
+
+                player.getWorld().playSound(player.getLocation(), Sound.ENTITY_ENDERMAN_TELEPORT, 1.0F, 1.5F);
+                player.getWorld().playSound(target.getLocation(), Sound.ENTITY_PLAYER_HURT, 1.0F, 1.0F);
+
+                player.getWorld().spawnParticle(Particle.PORTAL, player.getLocation(), 30, 0.5, 0.5, 0.5, 0.5);
+                player.getWorld().spawnParticle(Particle.CRIT, target.getLocation().add(0, 1, 0), 20, 0.5, 0.5, 0.5, 0.2);
+
+
+                PlayerDataSave.setPlayerSkillCoolDownTime(player, "劫", 18);
+
+            } else {
+                player.sendMessage("§c未找到目标");
+
+                PlayerDataSave.setPlayerSkillCoolDownTime(player, "劫", 4);
+            }
+        }
+
+        if(Function.isHoldingSPItem(player, "绝尘")) {
+            event.setCancelled(true);
+
+            if(!PlayerDataSave.ifPlayerSkillPassCoolDownTime(player, "绝尘")) {
+                return;
+            }
+
+            float yaw = player.getLocation().getYaw();
+            double radYaw = Math.toRadians(yaw);
+
+            Vector forward = new Vector(-Math.sin(radYaw), 0, Math.cos(radYaw)).normalize();
+            Vector backward = new Vector(Math.sin(radYaw), 0, -Math.cos(radYaw)).normalize();
+
+            Vector moveDirection;
+            double verticalVelocity;
+            double horizontalSpeed;
+
+
+            if(player.isSprinting()) {
+
+                moveDirection = forward;
+                horizontalSpeed = 1.1;
+                verticalVelocity = 0.55;
+            } else if(player.isSneaking()) {
+
+                moveDirection = backward;
+                horizontalSpeed = 0.8;
+                verticalVelocity = 0.7;
+            } else {
+
+                moveDirection = forward;
+                horizontalSpeed = 0.5;
+                verticalVelocity = 0.85;
+            }
+
+
+            Vector boost = moveDirection.multiply(horizontalSpeed).setY(verticalVelocity);
+            player.setVelocity(player.getVelocity().add(boost));
+
+
+            Particle.DustOptions dustOptions;
+            if(player.isSprinting()) {
+                dustOptions = new Particle.DustOptions(Color.fromRGB(255, 200, 50), 1.5f); // 橙色-疾跑
+            } else if(player.isSneaking()) {
+                dustOptions = new Particle.DustOptions(Color.fromRGB(100, 100, 255), 1.5f); // 蓝色-潜行
+            } else {
+                dustOptions = new Particle.DustOptions(Color.fromRGB(200, 255, 200), 1.5f); // 绿色-正常
+            }
+
+
+            player.getWorld().playSound(player.getLocation(), Sound.ENTITY_BREEZE_JUMP, 1.2F, 0.9F);
+            player.getWorld().playSound(player.getLocation(), Sound.ENTITY_BREEZE_WIND_BURST, 1.0F, 0.8F);
+
+
+            Location particleLoc = player.getLocation().add(0, 0.2, 0);
+            for(int i = 0; i < 15; i++) {
+                double progress = i / 15.0;
+                Vector trailPos = moveDirection.clone().multiply(progress * 2.0);
+                player.getWorld().spawnParticle(
+                        Particle.DUST,
+                        particleLoc.clone().add(trailPos),
+                        3, 0.1, 0.1, 0.1, 0.05,
+                        dustOptions
+                );
+            }
+
+            for(int i = 0; i < 20; i++) {
+                double angle = 2 * Math.PI * i / 20;
+                double radius = 0.7;
+                Vector offset = new Vector(Math.cos(angle) * radius, 0.5, Math.sin(angle) * radius);
+                player.getWorld().spawnParticle(
+                        Particle.DUST,
+                        particleLoc.clone().add(offset),
+                        5, 0.15, 0.15, 0.15, 0.1,
+                        dustOptions
+                );
+            }
+
+            PlayerDataSave.setPlayerSkillCoolDownTime(player, "绝尘", 6);
+
+            player.addPotionEffect(new PotionEffect(PotionEffectType.SPEED, 20, 0, true, false));
+            player.addPotionEffect(new PotionEffect(PotionEffectType.RESISTANCE, 2, 0, true, false));
+
+        }
+
+
+        if(Function.isHoldingSPItem(player, "绝寂")) {
+            event.setCancelled(true);
+
+            if(!PlayerDataSave.ifPlayerSkillPassCoolDownTime(player, "绝寂")) {
+                return;
+            }
+
+
+            PlayerDataSave.setPlayerSkillCoolDownTime(player, "劫", 0);
+            PlayerDataSave.setPlayerSkillCoolDownTime(player, "绝尘", 0);
+
+
+            PlayerDataSave.setPlayerSkillCoolDownTime(player, "绝寂", 50);
+
+
+            player.getWorld().playSound(player.getLocation(), Sound.BLOCK_BEACON_ACTIVATE, 1.0F, 1.0F);
+
+        }
+
+
+
 
         if(playerUseSPItem(player,"返回大厅",0.1)) {
             player.getInventory().clear();
@@ -599,23 +1354,23 @@ public class SkillItems implements Listener {
 
     }
     private void useGunSkill(Player player, double damage){
-        // 获取玩家的视线方向
+
         Vector direction = player.getEyeLocation().getDirection();
         Predicate<Entity> predicate = x -> !x.getName().equals(player.getName());
 
-        // 创建一条射线
+
         RayTraceResult result = player.getWorld().rayTraceEntities(
-                player.getEyeLocation().clone().add(direction.multiply(2)), // 起始点
-                direction,               // 方向向量
-                100,                     // 最大距离
-                1,                     // 检测范围（宽度）
-                predicate                    // 过滤器
+                player.getEyeLocation().clone().add(direction.multiply(2)),
+                direction,
+                100,
+                1,
+                predicate
         );
 
 
         if (result != null && result.getHitEntity() instanceof LivingEntity target) {
-            // 检测到生物，对其造成伤害
-            target.damage(damage,player); // 造成8点伤害
+
+            target.damage(damage,player);
             target.setNoDamageTicks(0);
             if(damage == 5){
                 target.addPotionEffect(new PotionEffect(PotionEffectType.DARKNESS,5*20,1));
@@ -674,4 +1429,8 @@ public class SkillItems implements Listener {
 
         return ifYes;
     }
+
+    
+
+
 }
