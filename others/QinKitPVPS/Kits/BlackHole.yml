@@ -4,7 +4,7 @@ Kit:
   Available: true
   Cooldown: 0
   Level: 0
-  Health: 15
+  Health: 14
   NewAttack: true
 Inventory:
   Armor:
@@ -12,6 +12,7 @@ Inventory:
       Material: CHAINMAIL_HELMET
     Chestplate:
       Material: CHAINMAIL_CHESTPLATE
+      ArmorDefenseBase: 4
     Leggings:
       Material: CHAINMAIL_LEGGINGS
     Boots:
@@ -39,7 +40,7 @@ Inventory:
       - '  &8● &3虚无空间 &7: &7以自身为中心，以半径&a至多3格&7所在区域的其他玩家为对象，令他们获得&a3s虚弱1，&7在那之后，自己获得一个耐久30的盾牌，并清除自身所持有的上一个盾牌；技能释放瞬间，自己损失8生命值，同时获得5s缓慢2'
     '4':
       Material: COOKED_BEEF
-      Amount: 7
+      Amount: 6
     '8':
       Name: '&aPlayer Tracker &7(Right Click)'
       Material: COMPASS
@@ -57,7 +58,7 @@ Commands:
 
 Introduction:
 - '&7>> &b&l黑洞 &7-->'
-- '&7生命：&a30  &7防御：&a12  &7攻击：&a4'
+- '&7生命：&a28  &7防御：&a11  &7攻击：&a4'
 - '&7上手难度：&f★☆☆☆☆'
 - '  &8● &3宇宙之力 &7: &7以自身为中心，将半径&a至多9格&7以内所在区域的所以玩家吸附至自己身上'
 - '  &8● &3重力颠倒 &7: &7自己向自身&a正上方传送&a4格，&7同时获得&a2秒的缓降；&7同时，以自身为中心，以半径至多&a6格&7以内所在区域的其他玩家为对象，他们的&aY轴坐标-1&7，同时视角&a强制向下转移'
