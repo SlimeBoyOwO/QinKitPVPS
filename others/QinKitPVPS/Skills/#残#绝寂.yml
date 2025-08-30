@@ -1,0 +1,14 @@
+Activator:
+  Material: LIGHT_GRAY_STAINED_GLASS
+  Name: '&a绝寂'
+Commands:
+- 'console: execute as %player% at @s run tag %player% add JUEJI'
+- 'console: execute as %player% at @s run item replace entity @s armor.head with air'
+- 'console: execute as %player% at @s run item replace entity @s armor.chest with
+  air'
+- 'console: execute as %player% at @s run item replace entity @s armor.legs with air'
+- 'console: execute as %player% at @s run item replace entity @s armor.feet with air'
+- 'console: execute as %player% at @s run effect give @s minecraft:invisibility 10
+  0'
+CoolDown:
+  CoolDown: 50S
